@@ -1,2 +1,3 @@
 # Team_Garnet
-ISTE 500 Senior Development projet with Rapids Cemetery
+ISTE 500 Senior Development project with Rapids Cemetery
+Google Docs: https://drive.google.com/open?id=0BwWVnfabYuAMb1FIN3NxM1kyYUE
