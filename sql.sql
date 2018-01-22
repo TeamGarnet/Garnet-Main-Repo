@@ -41,10 +41,11 @@ CREATE TABLE IF NOT EXISTS `garnet`.`grave` (
   `deathDate` DATE NULL DEFAULT NULL,
   `description` VARCHAR(45) NULL DEFAULT NULL,
   `image` VARCHAR(45) NULL DEFAULT NULL,
-  `coordinates` DECIMAL NULL DEFAULT NULL,
+  `coordsFirst` DECIMAL(9,6) NULL DEFAULT NULL,
+  `coordsSecond` DECIMAL(9,6) NULL DEFAULT NULL,
   `war_id` INT NULL DEFAULT NULL,
-  `pointValue` INT NULL,
-  `hint` VARCHAR(45) NULL,
+  `pointValue` INT NULL DEFAULT NULL,
+  `hint` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_grave_war_idx` (`war_id` ASC),
   CONSTRAINT `fk_grave_war`
@@ -63,9 +64,10 @@ CREATE TABLE IF NOT EXISTS `garnet`.`vegetation` (
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `description` VARCHAR(45) NULL DEFAULT NULL,
   `image` VARCHAR(45) NULL DEFAULT NULL,
-  `coordinates` DECIMAL NULL DEFAULT NULL,
-  `pointValue` INT NULL,
-  `hint` VARCHAR(45) NULL,
+  `coordsFirst` DECIMAL(9,6) NULL DEFAULT NULL,
+  `coordsSecond` DECIMAL(9,6) NULL,
+  `pointValue` INT NULL DEFAULT NULL,
+  `hint` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -98,7 +100,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `garnet`.`hazardousArea` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `coordinates` DECIMAL NULL DEFAULT NULL,
+  `coordsFirst` DECIMAL(9,6) NULL,
+  `coordsSecond` DECIMAL(9,6) NULL,
   `image` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
