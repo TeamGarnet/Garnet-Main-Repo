@@ -1,5 +1,5 @@
 <?php
-#connectionHandling.php: Connection and closure settings to garnet database
+#Database.class.php: Connection and closure settings to garnet database
 #Follows singleton pattern of returning an instance to parent method.
 //To make a connection to the database and make a query simple use the lines:
 //

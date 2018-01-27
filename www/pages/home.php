@@ -1,3 +1,5 @@
+<?php include 'php/Database.class.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <body>
