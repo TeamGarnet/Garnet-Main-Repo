@@ -1,4 +1,13 @@
-<?php include 'php/Database.class.php'; ?>
+<?php include '../services/DatabaseConnection.class.php';
+
+echo 'Attempting to connect....';
+
+$db = Database::getInstance();
+echo 'Instance found';
+
+$mysqli = $db->getConnection();
+echo 'Connection found';
+?>
 
 <!DOCTYPE html>
 <html>
