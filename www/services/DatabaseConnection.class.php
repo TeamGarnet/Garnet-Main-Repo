@@ -22,7 +22,7 @@ class Database {
     private function __construct()
     {
         try {
-            $dsn = 'mysql:host=129.21.183.74;port=3306;dbname=garnet';
+            $dsn = 'mysql:host=localhost;port=3306;dbname=garnet';
             #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $username = 'root';
             $password = '$peedingT1ckets4the$l0w!';
