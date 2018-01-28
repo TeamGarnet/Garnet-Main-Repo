@@ -1,5 +1,5 @@
 <?php
-#Database.class.php: Connection and closure settings to garnet database
+#DatabaseConnection.class.php: Connection and closure settings to garnet database
 #Follows singleton pattern of returning an instance to parent method.
 //To make a connection to the database and make a query simple use the lines:
 //
@@ -22,6 +22,7 @@ class Database {
     private function __construct()
     {
         try {
+            #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $dsn = 'mysql:host=129.21.183.74;dbname=garnet';
             $username = 'root';
             $password = '$peedingT1ckets4the$l0w!';
