@@ -22,6 +22,7 @@ class Database {
     private function __construct()
     {
         try {
+            echo 'Contstructing DB';
             #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $dsn = 'mysql:host=129.21.183.74;dbname=garnet';
             $username = 'root';
@@ -29,11 +30,13 @@ class Database {
             $options = array(
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             );
+            echo 'Running PDO connection';
             $this->_connection = new PDO($dsn, $username, $password, $options);
             echo "I connected";
 
         } catch (PDOException $e) {
             #Open log file and add error message
+            echo $e->getMessage();
             $logFile = 'phpErrors.txt';
             $currentLogFile = file_get_contents($logFile);
             $currentLogFile .= "\n" . date('l jS \of F Y h:i:s A') . $e->getMessage();
