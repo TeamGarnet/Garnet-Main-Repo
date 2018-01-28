@@ -1,7 +1,6 @@
 <?php
 
 
-class MapOperations
-{
+class MapOperations {
 
 }

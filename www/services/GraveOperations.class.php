@@ -1,7 +1,6 @@
 <?php
 
 
-class GraveOperations
-{
+class GraveOperations {
 
 }

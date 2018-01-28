@@ -1,7 +1,6 @@
 <?php
 
 
-class Permission
-{
+class Permission {
 
 }

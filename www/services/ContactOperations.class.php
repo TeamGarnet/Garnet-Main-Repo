@@ -1,7 +1,6 @@
 <?php
 
 
-class ContactOperations
-{
+class ContactOperations {
 
 }

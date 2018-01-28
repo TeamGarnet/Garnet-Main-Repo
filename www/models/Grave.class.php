@@ -1,6 +1,5 @@
 <?php
 
-class Graves
-{
+class Graves {
 
 }
