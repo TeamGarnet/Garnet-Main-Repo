@@ -176,7 +176,6 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
   `longitude` VARCHAR(45) NULL,
   `latitude` VARCHAR(45) NULL,
   `qrCode` VARCHAR(45) NULL,
-  `TrackableObjectcol` VARCHAR(45) NULL,
   `imageDescription` VARCHAR(100) NULL,
   `imageLocation` VARCHAR(5000) NULL,
   `idTypeFilter` INT NOT NULL,
