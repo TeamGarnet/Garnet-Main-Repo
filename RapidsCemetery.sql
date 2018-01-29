@@ -127,16 +127,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RapidsCemetery`.`VegetationDetail`
+-- Table `RapidsCemetery`.`NaturalHistoryDetail`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `RapidsCemetery`.`VegetationDetail` ;
+DROP TABLE IF EXISTS `RapidsCemetery`.`NaturalHistoryDetail` ;
 
-CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`VegetationDetail` (
-  `idVegetationDetail` INT NOT NULL DEFAULT -1,
+CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`NaturalHistoryDetail` (
+  `idNaturalHistoryDetail` INT NOT NULL DEFAULT -1,
   `commonName` VARCHAR(100) NULL,
   `scientificName` VARCHAR(150) NULL,
   `description` BLOB NULL,
-  PRIMARY KEY (`idVegetationDetail`))
+  PRIMARY KEY (`idNaturalHistoryDetail`))
 ENGINE = InnoDB;
 
 
@@ -181,13 +181,13 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
   `imageLocation` VARCHAR(5000) NULL,
   `idTypeFilter` INT NOT NULL,
   `idGraveDetail` INT NOT NULL DEFAULT -1,
-  `idVegetationDetail` INT NOT NULL DEFAULT -1,
+  `idNaturalHistoryDetail` INT NOT NULL DEFAULT -1,
   `idMiscDetail` INT NOT NULL DEFAULT -1,
   `idPlotDetail` INT NOT NULL,
-  PRIMARY KEY (`idTrackableObject`, `idTypeFilter`, `idGraveDetail`, `idVegetationDetail`, `idMiscDetail`, `idPlotDetail`),
+  PRIMARY KEY (`idTrackableObject`, `idTypeFilter`, `idGraveDetail`, `idNaturalHistoryDetail`, `idMiscDetail`, `idPlotDetail`),
   INDEX `fk_TrackableObject_TypeFilter1_idx` (`idTypeFilter` ASC),
   INDEX `fk_TrackableObject_GraveDetail1_idx` (`idGraveDetail` ASC),
-  INDEX `fk_TrackableObject_VegetationDetail1_idx` (`idVegetationDetail` ASC),
+  INDEX `fk_TrackableObject_VegetationDetail1_idx` (`idNaturalHistoryDetail` ASC),
   INDEX `fk_TrackableObject_MiscDetail1_idx` (`idMiscDetail` ASC),
   INDEX `fk_TrackableObject_PlotDetail1_idx` (`idPlotDetail` ASC),
   CONSTRAINT `fk_TrackableObject_TypeFilter1`
@@ -201,8 +201,8 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_VegetationDetail1`
-    FOREIGN KEY (`idVegetationDetail`)
-    REFERENCES `RapidsCemetery`.`VegetationDetail` (`idVegetationDetail`)
+    FOREIGN KEY (`idNaturalHistoryDetail`)
+    REFERENCES `RapidsCemetery`.`NaturalHistoryDetail` (`idNaturalHistoryDetail`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_MiscDetail1`
