@@ -198,17 +198,17 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
   CONSTRAINT `fk_TrackableObject_GraveDetail1`
     FOREIGN KEY (`idGraveDetail`)
     REFERENCES `RapidsCemetery`.`GraveDetail` (`idGraveDetail`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_VegetationDetail1`
     FOREIGN KEY (`idVegetationDetail`)
     REFERENCES `RapidsCemetery`.`VegetationDetail` (`idVegetationDetail`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_MiscDetail1`
     FOREIGN KEY (`idMiscDetail`)
     REFERENCES `RapidsCemetery`.`MiscDetail` (`idMiscDetail`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_PlotDetail1`
     FOREIGN KEY (`idPlotDetail`)
