@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Event` (
   `idEvent` INT NOT NULL,
   `name` VARCHAR(100) NULL,
   `description` BLOB NULL,
-  `startTime` DATE NULL,
-  `endTime` DATE NULL,
+  `startTime` DATETIME NULL,
+  `endTime` DATETIME NULL,
   PRIMARY KEY (`idEvent`))
 ENGINE = InnoDB;
 
@@ -182,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
   `longitude` DECIMAL(9,6) NULL,
   `latitude` DECIMAL(9,6) NULL,
   `qrCode` VARCHAR(45) NULL,
+  `hint` VARCHAR(100) NULL,
   `imageDescription` VARCHAR(100) NULL,
   `imageLocation` VARCHAR(5000) NULL,
   `idTypeFilter` INT NOT NULL,
