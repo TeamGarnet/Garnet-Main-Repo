@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Wider Location` (
   `name` VARCHAR(100) NULL,
   `description` BLOB NULL,
   `url` VARCHAR(2083) NULL,
-  `longitude` VARCHAR(45) NULL,
-  `latitude` VARCHAR(45) NULL,
+  `longitude` DECIMAL(9,6) NULL,
+  `latitude` DECIMAL(9,6) NULL,
   `address` VARCHAR(100) NULL,
   `city` VARCHAR(100) NULL,
   `state` VARCHAR(2) NULL,
@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Event` (
   `idEvent` INT NOT NULL,
   `name` VARCHAR(100) NULL,
   `description` BLOB NULL,
-  `startTime` DATETIME NULL,
-  `endTime` DATETIME NULL,
+  `startTime` DATE NULL,
+  `endTime` DATE NULL,
   PRIMARY KEY (`idEvent`))
 ENGINE = InnoDB;
 
@@ -85,7 +85,12 @@ DROP TABLE IF EXISTS `RapidsCemetery`.`HistoricFilter` ;
 
 CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`HistoricFilter` (
   `idHistoricFilter` INT NOT NULL,
-  `HistoricFilter` VARCHAR(100) NULL,
+  `historicFilterName` VARCHAR(100) NULL,
+  `dateStart` DATE NULL,
+  `dateEnd` DATE NULL,
+  `description` BLOB NULL,
+  `imageLocation` VARCHAR(50) NULL,
+  `imageDescription` VARCHAR(150) NULL,
   PRIMARY KEY (`idHistoricFilter`))
 ENGINE = InnoDB;
 
@@ -112,8 +117,8 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`GraveDetail` (
   `firstName` VARCHAR(75) NULL,
   `middleName` VARCHAR(75) NULL,
   `lastName` VARCHAR(75) NULL,
-  `birth` DATETIME NULL,
-  `death` DATETIME NULL,
+  `birth` DATE NULL,
+  `death` DATE NULL,
   `description` BLOB NULL,
   `idHistoricFilter` INT NOT NULL,
   PRIMARY KEY (`idGraveDetail`, `idHistoricFilter`),
@@ -149,6 +154,7 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`MiscDetail` (
   `idMiscDetail` INT NOT NULL DEFAULT -1,
   `name` VARCHAR(75) NULL,
   `description` BLOB NULL,
+  `isHazard` ENUM('Yes', 'No') NOT NULL,
   PRIMARY KEY (`idMiscDetail`))
 ENGINE = InnoDB;
 
@@ -173,8 +179,8 @@ DROP TABLE IF EXISTS `RapidsCemetery`.`TrackableObject` ;
 
 CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TrackableObject` (
   `idTrackableObject` INT NOT NULL,
-  `longitude` VARCHAR(45) NULL,
-  `latitude` VARCHAR(45) NULL,
+  `longitude` DECIMAL(9,6) NULL,
+  `latitude` DECIMAL(9,6) NULL,
   `qrCode` VARCHAR(45) NULL,
   `imageDescription` VARCHAR(100) NULL,
   `imageLocation` VARCHAR(5000) NULL,
@@ -224,10 +230,10 @@ DROP TABLE IF EXISTS `RapidsCemetery`.`Contact` ;
 
 CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Contact` (
   `idContact` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
-  `description` VARCHAR(45) NULL,
-  `phone` VARCHAR(45) NULL,
+  `name` VARCHAR(80) NULL,
+  `email` VARCHAR(80) NULL,
+  `description` VARCHAR(80) NULL,
+  `phone` VARCHAR(80) NULL,
   PRIMARY KEY (`idContact`))
 ENGINE = InnoDB;
 
