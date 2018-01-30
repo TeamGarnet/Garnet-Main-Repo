@@ -7,7 +7,8 @@ class TrackableObjectOperations {
         try {
             $query = "select * from TrackableObject join GraveDetail on GraveDetail.idGraveDetail = TrackableObject.idGraveDetail;";
 
-//            $query->bindParam(':type', $type, PDO::PARAM_STR);
+//            $query->bindParam(':type', $type, PDO::PARAM_STR);e
+            echo "Executing Query";
             $query->execute();
             $query->setFetchMode(PDO::FETCH_CLASS,"TrackableObject");
             while ($row = $query->fetch()) {

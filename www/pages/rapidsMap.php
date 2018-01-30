@@ -1,8 +1,9 @@
 <?php
-include '../services/MapOperations.class.php';
-echo "Loaded includes";
+include '../services/TrackableObject.class.php';
+echo "Loaded includes" + "\n" + "Incoming Map Data" + "\n";
+$mapData = getAllMapData();
+echo $mapData;
 
-getAllCoordinatesByType('Grave');
 ?>
 
 <!DOCTYPE html>
