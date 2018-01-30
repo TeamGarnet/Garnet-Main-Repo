@@ -31,11 +31,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RapidsCemetery`.`Wider Location`
+-- Table `RapidsCemetery`.`WiderLocation`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `RapidsCemetery`.`Wider Location` ;
+DROP TABLE IF EXISTS `RapidsCemetery`.`WiderLocation` ;
 
-CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Wider Location` (
+CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`WiderLocation` (
   `idLocation` INT NOT NULL,
   `name` VARCHAR(100) NULL,
   `description` BLOB NULL,
