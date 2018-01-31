@@ -1,7 +1,7 @@
 <?php
 include '../services/DatabaseConnection.class.php';
 
-class TrackableObjectOperations {
+class TrackableObject {
 
     private function getDBConn() {
         try{
