@@ -16,14 +16,13 @@ class DatabaseConnection {
     private static $_instance; //The single instance
 
     public static function getInstance() {
-        if(!self::$_instance) { // If no instance then make one
+        if (!self::$_instance) { // If no instance then make one
             self::$_instance = new self();
         }
         return self::$_instance;
     }
 
-    private function __construct()
-    {
+    private function __construct() {
         try {
             $dsn = 'mysql:host=localhost;port=3306;dbname=RapidsCemetery';
             #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
@@ -37,7 +36,7 @@ class DatabaseConnection {
         } catch (PDOException $e) {
             #Open log file and add error message
             #TODO: Fix log writing to work on a server
-            echo $e->getMessage()  . "\n";
+            echo $e->getMessage() . "\n";
             $logFile = 'phpErrors.txt';
             $currentLogFile = file_get_contents($logFile);
             $currentLogFile .= "\n" . date('l jS \of F Y h:i:s A') . $e->getMessage();
@@ -52,5 +51,6 @@ class DatabaseConnection {
     }
 
     // Magic method clone is empty to prevent duplication of connection
-    private function __clone() { }
+    private function __clone() {
+    }
 }
