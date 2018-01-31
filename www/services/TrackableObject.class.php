@@ -1,26 +1,45 @@
 <?php
+include '../services/DatabaseConnection.class.php';
 
 class TrackableObjectOperations {
 
-    public function getAllMapData() {
-        $map = [];
-        try {
-            $query = 'SELECT * FROM TrackableObject JOIN GraveDetail ON GraveDetail.idGraveDetail = TrackableObject.idGraveDetail';
-
-//            $query->bindParam(':type', $type, PDO::PARAM_STR);e
-            echo "Executing Query";
-            $query->execute();
-            //$query->setFetchMode(PDO::FETCH_CLASS,"TrackableObject");
-            while ($row = $query->fetch()) {
-                $map[] = $row;
-            }
-            echo 'Here is the map ' . "\n";
-            echo var_dump($map);
-            return $map;
-
-        } catch(PDOException $e){
+    private function getDBConn() {
+        try{
+            $instance = DatabaseConnection::getInstance();
+            $conn = $instance->getConnection();
+            var_dump($conn);
+            return $conn;
+        }
+        catch(Exception $e){
             echo $e->getMessage();
-            exit();
+        }
+        return null;
+    }
+
+    /*
+  * Takes a table name, and optional sql string
+  * Prepares and executes the statement
+  * @param $objName
+  * @param $sqlString
+  * @return: $results
+  */
+    public function returnObject($objName, $sqlString=""){
+        try{
+            $results = array();
+            if($sqlString == "") {
+                $sqlString = "SELECT * FROM " .$objName;
+            }
+            $stmnt = $this->getDBConn()->prepare($sqlString);
+            $stmnt->execute();
+            $stmnt->setFetchMode(PDO::FETCH_CLASS,$objName);
+            while($result = $stmnt->fetch()){ // or just fetchALl();
+                $results[] = $result;
+            }
+            return $results;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+            die();
         }
     }
 }

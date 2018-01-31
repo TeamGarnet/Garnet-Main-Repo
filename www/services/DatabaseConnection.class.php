@@ -8,7 +8,7 @@
 //    $sql_query = "SELECT foo FROM .....";
 //    $result = $mysqli->query($sql_query);
 
-class Database {
+class DatabaseConnection {
     private $_connection;
     private static $_instance; //The single instance
 
