@@ -61,7 +61,14 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Event` (
   `description` BLOB NULL,
   `startTime` DATETIME NULL,
   `endTime` DATETIME NULL,
-  PRIMARY KEY (`idEvent`))
+  `idWiderAreaMap` INT NULL,
+  PRIMARY KEY (`idEvent`),
+  INDEX `fk_Event_WiderAreaMap1_idx` (`idWiderAreaMap` ASC),
+  CONSTRAINT `fk_Event_WiderAreaMap1`
+    FOREIGN KEY (`idWiderAreaMap`)
+    REFERENCES `RapidsCemetery`.`WiderAreaMap` (`idWiderAreaMap`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -101,6 +108,7 @@ DROP TABLE IF EXISTS `RapidsCemetery`.`TypeFilter` ;
 CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`TypeFilter` (
   `idTypeFilter` INT NOT NULL,
   `type` VARCHAR(45) NULL,
+  `pinDesign` VARCHAR(500) NULL,
   PRIMARY KEY (`idTypeFilter`))
 ENGINE = InnoDB;
 
@@ -233,6 +241,7 @@ CREATE TABLE IF NOT EXISTS `RapidsCemetery`.`Contact` (
   `email` VARCHAR(80) NULL,
   `description` BLOB NULL,
   `phone` VARCHAR(80) NULL,
+  `title` VARCHAR(80) NULL,
   PRIMARY KEY (`idContact`))
 ENGINE = InnoDB;
 

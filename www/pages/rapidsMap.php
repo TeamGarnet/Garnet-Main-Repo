@@ -1,10 +1,10 @@
 <?php
 echo "Loading includes..." . "\n";
-include '../services/TrackableObject.class.php';
+include '../services/Generic.class.php';
 echo "Loaded includes" . "\n" . "Incoming Map Data" . "\n";
 
-$trackableObject = new TrackableObject();
-$mapData = $trackableObject->returnObject("FAQ", "");
+$generic = new Generic();
+$mapData = $generic->returnObject("FAQ", "");
 
 echo $mapData;
 

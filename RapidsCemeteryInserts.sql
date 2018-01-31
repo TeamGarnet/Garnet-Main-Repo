@@ -14,17 +14,20 @@ INSERT INTO `RapidsCemetery`.`Contact`
 (`idContact`,
 `name`,
 `email`,
+`title`,
 `description`,
 `phone`)
 VALUES
 ('1',
 'Test Human',
 'test@human.com',
+'title',
 'I am a test human.',
 '750285028'),
 ('2',
 'Test Person',
 'test@person.com',
+'title',
 'I am a test person.',
 '750285020');
 
@@ -33,9 +36,10 @@ INSERT INTO `RapidsCemetery`.`Event`
 `name`,
 `description`,
 `startTime`,
-`endTime`)
+`endTime`,
+`idWiderAreaMap`)
 VALUES
-('1','Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','9999-12-31 23:59:59', '9999-12-31 23:59:59');
+('1','Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','9999-12-31 23:59:59', '9999-12-31 23:59:59', '2');
 
 INSERT INTO `RapidsCemetery`.`FAQ`
 (`idFAQ`,
@@ -101,14 +105,18 @@ VALUES
 
 INSERT INTO `RapidsCemetery`.`TypeFilter`
 (`idTypeFilter`,
-`type`)
+`type`,
+`pinDesign`)
 VALUES
 ('1',
-'Grave'),
+'Grave',
+'blue'),
 ('2',
-'Natural History'),
+'Natural History',
+'green'),
 ('3',
-'Other');
+'Other',
+'purple');
 
 INSERT INTO `RapidsCemetery`.`User`
 (`idUser`,
