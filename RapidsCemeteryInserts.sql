@@ -5,13 +5,10 @@ INSERT INTO `RapidsCemetery`.`HistoricFilter`
 `historicFilterName`,
 `dateStart`,
 `dateEnd`,
-`description`,
-`imageLocation`,
-`imageDescription`)
+`description`)
 VALUES
-('1','Civil War','1861-04-12','1865-05-13','The civil was fought in the US over slavery', 'imageLocation',
-'imageDescription'),
-('2','American Revolutionary War','1775-04-19','1783-09-03','This was was also known as the american war of independence', 'imageLocation','imageDescription');
+('1','Civil War','1861-04-12','1865-05-13','The civil was fought in the US over slavery'),
+('2','American Revolutionary War','1775-04-19','1783-09-03','This was was also known as the american war of independence');
 
 INSERT INTO `RapidsCemetery`.`Contact`
 (`idContact`,
@@ -48,8 +45,8 @@ VALUES
 ('1', 'How do I ask a question on this?', ' I don\'t know how do I get an anwser.'),
 ('2', 'What do I need to remember to escape?', 'Apsotophes can be an issue at times');
 
-INSERT INTO `RapidsCemetery`.`GraveDetail`
-(`idGraveDetail`,
+INSERT INTO `RapidsCemetery`.`Grave`
+(`idGrave`,
 `firstName`,
 `middleName`,
 `lastName`,
@@ -62,8 +59,8 @@ VALUES
 ('2','Squidward', 'Something', 'Nopants', '1755-02-23','1777-12-02','smallest grave in the cemetery', '1'),
 ('3','Patrick', 'Something', 'Star', '1845-11-11','1869-01-14','A pair of graves near the vegetation','2');
 
-INSERT INTO `RapidsCemetery`.`MiscDetail`
-(`idMiscDetail`,
+INSERT INTO `RapidsCemetery`.`MiscObject`
+(`idMisc`,
 `name`,
 `description`,
 `isHazard`)
@@ -77,8 +74,8 @@ VALUES
 'Disclaimer: There is a hole around this area. Now you cant sue',
 'Yes');
 
-INSERT INTO `RapidsCemetery`.`NaturalHistoryDetail`
-(`idNaturalHistoryDetail`,
+INSERT INTO `RapidsCemetery`.`NaturalHistory`
+(`idNaturalHistory`,
 `commonName`,
 `scientificName`,
 `description`)
@@ -87,8 +84,8 @@ VALUES
 ('2','Black Raspberries','scientificName', 'This plant is native to eastern North America. Black seeded looking fruit'),
 ('3','Walnut Trees','scientificName', 'These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
 
-INSERT INTO `RapidsCemetery`.`PlotDetail`
-(`idPlotDetail`,
+INSERT INTO `RapidsCemetery`.`Group`
+(`idGroup`,
 `name`,
 `description`)
 VALUES
@@ -114,7 +111,7 @@ VALUES
 'Other');
 
 INSERT INTO `RapidsCemetery`.`User`
-(`idAccount`,
+(`idUser`,
 `firstName`,
 `lastName`,
 `email`,
@@ -124,8 +121,8 @@ VALUES
 ('2', 'Cole', 'Johnson','cj3421@g.rit.edu', 'hashedPWD'),
 ('3', 'Daniel', 'Quackenbush','dqvcdsv9@g.rit.edu', 'hashedPWD');
 
-INSERT INTO `RapidsCemetery`.`WiderLocation`
-(`idLocation`,
+INSERT INTO `RapidsCemetery`.`WiderAreaMap`
+(`idWiderAreaMap`,
 `name`,
 `description`,
 `url`,
@@ -149,19 +146,19 @@ INSERT INTO `RapidsCemetery`.`TrackableObject`
 `imageDescription`,
 `imageLocation`,
 `idTypeFilter`,
-`idGraveDetail`,
-`idNaturalHistoryDetail`,
-`idMiscDetail`,
-`idPlotDetail`)
+`idGrave`,
+`idNaturalHistory`,
+`idMisc`,
+`idGroup`)
 VALUES
-('1', '43.129362','-77.639403', 'qrCode', 'He was #1','imageDescription', 'imageLocation', '1', '1', '-1', '-1', '3'),
-('2', '43.129434','-77.639395', 'qrCode', 'He was always angry', 'imageDescription', 'imageLocation', '1' ,'2', '-1', '-1', '2'),
-('3', '43.129518','-77.639398', 'qrCode', 'I guess Ill eat it know.', 'imageDescription', 'imageLocation', '1' ,'3', '-1', '-1', '3'),
-('4', '43.129539','-77.639636', 'qrCode', 'Look at allllll those flowerrss', 'imageDescription', 'imageLocation', '2' ,'-1', '1', '-1', '2'),
-('5', '43.129545','-77.639701', 'qrCode', 'Look at allllll those treessss', 'imageDescription', 'imageLocation', '2' ,'-1', '2', '-1', '2'),
-('6', '43.129607','-77.639348', 'qrCode', 'Look at allllll thattt grassss', 'imageDescription', 'imageLocation', '2' ,'-1', '3', '-1', '2'),
-('7', '43.129617','-77.638936', 'qrCode', '3', 'imageDescription', 'imageLocation', null ,'-1', '-1', '2', '1'),
-('8', '43.129617','-77.639403', 'qrCode', '3', 'imageDescription', 'imageLocation', null ,'-1', '-1', '1', '2');
+('1', '43.129362','-77.639403', 'qrCode', 'He was #1','imageDescription', 'imageLocation', '1', '1', null, null, '3'),
+('2', '43.129434','-77.639395', 'qrCode', 'He was always angry', 'imageDescription', 'imageLocation', '1' ,'2', null, null, '2'),
+('3', '43.129518','-77.639398', 'qrCode', 'I guess Ill eat it know.', 'imageDescription', 'imageLocation', '1' ,'3', null, null, '3'),
+('4', '43.129539','-77.639636', 'qrCode', 'Look at allllll those flowerrss', 'imageDescription', 'imageLocation', '2' , null, '1', null, '2'),
+('5', '43.129545','-77.639701', 'qrCode', 'Look at allllll those treessss', 'imageDescription', 'imageLocation', '2' , null, '2', null, '2'),
+('6', '43.129607','-77.639348', 'qrCode', 'Look at allllll thattt grassss', 'imageDescription', 'imageLocation', '2' , null, '3', null, '2'),
+('7', '43.129617','-77.638936', 'qrCode', '3', 'imageDescription', 'imageLocation', '2' , null, null, '2', '1'),
+('8', '43.129617','-77.639403', 'qrCode', '3', 'imageDescription', 'imageLocation', '1' , null, null, '1', '2');
 
 
 SET FOREIGN_KEY_CHECKS=1;
