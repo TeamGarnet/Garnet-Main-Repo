@@ -12,6 +12,16 @@ class Map {
     private $type;
     private $pinDesign;
 
+    public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $type, $pinDesign) {
+        $this->setIdTrackableObject($idTrackableObject);
+        $this->setLatitude($latitude);
+        $this->setLongitude($longitude);
+        $this->setImageDescription($imageDescription);
+        $this->setImageLocation($imageLocation);
+        $this->setName($name);
+        $this->setType($type);
+        $this->setPinDesign($pinDesign);
+    }
 
     /**
      * @return mixed

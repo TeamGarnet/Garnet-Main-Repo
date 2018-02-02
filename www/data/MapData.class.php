@@ -31,8 +31,8 @@ class MapData {
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, "Map.class");
             while ($result = $stmt->fetch()) {
-                echo $result;
-                $mapPinData[] = $result;
+                array_push($mapPinData, $result);
+                //$mapPinData[]= $result;
             }
             return $mapPinData;
         } catch (PDOException $e) {
