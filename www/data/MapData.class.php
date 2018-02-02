@@ -29,7 +29,7 @@ class MapData {
 
             $stmt = $this->getDBInfo(1)->prepare($getAllMapPinInfoQuery);
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS);
+            $stmt->setFetchMode(PDO::FETCH_CLASS, "Map");
             while ($result = $stmt->fetch()) {
                 $results[] = $result;
             }
