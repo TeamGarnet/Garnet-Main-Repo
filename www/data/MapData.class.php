@@ -35,6 +35,7 @@ class MapData {
             }
             return $results;
         } catch (PDOException $e) {
+            echo "You got dem errors";
             echo $e->getMessage();
             die();
         }
