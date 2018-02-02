@@ -10,7 +10,7 @@ class MapService {
         //loop through map data to get and create map pin objects
         foreach ($mapData as $pinArray) {
             foreach ($pinArray as $pin) {
-                echo $pin[0];
+                echo $pin['name'];
             }
         }
         echo $mapData;
