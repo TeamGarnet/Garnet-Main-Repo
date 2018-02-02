@@ -25,15 +25,16 @@ class MapData {
     public function getAllMapPinInfo() {
         global $getAllMapPinInfoQuery;
         try {
-            $results = array();
+            $mapPinData = array();
 
             $stmt = $this->getDBInfo(1)->prepare($getAllMapPinInfoQuery);
             $stmt->execute();
-            $stmt->setFetchMode(PDO::FETCH_CLASS, "Map");
+            $stmt->setFetchMode(PDO::FETCH_CLASS, "Map.class");
             while ($result = $stmt->fetch()) {
-                $results[] = $result;
+                echo $result;
+                $mapPinData[] = $result;
             }
-            return $results;
+            return $mapPinData;
         } catch (PDOException $e) {
             echo "You got dem errors";
             echo $e->getMessage();
