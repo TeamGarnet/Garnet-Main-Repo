@@ -13,8 +13,11 @@ class MapService {
                 echo gettype($pin);
                 //echo array_column($pin, 'name');
                 //echo array_column($pinArray, 'idTrackableObject');
-                echo "why u no work";
+                echo "<br>";
                 echo $pin['name'];
+                echo "<br>";
+                echo $pin['pinDesign'];
+                echo "<br>";
             }
         }
         echo $mapData;
