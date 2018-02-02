@@ -12,6 +12,8 @@ class MapService {
         foreach ($mapData as $pinArray) {
 
             $pinObject = new Map($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['type'], $pinArray['pinDesign']);
+
+            //TODO delete this comment after the feature is complete
             echo "<br>";
             print_r($pinObject);
 
