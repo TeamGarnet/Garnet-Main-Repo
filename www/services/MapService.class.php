@@ -10,6 +10,9 @@ class MapService {
         //loop through map data to get and create map pin objects
         foreach ($mapData as $pinArray) {
             foreach ($pinArray as $pin) {
+                echo array_column($pinArray, 'name');
+                echo array_column($pinArray, 'idTrackableObject');
+                echo "why u no work";
                 echo $pin['name'];
             }
         }
