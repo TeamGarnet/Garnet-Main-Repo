@@ -4,12 +4,13 @@
 class Map {
 
     private $idTrackableObject;
-    private $objectID;
     private $latitude;
     private $longitude;
     private $imageDescription;
     private $imageLocation;
     private $name;
+    private $type;
+    private $pinDesign;
 
 
     /**
@@ -110,12 +111,32 @@ class Map {
         $this->imageLocation = $imageLocation;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getType() {
+        return $this->type;
+    }
 
+    /**
+     * @param mixed $type
+     */
+    public function setType($type) {
+        $this->type = $type;
+    }
 
-    //ideas for making a trackableObject type uniform:
-    //make a variable that holds an id for what ever type it is
-    //or a type variable that keeps track
-    //or if statements that check to see which one is not null
-    //or load them all into different hash maps
+    /**
+     * @return mixed
+     */
+    public function getPinDesign() {
+        return $this->pinDesign;
+    }
+
+    /**
+     * @param mixed $pinDesign
+     */
+    public function setPinDesign($pinDesign) {
+        $this->pinDesign = $pinDesign;
+    }
 
 }

@@ -29,6 +29,7 @@ class Generic {
         }
         return null;
     }
+
     /*
   * Takes a table name, and optional sql string
   * Prepares and executes the statement

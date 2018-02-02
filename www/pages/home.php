@@ -1,6 +1,6 @@
 <?php include '../services/DatabaseConnection.class.php';
 
-$db = Database::getInstance();
+$db = DatabaseConnection::getInstance();
 echo 'Instance found' . "\n";
 
 $mysqli = $db->getConnection();

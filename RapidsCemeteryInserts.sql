@@ -116,7 +116,10 @@ VALUES
 'green'),
 ('3',
 'Other',
-'purple');
+'purple'),
+('4',
+'Hazard',
+'red');
 
 INSERT INTO `RapidsCemetery`.`User`
 (`idUser`,
