@@ -11,6 +11,8 @@ class MapService {
         foreach ($mapData as $pinArray) {
             foreach ($pinArray as $pin) {
                 echo gettype($pin);
+                echo "<br>";
+                echo $pin;
                 //echo array_column($pin, 'name');
                 //echo array_column($pinArray, 'idTrackableObject');
                 echo "<br>";
