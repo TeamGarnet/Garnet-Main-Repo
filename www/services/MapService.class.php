@@ -1,23 +1,27 @@
 <?php
 include '../data/MapData.class.php';
+include '../models/Map.class.php';
 
 class MapService {
 
     public function getAllMapPinInfo() {
        $dataClass = new MapData();
         $mapData = $dataClass->getAllMapPinInfo();
-        $allPinObjects = null;
+        $allPinObjects = array();
         echo "<br>";
         print_r($mapData);
         echo "<br>";
         foreach ($mapData as $pinArray) {
             echo "pinArray" . "<br>";
             print_r($pinArray);
-            foreach ($pinArray as $pin) {
-                echo "<br>";
-                print_r($pin);
-            }
+
+            $pinObject = new Map($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['type'], $pinArray['pinDesign']);
+            array_push($allPinObjects, $pinObject);
+
         }
+
+        print_r($allPinObjects[1]);
+        print_r($allPinObjects[3]);
         return $allPinObjects;
     }
 }
