@@ -8,8 +8,10 @@ class MapService {
         $mapData = $dataClass->getAllMapPinInfo();
         $allPinObjects = null;
         //loop through map data to get and create map pin objects
-        foreach ($mapData as $pin) {
-            echo $pin;
+        foreach ($mapData as $pinArray) {
+            foreach ($pinArray as $pin) {
+                echo $pin[0];
+            }
         }
         echo $mapData;
         return $allPinObjects;
