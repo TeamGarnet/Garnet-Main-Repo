@@ -11,6 +11,7 @@ class MapService {
         print_r($mapData);
         echo "<br>";
         foreach ($mapData as $pinArray) {
+            echo "pinArray" . "<br>";
             print_r($pinArray);
             foreach ($pinArray as $pin) {
                 echo "<br>";
