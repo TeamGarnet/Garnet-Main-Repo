@@ -20,7 +20,9 @@ class MapService {
 
         }
 
+        echo "<br>";
         print_r($allPinObjects[1]);
+        echo "<br>";
         print_r($allPinObjects[3]);
         return $allPinObjects;
     }
