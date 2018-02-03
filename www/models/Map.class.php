@@ -23,6 +23,10 @@ class Map {
         $this->setPinDesign($pinDesign);
     }
 
+    public function toString () {
+
+    }
+
     /**
      * @return mixed
      */
