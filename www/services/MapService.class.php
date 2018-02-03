@@ -21,4 +21,29 @@ class MapService {
         }
         return $allPinObjects;
     }
+
+    public function generateMarkers($pinObjectsArray) {
+        $addMarkerCode = "marker.setMap(map);";
+        $startScript = "<script>";
+        $endScript = "</script>";
+        $markerCode = "";
+
+        //Example output for foreach loop
+        /*
+         * var 1marker = new google.maps.Marker({
+         * position: {lat: 47.544, lng: 21.32123},
+         * map: map,
+         * title: 'Pin Name'
+         * });
+         */
+        foreach ($pinObjectsArray as $pin) {
+            $markerCode .= "var " .  $pin['idTrackableObject']. "marker = new google.maps.Marker({
+            position: {lat: " . $pin['latitude'] . ", lng: " . $pin['$longitude'] .
+            "} map: map, title: '" . $pin['name'] . "'});";
+        }
+
+        $generatedMarkers = $startScript . $markerCode . $endScript;
+        echo $generatedMarkers;
+        return $generatedMarkers;
+    }
 }
