@@ -38,7 +38,14 @@ class MapService {
          */
         foreach ($pinObjectsArray as $pin) {
             echo "<br>";
-            print_r($pin);
+            //print_r($pin);
+
+            
+            echo "<br>";
+            echo $pin.getIdTrackableObject();
+            echo "<br>";
+            echo $pin.getLongitude();
+
             $markerCode .= "var " .  $pin.getIdTrackableObject() . "marker = new google.maps.Marker({
             position: {lat: " . $pin.getLatitude() . ", lng: " . $pin.getLongitude() .
             "} map: map, title: '" . $pin.getName() . "'});";
