@@ -38,9 +38,8 @@ class MapService {
          */
         foreach ($pinObjectsArray as $pin) {
             echo "<br>";
-            print_r($pin);
-
             echo "<br>";
+            print_r($pin);
             echo "<br>";
             echo $pin -> getIdTrackableObject();
             echo "<br>";
