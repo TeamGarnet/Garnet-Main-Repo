@@ -14,8 +14,8 @@ class MapService {
             $pinObject = new Map($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['type'], $pinArray['pinDesign']);
 
             //TODO delete this comment after the feature is complete
-            echo "<br>";
-            print_r($pinObject);
+            //echo "<br>";
+            //print_r($pinObject);
 
             array_push($allPinObjects, $pinObject);
         }
@@ -48,11 +48,12 @@ class MapService {
 
             $markerCode .= "var " .  $pin -> getIdTrackableObject() . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() .
-            "} map: map, title: '" . $pin -> getName() . "'});";
+            "} map: map, title: '" . $pin -> getName() . "'}); ";
         }
 
         $generatedMarkers = $startScript . $markerCode . $endScript;
-        echo $generatedMarkers;
+
+        console.log(generatedMarkers);
         return $generatedMarkers;
     }
 }

@@ -67,6 +67,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         infoWindow.open(map);
     }
 
+
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -84,11 +85,10 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
+    <?php
+    echo $markers
+    ?>
 </script>
-
-<?php
-echo $markers
-?>
 
 </body>
 
