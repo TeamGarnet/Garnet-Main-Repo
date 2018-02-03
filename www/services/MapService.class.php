@@ -37,10 +37,11 @@ class MapService {
          * });
          */
         foreach ($pinObjectsArray as $pin) {
-            print_r( $pin);
-            $markerCode .= "var " .  $pin['idTrackableObject']. "marker = new google.maps.Marker({
-            position: {lat: " . $pin['latitude'] . ", lng: " . $pin['$longitude'] .
-            "} map: map, title: '" . $pin['name'] . "'});";
+            echo "<br>";
+            print_r($pin);
+            $markerCode .= "var " .  $pin.getIdTrackableObject() . "marker = new google.maps.Marker({
+            position: {lat: " . $pin.getLatitude() . ", lng: " . $pin.getLongitude() .
+            "} map: map, title: '" . $pin.getName() . "'});";
         }
 
         $generatedMarkers = $startScript . $markerCode . $endScript;
