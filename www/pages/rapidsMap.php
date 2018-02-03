@@ -51,6 +51,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
+        /*
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -69,6 +70,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+        */
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
