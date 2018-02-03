@@ -32,9 +32,9 @@ class MapService {
         /*
          * var 1marker = new google.maps.Marker({
          * position: {lat: 47.544, lng: 21.32123},
-         * map: map,
          * title: 'Pin Name'
          * });
+         * 1marker.setMap(map)
          */
         foreach ($pinObjectsArray as $pin) {
             echo "<br>";
@@ -48,7 +48,7 @@ class MapService {
 
             $markerCode .= "var " .  $pin -> getIdTrackableObject() . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() .
-            "} map: map, title: '" . $pin -> getName() . "'}); ";
+            "}, title: '" . $pin -> getName() . "'}); " . $pin -> getIdTrackableObject(). $addMarkerCode;
         }
 
         $generatedMarkers = $startScript . $markerCode . $endScript;
