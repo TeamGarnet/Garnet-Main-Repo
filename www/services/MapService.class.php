@@ -51,9 +51,9 @@ class MapService {
             "}, title: '" . $pin -> getName() . "'}); " . $pin -> getIdTrackableObject(). $addMarkerCode;
         }
 
-        $generatedMarkers = $startScript . $markerCode . $endScript;
+        //$generatedMarkers = $startScript . $markerCode . $endScript;
+        $generatedMarkers = $markerCode;
 
-        console.log(generatedMarkers);
         return $generatedMarkers;
     }
 }
