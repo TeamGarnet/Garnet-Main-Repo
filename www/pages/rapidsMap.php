@@ -4,8 +4,8 @@ include '../services/MapService.class.php';
 include '../components/PinInfoWindow.php';
 
 $mapData = new MapService();
-$pinInfo = $mapData -> getAllMapPinInfo();
-$markers = $mapData -> generateMarkers($pinInfo);
+$allPinInfo = $mapData -> getAllMapPinInfo();
+$markers = $mapData -> generateMarkers($allPinInfo);
 
 ?>
 

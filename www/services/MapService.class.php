@@ -37,6 +37,7 @@ class MapService {
          * });
          */
         foreach ($pinObjectsArray as $pin) {
+            print_r( $pin);
             $markerCode .= "var " .  $pin['idTrackableObject']. "marker = new google.maps.Marker({
             position: {lat: " . $pin['latitude'] . ", lng: " . $pin['$longitude'] .
             "} map: map, title: '" . $pin['name'] . "'});";
