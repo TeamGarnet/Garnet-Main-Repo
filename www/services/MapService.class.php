@@ -30,20 +30,20 @@ class MapService {
 
         //Example output for foreach loop
         /*
-         * var 1marker = new google.maps.Marker({
+         * var marker = new google.maps.Marker({
          * position: {lat: 47.544, lng: 21.32123},
          * title: 'Pin Name'
          * });
-         * 1marker.setMap(map)
+         * marker.setMap(map)
          */
         foreach ($pinObjectsArray as $pin) {
             echo "<br>";
             echo "<br>";
             print_r($pin);
 
-            $markerCode .= "var " .  $pin -> getIdTrackableObject() . "marker = new google.maps.Marker({
+            $markerCode .= "var " . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() .
-            "}, title: '" . $pin -> getName() . "'}); " . $pin -> getIdTrackableObject(). $addMarkerCode;
+            "}, title: '" . $pin -> getName() . "'}); " . $addMarkerCode;
         }
 
         //$generatedMarkers = $startScript . $markerCode . $endScript;

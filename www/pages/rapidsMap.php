@@ -48,10 +48,11 @@ $markers = $mapData -> generateMarkers($allPinInfo);
             mapTypeId: google.maps.MapTypeId.HYBRID
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        infoWindow = new google.maps.InfoWindow;
+
         <?php
         echo $markers
         ?>
-        infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
         /*
@@ -102,6 +103,9 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
+    <?php
+    echo $markers
+    ?>
 </script>
 
 </body>
