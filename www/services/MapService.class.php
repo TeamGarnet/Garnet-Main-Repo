@@ -13,20 +13,13 @@ class MapService {
 
             $pinObject = new Map($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['type'], $pinArray['pinDesign']);
 
-            //TODO delete this comment after the feature is complete
-            //echo "<br>";
-            //print_r($pinObject);
-
             array_push($allPinObjects, $pinObject);
         }
         return $allPinObjects;
     }
 
     public function generateMarkers($pinObjectsArray) {
-        $addMarkerCode = "marker.setMap(map);";
-        $startScript = "<script>";
-        $endScript = "</script>";
-        $markerCode = "";
+        $generatedMarkers = "";
 
         //Example output for foreach loop
         /*
@@ -41,14 +34,36 @@ class MapService {
             echo "<br>";
             print_r($pin);
 
-            $markerCode .= "var " . "marker = new google.maps.Marker({
-            position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() .
-            "}, title: '" . $pin -> getName() . "'}); " . $addMarkerCode;
+            $generatedMarkers .= "var " . "marker = new google.maps.Marker({
+            position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
+            icon:'" . $pin -> getPinDesign() . "',
+            title: '" . $pin -> getName() . "'});  marker.setMap(map);";
+
+            $infoWidowConfig = $this -> generateInfoWindowConfig($pin);
+            $generatedMarkers . $infoWidowConfig;
         }
 
-        //$generatedMarkers = $startScript . $markerCode . $endScript;
-        $generatedMarkers = $markerCode;
-
         return $generatedMarkers;
+    }
+
+    public function generateInfoWindowConfig($pin) {
+        /*
+        The will be returned from the generatePinInfo Window function
+        Then when the link is clicked a card of the object will be echoed.
+        */
+        $infoWindowContent = "<div id='infoWindow'><image src='"
+            . $pin -> getImageLocation() . "' alt='"
+            . $pin -> getImageDescription() . "' ></image><br><h2>"
+            . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
+            . $pin -> getIdTrackableObject() . "Learn more about "
+            . $pin -> getName() . "</a> </div>";
+
+        $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
+        content: " . $infoWindowContent . "});";
+
+        $infoWindowListener = "marker.addListener('click', function() {
+        infoWindow.open(map, marker);});";
+
+        return $infoWindowContent . $infoWindow . $infoWindowListener;
     }
 }

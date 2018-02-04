@@ -16,9 +16,8 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <head>
     <title> Rapids Cemetery Map </title>
     <!--
-    <link rel="stylesheet" href="../css/infoWindow.css" type="text/css">
+    <link rel="stylesheet" href="../css/infoWindow.css" type="text/css"> -->
     <link rel="stylesheet" href="../css/maps.css" type="text/css">
-     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <style>
         #map {
@@ -54,19 +53,14 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         echo $markers
         ?>
 
-        // Try HTML5 geolocation.
-        /*
+        // HTML5 geolocation.
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('Location found.');
-                infoWindow.open(map);
-                map.setCenter(pos);
             }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -74,7 +68,6 @@ $markers = $mapData -> generateMarkers($allPinInfo);
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-        */
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -103,26 +96,9 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
-    <?php
-    echo $markers
-    ?>
 </script>
 
 </body>
-
-<!--
-The will be returned from the generatePinInfo Window function
-The when the link is clicked a card of the object will be echoed.
--->
-<!--
-<div id="infoWindow">
-    <image src=" $pinObject['imageLocation']" alt="$pinObject['imageDescription']"> </image>
-    <h2> $pinObject['name']</h2>
-    <a href="#" onclick="loadObjectInfo($pinObject['idTrackableObject'])"> Learn more about $pinObject['name']</a>
-
-</div>
--->
-
 
 </html>
 </DOCTYPE>

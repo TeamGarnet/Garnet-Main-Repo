@@ -110,16 +110,16 @@ INSERT INTO `RapidsCemetery`.`TypeFilter`
 VALUES
 ('1',
 'Grave',
-'blue'),
+'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'),
 ('2',
 'Natural History',
-'green'),
+'http://maps.google.com/mapfiles/ms/icons/green-dot.png'),
 ('3',
 'Other',
-'purple'),
+'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'),
 ('4',
 'Hazard',
-'red');
+'http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 
 INSERT INTO `RapidsCemetery`.`User`
 (`idUser`,
@@ -150,8 +150,8 @@ VALUES
 
 INSERT INTO `RapidsCemetery`.`TrackableObject`
 (`idTrackableObject`,
-`latitude`,
 `longitude`,
+`latitude`,
 `qrCode`,
 `hint`,
 `imageDescription`,
