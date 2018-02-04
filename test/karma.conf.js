@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
 
     // frameworks to use
@@ -14,8 +14,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'www/js/*.js',
-      'test/js/*.js'
+      '../www/js/*.js',
+      'js/*.js'
     ],
 
 
@@ -26,7 +26,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-		'www/js/*.js':'coverage'
+		'../www/js/*.js':'coverage'
     },
 	
 		
@@ -38,17 +38,17 @@ module.exports = function(config) {
 	
 	// coverage reporter options
 	coverageReporter: {
-		dir: 'test/reports',
+		dir: 'reports',
 		reporters: [
 			// specify html report
-			{ type: 'html', subdir: 'code_coverage' }
+			{ type: 'html', subdir: 'karma_coverage' }
 		]
 	},
 	
 	
 	// html reporter options
 	htmlReporter: {
-		outputFile: 'test/reports/test_run_results.html',
+		outputFile: 'reports/karma_run_results.html',
 		pageTitle: 'Karma/Jasmine Unit Test Run Results',
 		groupSuites: true
     },

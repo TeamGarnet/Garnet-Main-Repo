@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit 
+	colors="true"
+	stopOnError="false"
+	stopOnFailure="false"
+	stopOnIncomplete="false"
+	stopOnSkipped="false"
+>
+	<testsuites>
+		<testsuite name="Dummy Suite">
+		<directory>php</directory>
+		</testsuite>
+	</testsuites>
+	<logging>
+		<log type="testdox-html" target="reports/phpunit_runs.html"/>
+	</logging>
+</phpunit>
