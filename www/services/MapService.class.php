@@ -52,12 +52,12 @@ class MapService {
         The will be returned from the generatePinInfo Window function
         Then when the link is clicked a card of the object will be echoed.
         */
-        $infoWindowContent = "<div id='infoWindow'><image src='"
+        $infoWindowContent = "'<div id='infoWindow'><image src='"
             . $pin -> getImageLocation() . "' alt='"
             . $pin -> getImageDescription() . "' ></image><br><h2>"
             . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
             . $pin -> getIdTrackableObject() . "Learn more about "
-            . $pin -> getName() . "</a> </div>";
+            . $pin -> getName() . "</a> </div>'";
 
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
         content: " . $infoWindowContent . "});";
