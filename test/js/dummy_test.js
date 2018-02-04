@@ -3,8 +3,4 @@ describe("dummy test suite", function(){
 	it("dummy test case", function() {
 		expect(true).toBe(true);
 	});
-	
-	it("hello world test case", function() {
-		expect(helloWorld()).toEqual("Hello World");
-	});
 });
