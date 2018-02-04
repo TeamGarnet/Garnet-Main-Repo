@@ -7,3 +7,16 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+#infoWindow{
+    align-content: center;
+    background-color: #d9bb79;
+}
+
+.pinName {
+    font-weight: bold;
+}
+
+.pinLink {
+
+}

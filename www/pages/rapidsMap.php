@@ -1,7 +1,6 @@
 <!-- PHP -->
 <?php
 include '../services/MapService.class.php';
-//include '../components/PinInfoWindow.php';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
@@ -15,8 +14,6 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <html>
 <head>
     <title> Rapids Cemetery Map </title>
-    <!--
-    <link rel="stylesheet" href="../css/infoWindow.css" type="text/css"> -->
     <link rel="stylesheet" href="../../css/maps.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <style>
@@ -33,8 +30,13 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 </head>
 <body>
 
+<!-- TODO: add the components for the nav bar and filters here -->
 <div id="map"></div>
 
+</body>
+
+</html>
+</DOCTYPE>
 
 <!-- Javascript -->
 <script type="text/javascript">
@@ -53,8 +55,8 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         echo $markers
         ?>
 
+        <!-- This needs to be tested -->
         // HTML5 geolocation.
-
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -79,6 +81,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
     }
 
 
+    //TODO: This method will be used to open the card components of objects -->
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -98,7 +101,3 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
 </script>
 
-</body>
-
-</html>
-</DOCTYPE>

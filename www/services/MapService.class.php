@@ -19,7 +19,6 @@ class MapService {
     }
 
     public function generateMarkers($pinObjectsArray) {
-        $setMarkerCode = "marker.setMap(map);";
         $generatedMarkers = "";
         $markerCounter = 0;
         $markerName = "marker" . $markerCounter;
@@ -64,18 +63,11 @@ class MapService {
         */
         $infoWindowContent = ' " ' ."<div id=" . "'infoWindow'><image src='"
             . $pin -> getImageLocation() . "' alt='"
-            . $pin -> getImageDescription() . "' ></image><br><h2>"
-            . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
+            . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName''>"
+            . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' onclick='loadObjectInfo("
             . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
-/*
-        $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
-        content: " . $infoWindowContent . "});";
 
-
-        $infoWindowListener = $markerName . ".addListener('click', function() {
-        infoWindow.open(map, " . $markerName . ");});";
-*/
         $infoWindowGenerator  = "var infowindow = new google.maps.InfoWindow();";
         $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {
             return function() {
@@ -85,6 +77,5 @@ class MapService {
             })(" . $markerName . "));";
 
         return  $infoWindowGenerator . $infoWindowListener;
-        //return $infoWindow . $infoWindowListener;
     }
 }
