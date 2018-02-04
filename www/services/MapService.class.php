@@ -31,9 +31,10 @@ class MapService {
          * marker.setMap(map)
          */
         foreach ($pinObjectsArray as $pin) {
-            echo "<br>";
-            echo "<br>";
-            print_r($pin);
+            /* Uncomment this if you need to see the how the objects for the pins look */
+            //echo "<br>";
+            //echo "<br>";
+            //print_r($pin);
 
             $generatedMarkers .= "var " . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
@@ -56,7 +57,7 @@ class MapService {
             . $pin -> getImageLocation() . "' alt='"
             . $pin -> getImageDescription() . "' ></image><br><h2>"
             . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . "Learn more about "
+            . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
