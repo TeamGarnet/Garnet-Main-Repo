@@ -55,5 +55,6 @@ From the repo folder:
 Reports for all Jasmine and PHPUnit tests will be generated in the `test/reports` directory. </br>
  
 ## Resources
+Since this README is not intended to be a comprehensive guide on how to write Jasmine and PHPUnit tests, here are a few resources on how to do so:
 - [Introduction to Writing Jasmine Tests](https://jasmine.github.io/edge/introduction.html)
 - [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
