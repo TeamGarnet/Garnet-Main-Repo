@@ -47,7 +47,6 @@ test/reports/*
 # Node.JS auto-generated directories/files #
 ################
 node_modules
-package*.json
 
 # Test Run Outputs #
 ####################
