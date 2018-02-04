@@ -65,6 +65,6 @@ class MapService {
         $infoWindowListener = "marker.addListener('click', function() {
         infoWindow.open(map, marker);});";
 
-        return $infoWindowContent . $infoWindow . $infoWindowListener;
+        return $infoWindow . $infoWindowListener;
     }
 }
