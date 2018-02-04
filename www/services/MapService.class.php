@@ -19,6 +19,7 @@ class MapService {
     }
 
     public function generateMarkers($pinObjectsArray) {
+        $setMarkerCode = "marker.setMap(map);";
         $generatedMarkers = "";
 
         //Example output for foreach loop
@@ -37,10 +38,10 @@ class MapService {
             $generatedMarkers .= "var " . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "'});  marker.setMap(map);";
+            title: '" . $pin -> getName() . "'});";
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin);
-            $generatedMarkers . $infoWidowConfig;
+            $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
         }
 
         return $generatedMarkers;
