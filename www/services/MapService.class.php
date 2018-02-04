@@ -35,20 +35,11 @@ class MapService {
             //echo "<br>";
             //echo "<br>";
             //print_r($pin);
-            $infoWindow = "new google.maps.InfoWindow({ 
-                content: " .
-                '"' ."<div id=" . "'infoWindow'><image src='"
-                . $pin -> getImageLocation() . "' alt='"
-                . $pin -> getImageDescription() . "' ></image><br><h2>"
-                . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
-                . $pin -> getIdTrackableObject() . ");'> Learn more about "
-                . $pin -> getName() . "</a> </div>" . '"});';
 
             $generatedMarkers .= "var " . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "',
-            info: ". $infoWindow . " });";
+            title: '" . $pin -> getName() . "' });";
 
 
 
@@ -60,6 +51,7 @@ class MapService {
     }
 
     public function generateInfoWindowConfig($pin) {
+        //TODO something is wrong with this. It only makes one window
         /*
         The will be returned from the generatePinInfo Window function
         Then when the link is clicked a card of the object will be echoed.
@@ -71,19 +63,14 @@ class MapService {
             . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
-        $infoWindowListener = "google.maps.event.addListener(marker, 'click', function() {
-        var rapidsMap = this.getMap(); 
-        this.info.open(rapidsMap); });";
-
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
         content: " . $infoWindowContent . "});";
 
-        /*
+
         $infoWindowListener = "marker.addListener('click', function() {
         infoWindow.open(map, marker);});";
-        */
 
-        return $infoWindowListener;
-        //return $infoWindow . $infoWindowListener;
+
+        return $infoWindow . $infoWindowListener;
     }
 }
