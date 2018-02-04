@@ -60,11 +60,17 @@ class MapService {
             . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
+        $infoWindow = "google.maps.events.addListener(marker, 'click', function() {
+        var rapidsMap = this.getMap(); 
+        this.info.open(rapidsMap);";
+
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
         content: " . $infoWindowContent . "});";
 
+        /*
         $infoWindowListener = "marker.addListener('click', function() {
         infoWindow.open(map, marker);});";
+        */
 
         return $infoWindow . $infoWindowListener;
     }
