@@ -80,7 +80,7 @@ class MapService {
         $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {
             return function() {
                 infoWindow.setContent(" . $infoWindowContent .");
-                infowindow.open(map," . $markerName . ");
+                infoWindow.open(map," . $markerName . ");
             }
             })(" . $markerName . "));";
 
