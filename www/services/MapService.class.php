@@ -21,14 +21,17 @@ class MapService {
     public function generateMarkers($pinObjectsArray) {
         $setMarkerCode = "marker.setMap(map);";
         $generatedMarkers = "";
+        $markerCounter = 0;
+        $markerName = "marker" . $markerCounter;
+        $setMarkerCode = $markerName . ".setMap(map);";
 
         //Example output for foreach loop
-        /*
-         * var marker = new google.maps.Marker({
+        /*                                                  
+         * var marker0 = new google.maps.Marker({
          * position: {lat: 47.544, lng: 21.32123},
          * title: 'Pin Name'
          * });
-         * marker.setMap(map)
+         * marker0.setMap(map)
          */
         foreach ($pinObjectsArray as $pin) {
             /* Uncomment this if you need to see the how the objects for the pins look */
@@ -36,21 +39,23 @@ class MapService {
             //echo "<br>";
             //print_r($pin);
 
-            $generatedMarkers .= "var " . "marker = new google.maps.Marker({
+            $markerName = "marker" . $markerCounter;
+            $generatedMarkers .= "var " . $markerName .  " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
             title: '" . $pin -> getName() . "' });";
 
 
 
-            $infoWidowConfig = $this -> generateInfoWindowConfig($pin);
+            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
+            $markerCounter += 1;
         }
 
         return $generatedMarkers;
     }
 
-    public function generateInfoWindowConfig($pin) {
+    public function generateInfoWindowConfig($pin, $markerName) {
         //TODO something is wrong with this. It only makes one window
         /*
         The will be returned from the generatePinInfo Window function
@@ -67,8 +72,8 @@ class MapService {
         content: " . $infoWindowContent . "});";
 
 
-        $infoWindowListener = "marker.addListener('click', function() {
-        infoWindow.open(map, marker);});";
+        $infoWindowListener = $markerName . ".addListener('click', function() {
+        infoWindow.open(map, " . $markerName . ");});";
 
 
         return $infoWindow . $infoWindowListener;
