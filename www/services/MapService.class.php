@@ -39,7 +39,17 @@ class MapService {
             $generatedMarkers .= "var " . "marker = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "'});";
+            title: '" . $pin -> getName() . "',
+            info: });";
+
+            $infoWindow = "new google.maps.InfoWindow({ 
+                content: " .
+                '"' ."<div id=" . "'infoWindow'><image src='"
+                . $pin -> getImageLocation() . "' alt='"
+                . $pin -> getImageDescription() . "' ></image><br><h2>"
+                . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
+                . $pin -> getIdTrackableObject() . ");'> Learn more about "
+                . $pin -> getName() . "</a> </div>" . '"});';
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
@@ -72,6 +82,7 @@ class MapService {
         infoWindow.open(map, marker);});";
         */
 
-        return $infoWindow . $infoWindowListener;
+        return $infoWindowListener;
+        //return $infoWindow . $infoWindowListener;
     }
 }
