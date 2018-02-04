@@ -35,13 +35,6 @@ class MapService {
             //echo "<br>";
             //echo "<br>";
             //print_r($pin);
-
-            $generatedMarkers .= "var " . "marker = new google.maps.Marker({
-            position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
-            icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "',
-            info: });";
-
             $infoWindow = "new google.maps.InfoWindow({ 
                 content: " .
                 '"' ."<div id=" . "'infoWindow'><image src='"
@@ -50,6 +43,14 @@ class MapService {
                 . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
                 . $pin -> getIdTrackableObject() . ");'> Learn more about "
                 . $pin -> getName() . "</a> </div>" . '"});';
+
+            $generatedMarkers .= "var " . "marker = new google.maps.Marker({
+            position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
+            icon:'" . $pin -> getPinDesign() . "',
+            title: '" . $pin -> getName() . "',
+            info: ". $infoWindow . " });";
+
+
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
