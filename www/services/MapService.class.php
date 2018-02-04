@@ -26,7 +26,7 @@ class MapService {
         $setMarkerCode = $markerName . ".setMap(map);";
 
         //Example output for foreach loop
-        /*                                                  
+        /*
          * var marker0 = new google.maps.Marker({
          * position: {lat: 47.544, lng: 21.32123},
          * title: 'Pin Name'
@@ -43,7 +43,8 @@ class MapService {
             $generatedMarkers .= "var " . $markerName .  " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "' });";
+            title: '" . $pin -> getName() . "' ,
+            map: map });";
 
 
 
@@ -67,15 +68,23 @@ class MapService {
             . $pin -> getName() . "</h2><br><a href='#' onclick='loadObjectInfo("
             . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
-
+/*
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
         content: " . $infoWindowContent . "});";
 
 
         $infoWindowListener = $markerName . ".addListener('click', function() {
         infoWindow.open(map, " . $markerName . ");});";
+*/
+        $infoWindowGenerator  = "var infowindow = new google.maps.InfoWindow();";
+        $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {
+            return function() {
+                infoWindow.setContent(" . $infoWindowContent .");
+                infowindow.open(map," . $markerName . ");
+            }
+            })(" . $markerName . "));";
 
-
-        return $infoWindow . $infoWindowListener;
+        return  $infoWindowGenerator . $infoWindowListener;
+        //return $infoWindow . $infoWindowListener;
     }
 }
