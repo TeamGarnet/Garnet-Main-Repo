@@ -62,7 +62,7 @@ class MapService {
 
         $infoWindowListener = "google.maps.events.addListener(marker, 'click', function() {
         var rapidsMap = this.getMap(); 
-        this.info.open(rapidsMap);";
+        this.info.open(rapidsMap); });";
 
         $infoWindow = "var infoWindow = new google.maps.InfoWindow({ 
         content: " . $infoWindowContent . "});";
