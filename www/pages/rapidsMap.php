@@ -1,7 +1,6 @@
 <!-- PHP -->
 <?php
 include '../services/MapService.class.php';
-include '../css/maps.css';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
@@ -15,12 +14,13 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <html>
 <head>
     <title> Rapids Cemetery Map </title>
-    <link rel="stylesheet" href="../css/maps.css" type="text/css">
+    <link rel="stylesheet" href="css/maps.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <style>
         #map {
             height: 100%;
         }
+
         html, body {
             height: 100%;
             margin: 0;
@@ -42,6 +42,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <!-- Javascript -->
 <script type="text/javascript">
     var map, infoWindow;
+
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.129467, -77.639153);
         var mapOptions = {
@@ -59,12 +60,12 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         <!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-            }, function() {
+            }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
@@ -85,7 +86,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
     //TODO: This method will be used to open the card components of objects -->
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             //TODO: DO I need this check?
             if (this.readyState == 4 && this.status == 200) {
                 console.log(xhr.responseText);

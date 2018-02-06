@@ -10,8 +10,8 @@ class TrackableObjectMap {
      */
     private function getDBInfo($returnConn) {
         try {
-            $instance = DatabaseConnection::getInstance();
-            $conn = $instance->getConnection();
+            $instance = DatabaseConnection ::getInstance();
+            $conn = $instance -> getConnection();
             if ($returnConn == 0) {
                 return $instance;
             } else if ($returnConn == 1) {
@@ -20,7 +20,7 @@ class TrackableObjectMap {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo $e -> getMessage();
         }
         return null;
     }

@@ -1,6 +1,7 @@
 #map {
     height: 100%;
 }
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
@@ -8,7 +9,7 @@ html, body {
     padding: 0;
 }
 
-#infoWindow{
+#infoWindow {
     align-content: center;
     background-color: #d9bb79;
 }

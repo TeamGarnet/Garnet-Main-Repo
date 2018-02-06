@@ -1,9 +1,9 @@
 <?php include '../services/DatabaseConnection.class.php';
 
-$db = DatabaseConnection::getInstance();
+$db = DatabaseConnection ::getInstance();
 echo 'Instance found' . "\n";
 
-$mysqli = $db->getConnection();
+$mysqli = $db -> getConnection();
 echo 'Connection found' . "\n";
 ?>
 

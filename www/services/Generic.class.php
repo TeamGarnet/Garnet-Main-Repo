@@ -5,7 +5,6 @@ include '../services/DatabaseConnection.class.php';
  * Hold generic functions that are not hooked to
  * specific feature or component.
  */
-
 class Generic {
 
     /**
@@ -15,8 +14,8 @@ class Generic {
      */
     private function getDBInfo($returnConn) {
         try {
-            $instance = DatabaseConnection::getInstance();
-            $conn = $instance->getConnection();
+            $instance = DatabaseConnection ::getInstance();
+            $conn = $instance -> getConnection();
             if ($returnConn == 0) {
                 return $instance;
             } else if ($returnConn == 1) {
@@ -25,7 +24,7 @@ class Generic {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo $e -> getMessage();
         }
         return null;
     }
@@ -43,15 +42,15 @@ class Generic {
             if ($sqlString == "") {
                 $sqlString = "SELECT * FROM " . $objName;
             }
-            $stmnt = $this->getDBInfo(1)->prepare($sqlString);
-            $stmnt->execute();
-            $stmnt->setFetchMode(PDO::FETCH_CLASS, $objName);
-            while ($result = $stmnt->fetch()) { // or just fetchALl();
+            $stmnt = $this -> getDBInfo(1) -> prepare($sqlString);
+            $stmnt -> execute();
+            $stmnt -> setFetchMode(PDO::FETCH_CLASS, $objName);
+            while ($result = $stmnt -> fetch()) { // or just fetchALl();
                 $results[] = $result;
             }
             return $results;
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            echo $e -> getMessage();
             die();
         }
     }
