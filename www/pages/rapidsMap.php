@@ -1,6 +1,7 @@
 <!-- PHP -->
 <?php
 include '../services/MapService.class.php';
+include '../css/maps.css';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
@@ -14,7 +15,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <html>
 <head>
     <title> Rapids Cemetery Map </title>
-    <link rel="stylesheet" href="../../css/maps.css" type="text/css">
+    <link rel="stylesheet" href="../css/maps.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <style>
         #map {
