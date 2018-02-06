@@ -1,6 +1,5 @@
 // Team Garnet - Karma configuration
-
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -20,40 +19,19 @@ module.exports = function(config) {
 
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
-	
+    exclude: [],
+
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-		'../www/js/*.js':'coverage'
-    },
-	
-		
+    preprocessors: {},
+
+
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage', 'html'],
-	
-	
-	// coverage reporter options
-	coverageReporter: {
-		dir: 'reports',
-		reporters: [
-			// specify html report
-			{ type: 'html', subdir: 'karma_coverage' }
-		]
-	},
-	
-	
-	// html reporter options
-	htmlReporter: {
-		outputFile: 'reports/karma_run_results.html',
-		pageTitle: 'Karma/Jasmine Unit Test Run Results',
-		groupSuites: true
-    },
-	
-	
+    reporters: ['progress'],
+
+
     // web server port
     port: 9876,
 
@@ -66,14 +44,16 @@ module.exports = function(config) {
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
+    // test results reporter to use
+    reporters: ['progress'],
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
