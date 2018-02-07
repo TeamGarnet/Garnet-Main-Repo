@@ -10,3 +10,7 @@ $getAllMapPinInfoQuery = "
     ";
 
 $getAllWideAreaMapPinInfoQuery = "";
+
+$loginUserQuery = "SELECT idUser FROM User WHERE email=:email AND password=:password";
+
+$userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM User WHERE idUser=:idUser";
