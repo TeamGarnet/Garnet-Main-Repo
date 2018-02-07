@@ -1,5 +1,5 @@
 <?php
-include '../services/DatabaseConnection.class.php';
+include ($_SERVER["DOCUMENT_ROOT"] . 'services/DatabaseConnection.class.php');
 include 'query.php';
 
 
