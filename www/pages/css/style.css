@@ -183,7 +183,8 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
 /*.top_btn a{background:#33998e; border:1px solid #1ac0ae; padding:8px 20px; border-radius:5px; color:#FFF;font-family:'Raleway-Bold'; font-size:18px; text-decoration:none;}*/
 .top_btn a {
     border: #da4b14;
-    padding: 8px 28px;
+    padding: 8px !important;
+    text-align: center;
     border-radius: 25px;
     color: #fff;
     font-family: prozolibre;
