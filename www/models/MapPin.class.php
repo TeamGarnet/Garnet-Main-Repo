@@ -54,10 +54,10 @@ class MapPin {
     public function getIdTrackableObject() {
         return $this -> idTrackableObject;
     }
+
     public function setIdTrackableObject($idTrackableObject) {
         $this -> idTrackableObject = $idTrackableObject;
     }
-
 
 
     /**
@@ -66,10 +66,10 @@ class MapPin {
     public function getLongitude() {
         return $this -> longitude;
     }
+
     public function setLongitude($longitude) {
         $this -> longitude = $longitude;
     }
-
 
 
     /**
@@ -78,10 +78,10 @@ class MapPin {
     public function getName() {
         return $this -> name;
     }
+
     public function setName($name) {
         $this -> name = $name;
     }
-
 
 
     /**
@@ -90,10 +90,10 @@ class MapPin {
     public function setLatitude($latitude) {
         $this -> latitude = $latitude;
     }
+
     public function getLatitude() {
         return $this -> latitude;
     }
-
 
 
     /**
@@ -102,10 +102,10 @@ class MapPin {
     public function getImageDescription() {
         return $this -> imageDescription;
     }
+
     public function setImageDescription($imageDescription) {
         $this -> imageDescription = $imageDescription;
     }
-
 
 
     /**
@@ -114,10 +114,10 @@ class MapPin {
     public function getImageLocation() {
         return $this -> imageLocation;
     }
+
     public function setImageLocation($imageLocation) {
         $this -> imageLocation = $imageLocation;
     }
-
 
 
     /**
@@ -126,10 +126,10 @@ class MapPin {
     public function getType() {
         return $this -> type;
     }
+
     public function setType($type) {
         $this -> type = $type;
     }
-
 
 
     /**
@@ -138,6 +138,7 @@ class MapPin {
     public function getPinDesign() {
         return $this -> pinDesign;
     }
+
     public function setPinDesign($pinDesign) {
         $this -> pinDesign = $pinDesign;
     }

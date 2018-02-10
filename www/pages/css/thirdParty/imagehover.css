@@ -1,39 +1,40 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
 [class^='imghvr-'],
 [class*=' imghvr-'] {
-  position: relative;
-  display:block;
-  margin: 0px;
-  max-width: 100%;
-  background-color: #33998e;
-  color: #fff;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+    position: relative;
+    display: block;
+    margin: 0px;
+    max-width: 100%;
+    background-color: #33998e;
+    color: #fff;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
+
 [class^='imghvr-'] > img,
 [class*=' imghvr-'] > img {
-  vertical-align: top;
-  max-width: 100%;
+    vertical-align: top;
+    max-width: 100%;
 }
+
 [class^='imghvr-'] figcaption,
 [class*=' imghvr-'] figcaption {
-  background-color: #33998e;
-  padding:12px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #ffffff;
+    background-color: #33998e;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #ffffff;
 }
+
 [class^='imghvr-'] figcaption h1,
 [class*=' imghvr-'] figcaption h1,
 [class^='imghvr-'] figcaption h2,
@@ -46,7 +47,7 @@
 [class*=' imghvr-'] figcaption h5,
 [class^='imghvr-'] figcaption h6,
 [class*=' imghvr-'] figcaption h6 {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 [class^='imghvr-'],
@@ -61,231 +62,268 @@
 [class^='imghvr-'] *:after,
 [class*=' imghvr-'] *:before,
 [class*=' imghvr-'] *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
 }
+
 /* imghvr-fade-*
    ----------------------------- */
 [class^='imghvr-fade'] figcaption,
 [class*=' imghvr-fade'] figcaption {
-  opacity: 0;
+    opacity: 0;
 }
+
 [class^='imghvr-fade']:hover > img,
 [class*=' imghvr-fade']:hover > img {
-  opacity: 0;
+    opacity: 0;
 }
+
 [class^='imghvr-fade']:hover figcaption,
 [class*=' imghvr-fade']:hover figcaption {
-  opacity: 1;
+    opacity: 1;
 }
+
 [class^='imghvr-fade']:hover > img,
 [class*=' imghvr-fade']:hover > img,
 [class^='imghvr-fade']:hover figcaption,
 [class*=' imghvr-fade']:hover figcaption {
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
 }
 
 /* imghvr-push-*
    ----------------------------- */
 [class^='imghvr-push-']:hover figcaption,
 [class*=' imghvr-push-']:hover figcaption {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
+
 /* imghvr-push-up
    ----------------------------- */
 .imghvr-push-up figcaption {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
 }
+
 .imghvr-push-up:hover > img {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
+
 /* imghvr-fade-*
    ----------------------------- */
 [class^='imghvr-fade'] figcaption,
 [class*=' imghvr-fade'] figcaption {
-  opacity: 0;
+    opacity: 0;
 }
+
 [class^='imghvr-fade']:hover > img,
 [class*=' imghvr-fade']:hover > img {
-  opacity: 0;
+    opacity: 0;
 }
+
 [class^='imghvr-fade']:hover figcaption,
 [class*=' imghvr-fade']:hover figcaption {
-  opacity: 1;
+    opacity: 1;
 }
+
 [class^='imghvr-fade']:hover > img,
 [class*=' imghvr-fade']:hover > img,
 [class^='imghvr-fade']:hover figcaption,
 [class*=' imghvr-fade']:hover figcaption {
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
 }
+
 /* imghvr-fade
    ----------------------------- */
 /* imghvr-fade-in-up
    ----------------------------- */
 .imghvr-fade-in-up figcaption {
-  -webkit-transform: translate(0px, 15%);
-  transform: translate(0px, 15%);
+    -webkit-transform: translate(0px, 15%);
+    transform: translate(0px, 15%);
 }
+
 /* imghvr-fade-in-down
    ----------------------------- */
 .imghvr-fade-in-down figcaption {
-  -webkit-transform: translate(0, -15%);
-  transform: translate(0, -15%);
+    -webkit-transform: translate(0, -15%);
+    transform: translate(0, -15%);
 }
+
 /* imghvr-fade-in-left
    ----------------------------- */
 .imghvr-fade-in-left figcaption {
-  -webkit-transform: translate(-15%, 0);
-  transform: translate(-15%, 0);
+    -webkit-transform: translate(-15%, 0);
+    transform: translate(-15%, 0);
 }
+
 /* imghvr-fade-in-right
    ----------------------------- */
 .imghvr-fade-in-right figcaption {
-  -webkit-transform: translate(15%, 0px);
-  transform: translate(15%, 0px);
+    -webkit-transform: translate(15%, 0px);
+    transform: translate(15%, 0px);
 }
+
 /* imghvr-push-*
    ----------------------------- */
 [class^='imghvr-push-']:hover figcaption,
 [class*=' imghvr-push-']:hover figcaption {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
+
 /* imghvr-push-up
    ----------------------------- */
 .imghvr-push-up figcaption {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
 }
+
 .imghvr-push-up:hover > img {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
+
 /* imghvr-push-down
    ----------------------------- */
 .imghvr-push-down figcaption {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
+
 .imghvr-push-down:hover > img {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
 }
+
 /* imghvr-push-left
    ----------------------------- */
 .imghvr-push-left figcaption {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }
+
 .imghvr-push-left:hover > img {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
+
 /* imghvr-push--right
    ----------------------------- */
 .imghvr-push-right figcaption {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
+
 .imghvr-push-right:hover > img {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }
+
 /* imghvr-slide-*
    ----------------------------- */
 [class^='imghvr-slide-']:hover figcaption,
 [class*=' imghvr-slide-']:hover figcaption {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
+
 /* imghvr-slide-up
    ----------------------------- */
 .imghvr-slide-up figcaption {
-  -webkit-transform: translateY(75%);
-  transform: translateY(75%);
+    -webkit-transform: translateY(75%);
+    transform: translateY(75%);
 }
+
 /* imghvr-slide-down
    ----------------------------- */
 .imghvr-slide-down figcaption {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
+
 /* imghvr-slide-left
    ----------------------------- */
 .imghvr-slide-left figcaption {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }
+
 /* imghvr-slide-right
    ----------------------------- */
 .imghvr-slide-right figcaption {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
+
 /* imghvr-slide-top-left
    ----------------------------- */
 .imghvr-slide-top-left figcaption {
-  -webkit-transform: translate(-100%, -100%);
-  transform: translate(-100%, -100%);
+    -webkit-transform: translate(-100%, -100%);
+    transform: translate(-100%, -100%);
 }
+
 /* imghvr-slide-top-right
    ----------------------------- */
 .imghvr-slide-top-right figcaption {
-  -webkit-transform: translate(100%, -100%);
-  transform: translate(100%, -100%);
+    -webkit-transform: translate(100%, -100%);
+    transform: translate(100%, -100%);
 }
+
 /* imghvr-slide-bottom-left
    ----------------------------- */
 .imghvr-slide-bottom-left figcaption {
-  -webkit-transform: translate(-100%, 100%);
-  transform: translate(-100%, 100%);
+    -webkit-transform: translate(-100%, 100%);
+    transform: translate(-100%, 100%);
 }
+
 /* imghvr-slide-bottom-right
    ----------------------------- */
 .imghvr-slide-bottom-right figcaption {
-  -webkit-transform: translate(100%, 100%);
-  transform: translate(100%, 100%);
+    -webkit-transform: translate(100%, 100%);
+    transform: translate(100%, 100%);
 }
+
 /* imghvr-reveal-*
    ----------------------------- */
 [class^='imghvr-reveal-']:before,
 [class*=' imghvr-reveal-']:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: '';
-  background-color: #135796;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    background-color: #135796;
 }
+
 [class^='imghvr-reveal-'] figcaption,
 [class*=' imghvr-reveal-'] figcaption {
-  opacity: 0;
+    opacity: 0;
 }
+
 [class^='imghvr-reveal-']:hover:before,
 [class*=' imghvr-reveal-']:hover:before {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
 }
+
 [class^='imghvr-reveal-']:hover figcaption,
 [class*=' imghvr-reveal-']:hover figcaption {
-  opacity: 1;
-  -webkit-transition-delay: 0.21s;
-  transition-delay: 0.21s;
+    opacity: 1;
+    -webkit-transition-delay: 0.21s;
+    transition-delay: 0.21s;
 }
+
 /* imghvr-reveal-up
    ----------------------------- */
 .imghvr-reveal-up:before {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
 }
 
 

@@ -27,6 +27,27 @@ html, body {
 @charset "utf-8";
 /* CSS Document */
 
+/* Map Filter CSS */
+
+.secondmenublock {
+    background-color: #ebece478;
+}
+
+.secondmenublock {
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 100px;
+    align-content: center;
+}
+
+.secondmenu li {
+    float: left;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
@@ -119,13 +140,13 @@ button{outline:none}
 /*.navbar-default {background:#ffffff;border:none;box-shadow:-2px -2px 12px #000; }*/
 .navbar-brand {
     float: left;
-     padding: 0px !important; 
+     padding: 0px !important;
     font-size: 18px;
     line-height: 20px;
     height: 50px;
 }
 .navbar-default {
-   
+
     background-color: #210e07 !important;
     border-color: #e7e7e700 !important;
     opacity: 0.8 !important;
@@ -157,12 +178,12 @@ button{outline:none}
 .btn-primary {
     color: #fff;
     background-color: #ff3358;border:none;
-  
+
 }
 .btn-primary:hover {
     color: #ff3358;
     background-color: #fff;border:1px solid #ff3358;
-  
+
 }
 
 @media (min-width: 768px) {
@@ -264,7 +285,7 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
 /*************************/
 @media (min-width: 1200px) {
 
-  
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
