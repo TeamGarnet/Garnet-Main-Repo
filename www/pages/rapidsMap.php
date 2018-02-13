@@ -1,6 +1,6 @@
 <!-- PHP -->
 <?php
-include '../services/MapService.class.php';
+include '/pages/services/MapService.class.php';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
@@ -14,7 +14,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 <html>
 <head>
 
-    <link rel="stylesheet" href="css/maps.css" type="text/css">
+    <link rel="stylesheet" href="/pages/css/maps.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
     <meta charset="utf-8">
@@ -24,11 +24,11 @@ $markers = $mapData -> generateMarkers($allPinInfo);
     <title> Rapids Cemetery Map </title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
-    <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
+    <link rel="stylesheet" href="/pages/css/thirdParty/font-awesome.css" type="text/css">
+    <link href="pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
+    <link href="pages/css/thirdParty/YouTubePopUp.css" rel="stylesheet">
+    <link href="pages/css/thirdParty/imagehover.css" rel="stylesheet">
+    <link href="pages/css/thirdParty/dropdoun.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 </head>
