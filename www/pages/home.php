@@ -1,4 +1,4 @@
-<?php include '../services/DatabaseConnection.class.php';
+<?php include '/pages/services/DatabaseConnection.class.php';
 
 $db = DatabaseConnection ::getInstance();
 echo 'Instance found' . "\n";
