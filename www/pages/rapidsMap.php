@@ -25,10 +25,10 @@ $markers = $mapData -> generateMarkers($allPinInfo);
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/pages/css/thirdParty/font-awesome.css" type="text/css">
-    <link href="pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="pages/css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="pages/css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="pages/css/thirdParty/dropdoun.css" rel="stylesheet">
+    <link href="/pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/pages/css/thirdParty/YouTubePopUp.css" rel="stylesheet">
+    <link href="/pages/css/thirdParty/imagehover.css" rel="stylesheet">
+    <link href="/pages/css/thirdParty/dropdoun.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 </head>

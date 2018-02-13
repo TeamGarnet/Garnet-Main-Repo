@@ -10,7 +10,7 @@
     <title>Rapids Cemetery</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="pages/css/thirdParty/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/pages/css/thirdParty/font-awesome.css" type="text/css">
     <link href="/pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
     <link href="/pages/css/thirdParty/YouTubePopUp.css" rel="stylesheet">
     <link href="/pages/css/thirdParty/imagehover.css" rel="stylesheet">
