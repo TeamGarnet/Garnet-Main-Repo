@@ -9,7 +9,6 @@ if (isset($_POST['Login'])) {
     if ($_POST['email'] != "" && $_POST['password'] != "") {
         $LoginService = new LoginService();
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
-        var_dump($validateEmail);
         if ($validateEmail) {
             $_SESSION['userID'] = $validateEmail;
             header('Location: home.php');
