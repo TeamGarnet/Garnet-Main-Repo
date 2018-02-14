@@ -6,8 +6,10 @@ if (isset($_POST['Login'])) {
         $LoginService = new LoginService();
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
         if ($validateEmail) {
-            $_SESSION['userID'] = $validateEmail;
+            session_start();
+            $_SESSION['idUser'] = $validateEmail;
             header('Location: home.php');
+            //TODO: destory session on logout of broswer.
         } else {
             $errorMsgLogin = "Incorrect email and password combination";
         }
