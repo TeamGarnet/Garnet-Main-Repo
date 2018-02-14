@@ -47,10 +47,9 @@ class LoginData {
             $stmt -> execute();
             $count = $stmt -> rowCount();
             if ($count == 1) {
-                $idUser = $stmt -> fetch();
-                print_r($stmt -> fetch());
+                $idUser = $stmt -> fetch()[0]['idUser'];
             }
-            echo $idUser[0] . "<br/>";
+            echo $idUser[0]['idUser'] . "<br/>";
             return $idUser;
         } catch (PDOException $e) {
             echo $e -> getMessage();
