@@ -47,7 +47,8 @@ class LoginData {
             $stmt -> execute();
             $count = $stmt -> rowCount();
             if ($count == 1) {
-                $idUser = $stmt -> fetch()[0]['idUser'];
+                $idUser = $stmt -> fetch();
+                $idUser = $idUser[0]['idUser'];
             }
             echo $idUser[0]['idUser'] . "<br/>";
             return $idUser;
