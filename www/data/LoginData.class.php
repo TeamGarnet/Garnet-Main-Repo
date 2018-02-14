@@ -3,7 +3,7 @@
 /*
  *
  */
-include '../services/ConnectDb.class.php';
+include '../services/DatabaseConnection.class.php';
 
 class LoginData {
 

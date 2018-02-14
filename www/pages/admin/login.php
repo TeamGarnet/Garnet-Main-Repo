@@ -8,18 +8,18 @@ $errorMsgReg = '';
 $errorMsgLogin = '';
 
 if(isset($_POST['Login'])){
-    echo "Submit clicked and being processed <br/>";
+    //echo "Submit clicked and being processed <br/>";
     if($_POST['email'] != "" && $_POST['password'] != ""){
         $LoginService = new LoginService();
         $validateEmail = $LoginService->validatePassword($_POST['email'], $_POST['password']);
-        echo "Validate Email: " . $validateEmail . "<br/>";
+        //echo "Validate Email: " . $validateEmail . "<br/>";
         var_dump($validateEmail);
         if($validateEmail){
             $_SESSION['userID'] = $validateEmail;
-            echo "You will be redirect to admin home page";
+            //echo "You will be redirect to admin home page";
             header('Location: home.php');
         } else {
-            echo "Incorrect Credentials";
+            //echo "Incorrect Credentials";
             header('Location: login.php');
         }
     } else {
