@@ -50,7 +50,7 @@ class LoginData {
                 $idUser = $stmt -> fetch();
                 $idUser = $idUser[0]['idUser'];
             }
-            echo $idUser[0]['idUser'] . "<br/>";
+            echo $idUser . "<br/>";
             return $idUser;
         } catch (PDOException $e) {
             echo $e -> getMessage();
