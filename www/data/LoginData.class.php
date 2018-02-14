@@ -33,11 +33,17 @@ class LoginData {
 
     public function validatePassword($email, $password) {
         global $loginUserQuery;
+
+        //TODO: hash them password gurl
         try {
             echo "Validating Password Against DB";
             $idUser = null;
             $stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
-            $stmt -> execute(array(":email" => $email, ":password" => $password));
+            $stmt -> bindParam(':email', $email);
+            $stmt -> bindParam(':password', $password);
+            print_r($stmt);
+            $stmt -> execute();
+            print_r($stmt);
             while ($row = $stmt -> fetch()) {
                 $idUser = $row;
             }
