@@ -45,7 +45,7 @@ class MapData {
 
             $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
             $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "Map.class");
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
             while ($result = $stmt -> fetch()) {
                 array_push($mapPinData, $result);
             }

@@ -39,7 +39,7 @@ class LoginData {
         try {
             $idUser = null;
 
-            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
+            $stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
             $stmt -> bindParam(':email', $email);
             $stmt -> bindParam(':pwd', $password);
             $stmt -> execute();
