@@ -1,13 +1,8 @@
 <!-- PHP -->
 <?php
-ob_start();
 include('../../services/LoginService.class.php');
-
 $errorMsgLogin = '';
-
 if (isset($_POST['Login'])) {
-    ob_end_flush();
-    ob_start();
     if ($_POST['email'] != "" && $_POST['password'] != "") {
         $LoginService = new LoginService();
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
@@ -19,7 +14,6 @@ if (isset($_POST['Login'])) {
             header('Location: login.php');
         }
     }
-    ob_end_flush();
 }
 
 ?>
