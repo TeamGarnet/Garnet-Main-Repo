@@ -43,6 +43,7 @@ class LoginData {
             $stmt -> bindParam(':password', $password);
             print_r($stmt);
             $stmt -> execute();
+            print_r($loginUserQuery);
             print_r($stmt);
             while ($row = $stmt -> fetch()) {
                 $idUser = $row;
