@@ -38,15 +38,17 @@ class LoginData {
         try {
             echo "Validating Password Against DB";
             $idUser = null;
-            $stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
+            //$stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
+            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd"
+            );
             $stmt -> bindParam(':email', $email);
-            $stmt -> bindParam(':password', $password);
+            $stmt -> bindParam(':pwd', $password);
             //print_r($stmt);
             $stmt -> execute();
-            print_r($loginUserQuery);
-            print_r($stmt);
-            while ($row = $stmt -> fetch()) {
-                print_r($row);
+            $count = $stmt -> rowCount();
+            if ($count == 1) {
+                $idUser = $stmt -> fetch();
+                print_r($stmt -> fetch());
             }
             echo $idUser[0] . "<br/>";
             return $idUser;
