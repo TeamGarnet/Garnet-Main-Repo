@@ -1,5 +1,5 @@
 <?php
-include '../data/LoginData.class.php';
+include '../../data/LoginData.class.php';
 
 /*
  *
