@@ -47,7 +47,7 @@ if (isset($_POST['Login'])) {
 
         <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 
-        <input type="Login" class="button" name="Login" value="Login">
+        <button type="Login" class="button" name="Login" value="Login">Login</button>
     </form>
 
 </div>
