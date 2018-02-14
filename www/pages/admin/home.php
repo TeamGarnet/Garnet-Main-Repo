@@ -1,5 +1,6 @@
 <!-- PHP -->
 <?php
+$_SESSION['idUser'];
 ?>
 
 <!-- HTML -->

@@ -4,10 +4,10 @@ $errorMsgLogin = '';
 if (isset($_POST['Login'])) {
     if ($_POST['email'] != "" && $_POST['password'] != "") {
         $LoginService = new LoginService();
-        $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
-        if ($validateEmail) {
+        $validateUser = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
+        if ($validateUser) {
             session_start();
-            $_SESSION['idUser'] = $validateEmail;
+            $_SESSION['idUser'] = $validateUser;
             header('Location: home.php');
             //TODO: destory session on logout of broswer.
         } else {
