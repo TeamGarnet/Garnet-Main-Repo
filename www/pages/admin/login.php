@@ -1,4 +1,3 @@
-<!-- PHP -->
 <?php
 include('../../services/LoginService.class.php');
 $errorMsgLogin = '';
@@ -8,7 +7,7 @@ if (isset($_POST['Login'])) {
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
         if ($validateEmail) {
             $_SESSION['userID'] = $validateEmail;
-            header('Location: ../admin/home.php');
+            header('Location: home.php');
         } else {
             $errorMsgLogin = "Incorrect email and password combination";
             header('Location: login.php');
