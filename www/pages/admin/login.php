@@ -21,7 +21,7 @@ if (isset($_POST['Login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../../css/admin/home.css" type="text/css">
+    <link rel="stylesheet" href="/pages/css/admin/home.css" type="text/css">
 </head>
 <body>
 <div id="login">
@@ -35,7 +35,7 @@ if (isset($_POST['Login'])) {
         <label>Password</label>
         <input type="password" name="password" autocomplete="off"/>
 
-        <div class="errorMsg"><?php //echo $errorMsgLogin; ?></div>
+        <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 
         <button type="Login" class="button" name="Login" value="Login">Login</button>
     </form>
