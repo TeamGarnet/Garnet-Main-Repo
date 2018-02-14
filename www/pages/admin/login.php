@@ -2,24 +2,23 @@
 <?php
 include('../../services/LoginService.class.php');
 include('../../data/URLs.php');
-$userData = new UserData();
 
-$errorMsgReg = '';
 $errorMsgLogin = '';
 
-if(isset($_POST['Login'])){
+if (isset($_POST['Login'])) {
     //echo "Submit clicked and being processed <br/>";
-    if($_POST['email'] != "" && $_POST['password'] != ""){
+    if ($_POST['email'] != "" && $_POST['password'] != "") {
         $LoginService = new LoginService();
-        $validateEmail = $LoginService->validatePassword($_POST['email'], $_POST['password']);
+        $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
         //echo "Validate Email: " . $validateEmail . "<br/>";
         var_dump($validateEmail);
-        if($validateEmail){
+        if ($validateEmail) {
             $_SESSION['userID'] = $validateEmail;
             //echo "You will be redirect to admin home page";
             header('Location: home.php');
         } else {
             //echo "Incorrect Credentials";
+            $errorMsgLogin = "Incorrect email and password combination";
             header('Location: login.php');
         }
     } else {
