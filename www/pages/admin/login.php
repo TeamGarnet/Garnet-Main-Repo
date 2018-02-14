@@ -8,7 +8,7 @@ if (isset($_POST['Login'])) {
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
         if ($validateEmail) {
             $_SESSION['userID'] = $validateEmail;
-            header('Location: home.php');
+            header('Location: ../admin/home.php');
         } else {
             $errorMsgLogin = "Incorrect email and password combination";
             header('Location: login.php');
