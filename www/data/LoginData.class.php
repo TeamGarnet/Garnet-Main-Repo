@@ -34,23 +34,21 @@ class LoginData {
     public function validatePassword($email, $password) {
         global $loginUserQuery;
 
-        //TODO: hash them password gurl
+        //TODO: hash them passwords gurl
+        //$password = hash(sha1($password));
         try {
-            echo "Validating Password Against DB";
             $idUser = null;
-            //$stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
-            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd"
-            );
+
+            $stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
             $stmt -> bindParam(':email', $email);
             $stmt -> bindParam(':pwd', $password);
-            //print_r($stmt);
             $stmt -> execute();
+
             $count = $stmt -> rowCount();
             if ($count == 1) {
                 $idUser = $stmt -> fetch();
                 $idUser = $idUser[0]['idUser'];
             }
-            echo $idUser . "<br/>";
             return $idUser;
         } catch (PDOException $e) {
             echo $e -> getMessage();
