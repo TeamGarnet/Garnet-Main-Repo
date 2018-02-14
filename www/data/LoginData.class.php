@@ -41,12 +41,12 @@ class LoginData {
             $stmt = $this -> getDBInfo(1) -> prepare($loginUserQuery);
             $stmt -> bindParam(':email', $email);
             $stmt -> bindParam(':password', $password);
-            print_r($stmt);
+            //print_r($stmt);
             $stmt -> execute();
             print_r($loginUserQuery);
             print_r($stmt);
             while ($row = $stmt -> fetch()) {
-                $idUser = $row;
+                print_r($row);
             }
             echo $idUser[0] . "<br/>";
             return $idUser;
