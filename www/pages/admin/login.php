@@ -1,5 +1,6 @@
 <!-- PHP -->
 <?php
+ob_start();
 include('../../services/LoginService.class.php');
 
 $errorMsgLogin = '';
