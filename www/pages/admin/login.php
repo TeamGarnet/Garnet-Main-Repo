@@ -5,7 +5,6 @@ include('../../services/LoginService.class.php');
 $errorMsgLogin = '';
 
 if (isset($_POST['Login'])) {
-    //echo "Submit clicked and being processed <br/>";
     if ($_POST['email'] != "" && $_POST['password'] != "") {
         $LoginService = new LoginService();
         $validateEmail = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
@@ -39,7 +38,7 @@ if (isset($_POST['Login'])) {
         <label>Password</label>
         <input type="password" name="password" autocomplete="off"/>
 
-        <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
+        <div class="errorMsg"><?php //echo $errorMsgLogin; ?></div>
 
         <button type="Login" class="button" name="Login" value="Login">Login</button>
     </form>
