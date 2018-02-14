@@ -1,5 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
+TRUNCATE table `RapidsCemetery`.`HistoricFilter`;
 INSERT INTO `RapidsCemetery`.`HistoricFilter`
 (`idHistoricFilter`,
  `historicFilterName`,
@@ -11,6 +12,7 @@ VALUES
   ('2', 'American Revolutionary War', '1775-04-19', '1783-09-03',
    'This was was also known as the american war of independence');
 
+TRUNCATE table `RapidsCemetery`.`Contact`;
 INSERT INTO `RapidsCemetery`.`Contact`
 (`idContact`,
  `name`,
@@ -32,6 +34,7 @@ VALUES
    'I am a test person.',
    '750285020');
 
+TRUNCATE table `RapidsCemetery`.`Event`;
 INSERT INTO `RapidsCemetery`.`Event`
 (`idEvent`,
  `name`,
@@ -44,6 +47,7 @@ VALUES
    'The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others',
    '9999-12-31 23:59:59', '9999-12-31 23:59:59', '2');
 
+TRUNCATE table `RapidsCemetery`.`FAQ`;
 INSERT INTO `RapidsCemetery`.`FAQ`
 (`idFAQ`,
  `question`,
@@ -52,6 +56,7 @@ VALUES
   ('1', 'How do I ask a question on this?', ' I don\'t know how do I get an anwser.'),
   ('2', 'What do I need to remember to escape?', 'Apsotophes can be an issue at times');
 
+TRUNCATE table `RapidsCemetery`.`Grave`;
 INSERT INTO `RapidsCemetery`.`Grave`
 (`idGrave`,
  `firstName`,
@@ -67,6 +72,7 @@ VALUES
   ('2', 'Squidward', 'Something', 'Nopants', '1755-02-23', '1777-12-02', 'smallest grave in the cemetery', '1'),
   ('3', 'Patrick', 'Something', 'Star', '1845-11-11', '1869-01-14', 'A pair of graves near the vegetation', '2');
 
+TRUNCATE table `RapidsCemetery`.`MiscObject`;
 INSERT INTO `RapidsCemetery`.`MiscObject`
 (`idMisc`,
  `name`,
@@ -82,6 +88,7 @@ VALUES
    'Disclaimer: There is a hole around this area. Now you cant sue',
    'Yes');
 
+TRUNCATE table `RapidsCemetery`.`NaturalHistory`;
 INSERT INTO `RapidsCemetery`.`NaturalHistory`
 (`idNaturalHistory`,
  `commonName`,
@@ -95,6 +102,7 @@ VALUES
   ('3', 'Walnut Trees', 'scientificName',
    'These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
 
+TRUNCATE table `RapidsCemetery`.`Group`;
 INSERT INTO `RapidsCemetery`.`Group`
 (`idGroup`,
  `name`,
@@ -110,6 +118,7 @@ VALUES
    'Ballintine Family',
    'The had a lot of sick children');
 
+TRUNCATE table `RapidsCemetery`.`TypeFilter`;
 INSERT INTO `RapidsCemetery`.`TypeFilter`
 (`idTypeFilter`,
  `type`,
@@ -128,6 +137,7 @@ VALUES
    'Hazard',
    'http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 
+TRUNCATE table `RapidsCemetery`.`User`;
 INSERT INTO `RapidsCemetery`.`User`
 (`idUser`,
  `firstName`,
@@ -139,6 +149,7 @@ VALUES
   ('2', 'Cole', 'Johnson', 'cj3421@g.rit.edu', 'hashedPWD'),
   ('3', 'Daniel', 'Quackenbush', 'dqvcdsv9@g.rit.edu', 'hashedPWD');
 
+TRUNCATE table `RapidsCemetery`.`WiderAreaMap`;
 INSERT INTO `RapidsCemetery`.`WiderAreaMap`
 (`idWiderAreaMap`,
  `name`,
@@ -158,6 +169,7 @@ VALUES
   ('3', 'Highland Park', 'People run here', 'www.google.com', '43.1287', '77.6207', '180 Reservoir Ave, Rochester',
    'Rochester', 'NY', '14620');
 
+TRUNCATE table `RapidsCemetery`.`TrackableObject`;
 INSERT INTO `RapidsCemetery`.`TrackableObject`
 (`idTrackableObject`,
  `longitude`,

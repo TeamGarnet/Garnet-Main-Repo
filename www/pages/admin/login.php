@@ -1,23 +1,29 @@
 <!-- PHP -->
 <?php
-include('../../data/UserData.class.php');
+include('../../services/LoginService.class.php');
 include('../../data/URLs.php');
 $userData = new UserData();
 
 $errorMsgReg = '';
 $errorMsgLogin = '';
 
-if (!empty($_POST['loginSubmit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    if (strlen(trim($email)) > 1 && strlen(trim($password)) > 1) {
-        $idUser = $userData -> userLogin($email, $password);
-        if ($idUser) {
-            $url = $BASEAdminURL . 'admin/home.php';
-            header("Location: $url"); // Page redirecting to home.php
+if(isset($_POST['Login'])){
+    echo "Submit clicked and being processed <br/>";
+    if($_POST['email'] != "" && $_POST['password'] != ""){
+        $LoginService = new LoginService();
+        $validateEmail = $LoginService->validatePassword($_POST['email'], $_POST['password']);
+        echo "Validate Email: " . $validateEmail . "<br/>";
+        var_dump($validateEmail);
+        if($validateEmail){
+            $_SESSION['userID'] = $validateEmail;
+            echo "You will be redirect to admin home page";
+            header('Location: home.php');
         } else {
-            $errorMsgLogin = "Please check login details.";
+            echo "Incorrect Credentials";
+            header('Location: login.php');
         }
+    } else {
+        echo "Please enter an email and password";
     }
 }
 
@@ -27,7 +33,7 @@ if (!empty($_POST['loginSubmit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/pages/css/admin/home.css" type="text/css">
+    <link rel="stylesheet" href="/css/admin/home.css" type="text/css">
 </head>
 <body>
 <div id="login">
@@ -43,7 +49,7 @@ if (!empty($_POST['loginSubmit'])) {
 
         <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 
-        <input type="submit" class="button" name="loginSubmit" value="Login">
+        <input type="Login" class="button" name="Login" value="Login">
     </form>
 
 </div>
