@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Mirrored from cmsdevelop.net/sharuk/doodoo/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Dec 2017 08:45:20 GMT -->
 <head>
     <meta charset="utf-8">
@@ -18,6 +17,14 @@
     <link href="/pages/css/thirdParty/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/pages/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/pages/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/pages/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/pages/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/pages/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
