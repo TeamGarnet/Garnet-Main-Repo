@@ -5,6 +5,7 @@ include '../services/DatabaseConnection.class.php';
  * Hold generic functions that are not hooked to
  * specific feature or component.
  */
+
 class Generic {
 
     /**

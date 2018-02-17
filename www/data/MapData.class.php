@@ -33,7 +33,6 @@ class MapData {
     }
 
 
-
     /**
      * Connects to the database and runs a query to pull all of the MapPin object
      * information.

@@ -1,22 +1,22 @@
 {
-        "name": "garnet_main_repo",
-        "version": "1.0.0",
-        "description": "Team Garnet - Rapid Cementaries Main Repository",
-        "dependencies": {},
-        "devDependencies": {
-            "jasmine": "^2.9.0",
-            "karma": "^2.0.0",
-            "karma-firefox-launcher": "^1.1.0",
-            "karma-jasmine": "^1.1.1",
-            "karma-phantomjs-launcher": "^1.0.4"
-        },
-        "repository": {
-            "type": "git",
-            "url": "githttps://github.com/TeamGarnet/Garnet_Main_Repo.git"
-        },
-        "author": "Team Garnet - RIT - IST Senior Development",
-        "bugs": {
-            "url": "https://github.com/TeamGarnet/Garnet_Main_Repo/issues"
-        },
-        "homepage": "https://github.com/TeamGarnet/Garnet_Main_Repo#readme"
-    }
+  "name": "garnet_main_repo",
+  "version": "1.0.0",
+  "description": "Team Garnet - Rapid Cementaries Main Repository",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.9.0",
+    "karma": "^2.0.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "githttps://github.com/TeamGarnet/Garnet_Main_Repo.git"
+  },
+  "author": "Team Garnet - RIT - IST Senior Development",
+  "bugs": {
+    "url": "https://github.com/TeamGarnet/Garnet_Main_Repo/issues"
+  },
+  "homepage": "https://github.com/TeamGarnet/Garnet_Main_Repo#readme"
+}
