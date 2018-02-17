@@ -1,22 +1,17 @@
-<!-- PHP -->
 <?php
-include('../../data/UserData.class.php');
-include('../../data/URLs.php');
-$userData = new UserData();
-
-$errorMsgReg = '';
+include('../../services/LoginService.class.php');
 $errorMsgLogin = '';
-
-if (!empty($_POST['loginSubmit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    if (strlen(trim($email)) > 1 && strlen(trim($password)) > 1) {
-        $idUser = $userData -> userLogin($email, $password);
-        if ($idUser) {
-            $url = $BASEAdminURL . 'admin/home.php';
-            header("Location: $url"); // Page redirecting to home.php
+if (isset($_POST['Login'])) {
+    if ($_POST['email'] != "" && $_POST['password'] != "") {
+        $LoginService = new LoginService();
+        $validateUser = $LoginService -> validatePassword($_POST['email'], $_POST['password']);
+        if ($validateUser) {
+            session_start();
+            $_SESSION['idUser'] = $validateUser;
+            header('Location: home.php');
+            //TODO: destory session on logout of broswer.
         } else {
-            $errorMsgLogin = "Please check login details.";
+            $errorMsgLogin = "Incorrect email and password combination";
         }
     }
 }
@@ -59,7 +54,7 @@ if (!empty($_POST['loginSubmit'])) {
 
         <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 
-        <input type="submit" class="button" name="loginSubmit" value="Login">
+        <button type="Login" class="button" name="Login" value="Login">Login</button>
     </form>
 
 </div>

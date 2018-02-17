@@ -1,12 +1,12 @@
 <?php
-include '../services/DatabaseConnection.class.php';
-include 'query.php';
+ob_start();
 
-/**
- * MapData.class.php: Handles all CRUD operations that are sent from the service and
- * business layers to the Database from mapping requests.
+/*
+ *
  */
-class MapData {
+include '../../services/DatabaseConnection.class.php';
+
+class LoginData {
 
     /**
      * Retrieves the Database information needed.
@@ -32,27 +32,30 @@ class MapData {
         return null;
     }
 
+    public function validatePassword($email, $password) {
+        global $loginUserQuery;
 
-    /**
-     * Connects to the database and runs a query to pull all of the MapPin object
-     * information.
-     * @return array: An array of Map Pin Object information.
-     */
-    public function getAllMapPinInfo() {
-        global $getAllMapPinInfoQuery;
+        //TODO: hash them passwords gurl
+        //$password = hash(sha1($password));
         try {
-            $mapPinData = array();
+            $idUser = null;
 
-            $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
+            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
+            $stmt -> bindParam(':email', $email);
+            $stmt -> bindParam(':pwd', $password);
             $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
-            while ($result = $stmt -> fetch()) {
-                array_push($mapPinData, $result);
+
+            $count = $stmt -> rowCount();
+            if ($count == 1) {
+                $idUser = $stmt -> fetch();
+                $idUser = $idUser[0]['idUser'];
             }
-            return $mapPinData;
+            return $idUser;
         } catch (PDOException $e) {
             echo $e -> getMessage();
             die();
         }
     }
 }
+
+?>

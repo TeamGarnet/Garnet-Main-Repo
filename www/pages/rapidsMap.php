@@ -1,6 +1,6 @@
 <!-- PHP -->
 <?php
-include '/pages/services/MapService.class.php';
+include '../services/MapService.class.php';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();

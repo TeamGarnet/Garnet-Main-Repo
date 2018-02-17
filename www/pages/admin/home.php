@@ -1,5 +1,8 @@
-<!-- PHP -->
 <?php
+session_start();
+if(isset($_SESSION['idUser'])) {
+    echo "Your session is running " . $_SESSION['idUser'];
+}
 ?>
 
 <!-- HTML -->
