@@ -39,15 +39,8 @@ Thumbs.db
 # Node.JS auto-generated directories/files #
 ################
 node_modules
+package-lock.json
 
 # Test Run Outputs #
 ####################
 test/reports/* 
-
-# Node.JS auto-generated directories/files #
-################
-node_modules
-
-# Test Run Outputs #
-####################
-test/reports/*
