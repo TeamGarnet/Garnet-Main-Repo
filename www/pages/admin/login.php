@@ -31,25 +31,35 @@ if (isset($_POST['Login'])) {
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-<div id="login">
-    <h3>Login</h3>
+	<body>
+		<div id="login">
+			
+			<img src="../../pages/images/AdminLogo.png" 
+			srcset="../../pages/images/AdminLogo@2x.png 2x,
+             ../../pages/images/AdminLogo@3x.png 3x"
+			class="logo"/>
+			
+			<div id ="headline"><h4>Administrator Login</h4></div>
+			
+			<div id="divider"></div>
 
-    <form method="post" action="" name="login">
+			<form method="post" action="" name="login">
+			
+				<label for="username">Username</label>
+				<input type="username" id="username" name="username" autocomplete="off" placeholder=" Enter username"/>
 
-        <label>Email</label>
-        <input type="email" name="email" autocomplete="off"/>
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" autocomplete="off" placeholder=" Enter password"/>
 
-        <label>Password</label>
-        <input type="password" name="password" autocomplete="off"/>
+				<div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
+				
+				<div id="forgotPassword"><a href="#">Forgot Password?</div></a>
+				
+				<button type="Login" class="button" name="Login" value="Login"><div id="buttonText">Login</div></button>
+			</form>
 
-        <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
-
-        <button type="Login" class="button" name="Login" value="Login">Login</button>
-    </form>
-
-</div>
-</body>
+		</div>
+	</body>
 </html>
 
 
