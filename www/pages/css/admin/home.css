@@ -5,7 +5,7 @@ body {
 #login, #signup {
 	width: 350px;
 	height: 490px;
-	font-family: ProzaLibre;
+	font-family: 'Proza Libre', sans-serif;
 	font-style: normal;
 	font-stretch: normal;
 	line-height: normal;
@@ -57,8 +57,8 @@ form input {
 #forgotPassword {
 	width: 103px;
 	height: 17px;
-	font-size: 12px;
-	padding: 0px 0px 27px 195px;
+	font-size: 10px;
+	padding: 0px 0px 27px 197px;
 }
 
 .button {
