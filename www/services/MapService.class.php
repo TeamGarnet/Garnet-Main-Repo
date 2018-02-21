@@ -25,6 +25,10 @@ class MapService {
         $allPinObjects = array();
 
         foreach ($mapData as $pinArray) {
+            echo "a mapData PinArray: <br>";
+            print_r($pinArray);
+            echo "<br>";
+            
             $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['$filterType'], $pinArray['pinDesign'], $pinArray['idHistoricField']);
 
             array_push($allPinObjects, $pinObject);
