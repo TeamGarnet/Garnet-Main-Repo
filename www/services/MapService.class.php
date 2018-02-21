@@ -142,7 +142,7 @@ class MapService {
         $allFilterObjects = $this -> getFilterInfo();
         $filterBar = new FilterBar($allFilterObjects);
         echo "Filter Bar <br>";
-        echo $filterBar;
+        print_r( $filterBar);
         return $filterBar -> getFilterBar();
     }
 }
