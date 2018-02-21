@@ -25,10 +25,6 @@ class MapService {
         $allPinObjects = array();
 
         foreach ($mapData as $pinArray) {
-            echo "a mapData PinArray: <br>";
-            print_r($pinArray);
-            echo "<br>";
-
             $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['idTypeFilter'], $pinArray['pinDesign'], $pinArray['idHistoricFilter']);
 
             array_push($allPinObjects, $pinObject);
@@ -70,10 +66,6 @@ class MapService {
         $setMarkerCode = $markerName . ".setMap(map);";
 
         foreach ($pinObjectsArray as $pin) {
-            echo "A pin: <br>";
-            print_r($pin);
-            echo "<br>";
-
             $markerName = "marker" . $markerCounter;
             $generatedMarkers .= "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
