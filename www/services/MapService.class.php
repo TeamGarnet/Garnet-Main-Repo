@@ -1,6 +1,7 @@
 <?php
 include '../data/MapData.class.php';
 include '../models/MapPin.class.php';
+include '../models/FilterButton.class.php';
 include '../components/FilterBar.class.php';
 
 /*
