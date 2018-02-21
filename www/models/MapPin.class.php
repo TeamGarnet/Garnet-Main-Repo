@@ -51,16 +51,6 @@ class MapPin {
     }
 
 
-    /**
-     * @return mixed
-     */
-    public function getIdHistoricFilter() {
-        return $this -> idHistoricFilter;
-    }
-
-    public function setIdHistoricFilter($idHistoricFilter) {
-        $this -> idHistoricFilter = $idHistoricFilter;
-    }
 
     /**
      * @return int : the ID stored in the DB of the trackable object
@@ -145,6 +135,17 @@ class MapPin {
         $this -> filterType = $filterType;
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getIdHistoricFilter() {
+        return $this -> idHistoricFilter;
+    }
+
+    public function setIdHistoricFilter($idHistoricFilter) {
+        $this -> idHistoricFilter = $idHistoricFilter;
+    }
 
     /**
      * @return string: the url to be used for the marker design

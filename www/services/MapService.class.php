@@ -66,6 +66,10 @@ class MapService {
         $setMarkerCode = $markerName . ".setMap(map);";
 
         foreach ($pinObjectsArray as $pin) {
+            echo "A pin: <br>";
+            print_r($pin);
+            echo "<br>";
+
             $markerName = "marker" . $markerCounter;
             $generatedMarkers .= "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
