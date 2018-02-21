@@ -59,10 +59,8 @@ html, body {
     color: #f7f7f4;
     border-radius: 25px;
     text-decoration: none;
-}
-
-.btn:hover > div {
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgb(18, 176, 41);
+    box-shadow:inset 0 0 0 99999px rgba(255,255,255,0.2);
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
