@@ -20,8 +20,12 @@ class FilterBar {
                 $filterButton -> getFilterName() .
                 "</a></li>";
 
-            $filterButtonCode += $filterButtonCode;
+            $filterBarCode = $filterBarCode . $filterButtonCode;
         }
+        echo "<br><br><br><br>";
+        echo "Filter Button Code from FilterBAr class";
+        echo $filterBarCode;
+        
         $this -> setFilterBar($filterBarCode);
     }
 
