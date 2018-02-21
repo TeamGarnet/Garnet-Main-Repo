@@ -12,7 +12,7 @@ class FilterBar {
         $filterBarCode = "";
 
         foreach ($filterButtonArray as $filterButton) {
-            $filterButtonCode = "<li><a href='#' class='btn' style='border-radius:25px;padding: 10px;background-color: " . $filterButton -> getButtonColor() .
+            $filterButtonCode = "<li><a href='#' class='btn filterButton' style='background-color: " . $filterButton -> getButtonColor() .
                 ";' data-filterID='" . $filterButton -> getFilterID() .
                 "' data-table='".
                 $filterButton -> getTable() .

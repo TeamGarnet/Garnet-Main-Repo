@@ -48,6 +48,12 @@ html, body {
     margin-bottom: 10px;
 }
 
+.filterButton, filterButton:hover {
+    border-radius: 30px;
+    padding: 10px;
+    color: #FFFFEE;
+    text-decoration: none;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 

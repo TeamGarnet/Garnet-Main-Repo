@@ -6,7 +6,6 @@ $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
 $markers = $mapData -> generateMarkers($allPinInfo);
 $filterBar = $mapData -> generateFilterBar();
-echo $filterBar;
 ?>
 
 <!-- HTML -->
