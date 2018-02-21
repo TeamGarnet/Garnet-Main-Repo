@@ -72,7 +72,7 @@ class MapService {
             title:'" . $pin -> getName() . "' ,
             map: map ,
             idTypeFilter:" . $pin -> getFilterType() . ",
-            idHistoricFilter:" . $pin ->  idHistoricFilter() . "});";
+            idHistoricFilter:" . $pin ->  getIdHistoricFilter() . "});";
 
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
