@@ -28,8 +28,8 @@ class MapService {
             echo "a mapData PinArray: <br>";
             print_r($pinArray);
             echo "<br>";
-            
-            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['$filterType'], $pinArray['pinDesign'], $pinArray['idHistoricField']);
+
+            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['idTypeFilter'], $pinArray['pinDesign'], $pinArray['idHistoricFilter']);
 
             array_push($allPinObjects, $pinObject);
         }
