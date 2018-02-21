@@ -50,7 +50,7 @@ $filterBar = $mapData -> generateFilterBar();
     <div class="container">
         <div class="secondmenu">
             <div style="text-align: center;">
-                <ul style="margin-left:110px;">
+                <ul style="margin-left:110px; margin-top: 1.5%;">
                     <!--
                     <li><a href="#" class="btn btn-danger " style="border-radius:25px;padding: 10px;">Civil War</a></li>
                     <li><a href="#" class="btn btn-warning " style="border-radius:25px;padding: 10px">War of 1812</a></li>
