@@ -147,7 +147,8 @@ INSERT INTO `RapidsCemetery`.`User`
 VALUES
   ('1', 'Brianna', 'Jones', 'bfj5889@g.rit.edu', 'hashedPWD'),
   ('2', 'Cole', 'Johnson', 'cj3421@g.rit.edu', 'hashedPWD'),
-  ('3', 'Daniel', 'Quackenbush', 'dqvcdsv9@g.rit.edu', 'hashedPWD');
+  ('3', 'Daniel', 'Quackenbush', 'dqvcdsv9@g.rit.edu', 'hashedPWD'),
+  ('4', 'Test', 'Test', 'test@gmail.com', 'test');
 
 TRUNCATE table `RapidsCemetery`.`WiderAreaMap`;
 INSERT INTO `RapidsCemetery`.`WiderAreaMap`

@@ -5,6 +5,7 @@ include '../services/MapService.class.php';
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
 $markers = $mapData -> generateMarkers($allPinInfo);
+$filterBar = $mapData -> generateFilterBar();
 
 ?>
 
@@ -49,6 +50,7 @@ $markers = $mapData -> generateMarkers($allPinInfo);
         <div class="secondmenu">
             <div style="text-align: center;">
                 <ul style="margin-left:110px;">
+                    <!--
                     <li><a href="#" class="btn btn-danger " style="border-radius:25px;padding: 10px;">Civil War</a></li>
                     <li><a href="#" class="btn btn-warning " style="border-radius:25px;padding: 10px">War of 1812</a></li>
                     <li><a href="#" class="btn btn-success " style="border-radius:25px;padding: 10px">Revolutionary
@@ -56,6 +58,11 @@ $markers = $mapData -> generateMarkers($allPinInfo);
                     <li><a href="#" class="btn btn-info " style="border-radius:25px;padding: 10px">Spanish-American
                             War</a></li>
                     <li><a href="#" class="btn btn-primary " style="border-radius:25px;">Rapids Flora</a></li>
+                    -->
+                    <?php
+                    echo $filterBar;
+                    ?>
+
                 </ul>
             </div>
         </div>

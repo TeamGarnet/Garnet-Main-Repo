@@ -55,4 +55,22 @@ class MapData {
             die();
         }
     }
+
+    public function getAllFilters() {
+        global $filterBarQuery;
+        try {
+            $filterData = array();
+
+            $stmt = $this -> getDBInfo(1) -> prepare($filterBarQuery);
+            $stmt -> execute();
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "FilterButton.class");
+            while ($result = $stmt -> fetch()) {
+                array_push($filterData, $result);
+            }
+            return $filterData;
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
+    }
 }

@@ -54,7 +54,7 @@
 
                             <div class="top_btn">
                                 <ul class="btno1">
-                                    <li><a href="rapidsMap.php">View Map</a></li>
+                                    <li><a href="rapidsMap.php">Explore Map</a></li>
 
                                 </ul>
                             </div>

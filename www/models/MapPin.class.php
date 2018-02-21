@@ -18,9 +18,11 @@ class MapPin {
 
     private $name;
 
-    private $type;
+    private $filterType;
 
     private $pinDesign;
+
+    private $idHistoricFilter;
 
 
     /**
@@ -32,21 +34,33 @@ class MapPin {
      * @param $imageDescription
      * @param $imageLocation
      * @param $name
-     * @param $type : a type of marker on the cememerty lot (ie. Grave, Natural
-     * History)
+     * @param $filterType
      * @param $pinDesign : a url to the marker design to be used for the pin
+     * @param $idHistoricFilter
      */
-    public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $type, $pinDesign) {
+    public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $filterType, $pinDesign, $idHistoricFilter) {
         $this -> setIdTrackableObject($idTrackableObject);
         $this -> setLatitude($latitude);
         $this -> setLongitude($longitude);
         $this -> setImageDescription($imageDescription);
         $this -> setImageLocation($imageLocation);
         $this -> setName($name);
-        $this -> setType($type);
+        $this -> setFilterType($filterType);
         $this -> setPinDesign($pinDesign);
+        $this -> setIdHistoricFilter($idHistoricFilter);
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getIdHistoricFilter() {
+        return $this -> idHistoricFilter;
+    }
+
+    public function setIdHistoricFilter($idHistoricFilter) {
+        $this -> idHistoricFilter = $idHistoricFilter;
+    }
 
     /**
      * @return int : the ID stored in the DB of the trackable object
@@ -123,12 +137,12 @@ class MapPin {
     /**
      * @return string :  the type of object in the database
      */
-    public function getType() {
-        return $this -> type;
+    public function getFilterType() {
+        return $this -> filterType;
     }
 
-    public function setType($type) {
-        $this -> type = $type;
+    public function setFilterType($filterType) {
+        $this -> filterType = $filterType;
     }
 
 

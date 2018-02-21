@@ -1,6 +1,7 @@
 <?php
 include '../data/MapData.class.php';
 include '../models/MapPin.class.php';
+include '../components/FilterBar.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
@@ -23,7 +24,7 @@ class MapService {
         $allPinObjects = array();
 
         foreach ($mapData as $pinArray) {
-            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['type'], $pinArray['pinDesign']);
+            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['$filterType'], $pinArray['pinDesign'], $pinArray['idHistoricField']);
 
             array_push($allPinObjects, $pinObject);
         }
@@ -68,8 +69,10 @@ class MapService {
             $generatedMarkers .= "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'" . $pin -> getPinDesign() . "',
-            title: '" . $pin -> getName() . "' ,
-            map: map });";
+            title:'" . $pin -> getName() . "' ,
+            map: map ,
+            idTypeFilter:" . $pin -> getFilterType() . ",
+            idHistoricFilter:" . $pin ->  idHistoricFilter() . "});";
 
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
@@ -118,5 +121,25 @@ class MapService {
             })(" . $markerName . "));";
 
         return $infoWindowGenerator . $infoWindowListener;
+    }
+
+
+    public function getFilterInfo() {
+        $dataClass = new MapData();
+        $filterData = $dataClass -> getAllFilters();
+        $allFilterObjects = array();
+
+        foreach ($filterData as $filterArray) {
+            $pinObject = new FilterButton($filterArray['filterID'], $filterArray['filterName'], $filterArray['buttonColor'], $filterArray['table']);
+
+            array_push($allFilterObjects, $pinObject);
+        }
+        return $allFilterObjects;
+    }
+
+    public function generateFilterBar() {
+        $allFilterObjects = $this -> getFilterInfo();
+        $filterBar = new FilterBar($allFilterObjects);
+        return $filterBar -> getFilterBar();
     }
 }
