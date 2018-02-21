@@ -13,7 +13,6 @@ $filterBar = $mapData -> generateFilterBar();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/pages/css/maps.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
     <meta charset="utf-8">
@@ -37,6 +36,9 @@ $filterBar = $mapData -> generateFilterBar();
     <link rel="mask-icon" href="/pages/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="stylesheet" href="/pages/css/maps.css" type="text/css">
 </head>
 <body>
 

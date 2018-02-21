@@ -48,11 +48,18 @@ html, body {
     margin-bottom: 10px;
 }
 
-.filterButton, filterButton:hover {
-    border-radius: 30px;
+.filterButton {
+    border-radius: 25px;
     padding: 10px;
-    color: #FFFFEE;
+    color: #f7f7f4;
     text-decoration: none;
+}
+
+.filterButton:hover {
+    color: #f7f7f4;
+    border-radius: 25px;
+    text-decoration: none;
+
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
