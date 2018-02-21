@@ -140,17 +140,7 @@ class MapService {
 
     public function generateFilterBar() {
         $allFilterObjects = $this -> getFilterInfo();
-        echo "allFilterObjects <br>";
-        print_r($allFilterObjects);
-        echo "<br><br><br><br>";
-
         $filterBar = new FilterBar($allFilterObjects);
-        echo "Filter Bar <br>";
-        print_r( $filterBar);
-        echo "<br><br><br><br>";
-
-        echo "Filter Bar Code <br>";
-        echo $filterBar -> getFilterBar();
         return $filterBar -> getFilterBar();
     }
 }
