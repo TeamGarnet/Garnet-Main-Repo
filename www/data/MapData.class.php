@@ -88,7 +88,7 @@ class MapData {
             $stmt -> execute();
             $filterType = strval($stmt -> fetch());
 
-            // 2. Determine which query to use based on filter type.
+            // 2. Determine which query to use based on returned filter type.
             switch ($filterType) {
                 case 'Grave':
                     $stmt = $this -> getDBInfo(1) -> prepare($graveInfoQuery);
@@ -102,7 +102,7 @@ class MapData {
             }
 
             $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrackableObjectCard.class");
+            $stmt -> setFetchMode(PDO::FETCH_ASSOC);
             while($result = $stmt -> fetch()) {
                 array_push($objectCardData, $result);
             }
