@@ -73,4 +73,43 @@ class MapData {
             die();
         }
     }
+
+    public function getCardData($idTypeFilter) {
+        global $filterTypeQuery;
+        global $graveInfoQuery;
+        global $naturalHistoryInfoQuery;
+        global $miscInfoQuery;
+        try {
+            $objectCardData = array();
+
+            // 1. Get the filter type to determine which subsequent table to use.
+            $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
+            $stmt -> bindParam(':idTypeFilter',$idTypeFilter, PDO::PARAM_INT);
+            $stmt -> execute();
+            $filterType = strval($stmt -> fetch());
+
+            // 2. Determine which query to use based on filter type.
+            switch ($filterType) {
+                case 'Grave':
+                    $stmt = $this -> getDBInfo(1) -> prepare($graveInfoQuery);
+                    break;
+                case 'Natural History':
+                    $stmt = $this -> getDBInfo(1) -> prepare($naturalHistoryInfoQuery);
+                    break;
+                case 'Other':
+                    $stmt = $this -> getDBInfo(1) -> prepare($miscInfoQuery);
+                    break;
+            }
+
+            $stmt -> execute();
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrackableObjectCard.class");
+            while($result = $stmt -> fetch()) {
+                array_push($objectCardData, $result);
+            }
+            return $objectCardData;
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
+    }
 }
