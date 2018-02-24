@@ -15,7 +15,7 @@ $loginUserQuery = "SELECT idUser FROM `User` WHERE email=:email AND password=:pw
 
 $userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM User WHERE idUser=:idUser";
 
-$miscInfoQuery = "SELECT miscobject.name, miscobject.description
+$miscInfoQuery = "SELECT miscobject.name, miscobject.description, miscobject.isHazard
 FROM  miscobject 
 INNER JOIN trackableobject 
 ON miscobject.idMisc = trackableobject.idMisc

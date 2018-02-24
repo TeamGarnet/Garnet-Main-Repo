@@ -74,7 +74,7 @@ class MapData {
         }
     }
 
-    public function getCardData($idTypeFilter) {
+    public function getMapCardData($idTypeFilter) {
         global $filterTypeQuery;
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;
@@ -88,7 +88,10 @@ class MapData {
             $stmt -> execute();
             $filterType = strval($stmt -> fetch());
 
-            // 2. Determine which query to use based on returned filter type.
+            // 2. Push filter type to array to pass up through service to create TrackableObjectCard
+            $objectCardData['type'] = $filterType;
+
+            // 3. Determine which query to use based on returned filter type.
             switch ($filterType) {
                 case 'Grave':
                     $stmt = $this -> getDBInfo(1) -> prepare($graveInfoQuery);
