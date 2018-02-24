@@ -19,6 +19,7 @@ class FilterBar {
 
             $filterBarCode = $filterBarCode . $filterButtonCode;
         }
+        $filterBarCode .= "<a href='#' class='btn filterButton' style='background-color: #2c3e50;' onclick=" . "\"resetFilters()\">Reset Filters</a> ";
 
         $this -> setFilterBar($filterBarCode);
     }

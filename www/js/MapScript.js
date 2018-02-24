@@ -12,3 +12,9 @@ function refreshFilters(table, referenceID) {
         }
     }
 }
+
+function resetFilters() {
+    for (var i = 0; i < allMarkerObjects.length; i++) {
+        allMarkerObjects[i].setVisible(true);
+    }
+}
