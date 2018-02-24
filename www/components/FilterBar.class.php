@@ -13,7 +13,7 @@ class FilterBar {
 
         foreach ($filterButtonArray as $filterButton) {
             $filterButtonCode = "<li><a href='#' class='btn filterButton' style='background-color: " . $filterButton -> getButtonColor() . "'" .
-                "; onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ");" . "\">" .
+                " onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
                 $filterButton -> getFilterName() .
                 "</a></li>";
 
