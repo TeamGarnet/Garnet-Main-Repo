@@ -18,7 +18,6 @@ class FilterBar {
                 "</a></li>";
 
             $filterBarCode = $filterBarCode . $filterButtonCode;
-            print_r($filterBarCode);
         }
 
         $this -> setFilterBar($filterBarCode);
