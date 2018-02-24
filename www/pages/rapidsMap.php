@@ -115,16 +115,10 @@ $filterBar = $mapData -> generateFilterBar();
 
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            //TODO: DO I need this check?
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(xhr.responseText);
-            } else {
-                //TODO: find a way to figure out the error and save it to a log.
-            }
-            xmlhttp.open("GET", "../components/TrackableObjectCard.class.php?id=" + $idTrackableObject, true);
-            xmlhttp.send();
-        }
+        console.log("Inside loadObjectInfo function");
+        xmlhttp.open("GET", "../components/TrackableObjectCard.class.php?id=" + $idTrackableObject, true);
+        xmlhttp.send();
+        console.log("GET request made");
     }
 
 </script>
