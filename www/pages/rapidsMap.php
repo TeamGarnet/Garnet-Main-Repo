@@ -51,15 +51,6 @@ $filterBar = $mapData -> generateFilterBar();
         <div class="secondmenu">
             <div style="text-align: center;">
                 <ul style="margin-left:110px; margin-top: 1.5%;">
-                    <!--
-                    <li><a href="#" class="btn btn-danger " style="border-radius:25px;padding: 10px;">Civil War</a></li>
-                    <li><a href="#" class="btn btn-warning " style="border-radius:25px;padding: 10px">War of 1812</a></li>
-                    <li><a href="#" class="btn btn-success " style="border-radius:25px;padding: 10px">Revolutionary
-                            War</a></li>
-                    <li><a href="#" class="btn btn-info " style="border-radius:25px;padding: 10px">Spanish-American
-                            War</a></li>
-                    <li><a href="#" class="btn btn-primary " style="border-radius:25px;">Rapids Flora</a></li>
-                    -->
                     <?php
                     echo $filterBar;
                     ?>
@@ -81,7 +72,6 @@ $filterBar = $mapData -> generateFilterBar();
 <!-- Javascript -->
 <script type="text/javascript">
     var map, infoWindow;
-    //var activeMarkerObjects = [];
     var allMarkerObjects = [];
 
     function initMap() {
