@@ -40,6 +40,8 @@ class MapService {
      * a Google Map that creates a marker.
      *
      * Example Output String for 1 Object:
+     * var activeMarkerObjects = [];
+     * var allMarkerObjects = [];
      * var marker0 = new google.maps.Marker({
      * position: {lat: 47.544, lng: 21.32123},
      * title: 'Pin Name'
@@ -57,10 +59,12 @@ class MapService {
      * }})(marker0));
      *
      * marker0.setMap(map)
+     * allMarkerObjects.push(marker0);
+     * activeMarkerObjects.push(marker0);
      *
      */
     public function generateMarkers($pinObjectsArray) {
-        $generatedMarkers = "";
+        $generatedMarkers = "var activeMarkerObjects = []; var allMarkerObjects = [];";
         $markerCounter = 0;
         $markerName = "marker" . $markerCounter;
         $setMarkerCode = $markerName . ".setMap(map);";
@@ -72,12 +76,16 @@ class MapService {
             icon:'" . $pin -> getPinDesign() . "',
             title:'" . $pin -> getName() . "' ,
             map: map ,
+            markerName: " . $markerName . ",
             idTypeFilter:" . $pin -> getFilterType() . ",
-            idHistoricFilter:" . $pin ->  getIdHistoricFilter() . "});";
+            idHistoricFilter:" . $pin -> getIdHistoricFilter() . "});";
 
 
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
+            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");" .
+            "activeMarkerObjects.push(" . $markerName . ");";
+
             $markerCounter += 1;
         }
 
