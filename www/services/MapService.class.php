@@ -15,6 +15,9 @@ include '../components/FilterBar.class.php';
 
 class MapService {
 
+    public function __construct(){
+    }
+
     /**
      * Retrieves all pin data from the database and forms MapPin Objects
      * @return array : An array of MapPin objects
@@ -152,8 +155,7 @@ class MapService {
         return $filterBar -> getFilterBar();
     }
 
-    public function getMapCardInfo() {
-        $idTrackableObject = $_REQUEST['id'];
+    public function getMapCardInfo($idTrackableObject) {
         $dataClass = new MapData();
         $cardData = $dataClass -> getMapCardData($idTrackableObject);
         return new TrackableObjectCard($cardData);
