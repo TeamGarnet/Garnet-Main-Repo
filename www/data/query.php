@@ -40,7 +40,7 @@ $filterTypeQuery = "SELECT typefilter.type
 FROM typefilter
 INNER JOIN trackableobject
 ON typefilter.idTypeFilter = trackableobject.idTypeFilter
-WHERE trackableobject.idTypeFilter = :idTypeFilter";
+WHERE trackableobject.idTrackableObject = :idTrackableObject";
 
 $filterBarQuery = "
 SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonColor, concat('historicFilter') as `table` FROM HistoricFilter 

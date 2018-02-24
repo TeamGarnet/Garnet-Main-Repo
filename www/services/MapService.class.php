@@ -144,9 +144,9 @@ class MapService {
         return $filterBar -> getFilterBar();
     }
 
-    public function getMapCardInfo($idTypeFilter) {
+    public function getMapCardInfo($idTrackableObject) {
         $dataClass = new MapData();
-        $cardData = $dataClass -> getMapCardData($idTypeFilter);
+        $cardData = $dataClass -> getMapCardData($idTrackableObject);
         return new TrackableObjectCard($cardData);
     }
 }

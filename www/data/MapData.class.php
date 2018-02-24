@@ -74,7 +74,7 @@ class MapData {
         }
     }
 
-    public function getMapCardData($idTypeFilter) {
+    public function getMapCardData($idTrackableObject) {
         global $filterTypeQuery;
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;
@@ -84,7 +84,7 @@ class MapData {
 
             // 1. Get the filter type to determine which subsequent table to use.
             $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
-            $stmt -> bindParam(':idTypeFilter',$idTypeFilter, PDO::PARAM_INT);
+            $stmt -> bindParam(':idTrackableObject',$idTrackableObject, PDO::PARAM_INT);
             $stmt -> execute();
             $filterType = strval($stmt -> fetch());
 
