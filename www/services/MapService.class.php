@@ -144,7 +144,8 @@ class MapService {
         return $filterBar -> getFilterBar();
     }
 
-    public function getMapCardInfo($idTrackableObject) {
+    public function getMapCardInfo() {
+        $idTrackableObject = $_REQUEST['id'];
         $dataClass = new MapData();
         $cardData = $dataClass -> getMapCardData($idTrackableObject);
         return new TrackableObjectCard($cardData);

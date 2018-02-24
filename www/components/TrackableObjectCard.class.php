@@ -63,19 +63,19 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        return "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
+        echo "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
             "<div id='birthDeathDate'>" . $this -> birth . " - " . $this -> death . "</div>" .
             "<div id='description'>" . $this -> description . "</div>";
     }
 
     public function getNaturalHistoryInfo() {
-        return "<div id='scientificName'>" . $this -> scientificName . "</div>" .
+        echo "<div id='scientificName'>" . $this -> scientificName . "</div>" .
             "<div id='commonName'>" . $this -> commonName . "</div>" .
             "<div id ='description'>" . $this -> description . "</div>";
     }
 
     public function getMiscObjectInfo() {
-        return "<div id='name'>" . $this -> name . "</div>" .
+        echo "<div id='name'>" . $this -> name . "</div>" .
             "<div id='isHazard'> Hazard?" . $this -> isHazard . "</div>" .
             "<div id = 'description'>" . $this -> description . "</div>";
     }
