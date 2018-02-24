@@ -132,7 +132,7 @@ WW
             } else {
                 //TODO: find a way to figure out the error and save it to a log.
             }
-            xmlhttp.open("GET", "../services/MapService.class.php?id=" + $idTrackableObject, true);
+            xmlhttp.open("GET", "../components/TrackableObjectCard.class.php?id=" + $idTrackableObject, true);
             xmlhttp.send();
         }
     }

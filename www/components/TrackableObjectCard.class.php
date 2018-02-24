@@ -1,4 +1,11 @@
 <?php
+include '../services/MapService.class.php';
+
+if(isset($_REQUEST['id'])) {
+    $mapService = new MapService();
+    $mapService -> getMapCardInfo($_REQUEST['id']);
+    unset($_REQUEST['id']);
+}
 
 class TrackableObjectCard {
     // Grave attribtues - inheritance may be more appropriate for this class
