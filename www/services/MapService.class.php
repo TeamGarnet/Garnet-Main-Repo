@@ -83,8 +83,7 @@ class MapService {
             idTypeFilter:" . $pin -> getFilterType() . ",
             idHistoricFilter:" . $pin -> getIdHistoricFilter() . "});";
 
-            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");" .
-                "activeMarkerObjects.push(" . $markerName . ");";
+            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");";
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
 
