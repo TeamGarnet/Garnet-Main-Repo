@@ -45,11 +45,9 @@ function refreshFilters(table, referenceID) {
             if (currentFilters[currFilterIndex].table == "historicFilter"  && allMarkerObjects[currMarkerIndex].idHistoricFilter == currentFilters[currFilterIndex].id) {
                 activeMarkerObjects.push(allMarkerObjects[currMarkerIndex]);
                 allMarkerObjects[currMarkerIndex].setMap(map);
-
             } else if (currentFilters[currFilterIndex].table == "typeFilter"  && allMarkerObjects[currMarkerIndex].idTypeFilter == currentFilters[currFilterIndex].id) {
                 activeMarkerObjects.push(allMarkerObjects[currMarkerIndex]);
                 allMarkerObjects[currMarkerIndex].setMap(map);
-
             } else {
                 alert("there is a problem");
             }

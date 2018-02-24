@@ -64,7 +64,7 @@ class MapService {
      *
      */
     public function generateMarkers($pinObjectsArray) {
-        $generatedMarkers = "var activeMarkerObjects = []; var allMarkerObjects = [];";
+        $generatedMarkers = "";
         $markerCounter = 0;
         $markerName = "marker" . $markerCounter;
         $setMarkerCode = $markerName . ".setMap(map);";
@@ -80,11 +80,11 @@ class MapService {
             idTypeFilter:" . $pin -> getFilterType() . ",
             idHistoricFilter:" . $pin -> getIdHistoricFilter() . "});";
 
-
+            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");" .
+                "activeMarkerObjects.push(" . $markerName . ");";
             $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
-            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");" .
-            "activeMarkerObjects.push(" . $markerName . ");";
+
 
             $markerCounter += 1;
         }

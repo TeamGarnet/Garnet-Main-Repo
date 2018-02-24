@@ -81,6 +81,8 @@ WW
 <!-- Javascript -->
 <script type="text/javascript">
     var map, infoWindow;
+    var activeMarkerObjects = [];
+    var allMarkerObjects = [];
 
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.129467, -77.639153);
