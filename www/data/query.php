@@ -15,11 +15,32 @@ $loginUserQuery = "SELECT idUser FROM `User` WHERE email=:email AND password=:pw
 
 $userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM User WHERE idUser=:idUser";
 
-$miscInfoQuery = "";
+$miscInfoQuery = "SELECT miscobject.name, miscobject.description, miscobject.isHazard
+FROM  miscobject 
+INNER JOIN trackableobject 
+ON miscobject.idMisc = trackableobject.idMisc
+WHERE miscobject.idMisc = trackableobject.idMisc;";
 
-$graveInfoQuery = "";
+$graveInfoQuery = "SELECT grave.firstName, grave.middleName, grave.lastName, 
+DATE_FORMAT(grave.birth, '%b %d %Y') AS birth, DATE_FORMAT(grave.death, '%b %d %Y') AS death, 
+grave.description
+FROM grave 
+INNER JOIN trackableobject 
+ON grave.idGrave = trackableobject.idGrave
+WHERE grave.idGrave = trackableobject.idGrave;
+";
 
-$naturalHistoryInfoQuery = "";
+$naturalHistoryInfoQuery = "SELECT naturalhistory.commonName, naturalhistory.scientificName, naturalhistory.description
+FROM naturalhistory 
+INNER JOIN trackableobject
+ON naturalhistory.idNaturalHistory = trackableobject.idNaturalHistory
+WHERE naturalhistory.idNaturalHistory = trackableobject.idNaturalHistory;";
+
+$filterTypeQuery = "SELECT typefilter.type
+FROM typefilter
+INNER JOIN trackableobject
+ON typefilter.idTypeFilter = trackableobject.idTypeFilter
+WHERE trackableobject.idTrackableObject = :idTrackableObject";
 
 $filterBarQuery = "
 SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonColor, concat('historicFilter') as `table` FROM HistoricFilter 

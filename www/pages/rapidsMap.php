@@ -121,8 +121,6 @@ WW
         infoWindow.open(map);
     }
 
-
-    //TODO: This method will be used to open the card components of objects -->
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -132,7 +130,7 @@ WW
             } else {
                 //TODO: find a way to figure out the error and save it to a log.
             }
-            xmlhttp.open("GET", "../components/TrackableObjectCard.class.php?id=" + $idTrackableObject, true);
+            xmlhttp.open("GET", "../services/MapService.class.php?id=" + $idTrackableObject, true);
             xmlhttp.send();
         }
     }
