@@ -124,7 +124,7 @@ $filterBar = $mapData -> generateFilterBar();
             type: "GET",
             url: "/services/MapService.class.php",
             data: "id="+idTrackableObject,
-            dataType:"json",
+            dataType:"text",
             success: function(data) {
                 console.log(data);
             }
