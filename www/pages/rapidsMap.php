@@ -141,9 +141,14 @@ $filterBar = $mapData -> generateFilterBar();
             dataType:"text",
             success: function(data) {
                 console.log(data);
-                }
+                $('#myModal').modal('show');
+                return data;
+            }
+            }
         });
     }
+
+
 
 </script>
 
