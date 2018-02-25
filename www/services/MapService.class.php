@@ -123,19 +123,11 @@ class MapService {
      * }})(marker2));
      */
     public function generateInfoWindowConfig($pin, $markerName) {
-        $objectInfoString = "onclick='loadObjectInfo( "
-            . $pin -> getIdTrackableObject()
-            . ",'"
-            . $pin -> getTypeFilterName()
-            . "');'"; 
-
-
         $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
             . $pin -> getImageLocation() . "' alt='"
             . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName'>"
-            . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' "
-            . $objectInfoString
-            . "> Learn more about "
+            . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' onclick='loadObjectInfo("
+            . $pin -> getIdTrackableObject() . ",'" . $pin -> getTypeFilterName() . "\');\'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
