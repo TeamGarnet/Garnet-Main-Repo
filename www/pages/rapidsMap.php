@@ -141,8 +141,6 @@ $filterBar = $mapData -> generateFilterBar();
             dataType:"text",
             success: function(data) {
                 console.log(data);
-            <button id="modalButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></button>
-                $("#modalButton").trigger("click");
                 }
             }
         });
