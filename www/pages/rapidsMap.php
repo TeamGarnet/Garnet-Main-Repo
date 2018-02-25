@@ -127,8 +127,10 @@ $filterBar = $mapData -> generateFilterBar();
             dataType:"text",
             success: function(data) {
                 alert(data);
-                $(".popup-content").html(data);
-                $(".popup-overlay, .popup-content").show("fast");
+                $(document).ready(function () {
+                    $(".popup-content").append(data);
+                    $(".popup-overlay, .popup-content").show("fast");
+                }
             }
         });
     }
