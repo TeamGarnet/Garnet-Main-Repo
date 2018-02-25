@@ -42,14 +42,6 @@ $filterBar = $mapData -> generateFilterBar();
 </head>
 <body>
 
-<!--Modal -->
-<div id="Modal" class="Modal">
-<!-- Modal content -->
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-</div>
-
 <!-- Navigation -->
 <?php include '../components/Navigation.php'; ?>
 
@@ -62,17 +54,25 @@ $filterBar = $mapData -> generateFilterBar();
                     <?php
                     echo $filterBar;
                     ?>
+
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-
+<!--Modal -->
+<div id="Modal" class="Modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+</div>
 
 <!-- Google Map-->
 <div id="map"></div>
-</div>
+
 </body>
 
 </html>
