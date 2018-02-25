@@ -129,6 +129,10 @@ $filterBar = $mapData -> generateFilterBar();
                 console.log(data);
             }
         });
+
+        <?php
+            $mapData -> getMapCardInfo(idTrackableObject);
+        ?>
     }
 
 </script>
