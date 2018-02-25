@@ -60,15 +60,15 @@ $filterBar = $mapData -> generateFilterBar();
     </div>
 </div>
 
+<!-- Google Map-->
+<div id="map"></div>
+
 <!-- Modal -->
 <div class=".popup-overlay" id="popup-overlay">
     <div class=".popup-content" id="popup-content">
 
     </div>
 </div>
-
-<!-- Google Map-->
-<div id="map"></div>
 
 </body>
 
