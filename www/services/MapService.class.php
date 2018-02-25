@@ -117,7 +117,7 @@ class MapService {
      * }})(marker2));
      */
     public function generateInfoWindowConfig($pin, $markerName) {
-        /*
+
         $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
             . $pin -> getImageLocation() . "' alt='"
             . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName'>"
@@ -125,8 +125,9 @@ class MapService {
             . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
-        */
 
+
+        /*
         $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src="
             . $pin -> getImageDescription()
             . " style=width:100px;height:100px;/></br><h4>"
@@ -135,6 +136,7 @@ class MapService {
             . "</br></br><button onclick='openup()' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
             .'"';
 
+        */
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
         $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {
             return function() {
