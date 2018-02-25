@@ -89,7 +89,7 @@ class TrackableObjectCard {
         $modalContent = "<div class='.popup-overlay .active'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> commonName . "</br><h6>("
+            . $this-> commonName . "</br><h6>"
             . $this -> scientificName . "</h6></h4>"
             . $this -> description;
 
@@ -103,7 +103,7 @@ class TrackableObjectCard {
         $modalContent = "<div class='.popup-overlay .active'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> name . "</br><h6> Hazardous Location: ("
+            . $this-> name . "</br><h6> Hazardous Location: "
             . $this -> isHazard . "</h6></h4>"
             . $this -> description;
 
