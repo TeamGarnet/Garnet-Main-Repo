@@ -71,12 +71,6 @@ class TrackableObjectCard {
         $modalStyle = "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
         $modal = $modalContent . $modalStyle;
 
-
-        echo "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
-            "<div id='birthDeathDate'>" . $this -> birth . " - " . $this -> death . "</div>" .
-            "<div id='description'>" . $this -> description . "</div>";
-
-        echo "<br>";
         echo $modal;
         return $modal;
 
