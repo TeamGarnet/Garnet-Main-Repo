@@ -113,12 +113,22 @@ $filterBar = $mapData -> generateFilterBar();
         infoWindow.open(map);
     }
 
-    function loadObjectInfo($idTrackableObject) {
-        var xmlhttp = new XMLHttpRequest();
-        console.log("Inside loadObjectInfo function");
-        xmlhttp.open("GET", "/home/services/MapService.class.php", true);
-        xmlhttp.send($idTrackableObject);
-        console.log("GET request made");
+    function loadObjectInfo(idTrackableObject) {
+        // var xmlhttp = new XMLHttpRequest();
+        // console.log("Inside loadObjectInfo function");
+        // xmlhttp.open("GET", "/home/services/MapService.class.php", true);
+        // xmlhttp.send(idTrackableObject);
+        // console.log("GET request made");
+
+        $.ajax({
+            type: "GET",
+            url: "../services/MapService.Class.php",
+            data: "id="+idTrackableObject,
+            dataType:"json",
+            success: function(data) {
+                console.log(data);
+            }
+        });
     }
 
 </script>
