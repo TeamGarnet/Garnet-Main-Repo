@@ -63,7 +63,7 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div class='.popup-overlay.active'><img src='images/download.jpg' style=width:100px;height:100px;/></br><h4>"
+        $modalContent = "<div class='.popup-overlay .active'><img src='images/download.jpg' style=width:100px;height:100px;/></br><h4>"
             . $this-> firstName . " " . $this -> lastName . "</br><h6>("
             . $this -> birth . " - " . $this -> death . ")" . "</h6></h4>"
             . $this -> description;
