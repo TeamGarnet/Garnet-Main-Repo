@@ -48,5 +48,5 @@ WHERE TrackableObject.idTrackableObject = :idTrackableObject";
 $filterBarQuery = "
 SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonColor, concat('historicFilter') as `table` FROM HistoricFilter 
 UNION
-SELECT idTypeFilter, type, buttonColor, concat('typeFilter') as `Table` FROM TypeFilter;
+SELECT idTypeFilter, typeName, buttonColor, concat('typeFilter') as `Table` FROM TypeFilter;
 ";
