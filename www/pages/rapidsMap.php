@@ -142,6 +142,7 @@ $filterBar = $mapData -> generateFilterBar();
             success: function(data) {
                 console.log(data);
                 }
+            }
         });
     }
 
