@@ -50,3 +50,5 @@ SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonCo
 UNION
 SELECT idTypeFilter, type, buttonColor, concat('typeFilter') as `Table` FROM TypeFilter;
 ";
+
+$getAllTrailLocationQuery = "select ";
