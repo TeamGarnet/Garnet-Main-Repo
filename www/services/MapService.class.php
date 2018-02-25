@@ -3,6 +3,7 @@ include '../data/MapData.class.php';
 include '../models/MapPin.class.php';
 include '../models/FilterButton.class.php';
 include '../components/FilterBar.class.php';
+include '../components/TrackableObjectCard.class.php';
 
 if(isset($_GET['id'])) {
     $mapService = new MapService();
@@ -164,6 +165,6 @@ class MapService {
         echo("In getMapCardInfo");
         $dataClass = new MapData();
         $cardData = $dataClass -> getMapCardData($idTrackableObject);
-        return new TrackableObjectCard($cardData);
+        new TrackableObjectCard($cardData);
     }
 }

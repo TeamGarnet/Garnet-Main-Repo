@@ -114,16 +114,10 @@ $filterBar = $mapData -> generateFilterBar();
     }
 
     function loadObjectInfo(idTrackableObject) {
-        // var xmlhttp = new XMLHttpRequest();
-        // console.log("Inside loadObjectInfo function");
-        // xmlhttp.open("GET", "/home/services/MapService.class.php", true);
-        // xmlhttp.send(idTrackableObject);
-        // console.log("GET request made");
-
         $.ajax({
             type: "GET",
             url: "ajaxCalls.php",
-            data: "idTrackableObject="+idTrackableObject,
+            data: "getMapCardInfoID="+idTrackableObject,
             dataType:"text",
             success: function(data) {
                 console.log(data);
