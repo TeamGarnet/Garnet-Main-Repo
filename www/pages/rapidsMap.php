@@ -119,7 +119,7 @@ $filterBar = $mapData -> generateFilterBar();
             url: "ajaxCalls.php",
             data: {
                 "getMapCardInfoID": String(idTrackableObject),
-                "typeFilterName": String(typeFilterName)},
+                "typeFilterName": typeFilterName},
             dataType:"text",
             success: function(data) {
                 console.log(data);
