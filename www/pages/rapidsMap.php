@@ -140,7 +140,6 @@ $filterBar = $mapData -> generateFilterBar();
             data: "getMapCardInfoID="+String(idTrackableObject),
             dataType:"text",
             success: function(data) {
-                console.log(data);
                 $('#myModal').modal('show');
                 return data;
                 }
