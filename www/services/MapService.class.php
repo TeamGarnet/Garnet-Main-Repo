@@ -125,9 +125,9 @@ class MapService {
     public function generateInfoWindowConfig($pin, $markerName) {
         $objectInfoString = "onclick=" . "'loadObjectInfo("
             . $pin -> getIdTrackableObject()
-            . ","
-            . $pin -> getTypeFilterName()
-            . ");" . '\'';
+            . ",'"
+            . addslashes($pin -> getTypeFilterName())
+            . "');" . '\'';
 
 
         $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
