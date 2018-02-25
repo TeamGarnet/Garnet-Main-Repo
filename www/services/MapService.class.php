@@ -86,7 +86,7 @@ class MapService {
             icon:'" . $pin -> getPinDesign() . "',
             title:'" . $pin -> getName() . "' ,
             map: map ,
-            typeFilterName: '" . $pin -> getTypeFilterName() . "',
+            typeFilterName: " . $pin -> getTypeFilterName() . ",
             idTypeFilter:" . $pin -> getFilterType() . ",
             idHistoricFilter:" . $pin -> getIdHistoricFilter() . "});";
 
