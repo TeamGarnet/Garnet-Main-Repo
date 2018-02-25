@@ -122,7 +122,7 @@ $filterBar = $mapData -> generateFilterBar();
 
         $.ajax({
             type: "GET",
-            url: "../services/MapService.Class.php",
+            url: "/services/MapService.class.php",
             data: "id="+idTrackableObject,
             dataType:"json",
             success: function(data) {
