@@ -127,7 +127,7 @@ class MapService {
             . $pin -> getIdTrackableObject()
             . ","
             . $pin -> getTypeFilterNameWithQuote()
-            . ");" . "'";
+            . ");" . '\'';
 
 
         $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
