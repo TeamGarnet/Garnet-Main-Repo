@@ -126,7 +126,7 @@ class MapService {
         $objectInfoString = "onclick=" . "'loadObjectInfo("
             . $pin -> getIdTrackableObject()
             . ","
-            . json_encode($pin -> getTypeFilterName())
+            . $pin -> getTypeFilterNameWithQuote()
             . ");" . "'";
 
 

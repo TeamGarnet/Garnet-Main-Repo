@@ -25,6 +25,7 @@ class MapPin {
     private $idHistoricFilter;
 
     private $typeFilterName;
+    private $typeFilterNameWithQuote;
 
 
     /**
@@ -52,6 +53,7 @@ class MapPin {
         $this -> setPinDesign($pinDesign);
         $this -> setIdHistoricFilter($idHistoricFilter);
         $this -> setTypeFilterName($typeFilterName);
+        $this -> setTypeFilterNameWithQuote($typeFilterName);
     }
 
 
@@ -67,12 +69,17 @@ class MapPin {
      * @param mixed $typeFilterName
      */
     public function getTypeFilterNameWithQuote() {
-        return "'". $this -> typeFilterName . "'";
+        return typeFilterNameWithQuote;
     }
 
     public function setTypeFilterName($typeFilterName) {
         $this -> typeFilterName = $typeFilterName;
     }
+
+    public function setTypeFilterNameWithQuote($typeFilterName) {
+        $this -> typeFilterNameWithQuote = "'" . $typeFilterName . "'";
+    }
+
 
     /**
      * @return int : the ID stored in the DB of the trackable object
