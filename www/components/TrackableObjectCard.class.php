@@ -1,7 +1,7 @@
 <?php
 
 class TrackableObjectCard {
-    // Grave attribtues - inheritance may be more appropriate for this class
+    // Grave attribtues
     private $firstName;
     private $middleName;
     private $lastName;
@@ -51,6 +51,8 @@ class TrackableObjectCard {
     }
 
     public function setNaturalHistoryInfo($cardDataArray) {
+        $commonName1 = $cardDataArray['commonName'];
+        echo "Common name: $commonName1";
         $this -> commonName = $cardDataArray['commonName'];
         $this -> scientificName = $cardDataArray['scientificName'];
         $this -> description = $cardDataArray['description'];
