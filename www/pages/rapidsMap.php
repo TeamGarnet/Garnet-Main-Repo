@@ -122,18 +122,13 @@ $filterBar = $mapData -> generateFilterBar();
 
         $.ajax({
             type: "GET",
-            url: "https://team-garnet.ist.rit.edu/services/MapService.class.php",
-            data: "id="+idTrackableObject,
+            url: "ajaxCalls.php",
+            data: "idTrackableObject="+idTrackableObject,
             dataType:"text",
             success: function(data) {
                 console.log(data);
             }
         });
-
-        console.log("Calling PHP");
-        <?php
-            $mapData -> getMapCardInfo(idTrackableObject);
-        ?>
     }
 
 </script>
