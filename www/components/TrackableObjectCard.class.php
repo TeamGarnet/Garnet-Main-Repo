@@ -81,6 +81,7 @@ class TrackableObjectCard {
         $modalStyle = $this -> getModalClosure();
         $modal = $modalContent . $modalStyle;
 
+        echo  $modal;
         return $modal;
     }
 
@@ -94,7 +95,7 @@ class TrackableObjectCard {
 
         $modalStyle = $this -> getModalClosure();
         $modal = $modalContent . $modalStyle;
-
+        echo  $modal;
         return $modal;
     }
 
@@ -108,7 +109,7 @@ class TrackableObjectCard {
 
         $modalStyle = $this -> getModalClosure();
         $modal = $modalContent . $modalStyle;
-
+        echo  $modal;
         return $modal;
     }
 
