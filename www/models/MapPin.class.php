@@ -66,8 +66,9 @@ class MapPin {
     /**
      * @param mixed $typeFilterName
      */
-    public function setTypeFilterNameWithQuote($typeFilterName) {
-        $this -> typeFilterName = "'". $typeFilterName . "'";
+    public function getTypeFilterNameWithQuote() {
+        $newTypeFilterName = "'". $this -> typeFilterName . "'";
+        return $newTypeFilterName;
     }
 
     public function setTypeFilterName($typeFilterName) {
