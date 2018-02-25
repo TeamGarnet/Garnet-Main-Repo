@@ -129,7 +129,7 @@ class MapService {
 
         $infoWindowContent =  "<div>
 <div class='first' style = 'width:250px;height:auto;text-align:center'><img src="
-            .$pin -> getImage()
+            .$pin -> getImageDescription()
             ." style=width:100px;height:100px;/></br><h4>"
             .$pin -> getName()
             ."</h4>"
