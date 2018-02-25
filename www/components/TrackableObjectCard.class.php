@@ -63,10 +63,20 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modal = $this -> createModal();
-        return "$modal" . "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
+        $modalContent = "<div><img src='images/download.jpg' style=width:100px;height:100px;/></br><h4>"
+            . $this-> firstName . " " . $this -> lastName . "</br><h6>("
+            . $this -> birth . " - " . $this -> death . ")" . "</h6></h4>"
+            . $this -> description;
+
+        $modalStyle = "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
+        $modal = $modalContent + $modalStyle;
+        echo $modal;
+        return $modal;
+        /*
+        echo "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
             "<div id='birthDeathDate'>" . $this -> birth . " - " . $this -> death . "</div>" .
             "<div id='description'>" . $this -> description . "</div>";
+        */
     }
 
     public function getNaturalHistoryInfo() {
