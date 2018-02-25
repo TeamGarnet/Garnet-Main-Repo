@@ -77,7 +77,7 @@ class MapPin {
     }
 
     public function setTypeFilterNameWithQuote($typeFilterName) {
-        $this -> typeFilterNameWithQuote = "'" . $typeFilterName . "'";
+        $this -> typeFilterNameWithQuote = '\'' . $typeFilterName . '\'';
     }
 
 
