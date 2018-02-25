@@ -126,9 +126,8 @@ class MapService {
         $objectInfoString = "onclick=" . "'loadObjectInfo("
             . $pin -> getIdTrackableObject()
             . ","
-            . '\''
             . $pin -> getTypeFilterName()
-            . '\'' . ");" . '\'';
+            . ");" . '\'';
 
 
         $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
