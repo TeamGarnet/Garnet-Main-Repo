@@ -86,7 +86,7 @@ class MapData {
             $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
             $stmt -> bindParam(':idTrackableObject',$idTrackableObject);
             $stmt -> execute();
-            $filterType = strval($stmt -> fetch());
+            $filterType = strval($stmt -> fetchColumn());
 
             // 2. Push filter type to array to pass up through service to create TrackableObjectCard
             $objectCardData['type'] = $filterType;
