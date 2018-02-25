@@ -113,13 +113,11 @@ $filterBar = $mapData -> generateFilterBar();
         infoWindow.open(map);
     }
 
-    function loadObjectInfo(idTrackableObject, typeFilterName) {
+    function loadObjectInfo(idTrackableObject) {
         $.ajax({
             type: "GET",
             url: "ajaxCalls.php",
-            data: {
-                "getMapCardInfoID": String(idTrackableObject),
-                "typeFilterName": String(typeFilterName)},
+            data: "getMapCardInfoID="+String(idTrackableObject),
             dataType:"text",
             success: function(data) {
                 console.log(data);

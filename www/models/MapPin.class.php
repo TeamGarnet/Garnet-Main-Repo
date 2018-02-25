@@ -24,8 +24,6 @@ class MapPin {
 
     private $idHistoricFilter;
 
-    private $typeFilterName;
-
 
     /**
      * MapPin constructor. The following params are fields in the Database that
@@ -40,7 +38,7 @@ class MapPin {
      * @param $pinDesign : a url to the marker design to be used for the pin
      * @param $idHistoricFilter
      */
-    public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $filterType, $pinDesign, $idHistoricFilter, $typeFilterName) {
+    public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $filterType, $pinDesign, $idHistoricFilter) {
         $this -> setIdTrackableObject($idTrackableObject);
         $this -> setLatitude($latitude);
         $this -> setLongitude($longitude);
@@ -50,24 +48,9 @@ class MapPin {
         $this -> setFilterType($filterType);
         $this -> setPinDesign($pinDesign);
         $this -> setIdHistoricFilter($idHistoricFilter);
-        $this -> setTypeFilterName($typeFilterName);
     }
 
 
-
-    /**
-     * @return mixed
-     */
-    public function getTypeFilterName() {
-        return $this -> typeFilterName;
-    }
-
-    /**
-     * @param mixed $typeFilterName
-     */
-    public function setTypeFilterName($typeFilterName) {
-        $this -> typeFilterName = $typeFilterName;
-    }
 
     /**
      * @return int : the ID stored in the DB of the trackable object

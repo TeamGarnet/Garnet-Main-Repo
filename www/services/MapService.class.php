@@ -86,7 +86,7 @@ class MapService {
             icon:'" . $pin -> getPinDesign() . "',
             title:'" . $pin -> getName() . "' ,
             map: map ,
-            typeFilterName: " . $pin -> getTypeFilterName() . ",
+            markerName: " . $markerName . ",
             idTypeFilter:" . $pin -> getFilterType() . ",
             idHistoricFilter:" . $pin -> getIdHistoricFilter() . "});";
 
@@ -127,7 +127,7 @@ class MapService {
             . $pin -> getImageLocation() . "' alt='"
             . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName'>"
             . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . "," . $pin -> getTypeFilterName() . ");'> Learn more about "
+            . $pin -> getIdTrackableObject() . ");'> Learn more about "
             . $pin -> getName() . "</a> </div>" . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
@@ -161,9 +161,9 @@ class MapService {
         return $filterBar -> getFilterBar();
     }
 
-    public function getMapCardInfo($idTrackableObject, $typeFilterName) {
+    public function getMapCardInfo($idTrackableObject) {
         $mapData = new MapData();
-        $cardData = $mapData -> getMapCardData($idTrackableObject, $typeFilterName);
+        $cardData = $mapData -> getMapCardData($idTrackableObject);
         return new TrackableObjectCard($cardData);
     }
 }
