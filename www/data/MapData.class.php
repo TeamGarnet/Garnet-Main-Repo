@@ -108,7 +108,6 @@ class MapData {
             $stmt -> execute();
             while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                 $objectCardData = array_merge($objectCardData, $result);
-                var_dump($objectCardData);
             }
             return $objectCardData;
         } catch (PDOException $e) {
