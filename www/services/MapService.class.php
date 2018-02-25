@@ -165,6 +165,6 @@ class MapService {
         $mapData = new MapData();
         $cardData = $mapData -> getMapCardData($idTrackableObject);
         print_r($cardData);
-        new TrackableObjectCard($cardData);
+        return new TrackableObjectCard($cardData);
     }
 }

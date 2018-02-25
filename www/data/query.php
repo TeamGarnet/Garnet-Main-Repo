@@ -19,7 +19,7 @@ $miscInfoQuery = "SELECT miscobject.name, miscobject.description, miscobject.isH
 FROM  miscobject 
 INNER JOIN trackableobject 
 ON miscobject.idMisc = trackableobject.idMisc
-WHERE miscobject.idMisc = trackableobject.idMisc;";
+WHERE miscobject.idMisc =:idTrackableObject";
 
 $graveInfoQuery = "SELECT grave.firstName, grave.middleName, grave.lastName, 
 DATE_FORMAT(grave.birth, '%b %d %Y') AS birth, DATE_FORMAT(grave.death, '%b %d %Y') AS death, 
@@ -27,14 +27,14 @@ grave.description
 FROM grave 
 INNER JOIN trackableobject 
 ON grave.idGrave = trackableobject.idGrave
-WHERE grave.idGrave = trackableobject.idGrave;
-";
+WHERE grave.idGrave =:idTrackableObject";
+
 
 $naturalHistoryInfoQuery = "SELECT naturalhistory.commonName, naturalhistory.scientificName, naturalhistory.description
 FROM naturalhistory 
 INNER JOIN trackableobject
 ON naturalhistory.idNaturalHistory = trackableobject.idNaturalHistory
-WHERE naturalhistory.idNaturalHistory = trackableobject.idNaturalHistory;";
+WHERE naturalhistory.idNaturalHistory =:idTrackableObject";
 
 $filterTypeQuery = "SELECT typefilter.type
 FROM typefilter
