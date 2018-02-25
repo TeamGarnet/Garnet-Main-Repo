@@ -133,7 +133,6 @@ class MapService {
             ." style=width:100px;height:100px;/></br><h4>"
             .$pin -> getName()
             ."</h4>"
-            .$pin -> getDescription()
             . "</br></br><button onclick='openup()' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button>
 </div></div>";
 
