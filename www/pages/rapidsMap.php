@@ -122,7 +122,7 @@ $filterBar = $mapData -> generateFilterBar();
 
         $.ajax({
             type: "GET",
-            url: "/services/MapService.class.php",
+            url: "https://team-garnet.ist.rit.edu/services/MapService.class.php",
             data: "id="+idTrackableObject,
             dataType:"text",
             success: function(data) {
