@@ -61,22 +61,8 @@ $filterBar = $mapData -> generateFilterBar();
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+<div class=".popup-overlay">
+    <div class=".popup-content">
 
     </div>
 </div>
@@ -140,12 +126,24 @@ $filterBar = $mapData -> generateFilterBar();
             data: "getMapCardInfoID="+String(idTrackableObject),
             dataType:"text",
             success: function(data) {
-                $('#myModal').modal('show');
-                return data;
-                }
+                $(".popup-content").append(data);
+                $(".popup-overlay, .popup-content").show("fast");
+            }
         });
     }
 
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+    $("#flip").on('click',function(){
+        $(this).children('i.fa-sort-down').toggleClass('i.fa-sort-up');
+    });
+
+    function shutdown() {
+        $(".popup-overlay, .popup-content").hide("fast");
+    }
 
 
 </script>
@@ -154,3 +152,47 @@ $filterBar = $mapData -> generateFilterBar();
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
 </script>
 
+<style>
+    .popup-overlay{
+        z-index:999;
+        position: absolute;
+        background:#ffffff;
+
+        width:100%;
+        height:100%;
+        left:0%;
+        top:0%;
+    }
+    .popup-overlay.active{
+        /*displays pop-up when "active" class is present*/
+        visibility:visible;
+        text-align:center;
+    }
+    .popup-content.active {
+        /*Shows pop-up content when "active" class is present */
+        visibility:visible;
+    }/*
+.gm-style-iw {
+	width: 500px !important;
+	height: 500px;
+	top: 15px !important;
+	left: 0px !important;
+	background-color: #fff0;
+	box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+	border: 1px solid rgba(72, 181, 233, 0.6);
+	border-radius: 2px 2px 10px 10px;
+}*/
+    #panel, #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+    }
+    #panel {
+        display: none;
+    }
+    .secondmenu input[type="radio"] {
+        opacity: 0;
+    }
+    .paragraph{margin: 80px 0px 10px!important;}
+</style>
