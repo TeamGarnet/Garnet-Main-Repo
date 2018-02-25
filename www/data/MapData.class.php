@@ -106,9 +106,10 @@ class MapData {
 
             $stmt -> bindParam(':idTrackableObject', $idTrackableObject);
             $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_ASSOC);
-            while($result = $stmt -> fetchAll()) {
+            while($result = $stmt -> fetchAll(PDO::FETCH_ASSOC)) {
+                var_dump($result);
                 array_push($objectCardData, $result);
+                var_dump($objectCardData);
             }
             return $objectCardData;
         } catch (PDOException $e) {

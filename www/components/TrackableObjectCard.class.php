@@ -51,8 +51,6 @@ class TrackableObjectCard {
     }
 
     public function setNaturalHistoryInfo($cardDataArray) {
-        $commonName1 = $cardDataArray['commonName'];
-        echo "Common name: $commonName1";
         $this -> commonName = $cardDataArray['commonName'];
         $this -> scientificName = $cardDataArray['scientificName'];
         $this -> description = $cardDataArray['description'];
