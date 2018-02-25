@@ -5,12 +5,6 @@ include '../models/FilterButton.class.php';
 include '../components/FilterBar.class.php';
 include '../components/TrackableObjectCard.class.php';
 
-if(isset($_GET['id'])) {
-    $mapService = new MapService();
-    $mapService -> getMapCardInfo($_GET['id']);
-    unset($_GET['id']);
-}
-
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
  * Database. Can create markers and info windows for the marksers.
