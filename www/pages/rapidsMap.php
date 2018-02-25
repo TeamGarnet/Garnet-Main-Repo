@@ -135,6 +135,7 @@ $filterBar = $mapData -> generateFilterBar();
     }
 
     function showModal(data) {
+        $("#popup-content").html('');
         $("#popup-content").append(data);
         $("#popup-content").show("fast");
     }
