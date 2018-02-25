@@ -162,8 +162,9 @@ class MapService {
     }
 
     public function getMapCardInfo($idTrackableObject) {
-        $dataClass = new MapData();
-        $cardData = $dataClass -> getMapCardData($idTrackableObject);
+        $mapData = new MapData();
+        $cardData = $mapData -> getMapCardData($idTrackableObject);
+        print_r($cardData);
         new TrackableObjectCard($cardData);
     }
 }
