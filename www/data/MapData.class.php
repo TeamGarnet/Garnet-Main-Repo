@@ -75,7 +75,6 @@ class MapData {
     }
 
     public function getMapCardData($idTrackableObject) {
-        print_r($idTrackableObject);
         global $filterTypeQuery;
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;
@@ -87,9 +86,7 @@ class MapData {
             $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
             $stmt -> bindParam(':idTrackableObject',$idTrackableObject);
             $stmt -> execute();
-            print_r($stmt);
             $filterType = strval($stmt -> fetch());
-            print_r($filterType);
 
             // 2. Push filter type to array to pass up through service to create TrackableObjectCard
             $objectCardData['type'] = $filterType;
@@ -107,6 +104,7 @@ class MapData {
                     break;
             }
 
+            $stmt -> bindParam('idTrackableObject', $idTrackableObject);
             $stmt -> execute();
             $stmt -> setFetchMode(PDO::FETCH_ASSOC);
             while($result = $stmt -> fetch()) {
