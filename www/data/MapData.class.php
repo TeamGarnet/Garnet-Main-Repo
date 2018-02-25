@@ -106,7 +106,7 @@ class MapData {
 
             $stmt -> bindParam('idTrackableObject', $idTrackableObject);
             $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrackableObjectCard.class");
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, TrackableObjectCard::class);
             while($result = $stmt -> fetch()) {
                 array_push($objectCardData, $result);
             }
