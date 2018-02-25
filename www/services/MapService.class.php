@@ -126,7 +126,7 @@ class MapService {
         $objectInfoString = "onclick=" . "'loadObjectInfo("
             . $pin -> getIdTrackableObject()
             . ","
-            . $pin -> setTypeFilterNameWithQuote()
+            . $pin -> getTypeFilterName()
             . ");" . '\'';
 
 
