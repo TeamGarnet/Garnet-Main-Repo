@@ -126,7 +126,7 @@ $filterBar = $mapData -> generateFilterBar();
             data: "getMapCardInfoID="+String(idTrackableObject),
             dataType:"text",
             success: function(data) {
-                $(".popup-content").append(data);
+                $(".popup-content").html(data);
                 $(".popup-overlay, .popup-content").show("fast");
             }
         });
