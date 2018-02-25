@@ -61,6 +61,15 @@ $filterBar = $mapData -> generateFilterBar();
     </div>
 </div>
 
+<!--Modal -->
+<div id="Modal" class="Modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
+</div>
+
 <!-- Google Map-->
 <div id="map"></div>
 
@@ -121,6 +130,12 @@ $filterBar = $mapData -> generateFilterBar();
             dataType:"text",
             success: function(data) {
                 console.log(data);
+                // When the user clicks the link, open the modal
+                modal.style.display = "block";
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
             }
         });
     }
