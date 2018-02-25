@@ -162,6 +162,7 @@ class MapService {
     }
 
     public function getMapCardInfo($idTrackableObject) {
+        print_r($idTrackableObject);
         $mapData = new MapData();
         $cardData = $mapData -> getMapCardData($idTrackableObject);
         print_r($cardData);

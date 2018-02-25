@@ -75,6 +75,7 @@ class MapData {
     }
 
     public function getMapCardData($idTrackableObject) {
+        print_r($idTrackableObject);
         global $filterTypeQuery;
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;

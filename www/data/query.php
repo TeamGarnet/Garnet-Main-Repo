@@ -15,32 +15,35 @@ $loginUserQuery = "SELECT idUser FROM `User` WHERE email=:email AND password=:pw
 
 $userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM User WHERE idUser=:idUser";
 
-$miscInfoQuery = "SELECT miscobject.name, miscobject.description, miscobject.isHazard
-FROM  miscobject 
-INNER JOIN trackableobject 
-ON miscobject.idMisc = trackableobject.idMisc
-WHERE miscobject.idMisc =:idTrackableObject";
-
-$graveInfoQuery = "SELECT grave.firstName, grave.middleName, grave.lastName, 
-DATE_FORMAT(grave.birth, '%b %d %Y') AS birth, DATE_FORMAT(grave.death, '%b %d %Y') AS death, 
-grave.description
-FROM grave 
-INNER JOIN trackableobject 
-ON grave.idGrave = trackableobject.idGrave
-WHERE grave.idGrave =:idTrackableObject";
 
 
-$naturalHistoryInfoQuery = "SELECT naturalhistory.commonName, naturalhistory.scientificName, naturalhistory.description
-FROM naturalhistory 
-INNER JOIN trackableobject
-ON naturalhistory.idNaturalHistory = trackableobject.idNaturalHistory
-WHERE naturalhistory.idNaturalHistory =:idTrackableObject";
+$miscInfoQuery = "SELECT MiscObject.name, MiscObject.description, MiscObject.isHazard
+FROM  MiscObject 
+INNER JOIN TrackableObject 
+ON MiscObject.idMisc = TrackableObject.idMisc
+WHERE MiscObject.idMisc =:idTrackableObject";
 
-$filterTypeQuery = "SELECT typefilter.type
-FROM typefilter
-INNER JOIN trackableobject
-ON typefilter.idTypeFilter = trackableobject.idTypeFilter
-WHERE trackableobject.idTrackableObject = :idTrackableObject";
+$graveInfoQuery = "SELECT Grave.firstName, Grave.middleName, Grave.lastName, 
+DATE_FORMAT(Grave.birth, '%b %d %Y') AS birth, DATE_FORMAT(Grave.death, '%b %d %Y') AS death, 
+Grave.description
+FROM Grave 
+INNER JOIN TrackableObject 
+ON Grave.idGrave = TrackableObject.idGrave
+WHERE Grave.idGrave =:idTrackableObject";
+
+$naturalHistoryInfoQuery = "SELECT NaturalHistory.commonName, NaturalHistory.scientificName, NaturalHistory.description
+FROM NaturalHistory 
+INNER JOIN TrackableObject
+ON NaturalHistory.idNaturalHistory = TrackableObject.idNaturalHistory
+WHERE NaturalHistory.idNaturalHistory =:idTrackableObject";
+
+$filterTypeQuery = "SELECT TypeFilter.type
+FROM TypeFilter
+INNER JOIN TrackableObject
+ON TypeFilter.idTypeFilter = TrackableObject.idTypeFilter
+WHERE TrackableObject.idTrackableObject = :idTrackableObject";
+
+
 
 $filterBarQuery = "
 SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonColor, concat('historicFilter') as `table` FROM HistoricFilter 
