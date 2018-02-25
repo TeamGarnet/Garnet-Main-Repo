@@ -128,8 +128,6 @@ $filterBar = $mapData -> generateFilterBar();
             success: function(data) {
                 //alert(data);
                 showModal(data);
-                //$("#popup-content").append(data);
-                //$("#popup-overlay, #popup-content").show("fast");
             }
         });
     }

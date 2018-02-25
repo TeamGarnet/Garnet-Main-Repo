@@ -17,25 +17,25 @@ $userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM Us
 
 
 
-$miscInfoQuery = "SELECT MiscObject.name, MiscObject.description, MiscObject.isHazard
+$miscInfoQuery = "SELECT T.imageLocation, T.imageDescription, MiscObject.name, MiscObject.description, MiscObject.isHazard
 FROM  MiscObject 
-INNER JOIN TrackableObject 
-ON MiscObject.idMisc = TrackableObject.idMisc
-WHERE TrackableObject.idTrackableObject =:idTrackableObject";
+INNER JOIN TrackableObject T
+ON MiscObject.idMisc = T.idMisc
+WHERE T.idTrackableObject =:idTrackableObject";
 
-$graveInfoQuery = "SELECT Grave.firstName, Grave.middleName, Grave.lastName, 
+$graveInfoQuery = "SELECT T.imageLocation, T.imageDescription,  Grave.firstName, Grave.middleName, Grave.lastName, 
 DATE_FORMAT(Grave.birth, '%b %d %Y') AS birth, DATE_FORMAT(Grave.death, '%b %d %Y') AS death, 
 Grave.description
 FROM Grave 
-INNER JOIN TrackableObject 
-ON Grave.idGrave = TrackableObject.idGrave
-WHERE TrackableObject.idTrackableObject =:idTrackableObject";
+INNER JOIN TrackableObject T
+ON Grave.idGrave = T.idGrave
+WHERE T.idTrackableObject =:idTrackableObject";
 
-$naturalHistoryInfoQuery = "SELECT NaturalHistory.commonName, NaturalHistory.scientificName, NaturalHistory.description
+$naturalHistoryInfoQuery = "SELECT T.imageLocation, T.imageDescription,  NaturalHistory.commonName, NaturalHistory.scientificName, NaturalHistory.description
 FROM NaturalHistory 
-INNER JOIN TrackableObject
-ON NaturalHistory.idNaturalHistory = TrackableObject.idNaturalHistory
-WHERE TrackableObject.idTrackableObject =:idTrackableObject";
+INNER JOIN TrackableObject T
+ON NaturalHistory.idNaturalHistory = T.idNaturalHistory
+WHERE T.idTrackableObject =:idTrackableObject";
 
 $filterTypeQuery = "SELECT TypeFilter.type
 FROM TypeFilter

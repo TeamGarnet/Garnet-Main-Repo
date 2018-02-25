@@ -18,6 +18,8 @@ class TrackableObjectCard {
 
     // Common attributes
     private $description;
+    private $imageLocation;
+    private $imageDescription;
 
     public function __construct($cardDataArray) {
         foreach($cardDataArray as $key => $value) {
@@ -48,72 +50,69 @@ class TrackableObjectCard {
         $this -> birth = $cardDataArray['birth'];
         $this -> death = $cardDataArray['death'];
         $this -> description = $cardDataArray['description'];
+        $this -> imageLocation = $cardDataArray['imageLocation'];
+        $this -> imageDescription = $cardDataArray['imageDescription'];
     }
 
     public function setNaturalHistoryInfo($cardDataArray) {
         $this -> commonName = $cardDataArray['commonName'];
         $this -> scientificName = $cardDataArray['scientificName'];
         $this -> description = $cardDataArray['description'];
+        $this -> imageLocation = $cardDataArray['imageLocation'];
+        $this -> imageDescription = $cardDataArray['imageDescription'];
     }
 
     public function setMiscObjectInfo($cardDataArray) {
         $this -> name = $cardDataArray;
         $this -> isHazard = $cardDataArray['isHazard'];
         $this -> description = $cardDataArray['description'];
+        $this -> imageLocation = $cardDataArray['imageLocation'];
+        $this -> imageDescription = $cardDataArray['imageDescription'];
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='images/download.jpg' style=width:100px;height:100px;/></br><h4>"
+        $modalContent = "<div class='.popup-overlay .active'><img src='"
+            . $this -> imageLocation . "' alt='"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
             . $this-> firstName . " " . $this -> lastName . "</br><h6>("
             . $this -> birth . " - " . $this -> death . ")" . "</h6></h4>"
             . $this -> description;
 
-        $modalStyle = "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
+        $modalStyle = $this -> getModalClosure();
         $modal = $modalContent . $modalStyle;
 
-        echo $modal;
         return $modal;
-
-
-        /*
-        echo "<div id='graveFullName'>" . $this -> firstName . " " . $this -> middleName . " " . $this -> lastName . "</div>" .
-            "<div id='birthDeathDate'>" . $this -> birth . " - " . $this -> death . "</div>" .
-            "<div id='description'>" . $this -> description . "</div>";
-        */
     }
 
     public function getNaturalHistoryInfo() {
-        echo "<div id='scientificName'>" . $this -> scientificName . "</div>" .
-            "<div id='commonName'>" . $this -> commonName . "</div>" .
-            "<div id ='description'>" . $this -> description . "</div>";
+        $modalContent = "<div class='.popup-overlay .active'><img src='"
+            . $this -> imageLocation . "' alt='"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
+            . $this-> commonName . "</br><h6>("
+            . $this -> scientificName . "</h6></h4>"
+            . $this -> description;
+
+        $modalStyle = $this -> getModalClosure();
+        $modal = $modalContent . $modalStyle;
+
+        return $modal;
     }
 
     public function getMiscObjectInfo() {
-        echo "<div id='name'>" . $this -> name . "</div>" .
-            "<div id='isHazard'> Hazard?" . $this -> isHazard . "</div>" .
-            "<div id = 'description'>" . $this -> description . "</div>";
+        $modalContent = "<div class='.popup-overlay .active'><img src='"
+            . $this -> imageLocation . "' alt='"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
+            . $this-> name . "</br><h6> Hazardous Location: ("
+            . $this -> isHazard . "</h6></h4>"
+            . $this -> description;
+
+        $modalStyle = $this -> getModalClosure();
+        $modal = $modalContent . $modalStyle;
+
+        return $modal;
     }
 
-    private function createModal() {
-        return "<!-- Modal -->
-        <div id='myModal' class='modal fade' role='dialog'>
-          <div class='modal-dialog'>
-        
-            <!-- Modal content-->
-            <div class='modal-content'>
-              <div class='modal-header'>
-                <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                <h4 class='modal-title'>Modal Header</h4>
-              </div>
-              <div class='modal-body'>
-                <p>Some text in the modal.</p>
-              </div>
-              <div class='modal-footer'>
-                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-              </div>
-            </div>
-        
-          </div>
-        </div>";
+    public function getModalClosure() {
+        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
     }
 }
