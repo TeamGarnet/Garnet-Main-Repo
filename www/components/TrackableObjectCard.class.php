@@ -1,5 +1,4 @@
 <?php
-include '../services/MapService.class.php';
 
 class TrackableObjectCard {
     // Grave attribtues - inheritance may be more appropriate for this class
