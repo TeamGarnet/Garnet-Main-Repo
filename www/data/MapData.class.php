@@ -78,6 +78,7 @@ class MapData {
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;
         global $miscInfoQuery;
+        $objectCardData = array();
         try {
 
             // 3. Determine which query to use based on returned filter type.
