@@ -104,7 +104,7 @@ class MapData {
                     break;
             }
 
-            $stmt -> bindParam('idTrackableObject', $idTrackableObject);
+            $stmt -> bindParam(':idTrackableObject', $idTrackableObject);
             $stmt -> execute();
             $stmt -> setFetchMode(PDO::FETCH_ASSOC);
             while($result = $stmt -> fetch()) {
