@@ -39,7 +39,6 @@ class MapPin {
      * @param $filterType
      * @param $pinDesign : a url to the marker design to be used for the pin
      * @param $idHistoricFilter
-     * @param $typeFilterName
      */
     public function __construct($idTrackableObject, $latitude, $longitude, $imageDescription, $imageLocation, $name, $filterType, $pinDesign, $idHistoricFilter, $typeFilterName) {
         $this -> setIdTrackableObject($idTrackableObject);
