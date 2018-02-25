@@ -74,14 +74,25 @@ class MapData {
         }
     }
 
-    public function getMapCardData($idTrackableObject, $typeFilterName) {
+    public function getMapCardData($idTrackableObject) {
+        global $filterTypeQuery;
         global $graveInfoQuery;
         global $naturalHistoryInfoQuery;
         global $miscInfoQuery;
         try {
+            $objectCardData = array();
+
+            // 1. Get the filter type to determine which subsequent table to use.
+            $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
+            $stmt -> bindParam(':idTrackableObject',$idTrackableObject);
+            $stmt -> execute();
+            $filterType = strval($stmt -> fetch());
+
+            // 2. Push filter type to array to pass up through service to create TrackableObjectCard
+            $objectCardData['type'] = $filterType;
 
             // 3. Determine which query to use based on returned filter type.
-            switch ($typeFilterName) {
+            switch ($filterType) {
                 case 'Grave':
                     $stmt = $this -> getDBInfo(1) -> prepare($graveInfoQuery);
                     break;
@@ -93,7 +104,7 @@ class MapData {
                     break;
             }
 
-            $stmt -> bindParam(':idTrackableObject', $idTrackableObject);
+            $stmt -> bindParam('idTrackableObject', $idTrackableObject);
             $stmt -> execute();
             $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrackableObjectCard.class");
             while($result = $stmt -> fetch()) {
