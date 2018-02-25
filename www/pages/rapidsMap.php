@@ -116,7 +116,7 @@ $filterBar = $mapData -> generateFilterBar();
     function loadObjectInfo($idTrackableObject) {
         var xmlhttp = new XMLHttpRequest();
         console.log("Inside loadObjectInfo function");
-        xmlhttp.open("GET", "../../components/TrackableObjectCard.class.php", true);
+        xmlhttp.open("GET", "pages/../components/TrackableObjectCard.class.php", true);
         xmlhttp.send($idTrackableObject);
         console.log("GET request made");
     }
