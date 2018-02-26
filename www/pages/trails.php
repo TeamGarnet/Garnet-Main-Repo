@@ -46,14 +46,14 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3>Rapids History Trails</h3>
+            <h3 style="text-align: center">Rapids History Trails</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <img class="center-block img-responsive" src="http://www.mobygames.com/images/shots/l/698755-dora-the-explorer-swiper-s-big-adventure-windows-screenshot.png" alt="Map of history trails in Rochester"/>
-            <img class="center-block img-responsive" src="TrailMap.jpg" alt="Map of history trails in Rochester"/>
+            <img class="center-block img-responsive" src="TrailMap.jpg" alt="The trail map would go here is the server wasnt being mean to me"/>
         </div>
     </div>
 
