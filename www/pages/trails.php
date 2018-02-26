@@ -49,19 +49,19 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3>Rapids History Trails</h3>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <img class="center-block img-responsive" src="http://www.mobygames.com/images/shots/l/698755-dora-the-explorer-swiper-s-big-adventure-windows-screenshot.png" alt=""/>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div id="">
                 <div class="">
                     <p class="">Red Line</p>
@@ -74,7 +74,7 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
             </div>
         </div>
 
-        <div class="col-xs-6 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div id="">
                 <div class="">
                     <p class="">Blue Line</p>
