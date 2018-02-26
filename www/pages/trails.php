@@ -36,6 +36,7 @@ print_r($allTrailInfo);
     <link rel="stylesheet" href="/pages/css/trails.css" type="text/css">
 </head>
 <body>
+<div>
     <!-- Navigation -->
     <?php include '../components/Navigation.php'; ?>
 
@@ -55,5 +56,6 @@ print_r($allTrailInfo);
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
