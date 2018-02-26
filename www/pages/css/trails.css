@@ -2,13 +2,14 @@ body {
     background-color: #F7F5E9;
 }
 
-#content {
+.container {
     width: 1440px;
     height: 1041.7px;
     background-image: url("../images/TrailBackground.png");
     object-fit: fill;
     margin: auto;
     position: fixed;
+    margin-top: 7%;
 }
 
 #title {

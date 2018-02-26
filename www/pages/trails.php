@@ -42,21 +42,63 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
     </div>
 
 
-    <div id="content">
-        <div id="title"><p>Rochester History Trails</p></div>
-        <img src="images/TrailMap.jpg" alt="Trail Map" id="trailMap"/>
-        <div id="mapLegend">
-            <div class="lineContent">
-                <div class="lineColor"><p>Red Line</p></div>
-                <div class="lineName"><p>1. Genesee Riverway Trail</p></div>
-                <div class="lineInfo"><p>Fanny pack direct trade air plant +1 retro
-                    chambray poke blue bottle wayfarers dreamcatcher aesthetic microdosing
-                    trust fund. Ugh shaman put a bird on it asymmetrical enamel pin selfies
-                    kale chips bitters shoreditch franzen thundercats fixie. </p></div>
-                <a href="#" class="lineLink">rochester.com</a>
+<!--    <div id="content">-->
+<!--        <div id="title"><p>Rochester History Trails</p></div>-->
+<!--        <img src="images/TrailMap.jpg" alt="Trail Map" id="trailMap"/>-->
+<!--        <div id="mapLegend">-->
+<!--            <div class="lineContent">-->
+<!--                <div class="lineColor"><p>Red Line</p></div>-->
+<!--                <div class="lineName"><p>1. Genesee Riverway Trail</p></div>-->
+<!--                <div class="lineInfo"><p>Fanny pack direct trade air plant +1 retro-->
+<!--                    chambray poke blue bottle wayfarers dreamcatcher aesthetic microdosing-->
+<!--                    trust fund. Ugh shaman put a bird on it asymmetrical enamel pin selfies-->
+<!--                    kale chips bitters shoreditch franzen thundercats fixie. </p></div>-->
+<!--                <a href="#" class="lineLink">rochester.com</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <h3>Rapids History Trails</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <img class="center-block img-responsive" src="http://www.mobygames.com/images/shots/l/698755-dora-the-explorer-swiper-s-big-adventure-windows-screenshot.png" alt=""/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-md-6 col-lg-6">
+            <div id="">
+                <div class="">
+                    <p class="">Red Line</p>
+                    <p class="">1. Genesee Riverway Trail</p>
+                    <p class="">
+                        The problem here is that you fixed the position of the fixednav but not the navspacer. When you do this, the fixednav and navspacer are on the same line since one is fixed and not the other. When you add padding to the navspacer, it </p>
+                    <a href="#" class="">rochester.com</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-6 col-lg-6">
+            <div id="">
+                <div class="">
+                    <p class="">Blue Line</p>
+                    <p class="">1. Genesee Riverway Trail</p>
+                    <p class="">
+                        The problem here is that you fixed the position of the fixednav but not the navspacer. When you do this, the fixednav and navspacer are on the same line since one is fixed and not the other. When you add padding to the navspacer, it </p>
+                    <a href="#" class="">rochester.com</a>
+
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 </body>
 </html>
