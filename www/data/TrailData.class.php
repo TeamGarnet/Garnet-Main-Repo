@@ -1,5 +1,6 @@
 <?php
-
+include '../services/DatabaseConnection.class.php';
+include 'query.php';
 
 class TrailData {
     /**
@@ -27,6 +28,18 @@ class TrailData {
     }
 
     public function getAllTrailLocations() {
-
+        global $allTrailLocationQuery;
+        try {
+            $allTrailLocations = array();
+            $stmt = $this -> getDBInfo(1) -> prepare($allTrailLocationQuery);
+            $stmt -> execute();
+            while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+                $allTrailLocations = array_merge($allTrailLocations, $result);
+            }
+            return $allTrailLocations;
+        } catch (Exception $e) {
+            echo $e -> getMessage();
+            die();
+        }
     }
 }
