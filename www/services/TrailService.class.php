@@ -32,7 +32,7 @@ class TrailService {
                 . $trailObjectInfo -> getLineColor() . '</p><p class="">'
                 . $trailObjectInfo -> getName() . '</p><p class="">'
                 . $trailObjectInfo -> getDescription() . '</p><a href="#" class="">'
-                . $trailObjectInfo -> getUrl() . '</div></div></div>'
+                . $trailObjectInfo -> getUrl() . '</a></div></div></div>'
             ;
         };
 
