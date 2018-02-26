@@ -53,7 +53,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <img class="center-block img-responsive" src="http://www.mobygames.com/images/shots/l/698755-dora-the-explorer-swiper-s-big-adventure-windows-screenshot.png" alt="Map of history trails in Rochester"/>
-            <img class="center-block img-responsive" src="TrailMap.jpg" alt="The trail map would go here is the server wasnt being mean to me"/>
+            <img class="center-block img-responsive" src="TrailMap.jpg" alt="The trail map would go here under the dora map if the server wasnt being mean to me. Its not loading"/>
         </div>
     </div>
 
