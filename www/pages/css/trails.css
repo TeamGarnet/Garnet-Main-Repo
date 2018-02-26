@@ -8,6 +8,7 @@ body {
     background-image: url("../images/TrailBackground.png");
     object-fit: fill;
     margin: auto;
+    position: fixed;
 }
 
 #title {
