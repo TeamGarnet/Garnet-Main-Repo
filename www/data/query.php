@@ -51,4 +51,4 @@ UNION
 SELECT idTypeFilter, type, buttonColor, concat('typeFilter') as `Table` FROM TypeFilter;
 ";
 
-$allTrailLocationQuery = "SELECT *  FROM RapidsCemetery.WiderAreaMap";
+$allTrailLocationQuery = "SELECT * FROM RapidsCemetery.WiderAreaMap";

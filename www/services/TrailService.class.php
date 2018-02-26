@@ -19,6 +19,8 @@ class TrailService {
             $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], $trailArray['description'], $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode']);
 
             array_push($allTrailObjects, $trailObject);
+            print_r($trailObject);
+            echo "<br>";
         }
         return $allTrailObjects;
     }
