@@ -2,7 +2,7 @@
 include '../services/TrailService.class.php';
 $trailService = new TrailService();
 $allTrailInfo = $trailService ->getAllTrailLocationInfo();
-
+print_r($allTrailInfo);
 ?>
 
 <!-- HTML -->
