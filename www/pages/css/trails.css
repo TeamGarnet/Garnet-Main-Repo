@@ -3,12 +3,7 @@ body {
 }
 
 .container {
-    width: 1440px;
-    height: 1041.7px;
     background-image: url("../images/TrailBackground.png");
-    object-fit: fill;
-    margin: auto;
-    position: fixed;
     margin-top: 7%;
 }
 
@@ -34,69 +29,4 @@ body {
     display: block;
     margin: auto;
     padding-bottom: 20px;
-}
-
-#mapLegend {
-    width: 907.1px;
-    height: 349px;
-    background-color: #ffffff;
-    margin: auto;
-}
-
-.lineContent {
-    width: 400px;
-    padding: 10px;
-}
-
-.lineColor {
-    width: 74.8px;
-    height: 9.2px;
-    font-family: ProzaLibre;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: italic;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #c4ada5;
-}
-
-.lineName {
-    width: 283px;
-    height: 32px;
-    font-family: CormorantGaramond;
-    font-size: 25px;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -1.2px;
-    color: #210e07;
-}
-
-.lineInfo {
-    width: 400.6px;
-    height: 48px;
-    font-family: ProzaLibre;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #5d463e;
-    padding-top: 8px;
-}
-
-.lineLink {
-    width: 262.5px;
-    height: 22px;
-    font-family: ProzaLibre;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #2d9cdb;
 }

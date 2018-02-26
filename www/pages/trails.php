@@ -19,10 +19,16 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/pages/css/thirdParty/font-awesome.css" type="text/css">
-    <link href="/pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/pages/css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="/pages/css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="/pages/css/thirdParty/dropdoun.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <link rel="apple-touch-icon" sizes="120x120" href="/pages/images/favicon/apple-touch-icon.png">
@@ -33,7 +39,6 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="/pages/css/trails.css" type="text/css">
-    <link rel="stylesheet" href="/pages/css/maps.css" type="text/css">
 </head>
 <body>
 
