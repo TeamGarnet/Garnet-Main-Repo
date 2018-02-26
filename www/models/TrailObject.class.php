@@ -162,5 +162,8 @@ class TrailObject {
         $this -> zipcode = $zipcode;
     }
 
+    public function getLineColor() {
+        return '';
+    }
 
 }

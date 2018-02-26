@@ -23,4 +23,21 @@ class TrailService {
         return $allTrailObjects;
     }
 
+    public function formatTrailLocationsInfo() {
+        $allTrailObjectsInfo = $this ->getAllTrailLocationInfo();
+        $formattedTrailLocationInfo = "";
+
+        foreach ($allTrailObjectsInfo as $trailObjectInfo){
+            $formattedTrailLocationInfo .= '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div id=""><div class=""><p class="">'
+                . $trailObjectInfo -> getLineColor() . '</p><p class="">'
+                . $trailObjectInfo -> getName() . '</p><p class="">'
+                . $trailObjectInfo -> getDescription() . '</p><a href="#" class="">'
+                . $trailObjectInfo -> getUrl() . '</div></div></div>'
+            ;
+        };
+
+
+        return $formattedTrailLocationInfo;
+    }
+
 }
