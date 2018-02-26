@@ -33,6 +33,7 @@ print_r($allTrailInfo);
     <link rel="mask-icon" href="/pages/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/pages/css/trails.css" type="text/css">
 </head>
 <body>
     <!-- Navigation -->
