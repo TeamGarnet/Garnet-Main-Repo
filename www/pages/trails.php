@@ -33,6 +33,7 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="/pages/css/trails.css" type="text/css">
+    <link rel="stylesheet" href="/pages/css/maps.css" type="text/css">
 </head>
 <body>
 
@@ -40,23 +41,6 @@ $allTrailInfo = $trailService ->getAllTrailLocationInfo();
     <div id="'navigation">
     <?php include '../components/Navigation.php'; ?>
     </div>
-
-
-<!--    <div id="content">-->
-<!--        <div id="title"><p>Rochester History Trails</p></div>-->
-<!--        <img src="images/TrailMap.jpg" alt="Trail Map" id="trailMap"/>-->
-<!--        <div id="mapLegend">-->
-<!--            <div class="lineContent">-->
-<!--                <div class="lineColor"><p>Red Line</p></div>-->
-<!--                <div class="lineName"><p>1. Genesee Riverway Trail</p></div>-->
-<!--                <div class="lineInfo"><p>Fanny pack direct trade air plant +1 retro-->
-<!--                    chambray poke blue bottle wayfarers dreamcatcher aesthetic microdosing-->
-<!--                    trust fund. Ugh shaman put a bird on it asymmetrical enamel pin selfies-->
-<!--                    kale chips bitters shoreditch franzen thundercats fixie. </p></div>-->
-<!--                <a href="#" class="lineLink">rochester.com</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
 <div class="container">
     <div class="row">
