@@ -33,9 +33,11 @@ class TrailData {
             $allTrailLocations = array();
             $stmt = $this -> getDBInfo(1) -> prepare($allTrailLocationQuery);
             $stmt -> execute();
-            while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-                $allTrailLocations = array_merge($allTrailLocations, $result);
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrailObject.class");
+            while ($result = $stmt -> fetch()) {
+                array_push($allTrailLocations, $result);
             }
+
             return $allTrailLocations;
         } catch (Exception $e) {
             echo $e -> getMessage();
