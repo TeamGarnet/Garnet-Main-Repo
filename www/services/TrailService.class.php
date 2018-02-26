@@ -1,5 +1,6 @@
 <?php
 include '../data/TrailData.class.php';
+include '../models/TrailObject.class.php';
 
 class TrailService {
 
