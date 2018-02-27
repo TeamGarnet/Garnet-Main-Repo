@@ -61,7 +61,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
             </div>
 
 
-            <ul class="nav navbar-nav navbar-page navbar-right">
+            <ul id="leftLinks" class="nav navbar-nav navbar-page navbar-right">
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="trails.php">HISTORIC TRAILS</a></li>
                 <li><a href="#">CONTACT</a></li>
