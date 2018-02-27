@@ -431,8 +431,9 @@ font-weight:bold;
 
 /* Bottom Modal Window Style */
 #bottomMdl {
-    align-content: center;
-    margin: 5%;
+    text-align: center;
+    margin: 3%;
+    background-image: url("../images/TrailBackground.png");
 }
 
 #bottomMdlContent {
