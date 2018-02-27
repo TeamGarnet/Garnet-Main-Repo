@@ -11,7 +11,7 @@ echo '<div id="header1s" class="header_sr" >
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-						<a class="navbar-brand" href="home.php"><img src="images/logo.png" class="img-responsive" alt="img"></a>
+						<a class="navbar-brand" href="home.php"><img src="../pages/images/Logo.png" class="img-responsive" alt="img"></a>
 				</div>
                     <div class="collapse navbar-collapse top-btn " id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-page navbar-right" style="margin-top:15px">
