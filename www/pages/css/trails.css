@@ -11,7 +11,20 @@ body {
 */
 
 #navigation {
+    width: auto;
+    color: white;
+    text-transform: uppercase;
+}
 
+#navigation a {
+    color: white !important;
+    font-family: prozolibre;
+    font-weight: bold;
+}
+#navigation a:hover {
+    color: white;
+    background-color: #f1916d;
+    text-decoration: none;
 }
 
 #pageContent {
