@@ -31,7 +31,8 @@ $filterBar = $mapData -> generateFilterBar();
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
-    <link rel="apple-touch-icon" sizes="120x120" href="/pages/images/favicon/apple-touch-icon.png">
+    <!-- Favicon Info -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../pages/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../pages/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../pages/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="../pages/images/favicon/site.webmanifest">
