@@ -307,11 +307,11 @@ INSERT INTO `TrackableObject` VALUES
 (6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','imageLocation',2,NULL,3,NULL,2),
 (7,43.129617,-77.638936,'qrCode','3','imageDescription','imageLocation',2,NULL,NULL,2,1),
 (8,43.129617,-77.639403,'qrCode','3','imageDescription','imageLocation',1,NULL,NULL,1,2),
-(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Ampitheater Seating','wwww/pages/images/amp.jpeg',3,null,null,3,null),
-(10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','www/pages/images/mcguckin.jpeg',1,4,null,null,null),
-(11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','www/pages/images/oakleyhotel.jpeg',1,null,null,null,2),
-(12,43.129301,-77.639521,'qrCode',null,'Image of Potter\'s Field','www/pages/images/potters.jpeg',1,null,null,null,4),
-(13,43.129356,-77.638774,'qrCode',null,'Image of the Ballintine\'s family plot','www/pages/images/ballintine_family.jpeg',1,null,null,null,3);
+(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Ampitheater Seating','../pages/images/pins/amp.jpeg',3,null,null,3,null),
+(10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','../pages/images/pins/mcguckin.jpeg',1,4,null,null,null),
+(11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','../pages/images/pins/oakleyhotel.jpeg',1,null,null,null,2),
+(12,43.129301,-77.639521,'qrCode',null,'Image of Potter\'s Field','../pages/images/pins/potters.jpeg',1,null,null,null,4),
+(13,43.129356,-77.638774,'qrCode',null,'Image of the Ballintine\'s family plot','../pages/images/pins/ballintine_family.jpeg',1,null,null,null,3);
 /*!40000 ALTER TABLE `TrackableObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
