@@ -43,7 +43,7 @@ $filterBar = $mapData -> generateFilterBar();
     <script src="../js/MapScript.js"></script>
     <link rel="stylesheet" href="../pages/css/maps.css" type="text/css">
 </head>
-<body>
+<body style="background-image:url('../pages/images/TrailBackground.png');">
 
 <!-- Navigation -->
 <?php include '../components/Navigation.php'; ?>
@@ -67,7 +67,7 @@ $filterBar = $mapData -> generateFilterBar();
 <div id="map"></div>
 
 <!-- Modal -->
-<div class="bottonMdl" id="popup-overlay" style="text-align:center; margin:3%; background-image:url('../pages/images/TrailBackground.png');">
+<div class="bottonMdl" id="popup-overlay" style="text-align:center; margin:3%;">
     <div class="bottomMdlContent" id="popup-content">
 
     </div>
