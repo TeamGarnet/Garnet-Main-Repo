@@ -2,9 +2,19 @@ body {
     background-color: #F7F5E9;
 }
 
+/*
 .container {
     background-image: url("../images/TrailBackground.png");
     margin-top: 7%;
 }
 
+*/
+
+#navigation {
+
+}
+
+#pageContent {
+    background-image: url("../images/TrailBackground.png");
+}
 
