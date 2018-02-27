@@ -63,14 +63,12 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
                                 </button>
                                 <a class="navbar-brand" href="home.php"><img src="../pages/images/Logo.png" class="img-responsive" alt="img"></a>
                             </div>
-                            <div class="collapse navbar-collapse top-btn " id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-page navbar-right" style="margin-top:15px">
                                     <li ><a href="#">ABOUT</a></li>
                                     <li><a href="trails.php">HISTORIC TRAILS</a></li>
                                     <li><a href="#">CONTACT</a></li>
                                     <li><a href="#" class="btn btn-default btn-outline btn-circle collapsed" style="border-radius:25px;">Donate</a></li>
                                 </ul>
-                            </div>
                         </div>
                     </nav>
                 </div>
