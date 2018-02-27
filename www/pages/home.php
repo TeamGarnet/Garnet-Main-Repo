@@ -8,6 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Rapids Cemetery</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/pages/css/thirdParty/font-awesome.css" type="text/css">
     <link href="/pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>

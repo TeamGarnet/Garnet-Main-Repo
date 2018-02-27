@@ -27,7 +27,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 
     <link rel="stylesheet" href="../pages/css/trails.css" type="text/css">
     <link rel="stylesheet" href="../pages/css/staticNavigation.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Favicon Info -->
     <link rel="apple-touch-icon" sizes="120x120" href="../pages/images/favicon/apple-touch-icon.png">
