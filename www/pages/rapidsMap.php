@@ -14,7 +14,6 @@ $filterBar = $mapData -> generateFilterBar();
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/path/to/bootstrap/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,13 +30,13 @@ $filterBar = $mapData -> generateFilterBar();
     <link href="../pages/css/thirdParty/dropdoun.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <!--
+
     <link rel="apple-touch-icon" sizes="120x120" href="/pages/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../pages/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../pages/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="../pages/images/favicon/site.webmanifest">
     <link rel="mask-icon" href="../pages/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    -->
+
 
 
     <script src="../js/MapScript.js"></script>
