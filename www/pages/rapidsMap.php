@@ -139,6 +139,7 @@ $filterBar = $mapData -> generateFilterBar();
         $("#popup-content").html('');
         $("#popup-content").append(data);
         $("#popup-content").show("fast");
+        infoWindow.close();
         window.scroll(0,document.body.scrollHeight);
     }
 
