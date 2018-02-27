@@ -1,4 +1,28 @@
 @charset "utf-8";
+
+/* Bottom Modal Window Style */
+#bottomMdl {
+    text-align: center;
+    margin: 3%;
+    background-image: url("../images/TrailBackground.png");
+}
+
+#bottomMdlContent {
+
+}
+
+#graveInfo {
+
+}
+
+#naturalHistoryInfo {
+
+}
+
+#miscObjectInfo {
+
+}
+
 #map {
     height: 100%;
 }
@@ -429,25 +453,3 @@ font-weight:bold;
 }
 
 
-/* Bottom Modal Window Style */
-#bottomMdl {
-    text-align: center;
-    margin: 3%;
-    background-image: url("../images/TrailBackground.png");
-}
-
-#bottomMdlContent {
-
-}
-
-#graveInfo {
-
-}
-
-#naturalHistoryInfo {
-
-}
-
-#miscObjectInfo {
-
-}
