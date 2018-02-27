@@ -2,14 +2,7 @@ body {
     background-color: #F7F5E9;
 }
 
-/*
-.container {
-    background-image: url("../images/TrailBackground.png");
-    margin-top: 7%;
-}
-
-*/
-
+/* Navigation Content */
 #navigation {
     width: auto;
     color: white;
@@ -52,5 +45,33 @@ body {
 
 #pageContent {
     background-image: url("../images/TrailBackground.png");
+}
+
+/* PHP Generated Content*/
+.locationContainer {
+    background-color: #F7F5E9;
+    text-align: center;
+    text-decoration: none;
+}
+
+.locationInfo {
+    font-family: prozolibre;
+}
+
+.locationDescription {
+    font-size: medium;
+}
+
+.locationName {
+    font-size: large;
+    font-weight: bold;
+}
+
+.locationURL {
+    font-size: medium;
+    text-decoration: none;
+}
+
+.locationDate {
 }
 

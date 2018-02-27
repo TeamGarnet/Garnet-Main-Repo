@@ -73,9 +73,9 @@ class TrackableObjectCard {
     public function getGraveInfo() {
         $modalContent = "<div class='.popup-overlay .active'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> firstName . " " . $this -> lastName . "</br><h6>("
-            . $this -> birth . " - " . $this -> death . ")" . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this-> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
+            . $this -> birth . " - " . $this -> death . ")" . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
@@ -88,9 +88,9 @@ class TrackableObjectCard {
     public function getNaturalHistoryInfo() {
         $modalContent = "<div class='.popup-overlay .active'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> commonName . "</br><h6>"
-            . $this -> scientificName . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this-> commonName . "</br><h4>"
+            . $this -> scientificName . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
@@ -102,9 +102,9 @@ class TrackableObjectCard {
     public function getMiscObjectInfo() {
         $modalContent = "<div class='.popup-overlay .active'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> name . "</br><h6> Hazardous Location: "
-            . $this -> isHazard . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this-> name . "</br><h4> Hazardous Location: "
+            . $this -> isHazard . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
