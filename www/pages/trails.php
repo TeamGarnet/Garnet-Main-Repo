@@ -26,40 +26,22 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="../pages/css/trails.css" type="text/css">
+    <link rel="stylesheet" href="../pages/css/staticNavigation.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <title> Historic Trails </title>
 </head>
 <body>
 
     <!-- Navigation -->
+    <?php include '../components/StaticNav.php'?>
 
-    <?php //include '../components/StaticNav.php'; ?>
-        <div id="navigation" class="container" style="background-color:#210e07 !important; margin-bottom:2%;">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><img src="../pages/images/Logo.png" class="img-responsive" alt="img"></a>
-            </div>
-
-
-            <ul id="leftLinks" class="nav navbar-nav navbar-page navbar-right">
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="trails.php">HISTORIC TRAILS</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="#" id="donateBtn" class="btn btn-default btn-outline btn-circle collapsed" style="border-radius:25px; background-color:#f1916d; !important">Donate</a></li>
-            </ul>
-        </div>
 
 
 <div class="container" id="pageContent">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center">Rapids History Trails</h3>
+            <h3 style="text-align: center; text-weight:bolder;">Rapids History Trails</h3>
         </div>
     </div>
 
@@ -75,9 +57,10 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
         <?php
         echo $allTrailInfo;
         ?>
+
 <!-- Use this as an example of how the content will be created -->
         <!--
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="">
                 <div class="">
                     <p class="">Red Line</p>
@@ -90,7 +73,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="">
                 <div class="">
                     <p class="">Blue Line</p>
