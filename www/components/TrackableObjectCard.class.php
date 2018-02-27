@@ -103,7 +103,7 @@ class TrackableObjectCard {
         $modalContent = "<div class='miscObjectInfo'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
-            . $this-> name . "</br><h4> Hazardous Location: "
+            . $this -> name . "</br><h4> Hazardous Location: "
             . $this -> isHazard . "</h4></h2>"
             . $this -> description;
 
