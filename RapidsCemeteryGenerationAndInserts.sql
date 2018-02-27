@@ -372,7 +372,7 @@ INSERT INTO `User` VALUES
 (2,'Cole','Johnson','cj3421@g.rit.edu','hashedPWD'),
 (3,'Daniel','Quackenbush','dqvcdsv9@g.rit.edu','hashedPWD'),
 (4,'Jake','Fanelli','jxf6552@rit.edu,','hashedPWD'),
-(4,'Test','Test','test@gmail.com','test');
+(5,'Test','Test','test@gmail.com','test');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
