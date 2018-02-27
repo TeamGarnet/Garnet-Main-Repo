@@ -66,8 +66,8 @@ $filterBar = $mapData -> generateFilterBar();
 <div id="map"></div>
 
 <!-- Modal -->
-<div class="bottonMdl" id="popup-overlay" style="text-align:center; margin:3%;">
-    <div class="bottomMdlContent" id="popup-content">
+<div class="bottonMdl" id="popup-overlay" style="text-align:center;">
+    <div class="bottomMdlContent" id="popup-content" style="margin:3%;">
 
     </div>
 </div>
