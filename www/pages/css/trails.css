@@ -41,12 +41,13 @@ body {
     display: block;
 }
 
-#donateBtn {
-    background-color: #da4b14;
+#donateBtn .btn{
+    border-color: #da4b14 !important;
+    background-color: #da4b14 !important;
 }
 
-#donateBtn:hover {
-
+#donateBtn .btn:hover {
+    background-color: #f1916d !important;
 }
 
 #pageContent {
