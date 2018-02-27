@@ -22,7 +22,7 @@ echo '
 						<div class="collapse navbar-collapse top-btn " id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-page navbar-right" style="margin-top:15px">
 								<li ><a href="#">ABOUT</a></li>
-								<li><a href="#">EVENTS</a></li>
+								<li><a href="../pages/trails.php">Historic Trails</a></li>
 								<li><a href="#">CONTACT</a></li>
 								<li><a href="#" class="btn btn-default btn-outline btn-circle collapsed" style="border-radius:25px;">Donate</a></li>
                             </ul>

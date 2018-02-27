@@ -20,7 +20,7 @@ function resetFilters() {
 }
 
 
-/*Abdols Code */
+/*Abdols Code
 
 $(document).ready(function(){
     $("#flip").click(function(){
