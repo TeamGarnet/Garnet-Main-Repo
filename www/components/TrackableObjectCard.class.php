@@ -71,9 +71,9 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div class='graveInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this-> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
             . $this -> birth . " - " . $this -> death . ")" . "</h4></h2>"
             . $this -> description;
@@ -86,9 +86,9 @@ class TrackableObjectCard {
     }
 
     public function getNaturalHistoryInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div class='naturalHistoryInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this-> commonName . "</br><h4>"
             . $this -> scientificName . "</h4></h2>"
             . $this -> description;
@@ -100,9 +100,9 @@ class TrackableObjectCard {
     }
 
     public function getMiscObjectInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div class='miscObjectInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h2>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this-> name . "</br><h4> Hazardous Location: "
             . $this -> isHazard . "</h4></h2>"
             . $this -> description;
@@ -114,6 +114,6 @@ class TrackableObjectCard {
     }
 
     public function getModalClosure() {
-        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
+        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07; padding:5px !important; margin-top: 2%;'>Return To Map</button></div>";
     }
 }

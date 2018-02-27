@@ -427,3 +427,26 @@ font-weight:bold;
     height:auto;
     text-align:center;
 }
+
+
+/* Bottom Modal Window Style */
+#bottomMdl {
+    align-content: center;
+    margin: 5%;
+}
+
+#bottomMdlContent {
+
+}
+
+#graveInfo {
+
+}
+
+#naturalHistoryInfo {
+
+}
+
+#miscObjectInfo {
+
+}
