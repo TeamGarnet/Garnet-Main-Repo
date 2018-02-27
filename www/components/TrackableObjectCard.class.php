@@ -71,7 +71,7 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div class='graveInfo'><img src='"
+        $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this-> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
@@ -86,7 +86,7 @@ class TrackableObjectCard {
     }
 
     public function getNaturalHistoryInfo() {
-        $modalContent = "<div class='naturalHistoryInfo'><img src='"
+        $modalContent = "<div style='margin:3%;' class='naturalHistoryInfo'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this-> commonName . "</br><h4>"
@@ -100,7 +100,7 @@ class TrackableObjectCard {
     }
 
     public function getMiscObjectInfo() {
-        $modalContent = "<div class='miscObjectInfo'><img src='"
+        $modalContent = "<div style='margin:3%;' class='miscObjectInfo'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
             . $this -> name . "</br><h4> Hazardous Location: "
