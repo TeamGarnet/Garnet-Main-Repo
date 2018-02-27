@@ -39,9 +39,9 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 <body>
 
     <!-- Navigation -->
-    <div id="'navigation">
+    <!-- <div id="'navigation"> -->
     <?php include '../components/Navigation.php'; ?>
-    </div>
+    <!-- </div> -->
 
 <div class="container">
     <div class="row">
