@@ -65,7 +65,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="trails.php">HISTORIC TRAILS</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="#" class="btn btn-default btn-outline btn-circle collapsed" style="border-radius:25px; background-color:#f1916d; !important">Donate</a></li>
+                <li><a href="#" id="donateBtn" class="btn btn-default btn-outline btn-circle collapsed" style="border-radius:25px; background-color:#f1916d; !important">Donate</a></li>
             </ul>
         </div>
 

@@ -15,9 +15,9 @@ body {
     color: white;
     text-transform: uppercase;
     padding-top: 2%;
-    padding-left: 4%;
+    padding-left: 3%;
     padding-right: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 3%;
 }
 
 #navigation a {
@@ -32,8 +32,21 @@ body {
     text-decoration: none;
 }
 
-#navigation nav {
+#navigation .nav {
     padding-top: 2%;
+}
+
+#navigation .nav > li {
+    position: relative;
+    display: block;
+}
+
+#donateBtn {
+    background-color: #da4b14;
+}
+
+#donateBtn:hover {
+
 }
 
 #pageContent {
