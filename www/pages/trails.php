@@ -22,23 +22,24 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-
+    <!--
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="apple-touch-icon" sizes="120x120" href="../pages/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../pages/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../pages/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="../pages/images/favicon/site.webmanifest">
     <link rel="mask-icon" href="../pages/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="../pages/css/trails.css" type="text/css">
-
     <link rel="stylesheet" href="../pages/css/thirdParty/font-awesome.css" type="text/css">
-    <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
+
+
+    <link href="../pages/css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    -->
+    <link rel="stylesheet" href="../pages/css/trails.css" type="text/css">
 
     <title> Historic Trails </title>
 </head>
