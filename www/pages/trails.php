@@ -41,7 +41,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 <div class="container" id="pageContent">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center; text-weight:bolder;">Rapids History Trails</h3>
+            <h3 style="text-align: center; font-weight:bolder;">Rapids History Trails</h3>
         </div>
     </div>
 
