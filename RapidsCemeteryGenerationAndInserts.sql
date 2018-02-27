@@ -41,7 +41,9 @@ CREATE TABLE `Contact` (
 
 LOCK TABLES `Contact` WRITE;
 /*!40000 ALTER TABLE `Contact` DISABLE KEYS */;
-INSERT INTO `Contact` VALUES (1,'Test Human','test@human.com','I am a test human.','750285028','title'),(2,'Test Person','test@person.com','I am a test person.','750285020','title');
+INSERT INTO `Contact` VALUES 
+(1,'John Curran','JohnCurren@Rapids.com','My name is John and I\'m usually at the cemetery Sundays 12:30-3:30PM.','750285028','titleName'),
+(2,'Test Person','test@person.com','I am a test person.','750285020','title');
 /*!40000 ALTER TABLE `Contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +98,9 @@ CREATE TABLE `FAQ` (
 
 LOCK TABLES `FAQ` WRITE;
 /*!40000 ALTER TABLE `FAQ` DISABLE KEYS */;
-INSERT INTO `FAQ` VALUES (1,'How do I ask a question on this?',' I don\'t know how do I get an anwser.'),(2,'What do I need to remember to escape?','Apsotophes can be an issue at times');
+INSERT INTO `FAQ` VALUES
+(1,'How do I ask a question on this?',' I don\'t know how do I get an anwser.'),
+(2,'What do I need to remember to escape?','Apsotophes can be an issue at times');
 /*!40000 ALTER TABLE `FAQ` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +132,11 @@ CREATE TABLE `Grave` (
 
 LOCK TABLES `Grave` WRITE;
 /*!40000 ALTER TABLE `Grave` DISABLE KEYS */;
-INSERT INTO `Grave` VALUES (1,'Spongebob','Something','Squarepants','1962-02-21','1989-02-21','he lived in a pineapple under the sea',2),(2,'Squidward','Something','Nopants','1755-02-23','1777-12-02','smallest grave in the cemetery',1),(3,'Patrick','Something','Star','1845-11-11','1869-01-14','A pair of graves near the vegetation',2);
+INSERT INTO `Grave` VALUES
+(1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),
+(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),
+(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),
+(4,'James','H','McGuckin','1841-00-00','1885-00-00','His service was prestigious',1);
 /*!40000 ALTER TABLE `Grave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +161,11 @@ CREATE TABLE `Group` (
 
 LOCK TABLES `Group` WRITE;
 /*!40000 ALTER TABLE `Group` DISABLE KEYS */;
-INSERT INTO `Group` VALUES (1,'Doctor Lady','Big grave that show the doctor lady'),(2,'Oakley Family','Oakley family is here. Not the sun glasses people.'),(3,'Ballintine Family','The had a lot of sick children');
+INSERT INTO `Group` VALUES
+(1,'Doctor Lady','Big grave that show the doctor lady'),
+(2,'Oakley Family','The Oakley family is meant to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.'),
+(3,'Ballintine Family','The had a lot of sick children'),
+(4,'Potter\'s Field,', 'The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery entrance. The "poorest of the poor" were located here, most likely buried in a simple shroud with no burial marker.');
 /*!40000 ALTER TABLE `Group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +193,11 @@ CREATE TABLE `HistoricFilter` (
 
 LOCK TABLES `HistoricFilter` WRITE;
 /*!40000 ALTER TABLE `HistoricFilter` DISABLE KEYS */;
-INSERT INTO `HistoricFilter` VALUES (1,'Civil War','1861-04-12','1865-05-13','The civil was fought in the US over slavery','#bdc3c7'),(2,'American Revolutionary War','1775-04-19','1783-09-03','This was was also known as the american war of independence','#bdc3c7');
+INSERT INTO `HistoricFilter` VALUES
+(1,'Civil War','1861-04-12','1865-05-13','The American Civil War was a civil war that was fought in the United States from 1861 to 1865. War broke out as a result of the long-standing controversy over slavery.','#bdc3c7'),
+(2,'American Revolutionary War','1775-04-19','1783-09-03','This was also known as the American War of Independence. This was a global war that began as a conflict between Great Britain and it\'s Thirteen Colonies which declared independence as the United States of America.','#bdc3c7'),
+(3,'War of 1812','1812-06-18','1815-02-15','The War of 1812 was a conflict fought between the United States, the United Kingdom, and their respective allies.','#bdc3c7'),
+(4,'Spanish-American War','1898-04-21','1898-07-17','The Spanish-American War was fought between the United States and Spain in 1898. Hostilities began in the aftermath of the internal explosion of the USS Maine in Cuba, leading to U.S. intervention in the Cuban War of Independence.','#bdc3c7');
 /*!40000 ALTER TABLE `HistoricFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +223,9 @@ CREATE TABLE `MiscObject` (
 
 LOCK TABLES `MiscObject` WRITE;
 /*!40000 ALTER TABLE `MiscObject` DISABLE KEYS */;
-INSERT INTO `MiscObject` VALUES (1,'Bee Hive','Oh boy, don\'t get stunnggg','No'),(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes');
+INSERT INTO `MiscObject` VALUES
+(1,'Bee Hive','There is a bee hive in this area','No'),
+(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes');
 /*!40000 ALTER TABLE `MiscObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +251,10 @@ CREATE TABLE `NaturalHistory` (
 
 LOCK TABLES `NaturalHistory` WRITE;
 /*!40000 ALTER TABLE `NaturalHistory` DISABLE KEYS */;
-INSERT INTO `NaturalHistory` VALUES (1,'Forget-Me-Not','scientificName','grows on tall, hairy stems which reach two feet in height. Blue blooms with yellow centers'),(2,'Black Raspberries','scientificName','This plant is native to eastern North America. Black seeded looking fruit'),(3,'Walnut Trees','scientificName','These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
+INSERT INTO `NaturalHistory` VALUES
+(1,'Forget-Me-Not','scientificName','grows on tall, hairy stems which reach two feet in height. Blue blooms with yellow centers'),
+(2,'Black Raspberries','scientificName','This plant is native to eastern North America. Black seeded looking fruit'),
+(3,'Walnut Trees','scientificName','These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
 /*!40000 ALTER TABLE `NaturalHistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +298,20 @@ CREATE TABLE `TrackableObject` (
 
 LOCK TABLES `TrackableObject` WRITE;
 /*!40000 ALTER TABLE `TrackableObject` DISABLE KEYS */;
-INSERT INTO `TrackableObject` VALUES (1,43.129362,-77.639403,'qrCode','He was #1','imageDescription','imageLocation',1,1,NULL,NULL,3),(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription','imageLocation',1,2,NULL,NULL,2),(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription','imageLocation',1,3,NULL,NULL,3),(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription','imageLocation',2,NULL,1,NULL,2),(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription','imageLocation',2,NULL,2,NULL,2),(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','imageLocation',2,NULL,3,NULL,2),(7,43.129617,-77.638936,'qrCode','3','imageDescription','imageLocation',2,NULL,NULL,2,1),(8,43.129617,-77.639403,'qrCode','3','imageDescription','imageLocation',1,NULL,NULL,1,2);
+INSERT INTO `TrackableObject` VALUES
+(1,43.129362,-77.639403,'qrCode','He was #1','imageDescription','imageLocation',1,1,NULL,NULL,3),
+(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription','imageLocation',1,2,NULL,NULL,2),
+(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription','imageLocation',1,3,NULL,NULL,3),
+(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription','imageLocation',2,NULL,1,NULL,2),
+(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription','imageLocation',2,NULL,2,NULL,2),
+(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','imageLocation',2,NULL,3,NULL,2),
+(7,43.129617,-77.638936,'qrCode','3','imageDescription','imageLocation',2,NULL,NULL,2,1),
+(8,43.129617,-77.639403,'qrCode','3','imageDescription','imageLocation',1,NULL,NULL,1,2),
+(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Ampitheater Seating','wwww/pages/images/amp.jpeg',3,null,null,3,null),
+(10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','www/pages/images/mcguckin.jpeg',1,4,null,null,null),
+(11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','www/pages/images/oakleyhotel.jpeg',1,null,null,null,2),
+(12,43.129301,-77.639521,'qrCode',null,'Image of Potter\'s Field','www/pages/images/potters.jpeg',1,null,null,null,4),
+(13,43.129356,-77.638774,'qrCode',null,'Image of the Ballintine\'s family plot','www/pages/images/ballintine_family.jpeg',1,null,null,null,3);
 /*!40000 ALTER TABLE `TrackableObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +337,10 @@ CREATE TABLE `TypeFilter` (
 
 LOCK TABLES `TypeFilter` WRITE;
 /*!40000 ALTER TABLE `TypeFilter` DISABLE KEYS */;
-INSERT INTO `TypeFilter` VALUES (1,'Grave','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),(2,'Natural History','http://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),(3,'Miscellaneous','http://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
+INSERT INTO `TypeFilter` VALUES
+(1,'Grave','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),
+(2,'Natural History','http://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),
+(3,'Miscellaneous','http://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
 /*!40000 ALTER TABLE `TypeFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,7 +367,12 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Brianna','Jones','bfj5889@g.rit.edu','hashedPWD'),(2,'Cole','Johnson','cj3421@g.rit.edu','hashedPWD'),(3,'Daniel','Quackenbush','dqvcdsv9@g.rit.edu','hashedPWD'),(4,'Test','Test','test@gmail.com','test');
+INSERT INTO `User` VALUES
+(1,'Brianna','Jones','bfj5889@g.rit.edu','hashedPWD'),
+(2,'Cole','Johnson','cj3421@g.rit.edu','hashedPWD'),
+(3,'Daniel','Quackenbush','dqvcdsv9@g.rit.edu','hashedPWD'),
+(4,'Jake','Fanelli','jxf6552@rit.edu,','hashedPWD'),
+(4,'Test','Test','test@gmail.com','test');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,7 +404,10 @@ CREATE TABLE `WiderAreaMap` (
 
 LOCK TABLES `WiderAreaMap` WRITE;
 /*!40000 ALTER TABLE `WiderAreaMap` DISABLE KEYS */;
-INSERT INTO `WiderAreaMap` VALUES (1,'Susan B Anthony Home','Home girl lived here','www.google.com',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),(2,'Fredick Duglass Home','Home boy lived here','www.google.com',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),(3,'Highland Park','People run here','www.google.com',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
+INSERT INTO `WiderAreaMap` VALUES
+(1,'Susan B Anthony Home','Home girl lived here','www.google.com',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),
+(2,'Fredick Duglass Home','Home boy lived here','www.google.com',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),
+(3,'Highland Park','People run here','www.google.com',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
 /*!40000 ALTER TABLE `WiderAreaMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
