@@ -303,7 +303,7 @@ CREATE TABLE `TypeFilter` (
 
 LOCK TABLES `TypeFilter` WRITE;
 /*!40000 ALTER TABLE `TypeFilter` DISABLE KEYS */;
-INSERT INTO `TypeFilter` VALUES (1,'Grave','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),(2,'Natural History','http://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),(3,'Other','http://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
+INSERT INTO `TypeFilter` VALUES (1,'Grave','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),(2,'Natural History','http://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),(3,'Miscellaneous','http://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
 /*!40000 ALTER TABLE `TypeFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
