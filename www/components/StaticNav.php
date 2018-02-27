@@ -1,5 +1,5 @@
 <?php
-echo '<div id="navigation" class="container" style="background-color:#210e07 !important; margin-bottom:2%;">
+echo '<div id="navigation" class="container" style="background-color:#210e07 !important; margin-bottom:2%; opacity:0.8;">
 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
