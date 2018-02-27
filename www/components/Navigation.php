@@ -16,7 +16,7 @@ echo '
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-						<a class="navbar-brand" href="home.php"><img src="images/logo.png" class="img-responsive" alt="img"></a>
+						<a class="navbar-brand" href="home.php"><img src="../pages/images/Logo.png" class="img-responsive" alt="img"></a>
 				</div>
                           <!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse top-btn " id="bs-example-navbar-collapse-1">
