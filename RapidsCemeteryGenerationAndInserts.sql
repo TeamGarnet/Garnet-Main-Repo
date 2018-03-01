@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `Contact`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Contact` (
-  `idContact` int(11) NOT NULL,
+  `idContact` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
   `description` blob,
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `Event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Event` (
-  `idEvent` int(11) NOT NULL,
+  `idEvent` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `description` blob,
   `startTime` datetime DEFAULT NULL,
@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS `FAQ`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `FAQ` (
-  `idFAQ` int(11) NOT NULL,
+  `idFAQ` int(11) NOT NULL AUTO_INCREMENT,
   `question` varchar(300) DEFAULT NULL,
   `answer` blob,
   PRIMARY KEY (`idFAQ`)
@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `Grave`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Grave` (
-  `idGrave` int(11) NOT NULL,
+  `idGrave` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(75) DEFAULT NULL,
   `middleName` varchar(75) DEFAULT NULL,
   `lastName` varchar(75) DEFAULT NULL,
@@ -148,7 +148,7 @@ DROP TABLE IF EXISTS `Group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Group` (
-  `idGroup` int(11) NOT NULL,
+  `idGroup` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `description` blob,
   PRIMARY KEY (`idGroup`)
@@ -177,7 +177,7 @@ DROP TABLE IF EXISTS `HistoricFilter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `HistoricFilter` (
-  `idHistoricFilter` int(11) NOT NULL,
+  `idHistoricFilter` int(11) NOT NULL AUTO_INCREMENT,
   `historicFilterName` varchar(100) DEFAULT NULL,
   `dateStart` date DEFAULT NULL,
   `dateEnd` date DEFAULT NULL,
@@ -209,7 +209,7 @@ DROP TABLE IF EXISTS `MiscObject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MiscObject` (
-  `idMisc` int(11) NOT NULL,
+  `idMisc` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(75) DEFAULT NULL,
   `description` blob,
   `isHazard` enum('Yes','No') NOT NULL,
@@ -237,7 +237,7 @@ DROP TABLE IF EXISTS `NaturalHistory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NaturalHistory` (
-  `idNaturalHistory` int(11) NOT NULL,
+  `idNaturalHistory` int(11) NOT NULL AUTO_INCREMENT,
   `commonName` varchar(100) DEFAULT NULL,
   `scientificName` varchar(150) DEFAULT NULL,
   `description` blob,
@@ -266,13 +266,13 @@ DROP TABLE IF EXISTS `TrackableObject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TrackableObject` (
-  `idTrackableObject` int(11) NOT NULL,
+  `idTrackableObject` int(11) NOT NULL AUTO_INCREMENT,
   `longitude` decimal(9,6) DEFAULT NULL,
   `latitude` decimal(9,6) DEFAULT NULL,
   `qrCode` varchar(45) DEFAULT NULL,
   `hint` varchar(100) DEFAULT NULL,
   `imageDescription` varchar(100) DEFAULT NULL,
-  `imageLocation` varchar(5000) DEFAULT NULL,
+  `imageLocation` varchar(5000) DEFAULT '../pages/images/pins/default.png',
   `idTypeFilter` int(11) NOT NULL,
   `idGrave` int(11) DEFAULT NULL,
   `idNaturalHistory` int(11) DEFAULT NULL,
@@ -299,14 +299,14 @@ CREATE TABLE `TrackableObject` (
 LOCK TABLES `TrackableObject` WRITE;
 /*!40000 ALTER TABLE `TrackableObject` DISABLE KEYS */;
 INSERT INTO `TrackableObject` VALUES
-(1,43.129362,-77.639403,'qrCode','He was #1','imageDescription','imageLocation',1,1,NULL,NULL,3),
-(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription','imageLocation',1,2,NULL,NULL,2),
-(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription','imageLocation',1,3,NULL,NULL,3),
-(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription','imageLocation',2,NULL,1,NULL,2),
-(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription','imageLocation',2,NULL,2,NULL,2),
-(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','imageLocation',2,NULL,3,NULL,2),
-(7,43.129617,-77.638936,'qrCode','3','imageDescription','imageLocation',2,NULL,NULL,2,1),
-(8,43.129617,-77.639403,'qrCode','3','imageDescription','imageLocation',1,NULL,NULL,1,2),
+(1,43.129362,-77.639403,'qrCode','He was #1','imageDescription',DEFAULT,1,1,NULL,NULL,3),
+(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription',DEFAULT,1,2,NULL,NULL,2),
+(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription',DEFAULT,1,3,NULL,NULL,3),
+(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription',DEFAULT,2,NULL,1,NULL,2),
+(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription',DEFAULT,2,NULL,2,NULL,2),
+(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription',DEFAULT,2,NULL,3,NULL,2),
+(7,43.129617,-77.638936,'qrCode','3','imageDescription',DEFAULT,2,NULL,NULL,2,1),
+(8,43.129617,-77.639403,'qrCode','3','imageDescription',DEFAULT,1,NULL,NULL,1,2),
 (9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Ampitheater Seating','../pages/images/pins/amp.jpeg',3,null,null,3,null),
 (10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','../pages/images/pins/mcguckin.jpeg',1,4,null,null,null),
 (11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','../pages/images/pins/oakleyhotel.jpeg',1,null,null,null,2),
@@ -323,7 +323,7 @@ DROP TABLE IF EXISTS `TypeFilter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TypeFilter` (
-  `idTypeFilter` int(11) NOT NULL,
+  `idTypeFilter` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(45) DEFAULT NULL,
   `pinDesign` varchar(500) DEFAULT NULL,
   `buttonColor` varchar(45) DEFAULT '#bdc3c7',
@@ -338,9 +338,9 @@ CREATE TABLE `TypeFilter` (
 LOCK TABLES `TypeFilter` WRITE;
 /*!40000 ALTER TABLE `TypeFilter` DISABLE KEYS */;
 INSERT INTO `TypeFilter` VALUES
-(1,'Grave','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),
-(2,'Natural History','http://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),
-(3,'Miscellaneous','http://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
+(1,'Grave','https://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),
+(2,'Natural History','https://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),
+(3,'Miscellaneous','https://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
 /*!40000 ALTER TABLE `TypeFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -352,7 +352,7 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `User` (
-  `idUser` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(80) DEFAULT NULL,
   `lastName` varchar(80) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
@@ -384,7 +384,7 @@ DROP TABLE IF EXISTS `WiderAreaMap`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `WiderAreaMap` (
-  `idWiderAreaMap` int(11) NOT NULL,
+  `idWiderAreaMap` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `description` blob,
   `url` varchar(2083) DEFAULT NULL,
@@ -405,9 +405,9 @@ CREATE TABLE `WiderAreaMap` (
 LOCK TABLES `WiderAreaMap` WRITE;
 /*!40000 ALTER TABLE `WiderAreaMap` DISABLE KEYS */;
 INSERT INTO `WiderAreaMap` VALUES
-(1,'Susan B Anthony Home','Home girl lived here','www.google.com',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),
-(2,'Fredick Duglass Home','Home boy lived here','www.google.com',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),
-(3,'Highland Park','People run here','www.google.com',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
+(1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),
+(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),
+(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
 /*!40000 ALTER TABLE `WiderAreaMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
