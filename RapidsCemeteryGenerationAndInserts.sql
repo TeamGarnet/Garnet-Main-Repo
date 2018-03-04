@@ -225,7 +225,8 @@ LOCK TABLES `MiscObject` WRITE;
 /*!40000 ALTER TABLE `MiscObject` DISABLE KEYS */;
 INSERT INTO `MiscObject` VALUES
 (1,'Bee Hive','There is a bee hive in this area','No'),
-(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes');
+(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes'),
+(3, 'Amphitheater','The amphitheater is used for events at the cemetery','Yes');
 /*!40000 ALTER TABLE `MiscObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,7 +308,7 @@ INSERT INTO `TrackableObject` VALUES
 (6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription',DEFAULT,2,NULL,3,NULL,2),
 (7,43.129617,-77.638936,'qrCode','3','imageDescription',DEFAULT,2,NULL,NULL,2,1),
 (8,43.129617,-77.639403,'qrCode','3','imageDescription',DEFAULT,1,NULL,NULL,1,2),
-(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Ampitheater Seating','../pages/images/pins/amp.jpeg',3,null,null,3,null),
+(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Amphitheater Seating','../pages/images/pins/amp.jpeg',3,null,null,3,null),
 (10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','../pages/images/pins/mcguckin.jpeg',1,4,null,null,null),
 (11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','../pages/images/pins/oakleyhotel.jpeg',1,null,null,null,2),
 (12,43.129301,-77.639521,'qrCode',null,'Image of Potter\'s Field','../pages/images/pins/potters.jpeg',1,null,null,null,4),
