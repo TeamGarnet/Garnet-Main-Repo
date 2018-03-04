@@ -820,4 +820,5 @@ button {
     color: white !important;
     font-family: prozolibre;
     font-weight: bold;
+	border-radius: 25px;
 }
