@@ -63,7 +63,7 @@ class TrackableObjectCard {
     }
 
     public function setMiscObjectInfo($cardDataArray) {
-        $this -> name = $cardDataArray;
+        $this -> name = $cardDataArray['name'];
         $this -> isHazard = $cardDataArray['isHazard'];
         $this -> description = $cardDataArray['description'];
         $this -> imageLocation = $cardDataArray['imageLocation'];
