@@ -69,7 +69,7 @@
         </div>
 
         <div class="container">
-            <!-- TODO: Implememented if time allows
+
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
                 <div class="social" style="float:left;">
                     <i class="fab fa-facebook-f"></i>
@@ -77,7 +77,6 @@
                     <i class="fab fa-instagram"></i>
                     <span style="padding:10px;"></span>
                     <i class="fab fa-twitter"></i></div>
-                    -->
                 <div style="color:#fff; float:right; font-family: prozolibre; padding-top:10px;"><h5>19th Ward Community Association
                         --- 216 Thurston Road Rochester,NY 14619 | (585)328-6571 | 19thWard@19wca.org</h5></div>
             </footer>
