@@ -101,8 +101,6 @@ class MapData {
                     break;
                 case 'Miscellaneous':
                     $stmt = $this -> getDBInfo(1) -> prepare($miscInfoQuery);
-                    echo $miscInfoQuery;
-                    echo $stmt;
                     break;
             }
 
@@ -111,7 +109,6 @@ class MapData {
             while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                 $objectCardData = array_merge($objectCardData, $result);
             }
-            var_dump($objectCardData);
             return $objectCardData;
         } catch (PDOException $e) {
             echo $e -> getMessage();
