@@ -36,7 +36,7 @@ class TrackableObjectCard {
                 $this -> setNaturalHistoryInfo($cardDataArray);
                 $this -> getNaturalHistoryInfo();
                 break;
-            default:
+            case 'Miscellaneous':
                 $this -> setMiscObjectInfo($cardDataArray);
                 $this -> getMiscObjectInfo();
                 break;
