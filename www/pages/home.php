@@ -72,7 +72,8 @@
 
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
                 <div class="social" style="float:left;">
-                    <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF">
+                        <i class="fab fa-facebook-f"></i></a>
                     <span style="padding:10px;"></span>
                     <i class="fab fa-instagram"></i>
                     <span style="padding:10px;"></span>
