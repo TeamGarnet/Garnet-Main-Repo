@@ -6,8 +6,6 @@
         unset($_SESSION['idUser']);
         session_destroy();
     }
-    else if(!isset($_SESSION['idUser'])) {
-        echo "No session for a user, but redirecting anyway";
-    }
+    
     header("Location: login.php");
     exit;
