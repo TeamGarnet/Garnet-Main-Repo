@@ -77,7 +77,9 @@ form input {
 
 .errorMsg {
     color: #cc0000;
-    margin-bottom: 10px
+	text-align: center;
+    font-size: 12px;
+    padding: 10px 0px 10px 0px;
 }
 
 #login, #signup, #divider, form input, .button, #buttonText{
