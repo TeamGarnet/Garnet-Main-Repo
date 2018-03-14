@@ -22,7 +22,7 @@ if (isset($_POST['Login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../../pages/css/admin/home.css" type="text/css">
+    <link rel="stylesheet" href="../../pages/css/admin/login.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="120x120" href="../../pages/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../pages/images/favicon/favicon-32x32.png">
