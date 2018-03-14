@@ -20,6 +20,7 @@ if(isset($_SESSION['idUser'])) {
 </head>
 <body>
 <p> Woah you made it </p>
+<a href="logout.php">Logout</a>
 </body>
 </html>
 
