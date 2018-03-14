@@ -3,6 +3,6 @@
     if(isset($_SESSION['idUser'])) {
         unset($_SESSION['idUser']);
         session_destroy();
+        header("Location: login.php");
     }
-    header("Location: login.php");
     exit;
