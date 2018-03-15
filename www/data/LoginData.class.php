@@ -36,7 +36,7 @@ class LoginData {
         global $loginUserQuery;
 
         //TODO: hash them passwords gurl
-        //$password = hash(sha1($password));
+        $password = hash(sha1($password));
         try {
             $idUser = null;
 
