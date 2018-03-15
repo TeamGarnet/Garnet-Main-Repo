@@ -14,8 +14,6 @@ if (isset($_POST['Login'])) {
             $errorMsgLogin = "Incorrect email and password combination";
         }
     }
-} else {
-    header('Location: login.php');
 }
 
 ?>
