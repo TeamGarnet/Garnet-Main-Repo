@@ -2,6 +2,8 @@
 session_start();
 if(isset($_SESSION['idUser'])) {
     echo "Your session is running " . $_SESSION['idUser'];
+} else {
+    header('Location: login.php');
 }
 ?>
 
