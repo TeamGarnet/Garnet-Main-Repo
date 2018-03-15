@@ -32,7 +32,7 @@ CREATE TABLE `Contact` (
   `phone` varchar(80) DEFAULT NULL,
   `title` varchar(80) DEFAULT NULL,
   PRIMARY KEY (`idContact`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,9 +41,7 @@ CREATE TABLE `Contact` (
 
 LOCK TABLES `Contact` WRITE;
 /*!40000 ALTER TABLE `Contact` DISABLE KEYS */;
-INSERT INTO `Contact` VALUES 
-(1,'John Curran','JohnCurren@Rapids.com','My name is John and I\'m usually at the cemetery Sundays 12:30-3:30PM.','750285028','titleName'),
-(2,'Test Person','test@person.com','I am a test person.','750285020','title');
+INSERT INTO `Contact` VALUES (1,'John Curran','JohnCurren@Rapids.com','My name is John and I\'m usually at the cemetery Sundays 12:30-3:30PM.','750285028','titleName'),(2,'Test Person','test@person.com','I am a test person.','750285020','title');
 /*!40000 ALTER TABLE `Contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +62,7 @@ CREATE TABLE `Event` (
   PRIMARY KEY (`idEvent`),
   KEY `fk_Event_WiderAreaMap1_idx` (`idWiderAreaMap`),
   CONSTRAINT `fk_Event_WiderAreaMap1` FOREIGN KEY (`idWiderAreaMap`) REFERENCES `WiderAreaMap` (`idWiderAreaMap`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +87,7 @@ CREATE TABLE `FAQ` (
   `question` varchar(300) DEFAULT NULL,
   `answer` blob,
   PRIMARY KEY (`idFAQ`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,9 +96,7 @@ CREATE TABLE `FAQ` (
 
 LOCK TABLES `FAQ` WRITE;
 /*!40000 ALTER TABLE `FAQ` DISABLE KEYS */;
-INSERT INTO `FAQ` VALUES
-(1,'How do I ask a question on this?',' I don\'t know how do I get an anwser.'),
-(2,'What do I need to remember to escape?','Apsotophes can be an issue at times');
+INSERT INTO `FAQ` VALUES (1,'How do I ask a question on this?',' I don\'t know how do I get an anwser.'),(2,'What do I need to remember to escape?','Apsotophes can be an issue at times');
 /*!40000 ALTER TABLE `FAQ` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +119,7 @@ CREATE TABLE `Grave` (
   PRIMARY KEY (`idGrave`),
   KEY `fk_GraveDetail_HistoricFilter1_idx` (`idHistoricFilter`),
   CONSTRAINT `fk_GraveDetail_HistoricFilter1` FOREIGN KEY (`idHistoricFilter`) REFERENCES `HistoricFilter` (`idHistoricFilter`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,11 +128,7 @@ CREATE TABLE `Grave` (
 
 LOCK TABLES `Grave` WRITE;
 /*!40000 ALTER TABLE `Grave` DISABLE KEYS */;
-INSERT INTO `Grave` VALUES
-(1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),
-(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),
-(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),
-(4,'James','H','McGuckin','1841-00-00','1885-00-00','His service was prestigious',1);
+INSERT INTO `Grave` VALUES (1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(4,'James','H','McGuckin','1841-00-00','1885-00-00','His service was prestigious',1);
 /*!40000 ALTER TABLE `Grave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +144,7 @@ CREATE TABLE `Group` (
   `name` varchar(100) DEFAULT NULL,
   `description` blob,
   PRIMARY KEY (`idGroup`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,11 +153,7 @@ CREATE TABLE `Group` (
 
 LOCK TABLES `Group` WRITE;
 /*!40000 ALTER TABLE `Group` DISABLE KEYS */;
-INSERT INTO `Group` VALUES
-(1,'Doctor Lady','Big grave that show the doctor lady'),
-(2,'Oakley Family','The Oakley family is meant to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.'),
-(3,'Ballintine Family','The had a lot of sick children'),
-(4,'Potter\'s Field,', 'The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery entrance. The "poorest of the poor" were located here, most likely buried in a simple shroud with no burial marker.');
+INSERT INTO `Group` VALUES (1,'Doctor Lady','Big grave that show the doctor lady'),(2,'Oakley Family','The Oakley family is meant to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.'),(3,'Ballintine Family','The had a lot of sick children'),(4,'Potter\'s Field,','The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery entrance. The \"poorest of the poor\" were located here, most likely buried in a simple shroud with no burial marker.');
 /*!40000 ALTER TABLE `Group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +172,7 @@ CREATE TABLE `HistoricFilter` (
   `description` blob,
   `buttonColor` varchar(45) DEFAULT '#bdc3c7',
   PRIMARY KEY (`idHistoricFilter`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,11 +181,7 @@ CREATE TABLE `HistoricFilter` (
 
 LOCK TABLES `HistoricFilter` WRITE;
 /*!40000 ALTER TABLE `HistoricFilter` DISABLE KEYS */;
-INSERT INTO `HistoricFilter` VALUES
-(1,'Civil War','1861-04-12','1865-05-13','The American Civil War was a civil war that was fought in the United States from 1861 to 1865. War broke out as a result of the long-standing controversy over slavery.','#bdc3c7'),
-(2,'American Revolutionary War','1775-04-19','1783-09-03','This was also known as the American War of Independence. This was a global war that began as a conflict between Great Britain and it\'s Thirteen Colonies which declared independence as the United States of America.','#bdc3c7'),
-(3,'War of 1812','1812-06-18','1815-02-15','The War of 1812 was a conflict fought between the United States, the United Kingdom, and their respective allies.','#bdc3c7'),
-(4,'Spanish-American War','1898-04-21','1898-07-17','The Spanish-American War was fought between the United States and Spain in 1898. Hostilities began in the aftermath of the internal explosion of the USS Maine in Cuba, leading to U.S. intervention in the Cuban War of Independence.','#bdc3c7');
+INSERT INTO `HistoricFilter` VALUES (1,'Civil War','1861-04-12','1865-05-13','The American Civil War was a civil war that was fought in the United States from 1861 to 1865. War broke out as a result of the long-standing controversy over slavery.','#bdc3c7'),(2,'American Revolutionary War','1775-04-19','1783-09-03','This was also known as the American War of Independence. This was a global war that began as a conflict between Great Britain and it\'s Thirteen Colonies which declared independence as the United States of America.','#bdc3c7'),(3,'War of 1812','1812-06-18','1815-02-15','The War of 1812 was a conflict fought between the United States, the United Kingdom, and their respective allies.','#bdc3c7'),(4,'Spanish-American War','1898-04-21','1898-07-17','The Spanish-American War was fought between the United States and Spain in 1898. Hostilities began in the aftermath of the internal explosion of the USS Maine in Cuba, leading to U.S. intervention in the Cuban War of Independence.','#bdc3c7');
 /*!40000 ALTER TABLE `HistoricFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +198,7 @@ CREATE TABLE `MiscObject` (
   `description` blob,
   `isHazard` enum('Yes','No') NOT NULL,
   PRIMARY KEY (`idMisc`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,10 +207,7 @@ CREATE TABLE `MiscObject` (
 
 LOCK TABLES `MiscObject` WRITE;
 /*!40000 ALTER TABLE `MiscObject` DISABLE KEYS */;
-INSERT INTO `MiscObject` VALUES
-(1,'Bee Hive','There is a bee hive in this area','No'),
-(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes'),
-(3, 'Amphitheater','The amphitheater is used for events at the cemetery','Yes');
+INSERT INTO `MiscObject` VALUES (1,'Bee Hive','There is a bee hive in this area','No'),(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes'),(3,'Amphitheater','The amphitheater is used for events at the cemetery','Yes');
 /*!40000 ALTER TABLE `MiscObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +224,7 @@ CREATE TABLE `NaturalHistory` (
   `scientificName` varchar(150) DEFAULT NULL,
   `description` blob,
   PRIMARY KEY (`idNaturalHistory`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,10 +233,7 @@ CREATE TABLE `NaturalHistory` (
 
 LOCK TABLES `NaturalHistory` WRITE;
 /*!40000 ALTER TABLE `NaturalHistory` DISABLE KEYS */;
-INSERT INTO `NaturalHistory` VALUES
-(1,'Forget-Me-Not','scientificName','grows on tall, hairy stems which reach two feet in height. Blue blooms with yellow centers'),
-(2,'Black Raspberries','scientificName','This plant is native to eastern North America. Black seeded looking fruit'),
-(3,'Walnut Trees','scientificName','These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
+INSERT INTO `NaturalHistory` VALUES (1,'Forget-Me-Not','scientificName','grows on tall, hairy stems which reach two feet in height. Blue blooms with yellow centers'),(2,'Black Raspberries','scientificName','This plant is native to eastern North America. Black seeded looking fruit'),(3,'Walnut Trees','scientificName','These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
 /*!40000 ALTER TABLE `NaturalHistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,7 +268,7 @@ CREATE TABLE `TrackableObject` (
   CONSTRAINT `fk_TrackableObject_VegetationDetail1` FOREIGN KEY (`idNaturalHistory`) REFERENCES `NaturalHistory` (`idNaturalHistory`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_MiscDetail1` FOREIGN KEY (`idMisc`) REFERENCES `MiscObject` (`idMisc`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_TrackableObject_PlotDetail1` FOREIGN KEY (`idGroup`) REFERENCES `Group` (`idGroup`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,20 +277,7 @@ CREATE TABLE `TrackableObject` (
 
 LOCK TABLES `TrackableObject` WRITE;
 /*!40000 ALTER TABLE `TrackableObject` DISABLE KEYS */;
-INSERT INTO `TrackableObject` VALUES
-(1,43.129362,-77.639403,'qrCode','He was #1','imageDescription',DEFAULT,1,1,NULL,NULL,3),
-(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription',DEFAULT,1,2,NULL,NULL,2),
-(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription',DEFAULT,1,3,NULL,NULL,3),
-(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription',DEFAULT,2,NULL,1,NULL,2),
-(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription',DEFAULT,2,NULL,2,NULL,2),
-(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription',DEFAULT,2,NULL,3,NULL,2),
-(7,43.129617,-77.638936,'qrCode','3','imageDescription',DEFAULT,3,NULL,NULL,2,1),
-(8,43.129617,-77.639403,'qrCode','3','imageDescription',DEFAULT,3,NULL,NULL,1,2),
-(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Amphitheater Seating','../pages/images/pins/amp.jpeg',3,null,null,3,null),
-(10,43.129361,-77.639027,'qrCode',null,'Image of McGuckin\'s tombstone','../pages/images/pins/mcguckin.jpeg',1,4,null,null,null),
-(11,43.129387,-77.639330,'qrCode',null,'Image is of the Oakley hotel','../pages/images/pins/oakleyhotel.jpeg',1,null,null,null,2),
-(12,43.129301,-77.639521,'qrCode',null,'Image of Potter\'s Field','../pages/images/pins/potters.jpeg',1,null,null,null,4),
-(13,43.129356,-77.638774,'qrCode',null,'Image of the Ballintine\'s family plot','../pages/images/pins/ballintine_family.jpeg',1,null,null,null,3);
+INSERT INTO `TrackableObject` VALUES (1,43.129362,-77.639403,'qrCode','He was #1','imageDescription','../pages/images/pins/default.png',1,1,NULL,NULL,3),(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription','../pages/images/pins/default.png',1,2,NULL,NULL,2),(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription','../pages/images/pins/default.png',1,3,NULL,NULL,3),(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription','../pages/images/pins/default.png',2,NULL,1,NULL,2),(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription','../pages/images/pins/default.png',2,NULL,2,NULL,2),(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','../pages/images/pins/default.png',2,NULL,3,NULL,2),(7,43.129617,-77.638936,'qrCode','3','imageDescription','../pages/images/pins/default.png',3,NULL,NULL,2,1),(8,43.129617,-77.639403,'qrCode','3','imageDescription','../pages/images/pins/default.png',3,NULL,NULL,1,2),(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Amphitheater Seating','../pages/images/pins/amp.jpeg',3,NULL,NULL,3,NULL),(10,43.129361,-77.639027,'qrCode',NULL,'Image of McGuckin\'s tombstone','../pages/images/pins/mcguckin.jpeg',1,4,NULL,NULL,NULL),(11,43.129387,-77.639330,'qrCode',NULL,'Image is of the Oakley hotel','../pages/images/pins/oakleyhotel.jpeg',1,NULL,NULL,NULL,2),(12,43.129301,-77.639521,'qrCode',NULL,'Image of Potter\'s Field','../pages/images/pins/potters.jpeg',1,NULL,NULL,NULL,4),(13,43.129356,-77.638774,'qrCode',NULL,'Image of the Ballintine\'s family plot','../pages/images/pins/ballintine_family.jpeg',1,NULL,NULL,NULL,3);
 /*!40000 ALTER TABLE `TrackableObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -329,7 +294,7 @@ CREATE TABLE `TypeFilter` (
   `pinDesign` varchar(500) DEFAULT NULL,
   `buttonColor` varchar(45) DEFAULT '#bdc3c7',
   PRIMARY KEY (`idTypeFilter`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,10 +303,7 @@ CREATE TABLE `TypeFilter` (
 
 LOCK TABLES `TypeFilter` WRITE;
 /*!40000 ALTER TABLE `TypeFilter` DISABLE KEYS */;
-INSERT INTO `TypeFilter` VALUES
-(1,'Grave','https://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),
-(2,'Natural History','https://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),
-(3,'Miscellaneous','https://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
+INSERT INTO `TypeFilter` VALUES (1,'Grave','https://maps.google.com/mapfiles/ms/icons/blue-dot.png','#6991FD'),(2,'Natural History','https://maps.google.com/mapfiles/ms/icons/green-dot.png','#00E54C'),(3,'Miscellaneous','https://maps.google.com/mapfiles/ms/icons/purple-dot.png','#bdc3c7');
 /*!40000 ALTER TABLE `TypeFilter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,7 +321,7 @@ CREATE TABLE `User` (
   `email` varchar(80) DEFAULT NULL,
   `password` varchar(80) DEFAULT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,12 +330,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES
-(1,'Brianna','Jones','bfj5889@g.rit.edu','hashedPWD'),
-(2,'Cole','Johnson','cj3421@g.rit.edu','hashedPWD'),
-(3,'Daniel','Quackenbush','dqvcdsv9@g.rit.edu','hashedPWD'),
-(4,'Jake','Fanelli','jxf6552@rit.edu,','hashedPWD'),
-(5,'Test','Test','test@gmail.com','test');
+INSERT INTO `User` VALUES (1,'Brianna','Jones','bfj5889@rit.edu','842aba5843178b6e2bcc022d8f6082c6b6caba20'),(6,'Admin','User','admin@admin.com','d033e22ae348aeb5660fc2140aec35850c4da997');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +353,7 @@ CREATE TABLE `WiderAreaMap` (
   `state` varchar(2) DEFAULT NULL,
   `zipcode` int(11) DEFAULT NULL,
   PRIMARY KEY (`idWiderAreaMap`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,10 +362,7 @@ CREATE TABLE `WiderAreaMap` (
 
 LOCK TABLES `WiderAreaMap` WRITE;
 /*!40000 ALTER TABLE `WiderAreaMap` DISABLE KEYS */;
-INSERT INTO `WiderAreaMap` VALUES
-(1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),
-(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),
-(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
+INSERT INTO `WiderAreaMap` VALUES (1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',43.153200,77.628100,'17 Madison St, Rochester','Rochester','NY',14608),(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',43.128700,77.620700,'1133 Mt Hope Ave, Rochester','Rochester','NY',14620),(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',43.128700,77.620700,'180 Reservoir Ave, Rochester','Rochester','NY',14620);
 /*!40000 ALTER TABLE `WiderAreaMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -421,4 +375,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-20 20:26:56
+-- Dump completed on 2018-03-15 16:06:33
