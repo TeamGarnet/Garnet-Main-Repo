@@ -35,7 +35,7 @@ class GraveObjectData {
 
     public function readGraveObject() {
         global $getAllGraveEntriesQuery;
-        return $this -> getDBInfo(1) -> returnObject("", "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
+        return $this -> getDBInfo(0) -> returnObject("", "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
 JOIN TrackableObject T ON G.idGrave = T.idGrave 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
 LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
