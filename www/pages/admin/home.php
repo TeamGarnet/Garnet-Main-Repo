@@ -8,8 +8,8 @@ if(isset($_SESSION['idUser'])) {
 include '../../services/GraveService.class.php';
 $graveService = new GraveService();
 //var_dump($graveService->getAllGraveEntries());
-$graveService -> createGraveEntry("Test", "Test", "Test", 1962-02-21, 1962-02-21, "Test", "",
-    43.129362, -77.639403, "Test", "Test", "", 1);
+$graveService -> createGraveEntry("Test", "Test", "Test", "1962-02-21", "1962-02-21", "Test", "",
+    "43.129362", "-77.639403", "Test", "Test", "", 1);
 
 ?>
 
