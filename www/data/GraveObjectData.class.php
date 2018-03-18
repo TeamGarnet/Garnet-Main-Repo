@@ -35,7 +35,7 @@ class GraveObjectData {
 
     public function readGraveObject() {
         global $getAllGraveEntriesQuery;
-        return $this->getDBInfo(1)->returnObject("", $getAllGraveEntriesQuery);
+        return $this->getDBInfo(0)->returnObject("", $getAllGraveEntriesQuery);
     }
 
     public function updateGraveObject() {
