@@ -70,18 +70,24 @@ JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 ";
 
-$createTrackableObjectQuery = "INSERT INTO TrackableObject (idTrackableObject,longitude,latitude,qrCode,hint,imageDescription,imageLocation,idTypeFilter,idGrave,idNaturalHistory,idMisc,idGroup)
-VALUES (:idTrackableObject,:longitude,:latitude,:qrCode,:hint,:imageDescription, '../pages/images/pins/default.png',:idTypeFilter,:idGrave,:idNaturalHistory,:idMisc,:idGroup)";
+$createTrackableObjectQuery = "INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription,imageLocation, idTypeFilter) 
+VALUES (:longitude, :latitude, :hint, :imageDescription, :imageLocation, :idTypeFilter)";
 
-$createGraveObjectQuery = "INSERT INTO Grave (idGrave,firstName,middleName,lastName,birth,death,description,idHistoricFilter)
-VALUES (:idGrave,:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)";
+$createGraveObjectQuery = "INSERT INTO Grave (firstName,middleName,lastName,birth,death,description,idHistoricFilter)
+VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)";
 
-$createMiscObjectQuery  = "INSERT INTO MiscObject (idMisc,name,description,isHazard)
-VALUES (:idMisc,:name, description,:isHazard)";
+$createMiscObjectQuery  = "INSERT INTO MiscObject (name,description,isHazard)
+VALUES (:name, description,:isHazard)";
 
-$createHanturalHistoryObjectQuery = "INSERT INTO NaturalHistory (idNaturalHistory,commonName,scientificName,description)
-VALUES  (:idNaturalHistory,:commonName,:scientificName,:description)";
+$createHanturalHistoryObjectQuery = "INSERT INTO NaturalHistory (commonName,scientificName,description)
+VALUES  (:commonName,:scientificName,:description)";
 
 $updateTrackableObjectConnectionQuery = "UPDATE TrackableObject SET
 idGrave = :idGrave, idNaturalHistory = :idNaturalHistory, idMisc = :idMisc, idGroup = :idGroup
 WHERE idTrackableObject = :idTrackableObject";
+
+$updateGraveEntryIdQuery = "UPDATE TrackableObject SET idGrave = :objectID WHERE idTrackableObject = :idTrackableObject";
+
+$updateNaturalHistoryEntryIdQuery = "UPDATE TrackableObject SET idNaturalHistory = :objectID WHERE idTrackableObject = :idTrackableObject";
+
+$updateMiscEntryIdQuery = "UPDATE TrackableObject SET idMisc = :objectID WHERE idTrackableObject = :idTrackableObject";

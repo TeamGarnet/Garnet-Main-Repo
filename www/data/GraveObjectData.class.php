@@ -29,8 +29,31 @@ class GraveObjectData {
         return null;
     }
 
-    public function createGraveObject() {
+    public function createGraveObject($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
+        try{
+            //global $createGraveObjectQuery;
+            $stmt = $this->getDBInfo(1)->prepare("INSERT INTO Grave (firstName,middleName,lastName,birth,death,description,idHistoricFilter)
+VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)");
 
+
+            $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+            $stmt->bindParam(':middleName', $middleName, PDO::PARAM_STR);
+            $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+            $stmt->bindParam(':birth', $birth, PDO::PARAM_STR);
+            $stmt->bindParam(':death', $death, PDO::PARAM_STR);
+            $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+            if ($idHistoricFilter == null) {
+                $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_NULL);
+            }else {
+                $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_INT);
+            }
+
+            $stmt->execute();
+            return $this->getDBInfo(0)->lastInsertId();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
     }
 
     public function readGraveObject() {

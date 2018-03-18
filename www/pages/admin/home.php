@@ -5,13 +5,11 @@ if(isset($_SESSION['idUser'])) {
 } else {
     header('Location: login.php');
 }
-//include '../../data/GraveObjectData.class.php';
-//$graveData = new GraveObjectData();
-//var_dump($graveData->readGraveObject());
-
 include '../../services/GraveService.class.php';
 $graveService = new GraveService();
-var_dump($graveService->getAllGraveEntries());
+//var_dump($graveService->getAllGraveEntries());
+$graveService -> createGraveEntry("Test", "Test", "Test", 1962-02-21, 1962-02-21, "Test", "",
+    43.129362, -77.639403, "Test", "Test", "", 1);
 
 ?>
 

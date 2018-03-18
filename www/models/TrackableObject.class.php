@@ -28,11 +28,10 @@ class TrackableObject {
      * @param $idMisc
      * @param $type
      */
-    public function __construct($idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
+    public function __construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
         $this -> idTrackableObject = $idTrackableObject;
         $this -> longitude = $longitude;
         $this -> latitude = $latitude;
-        $this -> qrCode = $qrCode;
         $this -> hint = $hint;
         $this -> imageDescription = $imageDescription;
         $this -> imageLocation = $imageLocation;
@@ -80,20 +79,6 @@ class TrackableObject {
      */
     public function setLatitude($latitude) {
         $this -> latitude = $latitude;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getQrCode() {
-        return $this -> qrCode;
-    }
-
-    /**
-     * @param mixed $qrCode
-     */
-    public function setQrCode($qrCode) {
-        $this -> qrCode = $qrCode;
     }
 
     /**
@@ -165,6 +150,7 @@ class TrackableObject {
     public function setType($type) {
         $this -> type = $type;
     }
+
 
 
 }
