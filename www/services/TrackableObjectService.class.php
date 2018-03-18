@@ -6,8 +6,11 @@ include '../../data/TrackableObjectData.class.php';
 class TrackableObjectService {
     public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $trackableObjectData = new TrackableObjectData();
-        $longitude = strval(filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT));
-        $latitude = strval(filter_var($latitude, FILTER_SANITIZE_NUMBER_FLOAT));
+        $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT);
+        echo $longitude;
+        echo "<br>";
+        $latitude = filter_var($latitude, FILTER_SANITIZE_NUMBER_FLOAT);
+        echo $latitude;
         $hint = filter_var($hint, FILTER_SANITIZE_STRING);
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
