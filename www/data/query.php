@@ -55,7 +55,7 @@ $allTrailLocationQuery = "SELECT * FROM RapidsCemetery.WiderAreaMap";
 
 
 //Admin Page Queries
-$getAllGraveEntriesQuery = "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
+$getAllGraveEntriesQuery = "SELECT idTrackableObject, G.idGrave, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
 JOIN TrackableObject T ON G.idGrave = T.idGrave 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
 LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter";

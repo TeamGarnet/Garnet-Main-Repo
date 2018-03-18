@@ -5,9 +5,13 @@ if(isset($_SESSION['idUser'])) {
 } else {
     header('Location: login.php');
 }
-include '../../data/GraveObjectData.class.php';
-$graveData = new GraveObjectData();
-var_dump($graveData->readGraveObject());
+//include '../../data/GraveObjectData.class.php';
+//$graveData = new GraveObjectData();
+//var_dump($graveData->readGraveObject());
+
+include '../../services/GraveService.class.php';
+$graveService = new GraveService();
+var_dump($graveService->getAllGraveEntries());
 
 ?>
 

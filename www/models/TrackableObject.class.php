@@ -11,9 +11,6 @@ class TrackableObject {
     private $imageDescription;
     private $imageLocation;
     private $idTypeFilter;
-    private $idGrave;
-    private $idHistoryHistory;
-    private $idMisc;
     private $type;
 
     /**
@@ -31,7 +28,7 @@ class TrackableObject {
      * @param $idMisc
      * @param $type
      */
-    public function __construct($idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $idGrave, $idHistoryHistory, $idMisc, $type) {
+    public function __construct($idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
         $this -> idTrackableObject = $idTrackableObject;
         $this -> longitude = $longitude;
         $this -> latitude = $latitude;
@@ -40,9 +37,6 @@ class TrackableObject {
         $this -> imageDescription = $imageDescription;
         $this -> imageLocation = $imageLocation;
         $this -> idTypeFilter = $idTypeFilter;
-        $this -> idGrave = $idGrave;
-        $this -> idHistoryHistory = $idHistoryHistory;
-        $this -> idMisc = $idMisc;
         $this -> type = $type;
     }
 
