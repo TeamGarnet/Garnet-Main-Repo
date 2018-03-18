@@ -6,14 +6,13 @@ include '../../models/Grave.class.php';
  */
 
 class GraveService {
-    public $graveDataClass;
 
     public function __construct(){
-        $this -> $graveDataClass = new GraveObjectData();
     }
 
     public function getAllGraveEntries() {
-        $allGraveDataObjects = $this -> $graveDataObjects -> readGraveObject();
+        $graveDataClass = new GraveObjectData();
+        $allGraveDataObjects =  $graveDataClass -> readGraveObject();
         $allGraveObject = array();
 
         foreach ($allGraveDataObjects as $graveArray) {
