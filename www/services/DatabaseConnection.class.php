@@ -89,9 +89,9 @@ class DatabaseConnection {
             if ($sqlString == "") {
                 $sqlString = "SELECT * FROM " . $objName;
             }
-            $stmnt = $this->conn->prepare($sqlString);
+            $stmnt = $this->getConnection()->prepare($sqlString);
             $stmnt->execute();
-            $stmnt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmnt->setFetchMode(PDO::FETCH_CLASS, $objName);
             while ($result = $stmnt->fetch()) { // or just fetchALl();
                 $results[] = $result;
             }
