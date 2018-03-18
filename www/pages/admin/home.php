@@ -5,6 +5,10 @@ if(isset($_SESSION['idUser'])) {
 } else {
     header('Location: login.php');
 }
+include '../../data/GraveObjectData.class.php';
+$graveData = new GraveData;
+var_dump($graveData);
+
 ?>
 
 <!-- HTML -->
@@ -22,6 +26,11 @@ if(isset($_SESSION['idUser'])) {
 </head>
 <body>
 <p> Woah you made it </p>
+
+
+
+
+
 <a href="logout.php">Logout</a>
 </body>
 </html>

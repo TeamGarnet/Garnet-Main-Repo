@@ -75,4 +75,30 @@ class DatabaseConnection {
     // Magic method clone is empty to prevent duplication of connection
     private function __clone() {
     }
+
+
+    /**
+     * @param $objName - Name of Object / Database Table
+     * @param string $sqlString - Complete sql select statement
+     * @return array - An associative array of objects pulled from the database
+     */
+    function returnObject($objName, $sqlString = "")
+    {
+        try {
+            $results = array();
+            if ($sqlString == "") {
+                $sqlString = "SELECT * FROM " . $objName;
+            }
+            $stmnt = $this->conn->prepare($sqlString);
+            $stmnt->execute();
+            $stmnt->setFetchMode(PDO::FETCH_CLASS, $objName);
+            while ($result = $stmnt->fetch()) { // or just fetchALl();
+                $results[] = $result;
+            }
+            return $results;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+    }
 }

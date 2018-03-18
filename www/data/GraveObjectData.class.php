@@ -1,10 +1,10 @@
 <?php
-include '../services/DatabaseConnection.class.php';
-include 'query.php';
-/**
+/*
+ *
  */
+require_once '../../services/DatabaseConnection.class.php';
 
-class AdminObjectsData {
+class GraveObjectData {
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -29,20 +29,20 @@ class AdminObjectsData {
         return null;
     }
 
-    public function insertTrackableObject() {
-        global $createTrackableObjectQuery;
+    public function createGraveObject() {
 
     }
 
-    public function insertGraveObject() {
+    public function readGraveObject() {
+        global $getAllGraveEntriesQuery;
+        return $this->getDBInfo(1)->returnObject("Grave", $getAllGraveEntriesQuery);
+    }
+
+    public function updateGraveObject() {
 
     }
 
-    public function insertMiscObject() {
-
-    }
-
-    public function insertNaturalHistoryObject() {
+    public function deleteGraveObject() {
 
     }
 }

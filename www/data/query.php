@@ -56,15 +56,18 @@ $allTrailLocationQuery = "SELECT * FROM RapidsCemetery.WiderAreaMap";
 
 //Admin Page Queries
 $getAllGraveEntriesQuery = "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
-JOIN TrackableObject T ON G.idGrave = T.idGrave JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
-JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter;";
+JOIN TrackableObject T ON G.idGrave = T.idGrave 
+JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
+LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter";
 
 $getAllMiscEntriesQuery = "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, name, T.idTypeFilter, TF.type, M.idMisc, M.name, M.description FROM MiscObject M 
-JOIN TrackableObject T ON M.idMisc = T.idMisc JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter;
+JOIN TrackableObject T ON M.idMisc = T.idMisc 
+JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 ";
 
 $getAllNaturalHistoryEntriesQuery = "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, commonName, scientificName, description, T.idTypeFilter, TF.type FROM NaturalHistory NM 
-JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter;
+JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory 
+JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 ";
 
 $createTrackableObjectQuery = "INSERT INTO TrackableObject (idTrackableObject,longitude,latitude,qrCode,hint,imageDescription,imageLocation,idTypeFilter,idGrave,idNaturalHistory,idMisc,idGroup)
