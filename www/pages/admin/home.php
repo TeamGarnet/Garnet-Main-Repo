@@ -6,7 +6,7 @@ if(isset($_SESSION['idUser'])) {
     header('Location: login.php');
 }
 include '../../data/GraveObjectData.class.php';
-$graveData = new GraveData;
+$graveData = new GraveObjectData();
 var_dump($graveData);
 
 ?>
