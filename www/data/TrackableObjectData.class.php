@@ -40,7 +40,7 @@ class TrackableObjectData {
             $stmt->bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
 
             $stmt->execute();
-            return $this->getDBInfo(0)->lastInsertId();
+            return $this->getDBInfo(1)->lastInsertId();
         } catch (PDOException $e) {
             echo $e->getMessage();
             die();
