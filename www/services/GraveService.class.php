@@ -24,4 +24,12 @@ class GraveService {
         return $allGraveDataObjects;
     }
 
+    public function createGraveEntry() {}
+
+    public function updateGraveEntry() {}
+
+    public function deleteGraveEntry() {
+
+    }
+
 }

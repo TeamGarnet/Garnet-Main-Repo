@@ -155,48 +155,6 @@ class TrackableObject {
     /**
      * @return mixed
      */
-    public function getIdGrave() {
-        return $this -> idGrave;
-    }
-
-    /**
-     * @param mixed $idGrave
-     */
-    public function setIdGrave($idGrave) {
-        $this -> idGrave = $idGrave;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdHistoryHistory() {
-        return $this -> idHistoryHistory;
-    }
-
-    /**
-     * @param mixed $idHistoryHistory
-     */
-    public function setIdHistoryHistory($idHistoryHistory) {
-        $this -> idHistoryHistory = $idHistoryHistory;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdMisc() {
-        return $this -> idMisc;
-    }
-
-    /**
-     * @param mixed $idMisc
-     */
-    public function setIdMisc($idMisc) {
-        $this -> idMisc = $idMisc;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getType() {
         return $this -> type;
     }

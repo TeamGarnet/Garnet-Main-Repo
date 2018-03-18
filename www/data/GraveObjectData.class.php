@@ -42,7 +42,9 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
     }
 
     public function updateGraveObject() {
-
+        global $createTrackableObjectQuery;
+        global $createGraveObjectQuery;
+        return "";
     }
 
     public function deleteGraveObject() {
