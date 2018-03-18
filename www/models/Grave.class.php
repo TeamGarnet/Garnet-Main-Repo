@@ -1,4 +1,5 @@
 <?php
+include 'TrackableObject.class.php';
 /**
  */
 
