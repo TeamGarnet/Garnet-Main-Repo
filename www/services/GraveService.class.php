@@ -1,6 +1,6 @@
 <?php
-include '../data/GraveObjectData.class.php';
-include '../models/Grave.class.php';
+include '../../data/GraveObjectData.class.php';
+include '../../models/Grave.class.php';
 
 /**
  */
