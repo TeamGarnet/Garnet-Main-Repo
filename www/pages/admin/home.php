@@ -7,7 +7,7 @@ if(isset($_SESSION['idUser'])) {
 }
 include '../../data/GraveObjectData.class.php';
 $graveData = new GraveObjectData();
-var_dump($graveData);
+var_dump($graveData->readGraveObject());
 
 ?>
 
