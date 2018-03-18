@@ -108,7 +108,7 @@ class MapPin {
     }
 
     public function setImageDescription($imageDescription) {
-        $this -> imageDescription = $imageDescription;
+        $this -> im7geDescription = $imageDescription;
     }
 
 
