@@ -8,8 +8,8 @@ if(isset($_SESSION['idUser'])) {
 include '../../services/GraveService.class.php';
 $graveService = new GraveService();
 //var_dump($graveService->getAllGraveEntries());
-$graveService -> createGraveEntry("Test", "Test", "Test", "1962-02-22", "1962-02-22", "Test", "",
-    43.129362, -77.639403, "Test", "Test", "", 1);
+$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",
+    43.109362, -77.659403, "Test", "Test", "", 1);
 
 ?>
 

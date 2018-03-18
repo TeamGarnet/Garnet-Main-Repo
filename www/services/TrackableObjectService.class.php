@@ -34,7 +34,7 @@ class TrackableObjectService {
 
     public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
         $trackableObjectData = new TrackableObjectData();
-        $trackableObjectData -> updateTrackableObjectEntry();
+        $trackableObjectData -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
     }
 
     public function updateObjectEntryID($objectType, $objectID, $idTrackableObject) {
