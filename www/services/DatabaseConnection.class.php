@@ -91,7 +91,7 @@ class DatabaseConnection {
             }
             $stmnt = $this->conn->prepare($sqlString);
             $stmnt->execute();
-            $stmnt->setFetchMode(PDO::FETCH_CLASS, $objName);
+            $stmnt->setFetchMode(PDO::FETCH_ASSOC);
             while ($result = $stmnt->fetch()) { // or just fetchALl();
                 $results[] = $result;
             }
