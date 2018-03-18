@@ -49,7 +49,7 @@ VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricF
             }
 
             $stmt->execute();
-            return $this->getDBInfo(0)->lastInsertId();
+            return $this->getDBInfo(1)->lastInsertId();
         } catch (PDOException $e) {
             echo $e->getMessage();
             die();
