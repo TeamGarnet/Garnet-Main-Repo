@@ -27,7 +27,7 @@ class Grave extends TrackableObject {
      * @param $historicFilterName
      */
     public function __construct($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $historicFilterName,
-                                $idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $idGrave, $idHistoryHistory, $idMisc, $type) {
+                                $idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
         $this -> idGrave = $idGrave;
         $this -> firstName = $firstName;
         $this -> middleName = $middleName;
@@ -37,7 +37,7 @@ class Grave extends TrackableObject {
         $this -> description = $description;
         $this -> idHistoricFilter = $idHistoricFilter;
         $this -> historicFilterName = $historicFilterName;
-        TrackableObject::__construct($idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $idGrave, $idHistoryHistory, $idMisc, $type);
+        TrackableObject::__construct($idTrackableObject, $longitude, $latitude, $qrCode, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
     }
 
 
