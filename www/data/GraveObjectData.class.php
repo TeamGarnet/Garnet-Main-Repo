@@ -32,8 +32,7 @@ class GraveObjectData {
     public function createGraveObject($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
         try{
             //global $createGraveObjectQuery;
-            $stmt = $this->getDBInfo(1)->prepare("INSERT INTO Grave (firstName,middleName,lastName,birth,death,description,idHistoricFilter)
-VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)");
+            $stmt = $this->getDBInfo(1)->prepare("INSERT INTO Grave (firstName,middleName,lastName,birth,death,description,idHistoricFilter)VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)");
 
 
             $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
@@ -64,10 +63,25 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
     }
 
-    public function updateGraveObject() {
-        global $createTrackableObjectQuery;
-        global $createGraveObjectQuery;
-        return "";
+    public function updateGraveObject($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
+        //global $updateGraveObjectQuery;
+        $stmt = $this->getDBInfo(1)->prepare("UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave;");
+
+
+        $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+        $stmt->bindParam(':middleName', $middleName, PDO::PARAM_STR);
+        $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+        $stmt->bindParam(':birth', $birth, PDO::PARAM_STR);
+        $stmt->bindParam(':death', $death, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':idGrave', $idGrave, PDO::PARAM_STR);
+        if ($idHistoricFilter == null) {
+            $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_NULL);
+        }else {
+            $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_INT);
+        }
+
+        $stmt->execute();
     }
 
     public function deleteGraveObject() {

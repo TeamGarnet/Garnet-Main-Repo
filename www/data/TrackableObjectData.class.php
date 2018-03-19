@@ -47,7 +47,26 @@ class TrackableObjectData {
         }
     }
 
-    public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type) {
+    public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        try{
+            //global $updateTrackableObjectQuery;
+            $stmt = $this->getDBInfo(1)->prepare("UPDATE TrackableObject
+SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription = :imageDescription, imageLocation = :imageLocation, idTypeFilter = :idTypeFilter WHERE idTrackableObject = :idTrackableObject;");
+
+            $stmt->bindParam(':longitude', $longitude, PDO::PARAM_STR);
+            $stmt->bindParam(':latitude', $latitude, PDO::PARAM_STR);
+            $stmt->bindParam(':hint', $hint, PDO::PARAM_STR);
+            $stmt->bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
+            $stmt->bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
+            $stmt->bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+            $stmt->bindParam(':idTrackableObject', $idTrackableObject, PDO::PARAM_STR);
+
+            $stmt->execute();
+            return $this->getDBInfo(1)->lastInsertId();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
     }
 
     public function updateObjectEntryID($objectType, $objectID, $idTrackableObject) {

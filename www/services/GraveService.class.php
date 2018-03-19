@@ -25,8 +25,7 @@ class GraveService extends TrackableObjectService {
         return $allGraveDataObjects;
     }
 
-    public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter,
-                                     $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+    public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
         $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
         $lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
@@ -49,7 +48,23 @@ class GraveService extends TrackableObjectService {
         $this -> updateObjectEntryID("Grave", $lastInsertIdGrave, $lastInsertIdTrackableObject);
     }
 
-    public function updateGraveEntry() {}
+    public function updateGraveEntry($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
+        $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
+        $lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
+        $birth = filter_var (preg_replace("([^0-9/] | [^0-9-])","",htmlentities($birth)));
+        $death = filter_var (preg_replace("([^0-9/] | [^0-9-])","",htmlentities($death)));
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
+        $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
+        if (empty($idHistoricFilter) || $idHistoricFilter == "") {
+            $idHistoricFilter = null;
+        }
+
+        $this ->updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
+
+        $graveDataClass = new GraveObjectData();
+        $graveDataClass -> updateGraveObject($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter);
+    }
 
     public function deleteGraveEntry() {
 

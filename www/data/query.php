@@ -82,12 +82,12 @@ VALUES (:name, description,:isHazard)";
 $createHanturalHistoryObjectQuery = "INSERT INTO NaturalHistory (commonName,scientificName,description)
 VALUES  (:commonName,:scientificName,:description)";
 
-$updateTrackableObjectConnectionQuery = "UPDATE TrackableObject SET
-idGrave = :idGrave, idNaturalHistory = :idNaturalHistory, idMisc = :idMisc, idGroup = :idGroup
-WHERE idTrackableObject = :idTrackableObject";
+$updateTrackableObjectQuery = "UPDATE TrackableObject SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription = :imageDescription, imageLocation = :imageLocation, idTypeFilter = :idTypeFilter WHERE idTrackableObject = :idTrackableObject;";
 
 $updateGraveEntryIdQuery = "UPDATE TrackableObject SET idGrave = :objectID WHERE idTrackableObject = :idTrackableObject";
 
 $updateNaturalHistoryEntryIdQuery = "UPDATE TrackableObject SET idNaturalHistory = :objectID WHERE idTrackableObject = :idTrackableObject";
 
 $updateMiscEntryIdQuery = "UPDATE TrackableObject SET idMisc = :objectID WHERE idTrackableObject = :idTrackableObject";
+
+$updateGraveObjectQuery = "UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave;";
