@@ -58,38 +58,43 @@
         </div>
     </div>
 
-<!--    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <img class="center-block img-responsive" src="../pages/images/TrailMap.jpg" alt="Map of history trails in Rochester"/>
-        </div>
-    </div>
-	-->
-	
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-				<div id="contactCard1">
-					<div class="contactCard">
-						<p class="name">Name: </p>
-						<p class="title">Title: </p>
-						<p class="description">Description: </p>
-						<p class="email">Email: </p>
-						<p class="phone">Phone: </p>
-					</div>
-				</div>
-			</div>
-		
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-				<div id="contactCard2">
-					<div class="contactCard">
-						<p class="name">Name: </p>
-						<p class="title">Title: </p>
-						<p class="description">Description: </p>
-						<p class="email">Email: </p>
-						<p class="phone">Phone: </p>
-					</div>
+<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			<div class="contactCardOutter">
+				<div class="contactCard">
+					<p class="name">Name </p>
+					<p class="title">Title </p>
+					<p class="description">Description </p>
+					<p class="email">Email </p>
+					<p class="phone">Phone </p>
 				</div>
 			</div>
 		</div>
+	
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			<div class="contactCardOutter">
+				<div class="contactCard">
+					<p class="name">Name </p>
+					<p class="title">Title </p>
+					<p class="description">Description </p>
+					<p class="email">Email </p>
+					<p class="phone">Phone </p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			<div class="contactCardOutter">
+				<div class="contactCard">
+					<p class="name">Name </p>
+					<p class="title">Title </p>
+					<p class="description">Description </p>
+					<p class="email">Email </p>
+					<p class="phone">Phone </p>
+				</div>
+			</div>
+		</div>
+	</div>
 
     <div class="row">
         <?php
