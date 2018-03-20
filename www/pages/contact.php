@@ -65,31 +65,31 @@
     </div>
 	-->
 	
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div id="">
-                <div class="">
-                    <p class="">Name: </p>
-                    <p class="">Title: </p>
-                    <p class="">Description: </p>
-					<p class="">Email: </p>
-					<p class="">Phone: </p>
-                </div>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div id="contactCard1">
+					<div class="contactCard">
+						<p class="name">Name: </p>
+						<p class="title">Title: </p>
+						<p class="description">Description: </p>
+						<p class="email">Email: </p>
+						<p class="phone">Phone: </p>
+					</div>
+				</div>
+			</div>
 		
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div id="">
-                <div class="">
-                    <p class="">Name: </p>
-                    <p class="">Title: </p>
-                    <p class="">Description: </p>
-					<p class="">Email: </p>
-					<p class="">Phone: </p>
-                </div>
-            </div>
-        </div>
-
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div id="contactCard2">
+					<div class="contactCard">
+						<p class="name">Name: </p>
+						<p class="title">Title: </p>
+						<p class="description">Description: </p>
+						<p class="email">Email: </p>
+						<p class="phone">Phone: </p>
+					</div>
+				</div>
+			</div>
+		</div>
 
     <div class="row">
         <?php
