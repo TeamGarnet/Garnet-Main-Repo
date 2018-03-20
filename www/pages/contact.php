@@ -17,7 +17,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="../pages/css/trails.css" type="text/css">
+    <link rel="stylesheet" href="../pages/css/contact.css" type="text/css">
     <link rel="stylesheet" href="../pages/css/staticNavigation.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
