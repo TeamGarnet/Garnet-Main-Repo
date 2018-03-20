@@ -23,7 +23,7 @@ echo '
 							<ul class="nav navbar-nav navbar-page navbar-right" style="margin-top:15px">
 								<li ><a href="#">ABOUT</a></li>
 								<li><a href="trails.php">HISTORIC TRAILS</a></li>
-								<li><a href="#">CONTACT</a></li>
+								<li><a href="contact.php">CONTACT</a></li>
 								<li><a href="https://www.paypal.me/JacobFanelli" class="btn btn-default btn-outline btn-circle collapsed">Donate</a></li>
                             </ul>
 						</div>
