@@ -8,7 +8,7 @@ if(isset($_SESSION['idUser'])) {
 include '../../services/GraveService.class.php';
 include '../../services/NaturalHistoryService.class.php';
 //include '../../services/MiscObjectService.class.php';
-$graveService = new GraveService();
+//$graveService = new GraveService();
 $naturalHistoryService = new NaturalHistoryService();
 //$miscObjectService = new MiscObjectService();
 /*
@@ -19,7 +19,7 @@ $graveService -> updateGraveEntry("14","5","firstName2", "M", "lastName", "2018/
 
 $graveService -> deleteGraveEntry("5");
 */
-
+echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
 echo "<br><br>";
 //var_dump($miscObjectService->getAllMiscObjectEntries());
