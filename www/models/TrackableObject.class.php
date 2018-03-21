@@ -6,7 +6,6 @@ class TrackableObject {
     private $idTrackableObject;
     private $longitude;
     private $latitude;
-    private $qrCode;
     private $hint;
     private $imageDescription;
     private $imageLocation;
@@ -18,7 +17,6 @@ class TrackableObject {
      * @param $idTrackableObject
      * @param $longitude
      * @param $latitude
-     * @param $qrCode
      * @param $hint
      * @param $imageDescription
      * @param $imageLocation
