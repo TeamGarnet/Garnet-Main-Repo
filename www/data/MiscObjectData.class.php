@@ -31,7 +31,8 @@ class MiscObjectData {
     public function createMiscObject($name, $isHazard, $description) {
         try {
             //global $createMiscObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO MiscObject (name,description,isHazard) VALUES (:name, description,:isHazard)");
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO MiscObject (name,description,isHazard) VALUES (:name, :description,:isHazard)");
+
 
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
             $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
