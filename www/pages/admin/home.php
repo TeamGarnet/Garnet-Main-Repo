@@ -18,7 +18,7 @@ $graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1
 $graveService -> updateGraveEntry("14","5","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "Test", "Test", "", 1);
 
 $graveService -> deleteGraveEntry("5");
-*/
+
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
 echo "<br><br>";
@@ -26,6 +26,13 @@ var_dump($miscObjectService->getAllMiscObjectEntries());
 
 $naturalHistoryService -> createNaturalHistoryEntry("Test", "commonName", "description", 43.109362, -77.659403, "Test", "Test", "", 2);
 $miscObjectService -> createMiscObjectEntry("name", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
+*/
+
+$naturalHistoryService->updateNaturalHistoryEntry("35","6","Test", "commonName", "description", 43.109362, -77.659403, "Test", "Test", "", 2);
+$miscObjectService->updateMiscObjectEntry("36", "4", "name", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
+
+//$naturalHistoryService->deleteNaturalHistoryEntry("6");
+//$miscObjectService->deleteMiscObjectEntry("4");
 ?>
 
 <!-- HTML -->
