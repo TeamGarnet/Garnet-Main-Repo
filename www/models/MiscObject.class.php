@@ -1,5 +1,5 @@
 <?php
-include 'TrackableObject.class.php';
+require_once 'TrackableObject.class.php';
 
 /**
  */
