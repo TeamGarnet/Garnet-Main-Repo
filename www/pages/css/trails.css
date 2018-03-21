@@ -1,14 +1,15 @@
 body {
     background-color: #F7F5E9;
+    background-image: url("../images/TrailBackground.png");
 }
 
 #pageContent {
-    background-image: url("../images/TrailBackground.png");
+    
 }
 
 /* PHP Generated Content*/
 .locationContainer {
-    background-color: #F7F5E9;
+    background-color: transparent;
     text-align: center;
     text-decoration: none;
 }
