@@ -1,9 +1,10 @@
 body {
     background-color: #F7F5E9;
+	background-image: url("../images/TrailBackground.png");
 }
 
 #pageContent {
-    background-image: url("../images/TrailBackground.png");
+    
 }
 
 /* PHP Generated Content*/
