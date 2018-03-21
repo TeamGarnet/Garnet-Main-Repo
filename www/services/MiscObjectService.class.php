@@ -1,7 +1,7 @@
 <?php
 include '../../data/MiscObjectData.class.php';
 include '../../models/MiscObject.class.php';
-include 'TrackableObjectService.class.php';
+require_once 'TrackableObjectService.class.php';
 /**
  */
 

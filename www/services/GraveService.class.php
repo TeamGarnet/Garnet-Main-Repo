@@ -1,7 +1,7 @@
 <?php
 include '../../data/GraveObjectData.class.php';
 include '../../models/Grave.class.php';
-include 'TrackableObjectService.class.php';
+require_once 'TrackableObjectService.class.php';
 
 /**
  */
