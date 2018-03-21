@@ -55,6 +55,7 @@ $allTrailLocationQuery = "SELECT * FROM RapidsCemetery.WiderAreaMap";
 
 
 //Admin Page Queries
+        //Get Queries
 $getAllGraveEntriesQuery = "SELECT idTrackableObject, G.idGrave, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
 JOIN TrackableObject T ON G.idGrave = T.idGrave 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
@@ -70,6 +71,7 @@ JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 ";
 
+        //Create Queries
 $createTrackableObjectQuery = "INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription,imageLocation, idTypeFilter) 
 VALUES (:longitude, :latitude, :hint, :imageDescription, :imageLocation, :idTypeFilter)";
 
@@ -79,9 +81,10 @@ VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricF
 $createMiscObjectQuery  = "INSERT INTO MiscObject (name,description,isHazard)
 VALUES (:name, description,:isHazard)";
 
-$createHanturalHistoryObjectQuery = "INSERT INTO NaturalHistory (commonName,scientificName,description)
+$createNaturalHistoryObjectQuery = "INSERT INTO NaturalHistory (commonName,scientificName,description)
 VALUES  (:commonName,:scientificName,:description)";
 
+    //Update Queries
 $updateTrackableObjectQuery = "UPDATE TrackableObject SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription = :imageDescription, imageLocation = :imageLocation, idTypeFilter = :idTypeFilter WHERE idTrackableObject = :idTrackableObject;";
 
 $updateGraveEntryIdQuery = "UPDATE TrackableObject SET idGrave = :objectID WHERE idTrackableObject = :idTrackableObject";
@@ -92,4 +95,12 @@ $updateMiscEntryIdQuery = "UPDATE TrackableObject SET idMisc = :objectID WHERE i
 
 $updateGraveObjectQuery = "UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave";
 
+$updateNaturalHistoryObjectQuery = "UPDATE NaturalHistory SET idNaturalHistory = :idNaturalHistory, commonName = :commonName, scientificName = :scientificName, description = :description WHERE idNaturalHistory = :idNaturalHistory";
+
+$updateMiscObjectQuery = "UPDATE MiscObject SET idMisc = :idMisc , name = :name , description = :description , isHazard = :isHazard  WHERE idMisc = :idMisc;";
+
 $deleteGraveObjectQuery = "DELETE FROM Grave WHERE idGrave = :idGrave";
+
+$deleteNaturalHistoryObjectQuery = "DELETE FROM NaturalHistory WHERE idNaturalHistory = :idNaturalHistory";
+
+$deleteMiscObjectQuery ="DELETE FROM MiscObject WHERE idMisc = :idMisc";
