@@ -28,8 +28,8 @@ $naturalHistoryService -> createNaturalHistoryEntry("Test", "commonName", "descr
 $miscObjectService -> createMiscObjectEntry("name", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
 */
 
-$naturalHistoryService->updateNaturalHistoryEntry("35","6","Test", "commonName", "description", 43.109362, -77.659403, "Test", "Test", "", 2);
-$miscObjectService->updateMiscObjectEntry("36", "4", "name", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
+$naturalHistoryService->updateNaturalHistoryEntry("35","6","Test1", "commonName", "description", 43.109362, -77.659403, "Test", "Test", "", 2);
+$miscObjectService->updateMiscObjectEntry("36", "4", "name1", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
 
 //$naturalHistoryService->deleteNaturalHistoryEntry("6");
 //$miscObjectService->deleteMiscObjectEntry("4");
