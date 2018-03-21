@@ -65,7 +65,7 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
 
     public function updateGraveObject($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
         //global $updateGraveObjectQuery;
-        $stmt = $this->getDBInfo(1)->prepare("UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave;");
+        $stmt = $this->getDBInfo(1)->prepare("UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave");
 
 
         $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
@@ -84,7 +84,10 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
         $stmt->execute();
     }
 
-    public function deleteGraveObject() {
-
+    public function deleteGraveObject($idGrave) {
+        //global $deleteGraveObjectQuery;
+        $stmt = $this->getDBInfo(1)->prepare("DELETE FROM Grave WHERE idGrave = :idGrave");
+        $stmt->bindParam(':idGrave', $idGrave, PDO::PARAM_STR);
+        $stmt->execute();
     }
 }

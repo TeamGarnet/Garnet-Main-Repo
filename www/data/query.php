@@ -90,4 +90,6 @@ $updateNaturalHistoryEntryIdQuery = "UPDATE TrackableObject SET idNaturalHistory
 
 $updateMiscEntryIdQuery = "UPDATE TrackableObject SET idMisc = :objectID WHERE idTrackableObject = :idTrackableObject";
 
-$updateGraveObjectQuery = "UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave;";
+$updateGraveObjectQuery = "UPDATE Grave SET firstName = :firstName, middleName = :middleName, lastName = :lastName, birth = :birth, death = :death, description = :description, idHistoricFilter = :idHistoricFilter WHERE idGrave = :idGrave";
+
+$deleteGraveObjectQuery = "DELETE FROM Grave WHERE idGrave = :idGrave";

@@ -66,7 +66,14 @@ class GraveService extends TrackableObjectService {
         $graveDataClass -> updateGraveObject($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter);
     }
 
-    public function deleteGraveEntry() {
+    public function deleteGraveEntry($idGrave) {
+        $idGrave = filter_var($idGrave, FILTER_SANITIZE_NUMBER_INT);
+        if (empty($idGrave) || $idGrave == "") {
+            return;
+        } else {
+            $graveDataClass = new GraveObjectData();
+            $graveDataClass -> deleteGraveObject($idGrave);
+        }
 
     }
 

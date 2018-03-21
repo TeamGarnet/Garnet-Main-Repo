@@ -47,6 +47,6 @@ class TrackableObjectService {
     }
 
     public function deleteTrackableObjectEntry($idTrackableObject) {
-
+        //This function should never be needed beacause the DB has cascading deletes.
     }
 }
