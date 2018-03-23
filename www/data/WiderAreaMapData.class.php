@@ -65,7 +65,7 @@ class WiderAreaMapData {
     public function updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
         try {
             //global $updateWiderAreaMapQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE WiderAreaMap SET idWiderAreaMap = :idWiderAreaMap , url = :url , description = :description , name = :name, longitude =:longitude, latitude =:latitude, city = :city, zipcode =:zipcode  WHERE idWiderAreaMap = :idWiderAreaMap");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE WiderAreaMap SET idWiderAreaMap = :idWiderAreaMap , url = :url , description = :description , name = :name, longitude =:longitude, latitude =:latitude, city = :city, zipcode =:zipcode, address = :address  WHERE idWiderAreaMap = :idWiderAreaMap");
 
             $stmt -> bindParam(':url', $url, PDO::PARAM_STR);
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);

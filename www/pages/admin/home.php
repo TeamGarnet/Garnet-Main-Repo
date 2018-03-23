@@ -81,6 +81,7 @@ var_dump($widerAreaMapService->getAllWiderAreaMapEntries());
 //$widerAreaMapService->createWiderAreaMapEntry("www.google.com", "name1", "description", 43.109362, 43.109362, "Address1", "city1", "state1", 12345);
 $widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name2", "description2", -77.659403, -77.659403, "Address2", "city2", "state1", 12345);
 
+
 echo "<br><br>";
 var_dump($eventService->getAllEventEntries());
 //$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
