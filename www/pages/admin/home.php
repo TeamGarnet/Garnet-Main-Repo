@@ -59,34 +59,39 @@ $miscObjectService->deleteMiscObjectEntry("4");
 echo "<br><br>";
 var_dump($contactService->getAllContactEntries());
 //$contactService->createContactEntry("Name1", "email1@email.com", "description", "333-3333333", "Boss");
-$contactService->updateContactEntry("6", "Name3", "email3@email.com", "description1", "333-3333333", "Boss3");
+//$contactService->updateContactEntry("6", "Name3", "email3@email.com", "description1", "333-3333333", "Boss3");
+$contactService->deleteContactEntry("6");
 
 echo "<br><br>";
 var_dump($fAQService->getAllFAQEntries());
 //$fAQService->createFAQEntry("make a question?", "make an answer.");
-$fAQService->updateFAQEntry("6", "make a question3?", "make an answer.3");
+//$fAQService->updateFAQEntry("6", "make a question3?", "make an answer.3");
+$fAQService->deleteFAQEntry("6");
 
 echo "<br><br>";
 var_dump($historicFilterService->getAllHistoricFilterEntries());
 //$historicFilterService->createHistoricFilterEntry("Name1", "3018/11/31", "description", "3018/11/31", "#4386f4");
-$historicFilterService->updateHistoricFilterEntry("8", "Name3", "3318/11/33", "description3", "3038/11/31", "#6g86f4");
+//$historicFilterService->updateHistoricFilterEntry("8", "Name3", "3318/11/33", "description3", "3038/11/31", "#6g86f4");
+$historicFilterService->deleteHistoricFilterEntry("8");
 
 echo "<br><br>";
 var_dump($typeFilterService->getAllTypeFilterEntries());
 //$typeFilterService->createTypeFilterEntry("Name1", null, "#4386f4");
-$typeFilterService->updateTypeFilterEntry("7", "Name3", "https://www.moma.org/collection/works/174300", null);
+//$typeFilterService->updateTypeFilterEntry("7", "Name3", "https://www.moma.org/collection/works/174300", null);
+$typeFilterService->deleteTypeFilterEntry("7");
 
 echo "<br><br>";
 var_dump($widerAreaMapService->getAllWiderAreaMapEntries());
 //$widerAreaMapService->createWiderAreaMapEntry("www.google.com", "name1", "description", 43.109363, 43.109363, "Address1", "city1", "state1", 13345);
-$widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name3", "description3", -77.659403, -77.659403, "Address3", "city3", "state1", 13345);
-
+//$widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name3", "description3", -77.659403, -77.659403, "Address3", "city3", "state1", 13345);
+$widerAreaMapService->deleteWiderAreaMapEntry("7");
 
 echo "<br><br>";
 var_dump($eventService->getAllEventEntries());
 //$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
 //TODO figure out how to get the correct time
-$eventService->updateEventEntry("5", "name3", "description3", "12:00", "1:00", "2");
+//$eventService->updateEventEntry("5", "name3", "description3", "12:00", "1:00", "2");
+$eventService->deleteEventEntry("5");
 ?>
 
 <!-- HTML -->
