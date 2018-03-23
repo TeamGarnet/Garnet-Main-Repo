@@ -58,28 +58,33 @@ $miscObjectService->deleteMiscObjectEntry("4");
 
 echo "<br><br>";
 var_dump($contactService->getAllContactEntries());
-$contactService->createContactEntry("Name1", "email1@email.com", "description", "222-2222222", "Boss");
+//$contactService->createContactEntry("Name1", "email1@email.com", "description", "222-2222222", "Boss");
+$contactService->updateContactEntry("6", "Name2", "email2@email.com", "description1", "322-2222222", "Boss2");
 
 echo "<br><br>";
 var_dump($fAQService->getAllFAQEntries());
-$fAQService->createFAQEntry("make a question?", "make an answer.");
+//$fAQService->createFAQEntry("make a question?", "make an answer.");
+$fAQService->updateFAQEntry("6", "make a question2?", "make an answer.2");
 
 echo "<br><br>";
 var_dump($historicFilterService->getAllHistoricFilterEntries());
-$historicFilterService->createHistoricFilterEntry("Name1", "2018/11/21", "description", "2018/11/21", "#4286f4");
+//$historicFilterService->createHistoricFilterEntry("Name1", "2018/11/21", "description", "2018/11/21", "#4286f4");
+$historicFilterService->updateHistoricFilterEntry("8", "Name2", "2218/11/22", "description2", "2028/11/21", "#6g86f4");
 
 echo "<br><br>";
 var_dump($typeFilterService->getAllTypeFilterEntries());
-$typeFilterService->createTypeFilterEntry("Name1", null, "#4286f4");
+//$typeFilterService->createTypeFilterEntry("Name1", null, "#4286f4");
+$typeFilterService->updateTypeFilterEntry("7", "Name2", "https://www.moma.org/collection/works/174200", null);
 
 echo "<br><br>";
 var_dump($widerAreaMapService->getAllWiderAreaMapEntries());
-$widerAreaMapService->createWiderAreaMapEntry("www.google.com", "name1", "description", 43.109362, 43.109362, "Address1", "city1", "state1", 12345);
+//$widerAreaMapService->createWiderAreaMapEntry("www.google.com", "name1", "description", 43.109362, 43.109362, "Address1", "city1", "state1", 12345);
+$widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name2", "description2", -77.659403, -77.659403, "Address2", "city2", "state1", 12345);
 
 echo "<br><br>";
 var_dump($eventService->getAllEventEntries());
-$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
-
+//$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
+$eventService->updateEventEntry("5", "name2", "description2", "12:00", "1:00", "2");
 ?>
 
 <!-- HTML -->
