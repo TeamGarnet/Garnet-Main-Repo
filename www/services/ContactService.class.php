@@ -33,7 +33,7 @@ class ContactService {
         $contactDataClass -> createContact($email, $description, $phone, $title, $name);
     }
 
-    public function updateContactEntry($idContact, $email, $description, $phone, $title, $name, $description) {
+    public function updateContactEntry($idContact, $name, $email, $description, $phone, $title) {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $phone = filter_var($phone, FILTER_SANITIZE_STRING);
