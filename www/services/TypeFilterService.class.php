@@ -48,14 +48,17 @@ class TypeFilterService {
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idTypeFilter) || $idTypeFilter == "") {
             return null;
+            echo "type null";
         } else {
             $trackableObjectDataClass = new TrackableObjectData();
             $typeFilterUseAmount = $trackableObjectDataClass -> checkForInUseTypeFilters($idTypeFilter);
 
-            if ($typeFilterUseAmount < 0) {
+            if ($typeFilterUseAmount = 0) {
                 $typeFilterDataClass = new TypeFilterData();
                 $typeFilterDataClass -> deleteTypeFilter($idTypeFilter);
+                echo "typefilter not used";
             } else {
+                echo "The Type filter is currently in use by a Grave, Natural History, or Misc Object. Unattach this filter before the filter can be deleted.";
                 return "The Type filter is currently in use by a Grave, Natural History, or Misc Object. Unattach this filter before the filter can be deleted.";
             }
 
