@@ -41,7 +41,7 @@ class EventService {
         $name = filter_var($name, FILTER_SANITIZE_STRING);
 
         $eventDataClass = new EventData();
-        $eventDataClass -> updateEvent($idEvent, $name, $startTime, $description, $endTime, $idWiderAreaMap);
+        $eventDataClass -> updateEvent($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap);
     }
 
     public function deleteEventEntry($idEvent) {
