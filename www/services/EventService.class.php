@@ -22,7 +22,7 @@ class EventService {
     }
 
     public function createEventEntry($name, $description, $startTime, $endTime, $idWiderAreaMap) {
-        $startTime = filter_var($startTime, FILTER_SANITIZE_EMAIL);
+        $startTime = filter_var($startTime, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $endTime = filter_var($endTime, FILTER_SANITIZE_STRING);
         $idWiderAreaMap = filter_var($idWiderAreaMap, FILTER_SANITIZE_STRING);
@@ -34,7 +34,7 @@ class EventService {
     }
 
     public function updateEventEntry($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap) {
-        $startTime = filter_var($startTime, FILTER_SANITIZE_EMAIL);
+        $startTime = filter_var($startTime, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $endTime = filter_var($endTime, FILTER_SANITIZE_STRING);
         $idWiderAreaMap = filter_var($idWiderAreaMap, FILTER_SANITIZE_STRING);
