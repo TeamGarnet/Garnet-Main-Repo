@@ -30,7 +30,7 @@ class EventService {
 
         //create Event Object
         $eventDataClass = new EventData();
-        $eventDataClass -> createEvent($startTime, $description, $endTime, $idWiderAreaMap, $name);
+        $eventDataClass -> createEvent($name, $description, $startTime, $endTime, $idWiderAreaMap);
     }
 
     public function updateEventEntry($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap) {
