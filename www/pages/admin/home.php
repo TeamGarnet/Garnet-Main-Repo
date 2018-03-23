@@ -33,19 +33,19 @@ $eventService = new EventService();
 //TODO: check if trackable object is working
 ///*
 var_dump($graveService->getAllGraveEntries());
-$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "Test", "Test", "", 1);
+$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
 //$graveService -> updateGraveEntry("14","5","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70 .659403, "Test", "Test", "", 1);
 //$graveService -> deleteGraveEntry("5");
 
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
-$naturalHistoryService -> createNaturalHistoryEntry("Test", "commonName", "description", 40.109362, -77.659403, "Test", "Test", "", 2);
+$naturalHistoryService -> createNaturalHistoryEntry("naturalHistoryService", "commonName", "description", 40.109362, -77.659403, "Test", "Test", "", 2);
 //$naturalHistoryService->updateNaturalHistoryEntry("35","6","Test1", "commonName", "description", 43.109362, -77.659403, "Test", "Test", "", 2);
 //$naturalHistoryService->deleteNaturalHistoryEntry("6");
 
 echo "<br><br>";
 var_dump($miscObjectService->getAllMiscObjectEntries());
-$miscObjectService -> createMiscObjectEntry("name", "Yes", "description",43.109362, -77.659403, "Test", "Test2", "", 3);
+$miscObjectService -> createMiscObjectEntry("miscObjectService", "Yes", "description",43.109362, -77.659403, "Test", "Test2", "", 3);
 //$miscObjectService->updateMiscObjectEntry("36", "4", "name1", "Yes", "description",43.109362, -77.659403, "Test", "Test", "", 3);
 //$miscObjectService->deleteMiscObjectEntry("4");
 /*
