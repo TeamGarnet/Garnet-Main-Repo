@@ -34,6 +34,9 @@ class TypeFilterService {
 
     public function updateTypeFilterEntry($idTypeFilter, $type, $pinDesign, $buttonColor) {
         $pinDesign = filter_var($pinDesign, FILTER_SANITIZE_STRING);
+        if ($buttonColor == null) {
+            $buttonColor = "#bdc3c7";
+        }
         $buttonColor = filter_var($buttonColor, FILTER_SANITIZE_STRING);
         $type = filter_var($type, FILTER_SANITIZE_STRING);
 

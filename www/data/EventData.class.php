@@ -61,7 +61,7 @@ class EventData {
     public function updateEvent($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap) {
         try {
             //global $updateEventQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE Event SET idEvent = :idEvent , name = :name , description = :description, startTime= :startTime, endTime =: endTime, idWiderAreaMap = :idWiderAreaMap WHERE idEvent = :idEvent");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE Event SET idEvent = :idEvent , name = :name , description = :description, startTime= :startTime, endTime = :endTime, idWiderAreaMap = :idWiderAreaMap WHERE idEvent = :idEvent");
 
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
             $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
