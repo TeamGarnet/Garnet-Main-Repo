@@ -85,7 +85,8 @@ $widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name3", 
 echo "<br><br>";
 var_dump($eventService->getAllEventEntries());
 //$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
-$eventService->updateEventEntry("5", "name2", "description2", "12:00", "1:00", "2");
+//TODO figure out how to get the correct time
+$eventService->updateEventEntry("5", "name3", "description3", "12:00", "1:00", "2");
 ?>
 
 <!-- HTML -->
