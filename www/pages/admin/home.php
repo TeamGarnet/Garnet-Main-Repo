@@ -34,19 +34,19 @@ $eventService = new EventService();
 ///*
 var_dump($graveService->getAllGraveEntries());
 //$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
-$graveService -> updateGraveEntry("14","5","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70.659403, "UpdateTest", "Test", "", 1);
+$graveService -> updateGraveEntry("43","24","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70.659403, "UpdateTest", "Test", "", 1);
 //$graveService -> deleteGraveEntry("5");
 
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
 //$naturalHistoryService -> createNaturalHistoryEntry("naturalHistoryService", "commonName", "description", 40.109362, -77.659403, "naturalHistoryService", "Test", "", 2);
-$naturalHistoryService->updateNaturalHistoryEntry("35","6","Test1", "commonName", "description", 43.109362, -77.659403, "UpdateTest", "Test", "", 2);
+$naturalHistoryService->updateNaturalHistoryEntry("44","9","Test1", "commonName", "description", 43.109362, -77.659403, "UpdateTest", "Test", "", 2);
 //$naturalHistoryService->deleteNaturalHistoryEntry("6");
 
 echo "<br><br>";
 var_dump($miscObjectService->getAllMiscObjectEntries());
 //$miscObjectService -> createMiscObjectEntry("miscObjectService", "Yes", "description",43.109362, -77.659403, "miscObjectService", "Test2", "", 3);
-$miscObjectService->updateMiscObjectEntry("36", "4", "name1", "Yes", "description",43.109362, -77.659403, "UpdateTest", "Test", "", 3);
+$miscObjectService->updateMiscObjectEntry("45", "7", "name1", "Yes", "description",43.109362, -77.659403, "UpdateTest", "Test", "", 3);
 //$miscObjectService->deleteMiscObjectEntry("4");
 /*
 
