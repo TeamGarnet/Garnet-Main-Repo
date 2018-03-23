@@ -63,7 +63,11 @@ class TypeFilterData {
 
             $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);
-            $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+            if ($buttonColor == null) {
+                $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_NULL);
+            } else {
+                $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+            }
             $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
 
             $stmt -> execute();
