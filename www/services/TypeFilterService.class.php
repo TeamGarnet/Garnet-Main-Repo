@@ -53,7 +53,7 @@ class TypeFilterService {
             $trackableObjectDataClass = new TrackableObjectData();
             $typeFilterUseAmount = $trackableObjectDataClass -> checkForInUseTypeFilters($idTypeFilter);
 
-            if ($typeFilterUseAmount = 0) {
+            if ($typeFilterUseAmount == 0) {
                 $typeFilterDataClass = new TypeFilterData();
                 $typeFilterDataClass -> deleteTypeFilter($idTypeFilter);
                 echo "typefilter not used";
