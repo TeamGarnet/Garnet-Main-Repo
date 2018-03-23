@@ -1,4 +1,6 @@
 <?php
+require_once '../../services/DatabaseConnection.class.php';
+
 /**
  */
 
@@ -97,6 +99,20 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
     }
 
     public function deleteTrackableObjectEntry($idTrackableObject) {
+        //This fucntion should not need to be used due to DB cascaing options
+    }
 
+    public function checkForInUseTypeFilters($idTypeFilter) {
+        try {
+            //global $deleteEventQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idTrackableObject FROM TrackableObject WHERE idTypeFilter = :idTypeFilter");
+            $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+            $stmt -> execute();
+            $count = $stmt -> rowCount();
+            return $count;
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
     }
 }

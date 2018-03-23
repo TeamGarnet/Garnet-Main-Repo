@@ -1,6 +1,6 @@
 <?php
-include '../services/DatabaseConnection.class.php';
-include 'query.php';
+require_once '../services/DatabaseConnection.class.php';
+require_once 'query.php';
 
 class TrailData {
     /**

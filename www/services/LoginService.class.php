@@ -1,5 +1,5 @@
 <?php
-include '../../data/LoginData.class.php';
+require_once '../../data/LoginData.class.php';
 
 /*
  *

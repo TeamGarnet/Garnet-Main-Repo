@@ -1,9 +1,9 @@
 <?php
-require_once '../../services/DatabaseConnection.class.php';
 /**
  */
+require_once '../../services/DatabaseConnection.class.php';
 
-class MiscObjectData {
+class ContactData {
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -27,46 +27,17 @@ class MiscObjectData {
         }
         return null;
     }
-
-    public function createMiscObject($name, $isHazard, $description) {
+    public function createContact($name, $email, $description, $phone, $title) {
         try {
-            //global $createMiscObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO MiscObject (name,description,isHazard) VALUES (:name, :description,:isHazard)");
+            //global $createContactQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO Contact (name,description,email, phone, title) VALUES (:name, :description,:email,:phone,:title)");
 
 
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
+            $stmt -> bindParam(':email', $email, PDO::PARAM_STR);
             $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-
-            $stmt -> execute();
-            return $this -> getDBInfo(1) -> lastInsertId();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
-    }
-
-    public function readMiscObject() {
-        try {
-            //global $getAllMiscEntriesQuery;
-            return $this -> getDBInfo(0) -> returnObject("", "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, name, T.idTypeFilter, TF.type, M.idMisc, M.name, M.description FROM MiscObject M 
-JOIN TrackableObject T ON M.idMisc = T.idMisc 
-JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
-    }
-
-    public function updateMiscObject($idMisc, $name, $isHazard, $description) {
-        try {
-            //global $updateMiscObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE MiscObject SET idMisc = :idMisc , name = :name , description = :description , isHazard = :isHazard  WHERE idMisc = :idMisc");
-
-            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-            $stmt -> bindParam(':idMisc', $idMisc,PDO::PARAM_STR);
+            $stmt -> bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt -> bindParam(':phone', $phone, PDO::PARAM_STR);
 
             $stmt -> execute();
         } catch (PDOException $e) {
@@ -75,11 +46,40 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         }
     }
 
-    public function deleteMiscObject($idMisc) {
+    public function readContact() {
         try {
-            //global $deleteMiscObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("DELETE FROM MiscObject WHERE idMisc = :idMisc");
-            $stmt -> bindParam(':idMisc', $idMisc, PDO::PARAM_STR);
+            //global $getAllContactEntriesQuery;
+            return $this -> getDBInfo(0) -> returnObject("", "SELECT idContact, name, email, description, phone, title FROM Contact");
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
+    }
+
+    public function updateContact($idContact, $name, $email, $description, $phone, $title) {
+        try {
+            //global $updateContactQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE Contact SET idContact = :idContact , name = :name , description = :description , email = :email, phone = :phone,  title= :title WHERE idContact = :idContact");
+
+            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt -> bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt -> bindParam(':idContact', $idContact, PDO::PARAM_STR);
+            $stmt -> bindParam(':phone', $phone, PDO::PARAM_STR);
+            $stmt -> bindParam(':title', $title, PDO::PARAM_STR);
+
+            $stmt -> execute();
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
+    }
+
+    public function deleteContact($idContact) {
+        try {
+            //global $deleteContactQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("DELETE FROM Contact WHERE idContact = :idContact");
+            $stmt -> bindParam(':idContact', $idContact, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
             echo $e -> getMessage();

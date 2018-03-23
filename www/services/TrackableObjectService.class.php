@@ -1,5 +1,5 @@
 <?php
-include_once '../../data/TrackableObjectData.class.php';
+require_once '../../data/TrackableObjectData.class.php';
 /**
  */
 

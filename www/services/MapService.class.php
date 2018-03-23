@@ -1,9 +1,9 @@
 <?php
-include '../data/MapData.class.php';
-include '../models/MapPin.class.php';
-include '../models/FilterButton.class.php';
-include '../components/FilterBar.class.php';
-include '../components/TrackableObjectCard.class.php';
+require_once '../data/MapData.class.php';
+require_once '../models/MapPin.class.php';
+require_once '../models/FilterButton.class.php';
+require_once '../components/FilterBar.class.php';
+require_once '../components/TrackableObjectCard.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
