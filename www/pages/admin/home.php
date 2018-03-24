@@ -168,7 +168,7 @@ $eventService->deleteEventEntry("5");
 
                             <tbody>
                             <?php
-                                echo $graveService -> getAllEntriesAsRows();
+                            echo $graveService -> getAllEntriesAsRows();
                             ?>
                             </tbody>
 
@@ -197,63 +197,68 @@ $eventService->deleteEventEntry("5");
                             </thead>
                             <tbody>
                             <?php
-                                echo $naturalHistoryService -> getAllEntriesAsRows();
+                            echo $naturalHistoryService -> getAllEntriesAsRows();
                             ?>
                             </tbody>
 
                         </table>
                     </div>
                     <!--accordion end-->
+                </div>
 
-                    <div class="tab-pane fade" id="miscDiv">
-                        <div class="content_accordion">
-                            <table id="misc" class="table table-striped table-bordered" style="width:100%">
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Is a Hazard?</th>
-                                    <th>Longitude</th>
-                                    <th>Latitude</th>
-                                    <th>Image Description</th>
-                                    <th>Image Location</th>
-                                    <th>Hint</th>
-                                    <th>Type</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                    echo $miscObjectService->getAllEntriesAsRows();
-                                ?>
-                                </tbody>
+                <div class="tab-pane fade" id="miscDiv">
+                    <div class="content_accordion">
+                        <table id="misc" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Is a Hazard?</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Image Description</th>
+                                <th>Image Location</th>
+                                <th>Hint</th>
+                                <th>Type</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            echo $miscObjectService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
 
-                            </table>
-                        </div>
-                        <!--accordion end-->
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
 
-                        <div class="tab-pane fade" id="typeDiv">
-                            <div class="content_accordion">
-                                <table id="type" class="table table-striped table-bordered" style="width:100%">
-                                    <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Pin Design</th>
-                                        <th>Button Color</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                        echo $typeFilterService->getAllEntriesAsRows();
-                                    ?>
-                                    </tbody>
+                <div class="tab-pane fade" id="typeDiv">
+                    <div class="content_accordion">
+                        <table id="type" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pin Design</th>
+                                <th>Button Color</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            echo $typeFilterService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
 
-                                </table>
-                            </div>
-                            <!--accordion end-->
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
+
+
 
             </div>
         </div>
@@ -263,7 +268,7 @@ $eventService->deleteEventEntry("5");
 </div>
 
 
-<a href="logout.php">Logout</a>
+<!-- <a href="logout.php">Logout</a> -->
 </body>
 </html>
 
