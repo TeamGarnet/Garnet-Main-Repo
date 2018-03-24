@@ -16,7 +16,7 @@ class NaturalHistoryService extends TrackableObjectService{
 
         foreach ($allNaturalHistoryDataObjects as $naturalHistoryArray) {
             $naturalHistoryObject = new NaturalHistory($naturalHistoryArray['idNaturalHistory'], $naturalHistoryArray['commonName'], $naturalHistoryArray['scientificName'], $naturalHistoryArray['description'],
-                $naturalHistoryArray['idTrackableObject'], $naturalHistoryArray['longitude'], $naturalHistoryArray['latitude'], $naturalHistoryArray['hint'], $naturalHistoryArray['imageDescription'], $naturalHistoryArray['imageLocation'], $naturalHistoryArray['idTypeFilter'], $naturalHistoryArray['$type']);
+                $naturalHistoryArray['idTrackableObject'], $naturalHistoryArray['longitude'], $naturalHistoryArray['latitude'], $naturalHistoryArray['hint'], $naturalHistoryArray['imageDescription'], $naturalHistoryArray['imageLocation'], $naturalHistoryArray['idTypeFilter'], $naturalHistoryArray['type']);
 
             array_push($allNaturalHistoryObject, $naturalHistoryObject);
         }
