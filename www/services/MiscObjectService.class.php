@@ -64,6 +64,11 @@ class MiscObjectService extends TrackableObjectService {
         $allModels = $this -> getAllMiscObjectEntries();
         $html = "";
         foreach ($allModels as $model) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "misc" . "',"
+                . $model->getIdMisc()
+                . ")'> Delete</button>";
             $html = $html . "<tr><td>" . $model->getName()
                 . "</td><td>" . $model->getDescription()
                 . "</td><td>" . $model->getIsHazard()
@@ -72,6 +77,7 @@ class MiscObjectService extends TrackableObjectService {
                 . "</td><td>" . $model->getImageDescription()
                 . "</td><td>" . $model->getImageLocation()
                 . "</td><td>" . $model->getType()
+                . $editAndDelete
                 . "</td></tr>";
         }
         return $html;

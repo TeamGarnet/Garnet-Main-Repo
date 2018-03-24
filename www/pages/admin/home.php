@@ -160,8 +160,6 @@ $eventService->deleteEventEntry("5");
                                 <th>Image Location</th>
                                 <th>Type Filter</th>
                                 <th>Historic Filter</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                             </thead>
 
@@ -189,8 +187,6 @@ $eventService->deleteEventEntry("5");
                                 <th>Image Description</th>
                                 <th>Image Location</th>
                                 <th>Type</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -217,8 +213,6 @@ $eventService->deleteEventEntry("5");
                                 <th>Image Description</th>
                                 <th>Image Location</th>
                                 <th>Type</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>

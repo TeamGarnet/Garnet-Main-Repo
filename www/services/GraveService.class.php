@@ -82,6 +82,11 @@ class GraveService extends TrackableObjectService {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
         foreach ($allGraveModels as $graveModel) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "grave" . "',"
+                . $model->getIdGrave()
+                . ")'> Delete</button>";
             $html = $html . "<tr><td>" . $graveModel->getFirstName()
                 . "</td><td>" . $graveModel->getMiddleName()
                 . "</td><td>" . $graveModel->getLastName()
@@ -94,6 +99,7 @@ class GraveService extends TrackableObjectService {
                 . "</td><td>" . $graveModel->getImageLocation()
                 . "</td><td>" . $graveModel->getType()
                 . "</td><td>" . $graveModel->getHistoricFilterName()
+                . $editAndDelete
                 . "</td></tr>";
         }
         return $html;

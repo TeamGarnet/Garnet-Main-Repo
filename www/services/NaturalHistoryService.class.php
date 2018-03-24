@@ -64,6 +64,11 @@ class NaturalHistoryService extends TrackableObjectService{
         $allModels = $this -> getAllNaturalHistoryEntries();
         $html = "";
         foreach ($allModels as $model) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "naturalHistory" . "',"
+                . $model->getIdNaturalHistory()
+                . ")'> Delete</button>";
             $html = $html . "<tr><td>" . $model->getCommonName()
                 . "</td><td>" . $model->getScientificName()
                 . "</td><td>" . $model->getDescription()
@@ -72,6 +77,7 @@ class NaturalHistoryService extends TrackableObjectService{
                 . "</td><td>" . $model->getImageDescription()
                 . "</td><td>" . $model->getImageLocation()
                 . "</td><td>" . $model->getType()
+                . $editAndDelete
                 . "</td></tr>";
         }
         return $html;
