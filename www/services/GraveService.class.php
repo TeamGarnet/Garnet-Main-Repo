@@ -14,18 +14,19 @@ class GraveService extends TrackableObjectService {
     public function getAllGraveEntries() {
         $graveDataClass = new GraveObjectData();
         $allGraveDataObjects =  $graveDataClass -> readGraveObject();
-        $allGraveObject = array();
+        $allGraveObjects = array();
 
         foreach ($allGraveDataObjects as $graveArray) {
             $graveObject = new Grave($graveArray['idGrave'], $graveArray['firstName'], $graveArray['middleName'], $graveArray['lastName'], $graveArray['birth'], $graveArray['death'], $graveArray['description'], $graveArray['idHistoricFilter'], $graveArray['historicFilterName'],
                 $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], $graveArray['hint'], $graveArray['imageDescription'], $graveArray['imageLocation'], $graveArray['idTypeFilter'], $graveArray['$type']);
 
-            array_push($allGraveObject, $graveObject);
+            array_push($allGraveObjects, $graveObject);
             var_dump($graveObject);
             echo "<br><br>";
         }
 
-        return $allGraveObject;
+        var_dump($allGraveObjects);
+        return $allGraveObjects;
     }
 
     public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
