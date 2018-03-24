@@ -61,7 +61,7 @@ class MiscObjectService extends TrackableObjectService {
     }
 
     public function getAllEntriesAsRows() {
-        $allModels = $this -> getAllNaturalHistoryEntries();
+        $allModels = $this -> getAllMiscObjectEntries();
         $html = "";
         foreach ($allModels as $model) {
             $html = $html . "<tr><td>" . $model->getName()
