@@ -64,7 +64,7 @@ class HistoricFilterService {
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
-            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+            $editAndDelete = "</td><td><button onclick='updateObjectInfo()'>Update</button>"
                 . "</td><td><button onclick='deleteObjectInfo("
                 . "''" . "historicFilter" . "',"
                 . $model->getIdHistoricFilter()
