@@ -64,8 +64,7 @@ class NaturalHistoryService extends TrackableObjectService{
         $allModels = $this -> getAllNaturalHistoryEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $html = $html . "<tr><td>" . $model->getFirstName()
-                . "</td><td>" . $model->getCommonName()
+            $html = $html . "<tr><td>" . $model->getCommonName()
                 . "</td><td>" . $model->getScientificName()
                 . "</td><td>" . $model->getDescription()
                 . "</td><td>" . $model->getLongitude()
