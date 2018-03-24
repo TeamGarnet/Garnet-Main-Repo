@@ -157,14 +157,13 @@ $eventService->deleteEventEntry("5");
                                     <th>Image Location</th>
                                     <th>Type Filter</th>
                                     <th>Historic Filter</th>
-
                                 </tr>
                                 </thead>
-                                <tbody>
 
-                                <?php
-                                    echo $graveService->getAllEntriesAsRows();
-                                ?>
+                                <tbody>
+                                    <?php
+                                        echo $graveService->getAllEntriesAsRows();
+                                    ?>
                                 </tbody>
 
                             </table>
