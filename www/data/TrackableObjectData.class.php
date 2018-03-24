@@ -32,7 +32,7 @@ class TrackableObjectData {
     public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         try{
             //global $createTrackableObjectQuery;
-            $stmt = $this->getDBInfo(1)->prepare("INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription,imageLocation, idTypeFilter) VALUES (:longitude, :latitude, :hint, :imageDescription, :imageLocation, :idTypeFilter)");
+            $stmt = $this->getDBInfo(1)->prepare("INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription, imageLocation, idTypeFilter) VALUES (:longitude, :latitude, :hint, :imageDescription, :imageLocation, :idTypeFilter)");
 
             $stmt->bindParam(':longitude', $longitude, PDO::PARAM_STR);
             $stmt->bindParam(':latitude', $latitude, PDO::PARAM_STR);
