@@ -18,7 +18,7 @@ class FAQService {
 
             array_push($allFAQData, $fAQObject);
         }
-        return $allFAQDataObjects;
+        return $allFAQData;
     }
 
     public function createFAQEntry($question, $answer) {
@@ -46,6 +46,22 @@ class FAQService {
             $fAQDataClass = new FAQData();
             $fAQDataClass -> deleteFAQ($idFAQ);
         }
+    }
 
+    public function getAllEntriesAsRows() {
+        $allModels = $this -> getAllFAQEntries();
+        $html = "";
+        foreach ($allModels as $model) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "faq" . "',"
+                . $model->getIdFAQ()
+                . ")'> Delete</button>";
+            $html = $html . "<tr><td>" . $model->getQuestion()
+                . "</td><td>" . $model->getAnswer()
+                . $editAndDelete
+                . "</td></tr>";
+        }
+        return $html;
     }
 }

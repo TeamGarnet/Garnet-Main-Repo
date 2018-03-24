@@ -247,6 +247,47 @@ $eventService->deleteEventEntry("5");
                     <!--accordion end-->
                 </div>
 
+                <div class="tab-pane fade" id="historicDiv">
+                    <div class="content_accordion">
+                        <table id="historic" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pin Design</th>
+                                <th>Button Color</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            echo $typeFilterService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
+
+                <div class="tab-pane fade" id="faqDiv">
+                    <div class="content_accordion">
+                        <table id="faq" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pin Design</th>
+                                <th>Button Color</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            echo $typeFilterService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
 
 
             </div>

@@ -19,7 +19,7 @@ class HistoricFilterService {
 
             array_push($allHistoricFilterData, $historicFilterObject);
         }
-        return $allHistoricFilterDataObjects;
+        return $allHistoricFilterData;
     }
 
     public function createHistoricFilterEntry($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
@@ -57,5 +57,25 @@ class HistoricFilterService {
             $historicFilterDataClass = new HistoricFilterData();
             $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
         }
+    }
+
+    public function getAllEntriesAsRows() {
+        $allModels = $this -> getAllHistoricFilterEntries();
+        $html = "";
+        foreach ($allModels as $model) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "historicFilter" . "',"
+                . $model->getIdHistoricFilter()
+                . ")'> Delete</button>";
+            $html = $html . "<tr><td>" . $model->getHistoricFilterName()
+                . "</td><td>" . $model->getDateStart()
+                . "</td><td>" . $model->getDateEnd()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getButtonColor()
+                . $editAndDelete
+                . "</td></tr>";
+        }
+        return $html;
     }
 }
