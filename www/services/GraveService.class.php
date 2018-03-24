@@ -21,11 +21,8 @@ class GraveService extends TrackableObjectService {
                 $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], $graveArray['hint'], $graveArray['imageDescription'], $graveArray['imageLocation'], $graveArray['idTypeFilter'], $graveArray['$type']);
 
             array_push($allGraveObjects, $graveObject);
-            var_dump($graveObject);
-            echo "<br><br>";
         }
 
-        var_dump($allGraveObjects);
         return $allGraveObjects;
     }
 
