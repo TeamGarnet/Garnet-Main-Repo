@@ -20,7 +20,7 @@ class MiscObjectService extends TrackableObjectService {
 
             array_push($allMiscObject, $miscObject);
         }
-        return $allMiscObjectDataObjects;
+        return $allMiscObject;
     }
 
     public function createMiscObjectEntry($name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {

@@ -19,7 +19,7 @@ class TypeFilterService {
 
             array_push($allTypeFilterData, $typeFilterObject);
         }
-        return $allTypeFilterDataObjects;
+        return $allTypeFilterData;
     }
 
     public function createTypeFilterEntry($type, $pinDesign, $buttonColor) {
