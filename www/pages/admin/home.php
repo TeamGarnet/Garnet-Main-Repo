@@ -1,7 +1,6 @@
 <?php
 session_start();
 if (isset($_SESSION['idUser'])) {
-    echo "Your session is running " . $_SESSION['idUser'];
 } else {
     header('Location: login.php');
 }
@@ -129,22 +128,22 @@ $eventService->deleteEventEntry("5");
 
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active">
-                    <a href="#grave" data-toggle="tab">
+                    <a href="#graveDiv" data-toggle="tab">
                         Graves
                     </a>
                 </li>
-                <li><a href="#naturalHistory" data-toggle="tab">Natural History</a></li>
-                <li><a href="#misc" data-toggle="tab">Miscellaneous</a></li>
-                <li><a href="#type" data-toggle="tab">Type Filters</a></li>
-                <li><a href="#historic" data-toggle="tab">Historic Filters</a></li>
-                <li><a href="#faq" data-toggle="tab">FAQ</a></li>
-                <li><a href="#widerLocation" data-toggle="tab">Wider Area Location</a></li>
-                <li><a href="#contact" data-toggle="tab">Contact</a></li>
-                <li><a href="#event" data-toggle="tab">Events</a></li>
+                <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+                <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+                <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+                <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+                <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+                <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locationa</a></li>
+                <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+                <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
             </ul>
 
             <div id="myTabContent" class="tab-content">
-                <div class="tab-pane fade in active" id="home">
+                <div class="tab-pane fade in active" id="graveDiv">
                     <div class="content_accordion">
                         <table id="grave" class="table table-striped table-bordered" style="width:100%">
                             <thead>
