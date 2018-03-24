@@ -22,7 +22,7 @@ class GraveService extends TrackableObjectService {
 
             array_push($allGraveObject, $graveObject);
         }
-        return $allGraveDataObjects;
+        return $allGraveObject;
     }
 
     public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
