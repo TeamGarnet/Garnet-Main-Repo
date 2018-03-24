@@ -240,8 +240,6 @@ $eventService->deleteEventEntry("5");
                                 <th>Name</th>
                                 <th>Pin Design</th>
                                 <th>Button Color</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
