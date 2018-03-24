@@ -72,7 +72,7 @@ class MiscObject extends TrackableObject{
     /**
      * @return mixed
      */
-    public function getisHazard() {
+    public function getIsHazard() {
         return $this -> isHazard;
     }
 

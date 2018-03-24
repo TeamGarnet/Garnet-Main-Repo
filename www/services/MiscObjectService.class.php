@@ -58,6 +58,23 @@ class MiscObjectService extends TrackableObjectService {
             $miscObjectDataClass = new MiscObjectData();
             $miscObjectDataClass -> deleteMiscObject($idMiscObject);
         }
+    }
 
+    public function getAllEntriesAsRows() {
+        $allModels = $this -> getAllNaturalHistoryEntries();
+        $html = "";
+        foreach ($allModels as $model) {
+            $html = $html . "<tr><td>" . $model->getName()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getIsHazard()
+                . "</td><td>" . $model->getLongitude()
+                . "</td><td>" . $model->getLatitude()
+                . "</td><td>" . $model->getImageDescription()
+                . "</td><td>" . $model->getImageLocation()
+                . "</td><td>" . $model->getHint()
+                . "</td><td>" . $model->getType()
+                . "</td></tr>";
+        }
+        return $html;
     }
 }

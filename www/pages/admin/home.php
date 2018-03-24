@@ -129,14 +129,18 @@ $eventService->deleteEventEntry("5");
 
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active">
-                    <a href="#home" data-toggle="tab">
+                    <a href="#grave" data-toggle="tab">
                         Graves
                     </a>
                 </li>
-                <li><a href="#a" data-toggle="tab">Groups</a></li>
-
-                <li><a href="#b" data-toggle="tab">Filters</a></li>
-                <li><a href="#c" data-toggle="tab">Events</a></li>
+                <li><a href="#naturalHistory" data-toggle="tab">Natural History</a></li>
+                <li><a href="#misc" data-toggle="tab">Miscellaneous</a></li>
+                <li><a href="#type" data-toggle="tab">Type Filters</a></li>
+                <li><a href="#historic" data-toggle="tab">Historic Filters</a></li>
+                <li><a href="#faq" data-toggle="tab">FAQ</a></li>
+                <li><a href="#widerLocation" data-toggle="tab">Wider Area Location</a></li>
+                <li><a href="#contact" data-toggle="tab">Contact</a></li>
+                <li><a href="#event" data-toggle="tab">Events</a></li>
             </ul>
 
             <div id="myTabContent" class="tab-content">
@@ -157,6 +161,9 @@ $eventService->deleteEventEntry("5");
                                 <th>Image Location</th>
                                 <th>Type Filter</th>
                                 <th>Historic Filter</th>
+                                <th>Hint</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -170,6 +177,84 @@ $eventService->deleteEventEntry("5");
                     </div>
                     <!--accordion end-->
                 </div>
+
+                <div class="tab-pane fade" id="naturalHistoryDiv">
+                    <div class="content_accordion">
+                        <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Common Name</th>
+                                <th>Scientific Name</th>
+                                <th>Description</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Image Description</th>
+                                <th>Image Location</th>
+                                <th>Hint</th>
+                                <th>Type</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                echo $naturalHistoryService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+
+                    <div class="tab-pane fade" id="miscDiv">
+                        <div class="content_accordion">
+                            <table id="misc" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Is a Hazard?</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Image Description</th>
+                                    <th>Image Location</th>
+                                    <th>Hint</th>
+                                    <th>Type</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    echo $miscObjectService->getAllEntriesAsRows();
+                                ?>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <!--accordion end-->
+
+                        <div class="tab-pane fade" id="typeDiv">
+                            <div class="content_accordion">
+                                <table id="type" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Pin Design</th>
+                                        <th>Button Color</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        echo $typeFilterService->getAllEntriesAsRows();
+                                    ?>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <!--accordion end-->
 
             </div>
         </div>
@@ -188,10 +273,14 @@ $eventService->deleteEventEntry("5");
     $(document).ready(function () {
 
         //Apply the datatables plugin to your table
-        $('#example1').DataTable();
-        $('#example2').DataTable();
-        $('#example3').DataTable();
-        $('#example4').DataTable();
-
+        $('#grave').DataTable();
+        $('#naturalHistory').DataTable();
+        $('#misc').DataTable();
+        $('#type').DataTable();
+        $('#historic').DataTable();
+        $('#faq').DataTable();
+        $('#widerLocation').DataTable();
+        $('#contact').DataTable();
+        $('#event').DataTable();
     });
 </script>

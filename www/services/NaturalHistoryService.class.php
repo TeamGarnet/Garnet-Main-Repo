@@ -20,7 +20,7 @@ class NaturalHistoryService extends TrackableObjectService{
 
             array_push($allNaturalHistoryObject, $naturalHistoryObject);
         }
-        return $allNaturalHistoryDataObjects;
+        return $allNaturalHistoryObject;
     }
 
     public function createNaturalHistoryEntry($scientificName, $commonName, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
@@ -58,6 +58,24 @@ class NaturalHistoryService extends TrackableObjectService{
             $naturalHistoryDataClass = new NaturalHistoryObjectData();
             $naturalHistoryDataClass -> deleteNaturalHistoryObject($idNaturalHistory);
         }
+    }
 
+    public function getAllEntriesAsRows() {
+        $allModels = $this -> getAllNaturalHistoryEntries();
+        $html = "";
+        foreach ($allModels as $model) {
+            $html = $html . "<tr><td>" . $model->getFirstName()
+                . "</td><td>" . $model->getCommonName()
+                . "</td><td>" . $model->getScientificName()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getLongitude()
+                . "</td><td>" . $model->getLatitude()
+                . "</td><td>" . $model->getImageDescription()
+                . "</td><td>" . $model->getImageLocation()
+                . "</td><td>" . $model->getHint()
+                . "</td><td>" . $model->getType()
+                . "</td></tr>";
+        }
+        return $html;
     }
 }

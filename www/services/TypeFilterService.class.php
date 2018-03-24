@@ -55,10 +55,22 @@ class TypeFilterService {
             if ($typeFilterUseAmount == 0) {
                 $typeFilterDataClass = new TypeFilterData();
                 $typeFilterDataClass -> deleteTypeFilter($idTypeFilter);
+                return null;
             } else {
                 return "The Type filter is currently in use by a Grave, Natural History, or Misc Object. Unattach this filter before the filter can be deleted.";
             }
-
         }
+    }
+
+    public function getAllEntriesAsRows() {
+        $allModels = $this -> getAllTypeFilterEntries();
+        $html = "";
+        foreach ($allModels as $model) {
+            $html = $html . "<tr><td>" . $model->getType()
+                . "</td><td>" . $model->getPinDesign()
+                . "</td><td>" . $model->getButtonColor()
+                . "</td></tr>";
+        }
+        return $html;
     }
 }
