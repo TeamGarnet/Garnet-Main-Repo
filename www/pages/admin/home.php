@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['idUser'])) {
+if (isset($_SESSION['idUser'])) {
     echo "Your session is running " . $_SESSION['idUser'];
 } else {
     header('Location: login.php');
@@ -110,147 +110,73 @@ $eventService->deleteEventEntry("5");
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
-            <div class="logo col-md-4 col-sm-4 col-xs-4">
-                <img src="images/Logo.png" />
-            </div>
+        <div class="logo col-md-4 col-sm-4 col-xs-4">
+            <img src="images/Logo.png"/>
+        </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <a href="logout.php" class="logout">Logout</a>
-            </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <a href="logout.php" class="logout">Logout</a>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
 
-                <ul id="myTab" class="nav nav-tabs">
-                    <li class="active">
-                        <a href="#home" data-toggle="tab">
-                            Graves
-                        </a>
-                    </li>
-                    <li><a href="#a" data-toggle="tab">Groups</a></li>
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">
+                        Graves
+                    </a>
+                </li>
+                <li><a href="#a" data-toggle="tab">Groups</a></li>
 
-                    <li><a href="#b" data-toggle="tab">Filters</a></li>
-                    <li><a href="#c" data-toggle="tab">Events</a></li>
-                </ul>
+                <li><a href="#b" data-toggle="tab">Filters</a></li>
+                <li><a href="#c" data-toggle="tab">Events</a></li>
+            </ul>
 
-                <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in active" id="home">
-                        <div class="content_accordion">
-                            <table id="grave" class="table table-striped table-bordered" style="width:100%">
-                                <thead>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Last Name</th>
-                                    <th>Birth Date</th>
-                                    <th>Death Date</th>
-                                    <th>Description</th>
-                                    <th>Longitude</th>
-                                    <th>Latitude</th>
-                                    <th>Image Description</th>
-                                    <th>Image Location</th>
-                                    <th>Type Filter</th>
-                                    <th>Historic Filter</th>
-                                </tr>
-                                </thead>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div class="content_accordion">
+                        <table id="grave" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Birth Date</th>
+                                <th>Death Date</th>
+                                <th>Description</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Image Description</th>
+                                <th>Image Location</th>
+                                <th>Type Filter</th>
+                                <th>Historic Filter</th>
+                            </tr>
+                            </thead>
 
-                                <tbody>
-                                    <?php
-                                        echo $graveService->getAllEntriesAsRows();
-                                    ?>
-                                </tbody>
+                            <tbody>
+                            <?php
+                                echo $graveService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
 
-                            </table>
-                        </div>
-                        <!--accordion end-->
+                        </table>
                     </div>
-
-
-
-<!--                    <div class="tab-pane fade" id="a">-->
-<!--                        <div class="content_accordion">-->
-<!--                            <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">-->
-<!--                                <thead>-->
-<!--                                <tr>-->
-<!--                                    <th>IdGroup</th>-->
-<!--                                    <th>Name</th>-->
-<!--                                    <th>Description</th>-->
-<!---->
-<!--                                </tr>-->
-<!--                                </thead>-->
-<!--                                <tbody>-->
-<!---->
-<!--                                --><?php
-//                                //will add the td rows
-//                                ?>
-<!--                                -->
-<!--                                </tbody>-->
-<!---->
-<!--                            </table>-->
-<!--                        </div>-->
-<!--                        <!--accordion end-->-->
-<!--                    </div>-->
-<!--                    <div class="tab-pane fade" id="b">-->
-<!--                        <div class="content_accordion">-->
-<!--                            <table id="miscellaneous" class="table table-striped table-bordered" style="width:100%">-->
-<!--                                <thead>-->
-<!--                                <tr>-->
-<!--                                    <th>Name</th>-->
-<!--                                    <th>Position</th>-->
-<!--                                    <th>Office</th>-->
-<!---->
-<!--                                </tr>-->
-<!--                                </thead>-->
-<!--                                <tbody>-->
-<!---->
-<!--                                --><?php
-//                                    //will add the td rows
-//                                ?>
-<!---->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!---->
-<!--                        </div>-->
-<!--                        <!--accordion end-->-->
-<!--                    </div>-->
-<!--                    <div class="tab-pane fade" id="c">-->
-<!--                        <div class="content_accordion">-->
-<!--                            <table id="typeFilter" class="table table-striped table-bordered" style="width:100%">-->
-<!--                                <thead>-->
-<!--                                <tr>-->
-<!--                                    <th>IdEvent</th>-->
-<!--                                    <th>Name</th>-->
-<!--                                    <th>Description</th>-->
-<!--                                    <th>StartTime</th>-->
-<!--                                    <th>EndTime</th>-->
-<!--                                    <th>IdWiderAreaMap</th>-->
-<!--                                </tr>-->
-<!--                                </thead>-->
-<!--                                <tbody>-->
-<!--                                --><?php
-//                                ?>
-<!---->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </div>-->
-<!--                        <!--accordion end-->-->
-<!--                    </div>-->
-
+                    <!--accordion end-->
                 </div>
+
             </div>
-            <!-- /.row -->
-
         </div>
+        <!-- /.row -->
+
     </div>
-
-
-
+</div>
 
 
 <a href="logout.php">Logout</a>
@@ -259,7 +185,7 @@ $eventService->deleteEventEntry("5");
 
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         //Apply the datatables plugin to your table
         $('#example1').DataTable();
