@@ -98,7 +98,7 @@ class GraveService extends TrackableObjectService {
                 . "</td></tr>"
             ;
         }
-        var_dump($html);
+        echo($html);
         return $html;
     }
 
