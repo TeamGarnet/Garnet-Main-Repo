@@ -30,9 +30,8 @@ $typeFilterService = new TypeFilterService();
 $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
 
-
-var_dump($graveService->getAllGraveEntries());
 /*
+var_dump($graveService->getAllGraveEntries());
 $graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
 $graveService -> updateGraveEntry("43","24","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70.659403, "UpdateTest", "Test", "", 1);
 $graveService -> deleteGraveEntry("5");
