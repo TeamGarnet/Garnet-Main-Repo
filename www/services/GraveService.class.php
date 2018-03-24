@@ -95,8 +95,8 @@ class GraveService extends TrackableObjectService {
                 . "</td><td>" . $graveModel->getImageLocation()
                 . "</td><td>" . $graveModel->getType()
                 . "</td><td>" . $graveModel->getHistoricFilterName()
-                . "</td></tr>"
-            ;
+                . "</td></tr>";
+            var_dump($html);
         }
         var_dump($html);
         echo $html;
