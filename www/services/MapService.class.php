@@ -111,7 +111,7 @@ class MapService {
      *  infoWindow.setContent("<div id='infoWindow'>
      * <image src='imageLocation' alt='imageDescription' ></image>
      * <br><h2 class='pinName'>Blue Flower</h2><br>
-     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2);>
+     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2)';>
      * Learn more about Blue Flower </a> </div>");
      *  infoWindow.open(map,marker2);
      * }})(marker2));
