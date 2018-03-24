@@ -82,7 +82,7 @@ class GraveService extends TrackableObjectService {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
         foreach ($allGraveModels as $graveModel) {
-            $html .= "<tr><td>" . $graveModel->getFirstName()
+            $html = $html . "<tr><td>" . $graveModel->getFirstName()
                 . "</td><td>" . $graveModel->getMiddleName()
                 . "</td><td>" . $graveModel->getLastName()
                 . "</td><td>" . $graveModel->getBirth()
@@ -95,11 +95,7 @@ class GraveService extends TrackableObjectService {
                 . "</td><td>" . $graveModel->getType()
                 . "</td><td>" . $graveModel->getHistoricFilterName()
                 . "</td></tr>";
-            var_dump($html);
         }
-        var_dump($html);
-        echo $html;
-        print_r($html);
         return $html;
     }
 
