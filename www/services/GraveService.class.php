@@ -77,4 +77,27 @@ class GraveService extends TrackableObjectService {
 
     }
 
+    public function getAllEntriesAsRows() {
+        $allGraveModels = $this -> getAllGraveEntries();
+        $html = "";
+        foreach ($allGraveModels as $graveModel) {
+            $html .= $html
+                . "<tr><td>" . $graveModel->getFirstName()
+                . "</td><td>" . $graveModel->getMiddleName()
+                . "</td><td>" . $graveModel->getLastName()
+                . "</td><td>" . $graveModel->getBirth()
+                . "</td><td>" . $graveModel->getDeath()
+                . "</td><td>" . $graveModel->getDescription()
+                . "</td><td>" . $graveModel->getLongitude()
+                . "</td><td>" . $graveModel->getLatitude()
+                . "</td><td>" . $graveModel->getImageDescription()
+                . "</td><td>" . $graveModel->getImageLocation()
+                . "</td><td>" . $graveModel->getType()
+                . "</td><td>" . $graveModel->getHistoricFilterName()
+                . "</td></tr>"
+            ;
+        }
+        return $html;
+    }
+
 }
