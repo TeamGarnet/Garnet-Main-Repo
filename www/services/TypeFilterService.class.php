@@ -66,9 +66,15 @@ class TypeFilterService {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
         foreach ($allModels as $model) {
+            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
+                . "</td><td><button href='deleteObjectInfo("
+                . "'" . "typeFilter" . "',"
+                . $model->getIdType()
+                . ")'> Delete</button>";
             $html = $html . "<tr><td>" . $model->getType()
                 . "</td><td>" . $model->getPinDesign()
                 . "</td><td>" . $model->getButtonColor()
+                . $editAndDelete
                 . "</td></tr>";
         }
         return $html;
