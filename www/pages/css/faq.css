@@ -8,14 +8,14 @@ body {
 }
 
 /* PHP Generated Content*/
-.contactCardOutter {
+.faqCardContainer {
     background-color: transparent;
     text-align: center;
     text-decoration: none;
 	padding:5%;
 }
 
-.contactCard {
+.faqCard {
     font-family: prozolibre;
 }
 
