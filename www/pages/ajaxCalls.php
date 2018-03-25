@@ -6,10 +6,10 @@ if(isset($_GET['getMapCardInfoID'])) {
     $mapService = new MapService();
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
-} else if (isset($_GET['delete'])) {
+} else if (isset($_GET['deleteGrave'])) {
     $graveService = new GraveService();
-    $graveService ->deleteGraveEntry($_GET['delete']);
-    unset($_GET['delete']);
+    $graveService ->deleteGraveEntry($_GET['deleteGrave']);
+    unset($_GET['deleteGrave']);
 }
 
 
