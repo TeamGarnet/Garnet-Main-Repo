@@ -1,5 +1,5 @@
 <?php
-include_once '/data/ContactData.class.php';
+include_once '../../data/ContactData.class.php';
 include_once '/models/Contact.class.php';
 /**
  */
