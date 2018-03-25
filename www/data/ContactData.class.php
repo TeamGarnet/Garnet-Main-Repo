@@ -1,7 +1,7 @@
 <?php
 /**
  */
-include_once '../services/DatabaseConnection.class.php';
+include_once '../../services/DatabaseConnection.class.php';
 
 class ContactData {
     /**
