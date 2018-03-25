@@ -82,12 +82,12 @@ class GraveService extends TrackableObjectService {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
         foreach ($allGraveModels as $graveModel) {
-            $objectRowID = "10" . strval($graveModel->getIdTrackableObject());
+            $objectRowID = "10" . strval($graveModel->getIdGrave());
             $editAndDelete = "</td><td><button onclick='updateGrave("
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
-                . $graveModel->getIdTrackableObject()
+                . $graveModel->getIdGrave()
                 . ')"> Delete</button>';
 
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $graveModel->getFirstName()
