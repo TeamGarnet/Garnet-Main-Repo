@@ -3,13 +3,6 @@ include_once '../../data/GraveObjectData.class.php';
 include_once '../../models/Grave.class.php';
 include_once 'TrackableObjectService.class.php';
 
-/**
- */
-if (isset($_GET['delete'])) {
-    $graveService = new GraveService();
-    $graveService ->deleteGraveEntry($_GET['delete']);
-    unset($_GET['delete']);
-}
 
 class GraveService extends TrackableObjectService {
 
@@ -113,4 +106,12 @@ class GraveService extends TrackableObjectService {
         return $html;
     }
 
+}
+
+/**
+ */
+if (isset($_GET['delete'])) {
+    $graveService = new GraveService();
+    $graveService ->deleteGraveEntry($_GET['delete']);
+    unset($_GET['delete']);
 }

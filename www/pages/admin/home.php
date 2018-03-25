@@ -422,15 +422,13 @@ $eventService->deleteEventEntry("5");
     });
     function deleteGrave(id) {
         $('.confirm-button').on('click', function() {
-            alert('Saved!!');
+            alert('Saved!!' + id);
             $.ajax({
                 type: "GET",
                 url: "../../services/GraveService.class.php",
                 data: "delete="+String(id),
-                dataType:"text",
                 success: function(data) {
-                    alert(data + String(id));
-                    //$('.deleteModal').modal('hide');
+                    alert("hey"));
                 }
             });
             $('.deleteModal').modal('hide');
