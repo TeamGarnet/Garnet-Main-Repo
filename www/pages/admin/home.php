@@ -405,6 +405,10 @@ $eventService->deleteEventEntry("5");
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#confirm-button').on('click', function() {
+            alert('Saved!!');
+            $('.deleteModal').modal('hide');
+        });
         $('#deleteModal').modal('hide');
 
         //Apply the datatables plugin to your table
@@ -421,12 +425,11 @@ $eventService->deleteEventEntry("5");
 
     });
     function deleteGrave(id) {
-        $('.deleteModal').modal('show');
-        $('#confirm-button').on('click', function(id) {
-            //Ajax call to delete the object
-            alert('ugh');
+        $('.confirm-button').on('click', function() {
+            alert('Saved!!');
             $('.deleteModal').modal('hide');
         });
+        $('.deleteModal').modal('show');
 
 
     }
