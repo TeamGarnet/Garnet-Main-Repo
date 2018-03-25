@@ -114,17 +114,17 @@ $eventService->deleteEventEntry("5");
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">Delete Object Confirmation</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <p>Delete from database forever?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -424,28 +424,28 @@ $eventService->deleteEventEntry("5");
         $('.deleteModal').modal('toggle');
     }
     function deleteNH(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteMisc(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteType(id) {
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteHistoricFilter(id) {
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteFAQ(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteLocation(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteContact(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
     function deleteEvent(id){
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('show');
     }
 
 
