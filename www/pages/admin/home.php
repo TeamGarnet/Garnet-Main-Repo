@@ -260,9 +260,11 @@ $eventService->deleteEventEntry("5");
                             </tr>
                             </thead>
 
+                            <tbody>
                             <?php
                                 echo $historicFilterService -> getAllEntriesAsRows();
                             ?>
+                            </tbody>
 
 
                         </table>
