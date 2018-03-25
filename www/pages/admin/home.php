@@ -403,7 +403,7 @@ $eventService->deleteEventEntry("5");
 </html>
 
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $('#deleteModal').modal('hide');
 

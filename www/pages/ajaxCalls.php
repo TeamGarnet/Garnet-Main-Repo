@@ -3,7 +3,7 @@ include '../services/MapService.class.php';
 include '../services/GraveService.class.php';
 $graveService = new GraveService();
 $mapService = new MapService();
-
+ echo "made it here";
 if(isset($_GET['getMapCardInfoID'])) {
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
