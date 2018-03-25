@@ -425,7 +425,7 @@ $eventService->deleteEventEntry("5");
             alert('Saved!!');
             $.ajax({
                 type: "GET",
-                url: "ajaxCalls.php",
+                url: "../ajaxCalls.php",
                 data: "deleteGrave="+String(id),
                 dataType:"text",
                 success: function(data) {
