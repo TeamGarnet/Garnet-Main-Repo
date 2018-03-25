@@ -422,10 +422,15 @@ $eventService->deleteEventEntry("5");
     });
     function deleteGrave(id) {
         console.log("bootycake");
-        $('.deleteModal').modal('show');
-        $('.deleteModal').on('show', function (event) {
-            console.log(event.relatedTarget);
+        $('.deleteModal').on('hide.bs.modal show.bs.modal', function(event) {
+            var $activeElement = $(document.activeElement);
+
+            if ($activeElement.is('[data-toggle], [data-dismiss]')) {
+                alert($activeElement[0].id);
+            }
         });
+        $('.deleteModal').modal('show');
+
 
     }
     function deleteNH(id){
