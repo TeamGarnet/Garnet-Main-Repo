@@ -49,15 +49,18 @@ class FAQService {
     }
 
     public function getAllEntriesAsRows() {
-        $allModels = $this -> getAllFAQEntries();
+        $allmodels = $this -> getAllFAQEntries();
         $html = "";
-        foreach ($allModels as $model) {
-            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
-                . "</td><td><button href='deleteObjectInfo("
-                . "'" . "faq" . "',"
-                . $model->getIdFAQ()
-                . ")'> Delete</button>";
-            $html = $html . "<tr><td>" . $model->getQuestion()
+        foreach ($allmodels as $model) {
+            $objectRowID = "15" . strval($model->getIdFAQ());
+            $editAndDelete = "</td><td><button onclick='updateFAQ("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteFAQ('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>"
+                . $model->getQuestion()
                 . "</td><td>" . $model->getAnswer()
                 . $editAndDelete
                 . "</td></tr>";

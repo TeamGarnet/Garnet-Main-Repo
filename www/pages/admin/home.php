@@ -291,6 +291,80 @@ $eventService->deleteEventEntry("5");
                     <!--accordion end-->
                 </div>
 
+                <div class="tab-pane fade in active" id="widerLocationDiv">
+                    <div class="content_accordion">
+                        <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Zip Code</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <?php
+                            echo $widerAreaMapService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
+
+                <div class="tab-pane fade in active" id="contactDiv">
+                    <div class="content_accordion">
+                        <table id="contact" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Description</th>
+                                <th>Phone</th>
+                                <th>Title</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <?php
+                            echo $contactService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
+
+                <div class="tab-pane fade in active" id="eventDiv">
+                    <div class="content_accordion">
+                        <table id="event" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Description</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <?php
+                            echo $eventService -> getAllEntriesAsRows();
+                            ?>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!--accordion end-->
+                </div>
 
             </div>
         </div>

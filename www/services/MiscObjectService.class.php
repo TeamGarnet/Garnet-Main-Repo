@@ -64,12 +64,14 @@ class MiscObjectService extends TrackableObjectService {
         $allModels = $this -> getAllMiscObjectEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
-                . "</td><td><button href='deleteObjectInfo("
-                . "'" . "misc" . "',"
-                . $model->getIdMisc()
-                . ")'> Delete</button>";
-            $html = $html . "<tr><td>" . $model->getName()
+            $objectRowID = "12" . strval($model->getIdMisc());
+            $editAndDelete = "</td><td><button onclick='updateMisc("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteMisc('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getDescription()
                 . "</td><td>" . $model->getIsHazard()
                 . "</td><td>" . $model->getLongitude()

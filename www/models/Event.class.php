@@ -9,6 +9,7 @@ class Event {
     private $startTime;
     private $endTime;
     private $idWiderAreaMap;
+    private $locationName;
 
     /**
      * Event constructor.
@@ -18,14 +19,16 @@ class Event {
      * @param $startTime
      * @param $endTime
      * @param $idWiderAreaMap
+     * @param $locationName
      */
-    public function __construct($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap) {
+    public function __construct($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap, $locationName) {
         $this -> idEvent = $idEvent;
         $this -> name = $name;
         $this -> description = $description;
         $this -> startTime = $startTime;
         $this -> endTime = $endTime;
         $this -> idWiderAreaMap = $idWiderAreaMap;
+        $this -> locationName = $locationName;
     }
 
     /**
@@ -41,6 +44,21 @@ class Event {
     public function setIdEvent($idEvent) {
         $this -> idEvent = $idEvent;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLocationName() {
+        return $this -> locationName;
+    }
+
+    /**
+     * @param mixed $locationName
+     */
+    public function setLocationName($locationName) {
+        $this -> locationName = $locationName;
+    }
+
 
     /**
      * @return mixed

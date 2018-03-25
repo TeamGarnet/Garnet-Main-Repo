@@ -18,7 +18,7 @@ class ContactService {
 
             array_push($allContactData, $contactObject);
         }
-        return $allContactDataObjects;
+        return $allContactData;
     }
 
     public function createContactEntry($name, $email, $description, $phone, $title) {
@@ -52,6 +52,27 @@ class ContactService {
             $contactDataClass = new ContactData();
             $contactDataClass -> deleteContact($idContact);
         }
+    }
 
+    public function getAllEntriesAsRows() {
+        $allmodels = $this -> getAllContactEntries();
+        $html = "";
+        foreach ($allmodels as $model) {
+            $objectRowID = "17" . strval($model->getIdContact());
+            $editAndDelete = "</td><td><button onclick='updateGrave("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteGrave('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
+                . "</td><td>" . $model->getEmail()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getPhone()
+                . "</td><td>" . $model->getTitle()
+                . $editAndDelete
+                . "</td></tr>";
+        }
+        return $html;
     }
 }

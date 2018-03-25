@@ -19,7 +19,7 @@ class WiderAreaMapService {
 
             array_push($allWiderAreaMapData, $widerAreaMapObject);
         }
-        return $allWiderAreaMapDataObjects;
+        return $allWiderAreaMapData;
     }
 
     public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
@@ -71,5 +71,30 @@ class WiderAreaMapService {
             $widerAreaMapDataClass = new WiderAreaMapData();
             $widerAreaMapDataClass -> deleteWiderAreaMap($idWiderAreaMap);
         }
+    }
+
+    public function getAllEntriesAsRows() {
+        $allmodels = $this -> getAllWiderAreaMapEntries();
+        $html = "";
+        foreach ($allmodels as $model) {
+            $objectRowID = "16" . strval($model->getIdWiderAreaMap());
+            $editAndDelete = "</td><td><button onclick='updateLocation("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteLocation('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getLongitude()
+                . "</td><td>" . $model->getLatitude()
+                . "</td><td>" . $model->getAddress()
+                . "</td><td>" . $model->getCity()
+                . "</td><td>" . $model->getState()
+                . "</td><td>" . $model->getZipcode()
+                . $editAndDelete
+                . "</td></tr>";
+        }
+        return $html;
     }
 }

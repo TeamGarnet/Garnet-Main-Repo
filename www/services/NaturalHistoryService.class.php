@@ -64,12 +64,14 @@ class NaturalHistoryService extends TrackableObjectService{
         $allModels = $this -> getAllNaturalHistoryEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $editAndDelete = "</td><td><button href='updateObjectInfo()'>Update</button>"
-                . "</td><td><button href='deleteObjectInfo("
-                . "'" . "naturalHistory" . "',"
-                . $model->getIdNaturalHistory()
-                . ")'> Delete</button>";
-            $html = $html . "<tr><td>" . $model->getCommonName()
+            $objectRowID = "11" . strval($model->getIdNaturalHistory());
+            $editAndDelete = "</td><td><button onclick='updateNH("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteNH('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getCommonName()
                 . "</td><td>" . $model->getScientificName()
                 . "</td><td>" . $model->getDescription()
                 . "</td><td>" . $model->getLongitude()

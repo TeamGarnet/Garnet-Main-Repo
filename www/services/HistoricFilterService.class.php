@@ -68,7 +68,7 @@ class HistoricFilterService {
             $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
                 . $objectRowID
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteObject('
+                . "</td><td><button onclick=" . '"deleteHistoricFilter('
                 . $objectRowID
                 . ')"> Delete</button>';
             $html = $html
@@ -80,7 +80,6 @@ class HistoricFilterService {
                 . $editAndDelete
                 . "</td></tr>";
         }
-        $html = $html . "</tbody>";
         return $html;
     }
 }

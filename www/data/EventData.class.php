@@ -51,7 +51,7 @@ class EventData {
     public function readEvent() {
         try {
             //global $getAllEventEntriesQuery;
-            return $this -> getDBInfo(0) -> returnObject("", "SELECT * FROM Event");
+            return $this -> getDBInfo(0) -> returnObject("", "SELECT idEvent, E.name, E.description, startTime, endTime, E.idWiderAreaMap, W.name as locationName FROM Event E Join WiderAreaMap W ON E.idWiderAreaMap = W.idWiderAreaMap;");
         } catch (PDOException $e) {
             echo $e -> getMessage();
             die();

@@ -14,11 +14,11 @@ class EventService {
         $allEventData = array();
 
         foreach ($allEventDataObjects as $eventArray) {
-            $eventObject = new Event($eventArray['idEvent'], $eventArray['name'], $eventArray['description'], $eventArray['startTime'], $eventArray['endTime'], $eventArray['idWiderAreaMap']);
+            $eventObject = new Event($eventArray['idEvent'], $eventArray['name'], $eventArray['description'], $eventArray['startTime'], $eventArray['endTime'], $eventArray['idWiderAreaMap'], $eventArray['locationName']);
 
             array_push($allEventData, $eventObject);
         }
-        return $allEventDataObjects;
+        return $allEventData;
     }
 
     public function createEventEntry($name, $description, $startTime, $endTime, $idWiderAreaMap) {
@@ -52,6 +52,27 @@ class EventService {
             $eventDataClass = new EventData();
             $eventDataClass -> deleteEvent($idEvent);
         }
+    }
 
+    public function getAllEntriesAsRows() {
+        $allmodels = $this -> getAllEventEntries();
+        $html = "";
+        foreach ($allmodels as $model) {
+            $objectRowID = "18" . strval($model->getIdEvent());
+            $editAndDelete = "</td><td><button onclick='updateEvent("
+                . $objectRowID
+                . ")'>Update</button>"
+                . "</td><td><button onclick=" . '"deleteEvent('
+                . $objectRowID
+                . ')"> Delete</button>';
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
+                . "</td><td>" . $model->getLocationName()
+                . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getStartTime()
+                . "</td><td>" . $model->getEndTime()
+                . $editAndDelete
+                . "</td></tr>";
+        }
+        return $html;
     }
 }
