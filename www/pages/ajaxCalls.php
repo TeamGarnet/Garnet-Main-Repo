@@ -3,7 +3,7 @@ include '../services/MapService.class.php';
 include '../services/GraveService.class.php';
 $graveService = new GraveService();
 $mapService = new MapService();
- echo "made it here";
+ var_dump( "made it here");
 if(isset($_GET['getMapCardInfoID'])) {
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
@@ -19,7 +19,7 @@ if (isset($_POST['updateGraveEntry'])) {
 }
 
 if (isset($_GET['deleteGrave'])) {
-    echo "id = " . $_GET['deleteGrave'];
+    var_dump("id = " . $_GET['deleteGrave']);
     $graveService ->deleteGraveEntry($_GET['deleteGrave']);
     unset($_GET['deleteGrave']);
 }
