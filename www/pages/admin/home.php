@@ -253,13 +253,15 @@ $eventService->deleteEventEntry("5");
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Pin Design</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Description</th>
                                 <th>Button Color</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            echo $typeFilterService -> getAllEntriesAsRows();
+                            echo $historicFilterService -> getAllEntriesAsRows();
                             ?>
                             </tbody>
 
