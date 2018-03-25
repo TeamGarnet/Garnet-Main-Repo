@@ -17,10 +17,12 @@ include_once '../../services/TypeFilterService.class.php';
 
 include_once '../../services/WiderAreaMapService.class.php';
 include_once '../../services/EventService.class.php';
+*/
 $graveService = new GraveService();
 $naturalHistoryService = new NaturalHistoryService();
 $miscObjectService = new MiscObjectService();
 
+/*
 $contactService = new ContactService();
 $fAQService = new FAQService();
 
@@ -30,6 +32,7 @@ $typeFilterService = new TypeFilterService();
 $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
 */
+
 /*
 var_dump($graveService->getAllGraveEntries());
 $graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
