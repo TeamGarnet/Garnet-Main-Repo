@@ -1,10 +1,12 @@
 <?php
 include '../services/MapService.class.php';
 include '../services/GraveService.class.php';
-$graveService = new GraveService();
-$mapService = new MapService();
+
+
+
  var_dump( "made it here");
 if(isset($_GET['getMapCardInfoID'])) {
+    $mapService = new MapService();
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
 }
@@ -19,6 +21,7 @@ if (isset($_POST['updateGraveEntry'])) {
 }
 
 if (isset($_GET['deleteGrave'])) {
+    $graveService = new GraveService();
     var_dump("id = " . $_GET['deleteGrave']);
     $graveService ->deleteGraveEntry($_GET['deleteGrave']);
     unset($_GET['deleteGrave']);
