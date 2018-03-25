@@ -1,5 +1,5 @@
 <?php
-include_once '../services/ContactService.class.php';
+include_once '../../services/ContactService.class.php';
 $contactService = new ContactService();
 $allContactInfo = $contactService -> formatContactInfo();
 ?>
