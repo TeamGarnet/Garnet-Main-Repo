@@ -261,7 +261,7 @@ $eventService->deleteEventEntry("5");
                             </thead>
                             <tbody>
                             <?php
-                            echo $historicFilterService -> getAllEntriesAsRows();
+                                echo $historicFilterService -> getAllEntriesAsRows();
                             ?>
                             </tbody>
 
@@ -276,13 +276,13 @@ $eventService->deleteEventEntry("5");
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Pin Design</th>
-                                <th>Button Color</th>
+                                <th>Question</th>
+                                <th>Answer</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            echo $typeFilterService -> getAllEntriesAsRows();
+                            echo $fAQService -> getAllEntriesAsRows();
                             ?>
                             </tbody>
 
