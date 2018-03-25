@@ -8,10 +8,10 @@ include_once '../../services/GraveService.class.php';
 include_once '../../services/NaturalHistoryService.class.php';
 include_once '../../services/MiscObjectService.class.php';
 
-/*
+
 include_once '../../services/ContactService.class.php';
 include_once '../../services/FAQService.class.php';
-
+/*
 include_once '../../services/HistoricFilterService.class.php';
 include_once '../../services/TypeFilterService.class.php';
 
@@ -22,10 +22,10 @@ $graveService = new GraveService();
 $naturalHistoryService = new NaturalHistoryService();
 $miscObjectService = new MiscObjectService();
 
-/*
+
 $contactService = new ContactService();
 $fAQService = new FAQService();
-
+/*
 $historicFilterService = new HistoricFilterService();
 $typeFilterService = new TypeFilterService();
 
