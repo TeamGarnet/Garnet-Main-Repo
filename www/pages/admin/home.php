@@ -7,9 +7,8 @@ if (isset($_SESSION['idUser'])) {
 include_once '../../services/GraveService.class.php';
 include_once '../../services/NaturalHistoryService.class.php';
 include_once '../../services/MiscObjectService.class.php';
-
-
 include_once '../../services/ContactService.class.php';
+
 /*
 include_once '../../services/FAQService.class.php';
 
