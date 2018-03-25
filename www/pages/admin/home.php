@@ -8,6 +8,7 @@ include_once '../../services/GraveService.class.php';
 include_once '../../services/NaturalHistoryService.class.php';
 include_once '../../services/MiscObjectService.class.php';
 
+/*
 include_once '../../services/ContactService.class.php';
 include_once '../../services/FAQService.class.php';
 
@@ -28,7 +29,7 @@ $typeFilterService = new TypeFilterService();
 
 $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
-
+*/
 /*
 var_dump($graveService->getAllGraveEntries());
 $graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
