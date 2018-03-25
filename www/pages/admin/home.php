@@ -421,6 +421,7 @@ $eventService->deleteEventEntry("5");
 
     });
     function deleteGrave(id) {
+        console.log("bootycake");
         $('.deleteModal').modal('show');
         $('.deleteModal').on('show', function (event) {
             console.log(event.relatedTarget);
