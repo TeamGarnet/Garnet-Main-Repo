@@ -66,7 +66,7 @@ class HistoricFilterService {
         foreach ($allModels as $model) {
             $objectRowID = strval($model->getIdHistoricFilter()) . "historicFilter";
             $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
-                . "'" . $objectRowID . "'"
+                . "\'" . $objectRowID . "\'"
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteObject('
                 . $objectRowID
