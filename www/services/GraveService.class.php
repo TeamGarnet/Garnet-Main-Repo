@@ -87,7 +87,7 @@ class GraveService extends TrackableObjectService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
-                . $objectRowID
+                . $graveModel->getIdTrackableObject()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $graveModel->getFirstName()
                 . "</td><td>" . $graveModel->getMiddleName()

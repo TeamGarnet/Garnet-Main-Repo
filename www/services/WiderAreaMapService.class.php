@@ -82,7 +82,7 @@ class WiderAreaMapService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteLocation('
-                . $objectRowID
+                . $model->getIdWiderAreaMap()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getDescription()

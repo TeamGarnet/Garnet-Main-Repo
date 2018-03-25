@@ -63,7 +63,7 @@ class EventService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteEvent('
-                . $objectRowID
+                . $model->getIdEvent()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getLocationName()

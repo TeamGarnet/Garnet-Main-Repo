@@ -69,7 +69,7 @@ class HistoricFilterService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteHistoricFilter('
-                . $objectRowID
+                . $model->getIdHistoricFilter()
                 . ')"> Delete</button>';
             $html = $html
                 . "<tr id='" . $objectRowID . "'><td>" . $model->getHistoricFilterName()

@@ -69,7 +69,7 @@ class MiscObjectService extends TrackableObjectService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteMisc('
-                . $objectRowID
+                . $model->getIdMisc()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getDescription()

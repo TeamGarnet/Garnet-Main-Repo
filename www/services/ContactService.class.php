@@ -63,7 +63,7 @@ class ContactService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
-                . $objectRowID
+                . $model->getIdContact()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getEmail()

@@ -377,12 +377,27 @@ $eventService->deleteEventEntry("5");
 
 
 <!-- <a href="logout.php">Logout</a> -->
+<!-- Modal -->
+<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+        <p>Delete from database?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+        <button class="btn btn-primary">Yes</button>
+    </div>
+</div>
 </body>
 </html>
 
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#deleteModal').modal('hide');
 
         //Apply the datatables plugin to your table
         $('#grave').DataTable();
@@ -394,5 +409,36 @@ $eventService->deleteEventEntry("5");
         $('#widerLocation').DataTable();
         $('#contact').DataTable();
         $('#event').DataTable();
+
+
     });
+    function deleteGrave(id) {
+        $('#deleteModal').modal('show');
+    }
+    function deleteNH(id){
+        $('#deleteModal').modal('show');
+    }
+    function deleteMisc(id){
+        $('#deleteModal').modal('show');
+    }
+    function deleteType(id) {
+        $('#deleteModal').modal('show');
+    }
+    function deleteHistoricFilter(id) {
+        $('#deleteModal').modal('show');
+    }
+    function deleteFAQ(id){
+        $('#deleteModal').modal('show');
+    }
+    function deleteLocation(id){
+        $('#deleteModal').modal('show');
+    }
+    function deleteContact(id){
+        $('#deleteModal').modal('show');
+    }
+    function deleteEvent(id){
+        $('#deleteModal').modal('show');
+    }
+
+
 </script>
