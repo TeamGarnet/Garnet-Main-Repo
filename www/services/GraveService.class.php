@@ -107,11 +107,3 @@ class GraveService extends TrackableObjectService {
     }
 
 }
-
-/**
- */
-if (isset($_GET['delete'])) {
-    $graveService = new GraveService();
-    $graveService ->deleteGraveEntry($_GET['delete']);
-    unset($_GET['delete']);
-}
