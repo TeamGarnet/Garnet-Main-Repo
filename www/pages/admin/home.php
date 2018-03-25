@@ -422,7 +422,7 @@ $eventService->deleteEventEntry("5");
     });
     function deleteGrave(id) {
         $('.deleteModal').modal('show');
-        $('.deleteModal').on('show.bs.modal', function (event) {
+        $('.deleteModal').on('show', function (event) {
             console.log(event.relatedTarget);
         });
 
