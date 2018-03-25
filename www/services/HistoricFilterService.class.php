@@ -71,7 +71,7 @@ class HistoricFilterService {
                 . "</td><td><button onclick=" . '"deleteObject('
                 . $objectRowID
                 . ')"> Delete</button>';
-            $html = $html . $objectRowID . '"'
+            $html = $html . $objectRowID . '">'
                 . "<tr><td>" . $model->getHistoricFilterName()
                 . "</td><td>" . $model->getDateStart()
                 . "</td><td>" . $model->getDateEnd()
@@ -80,6 +80,7 @@ class HistoricFilterService {
                 . $editAndDelete
                 . "</td></tr>";
         }
+        $html = $html . "</tbody>";
         return $html;
     }
 }

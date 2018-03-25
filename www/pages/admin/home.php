@@ -259,11 +259,11 @@ $eventService->deleteEventEntry("5");
                                 <th>Button Color</th>
                             </tr>
                             </thead>
-                            <tbody>
+
                             <?php
                                 echo $historicFilterService -> getAllEntriesAsRows();
                             ?>
-                            </tbody>
+
 
                         </table>
                     </div>
