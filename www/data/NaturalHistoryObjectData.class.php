@@ -49,7 +49,7 @@ class NaturalHistoryObjectData {
     public function readNaturalHistoryObject() {
         try {
             //global $getAllNaturalHistoryEntriesQuery;
-            return $this -> getDBInfo(0) -> returnObject("", "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, commonName, scientificName, description, T.idTypeFilter, TF.type FROM NaturalHistory NM 
+            return $this -> getDBInfo(0) -> returnObject("", "SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, commonName, scientificName, description, T.idTypeFilter, TF.type, NM.idNaturalHistory FROM NaturalHistory NM 
 JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         } catch (PDOException $e) {
