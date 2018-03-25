@@ -109,6 +109,21 @@ $eventService->deleteEventEntry("5");
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- Modal -->
+<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Delete Object Confirmation</h3>
+    </div>
+    <div class="modal-body">
+        <p>Delete from database?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+        <button class="btn btn-primary">Yes</button>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
 
@@ -377,20 +392,7 @@ $eventService->deleteEventEntry("5");
 
 
 <!-- <a href="logout.php">Logout</a> -->
-<!-- Modal -->
-<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete Object Confirmation</h3>
-    </div>
-    <div class="modal-body">
-        <p>Delete from database?</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
-        <button class="btn btn-primary">Yes</button>
-    </div>
-</div>
+
 </body>
 </html>
 
