@@ -19,6 +19,7 @@ if (isset($_POST['updateGraveEntry'])) {
 }
 
 if (isset($_GET['deleteGrave'])) {
+    echo "id = " . $_GET['deleteGrave'];
     $graveService ->deleteGraveEntry($_GET['deleteGrave']);
     unset($_GET['deleteGrave']);
 }
