@@ -1,5 +1,5 @@
 <?php
-include_once '../../data/GraveObjectData.class.php';
+include_once '../data/GraveObjectData.class.php';
 include_once '../../models/Grave.class.php';
 include_once 'TrackableObjectService.class.php';
 
