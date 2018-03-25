@@ -163,255 +163,257 @@ $eventService->deleteEventEntry("5");
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+    <div class="container1">
+        <div class="row">
+            <div class="col-lg-12">
 
-            <ul id="myTab" class="nav nav-tabs">
-                <li class="active">
-                    <a href="#graveDiv" data-toggle="tab">
-                        Graves
-                    </a>
-                </li>
-                <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
-                <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
-                <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
-                <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-                <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
-                <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
-                <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
-                <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
-            </ul>
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#graveDiv" data-toggle="tab">
+                            Graves
+                        </a>
+                    </li>
+                    <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+                    <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+                    <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+                    <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+                    <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+                    <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
+                    <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+                    <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
+                </ul>
 
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane fade in active" id="graveDiv">
-                    <div class="content_accordion">
-                        <table id="grave" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Middle Name</th>
-                                <th>Last Name</th>
-                                <th>Birth Date</th>
-                                <th>Death Date</th>
-                                <th>Description</th>
-                                <th>Longitude</th>
-                                <th>Latitude</th>
-                                <th>Image Description</th>
-                                <th>Image Location</th>
-                                <th>Type Filter</th>
-                                <th>Historic Filter</th>
-                            </tr>
-                            </thead>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="graveDiv">
+                        <div class="content_accordion">
+                            <table id="grave" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Middle Name</th>
+                                    <th>Last Name</th>
+                                    <th>Birth Date</th>
+                                    <th>Death Date</th>
+                                    <th>Description</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Image Description</th>
+                                    <th>Image Location</th>
+                                    <th>Type Filter</th>
+                                    <th>Historic Filter</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <?php
-                            echo $graveService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                                <tbody>
+                                <?php
+                                echo $graveService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade" id="naturalHistoryDiv">
-                    <div class="content_accordion">
-                        <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Common Name</th>
-                                <th>Scientific Name</th>
-                                <th>Description</th>
-                                <th>Longitude</th>
-                                <th>Latitude</th>
-                                <th>Image Description</th>
-                                <th>Image Location</th>
-                                <th>Type</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            echo $naturalHistoryService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                    <div class="tab-pane fade" id="naturalHistoryDiv">
+                        <div class="content_accordion">
+                            <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Common Name</th>
+                                    <th>Scientific Name</th>
+                                    <th>Description</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Image Description</th>
+                                    <th>Image Location</th>
+                                    <th>Type</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                echo $naturalHistoryService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade" id="miscDiv">
-                    <div class="content_accordion">
-                        <table id="misc" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Is a Hazard?</th>
-                                <th>Longitude</th>
-                                <th>Latitude</th>
-                                <th>Image Description</th>
-                                <th>Image Location</th>
-                                <th>Type</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            echo $miscObjectService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                    <div class="tab-pane fade" id="miscDiv">
+                        <div class="content_accordion">
+                            <table id="misc" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Is a Hazard?</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Image Description</th>
+                                    <th>Image Location</th>
+                                    <th>Type</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                echo $miscObjectService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade" id="typeDiv">
-                    <div class="content_accordion">
-                        <table id="type" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Pin Design</th>
-                                <th>Button Color</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            echo $typeFilterService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                    <div class="tab-pane fade" id="typeDiv">
+                        <div class="content_accordion">
+                            <table id="type" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Pin Design</th>
+                                    <th>Button Color</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                echo $typeFilterService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade" id="historicDiv">
-                    <div class="content_accordion">
-                        <table id="historic" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Description</th>
-                                <th>Button Color</th>
-                            </tr>
-                            </thead>
+                    <div class="tab-pane fade" id="historicDiv">
+                        <div class="content_accordion">
+                            <table id="historic" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Description</th>
+                                    <th>Button Color</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <?php
+                                <tbody>
+                                <?php
                                 echo $historicFilterService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                                ?>
+                                </tbody>
 
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade" id="faqDiv">
-                    <div class="content_accordion">
-                        <table id="faq" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Question</th>
-                                <th>Answer</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            echo $fAQService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                    <div class="tab-pane fade" id="faqDiv">
+                        <div class="content_accordion">
+                            <table id="faq" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Question</th>
+                                    <th>Answer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                echo $fAQService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade in active" id="widerLocationDiv">
-                    <div class="content_accordion">
-                        <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Longitude</th>
-                                <th>Latitude</th>
-                                <th>Address</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Zip Code</th>
-                            </tr>
-                            </thead>
+                    <div class="tab-pane fade in active" id="widerLocationDiv">
+                        <div class="content_accordion">
+                            <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Zip Code</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <?php
-                            echo $widerAreaMapService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                                <tbody>
+                                <?php
+                                echo $widerAreaMapService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade in active" id="contactDiv">
-                    <div class="content_accordion">
-                        <table id="contact" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Description</th>
-                                <th>Phone</th>
-                                <th>Title</th>
-                            </tr>
-                            </thead>
+                    <div class="tab-pane fade in active" id="contactDiv">
+                        <div class="content_accordion">
+                            <table id="contact" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Description</th>
+                                    <th>Phone</th>
+                                    <th>Title</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <?php
-                            echo $contactService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                                <tbody>
+                                <?php
+                                echo $contactService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
-                <div class="tab-pane fade in active" id="eventDiv">
-                    <div class="content_accordion">
-                        <table id="event" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Location</th>
-                                <th>Description</th>
-                                <th>Start Time</th>
-                                <th>End Time</th>
-                            </tr>
-                            </thead>
+                    <div class="tab-pane fade in active" id="eventDiv">
+                        <div class="content_accordion">
+                            <table id="event" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Description</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <?php
-                            echo $eventService -> getAllEntriesAsRows();
-                            ?>
-                            </tbody>
+                                <tbody>
+                                <?php
+                                echo $eventService -> getAllEntriesAsRows();
+                                ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        </div>
+                        <!--accordion end-->
                     </div>
-                    <!--accordion end-->
-                </div>
 
+                </div>
             </div>
-        </div>
-        <!-- /.row -->
+            <!-- /.row -->
 
+        </div>
     </div>
 </div>
 
@@ -439,20 +441,26 @@ $eventService->deleteEventEntry("5");
 
 
     });
+
     function deleteGrave(id) {
-        $('.confirm-button').on('click', function() {
+        $('.confirm-button').on('click', function () {
             alert('Saved!!' + id);
             $.ajax({
                 type: "GET",
                 url: "../ajaxCalls.php",
-                data: "deleteGrave="+String(id),
-                success: function(data) {
-                    alert("hey"));
-                }
-            });
-            $('.deleteModal').modal('hide');
-        });
-        $('.deleteModal').modal('show');
+                data: "deleteGrave=" + String(id),
+                success: function (data) {
+                    alert("hey")
+                );
+        }
+    }
+
+    )
+    ;
+    $('.deleteModal').modal('hide');
+    })
+    ;
+    $('.deleteModal').modal('show');
     }
 
     function updateGrave(id) {
