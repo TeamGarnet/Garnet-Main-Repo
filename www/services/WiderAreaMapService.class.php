@@ -1,7 +1,7 @@
 <?php
-include_once '../../data/WiderAreaMapData.class.php';
-include_once '../../data/EventData.class.php';
-include_once '../../models/WiderAreaMap.class.php';
+include_once '../data/WiderAreaMapData.class.php';
+include_once '../data/EventData.class.php';
+include_once '../models/WiderAreaMap.class.php';
 /**
  */
 
