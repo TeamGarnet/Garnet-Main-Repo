@@ -61,7 +61,7 @@ class HistoricFilterService {
 
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllHistoricFilterEntries();
-        $html = '<tbody id="';
+        $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
             $objectRowID = "14" . strval($model->getIdHistoricFilter());
@@ -71,8 +71,8 @@ class HistoricFilterService {
                 . "</td><td><button onclick=" . '"deleteObject('
                 . $objectRowID
                 . ')"> Delete</button>';
-            $html = $html . $objectRowID . '">'
-                . "<tr><td>" . $model->getHistoricFilterName()
+            $html = $html
+                . "<tr id='" . $objectRowID . "'><td>" . $model->getHistoricFilterName()
                 . "</td><td>" . $model->getDateStart()
                 . "</td><td>" . $model->getDateEnd()
                 . "</td><td>" . $model->getDescription()
