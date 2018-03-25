@@ -22,10 +22,10 @@ $graveService = new GraveService();
 $naturalHistoryService = new NaturalHistoryService();
 $miscObjectService = new MiscObjectService();
 
-
 $contactService = new ContactService();
-$fAQService = new FAQService();
 /*
+$fAQService = new FAQService();
+
 $historicFilterService = new HistoricFilterService();
 $typeFilterService = new TypeFilterService();
 
@@ -283,7 +283,7 @@ $eventService->deleteEventEntry("5");
                                 </thead>
                                 <tbody>
                                 <?php
-                                echo $typeFilterService -> getAllEntriesAsRows();
+                                //echo $typeFilterService -> getAllEntriesAsRows();
                                 ?>
                                 </tbody>
 
@@ -307,7 +307,7 @@ $eventService->deleteEventEntry("5");
 
                                 <tbody>
                                 <?php
-                                echo $historicFilterService -> getAllEntriesAsRows();
+                                //echo $historicFilterService -> getAllEntriesAsRows();
                                 ?>
                                 </tbody>
 
@@ -329,7 +329,7 @@ $eventService->deleteEventEntry("5");
                                 </thead>
                                 <tbody>
                                 <?php
-                                echo $fAQService -> getAllEntriesAsRows();
+                                //echo $fAQService -> getAllEntriesAsRows();
                                 ?>
                                 </tbody>
 
@@ -356,7 +356,7 @@ $eventService->deleteEventEntry("5");
 
                                 <tbody>
                                 <?php
-                                echo $widerAreaMapService -> getAllEntriesAsRows();
+                                //echo $widerAreaMapService -> getAllEntriesAsRows();
                                 ?>
                                 </tbody>
 
@@ -404,7 +404,7 @@ $eventService->deleteEventEntry("5");
 
                                 <tbody>
                                 <?php
-                                echo $eventService -> getAllEntriesAsRows();
+                                //echo $eventService -> getAllEntriesAsRows();
                                 ?>
                                 </tbody>
 
