@@ -109,7 +109,7 @@ $eventService->deleteEventEntry("5");
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Modal -->
+<!-- Delete Object Modal -->
 <div class="modal deleteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -129,7 +129,26 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
-
+<!-- Update Object Modal -->
+<div class="modal updateModal" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalTitle">Update Object</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="updateModalBody">
+                <p>Content goes here</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
 
@@ -436,5 +455,7 @@ $eventService->deleteEventEntry("5");
         $('.deleteModal').modal('show');
     }
 
-
+    function updateGrave(id) {
+        $('#updateModal').modal('show')
+    }
 </script>
