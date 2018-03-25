@@ -425,7 +425,7 @@ $eventService->deleteEventEntry("5");
         $('.deleteModal').on('hide.bs.modal show.bs.modal', function(event) {
             var $activeElement = $(document.activeElement);
 
-            if ($activeElement.is('[data-toggle], [data-dismiss]')) {
+            if ($activeElement.is('[btn-primary], [btn-secondary]')) {
                 alert($activeElement[0].id);
             }
         });
