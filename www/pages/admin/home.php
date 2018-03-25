@@ -110,17 +110,23 @@ $eventService->deleteEventEntry("5");
 </head>
 <body>
 <!-- Modal -->
-<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete Object Confirmation</h3>
-    </div>
-    <div class="modal-body">
-        <p>Delete from database?</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
-        <button class="btn btn-primary">Yes</button>
+<div class="modal deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -415,7 +421,7 @@ $eventService->deleteEventEntry("5");
 
     });
     function deleteGrave(id) {
-        $('#deleteModal').modal('show');
+        $('.deleteModal').modal('toggle');
     }
     function deleteNH(id){
         $('#deleteModal').modal('show');
