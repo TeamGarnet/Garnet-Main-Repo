@@ -64,11 +64,12 @@ class HistoricFilterService {
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
+            $objectType = '"historicFilter"';
             $editAndDelete = "</td><td><button onclick='updateObjectInfo()'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteObjectInfo("'
-                . "'historicFilter',"
+                . "</td><td><button onclick=" . '"deleteObjectInfo('
+                . $objectType . ","
                 . $model->getIdHistoricFilter()
-                . '")> Delete</button>';
+                . ')"> Delete</button>';
             $html = $html . "<tr><td>" . $model->getHistoricFilterName()
                 . "</td><td>" . $model->getDateStart()
                 . "</td><td>" . $model->getDateEnd()
