@@ -406,7 +406,7 @@ $eventService->deleteEventEntry("5");
 <script>
     $(document).ready(function () {
         $('#confirm-button').on('click', function() {
-            alert('Saved!!');
+            alert('Saved!!1');
             $('.deleteModal').modal('hide');
         });
         $('#deleteModal').modal('hide');
@@ -426,7 +426,7 @@ $eventService->deleteEventEntry("5");
     });
     function deleteGrave(id) {
         $('.confirm-button').on('click', function() {
-            alert('Saved!!');
+            alert('Saved!!2');
             $('.deleteModal').modal('hide');
         });
         $('.deleteModal').modal('show');
