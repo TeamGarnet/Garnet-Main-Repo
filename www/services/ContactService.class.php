@@ -36,7 +36,7 @@ class ContactService {
         };
 
 
-        return $formattedFAQInfo;
+        return $formattedContactInfo;
     }
 
     public function createContactEntry($name, $email, $description, $phone, $title) {
