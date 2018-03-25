@@ -98,3 +98,9 @@ class WiderAreaMapService {
         return $html;
     }
 }
+
+if (isset($_GET['delete'])) {
+    $service = new WiderAreaMapService();
+    $service -> deleteWiderAreaMapEntry($_GET['delete']);
+    unset($_GET['delete']);
+}

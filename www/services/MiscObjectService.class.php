@@ -85,3 +85,9 @@ class MiscObjectService extends TrackableObjectService {
         return $html;
     }
 }
+
+if (isset($_GET['delete'])) {
+    $service = new MiscObjectService();
+    $service -> deleteMiscObjectEntry($_GET['delete']);
+    unset($_GET['delete']);
+}

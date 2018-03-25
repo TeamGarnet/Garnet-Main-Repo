@@ -68,3 +68,9 @@ class FAQService {
         return $html;
     }
 }
+
+if (isset($_GET['delete'])) {
+    $service = new FAQService();
+    $service -> deleteFAQEntry($_GET['delete']);
+    unset($_GET['delete']);
+}
