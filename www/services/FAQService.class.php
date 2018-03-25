@@ -20,6 +20,21 @@ class FAQService {
         }
         return $allFAQData;
     }
+	
+	public function formatFAQInfo() {
+        $allFAQObjectsInfo = $this ->getAllFAQEntries();
+        $formattedFAQInfo = "";
+
+        foreach ($allFAQObjectsInfo as $faqObjectInfo){
+            $formattedFAQInfo .= '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
+                . $trailObjectInfo -> getQuestion() . '</p><p class="a">'
+                . $trailObjectInfo -> getAnswer() . '</p></div></div></div>'
+            ;
+        };
+
+
+        return $formattedFAQInfo;
+    }
 
     public function createFAQEntry($question, $answer) {
         $question = filter_var($question, FILTER_SANITIZE_EMAIL);

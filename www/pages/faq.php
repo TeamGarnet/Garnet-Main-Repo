@@ -1,3 +1,10 @@
+<?php
+include_once '../services/FAQService.class.php';
+$faqService = new FAQService();
+$allFAQInfo = $faqService -> formatFAQInfo();
+
+//print_r($allTrailInfo);
+?>
 <!-- HTML -->
 <!DOCTYPE html>
 <html>
@@ -58,7 +65,7 @@
         </div>
     </div>
 
-<div class="row">
+<!--<div class="row">
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="faqCardContainer">
 				<div class="faqCard">
@@ -85,11 +92,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
     <div class="row">
         <?php
-        echo $allTrailInfo;
+        echo $allFAQInfo;
         ?>
     </div>
 </div>
