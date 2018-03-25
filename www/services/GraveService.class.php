@@ -82,21 +82,25 @@ class GraveService extends TrackableObjectService {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
         foreach ($allGraveModels as $graveModel) {
-            $objectRowID = "10" . strval($graveModel->getIdWiderAreaMap());
+            $objectRowID = "10" . strval($graveModel->getIdGrave());
             $editAndDelete = "</td><td><button onclick='updateGrave("
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
                 . $objectRowID
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $graveModel->getName()
+            $html = $html . "<tr><td>" . $graveModel->getFirstName()
+                . "</td><td>" . $graveModel->getMiddleName()
+                . "</td><td>" . $graveModel->getLastName()
+                . "</td><td>" . $graveModel->getBirth()
+                . "</td><td>" . $graveModel->getDeath()
                 . "</td><td>" . $graveModel->getDescription()
                 . "</td><td>" . $graveModel->getLongitude()
                 . "</td><td>" . $graveModel->getLatitude()
-                . "</td><td>" . $graveModel->getAddress()
-                . "</td><td>" . $graveModel->getCity()
-                . "</td><td>" . $graveModel->getState()
-                . "</td><td>" . $graveModel->getZipcode()
+                . "</td><td>" . $graveModel->getImageDescription()
+                . "</td><td>" . $graveModel->getImageLocation()
+                . "</td><td>" . $graveModel->getType()
+                . "</td><td>" . $graveModel->getHistoricFilterName()
                 . $editAndDelete
                 . "</td></tr>";
         }
