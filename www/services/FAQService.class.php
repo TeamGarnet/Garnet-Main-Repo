@@ -1,6 +1,6 @@
 <?php
-include_once '../data/FAQData.class.php';
-include_once '../models/FAQ.class.php';
+include_once '../../data/FAQData.class.php';
+include_once '../../models/FAQ.class.php';
 
 class FAQService {
     public function __construct(){
