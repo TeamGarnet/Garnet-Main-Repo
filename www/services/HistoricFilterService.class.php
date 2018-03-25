@@ -64,9 +64,9 @@ class HistoricFilterService {
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
-            $objectRowID = strval($model->getIdHistoricFilter()) . "historicFilter";
+            $objectRowID = "14" . strval($model->getIdHistoricFilter());
             $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
-                . "\'" . $objectRowID . "\'"
+                . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteObject('
                 . $objectRowID
