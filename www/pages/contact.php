@@ -1,3 +1,8 @@
+<?php
+include_once '../services/ContactService.class.php';
+$contactService = new ContactService();
+$allContactInfo = $contactService -> formatContactInfo();
+?>
 <!-- HTML -->
 <!DOCTYPE html>
 <html>
@@ -58,7 +63,7 @@
         </div>
     </div>
 
-<div class="row">
+<!--<div class="row">
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="contactCardOutter">
 				<div class="contactCard">
@@ -94,11 +99,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
     <div class="row">
         <?php
-        echo $allTrailInfo;
+        echo $allContactInfo;
         ?>
     </div>
 </div>
