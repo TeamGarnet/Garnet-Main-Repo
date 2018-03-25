@@ -5,6 +5,12 @@ include_once 'TrackableObjectService.class.php';
 
 /**
  */
+if (isset($_GET['deleteGrave'])) {
+    $graveService = new GraveService();
+    var_dump("id = " . $_GET['deleteGrave']);
+    $graveService ->deleteGraveEntry($_GET['deleteGrave']);
+    unset($_GET['deleteGrave']);
+}
 
 class GraveService extends TrackableObjectService {
 
