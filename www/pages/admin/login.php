@@ -1,5 +1,5 @@
 <?php
-include('../../services/LoginService.class.php');
+include_once('../../services/LoginService.class.php');
 $errorMsgLogin = '';
 if (isset($_POST['Login'])) {
     if ($_POST['email'] != "" && $_POST['password'] != "") {

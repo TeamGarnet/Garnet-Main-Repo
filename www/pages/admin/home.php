@@ -4,18 +4,18 @@ if (isset($_SESSION['idUser'])) {
 } else {
     header('Location: login.php');
 }
-include '../../services/GraveService.class.php';
-include '../../services/NaturalHistoryService.class.php';
-include '../../services/MiscObjectService.class.php';
+include_once '../../services/GraveService.class.php';
+include_once '../../services/NaturalHistoryService.class.php';
+include_once '../../services/MiscObjectService.class.php';
 
-include '../../services/ContactService.class.php';
-include '../../services/FAQService.class.php';
+include_once '../../services/ContactService.class.php';
+include_once '../../services/FAQService.class.php';
 
-include '../../services/HistoricFilterService.class.php';
-include '../../services/TypeFilterService.class.php';
+include_once '../../services/HistoricFilterService.class.php';
+include_once '../../services/TypeFilterService.class.php';
 
-include '../../services/WiderAreaMapService.class.php';
-include '../../services/EventService.class.php';
+include_once '../../services/WiderAreaMapService.class.php';
+include_once '../../services/EventService.class.php';
 $graveService = new GraveService();
 $naturalHistoryService = new NaturalHistoryService();
 $miscObjectService = new MiscObjectService();

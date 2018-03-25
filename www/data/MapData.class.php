@@ -1,6 +1,6 @@
 <?php
-include '../services/DatabaseConnection.class.php';
-include 'query.php';
+include_once '../services/DatabaseConnection.class.php';
+include_once 'query.php';
 
 /**
  * MapData.class.php: Handles all CRUD operations that are sent from the service and

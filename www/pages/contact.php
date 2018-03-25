@@ -47,7 +47,7 @@
 <body>
 
     <!-- Navigation -->
-    <?php include '../components/StaticNav.php'?>
+    <?php include_once '../components/StaticNav.php'?>
 
 
 

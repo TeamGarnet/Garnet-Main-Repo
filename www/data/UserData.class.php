@@ -1,6 +1,6 @@
 <?php
-require_once '../../services/DatabaseConnection.class.php';
-require_once 'query.php';
+include_once '../../services/DatabaseConnection.class.php';
+include_once 'query.php';
 
 
 /**

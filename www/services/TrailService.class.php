@@ -1,6 +1,6 @@
 <?php
-require_once '../data/TrailData.class.php';
-require_once '../models/TrailObject.class.php';
+include_once '../data/TrailData.class.php';
+include_once '../models/TrailObject.class.php';
 
 class TrailService {
 

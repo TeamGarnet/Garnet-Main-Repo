@@ -43,7 +43,7 @@
 
 
 <!-- Navigation -->
-<?php include '../components/Navigation.php'; ?>
+<?php include_once '../components/Navigation.php'; ?>
 
 <!--top_medalsection-->
 <section id="top_medalsection">
@@ -106,7 +106,7 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- include_once all compiled plugins (below), or include_once individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src='js/YouTubePopUp.jquery.js'></script>
 <script>jQuery(function () {

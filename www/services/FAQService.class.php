@@ -1,6 +1,6 @@
 <?php
-require_once '../../data/FAQData.class.php';
-require_once '../../models/FAQ.class.php';
+include_once '../../data/FAQData.class.php';
+include_once '../../models/FAQ.class.php';
 /**
  */
 

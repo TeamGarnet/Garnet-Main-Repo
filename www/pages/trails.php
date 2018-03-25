@@ -1,5 +1,5 @@
 <?php
-include '../services/TrailService.class.php';
+include_once '../services/TrailService.class.php';
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 
@@ -55,7 +55,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 <body>
 
     <!-- Navigation -->
-    <?php include '../components/StaticNav.php'?>
+    <?php include_once '../components/StaticNav.php'?>
 
 
 

@@ -1,6 +1,6 @@
 <?php
-require_once '../../data/EventData.class.php';
-require_once '../../models/Event.class.php';
+include_once '../../data/EventData.class.php';
+include_once '../../models/Event.class.php';
 /**
  */
 

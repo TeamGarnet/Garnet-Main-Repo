@@ -1,6 +1,6 @@
 <!-- PHP -->
 <?php
-include '../services/MapService.class.php';
+include_once '../services/MapService.class.php';
 
 $mapData = new MapService();
 $allPinInfo = $mapData -> getAllMapPinInfo();
@@ -60,7 +60,7 @@ $filterBar = $mapData -> generateFilterBar();
 <body style="background-image:url('../pages/images/TrailBackground.png');">
 
 <!-- Navigation -->
-<?php include '../components/Navigation.php'; ?>
+<?php include_once '../components/Navigation.php'; ?>
 
 <!--Map Filters -->
 <div class="secondmenublock">
