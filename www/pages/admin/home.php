@@ -123,8 +123,8 @@ $eventService->deleteEventEntry("5");
                 <p>Delete from database forever?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Confirm</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary confirm-button">Confirm</button>
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -405,6 +405,10 @@ $eventService->deleteEventEntry("5");
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#confirm-button').on('click', function() {
+            alert('Saved!!');
+            $('.deleteModal').modal('hide');
+        });
         $('#deleteModal').modal('hide');
 
         //Apply the datatables plugin to your table
@@ -421,14 +425,6 @@ $eventService->deleteEventEntry("5");
 
     });
     function deleteGrave(id) {
-        console.log("bootycake");
-        $('.deleteModal').on('hide.bs.modal show.bs.modal', function(event) {
-            var $activeElement = $(document.activeElement);
-
-            if ($activeElement.is('[btn-primary], [btn-secondary]')) {
-                alert($activeElement[0].id);
-            }
-        });
         $('.deleteModal').modal('show');
 
 
