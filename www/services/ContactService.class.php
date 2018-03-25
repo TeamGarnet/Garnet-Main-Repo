@@ -76,3 +76,9 @@ class ContactService {
         return $html;
     }
 }
+
+if (isset($_GET['delete'])) {
+    $contactService = new ContactService();
+    $contactService -> deleteContactEntry($_GET['delete']);
+    unset($_GET['delete']);
+}

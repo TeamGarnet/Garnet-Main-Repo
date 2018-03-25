@@ -76,3 +76,9 @@ class EventService {
         return $html;
     }
 }
+
+if (isset($_GET['delete'])) {
+    $contactService = new EventService();
+    $contactService -> deleteEventEntry($_GET['delete']);
+    unset($_GET['delete']);
+}
