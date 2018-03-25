@@ -429,7 +429,7 @@ $eventService->deleteEventEntry("5");
                 data: "deleteGrave="+String(id),
                 dataType:"text",
                 success: function(data) {
-                    alert("cool");
+                    alert(data + String(id));
                     //$('.deleteModal').modal('hide');
                 }
             });
