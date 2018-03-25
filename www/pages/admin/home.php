@@ -421,7 +421,11 @@ $eventService->deleteEventEntry("5");
 
     });
     function deleteGrave(id) {
-        $('.deleteModal').modal('toggle');
+        $('.deleteModal').modal('show');
+        $('.deleteModal').on('show.bs.modal', function (event) {
+            console.log(event.relatedTarget);
+        });
+
     }
     function deleteNH(id){
         $('.deleteModal').modal('show');
