@@ -62,8 +62,8 @@
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="faqCardContainer">
 				<div class="faqCard">
-					<p class="q">Name </p>
-					<p class="a">Title </p>
+					<p class="q">Question</p>
+					<p class="a">Answer</p>
 				</div>
 			</div>
 		</div>
@@ -71,8 +71,8 @@
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="faqCardContainer">
 				<div class="faqCard">
-					<p class="q">Name </p>
-					<p class="a">Title </p>
+					<p class="q">Question</p>
+					<p class="a">Answer</p>
 				</div>
 			</div>
 		</div>
@@ -80,8 +80,8 @@
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="faqCardContainer">
 				<div class="faqCard">
-					<p class="q">Name </p>
-					<p class="a">Title </p>
+					<p class="q">Question</p>
+					<p class="a">Answer</p>
 				</div>
 			</div>
 		</div>
