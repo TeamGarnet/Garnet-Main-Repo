@@ -1,5 +1,5 @@
 <?php
-include_once 'services/FAQService.class.php';
+include_once '../../services/FAQService.class.php';
 $faqService = new FAQService();
 $allFAQInfo = $faqService -> formatFAQInfo();
 
