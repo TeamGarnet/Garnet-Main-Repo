@@ -475,6 +475,9 @@ $eventService->deleteEventEntry("5");
         });
 
         $('#updateModalBody').html('<form method="post" action="" name="updateGrave">' + input + '</form>');
-        $('#updateModal').modal('show');
+
+        $(document).ready(function() {
+            $('#updateModal').modal('show');
+        });
     }
 </script>
