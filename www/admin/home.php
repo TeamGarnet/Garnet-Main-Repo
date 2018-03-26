@@ -126,7 +126,7 @@ $eventService->deleteEventEntry("5");
                 <p>Delete from database forever?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="confirm-button" onclick="updateGraveFromModal()" >Confirm</button>
+                <button type="button" class="btn btn-primary" id="confirm-button">Confirm</button>
                 <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
             </div>
         </div>
