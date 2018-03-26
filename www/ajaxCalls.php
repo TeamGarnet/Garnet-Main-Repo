@@ -3,6 +3,7 @@ include_once 'services/MapService.class.php';
 include_once 'services/GraveService.class.php';
 
 echo("request type: " . $_SERVER['REQUEST_METHOD']);
+echo("do we have a param: " . !empty($_POST['deleteGrave']));
 if(isset($_GET['getMapCardInfoID'])) {
     echo("In getMapcard");
     $mapService = new MapService();
