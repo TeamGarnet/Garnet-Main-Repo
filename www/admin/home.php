@@ -466,7 +466,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(id) {
-        // Generate inner HTML for form
+        // Grab current table header value and corresponding table data value
         var input = '';
         $('#grave th').each(function(index) {
             var tdVal = $('#' + id + ' td').eq(index).text();
@@ -478,6 +478,7 @@ $eventService->deleteEventEntry("5");
                 '" autocomplete="off"/>';
         });
 
+        // Generate inner HTML for form
         $('#updateModalBody').html(input);
 
         // Show modal

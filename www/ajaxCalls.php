@@ -16,6 +16,8 @@ else if (isset($_POST['updateGraveEntry'])) {
     $string1 = '';
     $json = $_POST['updateGraveEntry'];
     $assoc_array = json_decode($json, true);
+    var_dump($assoc_array);
+    
     foreach($assoc_array as $key => $value) {
         $string1 += $assoc_array[$key];
     }
