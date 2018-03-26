@@ -470,7 +470,7 @@ $eventService->deleteEventEntry("5");
 
             var input = '<label for="' + attribute + '">' + labelText + '</label>' +
                         '<input type="text" id="' + attribute + '" name="' + attribute + '" autocomplete="off"/>';
-            $('#updateModal').html(input);
+            $('#updateModalBody').html('<form method="post" action="" name="updateGrave>' + input + '</form>');
         });
 
         $('#updateModal').modal('show');
