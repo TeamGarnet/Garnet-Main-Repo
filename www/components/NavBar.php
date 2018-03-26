@@ -61,13 +61,13 @@ echo '
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-right">
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">about</a>
+                <li><a style="color:white;" href="faq.php" class="hvr-underline-reveal">faq</a>
                 </li>
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">historic trails</a>
+                <li><a style="color:white;" href="trails.php" class="hvr-underline-reveal">historic trails</a>
                 </li>
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">contact</a>
+                <li><a style="color:white;" href="contact.php" class="hvr-underline-reveal">contact</a>
                 </li>
-                <li><button type="button" class="btn donate">donate</button> 
+                <li><button type="button" class="btn donate" <a href="https://www.paypal.me/JacobFanelli" >donate</a></button> 
                 </li>
             </ul>
         </div>
