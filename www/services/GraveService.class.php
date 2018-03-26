@@ -68,10 +68,11 @@ class GraveService extends TrackableObjectService {
     public function deleteGraveEntry($idGrave) {
         $idGrave = filter_var($idGrave, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idGrave) || $idGrave == "") {
-            return;
+            return false;
         } else {
             $graveDataClass = new GraveObjectData();
             $graveDataClass -> deleteGraveObject($idGrave);
+            return true;
         }
 
     }
