@@ -13,6 +13,6 @@ if(isset($_GET['getMapCardInfoID'])) {
 }
 else if (isset($_POST['updateGraveEntry'])) {
     $graveService = new GraveService();
-   return 'SUCCESSFUL POST IS MADE';
+    return 'SUCCESSFUL POST IS MADE';
 }
 
