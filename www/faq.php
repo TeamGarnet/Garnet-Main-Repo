@@ -56,7 +56,7 @@ $allFAQInfo = $faqService -> formatFAQInfo();
 <body>
 
     <!-- Navigation -->
-    <?php include_once 'components/StaticNav.php'?>
+    <?php include_once 'components/NavBar.php'?>
 
 
 
@@ -66,36 +66,6 @@ $allFAQInfo = $faqService -> formatFAQInfo();
             <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Rapids History Frequently Asked Questions</h3>
         </div>
     </div>
-
-<!--<div class="row">
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="faqCardContainer">
-				<div class="faqCard">
-					<p class="q">Question</p>
-					<p class="a">Answer</p>
-				</div>
-			</div>
-		</div>
-	
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="faqCardContainer">
-				<div class="faqCard">
-					<p class="q">Question</p>
-					<p class="a">Answer</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="faqCardContainer">
-				<div class="faqCard">
-					<p class="q">Question</p>
-					<p class="a">Answer</p>
-				</div>
-			</div>
-		</div>
-	</div>-->
-
     <div class="row">
         <?php
         echo $allFAQInfo;
