@@ -2,7 +2,6 @@
 include_once 'services/MapService.class.php';
 include_once 'services/GraveService.class.php';
 
-echo("In ajax calls php");
 if(isset($_GET['getMapCardInfoID'])) {
     echo("In getMapcard");
     $mapService = new MapService();
