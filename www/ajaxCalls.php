@@ -2,6 +2,7 @@
 include_once 'services/MapService.class.php';
 include_once 'services/GraveService.class.php';
 
+echo("request type: " . $_SERVER['REQUEST_METHOD']);
 if(isset($_GET['getMapCardInfoID'])) {
     echo("In getMapcard");
     $mapService = new MapService();
