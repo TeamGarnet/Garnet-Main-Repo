@@ -1,7 +1,7 @@
 <?php
-include_once '../data/TypeFilterData.class.php';
-include_once '../models/TypeFilter.class.php';
-include_once '../data/TrackableObjectData.class.php';
+include_once 'data/TypeFilterData.class.php';
+include_once 'models/TypeFilter.class.php';
+include_once 'data/TrackableObjectData.class.php';
 /**
  */
 

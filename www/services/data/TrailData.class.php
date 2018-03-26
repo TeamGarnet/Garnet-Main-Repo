@@ -1,5 +1,5 @@
 <?php
-include_once '../services/DatabaseConnection.class.php';
+include_once 'DatabaseConnection.class.php';
 include_once 'query.php';
 
 class TrailData {

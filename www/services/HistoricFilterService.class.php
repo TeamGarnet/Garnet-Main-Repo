@@ -1,7 +1,7 @@
 <?php
-include_once '../data/HistoricFilterData.class.php';
-include_once '../data/GraveObjectData.class.php';
-include_once '../models/HistoricFilter.class.php';
+include_once 'data/HistoricFilterData.class.php';
+include_once 'data/GraveObjectData.class.php';
+include_once 'models/HistoricFilter.class.php';
 /**
  */
 

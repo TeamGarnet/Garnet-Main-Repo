@@ -2,7 +2,7 @@
 /*
  *
  */
-include_once '../services/DatabaseConnection.class.php';
+include_once 'DatabaseConnection.class.php';
 
 class GraveObjectData {
     /**

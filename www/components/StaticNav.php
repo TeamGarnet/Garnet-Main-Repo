@@ -8,7 +8,7 @@ echo '<div id="navigation" class="container" style="background-color:#210e07 !im
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php"><img src="../pages/images/Logo.png" class="img-responsive" alt="img"></a>
+                <a class="navbar-brand" href="home.php"><img src="../images/Logo.png" class="img-responsive" alt="img"></a>
             </div>
 
 

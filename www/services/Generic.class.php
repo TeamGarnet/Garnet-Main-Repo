@@ -1,5 +1,5 @@
 <?php
-include_once '../services/DatabaseConnection.class.php';
+include_once 'data/DatabaseConnection.class.php';
 
 /*
  * Hold generic functions that are not hooked to

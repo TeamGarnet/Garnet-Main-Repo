@@ -1,6 +1,6 @@
 <?php
-include_once '../data/MiscObjectData.class.php';
-include_once '../models/MiscObject.class.php';
+include_once 'data/MiscObjectData.class.php';
+include_once 'models/MiscObject.class.php';
 include_once 'TrackableObjectService.class.php';
 /**
  */

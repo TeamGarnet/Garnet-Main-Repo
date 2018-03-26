@@ -1,6 +1,6 @@
 <?php
-include_once '../services/MapService.class.php';
-include_once '../services/GraveService.class.php';
+include_once 'services/MapService.class.php';
+include_once 'services/GraveService.class.php';
 
 if(isset($_GET['getMapCardInfoID'])) {
     $mapService = new MapService();

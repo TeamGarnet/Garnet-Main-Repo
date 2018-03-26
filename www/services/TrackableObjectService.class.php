@@ -1,5 +1,5 @@
 <?php
-include_once '../data/TrackableObjectData.class.php';
+include_once 'data/TrackableObjectData.class.php';
 /**
  */
 
@@ -14,7 +14,7 @@ class TrackableObjectService {
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
         if ($imageLocation == null || $imageLocation == "") {
-            $imageLocation = '../pages/images/pins/default.png';
+            $imageLocation = '/images/pins/default.png';
         }
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
@@ -34,7 +34,7 @@ class TrackableObjectService {
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
         if ($imageLocation == null || $imageLocation == "") {
-            $imageLocation = '../pages/images/pins/default.png';
+            $imageLocation = '/images/pins/default.png';
         }
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 

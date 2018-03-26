@@ -1,6 +1,6 @@
 <?php
-include_once '../data/NaturalHistoryObjectData.class.php';
-include_once '../models/NaturalHistory.class.php';
+include_once 'data/NaturalHistoryObjectData.class.php';
+include_once 'models/NaturalHistory.class.php';
 include_once 'TrackableObjectService.class.php';
 /**
  */
