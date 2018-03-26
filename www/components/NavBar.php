@@ -67,7 +67,7 @@ echo '
                 </li>
                 <li><a style="color:white;" href="contact.php" class="hvr-underline-reveal">contact</a>
                 </li>
-                <li><button type="button" class="btn donate" <a href="https://www.paypal.me/JacobFanelli" >donate</a></button> 
+                <li><a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">donate</button></a>
                 </li>
             </ul>
         </div>
