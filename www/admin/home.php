@@ -451,7 +451,7 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function() {
             $('#deleteModal').modal('show');
         });
-        $('.confirm-button').on('click', function () {
+        $('.confirm-button').click(function () {
             alert('Saved!!' + id);
             $.ajax({
                 type: "POST",
