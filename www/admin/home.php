@@ -465,11 +465,13 @@ $eventService->deleteEventEntry("5");
     function updateGrave(id) {
         var input = null;
         $('#grave th').each(function(index) {
-            var attribute = $(this).text().replace('\s*', '');
+            var tdVal = $('#' + id + ' td')[index];
+            var attribute = $(this).text().replace(/ /g, '');
             var labelText =  $( this ).text() + ':';
 
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                        '<input type="text" id="' + attribute + '" name="' + attribute + '" autocomplete="off"/>';
+                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
         });
 
         $('#updateModalBody').html('<form method="post" action="" name="updateGrave>' + input + '</form>');
