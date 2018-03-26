@@ -13,7 +13,6 @@ if(isset($_GET['getMapCardInfoID'])) {
 }
 else if (isset($_POST['updateGraveEntry'])) {
     //$graveService = new GraveService();
-    var_dump($_POST['updateGraveEntry']);
     $string1 = '';
     $json = $_POST['updateGraveEntry'];
     $assoc_array = json_decode($json, true);

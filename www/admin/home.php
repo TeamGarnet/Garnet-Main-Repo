@@ -490,7 +490,7 @@ $eventService->deleteEventEntry("5");
             $.ajax({
                 method: "POST",
                 url: "../ajaxCalls.php",
-                data: { updateGraveEntry: ['{"firstName": "Test first name", "lastName": "Test last name"}']}
+                data: { updateGraveEntry:'{"firstName": "Test first name", "lastName": "Test last name"}'}
             }).done(function( msg ) {
                     alert( "Data: " + msg );
                 });
