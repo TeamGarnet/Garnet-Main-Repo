@@ -12,15 +12,7 @@ if(isset($_GET['getMapCardInfoID'])) {
     unset($_GET['deleteGrave']);
 }
 else if (isset($_POST['updateGraveEntry'])) {
-    //$graveService = new GraveService();
-    $string1 = '';
-    $json = $_POST['updateGraveEntry'];
-    $assoc_array = json_decode($json, true);
-    var_dump($assoc_array);
-    
-    foreach($assoc_array as $key => $value) {
-        $string1 += $assoc_array[$key];
-    }
-    echo $string1;
+    var_dump($_POST['updateGraveEntry']);
+    echo 'POST request success.';
 }
 

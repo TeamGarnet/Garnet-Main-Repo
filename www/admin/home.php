@@ -488,10 +488,11 @@ $eventService->deleteEventEntry("5");
 
         // Make AJAX POST request to update entry in database
         $('#saveChanges').click(function () {
+            var formData = {'FirstName': $('#FirstName').val()};
             $.ajax({
                 method: "POST",
                 url: "../ajaxCalls.php",
-                data: { updateGraveEntry:'{"firstName": "Test first name", "lastName": "Test last name"}'}
+                data: { updateGraveEntry: formData}
             }).done(function( msg ) {
                     alert( "Data: " + msg );
                 });
