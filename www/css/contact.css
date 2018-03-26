@@ -1,0 +1,28 @@
+body {
+    background-color: #F7F5E9;
+	background-image: url("../images/TrailBackground.png");
+}
+
+#pageContent {
+    
+}
+
+/* PHP Generated Content*/
+.contactCardOutter {
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+	padding:5%;
+}
+
+.contactCard {
+    font-family: prozolibre;
+    font-size: large;
+}
+
+.name {
+    
+    font-weight: bold;
+}
+
+

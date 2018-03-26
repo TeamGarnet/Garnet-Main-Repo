@@ -1,0 +1,37 @@
+body {
+    background-color: #F7F5E9;
+    background-image: url("../images/TrailBackground.png");
+}
+
+#pageContent {
+    
+}
+
+/* PHP Generated Content*/
+.locationContainer {
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+}
+
+.locationInfo {
+    font-family: prozolibre;
+}
+
+.locationDescription {
+    font-size: large;
+}
+
+.locationName {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.locationURL {
+    font-size: large;
+    text-decoration: none;
+}
+
+.locationDate {
+}
+

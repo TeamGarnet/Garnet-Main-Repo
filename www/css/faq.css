@@ -1,0 +1,27 @@
+body {
+    background-color: #F7F5E9;
+	background-image: url("../images/TrailBackground.png");
+}
+
+#pageContent {
+    
+}
+
+/* PHP Generated Content*/
+.faqCardContainer {
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+	padding:5%;
+}
+
+.faqCard {
+    font-family: prozolibre;
+	font-size: large;
+}
+
+.q {  
+    font-weight: bold;
+}
+
+

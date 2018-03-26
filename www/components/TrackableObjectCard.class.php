@@ -36,7 +36,7 @@ class TrackableObjectCard {
                 $this -> setNaturalHistoryInfo($cardDataArray);
                 $this -> getNaturalHistoryInfo();
                 break;
-            default:
+            case 'Miscellaneous':
                 $this -> setMiscObjectInfo($cardDataArray);
                 $this -> getMiscObjectInfo();
                 break;
@@ -63,7 +63,7 @@ class TrackableObjectCard {
     }
 
     public function setMiscObjectInfo($cardDataArray) {
-        $this -> name = $cardDataArray;
+        $this -> name = $cardDataArray['name'];
         $this -> isHazard = $cardDataArray['isHazard'];
         $this -> description = $cardDataArray['description'];
         $this -> imageLocation = $cardDataArray['imageLocation'];
@@ -71,11 +71,11 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> firstName . " " . $this -> lastName . "</br><h6>("
-            . $this -> birth . " - " . $this -> death . ")" . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
+            . $this-> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
+            . $this -> birth . " - " . $this -> death . ")" . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
@@ -86,11 +86,11 @@ class TrackableObjectCard {
     }
 
     public function getNaturalHistoryInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div style='margin:3%;' class='naturalHistoryInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> commonName . "</br><h6>"
-            . $this -> scientificName . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
+            . $this-> commonName . "</br><h4>"
+            . $this -> scientificName . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
@@ -100,11 +100,11 @@ class TrackableObjectCard {
     }
 
     public function getMiscObjectInfo() {
-        $modalContent = "<div class='.popup-overlay .active'><img src='"
+        $modalContent = "<div style='margin:3%;' class='miscObjectInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:100px;height:100px;/></br><h4>"
-            . $this-> name . "</br><h6> Hazardous Location: "
-            . $this -> isHazard . "</h6></h4>"
+            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
+            . $this -> name . "</br><h4> Hazardous Location: "
+            . $this -> isHazard . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
@@ -114,6 +114,6 @@ class TrackableObjectCard {
     }
 
     public function getModalClosure() {
-        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important; margin-top: 15px;'>Return To Map</button></div>";
+        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07; padding:5px !important; margin-top: 2%;'>Return To Map</button></div>";
     }
 }

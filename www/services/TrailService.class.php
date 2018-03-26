@@ -1,6 +1,6 @@
 <?php
-include '../data/TrailData.class.php';
-include '../models/TrailObject.class.php';
+include_once 'data/TrailData.class.php';
+include_once 'models/TrailObject.class.php';
 
 class TrailService {
 
@@ -28,11 +28,11 @@ class TrailService {
         $formattedTrailLocationInfo = "";
 
         foreach ($allTrailObjectsInfo as $trailObjectInfo){
-            $formattedTrailLocationInfo .= '<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div id=""><div class=""><p class="">'
-                . $trailObjectInfo -> getLineColor() . '</p><p class="">'
-                . $trailObjectInfo -> getName() . '</p><p class="">'
-                . $trailObjectInfo -> getDescription() . '</p><a href="#" class="">'
-                . $trailObjectInfo -> getUrl() . '</a></div></div></div>'
+            $formattedTrailLocationInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
+                . $trailObjectInfo -> getLineColor() . '</p><p class="locationName">'
+                . $trailObjectInfo -> getName() . '</p><p class="locationDescription">'
+                . $trailObjectInfo -> getDescription() . '</p><a href="'
+                . $trailObjectInfo -> getUrl() . '" class="locationURL">Visit Site</a></div></div></div>'
             ;
         };
 

@@ -1,9 +1,9 @@
 <?php
-include '../data/MapData.class.php';
-include '../models/MapPin.class.php';
-include '../models/FilterButton.class.php';
-include '../components/FilterBar.class.php';
-include '../components/TrackableObjectCard.class.php';
+include_once 'data/MapData.class.php';
+include_once 'models/MapPin.class.php';
+include_once 'models/FilterButton.class.php';
+include_once 'components/FilterBar.class.php';
+include_once 'components/TrackableObjectCard.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
@@ -111,7 +111,7 @@ class MapService {
      *  infoWindow.setContent("<div id='infoWindow'>
      * <image src='imageLocation' alt='imageDescription' ></image>
      * <br><h2 class='pinName'>Blue Flower</h2><br>
-     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2);>
+     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2)';>
      * Learn more about Blue Flower </a> </div>");
      *  infoWindow.open(map,marker2);
      * }})(marker2));
