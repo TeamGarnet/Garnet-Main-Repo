@@ -146,7 +146,7 @@ $eventService->deleteEventEntry("5");
                 <p>Content goes here</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="updateGrave()">Save Changes</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -465,7 +465,7 @@ $eventService->deleteEventEntry("5");
         $('.deleteModal').modal('hide');
     }
 
-    function showGraveModal(id) {
+    function updateGrave(id) {
         var input = '';
         $('#grave th').each(function(index) {
             var tdVal = $('#' + id + ' td').eq(index).text();
@@ -482,15 +482,5 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function() {
             $('#updateModal').modal('show');
         });
-    }
-
-    function updateGrave() {
-        $.ajax({
-            method: "POST",
-            url: "../ajaxCalls.php",
-            data: { "something" }
-        }).done(function( msg ) {
-                alert( "Response: " + msg );
-            });
     }
 </script>
