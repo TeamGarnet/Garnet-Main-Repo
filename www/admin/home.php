@@ -454,11 +454,17 @@ $eventService->deleteEventEntry("5");
         $('.confirm-button').on('click', function () {
             alert('Saved!!' + id);
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "../ajaxCalls.php",
                 data: "deleteGrave=" + String(id),
                 success: function (data) {
                     alert("hey");
+                },
+                processData: false,
+                contentType: false,
+                error: function (xhr, ajaxOptions, thrownError){
+                    alert(xhr.status);
+                    alert(thrownError);
                 }
             });
         });
