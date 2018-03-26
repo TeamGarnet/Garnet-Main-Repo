@@ -463,6 +463,16 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(id) {
+        $("th").each(function(index) {
+
+            var attribute = $(this).text().replace('\s*', '');
+            var labelText =  $( this ).text() + ':';
+
+            var input = '<label for="' + attribute + '">' + labelText + '</label>' +
+                        '<input type="text" id="' + attribute + '" name="' + attribute + '" autocomplete="off"/>';
+            $('#updateModal').html(input);
+        });
+
         $('#updateModal').modal('show');
     }
 </script>
