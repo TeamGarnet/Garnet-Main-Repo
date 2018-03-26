@@ -452,22 +452,22 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function() {
             alert("2");
             $('#deleteModal').modal('show');
-        });
-        $('.confirm-button').click(function () {
-            alert("3." + id);
-            $.ajax({
-                type: "POST",
-                url: "../ajaxCalls.php",
-                data: "deleteGrave=" + String(id),
-                success: function (data) {
-                    alert("hey");
-                },
-                processData: false,
-                contentType: false,
-                error: function (xhr, ajaxOptions, thrownError){
-                    alert(xhr.status);
-                    alert(thrownError);
-                }
+            $('.confirm-button').click(function () {
+                alert("3." + id);
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: "deleteGrave=" + String(id),
+                    success: function (data) {
+                        alert("hey");
+                    },
+                    processData: false,
+                    contentType: false,
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
             });
         });
         alert("4");
