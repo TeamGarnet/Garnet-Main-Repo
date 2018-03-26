@@ -466,6 +466,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(id) {
+        // Generate inner HTML for form
         var input = '';
         $('#grave th').each(function(index) {
             var tdVal = $('#' + id + ' td').eq(index).text();
@@ -479,17 +480,19 @@ $eventService->deleteEventEntry("5");
 
         $('#updateModalBody').html(input);
 
+        // Show modal
         $(document).ready(function() {
             $('#updateModal').modal('show');
         });
 
+        // Make AJAX POST request to update entry in database
         $('#saveChanges').click(function () {
             $.ajax({
                 method: "POST",
                 url: "../ajaxCalls.php",
-                data: { updateGraveEntry: 'Test'}
+                data: { updateGraveEntry: ['{"firstName": "Test first name", "lastName": "Test last name"}']}
             }).done(function( msg ) {
-                    alert( "Message: " + msg );
+                    alert( "Data: " + msg );
                 });
         });
     }
