@@ -463,7 +463,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(id) {
-        var input = null;
+        var input;
         $('#grave th').each(function(index) {
             var tdVal = $('#' + id + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
