@@ -486,9 +486,12 @@ $eventService->deleteEventEntry("5");
             $('#updateModal').modal('show');
         });
 
-        // Make AJAX POST request to update entry in database
+        // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'FirstName': $('#FirstName').val()};
+            var formData = {'FirstName': $('#FirstName').val(),
+                'MiddleName':$('#MiddleName').val(),
+                'LastName':$('#LastName').val()};
+            
             $.ajax({
                 method: "POST",
                 url: "../ajaxCalls.php",

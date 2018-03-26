@@ -12,7 +12,10 @@ if(isset($_GET['getMapCardInfoID'])) {
     unset($_GET['deleteGrave']);
 }
 else if (isset($_POST['updateGraveEntry'])) {
-    var_dump($_POST['updateGraveEntry']);
-    echo 'POST request success.';
+    $data = $_POST['updateGraveEntry'];
+    $string = '';
+    $string += $data['FirstName'];
+    $string += $data['LastName'];
+    echo $string;
 }
 
