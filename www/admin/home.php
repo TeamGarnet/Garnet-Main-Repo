@@ -113,7 +113,7 @@ $eventService->deleteEventEntry("5");
 </head>
 <body>
 <!-- Delete Object Modal -->
-<div class="modal deleteModal" tabindex="-1" role="dialog">
+<div class="modal deleteModal" id="deleteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -448,6 +448,9 @@ $eventService->deleteEventEntry("5");
     });
 
     function deleteGrave(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+        });
         $('.confirm-button').on('click', function () {
             alert('Saved!!' + id);
             $.ajax({
