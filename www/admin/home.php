@@ -126,7 +126,7 @@ $eventService->deleteEventEntry("5");
                 <p>Delete from database forever?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="confirm-button">Confirm</button>
+                <button type="button" class="btn btn-primary confirm" id="confirm">Confirm</button>
                 <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -452,7 +452,7 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function() {
             alert("2");
             $('#deleteModal').modal('show');
-            $('.confirm-button').click(function () {
+            $('.confirm').click(function () {
                 alert("3." + id);
                 $.ajax({
                     type: "POST",
