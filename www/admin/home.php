@@ -484,7 +484,13 @@ $eventService->deleteEventEntry("5");
         });
 
         $('#saveChanges').click(function () {
-           alert('I am clicked!');
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { name: "Test"}
+            }).done(function( msg ) {
+                    alert( "Message: " + msg );
+                });
         });
     }
 </script>
