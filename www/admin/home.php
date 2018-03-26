@@ -491,7 +491,7 @@ $eventService->deleteEventEntry("5");
             var formData = {'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val()};
-            
+
             $.ajax({
                 method: "POST",
                 url: "../ajaxCalls.php",
