@@ -11,5 +11,8 @@ if(isset($_GET['getMapCardInfoID'])) {
     $graveService ->deleteGraveEntry($_GET['deleteGrave']);
     unset($_GET['deleteGrave']);
 }
-
+else if (isset($_POST['updateGraveEntry'])) {
+    $graveService = new GraveService();
+   return 'SUCCESSFUL POST IS MADE';
+}
 
