@@ -483,8 +483,8 @@ $eventService->deleteEventEntry("5");
             $('#updateModal').modal('show');
         });
 
-        $('#saveChanges').click() {
-            alert('I am CLICKED!');
-        }
+        $('#saveChanges').click(function () {
+           alert('I am clicked!');
+        });
     }
 </script>
