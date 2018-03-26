@@ -453,13 +453,13 @@ $eventService->deleteEventEntry("5");
             alert("2");
             $('#deleteModal').modal('show');
             $('.confirm').click(function () {
-                alert("3." + id);
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
                     data: "deleteGrave=" + String(id),
                     success: function (data) {
-                        alert("hey");
+                        alert("success");
+                        $('.deleteModal').modal('hide');
                     },
                     processData: false,
                     contentType: false,
@@ -470,8 +470,6 @@ $eventService->deleteEventEntry("5");
                 });
             });
         });
-        alert("4");
-        $('.deleteModal').modal('hide');
     }
 
     function updateGrave(id) {
