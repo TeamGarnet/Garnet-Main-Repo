@@ -463,7 +463,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(id) {
-        var input;
+        var input = '';
         $('#grave th').each(function(index) {
             var tdVal = $('#' + id + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
@@ -474,7 +474,7 @@ $eventService->deleteEventEntry("5");
                 '" autocomplete="off"/>';
         });
 
-        $('#updateModalBody').html('<form method="post" action="" name="updateGrave">' + input + '</form>');
+        $('#updateModalBody').html('<form method="post" action="" name="updateGraveModal">' + input + '</form>');
 
         $(document).ready(function() {
             $('#updateModal').modal('show');
