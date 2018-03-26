@@ -461,4 +461,8 @@ $eventService->deleteEventEntry("5");
         });
         $('.deleteModal').modal('hide');
     }
+
+    function updateGrave(id) {
+        $('#updateModal').modal('show');
+    }
 </script>
