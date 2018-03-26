@@ -146,7 +146,7 @@ $eventService->deleteEventEntry("5");
                 <p>Content goes here</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-primary" onclick="">Save Changes</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -474,7 +474,7 @@ $eventService->deleteEventEntry("5");
                 '" autocomplete="off"/>';
         });
 
-        $('#updateModalBody').html('<form method="post" action="" name="updateGraveModal">' + input + '</form>');
+        $('#updateModalBody').html(input);
 
         $(document).ready(function() {
             $('#updateModal').modal('show');
