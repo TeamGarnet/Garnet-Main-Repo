@@ -31,7 +31,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/trails.css" type="text/css">
-    <link rel="stylesheet" href="css/staticNavigation.css" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Favicon Info -->
