@@ -456,8 +456,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteGrave=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -480,8 +480,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteNH=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -504,8 +504,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteMisc=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -528,8 +528,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteType=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -552,8 +552,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteHistoricFilter=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -576,8 +576,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteFAQ=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -600,8 +600,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteLocation=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -624,8 +624,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteContact=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
@@ -648,8 +648,8 @@ $eventService->deleteEventEntry("5");
                     url: "../ajaxCalls.php",
                     data: 'deleteEvent=' + String(id) +'&action=delete',
                     success: function (data) {
-                        alert("success");
                         $('.deleteModal').modal('hide');
+                        return true;
                     },
                     dataType:"text",
                     processData: false,
