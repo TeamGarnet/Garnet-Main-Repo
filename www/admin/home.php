@@ -705,6 +705,28 @@ $eventService->deleteEventEntry("5");
         });
     }
 
+    function generateForm(tableID, rowID) {
+        // Grab current table header value and corresponding table data value
+        var input = '';
+        $(tableID + ' th').each(function (index) {
+            var tdVal = $('#' + rowID + ' td').eq(index).text();
+            var attribute = $(this).text().replace(/ /g, '');
+            var labelText = $(this).text() + ':';
+
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
+        });
+
+        // Generate inner HTML for form
+        $('#updateModalBody').html(input);
+
+        // Show modal
+        $(document).ready(function () {
+            $('#updateModal').modal('show');
+        });
+    }
+
     function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
         generateForm('#grave', rowID);
 
@@ -731,34 +753,44 @@ $eventService->deleteEventEntry("5");
                 url: "../ajaxCalls.php",
                 data: { updateGraveEntry: formData}
             }).done(function( msg ) {
-                    $('#updateModal').modal('hide');
-                    location.reload();
-                });
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
         });
     }
 
-    function generateForm(tableID, rowID) {
-        // Grab current table header value and corresponding table data value
-        var input = '';
-        $(tableID + ' th').each(function (index) {
-            var tdVal = $('#' + rowID + ' td').eq(index).text();
-            var attribute = $(this).text().replace(/ /g, '');
-            var labelText = $(this).text() + ':';
-
-            input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
-        });
-
-        // Generate inner HTML for form
-        $('#updateModalBody').html(input);
-
-        // Show modal
-        $(document).ready(function () {
-            $('#updateModal').modal('show');
-        });
+    function updateNH(rowID) {
+        generateForm('#naturalHistory', rowID);
     }
 
+    function updateMisc(rowID) {
+        generateForm('#misc', rowID);
+    }
+
+    function updateType(rowID) {
+        generateForm('#type', rowID);
+    }
+
+    function updateHistoricFilter(rowID) {
+        generateForm('#historic', rowID);
+    }
+
+    function updateFAQ(rowID) {
+        generateForm('#faq', rowID);
+    }
+
+    function updateLocation(rowID) {
+        generateForm('#widerLocation', rowID);
+    }
+
+    function updateContact(rowID) {
+        generateForm('#contact', rowID);
+    }
+
+    function updateEvent(rowID) {
+        generateForm('#event', rowID);
+    }
+    
     function createHistoricFilterPicker(){
         html = "<select class=\"form-control form-control-sm\">\n" +
             "  <option>Small select</option>\n" +
