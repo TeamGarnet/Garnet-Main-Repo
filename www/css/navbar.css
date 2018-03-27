@@ -20,7 +20,9 @@ img {
   min-height: 12.9%;
   margin-bottom: 0;
   margin-top: 0;
-  text-shadow:none !important;
+}
+#menu a{
+	text-shadow:none !important;
 }
 
 #menu .container{
