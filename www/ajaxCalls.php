@@ -7,15 +7,12 @@ echo("do we have a param: " . !empty($_POST['deleteGrave']) . "<br>");
 echo("do we have a param: " . !empty($_GET['deleteGrave']) . "<br>");
 
 if(isset($_GET['getMapCardInfoID'])) {
-    echo("In getMapcard");
     $mapService = new MapService();
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
 } else if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['deleteGrave'])) {
     $graveService = new GraveService();
-    $status = $graveService ->deleteGraveEntry($_POST['deleteGrave']);
-    echo("Status: " . $status);
-    echo("unsetting deleteGrave");
+    $graveService ->deleteGraveEntry($_POST['deleteGrave']);
     unset($_GET['deleteGrave']);
 }
 else if (isset($_POST['updateGraveEntry'])) {
