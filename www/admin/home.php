@@ -679,11 +679,11 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateGrave(id) {
+    function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter) {
         // Grab current table header value and corresponding table data value
         var input = '';
         $('#grave th').each(function(index) {
-            var tdVal = $('#' + id + ' td').eq(index).text();
+            var tdVal = $('#' + rowID + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
             var labelText =  $( this ).text() + ':';
 
@@ -702,7 +702,10 @@ $eventService->deleteEventEntry("5");
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'FirstName': $('#FirstName').val(),
+            var formData = {'idTrackableObject': idTrackableObject,
+                'idGrave': idGrave,
+                'idHistoricFilter':idHistoricFilter,
+                'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val(),
                 'BirthDate': $('#BirthDate').val(),

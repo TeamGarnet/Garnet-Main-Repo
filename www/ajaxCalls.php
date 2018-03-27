@@ -69,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
 if (isset($_POST['updateGraveEntry'])) {
     $graveData = $_POST['updateGraveEntry'];
     $service = new GraveService();
-    $service -> updateGraveEntry($graveData[], $graveData[], $graveData['FirstName'],
+    $service -> updateGraveEntry($graveData['idTrackableObject'], $graveData['idGrave'], $graveData['FirstName'],
         $graveData['MiddleName'], $graveData['LastName'], $graveData['BirthDate'],
-        $graveData['DeathDate'], $graveData['Description'], null,
+        $graveData['DeathDate'], $graveData['Description'], $graveData['idHistoricFilter'],
         $graveData['Longitude'], $graveData['Latitude'], null,
         $graveData['ImageDescription'], $graveData['ImageLocation'],
         $graveData['TypeFilter'], $graveData['HistoricFilter']);
