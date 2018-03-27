@@ -19,9 +19,16 @@ img {
   box-shadow:none;
   margin-bottom: 5%;
   border-radius: 4px;
-  min-height: 12.5%;
+  min-height: 12.9%;
 }
 
+#menu .container{
+	height: 100%;
+}
+
+#menu li {
+	margin-top: 2.5%;
+}
 
 .hvr-underline-reveal {
   display: inline-block;
