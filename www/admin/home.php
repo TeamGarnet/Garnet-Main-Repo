@@ -454,11 +454,12 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: "deleteGrave=" + id,
+                    data: 'deleteGrave=' + id,
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
                     },
+                    dataType:"text",
                     processData: false,
                     contentType: false,
                     error: function (xhr, ajaxOptions, thrownError){
