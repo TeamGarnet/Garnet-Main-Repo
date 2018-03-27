@@ -146,6 +146,22 @@ $eventService->deleteEventEntry("5");
                     <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
                     <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
                 </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Grave</a>
+                        <a class="dropdown-item" href="#">Natural History</a>
+                        <a class="dropdown-item" href="#">Micellaneous</a>
+                        <a class="dropdown-item" href="#">Type Filter</a>
+                        <a class="dropdown-item" href="#">Historic Filter</a>
+                        <a class="dropdown-item" href="#">FAQ</a>
+                        <a class="dropdown-item" href="#">Wider Area Location</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="#">Event</a>
+                    </div>
+                </div>
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
