@@ -461,7 +461,7 @@ $eventService->deleteEventEntry("5");
                     },
                     dataType:"text",
                     processData: false,
-                    contentType: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
                     error: function (xhr, ajaxOptions, thrownError){
                         alert(xhr.status);
                         alert(thrownError);

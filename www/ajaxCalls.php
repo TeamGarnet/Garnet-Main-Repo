@@ -13,7 +13,7 @@ if(isset($_GET['getMapCardInfoID'])) {
     unset($_GET['getMapCardInfoID']);
 } else if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['deleteGrave'])) {
     $graveService = new GraveService();
-    $status = $graveService ->deleteGraveEntry($_GET['deleteGrave']);
+    $status = $graveService ->deleteGraveEntry($_POST['deleteGrave']);
     echo("Status: " . $status);
     echo("unsetting deleteGrave");
     unset($_GET['deleteGrave']);
