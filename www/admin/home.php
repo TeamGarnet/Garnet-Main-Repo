@@ -383,6 +383,9 @@ $eventService->deleteEventEntry("5");
 
 <!-- Small modal -->
 <div class="modal fade bd-example-modal-sm message" id="message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <p class="messageContent" id="messageContent"></p>
