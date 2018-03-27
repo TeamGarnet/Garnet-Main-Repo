@@ -706,25 +706,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter) {
-        // Grab current table header value and corresponding table data value
-        var input = '';
-        $('#grave th').each(function(index) {
-            var tdVal = $('#' + rowID + ' td').eq(index).text();
-            var attribute = $(this).text().replace(/ /g, '');
-            var labelText =  $( this ).text() + ':';
-
-            input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
-        });
-
-        // Generate inner HTML for form
-        $('#updateModalBody').html(input);
-
-        // Show modal
-        $(document).ready(function() {
-            $('#updateModal').modal('show');
-        });
+        generateForm('#grave');
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
@@ -752,6 +734,28 @@ $eventService->deleteEventEntry("5");
                     $('#updateModal').modal('hide');
                     location.reload();
                 });
+        });
+    }
+
+    function generateForm(tableID) {
+        // Grab current table header value and corresponding table data value
+        var input = '';
+        $('#' + tableID + ' th').each(function(index) {
+            var tdVal = $('#' + rowID + ' td').eq(index).text();
+            var attribute = $(this).text().replace(/ /g, '');
+            var labelText =  $( this ).text() + ':';
+
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
+        });
+
+        // Generate inner HTML for form
+        $('#updateModalBody').html(input);
+
+        // Show modal
+        $(document).ready(function() {
+            $('#updateModal').modal('show');
         });
     }
 </script>
