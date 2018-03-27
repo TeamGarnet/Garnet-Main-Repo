@@ -70,10 +70,10 @@
                             <p>
 
                             <div class="top_btn">
-                                <ul class="btno1">
-                                    <li><a href="rapidsMap.php">Explore Map</a></li>
+                                
+                                    <a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">Explore Map</button></a>
 
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
