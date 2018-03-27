@@ -31,12 +31,12 @@ $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
 
 
-/*
-var_dump($graveService->getAllGraveEntries());
-$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
-$graveService -> updateGraveEntry("43","24","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70.659403, "UpdateTest", "Test", "", 1);
-$graveService -> deleteGraveEntry("5");
 
+//var_dump($graveService->getAllGraveEntries());
+//$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
+$graveService -> updateGraveEntry("14","5","firstName2Test2", "MTest2", "lastNameTest2", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't. Test2", "1",48.109362, -70.659403, "UpdateTestTest2", "Test2Test2", "Test2", 1);
+//$graveService -> deleteGraveEntry("5");
+/*
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
 $naturalHistoryService -> createNaturalHistoryEntry("naturalHistoryService", "commonName", "description", 40.109362, -77.659403, "naturalHistoryService", "Test", "", 2);
@@ -757,5 +757,10 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function() {
             $('#updateModal').modal('show');
         });
+
+    function createHistoricFilterPicker(){
+        html = "<select class=\"form-control form-control-sm\">\n" +
+            "  <option>Small select</option>\n" +
+            "</select>"
     }
 </script>
