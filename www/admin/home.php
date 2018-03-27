@@ -706,7 +706,7 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter) {
-        generateForm('#grave');
+        generateForm('#grave', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
@@ -737,7 +737,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function generateForm(tableID) {
+    function generateForm(tableID, rowID) {
         // Grab current table header value and corresponding table data value
         var input = '';
         $(tableID + ' th').each(function (index) {
