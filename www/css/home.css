@@ -3,6 +3,6 @@ body {
 	background-size:cover;
 }
 .donate{
-	font-family: Proza Libre;
-	background-color: #97583a;
+	font-family: Proza Libre !important;
+	background-color: #97583a !important;
 }
