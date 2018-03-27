@@ -70,7 +70,7 @@ class NaturalHistoryService extends TrackableObjectService{
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteNH('
-                . $model->getIdTrackableObject()
+                . $model->getIdNaturalHistory()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getCommonName()
                 . "</td><td>" . $model->getScientificName()

@@ -70,7 +70,7 @@ class FAQService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteFAQ('
-                . $objectRowID
+                . $model->getIdFAQ()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>"
                 . $model->getQuestion()
