@@ -63,7 +63,7 @@ $allFAQInfo = $faqService -> formatFAQInfo();
 <div class="container" id="pageContent">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Rapids History Frequently Asked Questions</h3>
+            <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Frequently Asked Questions</h3>
         </div>
     </div>
     <div class="row">
