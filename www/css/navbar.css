@@ -16,6 +16,7 @@ img {
   background-color: #6b7749;
   background-image:none;
   box-shadow:none;
+  border-radius: 0;
   min-height: 12.9%;
   margin-bottom: 0;
   margin-top: 0;
