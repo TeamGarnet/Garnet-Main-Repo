@@ -22,6 +22,9 @@ img {
   min-height: 12.5%;
 }
 
+#menu .container{
+	height: 100%;
+}
 
 .hvr-underline-reveal {
   display: inline-block;
