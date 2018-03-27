@@ -251,10 +251,6 @@ button {
     color: #1fa582;
 }
 
-.navbar-collapse {
-    padding-top: 30px !important;
-    max-height: 270px;
-}
 
 .navbar-collapse form[role="search"] {
     position: absolute;
