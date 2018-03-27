@@ -147,12 +147,12 @@ $eventService->deleteEventEntry("5");
                     <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
                 </ul>
 
-                <div class="dropdown show">
-                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create
-                    </a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                    </button>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Grave</a>
                         <a class="dropdown-item" href="#">Natural History</a>
                         <a class="dropdown-item" href="#">Micellaneous</a>
