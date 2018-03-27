@@ -25,8 +25,6 @@ class TrackableObjectService {
 
 
     public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
-        echo "<br><br>";
-        var_dump($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
         $trackableObjectData = new TrackableObjectData();
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
             FILTER_FLAG_ALLOW_FRACTION);
@@ -39,9 +37,6 @@ class TrackableObjectService {
             $imageLocation = '/images/pins/default.png';
         }
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
-
-        echo "<br><br>";
-        var_dump($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
         $trackableObjectData -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
     }
 
