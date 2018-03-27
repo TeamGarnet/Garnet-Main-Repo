@@ -31,11 +31,11 @@ $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
 
 
-
-//var_dump($graveService->getAllGraveEntries());
-//$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
+/*
+var_dump($graveService->getAllGraveEntries());
+$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
 $graveService -> updateGraveEntry("14","5","firstName2Test2", "MTest2", "lastNameTest2", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't. Test2", "1",48.109362, -70.659403, "UpdateTestTest2", "Test2Test2", "Test2", 1);
-//$graveService -> deleteGraveEntry("5");
+$graveService -> deleteGraveEntry("5");
 /*
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());

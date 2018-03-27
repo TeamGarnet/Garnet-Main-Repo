@@ -48,6 +48,7 @@ class GraveService extends TrackableObjectService {
     }
 
     public function updateGraveEntry($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        echo "<br><br>";
         var_dump($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
         $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
         $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
@@ -59,7 +60,7 @@ class GraveService extends TrackableObjectService {
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
             $idHistoricFilter = null;
         }
-
+        echo "<br><br>";
         var_dump($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
         $this ->updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
 
