@@ -729,7 +729,8 @@ $eventService->deleteEventEntry("5");
                 url: "../ajaxCalls.php",
                 data: { updateGraveEntry: formData}
             }).done(function( msg ) {
-                    alert( "Data: " + msg );
+                    $('#updateModal').modal('hide');
+                    location.reload();
                 });
         });
     }
