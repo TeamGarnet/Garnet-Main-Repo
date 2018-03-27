@@ -10,6 +10,7 @@ include_once 'services/TypeFilterService.class.php';
 include_once 'services/MiscObjectService.class.php';
 
 echo("request type: " . $_SERVER['REQUEST_METHOD'] . "<br>");
+echo("action type: " . $_POST['action'] . "<br>");
 
 if(isset($_GET['getMapCardInfoID'])) {
     $mapService = new MapService();
