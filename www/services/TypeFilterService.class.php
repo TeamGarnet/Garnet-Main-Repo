@@ -71,7 +71,7 @@ class TypeFilterService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteType('
-                . $objectRowID
+                . $model->getIdTypeFilter()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getType()
                 . "</td><td>" . $model->getPinDesign()
