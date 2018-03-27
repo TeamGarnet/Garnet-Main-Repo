@@ -148,8 +148,8 @@ $eventService->deleteEventEntry("5");
                 </ul>
 
                 <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create +
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -164,23 +164,7 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#">Event</a>
                     </div>
                 </div>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Grave</a>
-                        <a class="dropdown-item" href="#">Natural History</a>
-                        <a class="dropdown-item" href="#">Micellaneous</a>
-                        <a class="dropdown-item" href="#">Type Filter</a>
-                        <a class="dropdown-item" href="#">Historic Filter</a>
-                        <a class="dropdown-item" href="#">FAQ</a>
-                        <a class="dropdown-item" href="#">Wider Area Location</a>
-                        <a class="dropdown-item" href="#">Contact</a>
-                        <a class="dropdown-item" href="#">Event</a>
-                    </div>
-                </div>
+                
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
                         <div class="content_accordion">
