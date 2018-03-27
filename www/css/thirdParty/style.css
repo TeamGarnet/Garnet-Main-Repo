@@ -214,21 +214,6 @@ button {
     margin-top: 3px;
 }
 
-.navbar-nav .bor {
-    padding-right: 1px;
-    border-right: 1px solid;
-    margin-top: 0px;
-}
-
-.navbar-nav > li > a {
-    padding: 4px 13px;
-    margin-top: 0px;
-    font-family: sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #fff !important;
-}
-
 .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
     outline: none;
 }

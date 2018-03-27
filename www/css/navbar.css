@@ -11,7 +11,7 @@ img {
 }
 
 #menu {
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Proza Libre", sans-serif !important;
   border: none;
   background-color: #6b7749;
   background-image:none;
