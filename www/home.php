@@ -70,10 +70,10 @@
                             <p>
 
                             <div class="top_btn">
-                                <ul class="btno1">
-                                    <a href="https://www.paypal.me/JacobFanelli"<li><button type="button" class="btn donate">Explore Map</button></li></a>
+                                
+                                    <a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">Explore Map</button></a>
 
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
