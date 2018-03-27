@@ -740,7 +740,7 @@ $eventService->deleteEventEntry("5");
     function generateForm(tableID) {
         // Grab current table header value and corresponding table data value
         var input = '';
-        $('#' + tableID + ' th').each(function (index) {
+        $(tableID + ' th').each(function (index) {
             var tdVal = $('#' + rowID + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
