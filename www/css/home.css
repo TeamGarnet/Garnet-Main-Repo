@@ -5,6 +5,7 @@ body {
 .donate{
 	font-family: Proza Libre !important;
 	background-color: #97583a !important;
+	border-radius: 4px;
 }
 h4{
 	font-family: Proza Libre !important;
