@@ -71,7 +71,7 @@
 
                             <div class="top_btn">
                                 
-                                    <a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">Explore Map</button></a>
+                                    <a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">explore map</button></a>
 
                                 
                             </div>
