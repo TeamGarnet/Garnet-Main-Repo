@@ -385,7 +385,7 @@ $eventService->deleteEventEntry("5");
 <div class="modal fade bd-example-modal-sm message" id="message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-
+            <p class="messageContent" id="messageContent"></p>
         </div>
     </div>
 </div>
@@ -537,7 +537,7 @@ $eventService->deleteEventEntry("5");
                     success: function (data) {
                         $('.deleteModal').modal('hide');
                         alert(data);
-                        $('.modal-content').append('data');
+                        $('.messageContent').append(data);
                         $('.message').modal('show');
                         return true;
                     },
