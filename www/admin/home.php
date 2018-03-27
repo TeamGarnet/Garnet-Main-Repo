@@ -529,6 +529,7 @@ $eventService->deleteEventEntry("5");
                     data: 'deleteType=' + String(id) +'&action=delete',
                     success: function (data) {
                         $('.deleteModal').modal('hide');
+                        alert(data);
                         return true;
                     },
                     dataType:"text",
