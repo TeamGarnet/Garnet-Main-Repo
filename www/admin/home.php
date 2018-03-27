@@ -147,12 +147,11 @@ $eventService->deleteEventEntry("5");
                     <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
                 </ul>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create
                     </button>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Grave</a>
                         <a class="dropdown-item" href="#">Natural History</a>
                         <a class="dropdown-item" href="#">Micellaneous</a>
@@ -164,7 +163,6 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#">Event</a>
                     </div>
                 </div>
-
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
                         <div class="content_accordion">
