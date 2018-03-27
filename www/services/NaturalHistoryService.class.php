@@ -85,9 +85,3 @@ class NaturalHistoryService extends TrackableObjectService{
         return $html;
     }
 }
-
-if (isset($_GET['delete'])) {
-    $naturalHistoryService = new NaturalHistoryService();
-    $naturalHistoryService -> deleteNaturalHistoryEntry($_GET['delete']);
-    unset($_GET['delete']);
-}

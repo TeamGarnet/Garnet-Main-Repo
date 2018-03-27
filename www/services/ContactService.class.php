@@ -77,10 +77,10 @@ class ContactService {
         $html = "";
         foreach ($allmodels as $model) {
             $objectRowID = "17" . strval($model->getIdContact());
-            $editAndDelete = "</td><td><button onclick='updateGrave("
+            $editAndDelete = "</td><td><button onclick='updateContact("
                 . $objectRowID
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteGrave('
+                . "</td><td><button onclick=" . '"deleteContact('
                 . $model->getIdContact()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
@@ -93,10 +93,4 @@ class ContactService {
         }
         return $html;
     }
-}
-
-if (isset($_GET['delete'])) {
-    $contactService = new ContactService();
-    $contactService -> deleteContactEntry($_GET['delete']);
-    unset($_GET['delete']);
 }

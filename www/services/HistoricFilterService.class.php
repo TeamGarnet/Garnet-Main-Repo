@@ -83,9 +83,3 @@ class HistoricFilterService {
         return $html;
     }
 }
-
-if (isset($_GET['delete'])) {
-    $service = new HistoricFilterService();
-    $service -> deleteHistoricFilterEntry($_GET['delete']);
-    unset($_GET['delete']);
-}

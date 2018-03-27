@@ -454,7 +454,199 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteGrave=' + String(id),
+                    data: 'deleteGrave=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteNH(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteNH=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteMisc(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteMisc=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteType(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteType=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteHistoricFilter(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteHistoricFilter=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteFAQ(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteFAQ=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteLocation(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteLocation=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteContact(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteContact=' + String(id) +'action=delete',
+                    success: function (data) {
+                        alert("success");
+                        $('.deleteModal').modal('hide');
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteEvent(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteEvent=' + String(id) +'action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');

@@ -82,9 +82,3 @@ class TypeFilterService {
         return $html;
     }
 }
-
-if (isset($_GET['delete'])) {
-    $service = new TypeFilterService();
-    $service -> deleteTypeFilterEntry($_GET['delete']);
-    unset($_GET['delete']);
-}
