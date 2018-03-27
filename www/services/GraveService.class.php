@@ -89,7 +89,8 @@ class GraveService extends TrackableObjectService {
                 . $objectRowID . ","
                 . $graveModel->getIdGrave() . ","
                 . $graveModel->getIdTrackableObject() . ","
-                . $graveModel->getIdHistoricFilter()
+                . $graveModel->getIdHistoricFilter() . ","
+                . $graveModel->getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
                 . $graveModel->getIdGrave()

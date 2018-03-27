@@ -705,7 +705,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter) {
+    function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
         generateForm('#grave', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
@@ -713,6 +713,7 @@ $eventService->deleteEventEntry("5");
             var formData = {'idTrackableObject': idTrackableObject,
                 'idGrave': idGrave,
                 'idHistoricFilter':idHistoricFilter,
+                'idTypeFilter':idTypeFilter,
                 'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val(),
@@ -723,7 +724,6 @@ $eventService->deleteEventEntry("5");
                 'Latitude': $('#Latitude').val(),
                 'ImageDescription': $('#ImageDescription').val(),
                 'ImageLocation': $('#ImageLocation').val(),
-                'TypeFilter': $('#TypeFilter').val(),
                 'HistoricFilter': $('#HistoricFilter').val()};
 
             $.ajax({
