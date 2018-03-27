@@ -67,8 +67,8 @@ echo '
                 </li>
                 <li><a style="color:white;" href="contact.php" class="hvr-underline-reveal">contact</a>
                 </li>
-                <li><a href="https://www.paypal.me/JacobFanelli"<button type="button" class="btn donate">donate</button></a>
-                </li>
+                <a href="https://www.paypal.me/JacobFanelli"<li><button type="button" class="btn donate">donate</button>
+                </li></a>
             </ul>
         </div>
     </div>
