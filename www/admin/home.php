@@ -698,7 +698,16 @@ $eventService->deleteEventEntry("5");
         $('#saveChanges').click(function () {
             var formData = {'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
-                'LastName':$('#LastName').val()};
+                'LastName':$('#LastName').val(),
+                'BirthDate': $('#BirthDate').val(),
+                'DeathDate': $('#DeathDate').val(),
+                'Description': $('#Description').val(),
+                'Longitude': $('#Longitude').val(),
+                'Latitude': $('#Latitude').val(),
+                'ImageDescription': $('#ImageDescription').val(),
+                'ImageLocation': $('#ImageLocation').val(),
+                'TypeFilter': $('#TypeFilter').val(),
+                'HistoricFilter': $('#HistoricFilter').val()};
 
             $.ajax({
                 method: "POST",
