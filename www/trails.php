@@ -60,7 +60,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 <body>
 
     <!-- Navigation -->
-    <?php include_once 'components/StaticNav.php'?>
+    <?php include_once 'components/NavBar.php'?>
 
 
 
