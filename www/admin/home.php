@@ -112,47 +112,6 @@ $eventService->deleteEventEntry("5");
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Delete Object Modal -->
-<div class="modal deleteModal" id="deleteModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete Object Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Delete from database forever?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary confirm" id="confirm">Confirm</button>
-                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Update Object Modal -->
-<div class="modal updateModal" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="updateModalTitle">Update Object</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="updateModalBody">
-                <p>Content goes here</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="container">
     <div class="row">
@@ -422,8 +381,58 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 
+<!-- Small modal -->
+<button type="button" class="btn btn-primary message" id="message" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
 
-<!-- <a href="logout.php">Logout</a> -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<!-- Delete Object Modal -->
+<div class="modal deleteModal" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Object Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Delete from database forever?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary confirm" id="confirm">Confirm</button>
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Object Modal -->
+<div class="modal updateModal" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="updateModalTitle">Update Object</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="updateModalBody">
+                <p>Content goes here</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
