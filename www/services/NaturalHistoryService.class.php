@@ -53,10 +53,11 @@ class NaturalHistoryService extends TrackableObjectService{
     public function deleteNaturalHistoryEntry($idNaturalHistory) {
         $idNaturalHistory = filter_var($idNaturalHistory, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idNaturalHistory) || $idNaturalHistory == "") {
-            return;
+            return false;
         } else {
             $naturalHistoryDataClass = new NaturalHistoryObjectData();
             $naturalHistoryDataClass -> deleteNaturalHistoryObject($idNaturalHistory);
+            return true;
         }
     }
 
