@@ -465,12 +465,10 @@ button {
 
 /*******top_medalsection*****/
 #top_medalsection {
-    background: url(../../images/7ac627eb-2ed0-48cd-999b-aece3a896f39.png) no-repeat top center;
     background-size: cover;
     padding: 200px 0px 37px 0;
     background-attachment: fixed;
     display: table;
-    height: 100%;
     position: relative;
     width: 100%;
 }
