@@ -164,7 +164,7 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#">Event</a>
                     </div>
                 </div>
-                
+
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
                         <div class="content_accordion">

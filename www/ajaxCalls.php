@@ -74,7 +74,7 @@ if (isset($_POST['updateGraveEntry'])) {
         $graveData['DeathDate'], $graveData['Description'], $graveData['idHistoricFilter'],
         $graveData['Longitude'], $graveData['Latitude'], null,
         $graveData['ImageDescription'], $graveData['ImageLocation'],
-        $graveData['TypeFilter'], $graveData['HistoricFilter']);
+        $graveData['TypeFilter']);
     unset($_POST['updateGraveEntry']);
 }
 
