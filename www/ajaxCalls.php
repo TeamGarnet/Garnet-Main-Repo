@@ -69,5 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
 
 if (isset($_POST['updateGraveEntry'])) {
     var_dump($_POST['updateGraveEntry']);
+    echo "First name: " . $_POST['updateGraveEntry']["FirstName"];
 }
 
