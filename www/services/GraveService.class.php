@@ -84,7 +84,9 @@ class GraveService extends TrackableObjectService {
             $objectRowID = "10" . strval($graveModel->getIdGrave());
             $editAndDelete = "</td><td><button onclick='updateGrave("
                 . $objectRowID . ","
-                . $graveModel->getIdGrave() . "," . $graveModel->getIdTrackableObject()
+                . $graveModel->getIdGrave() . ","
+                . $graveModel->getIdTrackableObject() . ","
+                . $graveModel->getIdHistoricFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
                 . $graveModel->getIdGrave()
