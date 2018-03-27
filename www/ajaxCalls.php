@@ -77,4 +77,24 @@ if (isset($_POST['updateGraveEntry'])) {
         $graveData['idTypeFilter']);
     unset($_POST['updateGraveEntry']);
 }
-
+else if (isset($_POST['updateMiscObjectEntry'])) {
+    unset($_POST['updateMiscObjectEntry']);
+}
+else if (isset($_POST['updateTypeFilterEntry'])) {
+    unset($_POST['updateTypeFilterEntry']);
+}
+else if (isset($_POST['updateHistoricFilterEntry'])) {
+    unset($_POST['updateHistoricFilterEntry']);
+}
+else if (isset($_POST['updateFAQEntry'])) {
+    unset($_POST['updateFAQEntry']);
+}
+else if (isset($_POST['updateWiderAreaMapEntry'])) {
+    unset($_POST['updateWiderAreaMapEntry']);
+}
+else if (isset($_POST['updateContactEntry'])) {
+    unset($_POST['updateContactEntry']);
+}
+else if (isset($_POST['updateEventEntry'])) {
+    unset($_POST['updateEventEntry']);
+}

@@ -761,6 +761,20 @@ $eventService->deleteEventEntry("5");
 
     function updateNH(rowID) {
         generateForm('#naturalHistory', rowID);
+
+        // // Make AJAX POST request with JSON object to update entry in database
+        // $('#saveChanges').click(function () {
+        //     var formData = {};
+        //
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "../ajaxCalls.php",
+        //         data: { updateGraveEntry: formData}
+        //     }).done(function( msg ) {
+        //         $('#updateModal').modal('hide');
+        //         location.reload();
+        //     });
+        // });
     }
 
     function updateMisc(rowID) {
@@ -790,7 +804,7 @@ $eventService->deleteEventEntry("5");
     function updateEvent(rowID) {
         generateForm('#event', rowID);
     }
-    
+
     function createHistoricFilterPicker(){
         html = "<select class=\"form-control form-control-sm\">\n" +
             "  <option>Small select</option>\n" +
