@@ -740,10 +740,10 @@ $eventService->deleteEventEntry("5");
     function generateForm(tableID) {
         // Grab current table header value and corresponding table data value
         var input = '';
-        $('#' + tableID + ' th').each(function(index) {
+        $('#' + tableID + ' th').each(function (index) {
             var tdVal = $('#' + rowID + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
-            var labelText =  $( this ).text() + ':';
+            var labelText = $(this).text() + ':';
 
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
@@ -754,9 +754,10 @@ $eventService->deleteEventEntry("5");
         $('#updateModalBody').html(input);
 
         // Show modal
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#updateModal').modal('show');
         });
+    }
 
     function createHistoricFilterPicker(){
         html = "<select class=\"form-control form-control-sm\">\n" +
