@@ -454,7 +454,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteGrave=' + String(id) +'action=delete',
+                    data: 'deleteGrave=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -478,7 +478,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteNH=' + String(id) +'action=delete',
+                    data: 'deleteNH=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -502,7 +502,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteMisc=' + String(id) +'action=delete',
+                    data: 'deleteMisc=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -526,7 +526,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteType=' + String(id) +'action=delete',
+                    data: 'deleteType=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -550,7 +550,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteHistoricFilter=' + String(id) +'action=delete',
+                    data: 'deleteHistoricFilter=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -574,7 +574,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteFAQ=' + String(id) +'action=delete',
+                    data: 'deleteFAQ=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -598,7 +598,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteLocation=' + String(id) +'action=delete',
+                    data: 'deleteLocation=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -622,7 +622,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteContact=' + String(id) +'action=delete',
+                    data: 'deleteContact=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
@@ -646,7 +646,7 @@ $eventService->deleteEventEntry("5");
                 $.ajax({
                     type: "POST",
                     url: "../ajaxCalls.php",
-                    data: 'deleteEvent=' + String(id) +'action=delete',
+                    data: 'deleteEvent=' + String(id) +',action=delete',
                     success: function (data) {
                         alert("success");
                         $('.deleteModal').modal('hide');
