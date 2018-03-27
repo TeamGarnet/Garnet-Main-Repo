@@ -696,9 +696,9 @@ $eventService->deleteEventEntry("5");
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = [{'FirstName': $('#FirstName').val(),
+            var formData = {'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
-                'LastName':$('#LastName').val()}];
+                'LastName':$('#LastName').val()};
 
             $.ajax({
                 method: "POST",
