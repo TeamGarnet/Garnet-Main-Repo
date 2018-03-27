@@ -12,7 +12,7 @@ echo '
   
 </head>
 <body>
-<div id="menu" class="navbar navbar-default" role="navigation" style="background-color: rgba(248, 248, 248, 0);">
+<div id="menu" class="navbar navbar-default" role="navigation">
     <div class="container" >
       <div class="navbar-header"><a class="navbar-brand" href="#"><svg width="160" height="67" viewBox="0 0 160 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Logo</title>
