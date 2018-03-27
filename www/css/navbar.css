@@ -22,8 +22,8 @@ img {
   min-height: 12.5%;
 }
 
-.navbar-header svg{
-	height:100%;
+#menu .container{
+	height: 100%;
 }
 
 .hvr-underline-reveal {
