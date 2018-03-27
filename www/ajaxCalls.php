@@ -18,7 +18,6 @@ if(isset($_GET['getMapCardInfoID'])) {
 
 //Delete Checks
 if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
-    echo("inside delete checks <br>");
     if (!empty($_POST['deleteGrave'])) {
         $service = new GraveService();
         $service ->deleteGraveEntry($_POST['deleteGrave']);

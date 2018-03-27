@@ -382,12 +382,16 @@ $eventService->deleteEventEntry("5");
 </div>
 
 <!-- Small modal -->
-<button type="button" class="btn btn-primary message" id="message" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-sm message" id="message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
+        <div class="modal-header">
+            <h5 class="modal-title">Object Deletion Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <div class="modal-content">
-
+            <p class="messageContent" id="messageContent"></p>
         </div>
     </div>
 </div>
@@ -538,7 +542,9 @@ $eventService->deleteEventEntry("5");
                     data: 'deleteType=' + String(id) +'&action=delete',
                     success: function (data) {
                         $('.deleteModal').modal('hide');
-                        alert(data);
+                        //alert(data);
+                        $('.messageContent').append(data);
+                        $('.message').modal('show');
                         return true;
                     },
                     dataType:"text",
