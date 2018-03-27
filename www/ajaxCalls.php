@@ -67,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
     }
 }
 
-
-else if (isset($_POST['updateGraveEntry'])) {
-    var_dump($_POST['updateGraveEntry']);
+if (isset($_POST['updateGraveEntry'])) {
+    $data = json_decode($_POST['updateGraveEntry']);
+    var_dump($data);
 }
 
