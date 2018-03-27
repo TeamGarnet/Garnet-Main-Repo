@@ -754,7 +754,7 @@ $eventService->deleteEventEntry("5");
                 data: { updateGraveEntry: formData}
             }).done(function( msg ) {
                 $('#updateModal').modal('hide');
-                location.reload();
+                location.reload(true);
             });
         });
     }
