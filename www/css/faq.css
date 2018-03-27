@@ -3,8 +3,8 @@ body {
 	background-image: url("../images/TrailBackground.png");
 }
 
-#pageContent {
-    
+.container {
+    margin-top:2.5%;
 }
 
 /* PHP Generated Content*/
@@ -13,7 +13,6 @@ body {
     text-align: center;
     text-decoration: none;
 	padding:5%;
-	margin-top: 2.5%;
 }
 
 .faqCard {
