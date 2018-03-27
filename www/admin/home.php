@@ -536,7 +536,7 @@ $eventService->deleteEventEntry("5");
                     data: 'deleteType=' + String(id) +'&action=delete',
                     success: function (data) {
                         $('.deleteModal').modal('hide');
-                        alert(data);
+                        //alert(data);
                         $('.messageContent').append(data);
                         $('.message').modal('show');
                         return true;
