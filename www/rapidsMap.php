@@ -62,7 +62,7 @@ $filterBar = $mapData -> generateFilterBar();
 <body style="background-image:url('/images/TrailBackground.png');">
 
 <!-- Navigation -->
-<?php include_once 'components/Navigation.php'; ?>
+<?php include_once 'components/NavBar.php'; ?>
 
 <!--Map Filters -->
 <div class="secondmenublock">
