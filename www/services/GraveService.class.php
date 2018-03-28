@@ -82,15 +82,17 @@ class GraveService extends TrackableObjectService {
         $html = "";
         foreach ($allGraveModels as $graveModel) {
             $historicFilterName = 'No Historic Filter';
+            $historicFilterNullID = null;
             if ($graveModel->getHistoricFilterName() != null) {
                 $historicFilterName = $graveModel->getHistoricFilterName();
+                $historicFilterNullID = $graveModel->getIdHistoricFilter();
             }
             $objectRowID = "10" . strval($graveModel->getIdGrave());
             $editAndDelete = "</td><td><button onclick='updateGrave("
                 . $objectRowID . ","
                 . $graveModel->getIdGrave() . ","
                 . $graveModel->getIdTrackableObject() . ","
-                . $graveModel->getIdHistoricFilter() . ","
+                . $historicFilterNullID . ","
                 . $graveModel->getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
