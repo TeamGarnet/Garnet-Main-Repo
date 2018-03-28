@@ -774,7 +774,7 @@ $eventService->deleteEventEntry("5");
             var formData = {'idTrackableObject': idTrackableObject,
                 'idGrave': idGrave,
                 'idHistoricFilter':idHistoricFilter,
-                'idTypeFilter':$("#historicSelect").options[$("#historicSelect").selectedIndex].value,
+                'idTypeFilter':idTypeFilter,
                 'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val(),
