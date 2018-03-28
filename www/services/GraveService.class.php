@@ -81,7 +81,7 @@ class GraveService extends TrackableObjectService {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
         foreach ($allGraveModels as $graveModel) {
-            $historicFilterName = '';
+            $historicFilterName = 'No Historic Filter';
             if ($graveModel->getHistoricFilterName() != null) {
                 $historicFilterName = $graveModel->getHistoricFilterName();
             }
