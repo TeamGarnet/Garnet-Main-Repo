@@ -741,7 +741,6 @@ $eventService->deleteEventEntry("5");
                     '" autocomplete="off"/ required>';
             } else if (labelText == "Historic Filter:") {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
-
             } else if (labelText.includes("Date")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
@@ -763,7 +762,13 @@ $eventService->deleteEventEntry("5");
 
         // Show modal
         $(document).ready(function () {
-            $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+            if (tableID == "#grave"){
+                if (idHistoricFilter == null) {
+                    $(".historicSelect.currentFilter option[value='']").attr("selected", true);
+                }
+                $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+            }
+
             $('#updateModal').modal('show');
         });
     }
