@@ -58,11 +58,12 @@ $filterBar = $mapData -> generateFilterBar();
 
     <script src="../js/MapScript.js"></script>
     <link rel="stylesheet" href="css/maps.css" type="text/css">
+	<link rel="stylesheet" href="css/navbar.css" type="text/css">
 </head>
 <body style="background-image:url('/images/TrailBackground.png');">
 
 <!-- Navigation -->
-<?php include_once 'components/Navigation.php'; ?>
+<?php include_once 'components/NavBar.php'; ?>
 
 <!--Map Filters -->
 <div class="secondmenublock">

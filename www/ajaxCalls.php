@@ -87,23 +87,53 @@ else if (isset($_POST['updateNaturalHistoryEntry'])) {
     unset($_POST['updateNaturalHistoryEntry']);
 }
 else if (isset($_POST['updateMiscObjectEntry'])) {
+    $miscData = $_POST['updateMiscObjectEntry'];
+    $service = new MiscObjectService();
+    $service -> updateMiscObjectEntry((int)$miscData['idTrackableObject'], (int)$miscData['idMiscObject'], $miscData['Name'],
+        'Yes', $miscData['Description'], $miscData['Longitude'],
+        $miscData['Latitude'], null, $miscData['ImageDescription'],
+        $miscData['ImageLocation'], (int)$miscData['idTypeFilter']);
     unset($_POST['updateMiscObjectEntry']);
 }
 else if (isset($_POST['updateTypeFilterEntry'])) {
+    $filterData = $_POST['updateTypeFilterEntry'];
+    $service = new TypeFilterService();
+    $service -> updateTypeFilterEntry($filterData['idTypeFilter'], $filterData['Name'],
+        $filterData['PinDesign'], $filterData['ButtonColor']);
     unset($_POST['updateTypeFilterEntry']);
 }
 else if (isset($_POST['updateHistoricFilterEntry'])) {
+    $filterData = $_POST['updateHistoricFilterEntry'];
+    $service = new HistoricFilterService();
+    $service -> updateHistoricFilterEntry($filterData['idHistoricFilter'], $filterData['Name'], $filterData['StartDate'],
+        $filterData['Description'], $filterData['EndDate'], $filterData['ButtonColor']);
     unset($_POST['updateHistoricFilterEntry']);
 }
 else if (isset($_POST['updateFAQEntry'])) {
+    $faqData = $_POST['updateFAQEntry'];
+    $service = new FAQService();
+    $service -> updateFAQEntry($faqData['idFAQ'], $faqData['Question'], $faqData['Answer']);
     unset($_POST['updateFAQEntry']);
 }
 else if (isset($_POST['updateWiderAreaMapEntry'])) {
+    $areaData = $_POST['updateWiderAreaMapEntry'];
+    $service = new WiderAreaMapService();
+    $service -> updateWiderAreaMapEntry($areaData['idWiderAreaMap'], $areaData['URL'], $areaData['Name'],
+        $areaData['Description'], $areaData['Longitude'], $areaData['Latitude'],
+        $areaData['Address'], $areaData['City'], $areaData['State'], $areaData['ZipCode']);
     unset($_POST['updateWiderAreaMapEntry']);
 }
 else if (isset($_POST['updateContactEntry'])) {
+    $contactData = $_POST['updateContactEntry'];
+    $service = new ContactService();
+    $service -> updateContactEntry($contactData['idContact'], $contactData['Name'], $contactData['Email'],
+        $contactData['Description'], $contactData['Phone'], $contactData['Title']);
     unset($_POST['updateContactEntry']);
 }
 else if (isset($_POST['updateEventEntry'])) {
+    $eventData = $_POST['updateEventEntry'];
+    $service = new EventService();
+    $service -> updateEventEntry($eventData['idEvent'], $eventData['Name'], $eventData['Description'],
+        $eventData['StartTime'], $eventData['EndTime'], $eventData['idWiderAreaMap']);
     unset($_POST['updateEventEntry']);
 }

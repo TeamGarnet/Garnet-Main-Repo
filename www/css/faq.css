@@ -16,12 +16,16 @@ body {
 }
 
 .faqCard {
-    font-family: prozolibre;
+    font-family: Proza Libre !important;
 	font-size: large;
 }
 
 .q {  
     font-weight: bold;
+}
+
+h3{
+	font-family: Proza Libre !important;
 }
 
 
