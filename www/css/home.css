@@ -18,8 +18,8 @@ p{
 	font-family: Proza Libre !important;
 }
 #top_medalsection{
-	padding-top: none !important;
-	padding-bottom: none !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 	/*
 	height: 87%;*/
 }
