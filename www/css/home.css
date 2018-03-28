@@ -19,4 +19,12 @@ p{
 #top_medalsection{
 	padding-top: 2% !important;
 	padding-bottom: 2% !important;
+	height: 87%;
+}
+.footerContainer{
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
