@@ -844,8 +844,7 @@ $eventService->deleteEventEntry("5");
                 method: "POST",
                 url: "../ajaxCalls.php",
                 data: { updateNaturalHistoryEntry: formData}
-            }).done(function(msg) {
-                alert('RESPONSE ' + msg );
+            }).done(function() {
                 $('#updateModal').modal('hide');
             });
         });
