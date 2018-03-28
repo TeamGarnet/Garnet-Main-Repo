@@ -24,7 +24,7 @@ p{
 	height: 87%;*/
 }
 .topvid_text{
-	padding-top:10%;
+	margin-top:10% !important;
 }
 /*#footerContainer{
 	position:absolute;
