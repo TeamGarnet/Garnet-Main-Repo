@@ -95,7 +95,7 @@
                     <span style="padding:10px;"></span>
                     <i class="fab fa-twitter"></i>--></div>
                 <div style="color:#fff; float:right; font-family: prozolibre; padding-top:10px;"><h5>19th Ward Community Association
-                        --- 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
+                        <hr width="2%"> 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
             </footer>
         </div>
     </div>
