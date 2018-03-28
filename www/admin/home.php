@@ -877,12 +877,13 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateType(rowID) {
+    function updateType(rowID, idTypeFilter) {
         generateForm('#type', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idTypeFilter': idTypeFilter,
+                'Name': $('#Name').val(),
                 'PinDesign': $('#PinDesign').val(),
                 'ButtonColor': $('#ButtonColor').val()};
 
@@ -896,12 +897,13 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateHistoricFilter(rowID) {
+    function updateHistoricFilter(rowID, idHistoricFilter) {
         generateForm('#historic', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idHistoricFilter': idHistoricFilter,
+                'Name': $('#Name').val(),
                 'StartDate': $('#StartDate').val(),
                 'EndDate': $('#EndDate').val(),
                 'Description': $('#Description').val(),
@@ -917,12 +919,12 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateFAQ(rowID) {
+    function updateFAQ(rowID, idFAQ) {
         generateForm('#faq', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idFAQ': idFAQ,
                 'Question': $('#Question').val(),
                 'Answer': $('#Answer').val()};
 
@@ -936,12 +938,14 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateLocation(rowID) {
+    function updateLocation(rowID, idWiderAreaMap) {
         generateForm('#widerLocation', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idWiderAreaMap': idWiderAreaMap,
+                'URL': $('#URL').val()
+                'Name': $('#Name').val(),
                 'Description': $('#Description').val(),
                 'Longitude': $('#Longitude').val(),
                 'Latitude': $('#Latitude').val(),
@@ -961,12 +965,13 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateContact(rowID) {
+    function updateContact(rowID, idContact) {
         generateForm('#contact', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idContact': idContact,
+                'Name': $('#Name').val(),
                 'Email': $('#Email').val(),
                 'Description': $('#Description').val(),
                 'Phone': $('#Phone').val(),
@@ -982,16 +987,18 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateEvent(rowID) {
+    function updateEvent(rowID, idEvent, idWiderAreaMap) {
         generateForm('#event', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
-            var formData = {'Name': $('#Name').val(),
+            var formData = {'idEvent': idEvent,
+                'Name': $('#Name').val(),
                 'Location': $('#Location').val(),
                 'Description': $('#Description').val(),
                 'StartTime': $('#StartTime').val(),
-                'EndTime': $('#EndTime').val()};
+                'EndTime': $('#EndTime').val(),
+                'idWiderAreaMap': idWiderAreaMap};
 
             $.ajax({
                 method: "POST",
