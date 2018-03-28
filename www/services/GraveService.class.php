@@ -48,6 +48,7 @@ class GraveService extends TrackableObjectService {
     }
 
     public function updateGraveEntry($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+
         $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
         $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
         $lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
@@ -58,7 +59,6 @@ class GraveService extends TrackableObjectService {
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
             $idHistoricFilter = null;
         }
-
         $this ->updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
 
         $graveDataClass = new GraveObjectData();
@@ -68,10 +68,11 @@ class GraveService extends TrackableObjectService {
     public function deleteGraveEntry($idGrave) {
         $idGrave = filter_var($idGrave, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idGrave) || $idGrave == "") {
-            return;
+            return false;
         } else {
             $graveDataClass = new GraveObjectData();
             $graveDataClass -> deleteGraveObject($idGrave);
+            return true;
         }
 
     }
@@ -82,7 +83,11 @@ class GraveService extends TrackableObjectService {
         foreach ($allGraveModels as $graveModel) {
             $objectRowID = "10" . strval($graveModel->getIdGrave());
             $editAndDelete = "</td><td><button onclick='updateGrave("
-                . $objectRowID
+                . $objectRowID . ","
+                . $graveModel->getIdGrave() . ","
+                . $graveModel->getIdTrackableObject() . ","
+                . $graveModel->getIdHistoricFilter() . ","
+                . $graveModel->getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteGrave('
                 . $graveModel->getIdGrave()

@@ -214,21 +214,6 @@ button {
     margin-top: 3px;
 }
 
-.navbar-nav .bor {
-    padding-right: 1px;
-    border-right: 1px solid;
-    margin-top: 0px;
-}
-
-.navbar-nav > li > a {
-    padding: 4px 13px;
-    margin-top: 0px;
-    font-family: sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #fff !important;
-}
-
 .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
     outline: none;
 }
@@ -237,7 +222,6 @@ button {
     margin-top: 14px;
     font-size: 15px;
     font-family: 'Century Gothic';
-    padding-right: 21px;
 }
 
 .navbar-page {
@@ -267,10 +251,6 @@ button {
     color: #1fa582;
 }
 
-.navbar-collapse {
-    padding-top: 30px !important;
-    max-height: 270px;
-}
 
 .navbar-collapse form[role="search"] {
     position: absolute;
@@ -338,10 +318,6 @@ button {
 }
 
 @media (min-width: 768px) {
-    .navbar-collapse {
-        padding-top: 0px !important;
-        padding-right: 12px !important;
-    }
 
     .navbar-collapse form[role="search"] {
         width: 28px;
@@ -480,12 +456,10 @@ button {
 
 /*******top_medalsection*****/
 #top_medalsection {
-    background: url(../../images/7ac627eb-2ed0-48cd-999b-aece3a896f39.png) no-repeat top center;
     background-size: cover;
     padding: 200px 0px 37px 0;
     background-attachment: fixed;
     display: table;
-    height: 100%;
     position: relative;
     width: 100%;
 }
@@ -810,15 +784,4 @@ button {
 .btn-default {
     color: #ffffff !important;
     border-color: #da4b14 !important;
-}
-
-.navbar-nav li a:hover {
-    background-color: #f1916d !important;
-}
-
-.navbar-nav li a {
-    color: white !important;
-    font-family: prozolibre;
-    font-weight: bold;
-	border-radius: 25px;
 }

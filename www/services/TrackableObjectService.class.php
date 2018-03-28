@@ -37,7 +37,6 @@ class TrackableObjectService {
             $imageLocation = '/images/pins/default.png';
         }
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
-
         $trackableObjectData -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
     }
 

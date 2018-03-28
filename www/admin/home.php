@@ -34,9 +34,9 @@ $eventService = new EventService();
 /*
 var_dump($graveService->getAllGraveEntries());
 $graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
-$graveService -> updateGraveEntry("43","24","firstName2", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -70.659403, "UpdateTest", "Test", "", 1);
+$graveService -> updateGraveEntry("14","5","firstName2Test2", "MTest2", "lastNameTest2", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't. Test2", "1",48.109362, -70.659403, "UpdateTestTest2", "Test2Test2", "Test2", 1);
 $graveService -> deleteGraveEntry("5");
-
+/*
 echo "<br><br>";
 var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
 $naturalHistoryService -> createNaturalHistoryEntry("naturalHistoryService", "commonName", "description", 40.109362, -77.659403, "naturalHistoryService", "Test", "", 2);
@@ -101,57 +101,14 @@ $eventService->deleteEventEntry("5");
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Delete Object Modal -->
-<div class="modal deleteModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete Object Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Delete from database forever?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id=" confirm-button">Confirm</button>
-                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Update Object Modal -->
-<div class="modal updateModal" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="updateModalTitle">Update Object</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="updateModalBody">
-                <p>Content goes here</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save Changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="container">
     <div class="row">
@@ -186,6 +143,24 @@ $eventService->deleteEventEntry("5");
                     <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
                     <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
                 </ul>
+
+                <div class="dropdown show">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create +
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Grave</a>
+                        <a class="dropdown-item" href="#">Natural History</a>
+                        <a class="dropdown-item" href="#">Micellaneous</a>
+                        <a class="dropdown-item" href="#">Type Filter</a>
+                        <a class="dropdown-item" href="#">Historic Filter</a>
+                        <a class="dropdown-item" href="#">FAQ</a>
+                        <a class="dropdown-item" href="#">Wider Area Location</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="#">Event</a>
+                    </div>
+                </div>
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
@@ -421,8 +396,67 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 
+<!-- Small modal -->
+<div class="modal message" id="message" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Object Deletion Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="messageContent" id="messageContent"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- <a href="logout.php">Logout</a> -->
+<!-- Delete Object Modal -->
+<div class="modal deleteModal" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Object Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Delete from database forever?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary confirm" id="confirm">Confirm</button>
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Object Modal -->
+<div class="modal updateModal" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="updateModalTitle">Update Object</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="updateModalBody">
+                <p>Content goes here</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
@@ -447,17 +481,330 @@ $eventService->deleteEventEntry("5");
     });
 
     function deleteGrave(id) {
-        $('.confirm-button').on('click', function () {
-            alert('Saved!!' + id);
-            $.ajax({
-                type: "GET",
-                url: "../ajaxCalls.php",
-                data: "deleteGrave=" + String(id),
-                success: function (data) {
-                    alert("hey");
-                }
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteGrave=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
             });
         });
-        $('.deleteModal').modal('hide');
+    }
+
+    function deleteNH(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteNH=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteMisc(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteMisc=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteType(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteType=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        //alert(data);
+                        if (data != "") {
+                            $('.messageContent').html('');
+                            $('.messageContent').append(data);
+                            $('.message').modal('show');
+                        }
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteHistoricFilter(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteHistoricFilter=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteFAQ(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteFAQ=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteLocation(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteLocation=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteContact(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteContact=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function deleteEvent(id) {
+        $(document).ready(function() {
+            $('#deleteModal').modal('show');
+            $('.confirm').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../ajaxCalls.php",
+                    data: 'deleteEvent=' + String(id) +'&action=delete',
+                    success: function (data) {
+                        $('.deleteModal').modal('hide');
+                        return true;
+                    },
+                    dataType:"text",
+                    processData: false,
+                    contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+                    error: function (xhr, ajaxOptions, thrownError){
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+        });
+    }
+
+    function generateForm(tableID, rowID) {
+        // Grab current table header value and corresponding table data value
+        var input = '';
+        $(tableID + ' th').each(function (index) {
+            var tdVal = $('#' + rowID + ' td').eq(index).text();
+            var attribute = $(this).text().replace(/ /g, '');
+            var labelText = $(this).text() + ':';
+
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
+        });
+
+        // Generate inner HTML for form
+        $('#updateModalBody').html(input);
+
+        // Show modal
+        $(document).ready(function () {
+            $('#updateModal').modal('show');
+        });
+    }
+
+    function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
+        generateForm('#grave', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'idTrackableObject': idTrackableObject,
+                'idGrave': idGrave,
+                'idHistoricFilter':idHistoricFilter,
+                'idTypeFilter':idTypeFilter,
+                'FirstName': $('#FirstName').val(),
+                'MiddleName':$('#MiddleName').val(),
+                'LastName':$('#LastName').val(),
+                'BirthDate': $('#BirthDate').val(),
+                'DeathDate': $('#DeathDate').val(),
+                'Description': $('#Description').val(),
+                'Longitude': $('#Longitude').val(),
+                'Latitude': $('#Latitude').val(),
+                'ImageDescription': $('#ImageDescription').val(),
+                'ImageLocation': $('#ImageLocation').val(),
+                'HistoricFilter': $('#HistoricFilter').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateGraveEntry: formData}
+            }).done(function( msg ) {
+                $('#updateModal').modal('hide');
+                location.reload(true);
+            });
+        });
+    }
+
+    function updateNH(rowID) {
+        generateForm('#naturalHistory', rowID);
+
+        // // Make AJAX POST request with JSON object to update entry in database
+        // $('#saveChanges').click(function () {
+        //     var formData = {};
+        //
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "../ajaxCalls.php",
+        //         data: { updateGraveEntry: formData}
+        //     }).done(function( msg ) {
+        //         $('#updateModal').modal('hide');
+        //         location.reload();
+        //     });
+        // });
+    }
+
+    function updateMisc(rowID) {
+        generateForm('#misc', rowID);
+    }
+
+    function updateType(rowID) {
+        generateForm('#type', rowID);
+    }
+
+    function updateHistoricFilter(rowID) {
+        generateForm('#historic', rowID);
+    }
+
+    function updateFAQ(rowID) {
+        generateForm('#faq', rowID);
+    }
+
+    function updateLocation(rowID) {
+        generateForm('#widerLocation', rowID);
+    }
+
+    function updateContact(rowID) {
+        generateForm('#contact', rowID);
+    }
+
+    function updateEvent(rowID) {
+        generateForm('#event', rowID);
+    }
+
+    function createHistoricFilterPicker(){
+        html = "<select class=\"form-control form-control-sm\">\n" +
+            "  <option>Small select</option>\n" +
+            "</select>"
     }
 </script>

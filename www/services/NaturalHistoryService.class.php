@@ -53,10 +53,11 @@ class NaturalHistoryService extends TrackableObjectService{
     public function deleteNaturalHistoryEntry($idNaturalHistory) {
         $idNaturalHistory = filter_var($idNaturalHistory, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idNaturalHistory) || $idNaturalHistory == "") {
-            return;
+            return false;
         } else {
             $naturalHistoryDataClass = new NaturalHistoryObjectData();
             $naturalHistoryDataClass -> deleteNaturalHistoryObject($idNaturalHistory);
+            return true;
         }
     }
 
@@ -64,12 +65,15 @@ class NaturalHistoryService extends TrackableObjectService{
         $allModels = $this -> getAllNaturalHistoryEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $objectRowID = "11" . strval($model->getIdTrackableObject());
+            $objectRowID = "11" . strval($model->getIdNaturalHistory());
             $editAndDelete = "</td><td><button onclick='updateNH("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdNaturalHistory() . ","
+                . $model->getIdTrackableObject() . ","
+                . $model->getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteNH('
-                . $model->getIdTrackableObject()
+                . $model->getIdNaturalHistory()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getCommonName()
                 . "</td><td>" . $model->getScientificName()
@@ -84,10 +88,4 @@ class NaturalHistoryService extends TrackableObjectService{
         }
         return $html;
     }
-}
-
-if (isset($_GET['delete'])) {
-    $naturalHistoryService = new NaturalHistoryService();
-    $naturalHistoryService -> deleteNaturalHistoryEntry($_GET['delete']);
-    unset($_GET['delete']);
 }

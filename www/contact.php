@@ -11,6 +11,8 @@ $allContactInfo = $contactService -> formatContactInfo();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
     <!-- Latest compiled and minified CSS -->
@@ -28,7 +30,7 @@ $allContactInfo = $contactService -> formatContactInfo();
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/contact.css" type="text/css">
-    <link rel="stylesheet" href="css/staticNavigation.css" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Favicon Info -->
@@ -57,14 +59,14 @@ $allContactInfo = $contactService -> formatContactInfo();
 <body>
 
     <!-- Navigation -->
-    <?php include_once 'components/StaticNav.php'?>
+    <?php include_once 'components/NavBar.php'?>
 
 
 
 <div class="container" id="pageContent">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Rapids History Contacts</h3>
+            <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Contacts</h3>
         </div>
     </div>
 

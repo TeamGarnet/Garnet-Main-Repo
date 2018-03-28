@@ -8,6 +8,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Rapids Cemetery</title>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
@@ -16,6 +18,8 @@
     <link href="css/thirdParty/imagehover.css" rel="stylesheet">
     <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
     <link href="css/thirdParty/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/navbar.css" type="text/css">
+	<link rel="stylesheet" href="css/home.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
@@ -43,7 +47,7 @@
 
 
 <!-- Navigation -->
-<?php include_once 'components/Navigation.php'; ?>
+<?php include_once 'components/NavBar.php'; ?>
 
 <!--top_medalsection-->
 <section id="top_medalsection">
@@ -66,10 +70,10 @@
                             <p>
 
                             <div class="top_btn">
-                                <ul class="btno1">
-                                    <li><a href="rapidsMap.php">Explore Map</a></li>
+                                
+                                    <a href="rapidsMap.php"<button type="button" class="btn donate">explore map</button></a>
 
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>

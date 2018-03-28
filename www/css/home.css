@@ -1,0 +1,22 @@
+body {
+	background: url(../../images/7ac627eb-2ed0-48cd-999b-aece3a896f39.png) no-repeat top center;
+	background-size:cover;
+}
+.donate{
+	font-family: Proza Libre !important;
+	background-color: #97583a !important;
+	border-radius: 4px !important;
+}
+h4{
+	font-family: Proza Libre !important;
+}
+h5{
+	font-family: Proza Libre !important;
+}
+p{
+	font-family: Proza Libre !important;
+}
+#top_medalsection{
+	padding-top: 2% !important;
+	padding-bottom: 2% !important;
+}

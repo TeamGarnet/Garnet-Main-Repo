@@ -66,3 +66,11 @@
 .content_accordion{
     margin-top: 20px;
 }
+
+#updateModal input {
+    width: 100%;
+    padding: 12px 5px;
+    margin: 5px 0px 30px 0px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}

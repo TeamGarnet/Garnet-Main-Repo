@@ -1,0 +1,90 @@
+body,
+html {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#menu {
+  font-family: "Proza Libre", sans-serif !important;
+  border: none;
+  background-color: #6b7749;
+  background-image:none;
+  box-shadow:none;
+  border-radius: 0;
+  min-height: 12.9%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#menu a{
+	text-shadow:none !important;
+}
+
+#menu .container{
+	height: 100%;
+}
+
+#menu ul {
+	margin-top: 2.5%;
+}
+
+.hvr-underline-reveal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-variant: small-caps;
+  font-family: Proza Libre;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  color: white;
+}
+.hvr-underline-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  color: white;
+  height: 4px;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-reveal:hover:before,
+.hvr-underline-reveal:focus:before,
+.hvr-underline-reveal:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  color: white;
+}
+.donate{
+  color: white;
+  background-color: #97583a;
+  font-variant: small-caps;
+  font-family: Proza Libre;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  letter-spacing: 1.5px;
+  margin: 10px;
+}
+

@@ -57,7 +57,7 @@ class TypeFilterService {
                 $typeFilterDataClass -> deleteTypeFilter($idTypeFilter);
                 return null;
             } else {
-                return "The Type filter is currently in use by a Grave, Natural History, or Misc Object. Unattach this filter before the filter can be deleted.";
+                return "The Type filter is currently in use by a Grave, Natural History, or Misc Object. <br> Unattach this filter before the filter can be deleted.";
             }
         }
     }
@@ -71,7 +71,7 @@ class TypeFilterService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteType('
-                . $objectRowID
+                . $model->getIdTypeFilter()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getType()
                 . "</td><td>" . $model->getPinDesign()
@@ -81,10 +81,4 @@ class TypeFilterService {
         }
         return $html;
     }
-}
-
-if (isset($_GET['delete'])) {
-    $service = new TypeFilterService();
-    $service -> deleteTypeFilterEntry($_GET['delete']);
-    unset($_GET['delete']);
 }

@@ -24,7 +24,7 @@ class FAQService {
         $formattedFAQInfo = "";
 
         foreach ($allFAQObjectsInfo as $faqObjectInfo){
-            $formattedFAQInfo .= '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
+            $formattedFAQInfo .= '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
                 . $faqObjectInfo -> getQuestion() . '</p><p class="a">'
                 . $faqObjectInfo -> getAnswer() . '</p></div></div></div>'
             ;
@@ -70,7 +70,7 @@ class FAQService {
                 . $objectRowID
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteFAQ('
-                . $objectRowID
+                . $model->getIdFAQ()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>"
                 . $model->getQuestion()
@@ -80,10 +80,4 @@ class FAQService {
         }
         return $html;
     }
-}
-
-if (isset($_GET['delete'])) {
-    $service = new FAQService();
-    $service -> deleteFAQEntry($_GET['delete']);
-    unset($_GET['delete']);
 }
