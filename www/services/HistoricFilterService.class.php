@@ -87,7 +87,7 @@ class HistoricFilterService {
         $filters = $this->getAllHistoricFilterEntries();
         $filterHTML = "<option id=null>No Historic Filter</option>";
         foreach ($filters as $filter) {
-            $filterHTML = $filterHTML . "<option id='"
+            $filterHTML = $filterHTML . "<option value='"
                 . $filter->getIdHistoricFilter() . "'>"
                 . $filter->getHistoricFilterName() ."</option>";
         }
