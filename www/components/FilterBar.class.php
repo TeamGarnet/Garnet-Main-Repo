@@ -22,7 +22,7 @@ class FilterBar {
         <ul class='nav navbar-nav navbar-left'>";
 
         foreach ($filterButtonArray as $filterButton) {
-			$filterButtonCode = "<li><button type='button' class='btn btn-default' style='background-color: " . $filterButton -> getButtonColor() . ";'" .
+			$filterButtonCode = "<li><button type='button' class='btn btn-default' style='background-color: " . $filterButton -> getButtonColor() . ";' border: 2px solid " . $filterButton -> getButtonColor() . ";'" .
 				"onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
 				$filterButton -> getFilterName() . "</button></li>";
             /**$filterButtonCode = "<li><a href='#' class='btn filterButton' style='background-color: " . $filterButton -> getButtonColor() . ";'" .
