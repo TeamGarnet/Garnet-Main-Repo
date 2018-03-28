@@ -1,7 +1,5 @@
 body {
 	background: url(../../images/7ac627eb-2ed0-48cd-999b-aece3a896f39.png) no-repeat top center;
-	/*
-	background-size:cover;*/
 }
 .donate{
 	font-family: Proza Libre !important;
@@ -32,4 +30,9 @@ p{
 	left: 0;
 	right: 0;
 	margin: auto;
+}
+@media only screen and (min-width: 1440px) {
+    body {
+		background-size:cover;
+    }
 }
