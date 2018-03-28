@@ -79,6 +79,7 @@ if (isset($_POST['updateGraveEntry'])) {
 }
 else if (isset($_POST['updateNaturalHistoryEntry'])) {
     $nhData = $_POST['updateNaturalHistoryEntry'];
+    var_dump($nhData);
     $service = new NaturalHistoryService();
     $service -> updateNaturalHistoryEntry($nhData['idTrackableObject'], $nhData['idNaturalHistory'], $nhData['ScientificName'],
         $nhData['CommonName'], $nhData['Description'], $nhData['Longitude'],
