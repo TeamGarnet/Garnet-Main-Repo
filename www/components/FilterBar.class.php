@@ -11,7 +11,7 @@ class FilterBar {
 
         $filterBarCode = "<nav class='navbar navbar-default navbar-fixed-bottom'><div class='container'><div class='navbar-header'><a class='navbar-brand' href='#'>Select Filters:</a>
         <!-- Mobile Menu -->
-        <button type="button" class='navbar-toggle collapsed' data-toggle='collapse' data-target='#mobile-dropdown'>
+        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#mobile-dropdown'>
           <!-- Hamburger Menu -->
           <span class='icon-bar'></span>
           <span class='icon-bar'></span>
