@@ -122,7 +122,26 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
-
+<div class="container">
+    <div class="col-sm-6" style="height:130px;">
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker9'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datetimepicker({
+                viewMode: 'years'
+            });
+        });
+    </script>
+</div>
 <!--
 <div class="container" id="typeSelect">
     <select class="form-control form-control-sm">
@@ -738,7 +757,7 @@ $eventService->deleteEventEntry("5");
             } else if (labelText.includes("Type")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                    '" autocomplete="off"/ required>';
+                    '" autocomplete="off" required/>';
             } else if (labelText == "Historic Filter:") {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
             } else if (labelText.includes("Date")) {
