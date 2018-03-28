@@ -726,7 +726,7 @@ $eventService->deleteEventEntry("5");
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
 
-            if(labelText.includes("?"){
+            if(labelText.includes("?")){
                 attribute = attribute.replace('?', '');
                 labelText = labelText.replace('?', '');
             }
