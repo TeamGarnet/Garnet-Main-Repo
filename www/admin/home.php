@@ -122,26 +122,6 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="col-sm-6" style="height:130px;">
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker9'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar">
-                    </span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker9').datetimepicker({
-                viewMode: 'years'
-            });
-        });
-    </script>
-</div>
 <!--
 <div class="container" id="typeSelect">
     <select class="form-control form-control-sm">
