@@ -740,7 +740,8 @@ $eventService->deleteEventEntry("5");
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
             } else if (labelText.includes("Historic")) {
-                input += $(".historicSelect").clone();
+                input += '<label for="' + attribute + '">' + labelText + '</label>' + $(".historicSelect").clone();
+                $(".historicSelect").removeClass("invisible");
             } else if (labelText.includes("Date")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
