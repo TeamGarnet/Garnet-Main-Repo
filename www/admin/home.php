@@ -795,7 +795,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateGraveEntry: formData}
             }).done(function( msg ) {
                 $('#updateModal').modal('hide');
-                location.reload(true);
             });
         });
     }
@@ -824,7 +823,6 @@ $eventService->deleteEventEntry("5");
             }).done(function(msg) {
                 alert('RESPONSE ' + msg );
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -852,7 +850,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateMiscObjectEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -872,7 +869,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateTypeFilterEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -894,7 +890,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateHistoricFilterEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -914,7 +909,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateFAQEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -940,7 +934,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateWiderAreaMapEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -962,7 +955,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateContactEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
@@ -984,7 +976,6 @@ $eventService->deleteEventEntry("5");
                 data: { updateEventEntry: formData}
             }).done(function() {
                 $('#updateModal').modal('hide');
-                location.reload();
             });
         });
     }
