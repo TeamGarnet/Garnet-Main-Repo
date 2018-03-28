@@ -84,7 +84,7 @@
 
         </div>
 
-        <div class="container">
+        <div class="container" id ="footerContainer">
 
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
                 <div class="social" style="float:left;">
