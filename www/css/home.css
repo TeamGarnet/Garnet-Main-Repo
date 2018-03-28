@@ -20,16 +20,16 @@ p{
 #top_medalsection{
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
-	/*
-	height: 87%;*/
+	
+	height: 87%;
 }
 .topvid_text{
 	margin-top:10% !important;
 }
-/*#footerContainer{
+#footerContainer{
 	position:absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
-}*/
+}
