@@ -728,8 +728,7 @@ $eventService->deleteEventEntry("5");
 
             if (labelText == "Start Time"){
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                    '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>' +
-                    '<input type="time" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
             } else if (labelText == "End Time") {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
