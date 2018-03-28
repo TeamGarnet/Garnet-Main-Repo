@@ -58,6 +58,7 @@ $filterBar = $mapData -> generateFilterBar();
 
     <script src="../js/MapScript.js"></script>
     <link rel="stylesheet" href="css/maps.css" type="text/css">
+	<link rel="stylesheet" href="css/navbar.css" type="text/css">
 </head>
 <body style="background-image:url('/images/TrailBackground.png');">
 
