@@ -67,7 +67,8 @@ class FAQService {
         foreach ($allmodels as $model) {
             $objectRowID = "15" . strval($model->getIdFAQ());
             $editAndDelete = "</td><td><button onclick='updateFAQ("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdFAQ()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteFAQ('
                 . $model->getIdFAQ()

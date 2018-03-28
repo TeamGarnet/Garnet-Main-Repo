@@ -79,7 +79,8 @@ class WiderAreaMapService {
         foreach ($allmodels as $model) {
             $objectRowID = "16" . strval($model->getIdWiderAreaMap());
             $editAndDelete = "</td><td><button onclick='updateLocation("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdWiderAreaMap()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteLocation('
                 . $model->getIdWiderAreaMap()

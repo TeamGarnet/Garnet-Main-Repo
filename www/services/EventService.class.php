@@ -60,7 +60,8 @@ class EventService {
         foreach ($allmodels as $model) {
             $objectRowID = "18" . strval($model->getIdEvent());
             $editAndDelete = "</td><td><button onclick='updateEvent("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdEvent()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteEvent('
                 . $model->getIdEvent()

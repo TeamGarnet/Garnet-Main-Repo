@@ -16,13 +16,17 @@ body {
 }
 
 .contactCard {
-    font-family: prozolibre;
+    font-family: Proza Libre !important;
     font-size: large;
 }
 
 .name {
     
     font-weight: bold;
+}
+
+h3 {
+	font-family: Proza Libre !important;
 }
 
 
