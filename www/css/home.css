@@ -18,10 +18,13 @@ p{
 	font-family: Proza Libre !important;
 }
 #top_medalsection{
-	padding-top: 2% !important;
-	padding-bottom: 2% !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 	/*
 	height: 87%;*/
+}
+.topvid_text{
+	padding-top:10%;
 }
 /*#footerContainer{
 	position:absolute;
