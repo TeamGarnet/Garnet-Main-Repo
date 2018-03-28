@@ -127,13 +127,13 @@ $eventService->deleteEventEntry("5");
 <div class="container" id="typeSelect">
     <select class="form-control form-control-sm">
         <option>Small select</option>
-        <?php $typeFilterService->getAllFiltersForSelect(); ?>
+        <?php echo $typeFilterService->getAllFiltersForSelect(); ?>
     </select>
 </div>
 <div class="container" id="historicSelect">
     <select class="form-control form-control-sm">
         <option>Small select</option>
-        <?php $historicFilterService->getAllFiltersForSelect(); ?>
+        <?php echo $historicFilterService->getAllFiltersForSelect(); ?>
     </select>
 </div>
 
