@@ -373,8 +373,7 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
 }
 @media (min-width: 768px){
 .navbar-nav>li>a {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
+    
 }
 }
 
