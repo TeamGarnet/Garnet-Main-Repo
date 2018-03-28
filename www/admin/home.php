@@ -719,7 +719,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function generateForm(tableID, rowID) {
+    function generateForm(tableID, rowID, idHistoricFilter) {
         // Grab current table header value and corresponding table data value
         var input = '';
         $(tableID + ' th').each(function (index) {
@@ -757,6 +757,7 @@ $eventService->deleteEventEntry("5");
         $('#updateModalBody').html(input);
         if (tableID == "#grave") {
             $(".historicSelect").clone().addClass(".currentFilter").appendTo(".hisFilter");
+            $(".historicSelect.currentFilter").val(idHistoricFilter);
             $(".historicSelect.currentFilter").removeClass("invisible");
         }
 
@@ -768,14 +769,14 @@ $eventService->deleteEventEntry("5");
     }
 
     function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
-        generateForm('#grave', rowID);
+        generateForm('#grave', rowID, idHistoricFilter);
 
         // Make AJAX POST request with JSON object to update entry in database
         $('#saveChanges').click(function () {
             var formData = {'idTrackableObject': idTrackableObject,
                 'idGrave': idGrave,
                 'idHistoricFilter':idHistoricFilter,
-                'idTypeFilter':idTypeFilter,
+                'idTypeFilter': $(".historicSelect.currentFilter").val(),
                 'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val(),
