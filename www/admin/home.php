@@ -740,8 +740,8 @@ $eventService->deleteEventEntry("5");
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
             } else if (labelText.includes("Historic")) {
-                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter"></div>' + $(".historicSelect").appendTo("");
-                $(".historicSelect").removeClass("invisible");
+                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
+
             } else if (labelText.includes("Date")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
@@ -755,6 +755,11 @@ $eventService->deleteEventEntry("5");
 
         // Generate inner HTML for form
         $('#updateModalBody').html(input);
+        if (tableID == "#grave") {
+            $(".historicSelect").appendTo(".hisFilter");
+            $(".historicSelect").removeClass("invisible");
+        }
+
 
         // Show modal
         $(document).ready(function () {
