@@ -91,5 +91,6 @@ class HistoricFilterService {
                 . $filter->getIdHistoricFilter() . "'>"
                 . $filter->getHistoricFilterName() ."</option>";
         }
+        return $filterHTML;
     }
 }
