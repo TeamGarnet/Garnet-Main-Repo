@@ -756,7 +756,7 @@ $eventService->deleteEventEntry("5");
         // Generate inner HTML for form
         $('#updateModalBody').html(input);
         if (tableID == "#grave") {
-            $(".historicSelect").clone()..addClass(".currentFilter").appendTo(".hisFilter");
+            $(".historicSelect").clone().addClass(".currentFilter").appendTo(".hisFilter");
             $(".historicSelect.currentFilter").removeClass("invisible");
         }
 
