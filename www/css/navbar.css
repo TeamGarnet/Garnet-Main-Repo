@@ -89,3 +89,8 @@ img {
   margin: 10px !important;
 }
 
+.donate:hover{
+  background-color: white;
+  color: #97583a !important; 
+}
+
