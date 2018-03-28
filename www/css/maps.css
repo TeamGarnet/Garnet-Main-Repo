@@ -201,7 +201,6 @@ button{outline:none}
 .btns h1{padding:10px;}
 .nav-item h1{padding:9px 20px; font-size:10px; font-family:'LaoUI-Regular'; background:#1fa582; border-radius:5px 5px 5px 5px; color:white;border: 1px solid;}
 .nav-item a :hover{background:none; border:#1fa582 1px solid; color: #1fa582;}
-.navbar-collapse {padding-top:30px !important;max-height:270px;}
 .navbar-collapse form[role="search"] {position:absolute;top:0px;right:-12px;width:100%;padding:0px;margin:0px;z-index:0;}
 .navbar-collapse form[role="search"] button,
 .navbar-collapse form[role="search"] input {padding:8px 12px;border-radius:0px;border-width:0px;color:rgb(255, 255, 255);background-color:rgb(248, 248, 248);border-color:rgb(231, 231, 231);box-shadow:none;outline:none;}
