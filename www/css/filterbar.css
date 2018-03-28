@@ -43,11 +43,8 @@
 
 .btn-default:hover {
   color: #000000 !important;
-  
 }
 
 .btn-default:active {
-  color: #FFFF !important;
-  background: #2d9cdb!important;
   border: 2px solid #2d9cdb !important;
 }
