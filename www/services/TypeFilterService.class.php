@@ -68,7 +68,8 @@ class TypeFilterService {
         foreach ($allModels as $model) {
             $objectRowID = "13" . strval($model->getIdTypeFilter());
             $editAndDelete = "</td><td><button onclick='updateType("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteType('
                 . $model->getIdTypeFilter()

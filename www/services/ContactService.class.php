@@ -78,7 +78,8 @@ class ContactService {
         foreach ($allmodels as $model) {
             $objectRowID = "17" . strval($model->getIdContact());
             $editAndDelete = "</td><td><button onclick='updateContact("
-                . $objectRowID
+                . $objectRowID . ","
+                . $model->getIdContact()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteContact('
                 . $model->getIdContact()
