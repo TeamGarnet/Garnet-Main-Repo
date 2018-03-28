@@ -77,6 +77,15 @@ if (isset($_POST['updateGraveEntry'])) {
         $graveData['idTypeFilter']);
     unset($_POST['updateGraveEntry']);
 }
+else if (isset($_POST['updateNaturalHistoryEntry'])) {
+    $nhData = $_POST['updateNaturalHistoryEntry'];
+    $service = new NaturalHistoryService();
+    $service -> updateNaturalHistoryEntry($nhData['idTrackableObject'], $nhData['idNaturalHistory'], $nhData['ScientificName'],
+        $nhData['CommonName'], $nhData['Description'], $nhData['Longitude'],
+        $nhData['Latitude'], null, $nhData['ImageDescription'],
+        $nhData['ImageLocation'], $nhData['idTypeFilter']);
+    unset($_POST['updateNaturalHistoryEntry']);
+}
 else if (isset($_POST['updateMiscObjectEntry'])) {
     unset($_POST['updateMiscObjectEntry']);
 }
