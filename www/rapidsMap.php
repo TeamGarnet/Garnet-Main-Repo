@@ -67,19 +67,10 @@ $filterBar = $mapData -> generateFilterBar();
 <?php include_once 'components/NavBar.php'; ?>
 
 <!--Map Filters -->
-<div class="secondmenublock">
-    <div class="container" id="filterContainer">
-        <div class="secondmenu">
-            <div style="text-align: center;">
-                <ul style="margin-left:110px; margin-top: 1.5%;">
+
                     <?php
                     echo $filterBar;
                     ?>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Google Map-->
 <div id="map"></div>
