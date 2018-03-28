@@ -764,7 +764,7 @@ $eventService->deleteEventEntry("5");
         $(document).ready(function () {
             if (tableID == "#grave"){
                 if (idHistoricFilter == null) {
-                    $(".historicSelect.currentFilter option[value='0']").attr("selected", true);
+                    $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
                 }
                 $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
             }
