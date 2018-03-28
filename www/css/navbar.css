@@ -12,14 +12,14 @@ img {
 
 #menu {
   font-family: "Proza Libre", sans-serif !important;
-  border: none;
-  background-color: #6b7749;
-  background-image:none;
-  box-shadow:none;
-  border-radius: 0;
-  min-height: 12.9%;
-  margin-bottom: 0;
-  margin-top: 0;
+  border: none !important; 
+  background-color: #6b7749 !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  border-radius: 0 !important;
+  min-height: 12.9% !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 #menu a{
 	text-shadow:none !important;
