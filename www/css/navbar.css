@@ -26,11 +26,11 @@ img {
 }
 
 #menu .container{
-	height: 100%;
+	height: 100% !important;
 }
 
 #menu ul {
-	margin-top: 2.5%;
+	margin-top: 2.5% !important;
 }
 
 .hvr-underline-reveal {
@@ -78,13 +78,13 @@ img {
   color: white;
 }
 .donate{
-  color: white;
-  background-color: #97583a;
-  font-variant: small-caps;
-  font-family: Proza Libre;
+  color: white !important;
+  background-color: #97583a !important;
+  font-variant: small-caps !important;
+  font-family: Proza Libre !important;
   font-weight: bold !important;
   font-size: 16px !important;
-  letter-spacing: 1.5px;
-  margin: 10px;
+  letter-spacing: 1.5px !important;
+  margin: 10px !important;
 }
 
