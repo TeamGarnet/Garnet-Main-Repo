@@ -123,6 +123,21 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 
+
+<div class="container" id="typeSelect">
+    <select class="form-control form-control-sm">
+        <option>Small select</option>
+        <?php $typeFilterService->getAllFiltersForSelect(); ?>
+    </select>
+</div>
+<div class="container" id="historicSelect">
+    <select class="form-control form-control-sm">
+        <option>Small select</option>
+        <?php $historicFilterService->getAllFiltersForSelect(); ?>
+    </select>
+</div>
+
+
 <div class="container">
     <div class="container1">
         <div class="row">
@@ -710,9 +725,31 @@ $eventService->deleteEventEntry("5");
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
 
-            input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
+            if (labelText.eq("Start Time")){
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            } else if (labelText.eq("End Time")) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            } else if (labelText.includes("Type")) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            } else if (labelText.includes("Historic")) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            } else if (labelText.includes("Date")) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            } else {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
+            }
         });
 
         // Generate inner HTML for form
@@ -805,6 +842,6 @@ $eventService->deleteEventEntry("5");
     function createHistoricFilterPicker(){
         html = "<select class=\"form-control form-control-sm\">\n" +
             "  <option>Small select</option>\n" +
-            "</select>"
+            "</select>";
     }
 </script>

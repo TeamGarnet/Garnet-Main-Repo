@@ -82,4 +82,14 @@ class HistoricFilterService {
         }
         return $html;
     }
+
+    public function getAllFiltersForSelect() {
+        $filters = $this->getAllHistoricFilterEntries();
+        $filterHTML = "";
+        foreach ($filters as $filter) {
+            $filterHTML = $filterHTML . "<option id='"
+                . $filter->getIdHistoricFilter() . "'>"
+                . $filter->getHistoricFilterName() ."</option>";
+        }
+    }
 }

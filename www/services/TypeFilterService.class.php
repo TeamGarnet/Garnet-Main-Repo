@@ -81,4 +81,8 @@ class TypeFilterService {
         }
         return $html;
     }
+
+    public function getAllFiltersForSelect() {
+        $filters = $this->getAllTypeFilterEntries();
+    }
 }
