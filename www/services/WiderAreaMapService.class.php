@@ -15,7 +15,7 @@ class WiderAreaMapService {
         $allWiderAreaMapData = array();
 
         foreach ($allWiderAreaMapDataObjects as $widerAreaMapArray) {
-            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], $widerAreaMapArray['name'],$widerAreaMapArray['description'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'] , $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode']);
+            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], $widerAreaMapArray['name'], $widerAreaMapArray['description'], $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'] , $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode']);
 
             array_push($allWiderAreaMapData, $widerAreaMapObject);
         }
@@ -87,6 +87,7 @@ class WiderAreaMapService {
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
                 . "</td><td>" . $model->getDescription()
+                . "</td><td>" . $model->getUrl()
                 . "</td><td>" . $model->getLongitude()
                 . "</td><td>" . $model->getLatitude()
                 . "</td><td>" . $model->getAddress()

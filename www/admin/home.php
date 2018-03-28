@@ -333,7 +333,6 @@ $eventService->deleteEventEntry("5");
                             <table id="faq" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
                                     <th>Question</th>
                                     <th>Answer</th>
                                 </tr>
@@ -356,6 +355,7 @@ $eventService->deleteEventEntry("5");
                                 <tr>
                                     <th>Name</th>
                                     <th>Description</th>
+                                    <th>Site</th>
                                     <th>Longitude</th>
                                     <th>Latitude</th>
                                     <th>Address</th>
@@ -748,8 +748,8 @@ $eventService->deleteEventEntry("5");
 
             if (labelText == "Start Time"){
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                    '" autocomplete="off"/>';
+                    '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>' +
+                    '<input type="time" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
             } else if (labelText == "End Time") {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +

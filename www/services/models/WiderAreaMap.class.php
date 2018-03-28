@@ -12,6 +12,7 @@ class WiderAreaMap {
     private $city;
     private $state;
     private $zipcode;
+    private $url;
 
     /**
      * WiderAreaMap constructor.
@@ -25,7 +26,7 @@ class WiderAreaMap {
      * @param $state
      * @param $zipcode
      */
-    public function __construct($idWiderAreaMap, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function __construct($idWiderAreaMap, $name, $description, $url, $longitude, $latitude, $address, $city, $state, $zipcode) {
         $this -> idWiderAreaMap = $idWiderAreaMap;
         $this -> name = $name;
         $this -> description = $description;
@@ -35,6 +36,21 @@ class WiderAreaMap {
         $this -> city = $city;
         $this -> state = $state;
         $this -> zipcode = $zipcode;
+        $this -> url = $url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl() {
+        return $this -> url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url) {
+        $this -> url = $url;
     }
 
     /**
