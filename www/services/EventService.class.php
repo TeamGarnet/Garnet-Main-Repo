@@ -61,7 +61,8 @@ class EventService {
             $objectRowID = "18" . strval($model->getIdEvent());
             $editAndDelete = "</td><td><button onclick='updateEvent("
                 . $objectRowID . ","
-                . $model->getIdEvent()
+                . $model->getIdEvent() . ","
+                . $model->getIdWiderAreaMap()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteEvent('
                 . $model->getIdEvent()
