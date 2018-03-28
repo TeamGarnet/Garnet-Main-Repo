@@ -800,50 +800,193 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateNH(rowID) {
+    function updateNH(rowID, idTrackableObject, idNaturalHistory, idTypeFilter) {
         generateForm('#naturalHistory', rowID);
 
-        // // Make AJAX POST request with JSON object to update entry in database
-        // $('#saveChanges').click(function () {
-        //     var formData = {};
-        //
-        //     $.ajax({
-        //         method: "POST",
-        //         url: "../ajaxCalls.php",
-        //         data: { updateGraveEntry: formData}
-        //     }).done(function( msg ) {
-        //         $('#updateModal').modal('hide');
-        //         location.reload();
-        //     });
-        // });
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'idTrackableObject': idTrackableObject,
+                'idNaturalHistory': idNaturalHistory,
+                'idTypeFilter':idTypeFilter,
+                'CommonName': $('#CommonName').val(),
+                'ScientificName': $('#ScientificName').val(),
+                'Description': $('#Description').val(),
+                'Longitude': $('#Longitude').val(),
+                'Latitude': $('#Latitude').val(),
+                'ImageDescription': $('#ImageDescription').val(),
+                'ImageLocation': $('#ImageLocation').val(),
+                'Type': $('#Type').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateNaturalHistoryEntry: formData}
+            }).done(function(msg) {
+                alert('RESPONSE ' + msg );
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
-    function updateMisc(rowID) {
+    function updateMisc(rowID, idTrackableObject, idMiscObject, idTypeFilter) {
         generateForm('#misc', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'idTrackableObject': idTrackableObject,
+                'idMiscObject': idMiscObject,
+                'idTypeFilter':idTypeFilter,
+                'Name': $('#Name').val(),
+                'Description': $('#Description').val(),
+                'IsaHazard?': $('#IsaHazard?').val(),
+                'Longitude': $('#Longitude').val(),
+                'Latitude': $('#Latitude').val(),
+                'ImageDescription': $('#ImageDescription').val(),
+                'ImageLocation': $('#ImageLocation').val(),
+                'Type': $('#Type').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateMiscObjectEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateType(rowID) {
         generateForm('#type', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'PinDesign': $('#PinDesign').val(),
+                'ButtonColor': $('#ButtonColor').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateTypeFilterEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateHistoricFilter(rowID) {
         generateForm('#historic', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'StartDate': $('#StartDate').val(),
+                'EndDate': $('#EndDate').val(),
+                'Description': $('#Description').val(),
+                'ButtonColor': $('#ButtonColor').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateHistoricFilterEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateFAQ(rowID) {
         generateForm('#faq', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'Question': $('#Question').val(),
+                'Answer': $('#Answer').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateFAQEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateLocation(rowID) {
         generateForm('#widerLocation', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'Description': $('#Description').val(),
+                'Longitude': $('#Longitude').val(),
+                'Latitude': $('#Latitude').val(),
+                'Address': $('#Address').val(),
+                'City': $('#City').val(),
+                'State': $('#State').val(),
+                'ZipCode': $('#ZipCode').val()
+            };
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateWiderAreaMapEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateContact(rowID) {
         generateForm('#contact', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'Email': $('#Email').val(),
+                'Description': $('#Description').val(),
+                'Phone': $('#Phone').val(),
+                'Title': $('#Title').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateContactEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function updateEvent(rowID) {
         generateForm('#event', rowID);
+
+        // Make AJAX POST request with JSON object to update entry in database
+        $('#saveChanges').click(function () {
+            var formData = {'Name': $('#Name').val(),
+                'Location': $('#Location').val(),
+                'Description': $('#Description').val(),
+                'StartTime': $('#StartTime').val(),
+                'EndTime': $('#EndTime').val()};
+
+            $.ajax({
+                method: "POST",
+                url: "../ajaxCalls.php",
+                data: { updateEventEntry: formData}
+            }).done(function() {
+                $('#updateModal').modal('hide');
+                location.reload();
+            });
+        });
     }
 
     function createHistoricFilterPicker(){
