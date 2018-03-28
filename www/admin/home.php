@@ -738,7 +738,7 @@ $eventService->deleteEventEntry("5");
             } else if (labelText.includes("Type")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                    '" autocomplete="off"/>';
+                    '" autocomplete="off"/ required>';
             } else if (labelText.includes("Historic")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
