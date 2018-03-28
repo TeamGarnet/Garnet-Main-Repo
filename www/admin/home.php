@@ -757,13 +757,13 @@ $eventService->deleteEventEntry("5");
         $('#updateModalBody').html(input);
         if (tableID == "#grave") {
             $(".historicSelect").clone().addClass(".currentFilter").appendTo(".hisFilter");
-            $(".historicSelect.currentFilter").val(idHistoricFilter);
             $(".historicSelect.currentFilter").removeClass("invisible");
         }
 
 
         // Show modal
         $(document).ready(function () {
+            $(".historicSelect.currentFilter").val(idHistoricFilter);
             $('#updateModal').modal('show');
         });
     }
