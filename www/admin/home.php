@@ -133,7 +133,6 @@ $eventService->deleteEventEntry("5");
 -->
 <div class="container" id="historicSelect">
     <select class="form-control form-control-sm">
-        <option>Small select</option>
         <?php
             echo $historicFilterService->getAllFiltersForSelect();
         ?>
@@ -728,11 +727,11 @@ $eventService->deleteEventEntry("5");
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
 
-            if (labelText.eq("Start Time")){
+            if (labelText == "Start Time"){
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
-            } else if (labelText.eq("End Time")) {
+            } else if (labelText == "End Time") {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
