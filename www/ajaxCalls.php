@@ -90,7 +90,7 @@ else if (isset($_POST['updateMiscObjectEntry'])) {
     $miscData = $_POST['updateMiscObjectEntry'];
     $service = new MiscObjectService();
     $service -> updateMiscObjectEntry((int)$miscData['idTrackableObject'], (int)$miscData['idMiscObject'], $miscData['Name'],
-        'Yes', $miscData['Description'], $miscData['Longitude'],
+        $miscData['IsaHazard'], $miscData['Description'], $miscData['Longitude'],
         $miscData['Latitude'], null, $miscData['ImageDescription'],
         $miscData['ImageLocation'], (int)$miscData['idTypeFilter']);
     unset($_POST['updateMiscObjectEntry']);

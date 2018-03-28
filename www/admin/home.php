@@ -726,6 +726,10 @@ $eventService->deleteEventEntry("5");
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
 
+            if(labelText.includes("?"){
+                attribute = attribute.replace('?', '');
+                labelText = labelText.replace('?', '');
+            }
             if (labelText == "Start Time"){
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
@@ -842,7 +846,7 @@ $eventService->deleteEventEntry("5");
                 'idTypeFilter':idTypeFilter,
                 'Name': $('#Name').val(),
                 'Description': $('#Description').val(),
-                'IsaHazard?': $('#IsaHazard?').val(),
+                'IsaHazard': $('#IsaHazard').val(),
                 'Longitude': $('#Longitude').val(),
                 'Latitude': $('#Latitude').val(),
                 'ImageDescription': $('#ImageDescription').val(),
