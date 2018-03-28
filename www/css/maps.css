@@ -383,17 +383,6 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
     color: #ffffff !important;
     border-color: #da4b14 !important;
 	}
-	.navbar-nav li a:hover{
-background-color:#f1916d !important;
-}
-.navbar-nav li a{
-color:white !important;
-font-family: prozolibre;
-font-weight:bold;
-}
-
-
-
 
 <!--Abdols Code -->
 .popup-overlay{
