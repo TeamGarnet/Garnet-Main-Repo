@@ -804,7 +804,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateNH(rowID, idTrackableObject, idNaturalHistory, idTypeFilter) {
+    function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
         generateForm('#naturalHistory', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
@@ -832,7 +832,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function updateMisc(rowID, idTrackableObject, idMiscObject, idTypeFilter) {
+    function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
         generateForm('#misc', rowID);
 
         // Make AJAX POST request with JSON object to update entry in database
