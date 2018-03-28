@@ -757,13 +757,13 @@ $eventService->deleteEventEntry("5");
         $('#updateModalBody').html(input);
         if (tableID == "#grave") {
             $(".historicSelect").clone().addClass(".currentFilter").appendTo(".hisFilter");
-            $(".historicSelect.currentFilter").val(idHistoricFilter);
             $(".historicSelect.currentFilter").removeClass("invisible");
         }
 
 
         // Show modal
         $(document).ready(function () {
+            $(".historicSelect.currentFilter").val(str(idHistoricFilter));
             $('#updateModal').modal('show');
         });
     }
@@ -775,8 +775,8 @@ $eventService->deleteEventEntry("5");
         $('#saveChanges').click(function () {
             var formData = {'idTrackableObject': idTrackableObject,
                 'idGrave': idGrave,
-                'idHistoricFilter':idHistoricFilter,
-                'idTypeFilter': $(".historicSelect.currentFilter").val(),
+                'idHistoricFilter':$(".historicSelect.currentFilter").val(),
+                'idTypeFilter': idTypeFilter,
                 'FirstName': $('#FirstName').val(),
                 'MiddleName':$('#MiddleName').val(),
                 'LastName':$('#LastName').val(),
