@@ -68,7 +68,7 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!--Map Filters -->
 <div class="secondmenublock">
-    <div class="container">
+    <div class="container" id="filterContainer">
         <div class="secondmenu">
             <div style="text-align: center;">
                 <ul style="margin-left:110px; margin-top: 1.5%;">
