@@ -459,7 +459,7 @@ $eventService->deleteEventEntry("5");
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="updateModalTitle">Update Object</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelChanges()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -468,7 +468,7 @@ $eventService->deleteEventEntry("5");
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelChanges()">Cancel</button>
             </div>
         </div>
     </div>
@@ -1001,5 +1001,10 @@ $eventService->deleteEventEntry("5");
                 $('#updateModalBody').empty();
             });
         });
+    }
+
+    function cancelChanges() {
+        $('#updateModal').modal('hide');
+        $('#updateModalBody').empty();
     }
 </script>
