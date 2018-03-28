@@ -154,8 +154,6 @@ p{margin:0px; padding:0px}
 ul {margin:0px; padding:0px; list-style:none}
 ul li{margin:0px; padding:0px}
 a{text-decoration:none}
-.navbar-default{background:none; border:none; margin-top:0px;     margin-bottom: 0px !important;}
-.navbar{margin-bottom:0px}
 button{outline:none}
 /******topmenu*******/
 
@@ -173,7 +171,6 @@ button{outline:none}
 .topicon ul li .selectpicker option{color:#000}
 .nice-select{font-family:'LaoUI-Regular'; font-size:14px;}
 .newwrap .wrap {position:relative;z-index:9999; background:#33998e;}
-.navbar-fixed-top {top: auto!important;padding-top: 20px !important}
 .container-fluid {padding:0 3px;}
 /*.navbar-default {background:#ffffff;border:none;box-shadow:-2px -2px 12px #000; }*/
 .navbar-brand {
