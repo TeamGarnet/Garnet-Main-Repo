@@ -198,8 +198,6 @@ button{outline:none}
 .navbar-nav .bor{ padding-right:1px; border-right:1px solid;    margin-top: 0px; }
 .navbar-nav>li>a{    padding:4px 13px; margin-top: 0px;font-family: sans-serif; font-size:14px; text-transform:uppercase; color:#fff !important;}
 .input-group-btn>.btn:hover, .input-group-btn>.btn:focus, .input-group-btn>.btn:active{outline:none;}
-.navbar-right{    margin-top: 14px; font-size:15px; font-family: 'Century Gothic';     padding-right: 45px;}
-.navbar-page{    margin-top: 14px; font-size:15px; font-family: 'Century Gothic';     padding-right: 45px;}
 .btns h1{padding:10px;}
 .nav-item h1{padding:9px 20px; font-size:10px; font-family:'LaoUI-Regular'; background:#1fa582; border-radius:5px 5px 5px 5px; color:white;border: 1px solid;}
 .nav-item a :hover{background:none; border:#1fa582 1px solid; color: #1fa582;}
