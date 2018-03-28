@@ -81,10 +81,10 @@ else if (isset($_POST['updateNaturalHistoryEntry'])) {
     $nhData = $_POST['updateNaturalHistoryEntry'];
     var_dump($nhData);
     $service = new NaturalHistoryService();
-    $service -> updateNaturalHistoryEntry($nhData['idTrackableObject'], $nhData['idNaturalHistory'], $nhData['ScientificName'],
-        $nhData['CommonName'], $nhData['Description'], $nhData['Longitude'],
-        $nhData['Latitude'], null, $nhData['ImageDescription'],
-        $nhData['ImageLocation'], $nhData['idTypeFilter']);
+    $service -> updateNaturalHistoryEntry((int)$nhData['idTrackableObject'], (int)$nhData['idNaturalHistory'], $nhData['ScientificName'],
+        $nhData['CommonName'], $nhData['Description'], (float)$nhData['Longitude'],
+        (float)$nhData['Latitude'], null, $nhData['ImageDescription'],
+        $nhData['ImageLocation'], (int)$nhData['idTypeFilter']);
     unset($_POST['updateNaturalHistoryEntry']);
 }
 else if (isset($_POST['updateMiscObjectEntry'])) {
