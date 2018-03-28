@@ -740,11 +740,9 @@ $eventService->deleteEventEntry("5");
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
             } else if (labelText.includes("Historic")) {
-                input += "<select class='form-control form-control-sm'>" +
-                    <?php
-                        echo $historicFilterService->getAllFiltersForSelect();
-                    ?> +
-                    "</select>";
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                    '" autocomplete="off"/>';
             } else if (labelText.includes("Date")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
