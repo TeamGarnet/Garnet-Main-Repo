@@ -225,7 +225,6 @@ button{outline:none}
 }
 
 @media (min-width: 768px) {
-.navbar-collapse {padding-top:0px !important;padding-right:12px !important;}
 .navbar-collapse form[role="search"] {width:28px;}
 .navbar-collapse form[role="search"] button,
 .navbar-collapse form[role="search"] input {padding: 15px 12px;font-family:'LaoUI-Regular';}
