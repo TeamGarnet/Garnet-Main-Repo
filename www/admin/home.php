@@ -763,7 +763,7 @@ $eventService->deleteEventEntry("5");
 
         // Show modal
         $(document).ready(function () {
-            $(".historicSelect.currentFilter").val(str(idHistoricFilter));
+            $(".historicSelect.currentFilter").val(String(idHistoricFilter));
             $('#updateModal').modal('show');
         });
     }
