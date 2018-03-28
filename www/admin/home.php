@@ -790,7 +790,8 @@ $eventService->deleteEventEntry("5");
                 'Latitude': $('#Latitude').val(),
                 'ImageDescription': $('#ImageDescription').val(),
                 'ImageLocation': $('#ImageLocation').val(),
-                'HistoricFilter': $('#HistoricFilter').val()};
+                'HistoricFilter': $('#HistoricFilter').val()
+            };
 
             $.ajax({
                 method: "POST",
@@ -987,11 +988,5 @@ $eventService->deleteEventEntry("5");
                 $('#updateModal').modal('hide');
             });
         });
-    }
-
-    function createHistoricFilterPicker(){
-        html = "<select class=\"form-control form-control-sm\">\n" +
-            "  <option>Small select</option>\n" +
-            "</select>";
     }
 </script>
