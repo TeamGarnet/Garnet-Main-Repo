@@ -131,8 +131,8 @@ $eventService->deleteEventEntry("5");
     </select>
 </div>
 -->
-<div class="container" id="historicSelect">
-    <select class="form-control form-control-sm">
+<div class="container invisible">
+    <select class="form-control form-control-sm historicSelect" id="historicSelect">
         <?php
             echo $historicFilterService->getAllFiltersForSelect();
         ?>
@@ -740,9 +740,7 @@ $eventService->deleteEventEntry("5");
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                     '" autocomplete="off"/>';
             } else if (labelText.includes("Historic")) {
-                input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                    '" autocomplete="off"/>';
+                input += $(".historicSelect").clone();
             } else if (labelText.includes("Date")) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
