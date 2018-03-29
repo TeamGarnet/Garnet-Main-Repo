@@ -524,5 +524,5 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
 }
 
 function createEvent() {
-    generateForm('#event',,,'create');
+    generateForm('#event','','','create');
 }
