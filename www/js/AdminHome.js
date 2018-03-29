@@ -235,7 +235,11 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
         if (labelText == "Start Time"){
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
-        } else if (labelText == "End Time") {
+        } else if (labelText.includes("Longitude:") || labelText.includes("Latitude:")) {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
+        }else if (labelText == "End Time") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
