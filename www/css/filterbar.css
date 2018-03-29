@@ -23,6 +23,7 @@
   line-height: normal;
   letter-spacing: normal;
   color: #97583a;
+  width: 100% !important;
 }
 
 .btn {
