@@ -174,7 +174,7 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#">FAQ</a>
                         <a class="dropdown-item" href="#">Wider Area Location</a>
                         <a class="dropdown-item" href="#">Contact</a>
-                        <a class="dropdown-item" href="#">Event</a>
+                        <a class="dropdown-item" href="#" onclick="createEvent()">Event</a>
                     </div>
                 </div>
 
@@ -463,9 +463,7 @@ $eventService->deleteEventEntry("5");
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="updateModalBody">
-                <p>Content goes here</p>
-            </div>
+            <div class="modal-body" id="updateModalBody"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
                 <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelChanges()">Cancel</button>
@@ -474,6 +472,24 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 
+<!-- Create Object Modal -->
+<div class="modal createModal" id=createModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="updateModalTitle">Create Object</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelChanges()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="createModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+                <button type="button" class="btn btn-secondary" id="cancel" onclick="cancelChanges()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 
@@ -495,6 +511,11 @@ $eventService->deleteEventEntry("5");
 
 
     });
+
+    function cancelChanges() {
+        $('#updateModal').modal('hide');
+        $('#updateModalBody').empty();
+    }
 
     function deleteGrave(id) {
         $(document).ready(function() {
@@ -718,11 +739,17 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function generateForm(tableID, rowID, idHistoricFilter) {
+    function generateForm(tableID, rowID, idHistoricFilter, action) {
+        action = action || 'update';
+        if(action !== 'update' || action!== 'create') {
+            throw new Error('Action should either be "update" or "create"');
+        }
         // Grab current table header value and corresponding table data value
         var input = '';
+        var tdVal = '';
         $(tableID + ' th').each(function (index) {
-            var tdVal = $('#' + rowID + ' td').eq(index).text();
+            if(action === 'update')
+                tdVal = $('#' + rowID + ' td').eq(index).text();
             var attribute = $(this).text().replace(/ /g, '');
             var labelText = $(this).text() + ':';
 
@@ -754,25 +781,32 @@ $eventService->deleteEventEntry("5");
             }
         });
 
-        // Generate inner HTML for form
-        $('#updateModalBody').html(input);
-        if (tableID == "#grave") {
-            $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
-            $(".historicSelect.currentFilter").removeClass("invisible");
-        }
-
-
-        // Show modal
-        $(document).ready(function () {
-            if (tableID == "#grave"){
-                if (idHistoricFilter == null) {
-                    $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
-                }
-                $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+        if(action === 'update')
+        {
+            // Generate inner HTML for form
+            $('#updateModalBody').html(input);
+            if (tableID == "#grave") {
+                $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
+                $(".historicSelect.currentFilter").removeClass("invisible");
             }
 
-            $('#updateModal').modal('show');
-        });
+            // Show modal
+            $(document).ready(function () {
+                if (tableID == "#grave"){
+                    if (idHistoricFilter == null) {
+                        $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
+                    }
+                    $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+                }
+
+                $('#updateModal').modal('show');
+            });
+        }
+        else if(action === 'create')
+        {
+            $('#createModalBody').html(input);
+            $('#createModal').modal('show');
+        }
     }
 
     function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
@@ -1003,8 +1037,7 @@ $eventService->deleteEventEntry("5");
         });
     }
 
-    function cancelChanges() {
-        $('#updateModal').modal('hide');
-        $('#updateModalBody').empty();
+    function createEvent() {
+        generateForm('#event',,,'create');
     }
 </script>
