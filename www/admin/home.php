@@ -165,15 +165,15 @@ $eventService->deleteEventEntry("5");
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Grave</a>
-                        <a class="dropdown-item" href="#">Natural History</a>
-                        <a class="dropdown-item" href="#">Micellaneous</a>
-                        <a class="dropdown-item" href="#">Type Filter</a>
-                        <a class="dropdown-item" href="#">Historic Filter</a>
+                        <a class="dropdown-item" href="#" onclick="createGrave()">Grave</a>
+                        <a class="dropdown-item" href="#" onclick="createNH()">Natural History</a>
+                        <a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a>
+                        <a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a>
+                        <a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a>
                         <a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a>
-                        <a class="dropdown-item" href="#">Wider Area Location</a>
-                        <a class="dropdown-item" href="#">Contact</a>
-                        <a class="dropdown-item" href="#">Event</a>
+                        <a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a>
+                        <a class="dropdown-item" href="#" onclick="createContact()">Contact</a>
+                        <a class="dropdown-item" href="#" onclick="createEvent()">Event</a>
                     </div>
                 </div>
 

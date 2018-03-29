@@ -565,6 +565,26 @@ function cancelCreate() {
     $('#createModalBody').empty();
 }
 
+function createGrave(){
+    generateCreateModal('#grave');
+}
+
+function createNH() {
+    generateCreateModal('#naturalHistory');
+}
+
+function createMisc() {
+    generateCreateModal('#misc');
+}
+
+function createTypeFilter() {
+    generateCreateModal('#type');
+}
+
+function createHistoricFilter() {
+    generateCreateModal('#historic');
+}
+
 function createFAQ() {
     generateCreateModal('#faq');
 
@@ -581,4 +601,16 @@ function createFAQ() {
             $('#createModalBody').empty();
         });
     });
+}
+
+function createWiderLocation() {
+    generateCreateModal('#widerLocation');
+}
+
+function createContact() {
+    generateCreateModal('#contact');
+}
+
+function createEvent () {
+    generateCreateModal('#event');
 }

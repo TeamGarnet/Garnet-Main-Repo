@@ -140,9 +140,41 @@ else if (isset($_POST['updateEventEntry'])) {
 }
 
 // Create POST requests
-if(isset($_POST['createFAQEntry'])) {
+if(isset($_POST['createGraveEntry'])) {
+    $faqData = $_POST['createGraveEntry'];
+    unset($_POST['createGraveEntry']);
+}
+else if(isset($_POST['createNaturalHistoryEntry'])) {
+    $faqData = $_POST['createNaturalHistoryEntry'];
+    unset($_POST['createNaturalHistoryEntry']);
+}
+else if(isset($_POST['createMiscObjectEntry'])) {
+    $faqData = $_POST['createMiscObjectEntry'];
+    unset($_POST['updateEventEntry']);
+}
+else if(isset($_POST['createTypeFilterEntry'])) {
+    $faqData = $_POST['createTypeFilterEntry'];
+    unset($_POST['createTypeFilterEntry']);
+}
+else if(isset($_POST['createHistoricFilterEntry'])) {
+    $faqData = $_POST['createHistoricFilterEntry'];
+    unset($_POST['createHistoricFilterEntry']);
+}
+else if(isset($_POST['createFAQEntry'])) {
     $faqData = $_POST['createFAQEntry'];
     $service = new FAQService();
     $service -> createFAQEntry($faqData['Question'], $faqData['Answer']);
     unset($_POST['createFAQEntry']);
+}
+else if(isset($_POST['createWiderAreaMapEntry'])) {
+    $faqData = $_POST['createWiderAreaMapEntry'];
+    unset($_POST['createWiderAreaMapEntry']);
+}
+else if(isset($_POST['createContactEntry'])) {
+    $faqData = $_POST['createContactEntry'];
+    unset($_POST['createContactEntry']);
+}
+else if(isset($_POST['createEventEntry'])) {
+    $faqData = $_POST['createEventEntry'];
+    unset($_POST['createEventEntry']);
 }

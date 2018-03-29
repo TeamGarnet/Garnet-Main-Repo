@@ -67,7 +67,7 @@
     margin-top: 20px;
 }
 
-#updateModal input {
+#updateModal input, #createModal input {
     width: 100%;
     padding: 12px 5px;
     margin: 5px 0px 30px 0px;
