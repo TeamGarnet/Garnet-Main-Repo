@@ -56,11 +56,6 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="topvid_text">
-
-                        <!--<h1>Introducing Anti-Counterfeiting Mobile</h1>
-                         <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-10">
-                        <p>Complete Protection on your brand and solution on both your mobile App and your cloud storages</p>-->
                         <div class="head1" style="float:right; text-align:right; color: white;">
                             <h5 style="font-weight:bold;">RAPIDS CEMETERY ONLINE EXPERIENCE</h5>
                             <h1 style="font-size:57px; font-family: CormorantGaramond;">Explore a Forgotten
@@ -72,27 +67,30 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
         </div>
-
-        <div class="container" id ="footerContainer">
+		<div class="container" id ="footerContainer">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-4" style="float:left;">
+					<a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="col-md-8 col-sm-8 col-xs-8">
+					<div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association ——— 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
+				</div>
+		</div>
+        <!--<div class="container" id ="footerContainer">
 
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
                 <div class="social" style="float:left;">
                     <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF">
                         <i class="fab fa-facebook-f"></i></a>
-                    <!--<span style="padding:10px;"></span>
-                    <i class="fab fa-instagram"></i>
-                    <span style="padding:10px;"></span>
-                    <i class="fab fa-twitter"></i>--></div>
-                <div style="color:#fff; float:right; font-family: prozolibre; padding-top:10px;"><h5>19th Ward Community Association
+				</div>
+                <div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association
                         --- 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
             </footer>
-        </div>
+        </div>-->
     </div>
     </div>
     </div>
