@@ -232,7 +232,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
-        if (labelText == "Start Time"){
+        if (labelText == "Start Time:"){
             var dateTimeArray = attribute.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
@@ -247,7 +247,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
-        } else if (labelText == "End Time") {
+        } else if (labelText == "End Time:") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
