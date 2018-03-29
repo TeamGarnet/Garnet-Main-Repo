@@ -6,6 +6,9 @@ body {
 	background-color: #97583a !important;
 	border-radius: 4px !important;
 }
+#explore{
+	padding-top: 2%;
+}
 h4{
 	font-family: Proza Libre !important;
 }

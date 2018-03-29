@@ -63,7 +63,7 @@
                             <p style=" font-family: ProzaLibre;">Unlock the history of the little known Rochester
                                 cemetery in this<br> interactive history experience</p>
                             <div class="top_btn">
-                                    <a href="rapidsMap.php"<button type="button" class="btn donate">explore map</button></a>
+                                    <a href="rapidsMap.php"<button type="button" class="btn donate" id="explore">explore map</button></a>
                             </div>
                         </div>
                     </div>
