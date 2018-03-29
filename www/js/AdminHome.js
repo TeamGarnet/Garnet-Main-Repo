@@ -486,7 +486,7 @@ function updateLocation(rowID, idWiderAreaMap) {
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
         var formData = {'idWiderAreaMap': idWiderAreaMap,
-            'URL': $('#URL').val(),
+            'Site': $('#Site').val(),
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
             'Longitude': $('#Longitude').val(),
@@ -579,10 +579,42 @@ function createMisc() {
 
 function createTypeFilter() {
     generateCreateModal('#type');
+
+    $('#createObject').click(function () {
+        var formData = {'Name': $('#Name').val(),
+            'PinDesign': $('#PinDesign').val(),
+            'ButtonColor': $('#ButtonColor').val()};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createHistoricFilterEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createHistoricFilter() {
     generateCreateModal('#historic');
+
+    $('#createObject').click(function () {
+        var formData = {'Name': $('#Name').val(),
+            'StartDate': $('#StartDate').val(),
+            'EndDate': $('#EndDate').val(),
+            'Description': $('#Description').val(),
+            'ButtonColor': $('#ButtonColor').val()};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createHistoricFilterEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createFAQ() {
@@ -605,12 +637,52 @@ function createFAQ() {
 
 function createWiderLocation() {
     generateCreateModal('#widerLocation');
+
+    $('#createObject').click(function () {
+        var formData = {'Site': $('#Site').val(),
+            'Name': $('#Name').val(),
+            'Description': $('#Description').val(),
+            'Longitude': $('#Longitude').val(),
+            'Latitude': $('#Latitude').val(),
+            'Address': $('#Address').val(),
+            'City': $('#City').val(),
+            'State': $('#State').val(),
+            'ZipCode': $('#ZipCode').val()
+        };
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createWiderAreaMapEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createContact() {
     generateCreateModal('#contact');
+
+    $('#createObject').click(function () {
+        var formData = {'Name': $('#Name').val(),
+            'Email': $('#Email').val(),
+            'Description': $('#Description').val(),
+            'Phone': $('#Phone').val(),
+            'Title': $('#Title').val()};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createContactEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
+
 }
 
-function createEvent () {
+function createEvent() {
     generateCreateModal('#event');
 }
