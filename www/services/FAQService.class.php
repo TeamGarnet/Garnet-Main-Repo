@@ -35,7 +35,7 @@ class FAQService {
     }
 
     public function createFAQEntry($question, $answer) {
-        $question = filter_var($question, FILTER_SANITIZE_EMAIL);
+        $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);
 
         //create FAQ Object
@@ -44,7 +44,7 @@ class FAQService {
     }
 
     public function updateFAQEntry($idFAQ, $question, $answer) {
-        $question = filter_var($question, FILTER_SANITIZE_EMAIL);
+        $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);
 
         $fAQDataClass = new FAQData();
