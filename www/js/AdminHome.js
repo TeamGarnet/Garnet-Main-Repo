@@ -248,8 +248,8 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
             alert(tdVal);
-            alert('[value=' + tdVal + ']');
-            var value= '[value=' + tdVal + ']';
+            alert('[value="' + tdVal + '"]');
+            var value= '[value="' + tdVal + '"]';
             $('input:radio[name=isHazard]').filter(value).prop('checked', true);
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
