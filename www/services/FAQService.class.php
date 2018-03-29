@@ -66,16 +66,16 @@ class FAQService {
         $html = "";
         foreach ($allmodels as $model) {
             $objectRowID = "15" . strval($model->getIdFAQ());
-            $editAndDelete = "</td><td><button onclick='updateFAQ("
+            $editAndDelete = ")</td><td><button onclick='updateFAQ("
                 . $objectRowID . ","
                 . $model->getIdFAQ()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteFAQ('
                 . $model->getIdFAQ()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>"
+            $html = $html . "<tr id='" . $objectRowID . "'><td>unescape("
                 . $model->getQuestion()
-                . "</td><td>" . $model->getAnswer()
+                . ")</td><td>unescape(" . $model->getAnswer()
                 . $editAndDelete
                 . "</td></tr>";
         }
