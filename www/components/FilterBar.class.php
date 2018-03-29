@@ -9,7 +9,7 @@ class FilterBar {
     public function __construct($filterButtonArray) {
         $this -> setFilterButtonArray($filterButtonArray);
 
-        $filterBarCode = "<nav class='navbar navbar-default navbar-fixed-bottom'><div class='container' id='filterContainer2'><div class='navbar-header'><a class='navbar-brand'>Select Filters:</a>
+        $filterBarCode = "<nav class='navbar navbar-default navbar-fixed-bottom' id = 'nav-fixed-bottom'><div class='container' id='filterContainer2'><div class='navbar-header'><a class='navbar-brand'>Select Filters:</a>
         <!-- Mobile Menu -->
         <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#mobile-dropdown'>
           <!-- Hamburger Menu -->

@@ -48,3 +48,9 @@
 .btn-default:active {
   
 }
+
+#nav-fixed-bottom{
+	right: 11% !important;
+	left: 11% !important;
+	bottom: 1.5% !important;
+}
