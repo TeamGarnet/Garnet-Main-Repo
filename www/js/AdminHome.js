@@ -233,10 +233,10 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             labelText = labelText.replace('?', '');
         }
         if (labelText == "Start Time:"){
-            var dateTimeArray = attribute.split(" ");
+            var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
-            alert(time + "<br>" + date);
+            alert(time + "<br>" + date + "<br>" + tdVal);
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="startDate" name="startDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" value="' + time + '" autocomplete="off"/>';
