@@ -223,11 +223,12 @@ function deleteEvent(id) {
 function generateUpdateModal(tableID, rowID, idHistoricFilter) {
     // Grab current table header value and corresponding table data value
     var input = '';
+    var isHazard = "No";
     $(tableID + ' th').each(function (index) {
         var tdVal = $('#' + rowID + ' td').eq(index).text();
         var attribute = $(this).text().replace(/ /g, '');
         var labelText = $(this).text() + ':';
-        var isHazard = "";
+
 
         if(labelText.includes("?")){
             attribute = attribute.replace('?', '');
