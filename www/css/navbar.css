@@ -34,6 +34,10 @@ img {
 	margin-top: 3% !important;
 }
 
+.navbar{
+	box-shadow:none;
+}
+
 .hvr-underline-reveal {
   display: inline-block !important;
   vertical-align: middle !important;
