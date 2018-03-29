@@ -20,6 +20,8 @@
     <link href="css/thirdParty/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/navbar.css" type="text/css">
 	<link rel="stylesheet" href="css/home.css" type="text/css">
+		<link rel="stylesheet" href="css/navbar.css" type="text/css">
+	<link rel="stylesheet" href="css/filterbar.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
