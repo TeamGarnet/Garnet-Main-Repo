@@ -143,16 +143,26 @@ else if (isset($_POST['updateEventEntry'])) {
 if(isset($_POST['createGraveEntry'])) {
     $graveData = $_POST['createGraveEntry'];
     $service = new GraveService();
+    $service -> createGraveEntry($graveData['FirstName'], $graveData['MiddleName'], $graveData['LastName'],
+        $graveData['BirthDate'], $graveData['DeathDate'], $graveData['Description'],
+        null, $graveData['Longitude'], $graveData['Latitude'], null,
+        $graveData['ImageDescription'], $graveData['ImageLocation'], null);
     unset($_POST['createGraveEntry']);
 }
 else if(isset($_POST['createNaturalHistoryEntry'])) {
     $nhData = $_POST['createNaturalHistoryEntry'];
     $service = new NaturalHistoryService();
+    $service -> createNaturalHistoryEntry($nhData['ScientificName'], $nhData['CommonName'], $nhData['Description'],
+        $nhData['Longitude'], $nhData['Latitude'], null, $nhData['ImageDescription'],
+        $nhData['ImageLocation'], null);
     unset($_POST['createNaturalHistoryEntry']);
 }
 else if(isset($_POST['createMiscObjectEntry'])) {
     $miscData = $_POST['createMiscObjectEntry'];
     $service = new MiscObjectService();
+    $service -> createMiscObjectEntry($miscData['Name'],$miscData['IsaHazard'], $miscData['Description'],
+        $miscData['Longitude'], $miscData['Latitude'], null,
+        $miscData['ImageDescription'], $miscData['ImageLocation'], null);
     unset($_POST['updateEventEntry']);
 }
 else if(isset($_POST['createTypeFilterEntry'])) {
@@ -192,5 +202,7 @@ else if(isset($_POST['createContactEntry'])) {
 else if(isset($_POST['createEventEntry'])) {
     $eventData = $_POST['createEventEntry'];
     $service = new EventService();
+    $service -> createEventEntry($eventData['Name'], $eventData['Description'], $eventData['StartTime'],
+        $eventData['EndTime'], null);
     unset($_POST['createEventEntry']);
 }
