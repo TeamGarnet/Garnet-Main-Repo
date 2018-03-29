@@ -66,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
     }
 }
 
+// Update POST requests
 if (isset($_POST['updateGraveEntry'])) {
     $graveData = $_POST['updateGraveEntry'];
     $service = new GraveService();
@@ -136,4 +137,12 @@ else if (isset($_POST['updateEventEntry'])) {
     $service -> updateEventEntry($eventData['idEvent'], $eventData['Name'], $eventData['Description'],
         $eventData['StartTime'], $eventData['EndTime'], $eventData['idWiderAreaMap']);
     unset($_POST['updateEventEntry']);
+}
+
+// Create POST requests
+if(isset($_POST['createFAQEntry'])) {
+    $faqData = $_POST['createFAQEntry'];
+    $service = new FAQService();
+    $service -> createFAQEntry($faqData['#Question'], $faqData['Answer']);
+    unset($_POST['createFAQEntry']);
 }
