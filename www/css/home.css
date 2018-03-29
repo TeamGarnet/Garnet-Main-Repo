@@ -10,6 +10,10 @@ body {
 	padding-top: 2% !important;
 	margin-right: 0 !important;
 }
+#explore:hover{
+  background-color: white !important;
+  color: #97583a !important; 
+}
 .top_btn{
 	padding:0;
 }
