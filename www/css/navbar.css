@@ -38,6 +38,9 @@ img {
 	box-shadow:none !important;
 	border: none !important;
 }
+#nav-right{
+	text-align:right;
+}
 
 .hvr-underline-reveal {
   display: inline-block !important;
