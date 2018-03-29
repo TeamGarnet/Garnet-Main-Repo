@@ -48,7 +48,7 @@ class ContactService {
 
         //create Contact Object
         $contactDataClass = new ContactData();
-        $contactDataClass -> createContact($email, $description, $phone, $title, $name);
+        $contactDataClass -> createContact($name, $email, $description, $phone, $title);
     }
 
     public function updateContactEntry($idContact, $name, $email, $description, $phone, $title) {
