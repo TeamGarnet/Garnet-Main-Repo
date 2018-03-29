@@ -245,8 +245,8 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 '" autocomplete="off"/>';
         } else if (labelText.includes("Hazard:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
+                '<input type="radio" name="isHazard" value="Yes" autocomplete="off"/>' +
+                '<input type="radio" name="isHazard" value="No" autocomplete="off"/>';
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
