@@ -45,8 +45,8 @@
   color: #000000 !important;
 }
 
-.btn-default:active {
-  
+.btn-default:focus {
+  outline-color: #4D90FE !important;
 }
 
 #nav-fixed-bottom{
