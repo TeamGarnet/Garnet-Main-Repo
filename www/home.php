@@ -71,17 +71,17 @@
             </div>
         </div>
 		
-		<!--<div class="container" id ="footerContainer">
+		<div class="container" id ="footerContainer">
 			<div class="row">
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="float:left;">
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 social" style="float:left;">
 					<a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i class="fab fa-facebook-f"></i></a>
 				</div>
 				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 					<div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association —— 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
 				</div>
 			</div>
-		</div>-->
-        <div class="container" id ="footerContainer">
+		</div>
+        <!--<div class="container" id ="footerContainer">
 
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
                 <div class="social" style="float:left;">
@@ -91,7 +91,7 @@
                 <div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association
                         --- 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
             </footer>
-        </div>
+        </div>-->
     </div>
 
 </section>
