@@ -173,7 +173,7 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a>
                         <a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a>
                         <a class="dropdown-item" href="#" onclick="createContact()">Contact</a>
-                        <a class="dropdown-item" href="#" onclick="createEvent()">Event</a>
+                        <a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a>
                     </div>
                 </div>
 

@@ -352,7 +352,6 @@ function generateCreateModal(tableID) {
 
     // Show modal
     $(document).ready(function () {
-        $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
         $('#createModal').modal('show');
     });
 }
@@ -787,7 +786,7 @@ function createContact() {
     });
 }
 
-function createEvent() {
+function createEventEntry() {
     $('#createModalTitle').text('Create Event');
     generateCreateModal('#event');
 
