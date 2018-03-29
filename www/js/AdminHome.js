@@ -236,6 +236,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             var dateTimeArray = attribute.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
+            alert(time + "<br>" + date);
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="startDate" name="startDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" value="' + time + '" autocomplete="off"/>';
