@@ -34,7 +34,7 @@ img {
 	margin-top: 3% !important;
 }
 
-.navbar{
+.navbar .navbar-default .navbar-collapse{
 	box-shadow:none !important;
 }
 
