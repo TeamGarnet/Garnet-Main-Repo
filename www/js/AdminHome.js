@@ -236,7 +236,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
-            alert(time + "<br>" + date + "<br>" + tdVal);
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="startDate" name="startDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" value="' + time + '" autocomplete="off"/>';
@@ -252,7 +251,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
-            alert(time + "<br>" + date + "<br>" + tdVal);
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
@@ -304,12 +302,14 @@ function generateCreateModal(tableID) {
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
-        if (labelText == "Start Time"){
+        if (labelText == "Start Time:"){
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+                '<input type="date" id="startDate" name="startDate" autocomplete="off"/>' +
+                '<input type="time" id="startTime" name="startTime" autocomplete="off"/>';
         } else if (labelText == "End Time") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+                '<input type="date" id="endDate" name="endDate" autocomplete="off"/>' +
+                '<input type="time" id="endTime" name="endTime" autocomplete="off"/>';
         } else if (labelText.includes("Type")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
