@@ -249,9 +249,13 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
         } else if (labelText == "End Time:") {
+            var dateTimeArray = tdVal.split(" ");
+            var time = dateTimeArray[1];
+            var date = dateTimeArray[0];
+            alert(time + "<br>" + date + "<br>" + tdVal);
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
+                '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
+                '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
         } else if (labelText.includes("Type")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
@@ -553,8 +557,8 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
             'Name': $('#Name').val(),
             'Location': $('#Location').val(),
             'Description': $('#Description').val(),
-            'StartTime': $('#StartTime').val(),
-            'EndTime': $('#EndTime').val(),
+            'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
+            'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
             'idWiderAreaMap': idWiderAreaMap};
 
         $.ajax({
@@ -778,8 +782,8 @@ function createEvent() {
         var formData = {'Name': $('#Name').val(),
             'Location': $('#Location').val(),
             'Description': $('#Description').val(),
-            'StartTime': $('#StartTime').val(),
-            'EndTime': $('#EndTime').val(),
+            'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
+            'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
             'idWiderAreaMap': null};
 
         $.ajax({
