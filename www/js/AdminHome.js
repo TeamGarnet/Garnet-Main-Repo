@@ -244,7 +244,8 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
         } else if (labelText.includes("Hazard:")) {
-            input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label><input type="radio" name="isHazard" value="Yes"/></label></div><div class="radio"><label><input type="radio" name="isHazard" value="Yes"/></label></div>';
+            input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
+                '<div class="radio"><label>No<input type="radio" name="isHazard" value="Yes"/></label></div>';
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
