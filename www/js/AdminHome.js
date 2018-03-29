@@ -309,10 +309,10 @@ function generateCreateModal(tableID) {
 
     // Generate inner HTML for form
     $('#createModalBody').html(input);
-    // if (tableID == "#grave") {
-    //     $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
-    //     $(".historicSelect.currentFilter").removeClass("invisible");
-    // }
+    if (tableID == "#grave") {
+        $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
+        $(".historicSelect.currentFilter").removeClass("invisible");
+    }
 
     // Show modal
     $(document).ready(function () {
@@ -580,7 +580,9 @@ function createGrave(){
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'HistoricFilter': $('#HistoricFilter').val()
+            'HistoricFilter': $('#HistoricFilter').val(),
+            'idTypeFilter': 1,
+            'idHistoricFilter': null
         };
 
         $.ajax({
@@ -606,7 +608,7 @@ function createNH() {
             'Latitude': parseFloat($('#Latitude').val()),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'Type': $('#Type').val()};
+            'idTypeFilter': 2};
 
         $.ajax({
             method: "POST",
@@ -631,7 +633,8 @@ function createMisc() {
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'Type': $('#Type').val()};
+            'Type': $('#Type').val(),
+            'idTypeFilter': null};
 
         $.ajax({
             method: "POST",
