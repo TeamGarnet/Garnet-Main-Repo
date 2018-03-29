@@ -35,7 +35,7 @@ img {
 }
 
 .navbar{
-	box-shadow:none;
+	box-shadow:none !important;
 }
 
 .hvr-underline-reveal {
