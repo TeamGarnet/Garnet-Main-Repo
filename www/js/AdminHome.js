@@ -227,6 +227,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
         var tdVal = $('#' + rowID + ' td').eq(index).text();
         var attribute = $(this).text().replace(/ /g, '');
         var labelText = $(this).text() + ':';
+        var isHazard = "";
 
         if(labelText.includes("?")){
             attribute = attribute.replace('?', '');
@@ -247,8 +248,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
         } else if (labelText.includes("Hazard:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
-            var value= "'[value=" + '"' + tdVal + '"' + "]'";
-            $('input[type="radio"][name="isHazard"]').filter(value).prop('checked', true);
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -256,6 +255,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
+            isHazard = tdVal;
 
         } else if (labelText.includes("Type")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
@@ -292,6 +292,9 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
             }
             $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+        } if (tableID == "#misc") {
+            var value= "'[value=" + '"' + isHazard + '"' + "]'";
+            $('input[type="radio"][name="isHazard"]').filter(value).prop('checked', true);
         }
 
         $('#updateModal').modal('show');
