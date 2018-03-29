@@ -119,7 +119,7 @@ else if (isset($_POST['updateFAQEntry'])) {
 else if (isset($_POST['updateWiderAreaMapEntry'])) {
     $areaData = $_POST['updateWiderAreaMapEntry'];
     $service = new WiderAreaMapService();
-    $service -> updateWiderAreaMapEntry($areaData['idWiderAreaMap'], $areaData['URL'], $areaData['Name'],
+    $service -> updateWiderAreaMapEntry($areaData['idWiderAreaMap'], $areaData['Site'], $areaData['Name'],
         $areaData['Description'], $areaData['Longitude'], $areaData['Latitude'],
         $areaData['Address'], $areaData['City'], $areaData['State'], $areaData['ZipCode']);
     unset($_POST['updateWiderAreaMapEntry']);
@@ -141,23 +141,31 @@ else if (isset($_POST['updateEventEntry'])) {
 
 // Create POST requests
 if(isset($_POST['createGraveEntry'])) {
-    $faqData = $_POST['createGraveEntry'];
+    $graveData = $_POST['createGraveEntry'];
+    $service = new GraveService();
     unset($_POST['createGraveEntry']);
 }
 else if(isset($_POST['createNaturalHistoryEntry'])) {
-    $faqData = $_POST['createNaturalHistoryEntry'];
+    $nhData = $_POST['createNaturalHistoryEntry'];
+    $service = new NaturalHistoryService();
     unset($_POST['createNaturalHistoryEntry']);
 }
 else if(isset($_POST['createMiscObjectEntry'])) {
-    $faqData = $_POST['createMiscObjectEntry'];
+    $miscData = $_POST['createMiscObjectEntry'];
+    $service = new MiscObjectService();
     unset($_POST['updateEventEntry']);
 }
 else if(isset($_POST['createTypeFilterEntry'])) {
-    $faqData = $_POST['createTypeFilterEntry'];
+    $filterData = $_POST['createTypeFilterEntry'];
+    $service = new TypeFilterService();
+    $service -> createTypeFilterEntry($filterData['Name'], $filterData['PinDesign'], $filterData['ButtonColor']);
     unset($_POST['createTypeFilterEntry']);
 }
 else if(isset($_POST['createHistoricFilterEntry'])) {
-    $faqData = $_POST['createHistoricFilterEntry'];
+    $filterData = $_POST['createHistoricFilterEntry'];
+    $service = new HistoricFilterService();
+    $service -> createHistoricFilterEntry($filterData['Name'], $filterData['StartDate'], $filterData['Description'],
+        $filterData['EndDate'], $filterData['ButtonColor']);
     unset($_POST['createHistoricFilterEntry']);
 }
 else if(isset($_POST['createFAQEntry'])) {
@@ -167,14 +175,22 @@ else if(isset($_POST['createFAQEntry'])) {
     unset($_POST['createFAQEntry']);
 }
 else if(isset($_POST['createWiderAreaMapEntry'])) {
-    $faqData = $_POST['createWiderAreaMapEntry'];
+    $areaData = $_POST['createWiderAreaMapEntry'];
+    $service = new WiderAreaMapService();
+    $service -> createWiderAreaMapEntry($areaData['Site'], $areaData['Name'], $areaData['Description'],
+        $areaData['Longitude'], $areaData['Latitude'], $areaData['Address'],
+        $areaData['City'], $areaData['State'], $areaData['ZipCode']);
     unset($_POST['createWiderAreaMapEntry']);
 }
 else if(isset($_POST['createContactEntry'])) {
-    $faqData = $_POST['createContactEntry'];
+    $contactData = $_POST['createContactEntry'];
+    $service = new ContactService();
+    $service ->createContactEntry($contactData['Name'], $contactData['Email'],
+        $contactData['Description'], $contactData['Phone'], $contactData['Title']);
     unset($_POST['createContactEntry']);
 }
 else if(isset($_POST['createEventEntry'])) {
-    $faqData = $_POST['createEventEntry'];
+    $eventData = $_POST['createEventEntry'];
+    $service = new EventService();
     unset($_POST['createEventEntry']);
 }
