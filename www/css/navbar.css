@@ -36,6 +36,7 @@ img {
 
 .navbar .navbar-default .navbar-collapse{
 	box-shadow:none !important;
+	border: none !important;
 }
 
 .hvr-underline-reveal {
