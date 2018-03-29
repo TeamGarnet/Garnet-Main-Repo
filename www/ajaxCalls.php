@@ -143,6 +143,6 @@ else if (isset($_POST['updateEventEntry'])) {
 if(isset($_POST['createFAQEntry'])) {
     $faqData = $_POST['createFAQEntry'];
     $service = new FAQService();
-    $service -> createFAQEntry($faqData['#Question'], $faqData['Answer']);
+    $service -> createFAQEntry($faqData['Question'], $faqData['Answer']);
     unset($_POST['createFAQEntry']);
 }
