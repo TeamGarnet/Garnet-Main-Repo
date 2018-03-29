@@ -223,7 +223,7 @@ function deleteEvent(id) {
 function generateUpdateModal(tableID, rowID, idHistoricFilter) {
     // Grab current table header value and corresponding table data value
     var input = '';
-    var isHazard = "No";
+    var isHazard = "";
     $(tableID + ' th').each(function (index) {
         var tdVal = $('#' + rowID + ' td').eq(index).text();
         var attribute = $(this).text().replace(/ /g, '');
@@ -249,6 +249,8 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
         } else if (labelText.includes("Hazard:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
+            isHazard = tdVal;
+            
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -256,7 +258,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
-            isHazard = tdVal;
 
         } else if (labelText.includes("Type")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
