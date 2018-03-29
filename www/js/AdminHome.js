@@ -611,7 +611,7 @@ function createGrave(){
             'ImageLocation': $('#ImageLocation').val(),
             'HistoricFilter': $('#HistoricFilter').val(),
             'idTypeFilter': 1,
-            'idHistoricFilter': 2
+            'idHistoricFilter': null
         };
 
         $.ajax({
