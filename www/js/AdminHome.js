@@ -239,13 +239,15 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="startDate" name="startDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" value="' + time + '" autocomplete="off"/>';
+
         } else if (labelText.includes("Longitude:") || labelText.includes("Latitude:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off"/>';
+                '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
+
         } else if (labelText.includes("Hazard:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
+            $('input:radio[name=isHazard]').filter('[value=' + tdVal + ']').prop('checked', true);
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -253,16 +255,20 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
+
         } else if (labelText.includes("Type")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off" required/>';
+
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
+
         } else if (labelText.includes("Date")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
+
         } else {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
@@ -314,6 +320,10 @@ function generateCreateModal(tableID) {
                 '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
+        } else if (labelText.includes("Hazard:")) {
+            input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
+                '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
+
         } else if (labelText.includes("Date")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="' + attribute + '" name="' + attribute + '"/>';
@@ -644,7 +654,7 @@ function createMisc() {
     $('#createObject').click(function () {
         var formData = {'Name': $('#Name').val(),
             'Description': $('#Description').val(),
-            'IsaHazard': $('#IsaHazard').val(),
+            'IsaHazard': $('input[type="radio"][name="isHazard"]:checked').val(),
             'Longitude': $('#Longitude').val(),
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
