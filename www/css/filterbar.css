@@ -60,3 +60,8 @@
 		left: 6% !important;
     }
 }
+@media only screen and (min-width: 1300px) {
+    #nav-fixed-bottom {
+		bottom: 2% !important;
+    }
+}
