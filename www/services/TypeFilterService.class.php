@@ -29,7 +29,7 @@ class TypeFilterService {
 
         //create TypeFilter Object
         $typeFilterDataClass = new TypeFilterData();
-        $typeFilterDataClass -> createTypeFilter($pinDesign, $type, $buttonColor);
+        $typeFilterDataClass -> createTypeFilter($type, $pinDesign, $buttonColor);
     }
 
     public function updateTypeFilterEntry($idTypeFilter, $type, $pinDesign, $buttonColor) {
