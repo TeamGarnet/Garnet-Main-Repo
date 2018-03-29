@@ -38,6 +38,10 @@ p{
 	margin: auto;
 	padding-bottom: 1%;
 }
+#footerRow{
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 @media only screen and (min-width: 1440px) {
     body {

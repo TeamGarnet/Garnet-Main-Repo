@@ -72,7 +72,7 @@
         </div>
 		
 		<div class="container" id ="footerContainer">
-			<div class="row">
+			<div class="row" id = "footerRow">
 				<div class="col-xs-3.5 col-sm-3.5 col-md-3.5 col-lg-3.5 social" style="float:left;">
 					<a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i class="fab fa-facebook-f"></i></a>
 				</div>
