@@ -306,7 +306,7 @@ function generateCreateModal(tableID) {
                 '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
         }
     });
-    
+
     // Generate inner HTML for form
     $('#createModalBody').html(input);
     if (tableID == "#grave") {
@@ -323,7 +323,7 @@ function generateCreateModal(tableID) {
             $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
         }
 
-        $('#createModalBody').modal('show');
+        $('#createModal').modal('show');
     });
 }
 
