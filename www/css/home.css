@@ -44,3 +44,8 @@ p{
 		background-size:cover;
     }
 }
+@media only screen and (min-height: 1027px) {
+    body {
+		background-size:cover;
+    }
+}
