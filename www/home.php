@@ -100,9 +100,7 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<!-- include_onceall compiled plugins (below), or include_onceindividual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+
 <!--<script src='js/YouTubePopUp.jquery.js'></script>
 <script>jQuery(function () {
         jQuery("a.bla-1").YouTubePopUp();
