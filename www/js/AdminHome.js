@@ -352,13 +352,7 @@ function generateCreateModal(tableID) {
 
     // Show modal
     $(document).ready(function () {
-        // if (tableID == "#grave"){
-        //     if (idHistoricFilter == null) {
-        //         $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
-        //     }
-        //     $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
-        // }
-
+        $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
         $('#createModal').modal('show');
     });
 }
@@ -618,7 +612,7 @@ function createGrave(){
             'ImageLocation': $('#ImageLocation').val(),
             'HistoricFilter': $('#HistoricFilter').val(),
             'idTypeFilter': 1,
-            'idHistoricFilter': null
+            'idHistoricFilter': $('#historicSelect > option :selected').val()
         };
 
         $.ajax({
