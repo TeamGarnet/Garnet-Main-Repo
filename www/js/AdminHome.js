@@ -245,7 +245,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 '" autocomplete="off"/>';
         } else if (labelText.includes("Hazard:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
-                '<div class="radio"><label>No<input type="radio" name="isHazard" value="Yes"/></label></div>';
+                '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -414,7 +414,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
             'idTypeFilter':idTypeFilter,
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
-            'IsaHazard': $('#IsaHazard').val(),
+            'IsaHazard': $('input[type="radio"][name="isHazard"]:checked').val(),
             'Longitude': $('#Longitude').val(),
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
