@@ -77,7 +77,7 @@
 					<a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i class="fab fa-facebook-f"></i></a>
 				</div>
 				<div class="col-xs-8.5 col-sm-8.5 col-md-8.5 col-lg-8.5">
-					<div style="color:#fff; float:right; text-align:right font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association — 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
+					<div style="color:#fff; float:right; text-align:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association — 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
 				</div>
 			</div>
 		</div>
