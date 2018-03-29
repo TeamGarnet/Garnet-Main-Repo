@@ -128,7 +128,7 @@ CREATE TABLE `Grave` (
 
 LOCK TABLES `Grave` WRITE;
 /*!40000 ALTER TABLE `Grave` DISABLE KEYS */;
-INSERT INTO `Grave` VALUES (1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(4,'James','H','McGuckin','1841-00-00','1885-00-00','His service was prestigious',1);
+INSERT INTO `Grave` VALUES (1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(4,'James','H','McGuckin','1841-01-01','1885-01-01','His service was prestigious',1);
 /*!40000 ALTER TABLE `Grave` ENABLE KEYS */;
 UNLOCK TABLES;
 
