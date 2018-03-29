@@ -203,6 +203,6 @@ else if(isset($_POST['createEventEntry'])) {
     $eventData = $_POST['createEventEntry'];
     $service = new EventService();
     $service -> createEventEntry($eventData['Name'], $eventData['Description'], $eventData['StartTime'],
-        $eventData['EndTime'], 3);
+        $eventData['EndTime'], $eventData['idWiderAreaMap']);
     unset($_POST['createEventEntry']);
 }

@@ -611,7 +611,7 @@ function createGrave(){
             'ImageLocation': $('#ImageLocation').val(),
             'HistoricFilter': $('#HistoricFilter').val(),
             'idTypeFilter': 1,
-            'idHistoricFilter': $('#historicSelect > option :selected').val()
+            'idHistoricFilter': 2
         };
 
         $.ajax({
@@ -663,7 +663,7 @@ function createMisc() {
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
             'Type': $('#Type').val(),
-            'idTypeFilter': null};
+            'idTypeFilter': 3};
 
         $.ajax({
             method: "POST",
