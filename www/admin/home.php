@@ -478,7 +478,7 @@ $eventService->deleteEventEntry("5");
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="createModalTitle">Create Object</h3>
+                <h3 class="modal-title" id="createModalTitle"></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelCreate()">
                     <span aria-hidden="true">&times;</span>
                 </button>

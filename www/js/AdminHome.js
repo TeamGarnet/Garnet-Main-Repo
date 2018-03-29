@@ -316,12 +316,12 @@ function generateCreateModal(tableID) {
 
     // Show modal
     $(document).ready(function () {
-        if (tableID == "#grave"){
-            if (idHistoricFilter == null) {
-                $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
-            }
-            $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
-        }
+        // if (tableID == "#grave"){
+        //     if (idHistoricFilter == null) {
+        //         $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
+        //     }
+        //     $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+        // }
 
         $('#createModal').modal('show');
     });
@@ -566,18 +566,89 @@ function cancelCreate() {
 }
 
 function createGrave(){
+    $('#createModalTitle').text('Create Grave');
     generateCreateModal('#grave');
+
+    $('#createObject').click(function () {
+        var formData = {'FirstName': $('#FirstName').val(),
+            'MiddleName':$('#MiddleName').val(),
+            'LastName':$('#LastName').val(),
+            'BirthDate': $('#BirthDate').val(),
+            'DeathDate': $('#DeathDate').val(),
+            'Description': $('#Description').val(),
+            'Longitude': $('#Longitude').val(),
+            'Latitude': $('#Latitude').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val(),
+            'HistoricFilter': $('#HistoricFilter').val(),
+            'idTypeFilter': 1,
+            'idHistoricFilter': null
+        };
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createGraveEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createNH() {
+    $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
+
+    $('#createObject').click(function () {
+        var formData = {'CommonName': $('#CommonName').val(),
+            'ScientificName': $('#ScientificName').val(),
+            'Description': $('#Description').val(),
+            'Longitude': parseFloat($('#Longitude').val()),
+            'Latitude': parseFloat($('#Latitude').val()),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val(),
+            'idTypeFilter': 2};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createNaturalHistoryEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createMisc() {
+    $('#createModalTitle').text('Create Miscellaneous');
     generateCreateModal('#misc');
+
+    $('#createObject').click(function () {
+        var formData = {'Name': $('#Name').val(),
+            'Description': $('#Description').val(),
+            'IsaHazard': $('#IsaHazard').val(),
+            'Longitude': $('#Longitude').val(),
+            'Latitude': $('#Latitude').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val(),
+            'Type': $('#Type').val(),
+            'idTypeFilter': null};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createMiscObjectEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
 
 function createTypeFilter() {
+    $('#createModalTitle').text('Create Type Filter');
     generateCreateModal('#type');
 
     $('#createObject').click(function () {
@@ -588,7 +659,7 @@ function createTypeFilter() {
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createHistoricFilterEntry: formData}
+            data: { createTypeFilterEntry: formData}
         }).done(function() {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
@@ -597,6 +668,7 @@ function createTypeFilter() {
 }
 
 function createHistoricFilter() {
+    $('#createModalTitle').text('Create Historic Filter');
     generateCreateModal('#historic');
 
     $('#createObject').click(function () {
@@ -618,6 +690,7 @@ function createHistoricFilter() {
 }
 
 function createFAQ() {
+    $('#createModalTitle').text('Create FAQ');
     generateCreateModal('#faq');
 
     $('#createObject').click(function () {
@@ -636,6 +709,7 @@ function createFAQ() {
 }
 
 function createWiderLocation() {
+    $('#createModalTitle').text('Create Wider Area Location');
     generateCreateModal('#widerLocation');
 
     $('#createObject').click(function () {
@@ -662,6 +736,7 @@ function createWiderLocation() {
 }
 
 function createContact() {
+    $('#createModalTitle').text('Create Contact');
     generateCreateModal('#contact');
 
     $('#createObject').click(function () {
@@ -680,9 +755,27 @@ function createContact() {
             $('#createModalBody').empty();
         });
     });
-
 }
 
 function createEvent() {
+    $('#createModalTitle').text('Create Event');
     generateCreateModal('#event');
+
+    $('#createObject').click(function () {
+        var formData = {'Name': $('#Name').val(),
+            'Location': $('#Location').val(),
+            'Description': $('#Description').val(),
+            'StartTime': $('#StartTime').val(),
+            'EndTime': $('#EndTime').val(),
+            'idWiderAreaMap': null};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createEventEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }
