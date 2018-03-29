@@ -1,8 +1,3 @@
-function cancelChanges() {
-    $('#updateModal').modal('hide');
-    $('#updateModalBody').empty();
-}
-
 function deleteGrave(id) {
     $(document).ready(function() {
         $('#deleteModal').modal('show');
@@ -225,17 +220,11 @@ function deleteEvent(id) {
     });
 }
 
-function generateForm(tableID, rowID, idHistoricFilter, action) {
-    action = action || 'update';
-    if(action !== 'update' || action!== 'create') {
-        throw new Error('Action should either be "update" or "create"');
-    }
+function generateForm(tableID, rowID, idHistoricFilter) {
     // Grab current table header value and corresponding table data value
     var input = '';
-    var tdVal = '';
     $(tableID + ' th').each(function (index) {
-        if(action === 'update')
-            tdVal = $('#' + rowID + ' td').eq(index).text();
+        var tdVal = $('#' + rowID + ' td').eq(index).text();
         var attribute = $(this).text().replace(/ /g, '');
         var labelText = $(this).text() + ':';
 
@@ -267,32 +256,25 @@ function generateForm(tableID, rowID, idHistoricFilter, action) {
         }
     });
 
-    if(action === 'update')
-    {
-        // Generate inner HTML for form
-        $('#updateModalBody').html(input);
-        if (tableID == "#grave") {
-            $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
-            $(".historicSelect.currentFilter").removeClass("invisible");
+    // Generate inner HTML for form
+    $('#updateModalBody').html(input);
+    if (tableID == "#grave") {
+        $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
+        $(".historicSelect.currentFilter").removeClass("invisible");
+    }
+
+
+    // Show modal
+    $(document).ready(function () {
+        if (tableID == "#grave"){
+            if (idHistoricFilter == null) {
+                $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
+            }
+            $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
         }
 
-        // Show modal
-        $(document).ready(function () {
-            if (tableID == "#grave"){
-                if (idHistoricFilter == null) {
-                    $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
-                }
-                $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
-            }
-
-            $('#updateModal').modal('show');
-        });
-    }
-    else if(action === 'create')
-    {
-        $('#createModalBody').html(input);
-        $('#createModal').modal('show');
-    }
+        $('#updateModal').modal('show');
+    });
 }
 
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
@@ -523,6 +505,7 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
     });
 }
 
-function createEvent() {
-    generateForm('#event','','','create');
+function cancelChanges() {
+    $('#updateModal').modal('hide');
+    $('#updateModalBody').empty();
 }
