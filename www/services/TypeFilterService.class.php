@@ -15,7 +15,7 @@ class TypeFilterService {
         $allTypeFilterData = array();
 
         foreach ($allTypeFilterDataObjects as $typeFilterArray) {
-            $typeFilterObject = new TypeFilter($typeFilterArray['idTypeFilter'], $typeFilterArray['type'],$typeFilterArray['pinDesign'], $typeFilterArray['buttonColor']);
+            $typeFilterObject = new TypeFilter($typeFilterArray['idTypeFilter'], stripcslashes($typeFilterArray['type']),$typeFilterArray['pinDesign'], $typeFilterArray['buttonColor']);
 
             array_push($allTypeFilterData, $typeFilterObject);
         }
@@ -29,7 +29,7 @@ class TypeFilterService {
 
         //create TypeFilter Object
         $typeFilterDataClass = new TypeFilterData();
-        $typeFilterDataClass -> createTypeFilter($pinDesign, $type, $buttonColor);
+        $typeFilterDataClass -> createTypeFilter($type, $pinDesign, $buttonColor);
     }
 
     public function updateTypeFilterEntry($idTypeFilter, $type, $pinDesign, $buttonColor) {

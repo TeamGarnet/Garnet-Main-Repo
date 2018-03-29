@@ -29,7 +29,7 @@ class TypeFilterData {
         return null;
     }
 
-    public function createTypeFilter($pinDesign, $type, $buttonColor) {
+    public function createTypeFilter($type, $pinDesign, $buttonColor) {
         try {
             //global $createTypeFilterQuery;
             $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (:pinDesign, :type, :buttonColor)");

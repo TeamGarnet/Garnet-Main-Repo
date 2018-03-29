@@ -12,7 +12,7 @@ class FAQService {
         $allFAQData = array();
 
         foreach ($allFAQDataObjects as $fAQArray) {
-            $fAQObject = new FAQ($fAQArray['idFAQ'], $fAQArray['question'], $fAQArray['answer']);
+            $fAQObject = new FAQ($fAQArray['idFAQ'], stripcslashes($fAQArray['question']), stripcslashes($fAQArray['answer']));
 
             array_push($allFAQData, $fAQObject);
         }

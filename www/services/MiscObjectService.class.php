@@ -15,8 +15,8 @@ class MiscObjectService extends TrackableObjectService {
         $allMiscObject = array();
 
         foreach ($allMiscObjectDataObjects as $miscObjectArray) {
-            $miscObject = new MiscObject($miscObjectArray['idMisc'], $miscObjectArray['name'],$miscObjectArray['description'], $miscObjectArray['isHazard'],
-                $miscObjectArray['idTrackableObject'], $miscObjectArray['longitude'], $miscObjectArray['latitude'], $miscObjectArray['hint'], $miscObjectArray['imageDescription'], $miscObjectArray['imageLocation'], $miscObjectArray['idTypeFilter'], $miscObjectArray['type']);
+            $miscObject = new MiscObject($miscObjectArray['idMisc'], stripcslashes($miscObjectArray['name']),stripcslashes($miscObjectArray['description']), $miscObjectArray['isHazard'],
+                $miscObjectArray['idTrackableObject'], $miscObjectArray['longitude'], $miscObjectArray['latitude'], $miscObjectArray['hint'], stripcslashes($miscObjectArray['imageDescription']), $miscObjectArray['imageLocation'], $miscObjectArray['idTypeFilter'], stripcslashes($miscObjectArray['type']));
 
             array_push($allMiscObject, $miscObject);
         }

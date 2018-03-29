@@ -15,8 +15,8 @@ class GraveService extends TrackableObjectService {
         $allGraveObjects = array();
 
         foreach ($allGraveDataObjects as $graveArray) {
-            $graveObject = new Grave($graveArray['idGrave'], $graveArray['firstName'], $graveArray['middleName'], $graveArray['lastName'], $graveArray['birth'], $graveArray['death'], $graveArray['description'], $graveArray['idHistoricFilter'], $graveArray['historicFilterName'],
-                $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], $graveArray['hint'], $graveArray['imageDescription'], $graveArray['imageLocation'], $graveArray['idTypeFilter'], $graveArray['type']);
+            $graveObject = new Grave($graveArray['idGrave'], $graveArray['firstName'], $graveArray['middleName'], $graveArray['lastName'], $graveArray['birth'], $graveArray['death'], stripcslashes($graveArray['description']), $graveArray['idHistoricFilter'], stripcslashes($graveArray['historicFilterName']),
+                $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], $graveArray['hint'], stripcslashes($graveArray['imageDescription']), $graveArray['imageLocation'], $graveArray['idTypeFilter'], stripcslashes($graveArray['type']));
 
             array_push($allGraveObjects, $graveObject);
         }
