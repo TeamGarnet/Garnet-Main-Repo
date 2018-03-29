@@ -30,7 +30,6 @@ $filterBar = $mapData -> generateFilterBar();
     <link href="css/thirdParty/YouTubePopUp.css" rel="stylesheet">
     <link href="css/thirdParty/imagehover.css" rel="stylesheet">
     <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
-	<link href="css/thirdParty/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
