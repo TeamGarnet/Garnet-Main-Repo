@@ -9,6 +9,9 @@ body {
 #explore{
 	padding-top: 2% !important;
 }
+.top_btn{
+	padding:0;
+}
 h4{
 	font-family: Proza Libre !important;
 }
