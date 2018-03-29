@@ -220,7 +220,7 @@ function deleteEvent(id) {
     });
 }
 
-function generateForm(tableID, rowID, idHistoricFilter) {
+function generateUpdateModal(tableID, rowID, idHistoricFilter) {
     // Grab current table header value and corresponding table data value
     var input = '';
     $(tableID + ' th').each(function (index) {
@@ -277,8 +277,58 @@ function generateForm(tableID, rowID, idHistoricFilter) {
     });
 }
 
+function generateCreateModal(tableID) {
+    var input = '';
+    $(tableID + ' th').each(function (index) {
+        var attribute = $(this).text().replace(/ /g, '');
+        var labelText = $(this).text() + ':';
+
+        if(labelText.includes("?")){
+            attribute = attribute.replace('?', '');
+            labelText = labelText.replace('?', '');
+        }
+        if (labelText == "Start Time"){
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+        } else if (labelText == "End Time") {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+        } else if (labelText.includes("Type")) {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+        } else if (labelText == "Historic Filter:") {
+            input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
+        } else if (labelText.includes("Date")) {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="date" id="' + attribute + '" name="' + attribute + '"/>';
+        } else {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+        }
+    });
+    
+    // Generate inner HTML for form
+    $('#createModalBody').html(input);
+    if (tableID == "#grave") {
+        $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
+        $(".historicSelect.currentFilter").removeClass("invisible");
+    }
+
+    // Show modal
+    $(document).ready(function () {
+        if (tableID == "#grave"){
+            if (idHistoricFilter == null) {
+                $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
+            }
+            $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+        }
+
+        $('#createModalBody').modal('show');
+    });
+}
+
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
-    generateForm('#grave', rowID, idHistoricFilter);
+    generateUpdateModal('#grave', rowID, idHistoricFilter);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -311,7 +361,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
 }
 
 function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
-    generateForm('#naturalHistory', rowID);
+    generateUpdateModal('#naturalHistory', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -339,7 +389,7 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
 }
 
 function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
-    generateForm('#misc', rowID);
+    generateUpdateModal('#misc', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -367,7 +417,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
 }
 
 function updateType(rowID, idTypeFilter) {
-    generateForm('#type', rowID);
+    generateUpdateModal('#type', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -388,7 +438,7 @@ function updateType(rowID, idTypeFilter) {
 }
 
 function updateHistoricFilter(rowID, idHistoricFilter) {
-    generateForm('#historic', rowID);
+    generateUpdateModal('#historic', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -411,7 +461,7 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
 }
 
 function updateFAQ(rowID, idFAQ) {
-    generateForm('#faq', rowID);
+    generateUpdateModal('#faq', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -431,7 +481,7 @@ function updateFAQ(rowID, idFAQ) {
 }
 
 function updateLocation(rowID, idWiderAreaMap) {
-    generateForm('#widerLocation', rowID);
+    generateUpdateModal('#widerLocation', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -459,7 +509,7 @@ function updateLocation(rowID, idWiderAreaMap) {
 }
 
 function updateContact(rowID, idContact) {
-    generateForm('#contact', rowID);
+    generateUpdateModal('#contact', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -482,7 +532,7 @@ function updateContact(rowID, idContact) {
 }
 
 function updateEvent(rowID, idEvent, idWiderAreaMap) {
-    generateForm('#event', rowID);
+    generateUpdateModal('#event', rowID);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -508,4 +558,27 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
 function cancelChanges() {
     $('#updateModal').modal('hide');
     $('#updateModalBody').empty();
+}
+
+function cancelCreate() {
+    $('#createModal').modal('hide');
+    $('#createModalBody').empty();
+}
+
+function createFAQ() {
+    generateCreateModal('#faq');
+
+    $('#createObject').click(function () {
+        var formData = {'Question': $('#Question').val(),
+            'Answer': $('#Answer').val()};
+
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: { createFAQEntry: formData}
+        }).done(function() {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+        });
+    });
 }

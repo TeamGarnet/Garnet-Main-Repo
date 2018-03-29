@@ -170,7 +170,7 @@ $eventService->deleteEventEntry("5");
                         <a class="dropdown-item" href="#">Micellaneous</a>
                         <a class="dropdown-item" href="#">Type Filter</a>
                         <a class="dropdown-item" href="#">Historic Filter</a>
-                        <a class="dropdown-item" href="#">FAQ</a>
+                        <a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a>
                         <a class="dropdown-item" href="#">Wider Area Location</a>
                         <a class="dropdown-item" href="#">Contact</a>
                         <a class="dropdown-item" href="#">Event</a>
@@ -473,6 +473,24 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 
+<!-- Create Object Modal -->
+<div class="modal createModal" id="createModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="createModalTitle">Create Object</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelCreate()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="createModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="createObject">Create</button>
+                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelCreate()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 
