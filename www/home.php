@@ -9,7 +9,11 @@
     <title>Rapids Cemetery</title>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<<<<<<< HEAD
     
+=======
+    <script src="js/jquery-3.3.1.min.js"></script>
+>>>>>>> parent of 8bd3acc... y tho
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
