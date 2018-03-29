@@ -14,7 +14,7 @@ class ContactService {
         $allContactData = array();
 
         foreach ($allContactDataObjects as $contactArray) {
-            $contactObject = new Contact($contactArray['idContact'], $contactArray['name'], $contactArray['email'], $contactArray['description'], $contactArray['phone'], $contactArray['title']);
+            $contactObject = new Contact($contactArray['idContact'], $contactArray['name'], $contactArray['email'], stripcslashes($contactArray['description']), $contactArray['phone'], $contactArray['title']);
 
             array_push($allContactData, $contactObject);
         }

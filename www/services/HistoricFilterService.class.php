@@ -15,7 +15,7 @@ class HistoricFilterService {
         $allHistoricFilterData = array();
 
         foreach ($allHistoricFilterDataObjects as $historicFilterArray) {
-            $historicFilterObject = new HistoricFilter($historicFilterArray['idHistoricFilter'], $historicFilterArray['historicFilterName'], $historicFilterArray['dateStart'], $historicFilterArray['dateEnd'], $historicFilterArray['description'], $historicFilterArray['buttonColor']);
+            $historicFilterObject = new HistoricFilter($historicFilterArray['idHistoricFilter'], stripcslashes($historicFilterArray['historicFilterName']), $historicFilterArray['dateStart'], $historicFilterArray['dateEnd'], stripcslashes($historicFilterArray['description']), $historicFilterArray['buttonColor']);
 
             array_push($allHistoricFilterData, $historicFilterObject);
         }

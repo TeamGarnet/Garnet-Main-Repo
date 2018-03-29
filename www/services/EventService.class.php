@@ -14,7 +14,7 @@ class EventService {
         $allEventData = array();
 
         foreach ($allEventDataObjects as $eventArray) {
-            $eventObject = new Event($eventArray['idEvent'], $eventArray['name'], $eventArray['description'], $eventArray['startTime'], $eventArray['endTime'], $eventArray['idWiderAreaMap'], $eventArray['locationName']);
+            $eventObject = new Event($eventArray['idEvent'], stripcslashes($eventArray['name']), $eventArray['description'], $eventArray['startTime'], $eventArray['endTime'], $eventArray['idWiderAreaMap'], stripcslashes($eventArray['locationName']));
 
             array_push($allEventData, $eventObject);
         }
