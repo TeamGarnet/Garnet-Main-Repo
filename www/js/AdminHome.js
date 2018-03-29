@@ -233,13 +233,21 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             labelText = labelText.replace('?', '');
         }
         if (labelText == "Start Time"){
+            var dateTimeArray = attribute.split(" ");
+            var time = dateTimeArray[1];
+            var date = dateTimeArray[0];
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal + '" autocomplete="off"/>';
+                '<input type="date" id="startDate" name="startDate" value="' + date + '" autocomplete="off"/>' +
+                '<input type="time" id="startTime" name="startTime" value="' + time + '" autocomplete="off"/>';
         } else if (labelText.includes("Longitude:") || labelText.includes("Latitude:")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
-        }else if (labelText == "End Time") {
+        } else if (labelText.includes("Hazard:")) {
+            input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                '<input type="number" step="0.000001" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
+                '" autocomplete="off"/>';
+        } else if (labelText == "End Time") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
