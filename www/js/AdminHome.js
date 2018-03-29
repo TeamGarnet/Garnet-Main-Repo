@@ -294,8 +294,12 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
             }
             $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
         } if (tableID == "#misc") {
-            var value= "'[value=" + '"' + isHazard + '"' + "]'";
-            $('input[type="radio"][name="isHazard"]').filter(value).prop('checked', true);
+            if (isHazard == "No") {
+                $('input[type="radio"][name="isHazard"]').filter('[value="No"]').prop('checked', true);
+            } else {
+                $('input[type="radio"][name="isHazard"]').filter('[value="Yes"]').prop('checked', true);
+            }
+
         }
 
         $('#updateModal').modal('show');
