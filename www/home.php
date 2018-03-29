@@ -69,8 +69,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
+		
 		<div class="container" id ="footerContainer">
 			<div class="row">
 				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="float:left;">
@@ -79,6 +79,7 @@
 				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 					<div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association —— 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
 				</div>
+			</div>
 		</div>
         <!--<div class="container" id ="footerContainer">
 
@@ -91,8 +92,6 @@
                         --- 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
             </footer>
         </div>-->
-    </div>
-    </div>
     </div>
 
 </section>
