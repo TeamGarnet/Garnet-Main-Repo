@@ -24,7 +24,9 @@
 #myTab > li:active > a{
 	background-color: transparent !important;
 }
-.active:active{
+#myTab > li.active > a,
+#myTab > li.active > a:hover,
+#myTab > li.active > a:focus{
 	background-color: transparent !important;
 }
 #myTab{
