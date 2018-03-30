@@ -11,6 +11,9 @@
 #navBarContainer{
 	width: 100%;
 }
+.links > a{
+	padding-left: 4%;
+}
 #myTab > li > a{
 	color: #ffffff;
 	border: none !important;
