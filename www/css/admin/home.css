@@ -14,8 +14,8 @@
 #nav-right{
 	margin-top: 2%;
 }
-#nav-right > li{
-	
+#nav-right > li > a:hover{
+	background-color: transparent;
 }
 #myTab > li > a{
 	color: #ffffff;
