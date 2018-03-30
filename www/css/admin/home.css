@@ -24,6 +24,9 @@
 #myTab > li:active > a{
 	background-color: transparent !important;
 }
+.active{
+	background-color: transparent !important;
+}
 #myTab{
 	background-color: #6b7749;
 }
