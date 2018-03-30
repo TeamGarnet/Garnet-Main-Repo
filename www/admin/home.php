@@ -116,11 +116,9 @@ $eventService->deleteEventEntry("5");
             <img src="../images/Logo.png"/>
         </div>
 		
-			
-
         <div class="links col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="logout.php" class="logout">Logout</a>
-			<a href="../home.php" class="logout">Home</a>
+			<a href="../home.php" class="logout">Main Site</a>
         </div>
     </div>
 </div>
