@@ -112,11 +112,11 @@ $eventService->deleteEventEntry("5");
 <div class="container">
     <div class="row">
 
-        <div class="logo col-md-4 col-sm-4 col-xs-4">
+        <div class="logo col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <img src="../images/Logo.png"/>
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <a href="logout.php" class="logout">Logout</a>
         </div>
     </div>
