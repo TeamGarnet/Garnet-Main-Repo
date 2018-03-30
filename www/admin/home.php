@@ -330,7 +330,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="widerLocationDiv">
+                    <div class="tab-pane fade" id="widerLocationDiv">
                         <div class="content_accordion">
                             <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
@@ -358,7 +358,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="contactDiv">
+                    <div class="tab-pane fade" id="contactDiv">
                         <div class="content_accordion">
                             <table id="contact" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
@@ -382,7 +382,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="eventDiv">
+                    <div class="tab-pane fade" id="eventDiv">
                         <div class="content_accordion">
                             <table id="event" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
