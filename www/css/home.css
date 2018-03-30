@@ -58,3 +58,8 @@ p{
 		background-size:cover;
     }
 }
+@media only screen and (max-width: 700px) {
+    .topvid_text{
+		margin-top: 2% !important;
+	}
+}
