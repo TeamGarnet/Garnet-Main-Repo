@@ -29,7 +29,7 @@
 	color: #000000 !important;
 }
 #myTab > li.active > a{
-	
+	color: #000000;
 }
 #myTab > li.active > a:hover{
 	background-color: transparent !important;
