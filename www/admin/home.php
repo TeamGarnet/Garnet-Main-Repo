@@ -112,14 +112,14 @@ $eventService->deleteEventEntry("5");
 <div class="container" id = "navBarContainer">
     <div class="row" id = "navBar">
 
-        <div class="logo col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="logo col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <img src="../images/Logo.png"/>
         </div>
 		
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<a href="../home.php" class="logout">Home</a>
-		</div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <a href="logout.php" class="logout">Logout</a>
         </div>
     </div>
