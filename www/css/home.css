@@ -49,6 +49,9 @@ p{
 .address{
 	padding-left:0 !important;
 	padding-right:0 !important;
+	color:white !important;
+	text-align:right !important;
+	margin-top: 0 !important;
 }
 .social{
 	padding-left:0 !important;
