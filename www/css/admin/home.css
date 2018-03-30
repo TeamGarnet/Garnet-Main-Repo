@@ -13,14 +13,20 @@
 	border: none !important;
 }
 #myTab > li > a:active{
-	background-color: transparent !important;
+	border: 1px solid #000000 !important;
+	border-bottom-color: transparent !important;
+	background-color: #ffffff !important;
+	color: #000000 !important;
 }
 #myTab > li > a:hover{
 	background-color: transparent !important;
 	color: #000000 !important;
 }
 #myTab > li > a:focus{
-	background-color: transparent !important;
+	border: 1px solid #000000 !important;
+	border-bottom-color: transparent !important;
+	background-color: #ffffff !important;
+	color: #000000 !important;
 }
 #myTab > li.active > a{
 	
