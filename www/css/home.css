@@ -70,6 +70,11 @@ p{
 		background-size:cover;
     }
 }
+@media only screen and (max-height: 723px) {
+    #top_medalsection{
+		height: 87% !important;
+	}
+}
 @media only screen and (max-width: 700px) {
     .topvid_text{
 		margin-top: 2% !important;
