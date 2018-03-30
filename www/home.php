@@ -58,8 +58,7 @@
                     <div class="topvid_text">
                         <div class="head1" style="float:right; text-align:right; color: white;">
                             <h5 style="font-weight:bold;">RAPIDS CEMETERY ONLINE EXPERIENCE</h5>
-                            <h1 style="font-size:57px; font-family: CormorantGaramond;">Explore a Forgotten
-                                Rochester</h1>
+                            <h1 style="font-size:57px; font-family: CormorantGaramond;">Explore a Forgotten Rochester</h1>
                             <p style=" font-family: ProzaLibre;">Unlock the history of the little known Rochester
                                 cemetery in this <br> interactive history experience</p>
                             <div class="top_btn">
