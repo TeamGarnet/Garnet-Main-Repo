@@ -128,14 +128,14 @@ $eventService->deleteEventEntry("5");
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
         <?php
-        echo $historicFilterService->getAllFiltersForSelect();
+            echo $typeFilterService->getAllFiltersForSelect();
         ?>
     </select>
 </div>
 <div class="container invisible">
     <select class="form-control form-control-sm historicSelect" id="historicSelect">
         <?php
-            echo $typeFilterService->getAllFiltersForSelect();
+            echo $historicFilterService->getAllFiltersForSelect();
         ?>
     </select>
 </div>
