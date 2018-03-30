@@ -38,6 +38,9 @@
 #myTab{
 	background-color: #6b7749;
 }
+#tabBar{
+	width: 100%;
+}
 .logo{
     padding-top:20px;
 }

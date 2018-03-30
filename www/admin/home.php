@@ -138,7 +138,7 @@ $eventService->deleteEventEntry("5");
 </div>
 
 
-<div class="container">
+<div class="container" id="tabBar">
     <div class="container1">
         <div class="row">
             <div class="col-lg-12">
