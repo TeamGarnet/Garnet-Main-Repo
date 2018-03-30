@@ -22,6 +22,11 @@ img {
   margin-top: 0 !important;
   opacity: 1 !important;
 }
+@media only screen and (min-height: 723px) {
+    #menu{
+		padding-bottom: 12% !important;
+	}
+}
 #menu a{
 	text-shadow:none !important;
 }
