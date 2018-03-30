@@ -9,7 +9,7 @@
 	margin: 0;
 }
 #mytab a{
-	color: #ffffff;
+	color: #ffffff !important;
 }
 .logo{
     padding-top:20px;
