@@ -259,13 +259,10 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter) {
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
 
-        } else if (labelText.includes("Type")) {
-            input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
-                '" autocomplete="off" required/>';
-
-        } else if (labelText == "Type:") {
-            input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
+        }  else if (labelText.includes("Type")) {
+            if (tableID == "#misc") {
+                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
+            }
 
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
@@ -349,6 +346,10 @@ function generateCreateModal(tableID) {
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
 
+        } else if (labelText.includes("Type")) {
+            if (tableID == "#misc") {
+                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
+            }
         } else if (labelText.includes("Date")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="' + attribute + '" name="' + attribute + '"/>';
