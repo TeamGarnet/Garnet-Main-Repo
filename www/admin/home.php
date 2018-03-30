@@ -109,7 +109,7 @@ $eventService->deleteEventEntry("5");
 </head>
 <body>
 
-<div class="container">
+<div class="container" id = "navBarContainer">
     <div class="row" id = "navBar">
 
         <div class="logo col-xs-4 col-sm-4 col-md-4 col-lg-4">

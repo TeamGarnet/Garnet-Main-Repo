@@ -8,6 +8,9 @@
 	background-color: #6b7749;
 	margin: 0;
 }
+#navBarContainer{
+	width: 100%;
+}
 #myTab > li > a{
 	color: #ffffff;
 	border: none !important;
