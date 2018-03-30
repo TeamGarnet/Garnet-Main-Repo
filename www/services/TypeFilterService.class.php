@@ -49,6 +49,10 @@ class TypeFilterService {
         if (empty($idTypeFilter) || $idTypeFilter == "") {
             return null;
         } else {
+            if ($idTypeFilter == 1 || $idTypeFilter == 2 || $idTypeFilter == 3) {
+                return "Grave, Natural History, and Miscellaneous are default types that cannot be deleted.";
+            }
+
             $trackableObjectDataClass = new TrackableObjectData();
             $typeFilterUseAmount = $trackableObjectDataClass -> checkForInUseTypeFilters($idTypeFilter);
 
