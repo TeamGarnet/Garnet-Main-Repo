@@ -86,7 +86,7 @@ class TypeFilterService {
     public function getAllFiltersForSelect() {
         $filters = $this->getAllTypeFilterEntries();
         $customFilters = array_filter($filters, function($filter){
-            if ($filter -> getType != "Grave" && $filter -> getType != "Natural History"){
+            if ($filter -> getType() != "Grave" && $filter -> getType() != "Natural History"){
                 return true;
             } else {
                 return false;
