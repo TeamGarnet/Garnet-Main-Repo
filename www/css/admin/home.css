@@ -10,6 +10,13 @@
 }
 #myTab > li > a{
 	color: #ffffff;
+	border: none !important;
+}
+#myTab > li > a:active{
+	background-color: transparent !important;
+}
+#myTab > li > a:hover{
+	background-color: transparent !important;
 }
 #myTab{
 	background-color: #6b7749;
