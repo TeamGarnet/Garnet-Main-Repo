@@ -52,6 +52,7 @@ form label {
 
 form input {
 	border: solid 1px rgba(107, 119, 73, 0.7);
+	text-indent: 3%;
 }
 
 #forgotPassword {

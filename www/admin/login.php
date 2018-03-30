@@ -47,10 +47,10 @@ if (isset($_POST['Login'])) {
 			<form method="post" action="" name="login">
 			
 				<label for="email">Email</label>
-				<input type="text" id="email" name="email" autocomplete="off" placeholder=" Enter email"/>
+				<input type="text" id="email" name="email" autocomplete="off" placeholder="Enter email"/>
 
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" autocomplete="off" placeholder=" Enter password"/>
+				<input type="password" id="password" name="password" autocomplete="off" placeholder="Enter password"/>
 
 				<div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 				
