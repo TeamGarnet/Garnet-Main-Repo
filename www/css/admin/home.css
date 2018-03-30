@@ -39,7 +39,7 @@
 	background-color: #6b7749;
 }
 #tabBar{
-	width: 100%;
+	width: 100% !important;
 }
 .logo{
     padding-top:20px;
