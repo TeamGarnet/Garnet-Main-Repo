@@ -70,7 +70,7 @@ p{
 		background-size:cover;
     }
 }
-@media only screen and (max-height: 723px) {
+@media only screen and (max-height: 650px) {
     #top_medalsection{
 		height: 78% !important;
 	}
