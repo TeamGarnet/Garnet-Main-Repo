@@ -96,7 +96,7 @@ class TypeFilterService {
                 return false;
             }
         });
-        $filterHTML = "<option value=0>No Historic Filter</option>";
+        $filterHTML = "";
         foreach ($customFilters as $customFilter) {
             $filterHTML = $filterHTML . "<option value='"
                 . $customFilter->getIdTypeFilter() . "'>"
