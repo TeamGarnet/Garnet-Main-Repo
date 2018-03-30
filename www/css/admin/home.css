@@ -11,6 +11,9 @@
 #myTab > li > a{
 	color: #ffffff;
 }
+#myTab{
+	background-color: #6b7749;
+}
 .logo{
     padding-top:20px;
 }
