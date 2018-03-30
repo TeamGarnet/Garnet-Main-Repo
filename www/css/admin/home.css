@@ -11,6 +11,12 @@
 #navBarContainer{
 	width: 100%;
 }
+#nav-right{
+	margin-top: 2%;
+}
+#nav-right > li{
+	
+}
 #myTab > li > a{
 	color: #ffffff;
 	border: none !important;
