@@ -58,6 +58,7 @@ p{
 .social{
 	padding-left:0 !important;
 	padding-right:0 !important;
+	font-size: 35px;
 }
 
 @media only screen and (min-width: 1440px) {
