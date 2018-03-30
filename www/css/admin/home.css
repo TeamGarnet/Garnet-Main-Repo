@@ -21,6 +21,7 @@
 #myTab > li > a:hover{
 	background-color: transparent !important;
 	color: #000000 !important;
+	border: none !important;
 }
 #myTab > li > a:focus{
 	border: 1px solid #ffffff !important;
