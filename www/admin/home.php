@@ -110,7 +110,7 @@ $eventService->deleteEventEntry("5");
 <body>
 
 <div class="container">
-    <div class="row">
+    <div class="row" id = "navBar">
 
         <div class="logo col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <img src="../images/Logo.png"/>

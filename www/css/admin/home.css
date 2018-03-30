@@ -4,6 +4,10 @@
     height:100px;
 
 }
+#navBar{
+	background-color: #6b7749;
+	margin: 0;
+}
 .logo{
     padding-top:20px;
 }
