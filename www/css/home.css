@@ -62,4 +62,7 @@ p{
     .topvid_text{
 		margin-top: 2% !important;
 	}
+	h1{
+		text-size: 45px !important;
+	}
 }
