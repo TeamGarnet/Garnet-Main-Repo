@@ -85,5 +85,19 @@ class TypeFilterService {
 
     public function getAllFiltersForSelect() {
         $filters = $this->getAllTypeFilterEntries();
+        $customFilters = array_filter($filters, function($filter){
+            if ($filter -> getType != "Grave" && $filter -> getType != "Natural History"){
+                return true;
+            } else {
+                return false;
+            }
+        });
+        $filterHTML = "<option value=0>No Historic Filter</option>";
+        foreach ($customFilters as $customFilter) {
+            $filterHTML = $filterHTML . "<option value='"
+                . $customFilter->getIdTypeFilter() . "'>"
+                . $customFilter->getType() ."</option>";
+        }
+        return $filterHTML;
     }
 }

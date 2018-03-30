@@ -220,7 +220,7 @@ function deleteEvent(id) {
     });
 }
 
-function generateUpdateModal(tableID, rowID, idHistoricFilter) {
+function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter) {
     // Grab current table header value and corresponding table data value
     var input = '';
     var isHazard = "";
@@ -264,6 +264,9 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off" required/>';
 
+        } else if (labelText == "Type:") {
+            input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
+
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
@@ -284,6 +287,14 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
     if (tableID == "#grave") {
         $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
         $(".historicSelect.currentFilter").removeClass("invisible");
+        $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
+        $(".typeSelect.currentFilter").removeClass("invisible");
+    } if (tableID == "#misc") {
+        $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
+        $(".typeSelect.currentFilter").removeClass("invisible");
+    } if (tableID == "#naturalHistory"){
+        $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
+        $(".typeSelect.currentFilter").removeClass("invisible");
     }
 
 
@@ -294,6 +305,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
             }
             $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
+            $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
         } if (tableID == "#misc") {
             if (isHazard == "No") {
                 $('input[type="radio"][name="isHazard"]').filter('[value="No"]').prop('checked', true);
@@ -301,6 +313,10 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter) {
                 $('input[type="radio"][name="isHazard"]').filter('[value="Yes"]').prop('checked', true);
             }
 
+            $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
+
+        } if (tableID =="#naturalHistory"){
+            $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
         }
 
         $('#updateModal').modal('show');
@@ -326,8 +342,7 @@ function generateCreateModal(tableID) {
                 '<input type="date" id="endDate" name="endDate" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" autocomplete="off"/>';
         } else if (labelText.includes("Type")) {
-            input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                '<input type="text" id="' + attribute + '" name="' + attribute + '"/>';
+            input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
         } else if (labelText.includes("Hazard:")) {
@@ -364,7 +379,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
         var formData = {'idTrackableObject': idTrackableObject,
             'idGrave': idGrave,
             'idHistoricFilter':$(".historicSelect.currentFilter option:selected").val(),
-            'idTypeFilter': idTypeFilter,
+            'idTypeFilter': 1,
             'FirstName': $('#FirstName').val(),
             'MiddleName':$('#MiddleName').val(),
             'LastName':$('#LastName').val(),
@@ -418,21 +433,20 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
 }
 
 function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
-    generateUpdateModal('#misc', rowID);
+    generateUpdateModal('#misc', rowID, idTypeFilter);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
         var formData = {'idTrackableObject': idTrackableObject,
             'idMiscObject': idMiscObject,
-            'idTypeFilter':idTypeFilter,
+            'idTypeFilter':$(".typeSelect.currentFilter option:selected").val(),
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
             'IsaHazard': $('input[type="radio"][name="isHazard"]:checked').val(),
             'Longitude': $('#Longitude').val(),
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
-            'ImageLocation': $('#ImageLocation').val(),
-            'Type': $('#Type').val()};
+            'ImageLocation': $('#ImageLocation').val()};
 
         $.ajax({
             method: "POST",
@@ -609,7 +623,7 @@ function createGrave(){
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'HistoricFilter': $('#HistoricFilter').val(),
+            'HistoricFilter': $(".historicSelect.currentFilter option:selected").val(),
             'idTypeFilter': 1,
             'idHistoricFilter': null
         };
@@ -662,7 +676,7 @@ function createMisc() {
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'Type': $('#Type').val(),
+            'Type': $(".typeSelect.currentFilter option:selected").val(),
             'idTypeFilter': 3};
 
         $.ajax({
