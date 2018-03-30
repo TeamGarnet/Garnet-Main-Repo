@@ -31,7 +31,7 @@
 #myTab > li.active > a:focus{
 	border: 1px solid #000000 !important;
 	border-bottom-color: transparent !important;
-	color: #ffffff !important;
+	background-color: #ffffff !important;
 }
 #myTab{
 	background-color: #6b7749;
