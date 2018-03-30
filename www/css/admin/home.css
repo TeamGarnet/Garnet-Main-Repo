@@ -12,7 +12,8 @@
 	width: 100%;
 }
 .links > a{
-	padding-left: 10%;
+	padding-right: 5%;
+	padding-left: 5%;
 }
 .links > a:hover{
 	text-decoration:none;
