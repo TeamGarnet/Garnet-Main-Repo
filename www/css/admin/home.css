@@ -13,7 +13,7 @@
 	border: none !important;
 }
 #myTab > li > a:active{
-	border: 1px solid #000000 !important;
+	border: 1px solid #ffffff !important;
 	border-bottom-color: transparent !important;
 	background-color: #ffffff !important;
 	color: #000000 !important;
@@ -23,7 +23,7 @@
 	color: #000000 !important;
 }
 #myTab > li > a:focus{
-	border: 1px solid #000000 !important;
+	border: 1px solid #ffffff !important;
 	border-bottom-color: transparent !important;
 	background-color: #ffffff !important;
 	color: #000000 !important;
