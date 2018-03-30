@@ -14,6 +14,10 @@
 .links > a{
 	padding-left: 4%;
 }
+.links > a:hover{
+	padding-left: 4%;
+	text-decoration:none;
+}
 #myTab > li > a{
 	color: #ffffff;
 	border: none !important;
