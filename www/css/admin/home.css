@@ -12,10 +12,9 @@
 	width: 100%;
 }
 .links > a{
-	padding-left: 4%;
+	padding-left: 10%;
 }
 .links > a:hover{
-	padding-left: 4%;
 	text-decoration:none;
 }
 #myTab > li > a{
