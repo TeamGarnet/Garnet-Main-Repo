@@ -18,6 +18,9 @@
 	background-color: transparent;
 	color: #000;
 }
+#nav-right > li{
+	float:right;
+}
 #myTab > li > a{
 	color: #ffffff;
 	border: none !important;
