@@ -11,12 +11,15 @@
 #navBarContainer{
 	width: 100%;
 }
-.links > a{
-	padding-left: 4%;
+#nav-right{
+	margin-top: 2%;
 }
-.links > a:hover{
-	padding-left: 4%;
-	text-decoration:none;
+#nav-right > li > a:hover{
+	background-color: transparent;
+	color: #000;
+}
+#nav-right > li{
+	float:right;
 }
 #myTab > li > a{
 	color: #ffffff;
@@ -42,6 +45,7 @@
 }
 #myTab{
 	background-color: #6b7749;
+	margin-bottom: 1em;
 }
 #tabBar{
 	width: 100% !important;

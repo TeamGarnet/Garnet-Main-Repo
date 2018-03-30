@@ -116,11 +116,11 @@ $eventService->deleteEventEntry("5");
             <img src="../images/Logo.png"/>
         </div>
 		
-			
-
         <div class="links col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="logout.php" class="logout">Logout</a>
-			<a href="../home.php" class="logout">Home</a>
+			<ul class="nav navbar-nav navbar-right" id="nav-right">
+				<li><a href="logout.php" class="logout">Logout</a></li>
+				<li><a href="../home.php" class="logout">Main Site</a></li>
+			</ul>
         </div>
     </div>
 </div>
@@ -330,7 +330,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="widerLocationDiv">
+                    <div class="tab-pane fade" id="widerLocationDiv">
                         <div class="content_accordion">
                             <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
@@ -358,7 +358,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="contactDiv">
+                    <div class="tab-pane fade" id="contactDiv">
                         <div class="content_accordion">
                             <table id="contact" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
@@ -382,7 +382,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade in active" id="eventDiv">
+                    <div class="tab-pane fade" id="eventDiv">
                         <div class="content_accordion">
                             <table id="event" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
