@@ -54,7 +54,7 @@
     <div class="text-vcenter">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="topvid_text">
                         <div class="head1" style="float:right; text-align:right; color: white;">
                             <h5 style="font-weight:bold;">RAPIDS CEMETERY ONLINE EXPERIENCE</h5>
