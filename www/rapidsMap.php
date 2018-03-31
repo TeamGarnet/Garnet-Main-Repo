@@ -108,8 +108,8 @@ $filterBar = $mapData -> generateFilterBar();
         <!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
-			console.log("here");
             navigator.geolocation.getCurrentPosition(function (position) {
+				console.log(position);
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
