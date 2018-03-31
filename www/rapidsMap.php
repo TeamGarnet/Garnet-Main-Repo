@@ -114,7 +114,8 @@ $filterBar = $mapData -> generateFilterBar();
                 };
 				mark = new google.maps.Marker({
 					position: pos,
-					map: map
+					map: map,
+					icon: "images/Pin.png"
 				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -141,7 +142,8 @@ $filterBar = $mapData -> generateFilterBar();
                 };
 				mark = new google.maps.Marker({
 					position: pos,
-					map: map
+					map: map,
+					icon: "images/Pin.png"
 				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
