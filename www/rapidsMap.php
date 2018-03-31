@@ -143,7 +143,8 @@ $filterBar = $mapData -> generateFilterBar();
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
-					icon: "images/Pin.png"
+					icon: "images/Pin.png",
+					title: "You are here"
 				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
