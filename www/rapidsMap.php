@@ -88,8 +88,7 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!-- Javascript -->
 <script type="text/javascript">
-    var map, infoWindow;
-	var mark = new google.maps.Marker;
+    var map, infoWindow, mark;
     var allMarkerObjects = [];
 
     function initMap() {
@@ -106,9 +105,27 @@ $filterBar = $mapData -> generateFilterBar();
         echo $markers
         ?>
 		
+		if (navigator.geolocation) {
+			console.log("initial make of pin");
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+				mark = new google.maps.Marker({
+					position: pos,
+					map: map
+				});
+            }, function () {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+		
 		//its in ms so 1000ms/second
 		var myVar = setInterval(updateUserLocation, 5000);
-        
     }
 	
 	function updateUserLocation(){
