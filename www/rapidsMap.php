@@ -115,6 +115,10 @@ $filterBar = $mapData -> generateFilterBar();
                 };
 				console.log(pos["lat"]);
 				console.log(pos["lng"]);
+				infoWindow.setPosition(pos);
+				infoWindow.setContent('Location found.');
+				infoWindow.open(map);
+				map.setCenter(pos);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
