@@ -125,7 +125,7 @@ class TrackableObjectCard {
     }
 
     public function getModalContainerEnd(){
-        return '</div>
+        return '</div style="z-index: 10000">
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Map</button>
             </div>
