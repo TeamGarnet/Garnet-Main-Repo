@@ -115,8 +115,6 @@ $filterBar = $mapData -> generateFilterBar();
                 };
 				console.log(pos["lat"]);
 				console.log(pos["lng"]);
-				var mark = new GLatLng(pos["lat"],pos["lng"]);
-				map.addOverlay(new GMarker(mark, {draggable: false, title: "You are here"}));
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
