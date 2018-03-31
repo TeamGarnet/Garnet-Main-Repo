@@ -88,7 +88,8 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!-- Javascript -->
 <script type="text/javascript">
-    var map, infoWindow, mark;
+    var map, infoWindow;
+	var mark = new google.maps.Marker;
     var allMarkerObjects = [];
 
     function initMap() {
