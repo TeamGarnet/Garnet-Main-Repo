@@ -113,8 +113,8 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-            }, function () {
 				console.log(pos["lat"]);
+            }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
