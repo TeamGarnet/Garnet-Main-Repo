@@ -267,7 +267,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
-        } else if (labelText.includes("Location") && tableID == "#event") {
+        } else if (labelText.includes("Location:") && tableID == "#event") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="locationFilter" id="locationFilter"></div>';
 
         } else if (labelText.includes("Date")) {
