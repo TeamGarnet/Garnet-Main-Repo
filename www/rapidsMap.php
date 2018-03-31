@@ -117,6 +117,7 @@ $filterBar = $mapData -> generateFilterBar();
 					map: map,
 					icon: "images/Pin.png"
 				});
+				var myVar = setInterval(updateUserLocation, 5000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -126,7 +127,7 @@ $filterBar = $mapData -> generateFilterBar();
         }
 		
 		//its in ms so 1000ms/second
-		var myVar = setInterval(updateUserLocation, 5000);
+		
     }
 	
 	function updateUserLocation(){
