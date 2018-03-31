@@ -23,6 +23,11 @@
 	color: #000;
 	border-radius: 4px;
 }
+#nav-right > li > a:focus{
+	background-color: white;
+	color: #000;
+	border-radius: 4px;
+}
 #nav-right > li{
 	float:right;
 }
