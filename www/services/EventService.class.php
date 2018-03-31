@@ -77,4 +77,15 @@ class EventService {
         }
         return $html;
     }
+
+    public function getAllFiltersForSelect() {
+        $filters = $this->getAllEventEntries();
+        $filterHTML = "";
+        foreach ($filters as $filter) {
+            $filterHTML = $filterHTML . "<option value='"
+                . $filter->getIdWiderAreaMap() . "'>"
+                . $filter->getLocationName() ."</option>";
+        }
+        return $filterHTML;
+    }
 }

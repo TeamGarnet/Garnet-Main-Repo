@@ -125,6 +125,7 @@ $eventService->deleteEventEntry("5");
     </div>
 </div>
 <!-- Filters Selects-->
+
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
         <?php
@@ -139,7 +140,13 @@ $eventService->deleteEventEntry("5");
         ?>
     </select>
 </div>
-
+<div class="container invisible">
+    <select class="form-control form-control-sm locationSelect" id="locationSelect">
+        <?php
+        echo $eventService->getAllFiltersForSelect();
+        ?>
+    </select>
+</div>
 
 <div class="container" id="tabBar">
     <div class="container1">
