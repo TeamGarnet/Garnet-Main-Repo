@@ -18,6 +18,10 @@
 	background-color: transparent;
 	color: #000;
 }
+#nav-right > li > a:active{
+	background-color: white;
+	color: #000;
+}
 #nav-right > li{
 	float:right;
 }
