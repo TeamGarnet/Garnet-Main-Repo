@@ -172,7 +172,7 @@ $filterBar = $mapData -> generateFilterBar();
 
         $(".popupModal").html('');
         $(".popupModal").append(data);
-        $(".popupModal").show("fast");
+        $("#exampleModalLong").show("fast");
 
         //window.scroll(0,document.body.scrollHeight);
     }
