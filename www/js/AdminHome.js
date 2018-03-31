@@ -261,7 +261,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
 
         }  else if (labelText.includes("Type")) {
             if (tableID == "#misc") {
-                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div>';
+                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div><br>';
             }
 
         } else if (labelText == "Historic Filter:") {
