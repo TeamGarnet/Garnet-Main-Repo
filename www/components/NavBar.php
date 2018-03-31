@@ -5,6 +5,7 @@ echo '
   <title>Rapid Nav</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
@@ -12,10 +13,11 @@ echo '
   
 </head>
 <body>
-<div id="menu" class="navbar navbar-default" role="navigation" style="background-color: #6b7749">
+<div id="menu" class="navbar navbar-default" role="navigation">
     <div class="container" >
-      <div class="navbar-header"><a class="navbar-brand" href="#"><svg width="160" height="52" viewBox="0 0 160 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <div class="navbar-header"><a class="navbar-brand" href="home.php" style="padding-bottom:60px;"><svg width="160" height="67" viewBox="0 0 160 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Logo</title>
+<desc>Created using Figma</desc>
 <g id="Canvas" transform="translate(512 479)">
 <g id="Logo">
 <g id="Rapids">
@@ -59,21 +61,17 @@ echo '
             </button>
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">map</a>
+            <ul class="nav navbar-nav navbar-right" id="nav-right">
+                <li><a style="color:white;" href="trails.php" class="hvr-underline-reveal">historic trails</a>
                 </li>
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">historic trails</a>
+                <li><a style="color:white;" href="contact.php" class="hvr-underline-reveal">contact</a>
                 </li>
-                <li><a style="color:white;" href="#" class="hvr-underline-reveal">contact</a>
+                <li><a style="color:white;" href="faq.php" class="hvr-underline-reveal">faq</a>
                 </li>
-              <li><a style="color:white;" href="#" class="hvr-underline-reveal">faq</a>
-                </li>
-                <li><button type="button" class="btn donate">donate</button> 
-                </li>
+                <a href="https://www.paypal.me/JacobFanelli"<li><button type="button" class="btn donate">donate</button>
+                </li></a>
             </ul>
         </div>
     </div>
 </div>
-
-
 ';
