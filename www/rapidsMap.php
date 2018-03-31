@@ -131,7 +131,7 @@ $filterBar = $mapData -> generateFilterBar();
     }
 	
 	function updateUserLocation(){
-		mark.setMap(null);
+		
 		console.log("removed old marker off the map");
 		<!-- This needs to be tested -->
         // HTML5 geolocation.
@@ -141,6 +141,7 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+				mark.setMap(null);
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
