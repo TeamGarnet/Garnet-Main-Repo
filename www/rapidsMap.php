@@ -88,7 +88,7 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!-- Javascript -->
 <script type="text/javascript">
-    var map, infoWindow;
+    var map, infoWindow, mark;
     var allMarkerObjects = [];
 
     function initMap() {
@@ -112,6 +112,7 @@ $filterBar = $mapData -> generateFilterBar();
 	
 	function updateUserLocation(){
 		console.log("yah we getting called every 5 second");
+		mark.setMap(null);
 		<!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
@@ -120,7 +121,7 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-				var mark = new google.maps.Marker({
+				mark = new google.maps.Marker({
 					position: pos,
 					map: map
 				});
