@@ -82,6 +82,26 @@ $filterBar = $mapData -> generateFilterBar();
     </div>
 </div>
 
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            -->
+            <div class="modal-body popupModal" id="popupModal">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Map</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
@@ -145,11 +165,16 @@ $filterBar = $mapData -> generateFilterBar();
     }
 
     function showModal(data) {
-        $("#popup-content").html('');
-        $("#popup-content").append(data);
-        $("#popup-content").show("fast");
         infoWindow.close();
-        window.scroll(0,document.body.scrollHeight);
+        //$("#popup-content").html('');
+        //$("#popup-content").append(data);
+        //$("#popup-content").show("fast");
+
+        $(".popupModal").html('');
+        $(".popupModal").append(data);
+        $(".popupModal").show("fast");
+
+        //window.scroll(0,document.body.scrollHeight);
     }
 
     $(document).ready(function(){
