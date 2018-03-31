@@ -143,7 +143,7 @@ $eventService->deleteEventEntry("5");
 <div class="container invisible">
     <select class="form-control form-control-sm locationSelect" id="locationSelect">
         <?php
-        echo $eventService->getAllFiltersForSelect();
+        echo $widerAreaMapService->getAllFiltersForSelect();
         ?>
     </select>
 </div>

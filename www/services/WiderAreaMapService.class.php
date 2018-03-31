@@ -99,4 +99,15 @@ class WiderAreaMapService {
         }
         return $html;
     }
+
+    public function getAllFiltersForSelect() {
+        $filters = $this->getAllWiderAreaMapEntries();
+        $filterHTML = "";
+        foreach ($filters as $filter) {
+            $filterHTML = $filterHTML . "<option value='"
+                . $filter->getIdWiderAreaMap() . "'>"
+                . $filter->getName() ."</option>";
+        }
+        return $filterHTML;
+    }
 }
