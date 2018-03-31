@@ -106,12 +106,12 @@ $filterBar = $mapData -> generateFilterBar();
         ?>
 		
 		if (navigator.geolocation) {
-			console.log("initial make of pin");
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+				console.log("initial make of pin");
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
@@ -130,7 +130,7 @@ $filterBar = $mapData -> generateFilterBar();
     }
 	
 	function updateUserLocation(){
-		console.log("yah we getting called every 5 second");
+		console.log("remove old marker off the map");
 		mark.setMap(null);
 		<!-- This needs to be tested -->
         // HTML5 geolocation.
@@ -140,11 +140,11 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+				console.log("adding newest marker to map");
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
 					icon: "images/Pin.png",
-					title: "You are here"
 				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
