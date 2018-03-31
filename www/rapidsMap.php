@@ -104,8 +104,15 @@ $filterBar = $mapData -> generateFilterBar();
         <?php
         echo $markers
         ?>
-
-        <!-- This needs to be tested -->
+		
+		//its in ms so 1000ms/second
+		var myVar = setInterval(updateUserLocation, 5000);
+        
+    }
+	
+	function updateUserLocation(){
+		console.log("yah we getting called every 5 second");
+		<!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -113,8 +120,6 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-				console.log(pos["lat"]);
-				console.log(pos["lng"]);
 				var mark = new google.maps.Marker({
 					position: pos,
 					map: map
@@ -126,7 +131,7 @@ $filterBar = $mapData -> generateFilterBar();
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-    }
+	}
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
