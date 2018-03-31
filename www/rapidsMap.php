@@ -116,7 +116,6 @@ $filterBar = $mapData -> generateFilterBar();
 					map: map,
 					icon: "images/Pin.png"
 				});
-				console.log("initial make of pin");
 				var myVar = setInterval(updateUserLocation, 5000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -131,8 +130,6 @@ $filterBar = $mapData -> generateFilterBar();
     }
 	
 	function updateUserLocation(){
-		
-		console.log("removed old marker off the map");
 		<!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
@@ -147,7 +144,6 @@ $filterBar = $mapData -> generateFilterBar();
 					map: map,
 					icon: "images/Pin.png",
 				});
-				console.log("added newest marker to map");
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
