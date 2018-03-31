@@ -115,7 +115,10 @@ $filterBar = $mapData -> generateFilterBar();
                 };
 				console.log(pos["lat"]);
 				console.log(pos["lng"]);
-				var mark = new google.maps.Marker(pos["lat"],pos["lng"]);
+				var mark = new google.maps.Marker({
+					position: pos;
+					map: map;
+				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
