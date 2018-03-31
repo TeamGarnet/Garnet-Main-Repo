@@ -114,7 +114,8 @@ $filterBar = $mapData -> generateFilterBar();
                     lng: position.coords.longitude
                 };
             }, function () {
-				console.log(pos);
+				console.log(pos.lat);
+				map.a
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
