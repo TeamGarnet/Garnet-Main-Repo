@@ -291,7 +291,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
         $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
         $(".typeSelect.currentFilter").removeClass("invisible");
     } if (tableID == "#event"){
-        $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationSelect");
+        $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationFilter");
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
 
@@ -377,7 +377,7 @@ function generateCreateModal(tableID) {
         $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
         $(".typeSelect.currentFilter").removeClass("invisible");
     } if (tableID == "#event"){
-        $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationSelect");
+        $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationFilter");
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
 
