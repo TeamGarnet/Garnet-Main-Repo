@@ -21,6 +21,7 @@
 #nav-right > li > a:active{
 	background-color: white;
 	color: #000;
+	border-radius: 4px;
 }
 #nav-right > li{
 	float:right;
