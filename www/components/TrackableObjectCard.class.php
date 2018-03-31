@@ -118,14 +118,14 @@ class TrackableObjectCard {
     }
 
     public function getModalContainerBegin() {
-        return '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 99;">
+        return '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 99; z-index: 100000">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-body popupModal" id="popupModal">';
     }
 
     public function getModalContainerEnd(){
-        return '</div style="z-index: 100000000000000">
+        return '</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Map</button>
             </div>
