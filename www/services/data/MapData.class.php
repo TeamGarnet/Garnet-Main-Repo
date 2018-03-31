@@ -99,7 +99,7 @@ class MapData {
                 case 'Natural History':
                     $stmt = $this -> getDBInfo(1) -> prepare($naturalHistoryInfoQuery);
                     break;
-                case 'Miscellaneous':
+                default:
                     $stmt = $this -> getDBInfo(1) -> prepare($miscInfoQuery);
                     break;
             }

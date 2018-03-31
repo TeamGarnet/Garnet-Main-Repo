@@ -22,7 +22,7 @@ class TrackableObjectCard {
     private $imageDescription;
 
     public function __construct($cardDataArray) {
-        foreach($cardDataArray as $key => $value) {
+        foreach ($cardDataArray as $key => $value) {
             $stringValue = (string)$value;
             $cardDataArray[$key] = $stringValue;
         }
@@ -36,7 +36,7 @@ class TrackableObjectCard {
                 $this -> setNaturalHistoryInfo($cardDataArray);
                 $this -> getNaturalHistoryInfo();
                 break;
-            case 'Miscellaneous':
+            default:
                 $this -> setMiscObjectInfo($cardDataArray);
                 $this -> getMiscObjectInfo();
                 break;
@@ -73,47 +73,64 @@ class TrackableObjectCard {
     public function getGraveInfo() {
         $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
-            . $this-> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
+            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
+            . $this -> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
             . $this -> birth . " - " . $this -> death . ")" . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $modalContent . $modalStyle;
+        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
 
-        echo  $modal;
+        echo $modal;
         return $modal;
     }
 
     public function getNaturalHistoryInfo() {
         $modalContent = "<div style='margin:3%;' class='naturalHistoryInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
-            . $this-> commonName . "</br><h4>"
+            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
+            . $this -> commonName . "</br><h4>"
             . $this -> scientificName . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $modalContent . $modalStyle;
-        echo  $modal;
+        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
+        echo $modal;
         return $modal;
     }
 
     public function getMiscObjectInfo() {
         $modalContent = "<div style='margin:3%;' class='miscObjectInfo'><img src='"
             . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription ."' style=width:200px;height:auto;/></br><h2>"
+            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
             . $this -> name . "</br><h4> Hazardous Location: "
             . $this -> isHazard . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $modalContent . $modalStyle;
-        echo  $modal;
+        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
+        echo $modal;
         return $modal;
     }
 
     public function getModalClosure() {
         return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07; padding:5px !important; margin-top: 2%;'>Return To Map</button></div>";
+    }
+
+    public function getModalContainerBegin() {
+        return '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-body popupModal" id="popupModal">';
+    }
+
+    public function getModalContainerEnd(){
+        return '</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Map</button>
+            </div>
+        </div>
+    </div>
+</div>';
     }
 }
