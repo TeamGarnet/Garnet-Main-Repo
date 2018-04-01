@@ -21,6 +21,7 @@ img {
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   opacity: 1 !important;
+  padding-bottom: 5%;
 }
 @media only screen and (max-height: 650px) {
     #menu{
