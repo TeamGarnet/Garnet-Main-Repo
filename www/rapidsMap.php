@@ -116,7 +116,7 @@ $filterBar = $mapData -> generateFilterBar();
 					map: map,
 					icon: "images/Pin.png"
 				});
-				var myVar = setInterval(updateUserLocation, 5000);
+				var myVar = setInterval(updateUserLocation, 15000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
