@@ -61,7 +61,7 @@ class TypeFilterService {
                 $typeFilterDataClass -> deleteTypeFilter($idTypeFilter);
                 return null;
             } else {
-                return "The Type filter is currently in use by a Grave, Natural History, or Misc Object. <br> Unattach this filter before the filter can be deleted.";
+                return "The Type filter is currently in use by a Miscellaneous Object. <br> Unattach this filter before the filter can be deleted.";
             }
         }
     }
