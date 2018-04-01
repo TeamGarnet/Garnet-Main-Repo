@@ -71,17 +71,17 @@ p{
 		background-size:cover;
     }
 }
-@media only screen and (max-height: 500px) {
+@media (min-height: 460px) and (max-height: 560px) {
     #top_medalsection{
 		height: 81%;
 	}
 }
-@media only screen and (max-height: 580px) {
-    #top_medalsection{
+@media (min-height: 560px) and (max-height: 630px) {
+	#top_medalsection{
 		height: 84%;
 	}
 }
-@media only screen and (max-height: 680px) {
+@media (min-height: 630px) and (max-height: 700px) {
     #top_medalsection{
 		height: 86%;
 	}
