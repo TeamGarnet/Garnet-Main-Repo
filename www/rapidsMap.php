@@ -178,11 +178,7 @@ $filterBar = $mapData -> generateFilterBar();
         infoWindow.close();
         $("#popup-content").html('');
         $("#popup-content").append(data);
-        //$("#popup-content").show("fast");
-
-        $("#exampleModalLong").modal("show")
-
-        //window.scroll(0,document.body.scrollHeight);
+        $("#exampleModalLong").modal("show");
     }
 
     $(document).ready(function(){
@@ -193,11 +189,6 @@ $filterBar = $mapData -> generateFilterBar();
     $("#flip").on('click',function(){
         $(this).children('i.fa-sort-down').toggleClass('i.fa-sort-up');
     });
-
-    function shutdown() {
-        $("#popup-content").html('');
-        $(".popup-overlay, .popup-content").hide("fast");
-    }
 
 
 </script>

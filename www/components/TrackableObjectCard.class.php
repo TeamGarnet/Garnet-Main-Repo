@@ -114,7 +114,7 @@ class TrackableObjectCard {
     }
 
     public function getModalClosure() {
-        return "</br><button onclick='shutdown()' class='btn' style='border-radius:25px;color: #ec5e07;background-color: #fff;border-color: #ec5e07; padding:5px !important; margin-top: 2%;'>Return To Map</button></div>";
+        return "";
     }
 
     public function getModalContainerBegin() {
