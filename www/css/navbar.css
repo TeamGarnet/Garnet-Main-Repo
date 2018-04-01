@@ -17,11 +17,10 @@ img {
   background-image:none !important;
   box-shadow:none !important;
   border-radius: 0 !important;
-  min-height: 12.9% !important;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   opacity: 1 !important;
-  height: 7em;
+  height: 8em;
 }
 @media only screen and (max-height: 650px) {
     /*#menu{
