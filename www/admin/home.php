@@ -126,27 +126,7 @@ $eventService->deleteEventEntry("5");
 </div>
 <!-- Filters Selects-->
 
-<div class="container invisible">
-    <select class="form-control form-control-sm typeSelect" id="typeSelect">
-        <?php
-            echo $typeFilterService->getAllFiltersForSelect();
-        ?>
-    </select>
-</div>
-<div class="container invisible">
-    <select class="form-control form-control-sm historicSelect" id="historicSelect">
-        <?php
-            echo $historicFilterService->getAllFiltersForSelect();
-        ?>
-    </select>
-</div>
-<div class="container invisible">
-    <select class="form-control form-control-sm locationSelect" id="locationSelect">
-        <?php
-        echo $widerAreaMapService->getAllFiltersForSelect();
-        ?>
-    </select>
-</div>
+
 
 <div class="container" id="tabBar">
     <div class="container1">
@@ -419,6 +399,28 @@ $eventService->deleteEventEntry("5");
 
         </div>
     </div>
+</div>
+
+<div class="container invisible">
+    <select class="form-control form-control-sm typeSelect" id="typeSelect">
+        <?php
+            echo $typeFilterService->getAllFiltersForSelect();
+        ?>
+    </select>
+</div>
+<div class="container invisible">
+    <select class="form-control form-control-sm historicSelect" id="historicSelect">
+        <?php
+            echo $historicFilterService->getAllFiltersForSelect();
+        ?>
+    </select>
+</div>
+<div class="container invisible">
+    <select class="form-control form-control-sm locationSelect" id="locationSelect">
+        <?php
+        echo $widerAreaMapService->getAllFiltersForSelect();
+        ?>
+    </select>
 </div>
 
 <!-- Small modal -->
