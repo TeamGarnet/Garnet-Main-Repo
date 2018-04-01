@@ -178,9 +178,11 @@ $filterBar = $mapData -> generateFilterBar();
         infoWindow.close();
         $("#popup-content").html('');
         $("#popup-content").append(data);
-        $("#popup-content").show("fast");
+        //$("#popup-content").show("fast");
 
-        window.scroll(0,document.body.scrollHeight);
+        $("#exampleModalLong").modal("show")
+
+        //window.scroll(0,document.body.scrollHeight);
     }
 
     $(document).ready(function(){
