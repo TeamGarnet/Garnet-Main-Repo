@@ -76,6 +76,11 @@ p{
 		height: 81%;
 	}
 }
+@media only screen and (max-height: 580px) {
+    #top_medalsection{
+		height: 84%;
+	}
+}
 @media only screen and (max-height: 680px) {
     #top_medalsection{
 		height: 86%;

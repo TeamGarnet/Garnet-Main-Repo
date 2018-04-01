@@ -27,6 +27,11 @@ img {
 		min-height: 19%;
 	}
 }
+@media only screen and (max-height: 580px) {
+    #menu{
+		min-height: 16%;
+	}
+}
 @media only screen and (max-height: 680px) {
     #menu{
 		min-height: 14%;
