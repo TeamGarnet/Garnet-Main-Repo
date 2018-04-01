@@ -22,9 +22,9 @@ img {
   margin-top: 0 !important;
   opacity: 1 !important;
 }
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 500px) {
     #menu{
-		
+		min-height: 19%;
 	}
 }
 #menu a{
