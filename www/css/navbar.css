@@ -17,7 +17,7 @@ img {
   background-image:none !important;
   box-shadow:none !important;
   border-radius: 0 !important;
-  min-height: 10%;
+  min-height: 9%;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   opacity: 1 !important;
@@ -40,6 +40,11 @@ img {
 @media (min-height: 700px) and (max-height: 800px) {
     #menu{
 		min-height: 12%;
+	}
+}
+@media (min-height: 700px) and (max-height: 800px) {
+    #menu{
+		min-height: 11%;
 	}
 }
 #menu a{
