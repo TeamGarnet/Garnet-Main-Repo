@@ -50,9 +50,6 @@ html, body {
 
 /* Map Filter CSS */
 
-.secondmenublock {
-    background-color: #ebece478;
-}
 
 .secondmenublock {
     z-index: 999;
@@ -433,4 +430,3 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
 		height: 89%;
 	}
 }
-
