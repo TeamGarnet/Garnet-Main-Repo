@@ -68,8 +68,8 @@ echo '
                 </li>
               <li><a style="color:white;" href="faq.php" class="hvr-underline-reveal">faq</a>
                 </li>
-                <a href="https://www.paypal.me/JacobFanelli"><li><button type="button" class="btn donate">donate</button> 
-                </li></a>
+                <li><button type="button" class="btn donate">donate</button> 
+                </li>
             </ul>
         </div>
     </div>
