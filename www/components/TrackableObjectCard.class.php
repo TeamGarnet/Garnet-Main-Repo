@@ -118,7 +118,7 @@ class TrackableObjectCard {
     }
 
     public function getModalContainerBegin() {
-        return '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 99; z-index: 100000">
+        return '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="position: absolute; top: 10px; left: 10px;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-body popupModal" id="popupModal">';
