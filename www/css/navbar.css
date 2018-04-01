@@ -21,11 +21,12 @@ img {
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   opacity: 1 !important;
+  height: 7em;
 }
 @media only screen and (max-height: 650px) {
-    #menu{
+    /*#menu{
 		padding-bottom: 11% !important;
-	}
+	}*/
 }
 #menu a{
 	text-shadow:none !important;
