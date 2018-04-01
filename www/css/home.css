@@ -76,6 +76,11 @@ p{
 		height: 81%;
 	}
 }
+@media only screen and (max-height: 680px) {
+    #top_medalsection{
+		height: 86%;
+	}
+}
 @media only screen and (max-width: 700px) {
     .topvid_text{
 		margin-top: 9% !important;
