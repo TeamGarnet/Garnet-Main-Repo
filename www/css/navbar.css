@@ -79,7 +79,7 @@ img {
 }
 
 .donate:hover{
-  background-color: white;
+  background-color: white !important;
   color: #97583a !important; 
 }
 
