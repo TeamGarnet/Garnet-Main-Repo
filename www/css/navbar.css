@@ -42,7 +42,7 @@ img {
 		min-height: 12%;
 	}
 }
-@media (min-height: 700px) and (max-height: 800px) {
+@media (min-height: 800px) and (max-height: 900px) {
     #menu{
 		min-height: 11%;
 	}
