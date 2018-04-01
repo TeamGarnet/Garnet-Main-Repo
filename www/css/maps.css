@@ -409,4 +409,29 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
     text-align:center;
 }
 
+@media (min-height: 460px) and (max-height: 560px) {
+    #map{
+		height: 81%;
+	}
+}
+@media (min-height: 560px) and (max-height: 630px) {
+	#map{
+		height: 84%;
+	}
+}
+@media (min-height: 630px) and (max-height: 700px) {
+    #map{
+		height: 86%;
+	}
+}
+@media (min-height: 700px) and (max-height: 800px) {
+    #map{
+		height: 88%;
+	}
+}
+@media (min-height: 800px) and (max-height: 900px) {
+    #map{
+		height: 89%;
+	}
+}
 
