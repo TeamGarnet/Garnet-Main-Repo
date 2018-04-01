@@ -297,10 +297,7 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {
-	.aobut_img img {
-    margin: 0px auto;
-}
+
 .navbar-nav>li>a{padding:4px 7px;}
 .navbar-nav>li> .nav-link{font-size:12px; padding:4px 12px;}
 .nav>li>a>img{max-width:79%;}
