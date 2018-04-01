@@ -73,7 +73,7 @@ p{
 }
 @media only screen and (max-height: 500px) {
     #top_medalsection{
-		min-height: 81%;
+		height: 81%;
 	}
 }
 @media only screen and (max-width: 700px) {
