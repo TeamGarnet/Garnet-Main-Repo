@@ -24,9 +24,9 @@ img {
   height: 11%;
 }
 @media only screen and (max-height: 650px) {
-    /*#menu{
+    menu{
 		padding-bottom: 11% !important;
-	}*/
+	}
 }
 #menu a{
 	text-shadow:none !important;
