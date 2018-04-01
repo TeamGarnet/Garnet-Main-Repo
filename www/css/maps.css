@@ -249,7 +249,6 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
     width: 141px;
     background-color: #da4b14;
 }
-}
 .social_btn .twiter {font-size: 17px;
     color: #fff;
     background: #55acee;
@@ -357,7 +356,7 @@ padding:200px 0px 37px 0;background-attachment:fixed;display: table;height:98%;p
     border-color: #da4b14 !important;
 	}
 
-<!--Abdols Code -->
+/*Abdols Code*/
 .popup-overlay{
     z-index:999;
     position: absolute;
