@@ -88,7 +88,7 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!-- Javascript -->
 <script type="text/javascript">
-    var map, infoWindow;
+    var map, infoWindow, mark;
     var allMarkerObjects = [];
 
     function initMap() {
@@ -104,15 +104,19 @@ $filterBar = $mapData -> generateFilterBar();
         <?php
         echo $markers
         ?>
-
-        <!-- This needs to be tested -->
-        // HTML5 geolocation.
-        if (navigator.geolocation) {
+		
+		if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+				mark = new google.maps.Marker({
+					position: pos,
+					map: map,
+					icon: "images/Pin.png"
+				});
+				var myVar = setInterval(updateUserLocation, 15000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -120,7 +124,34 @@ $filterBar = $mapData -> generateFilterBar();
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+		
+		//its in ms so 1000ms/second
+		
     }
+	
+	function updateUserLocation(){
+		<!-- This needs to be tested -->
+        // HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+				mark.setMap(null);
+				mark = new google.maps.Marker({
+					position: pos,
+					map: map,
+					icon: "images/Pin.png",
+				});
+            }, function () {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+	}
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);

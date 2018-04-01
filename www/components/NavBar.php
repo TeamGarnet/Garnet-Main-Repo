@@ -62,6 +62,8 @@ echo '
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-right" id="nav-right">
+				<li><a style="color:white;" href="rapidsMap.php" class="hvr-underline-reveal">map</a>
+                </li>
                 <li><a style="color:white;" href="trails.php" class="hvr-underline-reveal">historic trails</a>
                 </li>
                 <li><a style="color:white;" href="contact.php" class="hvr-underline-reveal">contact</a>
