@@ -37,6 +37,11 @@ img {
 		min-height: 14%;
 	}
 }
+@media (min-height: 700px) and (max-height: 800px) {
+    #menu{
+		min-height: 12%;
+	}
+}
 #menu a{
 	text-shadow:none !important;
 }
