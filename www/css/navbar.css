@@ -24,7 +24,7 @@ img {
 }
 @media only screen and (max-height: 650px) {
     #menu{
-		height: 18% !important;
+		
 	}
 }
 #menu a{
