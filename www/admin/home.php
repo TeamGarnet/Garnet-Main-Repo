@@ -142,7 +142,7 @@ $eventService->deleteEventEntry("5");
     <div class="container1">
         <div class="row">
             <div class="col-lg-12">
-				<div class = "container" id="containerForMenuTabsAndCreate">
+				<div id="containerForMenuTabsAndCreate">
 					<div id="leftMenu">
 						<ul id="myTab" class="nav nav-tabs">
 							<li class="active">
