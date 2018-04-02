@@ -110,4 +110,50 @@ class WiderAreaMapService {
         }
         return $filterHTML;
     }
+
+    public function generateMarkers() {
+        $pinObjectsArray = $this -> getAllWiderAreaMapEntries();
+        $generatedMarkers = "";
+        $markerCounter = 0;
+        $markerName = "marker" . $markerCounter;
+        $setMarkerCode = $markerName . ".setMap(map);";
+
+        foreach ($pinObjectsArray as $pin) {
+            $markerName = "marker" . $markerCounter;
+            $generatedMarkers .= "var " . $markerName . " = new google.maps.Marker({
+            position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
+            icon:'images/pins/greenMarker.png',
+            title:'" . $pin -> getName() . "' ,
+            map: map ,
+            markerName: " . $markerName . "});";
+
+            $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");";
+            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
+            $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
+
+
+            $markerCounter += 1;
+        }
+
+        return $generatedMarkers;
+    }
+
+    public function generateInfoWindowConfig($pin, $markerName) {
+        $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><h4>"
+            . $pin -> getName()
+            . "</h4>"
+            . "</br></br></p><a href="
+            . $pin -> getUrl() . ' class="locationURL">Visit Site</a></div></div>';
+
+
+        $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
+        $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {
+            return function() {
+                infoWindow.setContent(" . $infoWindowContent . ");
+                infoWindow.open(map," . $markerName . ");
+            }
+            })(" . $markerName . "));";
+
+        return $infoWindowGenerator . $infoWindowListener;
+    }
 }

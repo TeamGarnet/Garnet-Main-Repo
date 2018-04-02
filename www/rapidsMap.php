@@ -114,7 +114,7 @@ $filterBar = $mapData -> generateFilterBar();
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
-					icon: "images/Pin.png"
+					icon: "images/pins/userMarker.png"
 				});
 				var myVar = setInterval(updateUserLocation, 15000);
             }, function () {
@@ -142,7 +142,7 @@ $filterBar = $mapData -> generateFilterBar();
 				mark = new google.maps.Marker({
 					position: pos,
 					map: map,
-					icon: "images/Pin.png",
+					icon: "images/pins/userMarker.png"
 				});
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -216,17 +216,7 @@ $filterBar = $mapData -> generateFilterBar();
     .popup-content.active {
         /*Shows pop-up content when "active" class is present */
         visibility:visible;
-    }/*
-.gm-style-iw {
-	width: 500px !important;
-	height: 500px;
-	top: 15px !important;
-	left: 0px !important;
-	background-color: #fff0;
-	box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
-	border: 1px solid rgba(72, 181, 233, 0.6);
-	border-radius: 2px 2px 10px 10px;
-}*/
+    }
     #panel, #flip {
         padding: 5px;
         text-align: center;
