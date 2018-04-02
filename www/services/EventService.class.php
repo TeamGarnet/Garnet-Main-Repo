@@ -85,10 +85,10 @@ class EventService {
         foreach ($allEventObjects as $eventObject) {
             date_default_timezone_set('America/New_York');
             $unixStartTime = strtotime($eventObject->getStartTime());
-            $formattedStartTime = date("m-d-Y g:i A" , $unixStartTime);
+            $formattedStartTime = date("M-d-Y g:i A" , $unixStartTime);
 
             $unixEndTime = strtotime($eventObject->getStartTime());
-            $formattedEndTime = date("m-d-Y g:i A" , $unixEndTime);
+            $formattedEndTime = date("M-d-Y g:i A" , $unixEndTime);
 
             $formattedEventInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
                 . $eventObject->getName() . '</p><p class="eventLocationName">'
