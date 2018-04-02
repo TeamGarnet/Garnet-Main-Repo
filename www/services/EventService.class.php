@@ -83,6 +83,7 @@ class EventService {
         $formattedEventInfo = "";
 
         foreach ($allEventObjects as $eventObject) {
+            date_default_timezone_set('America/New_York');
             $unixStartTime = strtotime($eventObject->getStartTime());
             $formattedStartTime = date("mm-dd-yyyy g:i A" , $unixStartTime);
 
