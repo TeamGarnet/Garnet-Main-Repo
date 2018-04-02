@@ -144,7 +144,7 @@ class WiderAreaMapService {
         $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4></br><p><a class='locationHref' href=" . "'"
-            . $pin -> getUrl() . "'" . '>Visit Site</a></p><p onclick="calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, ' . $directionName . ')">Get Directions</p></div></div>' . '"';
+            . $pin -> getUrl() . "'" . ">Visit Site</a></p><p onclick='calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, " . $directionName . ")'>Get Directions</p></div></div>" . '"';
 
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
@@ -153,7 +153,7 @@ class WiderAreaMapService {
                 infoWindow.setContent(" . $infoWindowContent . ");
                 infoWindow.open(map," . $markerName . ");
             }
-            }))(" . $markerName . "));";
+            })(" . $markerName . "));";
 
         return $infoWindowGenerator . $infoWindowListener;
     }
