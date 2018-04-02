@@ -172,12 +172,9 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     //calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
-        console.log(pointB);
-        var directionListIndex = pointB.substr(pointB.length -1);
-        var coords = directionList[directionListIndex];
         directionsService.route({
             origin: pointA,
-            destination: coords,
+            destination: pointB,
             avoidTolls: true,
             avoidHighways: false,
             travelMode: google.maps.TravelMode.DRIVING
