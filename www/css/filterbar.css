@@ -12,61 +12,63 @@
 }
 
 #filterContainer2 {
-  border-radius: 4px;
-  background-color: #f7f6e9;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-  font-family: Proza Libre;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #97583a;
-  width: 100% !important;
+    border-radius: 4px;
+    background-color: #f7f6e9;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    font-family: Proza Libre;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #97583a;
+    width: 100% !important;
 }
 
 .btn {
-  margin-top: 7px;
-  margin-left: 10px;
-  margin-right: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .btn-default {
-  font-family: Proza Libre;
-  font-size: 14px !important;
-  color: #ffffff !important;
-  line-height: 20px !important;
-  border-radius: 4px !important;
-  transition: all 0.3s ease 0s !important;
+    font-family: Proza Libre;
+    font-size: 14px !important;
+    color: #ffffff !important;
+    line-height: 20px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease 0s !important;
 }
 
 .btn-default:hover {
-  color: #000000 !important;
+    color: #000000 !important;
 }
 
 .btn-default:focus {
-  outline-color: #4D90FE !important;
+    outline-color: #4D90FE !important;
 }
 
-#nav-fixed-bottom{
-	right: 13% !important;
-	left: 13% !important;
-	bottom: 3.5% !important;
+#nav-fixed-bottom {
+    right: 13% !important;
+    left: 13% !important;
+    bottom: 3.5% !important;
 }
 
 @media only screen and (min-width: 768px) {
     #nav-fixed-bottom {
-		right: 6% !important;
-		left: 6% !important;
+        right: 6% !important;
+        left: 6% !important;
     }
 }
+
 @media only screen and (min-width: 1300px) {
     #nav-fixed-bottom {
-		bottom: 2% !important;
+        bottom: 2% !important;
     }
 }
-.navbar-right{
-	margin:0 !important;
-	
+
+.navbar-right {
+    margin: 0 !important;
+
 }

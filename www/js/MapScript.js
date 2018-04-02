@@ -5,7 +5,7 @@ function refreshFilters(table, referenceID) {
 
         if (table == "historicFilter" && allMarkerObjects[i].idHistoricFilter == referenceID) {
             allMarkerObjects[i].setVisible(true);
-        } else if (table == "typeFilter" && allMarkerObjects[i].idTypeFilter == referenceID){
+        } else if (table == "typeFilter" && allMarkerObjects[i].idTypeFilter == referenceID) {
             allMarkerObjects[i].setVisible(true);
         } else {
             console.log(allMarkerObjects[i]);

@@ -109,23 +109,22 @@ $eventService->deleteEventEntry("5");
 </head>
 <body>
 
-<div class="container" id = "navBarContainer">
-    <div class="row" id = "navBar">
+<div class="container" id="navBarContainer">
+    <div class="row" id="navBar">
 
         <div class="logo col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <img src="../images/Logo.png"/>
         </div>
-		
+
         <div class="links col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<ul class="nav navbar-nav navbar-right" id="nav-right">
-				<li><a href="logout.php" class="logout">Logout</a></li>
-				<li><a href="../home.php" class="logout">Main Site</a></li>
-			</ul>
+            <ul class="nav navbar-nav navbar-right" id="nav-right">
+                <li><a href="logout.php" class="logout">Logout</a></li>
+                <li><a href="../home.php" class="logout">Main Site</a></li>
+            </ul>
         </div>
     </div>
 </div>
 <!-- Filters Selects-->
-
 
 
 <div class="container" id="tabBar">
@@ -150,7 +149,8 @@ $eventService->deleteEventEntry("5");
                 </ul>
 
                 <div class="dropdown show">
-                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Create +
                     </a>
 
@@ -404,21 +404,21 @@ $eventService->deleteEventEntry("5");
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
         <?php
-            echo $typeFilterService->getAllFiltersForSelect();
+        echo $typeFilterService -> getAllFiltersForSelect();
         ?>
     </select>
 </div>
 <div class="container invisible">
     <select class="form-control form-control-sm historicSelect" id="historicSelect">
         <?php
-            echo $historicFilterService->getAllFiltersForSelect();
+        echo $historicFilterService -> getAllFiltersForSelect();
         ?>
     </select>
 </div>
 <div class="container invisible">
     <select class="form-control form-control-sm locationSelect" id="locationSelect">
         <?php
-        echo $widerAreaMapService->getAllFiltersForSelect();
+        echo $widerAreaMapService -> getAllFiltersForSelect();
         ?>
     </select>
 </div>
@@ -479,7 +479,8 @@ $eventService->deleteEventEntry("5");
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
-                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelChanges()">Cancel</button>
+                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelChanges()">Cancel
+                </button>
             </div>
         </div>
     </div>
@@ -498,7 +499,8 @@ $eventService->deleteEventEntry("5");
             <div class="modal-body" id="createModalBody"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="createObject">Create</button>
-                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelCreate()">Cancel</button>
+                <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelCreate()">Cancel
+                </button>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+
 /**
  */
-
 class NaturalHistoryObjectData {
     /**
      * Retrieves the Database information needed.

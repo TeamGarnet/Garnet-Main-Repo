@@ -43,7 +43,7 @@ $filterBar = $mapData -> generateFilterBar();
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -55,11 +55,10 @@ $filterBar = $mapData -> generateFilterBar();
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
     <script src="../js/MapScript.js"></script>
     <link rel="stylesheet" href="css/maps.css" type="text/css">
-	<link rel="stylesheet" href="css/navbar.css" type="text/css">
-	<link rel="stylesheet" href="css/filterbar.css" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="css/filterbar.css" type="text/css">
 </head>
 <body style="background-image:url('/images/TrailBackground.png');">
 
@@ -68,9 +67,9 @@ $filterBar = $mapData -> generateFilterBar();
 
 <!--Map Filters -->
 
-                    <?php
-                    echo $filterBar;
-                    ?>
+<?php
+echo $filterBar;
+?>
 
 <!-- Google Map-->
 <div id="map"></div>
@@ -104,19 +103,19 @@ $filterBar = $mapData -> generateFilterBar();
         <?php
         echo $markers
         ?>
-		
-		if (navigator.geolocation) {
+
+        if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-				mark = new google.maps.Marker({
-					position: pos,
-					map: map,
-					icon: "images/pins/userMarker.png"
-				});
-				var myVar = setInterval(updateUserLocation, 15000);
+                mark = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    icon: "images/pins/userMarker.png"
+                });
+                var myVar = setInterval(updateUserLocation, 15000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -124,13 +123,13 @@ $filterBar = $mapData -> generateFilterBar();
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-		
-		//its in ms so 1000ms/second
-		
+
+        //its in ms so 1000ms/second
+
     }
-	
-	function updateUserLocation(){
-		<!-- This needs to be tested -->
+
+    function updateUserLocation() {
+        <!-- This needs to be tested -->
         // HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -138,12 +137,12 @@ $filterBar = $mapData -> generateFilterBar();
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-				mark.setMap(null);
-				mark = new google.maps.Marker({
-					position: pos,
-					map: map,
-					icon: "images/pins/userMarker.png"
-				});
+                mark.setMap(null);
+                mark = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    icon: "images/pins/userMarker.png"
+                });
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -151,7 +150,7 @@ $filterBar = $mapData -> generateFilterBar();
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-	}
+    }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -165,9 +164,9 @@ $filterBar = $mapData -> generateFilterBar();
         $.ajax({
             type: "GET",
             url: "ajaxCalls.php",
-            data: "getMapCardInfoID="+String(idTrackableObject),
-            dataType:"text",
-            success: function(data) {
+            data: "getMapCardInfoID=" + String(idTrackableObject),
+            dataType: "text",
+            success: function (data) {
                 //alert(data);
                 showModal(data);
             }
@@ -181,12 +180,12 @@ $filterBar = $mapData -> generateFilterBar();
         $("#exampleModalLong").modal("show");
     }
 
-    $(document).ready(function(){
-        $("#flip").click(function(){
+    $(document).ready(function () {
+        $("#flip").click(function () {
             $("#panel").slideToggle("slow");
         });
     });
-    $("#flip").on('click',function(){
+    $("#flip").on('click', function () {
         $(this).children('i.fa-sort-down').toggleClass('i.fa-sort-up');
     });
 
@@ -198,36 +197,44 @@ $filterBar = $mapData -> generateFilterBar();
 </script>
 
 <style>
-    .popup-overlay{
-        z-index:999;
+    .popup-overlay {
+        z-index: 999;
         position: absolute;
-        background:#ffffff;
+        background: #ffffff;
 
-        width:100%;
-        height:100%;
-        left:0%;
-        top:0%;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
     }
-    .popup-overlay.active{
+
+    .popup-overlay.active {
         /*displays pop-up when "active" class is present*/
-        visibility:visible;
-        text-align:center;
+        visibility: visible;
+        text-align: center;
     }
+
     .popup-content.active {
         /*Shows pop-up content when "active" class is present */
-        visibility:visible;
+        visibility: visible;
     }
+
     #panel, #flip {
         padding: 5px;
         text-align: center;
         background-color: #e5eecc;
         border: solid 1px #c3c3c3;
     }
+
     #panel {
         display: none;
     }
+
     .secondmenu input[type="radio"] {
         opacity: 0;
     }
-    .paragraph{margin: 80px 0px 10px!important;}
+
+    .paragraph {
+        margin: 80px 0px 10px !important;
+    }
 </style>

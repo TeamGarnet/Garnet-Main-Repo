@@ -2,20 +2,20 @@
 include_once 'data/WiderAreaMapData.class.php';
 include_once 'data/EventData.class.php';
 include_once 'models/WiderAreaMap.class.php';
+
 /**
  */
-
 class WiderAreaMapService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllWiderAreaMapEntries() {
         $widerAreaMapDataClass = new WiderAreaMapData();
-        $allWiderAreaMapDataObjects =  $widerAreaMapDataClass -> readWiderAreaMap();
+        $allWiderAreaMapDataObjects = $widerAreaMapDataClass -> readWiderAreaMap();
         $allWiderAreaMapData = array();
 
         foreach ($allWiderAreaMapDataObjects as $widerAreaMapArray) {
-            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'] , $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode']);
+            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'], $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode']);
 
             array_push($allWiderAreaMapData, $widerAreaMapObject);
         }
@@ -77,23 +77,23 @@ class WiderAreaMapService {
         $allmodels = $this -> getAllWiderAreaMapEntries();
         $html = "";
         foreach ($allmodels as $model) {
-            $objectRowID = "16" . strval($model->getIdWiderAreaMap());
+            $objectRowID = "16" . strval($model -> getIdWiderAreaMap());
             $editAndDelete = "</td><td><button onclick='updateLocation("
                 . $objectRowID . ","
-                . $model->getIdWiderAreaMap()
+                . $model -> getIdWiderAreaMap()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteLocation('
-                . $model->getIdWiderAreaMap()
+                . $model -> getIdWiderAreaMap()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
-                . "</td><td>" . $model->getDescription()
-                . "</td><td>" . $model->getUrl()
-                . "</td><td>" . $model->getLongitude()
-                . "</td><td>" . $model->getLatitude()
-                . "</td><td>" . $model->getAddress()
-                . "</td><td>" . $model->getCity()
-                . "</td><td>" . $model->getState()
-                . "</td><td>" . $model->getZipcode()
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()
+                . "</td><td>" . $model -> getDescription()
+                . "</td><td>" . $model -> getUrl()
+                . "</td><td>" . $model -> getLongitude()
+                . "</td><td>" . $model -> getLatitude()
+                . "</td><td>" . $model -> getAddress()
+                . "</td><td>" . $model -> getCity()
+                . "</td><td>" . $model -> getState()
+                . "</td><td>" . $model -> getZipcode()
                 . $editAndDelete
                 . "</td></tr>";
         }
@@ -101,12 +101,12 @@ class WiderAreaMapService {
     }
 
     public function getAllFiltersForSelect() {
-        $filters = $this->getAllWiderAreaMapEntries();
+        $filters = $this -> getAllWiderAreaMapEntries();
         $filterHTML = "";
         foreach ($filters as $filter) {
             $filterHTML = $filterHTML . "<option value='"
-                . $filter->getIdWiderAreaMap() . "'>"
-                . $filter->getName() ."</option>";
+                . $filter -> getIdWiderAreaMap() . "'>"
+                . $filter -> getName() . "</option>";
         }
         return $filterHTML;
     }
@@ -139,7 +139,7 @@ class WiderAreaMapService {
     }
 
     public function generateInfoWindowConfig($pin, $markerName) {
-        $infoWindowContent =  '"' ."<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
+        $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4></br><p><a class='locationHref' href=" . "'"
             . $pin -> getUrl() . "'" . '>Visit Site</a></p></div></div>' . '"';

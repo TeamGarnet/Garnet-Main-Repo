@@ -3,12 +3,12 @@ include_once 'data/FAQData.class.php';
 include_once 'models/FAQ.class.php';
 
 class FAQService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllFAQEntries() {
         $fAQDataClass = new FAQData();
-        $allFAQDataObjects =  $fAQDataClass -> readFAQ();
+        $allFAQDataObjects = $fAQDataClass -> readFAQ();
         $allFAQData = array();
 
         foreach ($allFAQDataObjects as $fAQArray) {
@@ -18,16 +18,15 @@ class FAQService {
         }
         return $allFAQData;
     }
-	
-	public function formatFAQInfo() {
-        $allFAQObjectsInfo = $this ->getAllFAQEntries();
+
+    public function formatFAQInfo() {
+        $allFAQObjectsInfo = $this -> getAllFAQEntries();
         $formattedFAQInfo = "";
 
-        foreach ($allFAQObjectsInfo as $faqObjectInfo){
+        foreach ($allFAQObjectsInfo as $faqObjectInfo) {
             $formattedFAQInfo .= '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
                 . $faqObjectInfo -> getQuestion() . '</p><p class="a">'
-                . $faqObjectInfo -> getAnswer() . '</p></div></div></div>'
-            ;
+                . $faqObjectInfo -> getAnswer() . '</p></div></div></div>';
         };
 
 
@@ -65,17 +64,17 @@ class FAQService {
         $allmodels = $this -> getAllFAQEntries();
         $html = "";
         foreach ($allmodels as $model) {
-            $objectRowID = "15" . strval($model->getIdFAQ());
+            $objectRowID = "15" . strval($model -> getIdFAQ());
             $editAndDelete = "</td><td><button onclick='updateFAQ("
                 . $objectRowID . ","
-                . $model->getIdFAQ()
+                . $model -> getIdFAQ()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteFAQ('
-                . $model->getIdFAQ()
+                . $model -> getIdFAQ()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>"
-                . $model->getQuestion()
-                . "</td><td>" . $model->getAnswer()
+                . $model -> getQuestion()
+                . "</td><td>" . $model -> getAnswer()
                 . $editAndDelete
                 . "</td></tr>";
         }

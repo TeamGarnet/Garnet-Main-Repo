@@ -1,8 +1,8 @@
 <?php
 include_once 'data/TrackableObjectData.class.php';
+
 /**
  */
-
 class TrackableObjectService {
     public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $trackableObjectData = new TrackableObjectData();

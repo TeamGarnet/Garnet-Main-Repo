@@ -3,7 +3,6 @@ include_once 'DatabaseConnection.class.php';
 
 /**
  */
-
 class HistoricFilterData {
     /**
      * Retrieves the Database information needed.

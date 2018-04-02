@@ -1,4 +1,5 @@
 <?php
+
 /*
 *
 DatabaseConnection.class.php: Connection and closure settings to garnet database
@@ -10,12 +11,12 @@ To make a connection to the database and make a query simple use the lines:
     $sql_query = "SELECT foo FROM .....";
     $result = $mysqli->query($sql_query);
 */
+
 class DatabaseConnection {
 
     private $_connection;
 
     private static $_instance; //The single instance
-
 
 
     /**
@@ -30,7 +31,6 @@ class DatabaseConnection {
         }
         return self ::$_instance;
     }
-
 
 
     /**
@@ -60,7 +60,6 @@ class DatabaseConnection {
     }
 
 
-
     /**
      * Retrieves an instance of the Database connection, not the instance.
      * @return PDO
@@ -69,7 +68,6 @@ class DatabaseConnection {
         $dbh = null;
         return $this -> _connection;
     }
-
 
 
     // Magic method clone is empty to prevent duplication of connection
@@ -82,22 +80,21 @@ class DatabaseConnection {
      * @param string $sqlString - Complete sql select statement
      * @return array - An associative array of objects pulled from the database
      */
-    function returnObject($objName, $sqlString = "")
-    {
+    function returnObject($objName, $sqlString = "") {
         try {
             $results = array();
             if ($sqlString == "") {
                 $sqlString = "SELECT * FROM " . $objName;
             }
-            $stmnt = $this->getConnection()->prepare($sqlString);
-            $stmnt->execute();
-            $stmnt->setFetchMode(PDO::FETCH_CLASS, $objName);
-            while ($result = $stmnt->fetch()) { // or just fetchALl();
+            $stmnt = $this -> getConnection() -> prepare($sqlString);
+            $stmnt -> execute();
+            $stmnt -> setFetchMode(PDO::FETCH_CLASS, $objName);
+            while ($result = $stmnt -> fetch()) { // or just fetchALl();
                 $results[] = $result;
             }
             return $results;
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            echo $e -> getMessage();
             die();
         }
     }

@@ -3,7 +3,6 @@ include_once 'DatabaseConnection.class.php';
 
 /**
  */
-
 class FAQData {
     /**
      * Retrieves the Database information needed.

@@ -2,16 +2,16 @@
 include_once 'data/HistoricFilterData.class.php';
 include_once 'data/GraveObjectData.class.php';
 include_once 'models/HistoricFilter.class.php';
+
 /**
  */
-
 class HistoricFilterService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllHistoricFilterEntries() {
         $historicFilterDataClass = new HistoricFilterData();
-        $allHistoricFilterDataObjects =  $historicFilterDataClass -> readHistoricFilter();
+        $allHistoricFilterDataObjects = $historicFilterDataClass -> readHistoricFilter();
         $allHistoricFilterData = array();
 
         foreach ($allHistoricFilterDataObjects as $historicFilterArray) {
@@ -64,20 +64,20 @@ class HistoricFilterService {
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
-            $objectRowID = "14" . strval($model->getIdHistoricFilter());
+            $objectRowID = "14" . strval($model -> getIdHistoricFilter());
             $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
                 . $objectRowID . ","
-                . $model->getIdHistoricFilter()
+                . $model -> getIdHistoricFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteHistoricFilter('
-                . $model->getIdHistoricFilter()
+                . $model -> getIdHistoricFilter()
                 . ')"> Delete</button>';
             $html = $html
-                . "<tr id='" . $objectRowID . "'><td>" . $model->getHistoricFilterName()
-                . "</td><td>" . $model->getDateStart()
-                . "</td><td>" . $model->getDateEnd()
-                . "</td><td>" . $model->getDescription()
-                . "</td><td>" . $model->getButtonColor()
+                . "<tr id='" . $objectRowID . "'><td>" . $model -> getHistoricFilterName()
+                . "</td><td>" . $model -> getDateStart()
+                . "</td><td>" . $model -> getDateEnd()
+                . "</td><td>" . $model -> getDescription()
+                . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
                 . "</td></tr>";
         }
@@ -85,12 +85,12 @@ class HistoricFilterService {
     }
 
     public function getAllFiltersForSelect() {
-        $filters = $this->getAllHistoricFilterEntries();
+        $filters = $this -> getAllHistoricFilterEntries();
         $filterHTML = "";
         foreach ($filters as $filter) {
             $filterHTML = $filterHTML . "<option value='"
-                . $filter->getIdHistoricFilter() . "'>"
-                . $filter->getHistoricFilterName() ."</option>";
+                . $filter -> getIdHistoricFilter() . "'>"
+                . $filter -> getHistoricFilterName() . "</option>";
         }
         return $filterHTML;
     }

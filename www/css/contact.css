@@ -1,10 +1,10 @@
 body {
     background-color: #F7F5E9;
-	background-image: url("../images/TrailBackground.png");
+    background-image: url("../images/TrailBackground.png");
 }
 
 #pageContent {
-    margin-top:2.5%;
+    margin-top: 2.5%;
 }
 
 /* PHP Generated Content*/
@@ -12,7 +12,7 @@ body {
     background-color: transparent;
     text-align: center;
     text-decoration: none;
-	padding:5%;
+    padding: 5%;
 }
 
 .contactCard {
@@ -21,12 +21,12 @@ body {
 }
 
 .name {
-    
+
     font-weight: bold;
 }
 
 h3 {
-	font-family: Proza Libre !important;
+    font-family: Proza Libre !important;
 }
 
 

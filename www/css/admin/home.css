@@ -1,78 +1,96 @@
-.container1{
+.container1 {
     background-color: #6b7749;
-    height:100px;
+    height: 100px;
 
 }
-#navBar{
-	background-color: #6b7749;
-	margin: 0;
+
+#navBar {
+    background-color: #6b7749;
+    margin: 0;
 }
-#navBarContainer{
-	width: 100%;
+
+#navBarContainer {
+    width: 100%;
 }
-#nav-right{
-	margin-top: 2%;
+
+#nav-right {
+    margin-top: 2%;
 }
-#nav-right > li > a:hover{
-	background-color: transparent;
-	color: #000;
+
+#nav-right > li > a:hover {
+    background-color: transparent;
+    color: #000;
 }
-#nav-right > li > a:active{
-	background-color: white;
-	color: #000;
-	border-radius: 4px;
+
+#nav-right > li > a:active {
+    background-color: white;
+    color: #000;
+    border-radius: 4px;
 }
-#nav-right > li > a:focus{
-	background-color: white;
-	color: #000;
-	border-radius: 4px;
+
+#nav-right > li > a:focus {
+    background-color: white;
+    color: #000;
+    border-radius: 4px;
 }
-#nav-right > li{
-	float:right;
+
+#nav-right > li {
+    float: right;
 }
-#myTab > li > a{
-	color: #ffffff;
-	border: none !important;
+
+#myTab > li > a {
+    color: #ffffff;
+    border: none !important;
 }
-#myTab > li > a:active{
-	border: 1px solid #ffffff !important;
-	border-bottom-color: transparent !important;
-	background-color: #ffffff !important;
-	color: #000000 !important;
+
+#myTab > li > a:active {
+    border: 1px solid #ffffff !important;
+    border-bottom-color: transparent !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
-#myTab > li > a:hover{
-	background-color: transparent !important;
-	color: #000000 !important;
-	border: none !important;
+
+#myTab > li > a:hover {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: none !important;
 }
-#myTab > li.active > a{
-	color: #000000;
+
+#myTab > li.active > a {
+    color: #000000;
 }
-#myTab > li.active > a:hover{
-	background-color: #ffffff !important;
+
+#myTab > li.active > a:hover {
+    background-color: #ffffff !important;
 
 }
-#myTab{
-	background-color: #6b7749;
-	margin-bottom: 1em;
+
+#myTab {
+    background-color: #6b7749;
+    margin-bottom: 1em;
 }
-#tabBar{
-	width: 100% !important;
+
+#tabBar {
+    width: 100% !important;
 }
-.logo{
-    padding-top:20px;
+
+.logo {
+    padding-top: 20px;
 }
-.logout{
-    float:right;
-    padding-top:35px;
+
+.logout {
+    float: right;
+    padding-top: 35px;
     color: #fff;
     font-size: 20px;
 }
-.logout:hover{
-    color:#040404;
+
+.logout:hover {
+    color: #040404;
 }
+
 #custom-search-input {
-    margin:0;
+    margin: 0;
     margin-top: 25px;
     padding: 0;
 }
@@ -104,12 +122,13 @@
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    color:#bdbcbc;
+    color: #bdbcbc;
 }
 
 .search-query:focus + button {
     z-index: 3;
 }
+
 /**********
 	Tabber
 ***********/
@@ -118,7 +137,8 @@
     margin-top: 60px;
     font-size: 20px;
 }
-.content_accordion{
+
+.content_accordion {
     margin-top: 20px;
 }
 

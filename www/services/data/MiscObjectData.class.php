@@ -1,8 +1,8 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+
 /**
  */
-
 class MiscObjectData {
     /**
      * Retrieves the Database information needed.
@@ -66,7 +66,7 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
             $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
             $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-            $stmt -> bindParam(':idMisc', $idMisc,PDO::PARAM_STR);
+            $stmt -> bindParam(':idMisc', $idMisc, PDO::PARAM_STR);
 
             $stmt -> execute();
         } catch (PDOException $e) {

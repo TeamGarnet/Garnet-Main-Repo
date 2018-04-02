@@ -84,7 +84,7 @@ class MapData {
 
             // 1. Get the filter type to determine which subsequent table to use.
             $stmt = $this -> getDBInfo(1) -> prepare($filterTypeQuery);
-            $stmt -> bindParam(':idTrackableObject',$idTrackableObject);
+            $stmt -> bindParam(':idTrackableObject', $idTrackableObject);
             $stmt -> execute();
             $filterType = strval($stmt -> fetchColumn());
 
@@ -106,7 +106,7 @@ class MapData {
 
             $stmt -> bindParam(':idTrackableObject', $idTrackableObject);
             $stmt -> execute();
-            while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+            while ($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                 $objectCardData = array_merge($objectCardData, $result);
             }
             return $objectCardData;

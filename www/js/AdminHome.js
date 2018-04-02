@@ -1,19 +1,19 @@
 function deleteGrave(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteGrave=' + String(id) +'&action=delete',
+                data: 'deleteGrave=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -23,21 +23,21 @@ function deleteGrave(id) {
 }
 
 function deleteNH(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteNH=' + String(id) +'&action=delete',
+                data: 'deleteNH=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -47,21 +47,21 @@ function deleteNH(id) {
 }
 
 function deleteMisc(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteMisc=' + String(id) +'&action=delete',
+                data: 'deleteMisc=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -71,13 +71,13 @@ function deleteMisc(id) {
 }
 
 function deleteType(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteType=' + String(id) +'&action=delete',
+                data: 'deleteType=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     //alert(data);
@@ -88,10 +88,10 @@ function deleteType(id) {
                     }
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -101,21 +101,21 @@ function deleteType(id) {
 }
 
 function deleteHistoricFilter(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteHistoricFilter=' + String(id) +'&action=delete',
+                data: 'deleteHistoricFilter=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -125,21 +125,21 @@ function deleteHistoricFilter(id) {
 }
 
 function deleteFAQ(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteFAQ=' + String(id) +'&action=delete',
+                data: 'deleteFAQ=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -149,21 +149,21 @@ function deleteFAQ(id) {
 }
 
 function deleteLocation(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteLocation=' + String(id) +'&action=delete',
+                data: 'deleteLocation=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -173,21 +173,21 @@ function deleteLocation(id) {
 }
 
 function deleteContact(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteContact=' + String(id) +'&action=delete',
+                data: 'deleteContact=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -197,21 +197,21 @@ function deleteContact(id) {
 }
 
 function deleteEvent(id) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#deleteModal').modal('show');
         $('.confirm').click(function () {
             $.ajax({
                 type: "POST",
                 url: "../ajaxCalls.php",
-                data: 'deleteEvent=' + String(id) +'&action=delete',
+                data: 'deleteEvent=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     return true;
                 },
-                dataType:"text",
+                dataType: "text",
                 processData: false,
-                contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError){
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
                     alert(xhr.status);
                     alert(thrownError);
                 }
@@ -230,11 +230,11 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
         var labelText = $(this).text() + ':';
 
 
-        if(labelText.includes("?")){
+        if (labelText.includes("?")) {
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
-        if (labelText == "Start Time:"){
+        if (labelText == "Start Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
             var date = dateTimeArray[0];
@@ -250,7 +250,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             input += '<label for="' + attribute + '">' + labelText + '</label><div class="radio"><label>Yes<input type="radio" name="isHazard" value="Yes"/></label></div>' +
                 '<div class="radio"><label>No<input type="radio" name="isHazard" value="No"/></label></div>';
             isHazard = tdVal;
-            
+
         } else if (labelText == "End Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -259,7 +259,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
                 '<input type="date" id="endDate" name="endDate" value="' + date + '" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" value="' + time + '" autocomplete="off"/>';
 
-        }  else if (labelText.includes("Type")) {
+        } else if (labelText.includes("Type")) {
             if (tableID == "#misc") {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div><br>';
             }
@@ -287,10 +287,12 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
     if (tableID == "#grave") {
         $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
         $(".historicSelect.currentFilter").removeClass("invisible");
-    } if (tableID == "#misc") {
+    }
+    if (tableID == "#misc") {
         $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
         $(".typeSelect.currentFilter").removeClass("invisible");
-    } if (tableID == "#event"){
+    }
+    if (tableID == "#event") {
         $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationFilter");
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
@@ -298,13 +300,14 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
 
     // Show modal
     $(document).ready(function () {
-        if (tableID == "#grave"){
+        if (tableID == "#grave") {
             if (idHistoricFilter == null) {
                 $(".historicSelect.currentFilter option[value=0]").attr("selected", true);
             }
             $(".historicSelect.currentFilter option[value=" + idHistoricFilter + "]").attr("selected", true);
             $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
-        } if (tableID == "#misc") {
+        }
+        if (tableID == "#misc") {
             if (isHazard == "No") {
                 $('input[type="radio"][name="isHazard"]').filter('[value="No"]').prop('checked', true);
             } else {
@@ -313,9 +316,11 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
 
             $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
 
-        } if (tableID =="#naturalHistory"){
+        }
+        if (tableID == "#naturalHistory") {
             $(".typeSelect.currentFilter option[value=" + idTypeFilter + "]").attr("selected", true);
-        } if (tableID == "#event") {
+        }
+        if (tableID == "#event") {
             $(".locationSelect.currentFilter option[value=" + idWiderAreaMap + "]").attr("selected", true);
         }
 
@@ -329,11 +334,11 @@ function generateCreateModal(tableID) {
         var attribute = $(this).text().replace(/ /g, '');
         var labelText = $(this).text() + ':';
 
-        if(labelText.includes("?")){
+        if (labelText.includes("?")) {
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
-        if (labelText == "Start Time:"){
+        if (labelText == "Start Time:") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="startDate" name="startDate" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" autocomplete="off"/>';
@@ -343,7 +348,7 @@ function generateCreateModal(tableID) {
                 '<input type="date" id="endDate" name="endDate" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" autocomplete="off"/>';
 
-        }  else if (labelText == "Historic Filter:") {
+        } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
         } else if (labelText.includes("Hazard:")) {
@@ -356,7 +361,7 @@ function generateCreateModal(tableID) {
             }
 
         } else if (labelText.includes("Location:") && tableID == "#event") {
-                input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="locationFilter" id="locationFilter"></div>';
+            input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="locationFilter" id="locationFilter"></div>';
 
         } else if (labelText.includes("Date")) {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
@@ -373,10 +378,12 @@ function generateCreateModal(tableID) {
     if (tableID == "#grave") {
         $(".historicSelect").clone().addClass("currentFilter").appendTo(".hisFilter");
         $(".historicSelect.currentFilter").removeClass("invisible");
-    } if (tableID == "#misc") {
+    }
+    if (tableID == "#misc") {
         $(".typeSelect").clone().addClass("currentFilter").appendTo(".typeFilter");
         $(".typeSelect.currentFilter").removeClass("invisible");
-    } if (tableID == "#event"){
+    }
+    if (tableID == "#event") {
         $(".locationSelect").clone().addClass("currentFilter").appendTo(".locationFilter");
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
@@ -392,13 +399,14 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idTrackableObject': idTrackableObject,
+        var formData = {
+            'idTrackableObject': idTrackableObject,
             'idGrave': idGrave,
-            'idHistoricFilter':$(".historicSelect.currentFilter option:selected").val(),
+            'idHistoricFilter': $(".historicSelect.currentFilter option:selected").val(),
             'idTypeFilter': 1,
             'FirstName': $('#FirstName').val(),
-            'MiddleName':$('#MiddleName').val(),
-            'LastName':$('#LastName').val(),
+            'MiddleName': $('#MiddleName').val(),
+            'LastName': $('#LastName').val(),
             'BirthDate': $('#BirthDate').val(),
             'DeathDate': $('#DeathDate').val(),
             'Description': $('#Description').val(),
@@ -412,8 +420,8 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateGraveEntry: formData}
-        }).done(function( msg ) {
+            data: {updateGraveEntry: formData}
+        }).done(function (msg) {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -425,7 +433,8 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idTrackableObject': parseInt(idTrackableObject),
+        var formData = {
+            'idTrackableObject': parseInt(idTrackableObject),
             'idNaturalHistory': parseInt(idNaturalHistory),
             'idTypeFilter': parseInt(idTypeFilter),
             'CommonName': $('#CommonName').val(),
@@ -435,13 +444,14 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
             'Latitude': parseFloat($('#Latitude').val()),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'Type': $('#Type').val()};
+            'Type': $('#Type').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateNaturalHistoryEntry: formData}
-        }).done(function() {
+            data: {updateNaturalHistoryEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -453,22 +463,24 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idTrackableObject': idTrackableObject,
+        var formData = {
+            'idTrackableObject': idTrackableObject,
             'idMiscObject': idMiscObject,
-            'idTypeFilter':$(".typeSelect.currentFilter option:selected").val(),
+            'idTypeFilter': $(".typeSelect.currentFilter option:selected").val(),
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
             'IsaHazard': $('input[type="radio"][name="isHazard"]:checked').val(),
             'Longitude': $('#Longitude').val(),
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
-            'ImageLocation': $('#ImageLocation').val()};
+            'ImageLocation': $('#ImageLocation').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateMiscObjectEntry: formData}
-        }).done(function() {
+            data: {updateMiscObjectEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -480,16 +492,18 @@ function updateType(rowID, idTypeFilter) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idTypeFilter': idTypeFilter,
+        var formData = {
+            'idTypeFilter': idTypeFilter,
             'Name': $('#Name').val(),
             'PinDesign': $('#PinDesign').val(),
-            'ButtonColor': $('#ButtonColor').val()};
+            'ButtonColor': $('#ButtonColor').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateTypeFilterEntry: formData}
-        }).done(function() {
+            data: {updateTypeFilterEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -501,18 +515,20 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idHistoricFilter': idHistoricFilter,
+        var formData = {
+            'idHistoricFilter': idHistoricFilter,
             'Name': $('#Name').val(),
             'StartDate': $('#StartDate').val(),
             'EndDate': $('#EndDate').val(),
             'Description': $('#Description').val(),
-            'ButtonColor': $('#ButtonColor').val()};
+            'ButtonColor': $('#ButtonColor').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateHistoricFilterEntry: formData}
-        }).done(function() {
+            data: {updateHistoricFilterEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -524,15 +540,17 @@ function updateFAQ(rowID, idFAQ) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idFAQ': idFAQ,
+        var formData = {
+            'idFAQ': idFAQ,
             'Question': $('#Question').val(),
-            'Answer': $('#Answer').val()};
+            'Answer': $('#Answer').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateFAQEntry: formData}
-        }).done(function() {
+            data: {updateFAQEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -540,11 +558,12 @@ function updateFAQ(rowID, idFAQ) {
 }
 
 function updateLocation(rowID, idWiderAreaMap) {
-    generateUpdateModal('#widerLocation', rowID, null,null, null);
+    generateUpdateModal('#widerLocation', rowID, null, null, null);
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idWiderAreaMap': idWiderAreaMap,
+        var formData = {
+            'idWiderAreaMap': idWiderAreaMap,
             'Site': $('#Site').val(),
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
@@ -559,8 +578,8 @@ function updateLocation(rowID, idWiderAreaMap) {
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateWiderAreaMapEntry: formData}
-        }).done(function() {
+            data: {updateWiderAreaMapEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -572,18 +591,20 @@ function updateContact(rowID, idContact) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idContact': idContact,
+        var formData = {
+            'idContact': idContact,
             'Name': $('#Name').val(),
             'Email': $('#Email').val(),
             'Description': $('#Description').val(),
             'Phone': $('#Phone').val(),
-            'Title': $('#Title').val()};
+            'Title': $('#Title').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateContactEntry: formData}
-        }).done(function() {
+            data: {updateContactEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -595,19 +616,21 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
-        var formData = {'idEvent': idEvent,
+        var formData = {
+            'idEvent': idEvent,
             'Name': $('#Name').val(),
             'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': idWiderAreaMap};
+            'idWiderAreaMap': idWiderAreaMap
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { updateEventEntry: formData}
-        }).done(function() {
+            data: {updateEventEntry: formData}
+        }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
         });
@@ -624,14 +647,15 @@ function cancelCreate() {
     $('#createModalBody').empty();
 }
 
-function createGrave(){
+function createGrave() {
     $('#createModalTitle').text('Create Grave');
     generateCreateModal('#grave');
 
     $('#createObject').click(function () {
-        var formData = {'FirstName': $('#FirstName').val(),
-            'MiddleName':$('#MiddleName').val(),
-            'LastName':$('#LastName').val(),
+        var formData = {
+            'FirstName': $('#FirstName').val(),
+            'MiddleName': $('#MiddleName').val(),
+            'LastName': $('#LastName').val(),
             'BirthDate': $('#BirthDate').val(),
             'DeathDate': $('#DeathDate').val(),
             'Description': $('#Description').val(),
@@ -647,8 +671,8 @@ function createGrave(){
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createGraveEntry: formData}
-        }).done(function() {
+            data: {createGraveEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -660,20 +684,22 @@ function createNH() {
     generateCreateModal('#naturalHistory');
 
     $('#createObject').click(function () {
-        var formData = {'CommonName': $('#CommonName').val(),
+        var formData = {
+            'CommonName': $('#CommonName').val(),
             'ScientificName': $('#ScientificName').val(),
             'Description': $('#Description').val(),
             'Longitude': parseFloat($('#Longitude').val()),
             'Latitude': parseFloat($('#Latitude').val()),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'idTypeFilter': 2};
+            'idTypeFilter': 2
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createNaturalHistoryEntry: formData}
-        }).done(function() {
+            data: {createNaturalHistoryEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -685,7 +711,8 @@ function createMisc() {
     generateCreateModal('#misc');
 
     $('#createObject').click(function () {
-        var formData = {'Name': $('#Name').val(),
+        var formData = {
+            'Name': $('#Name').val(),
             'Description': $('#Description').val(),
             'IsaHazard': $('input[type="radio"][name="isHazard"]:checked').val(),
             'Longitude': $('#Longitude').val(),
@@ -693,13 +720,14 @@ function createMisc() {
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
             'Type': $(".typeSelect.currentFilter option:selected").val(),
-            'idTypeFilter': 3};
+            'idTypeFilter': 3
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createMiscObjectEntry: formData}
-        }).done(function() {
+            data: {createMiscObjectEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -711,15 +739,17 @@ function createTypeFilter() {
     generateCreateModal('#type');
 
     $('#createObject').click(function () {
-        var formData = {'Name': $('#Name').val(),
+        var formData = {
+            'Name': $('#Name').val(),
             'PinDesign': $('#PinDesign').val(),
-            'ButtonColor': $('#ButtonColor').val()};
+            'ButtonColor': $('#ButtonColor').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createTypeFilterEntry: formData}
-        }).done(function() {
+            data: {createTypeFilterEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -731,17 +761,19 @@ function createHistoricFilter() {
     generateCreateModal('#historic');
 
     $('#createObject').click(function () {
-        var formData = {'Name': $('#Name').val(),
+        var formData = {
+            'Name': $('#Name').val(),
             'StartDate': $('#StartDate').val(),
             'EndDate': $('#EndDate').val(),
             'Description': $('#Description').val(),
-            'ButtonColor': $('#ButtonColor').val()};
+            'ButtonColor': $('#ButtonColor').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createHistoricFilterEntry: formData}
-        }).done(function() {
+            data: {createHistoricFilterEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -753,14 +785,16 @@ function createFAQ() {
     generateCreateModal('#faq');
 
     $('#createObject').click(function () {
-        var formData = {'Question': $('#Question').val(),
-            'Answer': $('#Answer').val()};
+        var formData = {
+            'Question': $('#Question').val(),
+            'Answer': $('#Answer').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createFAQEntry: formData}
-        }).done(function() {
+            data: {createFAQEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -772,7 +806,8 @@ function createWiderLocation() {
     generateCreateModal('#widerLocation');
 
     $('#createObject').click(function () {
-        var formData = {'Site': $('#Site').val(),
+        var formData = {
+            'Site': $('#Site').val(),
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
             'Longitude': $('#Longitude').val(),
@@ -786,8 +821,8 @@ function createWiderLocation() {
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createWiderAreaMapEntry: formData}
-        }).done(function() {
+            data: {createWiderAreaMapEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -799,17 +834,19 @@ function createContact() {
     generateCreateModal('#contact');
 
     $('#createObject').click(function () {
-        var formData = {'Name': $('#Name').val(),
+        var formData = {
+            'Name': $('#Name').val(),
             'Email': $('#Email').val(),
             'Description': $('#Description').val(),
             'Phone': $('#Phone').val(),
-            'Title': $('#Title').val()};
+            'Title': $('#Title').val()
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createContactEntry: formData}
-        }).done(function() {
+            data: {createContactEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });
@@ -821,18 +858,20 @@ function createEventEntry() {
     generateCreateModal('#event');
 
     $('#createObject').click(function () {
-        var formData = {'Name': $('#Name').val(),
+        var formData = {
+            'Name': $('#Name').val(),
             'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': null};
+            'idWiderAreaMap': null
+        };
 
         $.ajax({
             method: "POST",
             url: "../ajaxCalls.php",
-            data: { createEventEntry: formData}
-        }).done(function() {
+            data: {createEventEntry: formData}
+        }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
         });

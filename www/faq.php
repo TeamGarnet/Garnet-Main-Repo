@@ -15,7 +15,7 @@ $allFAQInfo = $faqService -> formatFAQInfo();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
     <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
@@ -40,7 +40,7 @@ $allFAQInfo = $faqService -> formatFAQInfo();
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -55,9 +55,8 @@ $allFAQInfo = $faqService -> formatFAQInfo();
 </head>
 <body>
 
-    <!-- Navigation -->
-    <?php include_once 'components/NavBar.php'?>
-
+<!-- Navigation -->
+<?php include_once 'components/NavBar.php' ?>
 
 
 <div class="container" id="pageContent">

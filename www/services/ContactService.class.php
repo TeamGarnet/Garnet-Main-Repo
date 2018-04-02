@@ -1,16 +1,16 @@
 <?php
 include_once 'data/ContactData.class.php';
 include_once 'models/Contact.class.php';
+
 /**
  */
-
 class ContactService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllContactEntries() {
         $contactDataClass = new ContactData();
-        $allContactDataObjects =  $contactDataClass -> readContact();
+        $allContactDataObjects = $contactDataClass -> readContact();
         $allContactData = array();
 
         foreach ($allContactDataObjects as $contactArray) {
@@ -20,19 +20,18 @@ class ContactService {
         }
         return $allContactData;
     }
-	
-	public function formatContactInfo() {
-        $allContactObjectsInfo = $this ->getAllContactEntries();
+
+    public function formatContactInfo() {
+        $allContactObjectsInfo = $this -> getAllContactEntries();
         $formattedContactInfo = "";
 
-        foreach ($allContactObjectsInfo as $contactObjectInfo){
+        foreach ($allContactObjectsInfo as $contactObjectInfo) {
             $formattedContactInfo .= '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="contactCardOutter"><div class="contactCard"><p class="name">'
                 . $contactObjectInfo -> getName() . '</p><p class="title">'
                 . $contactObjectInfo -> getTitle() . '</p><p class="description">'
-				. $contactObjectInfo -> getDescription() . '</p><p class="email">'
-				. $contactObjectInfo -> getEmail() . '</p><p class="phone">'
-				. $contactObjectInfo -> getPhone() . '</p></div></div></div>'
-            ;
+                . $contactObjectInfo -> getDescription() . '</p><p class="email">'
+                . $contactObjectInfo -> getEmail() . '</p><p class="phone">'
+                . $contactObjectInfo -> getPhone() . '</p></div></div></div>';
         };
 
 
@@ -76,19 +75,19 @@ class ContactService {
         $allmodels = $this -> getAllContactEntries();
         $html = "";
         foreach ($allmodels as $model) {
-            $objectRowID = "17" . strval($model->getIdContact());
+            $objectRowID = "17" . strval($model -> getIdContact());
             $editAndDelete = "</td><td><button onclick='updateContact("
                 . $objectRowID . ","
-                . $model->getIdContact()
+                . $model -> getIdContact()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteContact('
-                . $model->getIdContact()
+                . $model -> getIdContact()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
-                . "</td><td>" . $model->getEmail()
-                . "</td><td>" . $model->getDescription()
-                . "</td><td>" . $model->getPhone()
-                . "</td><td>" . $model->getTitle()
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()
+                . "</td><td>" . $model -> getEmail()
+                . "</td><td>" . $model -> getDescription()
+                . "</td><td>" . $model -> getPhone()
+                . "</td><td>" . $model -> getTitle()
                 . $editAndDelete
                 . "</td></tr>";
         }

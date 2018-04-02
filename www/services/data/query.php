@@ -2,7 +2,7 @@
 
 $getAllMapPinInfoQuery = "
     SELECT * FROM (
-	    SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, CONCAT(firstName, ' ', middleName, ' ', lastName) AS name, pinDesign, T.idTypeFilter, concat(CAST(HF.idHistoricFilter AS CHAR)) AS idHistoricFilter FROM Grave G JOIN TrackableObject T ON G.idGrave = T.idGrave JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter JOIN HistoricFilter HF on G.idHistoricFilter = HF.idHistoricFilter
+	    SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, CONCAT(firstName, ' ', middleName, ' ', lastName) AS name, pinDesign, T.idTypeFilter, concat(CAST(HF.idHistoricFilter AS CHAR)) AS idHistoricFilter FROM Grave G JOIN TrackableObject T ON G.idGrave = T.idGrave JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter
 	    UNION
 	    SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, name, pinDesign, T.idTypeFilter, CONCAT(CAST(0 AS CHAR)) AS idHistoricFilter FROM MiscObject M JOIN TrackableObject T ON M.idMisc = T.idMisc JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 	    UNION
@@ -14,7 +14,6 @@ $getAllWideAreaMapPinInfoQuery = "";
 $loginUserQuery = "SELECT idUser FROM `User` WHERE email=:email AND password=:pwd";
 
 $userInfoQuery = "SELECT email, CONCAT(firstName, ' ', lastName) AS name FROM User WHERE idUser=:idUser";
-
 
 
 $miscInfoQuery = "SELECT T.imageLocation, T.imageDescription, MiscObject.name, MiscObject.description, MiscObject.isHazard
@@ -44,18 +43,17 @@ ON TypeFilter.idTypeFilter = TrackableObject.idTypeFilter
 WHERE TrackableObject.idTrackableObject = :idTrackableObject";
 
 
-
 $filterBarQuery = "
-SELECT  idHistoricFilter AS filterID, historicFilterName as filterName, buttonColor, concat('historicFilter') as `table` FROM HistoricFilter 
+SELECT  idHistoricFilter AS filterID, historicFilterName AS filterName, buttonColor, concat('historicFilter') AS `table` FROM HistoricFilter 
 UNION
-SELECT idTypeFilter, type, buttonColor, concat('typeFilter') as `Table` FROM TypeFilter;
+SELECT idTypeFilter, type, buttonColor, concat('typeFilter') AS `Table` FROM TypeFilter;
 ";
 
 $allTrailLocationQuery = "SELECT * FROM RapidsCemetery.WiderAreaMap";
 
 
 //Admin Page Queries
-        //Get Queries
+//Get Queries
 $getAllGraveEntriesQuery = "SELECT idTrackableObject, G.idGrave, longitude, latitude, imageDescription, imageLocation, firstName, middleName, lastName, birth, death, G.description, HF.idHistoricFilter, HF.historicFilterName, T.idTypeFilter, TF.type FROM Grave G 
 JOIN TrackableObject T ON G.idGrave = T.idGrave 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter 
@@ -71,20 +69,20 @@ JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter
 ";
 
-        //Create Queries
+//Create Queries
 $createTrackableObjectQuery = "INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription,imageLocation, idTypeFilter) 
 VALUES (:longitude, :latitude, :hint, :imageDescription, :imageLocation, :idTypeFilter)";
 
 $createGraveObjectQuery = "INSERT INTO Grave (firstName,middleName,lastName,birth,death,description,idHistoricFilter)
 VALUES (:firstName,:middleName,:lastName,:birth,:death,:description,:idHistoricFilter)";
 
-$createMiscObjectQuery  = "INSERT INTO MiscObject (name,description,isHazard)
+$createMiscObjectQuery = "INSERT INTO MiscObject (name,description,isHazard)
 VALUES (:name, description,:isHazard)";
 
 $createNaturalHistoryObjectQuery = "INSERT INTO NaturalHistory (commonName,scientificName,description)
 VALUES  (:commonName,:scientificName,:description)";
 
-    //Update Queries
+//Update Queries
 $updateTrackableObjectQuery = "UPDATE TrackableObject SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription = :imageDescription, imageLocation = :imageLocation, idTypeFilter = :idTypeFilter WHERE idTrackableObject = :idTrackableObject;";
 
 $updateGraveEntryIdQuery = "UPDATE TrackableObject SET idGrave = :objectID WHERE idTrackableObject = :idTrackableObject";
@@ -103,4 +101,4 @@ $deleteGraveObjectQuery = "DELETE FROM Grave WHERE idGrave = :idGrave";
 
 $deleteNaturalHistoryObjectQuery = "DELETE FROM NaturalHistory WHERE idNaturalHistory = :idNaturalHistory";
 
-$deleteMiscObjectQuery ="DELETE FROM MiscObject WHERE idMisc = :idMisc";
+$deleteMiscObjectQuery = "DELETE FROM MiscObject WHERE idMisc = :idMisc";

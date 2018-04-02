@@ -1,16 +1,16 @@
 <?php
 include_once 'data/EventData.class.php';
 include_once 'models/Event.class.php';
+
 /**
  */
-
 class EventService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllEventEntries() {
         $eventDataClass = new EventData();
-        $allEventDataObjects =  $eventDataClass -> readEvent();
+        $allEventDataObjects = $eventDataClass -> readEvent();
         $allEventData = array();
 
         foreach ($allEventDataObjects as $eventArray) {
@@ -58,20 +58,20 @@ class EventService {
         $allmodels = $this -> getAllEventEntries();
         $html = "";
         foreach ($allmodels as $model) {
-            $objectRowID = "18" . strval($model->getIdEvent());
+            $objectRowID = "18" . strval($model -> getIdEvent());
             $editAndDelete = "</td><td><button onclick='updateEvent("
                 . $objectRowID . ","
-                . $model->getIdEvent() . ","
-                . $model->getIdWiderAreaMap()
+                . $model -> getIdEvent() . ","
+                . $model -> getIdWiderAreaMap()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteEvent('
-                . $model->getIdEvent()
+                . $model -> getIdEvent()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getName()
-                . "</td><td>" . $model->getLocationName()
-                . "</td><td>" . $model->getDescription()
-                . "</td><td>" . $model->getStartTime()
-                . "</td><td>" . $model->getEndTime()
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()
+                . "</td><td>" . $model -> getLocationName()
+                . "</td><td>" . $model -> getDescription()
+                . "</td><td>" . $model -> getStartTime()
+                . "</td><td>" . $model -> getEndTime()
                 . $editAndDelete
                 . "</td></tr>";
         }
@@ -84,20 +84,20 @@ class EventService {
 
         foreach ($allEventObjects as $eventObject) {
             date_default_timezone_set('America/New_York');
-            $unixStartTime = strtotime($eventObject->getStartTime());
+            $unixStartTime = strtotime($eventObject -> getStartTime());
             $dateStart = date("M d, Y", $unixStartTime);
             $timeStart = date("g:i A", $unixStartTime);
             $formattedStartTime = $dateStart . " " . $timeStart;
 
-            $unixEndTime = strtotime($eventObject->getStartTime());
+            $unixEndTime = strtotime($eventObject -> getStartTime());
             $dateEnd = date("M d, Y", $unixEndTime);
             $timeEnd = date("g:i A", $unixStartTime);
             $formattedEndTime = $dateEnd . " " . $timeEnd;
 
             $formattedEventInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
-                . $eventObject->getName() . '</p><p class="eventLocationName">'
-                . $eventObject -> getLocationName() . '</p><p class="eventStartTime">' . $formattedStartTime . ' - ' . $formattedEndTime . '</p><p class="eventDescription">' . $eventObject-> getDescription() . '</p>'
-                .'</div>';
+                . $eventObject -> getName() . '</p><p class="eventLocationName">'
+                . $eventObject -> getLocationName() . '</p><p class="eventStartTime">' . $formattedStartTime . ' - ' . $formattedEndTime . '</p><p class="eventDescription">' . $eventObject -> getDescription() . '</p>'
+                . '</div>';
         }
         return $formattedEventInfo;
     }

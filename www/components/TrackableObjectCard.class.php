@@ -79,7 +79,7 @@ class TrackableObjectCard {
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
+        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
 
         echo $modal;
         return $modal;
@@ -94,7 +94,7 @@ class TrackableObjectCard {
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
+        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
         echo $modal;
         return $modal;
     }
@@ -108,7 +108,7 @@ class TrackableObjectCard {
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
-        $modal = $this-> getModalContainerBegin() . $modalContent . $modalStyle . $this-> getModalContainerEnd();
+        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
         echo $modal;
         return $modal;
     }
@@ -124,7 +124,7 @@ class TrackableObjectCard {
         <div class="modal-body popupModal" id="popupModal">';
     }
 
-    public function getModalContainerEnd(){
+    public function getModalContainerEnd() {
         return '</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Map</button>

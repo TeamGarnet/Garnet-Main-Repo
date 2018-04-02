@@ -22,18 +22,18 @@ class FilterBar {
         <ul class='nav navbar-nav navbar-left'>";
 
         foreach ($filterButtonArray as $filterButton) {
-			$filterButtonCode = "<li><button type='button' class='btn btn-default' style='background-color: " . $filterButton -> getButtonColor() . "; border: 2px solid " . $filterButton -> getButtonColor() . " !important;'" .
-				"onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
-				$filterButton -> getFilterName() . "</button></li>";
-            /**$filterButtonCode = "<li><a href='#' class='btn filterButton' style='background-color: " . $filterButton -> getButtonColor() . ";'" .
+            $filterButtonCode = "<li><button type='button' class='btn btn-default' style='background-color: " . $filterButton -> getButtonColor() . "; border: 2px solid " . $filterButton -> getButtonColor() . " !important;'" .
                 "onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
-                $filterButton -> getFilterName() .
-                "</a></li>";
-			*/
+                $filterButton -> getFilterName() . "</button></li>";
+            /**$filterButtonCode = "<li><a href='#' class='btn filterButton' style='background-color: " . $filterButton -> getButtonColor() . ";'" .
+             * "onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
+             * $filterButton -> getFilterName() .
+             * "</a></li>";
+             */
 
             $filterBarCode = $filterBarCode . $filterButtonCode;
         }
-		$filterBarCode = $filterBarCode . "<ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></div></nav>";
+        $filterBarCode = $filterBarCode . "<ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></div></nav>";
         /*$filterBarCode  = $filterBarCode . "<a href='#' class='btn filterButton' style='background-color: #2c3e50;' onclick=" . "\"resetFilters()\">Reset Filters</a> ";
 		*/
         $this -> setFilterBar($filterBarCode);

@@ -3,7 +3,6 @@ include_once 'DatabaseConnection.class.php';
 
 /**
  */
-
 class TypeFilterData {
     /**
      * Retrieves the Database information needed.

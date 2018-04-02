@@ -1,8 +1,8 @@
 <?php
 include_once 'TrackableObject.class.php';
+
 /**
  */
-
 class NaturalHistory extends TrackableObject {
     private $idNaturalHistory;
     private $commonName;
@@ -22,7 +22,7 @@ class NaturalHistory extends TrackableObject {
         $this -> commonName = $commonName;
         $this -> scientificName = $scientificName;
         $this -> description = $description;
-        TrackableObject::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
+        TrackableObject ::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
     }
 
     /**

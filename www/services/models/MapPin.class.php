@@ -51,7 +51,6 @@ class MapPin {
     }
 
 
-
     /**
      * @return int : the ID stored in the DB of the trackable object
      */

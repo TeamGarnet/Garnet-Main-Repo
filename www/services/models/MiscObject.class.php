@@ -3,8 +3,7 @@ include_once 'TrackableObject.class.php';
 
 /**
  */
-
-class MiscObject extends TrackableObject{
+class MiscObject extends TrackableObject {
     private $idMisc;
     private $name;
     private $description;
@@ -24,7 +23,7 @@ class MiscObject extends TrackableObject{
         $this -> description = $description;
         $this -> isHazard = $isHazard;
 
-        TrackableObject::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
+        TrackableObject ::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
     }
 
     /**

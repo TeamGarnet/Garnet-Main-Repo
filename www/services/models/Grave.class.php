@@ -1,8 +1,8 @@
 <?php
 include_once 'TrackableObject.class.php';
+
 /**
  */
-
 class Grave extends TrackableObject {
     private $idGrave;
     private $firstName;
@@ -37,7 +37,7 @@ class Grave extends TrackableObject {
         $this -> description = $description;
         $this -> idHistoricFilter = $idHistoricFilter;
         $this -> historicFilterName = $historicFilterName;
-        TrackableObject::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
+        TrackableObject ::__construct($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter, $type);
     }
 
 

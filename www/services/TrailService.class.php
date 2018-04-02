@@ -5,7 +5,7 @@ include_once 'models/TrailObject.class.php';
 class TrailService {
 
 
-    public function __construct(){
+    public function __construct() {
     }
 
 
@@ -24,16 +24,15 @@ class TrailService {
     }
 
     public function formatTrailLocationsInfo() {
-        $allTrailObjectsInfo = $this ->getAllTrailLocationInfo();
+        $allTrailObjectsInfo = $this -> getAllTrailLocationInfo();
         $formattedTrailLocationInfo = "";
 
-        foreach ($allTrailObjectsInfo as $trailObjectInfo){
+        foreach ($allTrailObjectsInfo as $trailObjectInfo) {
             $formattedTrailLocationInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
                 . $trailObjectInfo -> getLineColor() . '</p><p class="locationName">'
                 . $trailObjectInfo -> getName() . '</p><p class="locationDescription">'
                 . $trailObjectInfo -> getDescription() . '</p><a href="'
-                . $trailObjectInfo -> getUrl() . '" class="locationURL">Visit Site</a></div></div></div>'
-            ;
+                . $trailObjectInfo -> getUrl() . '" class="locationURL">Visit Site</a></div></div></div>';
         };
 
 

@@ -16,7 +16,7 @@ include_once 'components/TrackableObjectCard.class.php';
 
 class MapService {
 
-    public function __construct(){
+    public function __construct() {
     }
 
     /**
@@ -127,7 +127,7 @@ class MapService {
 
         */
 
-        $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src='"
+        $infoWindowContent = '"' . "<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src='"
             . $pin -> getImageLocation()
             . "' alt='"
             . $pin -> getImageDescription() . "' style=width:100px;height:100px;/></br><h4>"
@@ -135,7 +135,7 @@ class MapService {
             . "</h4>"
             . "</br></br><button onclick='loadObjectInfo("
             . $pin -> getIdTrackableObject() . ")' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
-            .'"';
+            . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
         $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {

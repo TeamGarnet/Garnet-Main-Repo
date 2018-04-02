@@ -13,7 +13,7 @@ $allContactInfo = $contactService -> formatContactInfo();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
     <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
@@ -38,7 +38,7 @@ $allContactInfo = $contactService -> formatContactInfo();
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -53,9 +53,8 @@ $allContactInfo = $contactService -> formatContactInfo();
 </head>
 <body>
 
-    <!-- Navigation -->
-    <?php include_once 'components/NavBar.php'?>
-
+<!-- Navigation -->
+<?php include_once 'components/NavBar.php' ?>
 
 
 <div class="container" id="pageContent">
@@ -65,43 +64,43 @@ $allContactInfo = $contactService -> formatContactInfo();
         </div>
     </div>
 
-<!--<div class="row">
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="contactCardOutter">
-				<div class="contactCard">
-					<p class="name">Name </p>
-					<p class="title">Title </p>
-					<p class="description">Description </p>
-					<p class="email">Email </p>
-					<p class="phone">Phone </p>
-				</div>
-			</div>
-		</div>
-	
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="contactCardOutter">
-				<div class="contactCard">
-					<p class="name">Name </p>
-					<p class="title">Title </p>
-					<p class="description">Description </p>
-					<p class="email">Email </p>
-					<p class="phone">Phone </p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="contactCardOutter">
-				<div class="contactCard">
-					<p class="name">Name </p>
-					<p class="title">Title </p>
-					<p class="description">Description </p>
-					<p class="email">Email </p>
-					<p class="phone">Phone </p>
-				</div>
-			</div>
-		</div>
-	</div>-->
+    <!--<div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="contactCardOutter">
+                    <div class="contactCard">
+                        <p class="name">Name </p>
+                        <p class="title">Title </p>
+                        <p class="description">Description </p>
+                        <p class="email">Email </p>
+                        <p class="phone">Phone </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="contactCardOutter">
+                    <div class="contactCard">
+                        <p class="name">Name </p>
+                        <p class="title">Title </p>
+                        <p class="description">Description </p>
+                        <p class="email">Email </p>
+                        <p class="phone">Phone </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="contactCardOutter">
+                    <div class="contactCard">
+                        <p class="name">Name </p>
+                        <p class="title">Title </p>
+                        <p class="description">Description </p>
+                        <p class="email">Email </p>
+                        <p class="phone">Phone </p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
 
     <div class="row">
         <?php

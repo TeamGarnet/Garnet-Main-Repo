@@ -2,20 +2,20 @@
 include_once 'data/TypeFilterData.class.php';
 include_once 'models/TypeFilter.class.php';
 include_once 'data/TrackableObjectData.class.php';
+
 /**
  */
-
 class TypeFilterService {
-    public function __construct(){
+    public function __construct() {
     }
 
     public function getAllTypeFilterEntries() {
         $typeFilterDataClass = new TypeFilterData();
-        $allTypeFilterDataObjects =  $typeFilterDataClass -> readTypeFilter();
+        $allTypeFilterDataObjects = $typeFilterDataClass -> readTypeFilter();
         $allTypeFilterData = array();
 
         foreach ($allTypeFilterDataObjects as $typeFilterArray) {
-            $typeFilterObject = new TypeFilter($typeFilterArray['idTypeFilter'], stripcslashes($typeFilterArray['type']),$typeFilterArray['pinDesign'], $typeFilterArray['buttonColor']);
+            $typeFilterObject = new TypeFilter($typeFilterArray['idTypeFilter'], stripcslashes($typeFilterArray['type']), $typeFilterArray['pinDesign'], $typeFilterArray['buttonColor']);
 
             array_push($allTypeFilterData, $typeFilterObject);
         }
@@ -70,17 +70,17 @@ class TypeFilterService {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $objectRowID = "13" . strval($model->getIdTypeFilter());
+            $objectRowID = "13" . strval($model -> getIdTypeFilter());
             $editAndDelete = "</td><td><button onclick='updateType("
                 . $objectRowID . ","
-                . $model->getIdTypeFilter()
+                . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteType('
-                . $model->getIdTypeFilter()
+                . $model -> getIdTypeFilter()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getType()
-                . "</td><td>" . $model->getPinDesign()
-                . "</td><td>" . $model->getButtonColor()
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
+                . "</td><td>" . $model -> getPinDesign()
+                . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
                 . "</td></tr>";
         }
@@ -88,9 +88,9 @@ class TypeFilterService {
     }
 
     public function getAllFiltersForSelect() {
-        $filters = $this->getAllTypeFilterEntries();
-        $customFilters = array_filter($filters, function($filter){
-            if ($filter -> getType() != "Grave" && $filter -> getType() != "Natural History"){
+        $filters = $this -> getAllTypeFilterEntries();
+        $customFilters = array_filter($filters, function ($filter) {
+            if ($filter -> getType() != "Grave" && $filter -> getType() != "Natural History") {
                 return true;
             } else {
                 return false;
@@ -99,8 +99,8 @@ class TypeFilterService {
         $filterHTML = "";
         foreach ($customFilters as $customFilter) {
             $filterHTML = $filterHTML . "<option value='"
-                . $customFilter->getIdTypeFilter() . "'>"
-                . $customFilter->getType() ."</option>";
+                . $customFilter -> getIdTypeFilter() . "'>"
+                . $customFilter -> getType() . "</option>";
         }
         return $filterHTML;
     }

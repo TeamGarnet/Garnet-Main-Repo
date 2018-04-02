@@ -6,7 +6,7 @@ class FilterButton {
     private $buttonColor;
     private $table;
 
-    public function __construct($filterID,  $filterName, $buttonColor, $table) {
+    public function __construct($filterID, $filterName, $buttonColor, $table) {
         $this -> setFilterID($filterID);
         $this -> setFilterName($filterName);
         $this -> setButtonColor($buttonColor);

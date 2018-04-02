@@ -2,16 +2,16 @@
 include_once 'data/NaturalHistoryObjectData.class.php';
 include_once 'models/NaturalHistory.class.php';
 include_once 'TrackableObjectService.class.php';
+
 /**
  */
-
-class NaturalHistoryService extends TrackableObjectService{
-    public function __construct(){
+class NaturalHistoryService extends TrackableObjectService {
+    public function __construct() {
     }
 
     public function getAllNaturalHistoryEntries() {
         $naturalHistoryDataClass = new NaturalHistoryObjectData();
-        $allNaturalHistoryDataObjects =  $naturalHistoryDataClass -> readNaturalHistoryObject();
+        $allNaturalHistoryDataObjects = $naturalHistoryDataClass -> readNaturalHistoryObject();
         $allNaturalHistoryObject = array();
 
         foreach ($allNaturalHistoryDataObjects as $naturalHistoryArray) {
@@ -33,7 +33,7 @@ class NaturalHistoryService extends TrackableObjectService{
 
         //create NaturalHistory Object
         $naturalHistoryDataClass = new NaturalHistoryObjectData();
-        $lastInsertIdNaturalHistory =  $naturalHistoryDataClass -> createNaturalHistoryObject($scientificName, $commonName, $description);
+        $lastInsertIdNaturalHistory = $naturalHistoryDataClass -> createNaturalHistoryObject($scientificName, $commonName, $description);
 
         //Update Trackable Object to know NaturalHistory Object
         $this -> updateObjectEntryID("Natural History", $lastInsertIdNaturalHistory, $lastInsertIdTrackableObject);
@@ -44,7 +44,7 @@ class NaturalHistoryService extends TrackableObjectService{
         $commonName = filter_var($commonName, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
 
-        $this ->updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
+        $this -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
 
         $naturalHistoryDataClass = new NaturalHistoryObjectData();
         $naturalHistoryDataClass -> updateNaturalHistoryObject($idNaturalHistory, $commonName, $scientificName, $description);
@@ -65,24 +65,24 @@ class NaturalHistoryService extends TrackableObjectService{
         $allModels = $this -> getAllNaturalHistoryEntries();
         $html = "";
         foreach ($allModels as $model) {
-            $objectRowID = "11" . strval($model->getIdNaturalHistory());
+            $objectRowID = "11" . strval($model -> getIdNaturalHistory());
             $editAndDelete = "</td><td><button onclick='updateNH("
                 . $objectRowID . ","
-                . $model->getIdNaturalHistory() . ","
-                . $model->getIdTrackableObject() . ","
-                . $model->getIdTypeFilter()
+                . $model -> getIdNaturalHistory() . ","
+                . $model -> getIdTrackableObject() . ","
+                . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td><button onclick=" . '"deleteNH('
-                . $model->getIdNaturalHistory()
+                . $model -> getIdNaturalHistory()
                 . ')"> Delete</button>';
-            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model->getCommonName()
-                . "</td><td>" . $model->getScientificName()
-                . "</td><td>" . $model->getDescription()
-                . "</td><td>" . $model->getLongitude()
-                . "</td><td>" . $model->getLatitude()
-                . "</td><td>" . $model->getImageDescription()
-                . "</td><td>" . $model->getImageLocation()
-                . "</td><td>" . $model->getType()
+            $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getCommonName()
+                . "</td><td>" . $model -> getScientificName()
+                . "</td><td>" . $model -> getDescription()
+                . "</td><td>" . $model -> getLongitude()
+                . "</td><td>" . $model -> getLatitude()
+                . "</td><td>" . $model -> getImageDescription()
+                . "</td><td>" . $model -> getImageLocation()
+                . "</td><td>" . $model -> getType()
                 . $editAndDelete
                 . "</td></tr>";
         }

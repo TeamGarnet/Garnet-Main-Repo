@@ -110,7 +110,7 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
     public function unsetHistoricFilterId($idHistoricFilter) {
         try {
             //global $unsetHistoricFilterIdQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE Grave SET idHistoricFilter = null WHERE idHistoricFilter = :idHistoricFilter");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE Grave SET idHistoricFilter = NULL WHERE idHistoricFilter = :idHistoricFilter");
             $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {

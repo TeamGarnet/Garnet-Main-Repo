@@ -3,7 +3,6 @@ include_once 'DatabaseConnection.class.php';
 
 /**
  */
-
 class WiderAreaMapData {
     /**
      * Retrieves the Database information needed.

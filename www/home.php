@@ -10,7 +10,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
     <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
@@ -18,8 +18,8 @@
     <link href="css/thirdParty/imagehover.css" rel="stylesheet">
     <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
     <link href="css/thirdParty/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/navbar.css" type="text/css">
-	<link rel="stylesheet" href="css/home.css" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
@@ -32,7 +32,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -58,28 +58,33 @@
                     <div class="topvid_text">
                         <div class="head1" style="float:right; text-align:right; color: white;">
                             <h5 style="font-weight:bold;">RAPIDS CEMETERY ONLINE EXPERIENCE</h5>
-                            <h1 style="font-size:57px; font-family: CormorantGaramond;">Explore a Forgotten Rochester</h1>
+                            <h1 style="font-size:57px; font-family: CormorantGaramond;">Explore a Forgotten
+                                Rochester</h1>
                             <p style=" font-family: ProzaLibre;">Unlock the history of the little known Rochester
                                 cemetery in this <br> interactive history experience</p>
                             <div class="top_btn">
-                                    <a href="rapidsMap.php"<button type="button" class="btn donate" id="explore">explore map</button></a>
+                                <a href="rapidsMap.php"
+                                <button type="button" class="btn donate" id="explore">explore map</button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		
-		<div class="container" id ="footerContainer">
-			<div class="row" id = "footerRow">
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 social" style="float:left;">
-					<a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i class="fab fa-facebook-f"></i></a>
-				</div>
-				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 address">
-					<h5 id="addressh5">19th Ward Community Association — 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5>
-				</div>
-			</div>
-		</div>
+
+        <div class="container" id="footerContainer">
+            <div class="row" id="footerRow">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 social" style="float:left;">
+                    <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i
+                                class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 address">
+                    <h5 id="addressh5">19th Ward Community Association — 216 Thurston Road Rochester, NY 14619 -
+                        (585)328-6571 - 19thWard@19wca.org</h5>
+                </div>
+            </div>
+        </div>
         <!--<div class="container" id ="footerContainer">
 
             <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">

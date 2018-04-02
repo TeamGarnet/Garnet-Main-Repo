@@ -27,6 +27,7 @@ class ContactData {
         }
         return null;
     }
+
     public function createContact($name, $email, $description, $phone, $title) {
         try {
             //global $createContactQuery;
