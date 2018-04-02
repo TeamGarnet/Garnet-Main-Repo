@@ -121,7 +121,7 @@ class WiderAreaMapService {
         foreach ($pinObjectsArray as $pin) {
             $markerName = "marker" . $markerCounter;
             $directionName = "direction" . $markerCounter;
-            $markerPos = "var " . $directionName. " = new google.maps.LatLng(" . $pin -> getLatitude() . "," . $pin -> getLongitude() . "); ";
+            $markerPos = "var " . $directionName. " = new google.maps.LatLng(" . $pin -> getLatitude() . "," . $pin -> getLongitude() . "); directionList.push(" . $directionName . ");";
             $generatedMarkers .= $markerPos . "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'images/pins/greenMarker.png',
