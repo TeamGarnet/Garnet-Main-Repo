@@ -122,7 +122,7 @@ class WiderAreaMapService {
             $markerName = "marker" . $markerCounter;
             $directionName = "direction" . $markerCounter;
             $markerPos = "var " . $directionName. " = new google.maps.LatLng(" . $pin -> getLatitude() . $pin -> getLongitude() . "); ";
-            $generatedMarkers .= $directionName . "var " . $markerName . " = new google.maps.Marker({
+            $generatedMarkers .= $markerPos . "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'images/pins/greenMarker.png',
             title:'" . $pin -> getName() . "' ,
