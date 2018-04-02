@@ -128,7 +128,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    
+
 
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.149579, -77.609624);
@@ -173,9 +173,11 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
         console.log(pointB);
+        var directionListIndex = pointB.substr(pointB.length -1);
+        var coords = directionList[directionListIndex];
         directionsService.route({
             origin: pointA,
-            destination: pointB,
+            destination: coords,
             avoidTolls: true,
             avoidHighways: false,
             travelMode: google.maps.TravelMode.DRIVING
