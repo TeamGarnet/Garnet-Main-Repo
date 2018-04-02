@@ -85,7 +85,9 @@ class EventService {
         foreach ($allEventObjects as $eventObject) {
             date_default_timezone_set('America/New_York');
             $unixStartTime = strtotime($eventObject->getStartTime());
-            $formattedStartTime = date("M-d-Y \at g:i A" , $unixStartTime);
+            $date = date("M d, Y", $unixStartTime);
+            $time = date("g:i A", $unixStartTime);
+            $formattedStartTime = $date . " " . $time;
 
             $unixEndTime = strtotime($eventObject->getStartTime());
             $formattedEndTime = date("M d-Y  \at g:i A" , $unixEndTime);
