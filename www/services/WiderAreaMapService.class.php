@@ -153,7 +153,7 @@ class WiderAreaMapService {
                 infoWindow.setContent(" . $infoWindowContent . ");
                 infoWindow.open(map," . $markerName . ");
             }
-            })(" . $markerName . "));";
+            })(" . $markerName . ")));";
 
         return $infoWindowGenerator . $infoWindowListener;
     }
