@@ -75,44 +75,44 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 </ul>
 
 <div class="tab-content">
-<div class="container tab-pane fade in active" id="pageContent">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center; font-weight:bolder;">Trails</h3>
+    <div class="container tab-pane fade in active" id="pageContent">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 style="text-align: center; font-weight:bolder;">Trails</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <img class="center-block img-responsive" src="/images/TrailMap.jpg"
+                     alt="Map of history trails in Rochester"/>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <?php
+            echo $allTrailInfo;
+            ?>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <img class="center-block img-responsive" src="/images/TrailMap.jpg"
-                 alt="Map of history trails in Rochester"/>
+    <div class="container tab-pane fade" id="events">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 style="text-align: center; font-weight:bolder;">Events</h3>
+            </div>
         </div>
-    </div>
-
-
-    <div class="row">
-
-        <?php
-        echo $allTrailInfo;
-        ?>
-    </div>
-</div>
-
-<div class="container tab-pane fade" id="events">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 style="text-align: center; font-weight:bolder;">Events</h3>
-        </div>
-    </div>
 
         <!-- Google Map -->
         <div id="map"></div>
 
         <!-- Event List -->
         <div class="row">
-        <?php
-        echo $allEventInfo;
-        ?>
+            <?php
+            echo $allEventInfo;
+            ?>
         </div>
     </div>
 </div>
@@ -133,13 +133,18 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
             mapTypeId: google.maps.MapTypeId.roadmap
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        directionsService = new google.maps.DirectionsService;
+        directionsDisplay = new google.maps.DirectionsRenderer({
+            map: map
+        });
         infoWindow = new google.maps.InfoWindow;
 
         <?php
-            echo $allMapPins;
+        echo $allMapPins;
         ?>
-        
+
     }
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
