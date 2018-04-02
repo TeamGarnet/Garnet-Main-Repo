@@ -9,6 +9,9 @@
 
 #rightMenu{
 	float:right;
+	margin-top: 53px;
+	padding-right: 15px;
+	border:none;
 }
 #navBar {
     background-color: #6b7749;
