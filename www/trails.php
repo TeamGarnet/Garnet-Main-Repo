@@ -125,8 +125,8 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var map, infoWindow;
     var allMarkerObjects = [];
     var userLocation;
-    directionsService = new google.maps.DirectionsService;
-    directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.149579, -77.609624);
