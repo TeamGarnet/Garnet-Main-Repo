@@ -90,9 +90,9 @@ class EventService {
             $formattedStartTime = $dateStart . " " . $timeStart;
 
             $unixEndTime = strtotime($eventObject->getStartTime());
-            $dateEnd = date("M d, Y", $unixStartTime);
+            $dateEnd = date("M d, Y", $unixEndTime);
             $timeEnd = date("g:i A", $unixStartTime);
-            $formattedStartTime = $dateEnd . " " . $timeEnd;
+            $formattedEndTime = $dateEnd . " " . $timeEnd;
 
             $formattedEventInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
                 . $eventObject->getName() . '</p><p class="eventLocationName">'
