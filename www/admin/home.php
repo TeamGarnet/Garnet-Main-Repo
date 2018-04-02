@@ -142,24 +142,23 @@ $eventService->deleteEventEntry("5");
     <div class="container1">
         <div class="row">
             <div class="col-lg-12">
-
-                <ul id="myTab" class="nav nav-tabs">
-                    <li class="active">
-                        <a href="#graveDiv" data-toggle="tab">
-                            Graves
-                        </a>
-                    </li>
-                    <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
-                    <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
-                    <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
-                    <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-                    <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
-                    <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
-                    <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
-                    <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
-                </ul>
-
-                <div class="dropdown">
+				<div id="containerForMenuTabsAndCreate">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active">
+							<a href="#graveDiv" data-toggle="tab">
+								Graves
+							</a>
+						</li>
+						<li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+						<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+						<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+						<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+						<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+						<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
+						<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+						<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
+					</ul>
+					<div class="dropdown">
                     <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Create +
@@ -176,7 +175,7 @@ $eventService->deleteEventEntry("5");
                         <li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
                     </ul>
                 </div>
-
+				</div>
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
                         <div class="content_accordion">
