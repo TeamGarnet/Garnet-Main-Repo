@@ -1,10 +1,15 @@
 <?php
 include_once 'services/TrailService.class.php';
 include_once 'services/EventService.class.php';
+include_once 'services/WiderAreaMapService.class.php';
+
+
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 $eventService = new EventService();
 $allEventInfo = $eventService -> formatEventInfo();
+$widerAreaMapService = new WiderAreaMapService();
+$allMapPins = $widerAreaMapService -> generateMarkers();
 
 //print_r($allTrailInfo);
 ?>
@@ -128,6 +133,10 @@ $allEventInfo = $eventService -> formatEventInfo();
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         infoWindow = new google.maps.InfoWindow;
+
+        <?php
+            echo $allMapPins;
+        ?>
     }
 </script>
 <script async defer
