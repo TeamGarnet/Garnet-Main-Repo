@@ -159,23 +159,22 @@ $eventService->deleteEventEntry("5");
                     <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
                 </ul>
 
-                <div class="dropdown show">
+                <div class="dropdown">
                     <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Create +
                     </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#" onclick="createGrave()">Grave</a>
-                        <a class="dropdown-item" href="#" onclick="createNH()">Natural History</a>
-                        <a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a>
-                        <a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a>
-                        <a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a>
-                        <a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a>
-                        <a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a>
-                        <a class="dropdown-item" href="#" onclick="createContact()">Contact</a>
-                        <a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createContact()">Contact</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
+                    </ul>
                 </div>
 
                 <div id="myTabContent" class="tab-content">
