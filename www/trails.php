@@ -128,6 +128,9 @@ $allEventInfo = $eventService -> formatEventInfo();
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder;">Events</h3>
         </div>
+        <div class="row eventMap">
+
+        </div>
         <div class="row">
         <?php
         echo $allEventInfo;
@@ -139,3 +142,19 @@ $allEventInfo = $eventService -> formatEventInfo();
 </div>
 </body>
 </html>
+
+<script>
+    function initMap() {
+        var myLatlng = new google.maps.LatLng(43.129467, -77.639153);
+        var mapOptions = {
+            zoom: 20,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        map = new google.maps.Map(document.getElementById('eventMap'), mapOptions);
+        infoWindow = new google.maps.InfoWindow;
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
+</script>
