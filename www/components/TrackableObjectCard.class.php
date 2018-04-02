@@ -71,12 +71,25 @@ class TrackableObjectCard {
     }
 
     public function getGraveInfo() {
-        $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
-            . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
-            . $this -> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
-            . $this -> birth . " - " . $this -> death . ")" . "</h4></h2>"
-            . $this -> description;
+        if ($this -> birth == "" && $this -> death == ""){
+            $birthDate = "Unknown Birth Date";
+            $deathDate = "Unkown Death Date";
+        } else if ($this -> birth == "" && $this -> death != "") {
+            $birthDate = "Unknown Birth Date";
+            $deathDate = $this -> death;
+        } else if ($this -> birth != "" && $this -> death == "") {
+            $birthDate = $this -> birth;
+            $deathDate = "Unkown Death Date";
+        } else {
+            $birthDate = $this -> birth;
+            $deathDate = $this -> death;
+        }
+            $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
+                . $this -> imageLocation . "' alt='"
+                . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
+                . $this -> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
+                . $birthDate . " - " . $deathDate . ")" . "</h4></h2>"
+                . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
         $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
