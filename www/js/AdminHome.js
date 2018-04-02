@@ -424,6 +424,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
         }).done(function (msg) {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -454,6 +455,7 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -483,6 +485,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -506,6 +509,7 @@ function updateType(rowID, idTypeFilter) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -531,6 +535,7 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -553,6 +558,7 @@ function updateFAQ(rowID, idFAQ) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -582,6 +588,7 @@ function updateLocation(rowID, idWiderAreaMap) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -607,6 +614,7 @@ function updateContact(rowID, idContact) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -633,6 +641,7 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
         }).done(function () {
             $('#updateModal').modal('hide');
             $('#updateModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -675,6 +684,7 @@ function createGrave() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -702,6 +712,7 @@ function createNH() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -730,6 +741,7 @@ function createMisc() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -752,6 +764,7 @@ function createTypeFilter() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -776,6 +789,7 @@ function createHistoricFilter() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -797,6 +811,7 @@ function createFAQ() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -825,6 +840,7 @@ function createWiderLocation() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -849,6 +865,7 @@ function createContact() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
@@ -874,6 +891,7 @@ function createEventEntry() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
+            Location.reload(true);
         });
     });
 }
