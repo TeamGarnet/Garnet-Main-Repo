@@ -142,41 +142,37 @@ $eventService->deleteEventEntry("5");
     <div class="container1">
         <div class="row">
             <div class="col-lg-12">
-				<div id="containerForMenuTabsAndCreate">
-					<div id="leftMenu">
-						<ul id="myTab" class="nav nav-tabs">
-							<li class="active">
-								<a href="#graveDiv" data-toggle="tab">
-									Graves
-								</a>
-							</li>
-							<li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
-							<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
-							<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
-							<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-							<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
-							<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
-							<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
-							<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
-						</ul>
-					</div>
-					<div class="dropdown" id="rightMenu">
-						<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-						   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Create +
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active">
+						<a href="#graveDiv" data-toggle="tab">
+							Graves
 						</a>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createContact()">Contact</a></li>
-							<li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
-						</ul>
-					</div>
+					</li>
+					<li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+					<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+					<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+					<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+					<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+					<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
+					<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+					<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
+				</ul>
+				<div class="dropdown" id="rightMenu">
+					<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+					   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Create +
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createContact()">Contact</a></li>
+						<li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
+					</ul>
 				</div>
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="graveDiv">
