@@ -122,9 +122,9 @@ $allEventInfo = $eventService -> formatEventInfo();
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.150412, -77.608938);
         var mapOptions = {
-            zoom: 13,
+            zoom: 14,
             center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            mapTypeId: google.maps.MapTypeId.roadmap
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         infoWindow = new google.maps.InfoWindow;
