@@ -160,7 +160,7 @@ $eventService->deleteEventEntry("5");
                 </ul>
 
                 <div class="dropdown show">
-                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Create +
                     </a>
