@@ -136,7 +136,7 @@ $allEventInfo = $eventService -> formatEventInfo();
 
 <style>
     #map {
-        height: auto;
-        weidth: 100%;
+        height: 450px;
+        weidth: auto;
     }
 </style>
