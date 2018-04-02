@@ -6,9 +6,7 @@
 #dropdownMenuLink{
 	background-color: #97583a;
 }
-#leftMenu{
-	float:left;
-}
+
 #rightMenu{
 	float:right;
 }
@@ -76,6 +74,7 @@
 #myTab {
     background-color: #6b7749;
     margin-bottom: 1em;
+	float:left;
 }
 
 #tabBar {
