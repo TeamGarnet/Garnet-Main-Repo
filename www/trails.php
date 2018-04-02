@@ -138,7 +138,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         <?php
             echo $allMapPins;
         ?>
-
+        
     }
 </script>
 <script async defer
