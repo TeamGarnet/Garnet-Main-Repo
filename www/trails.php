@@ -98,6 +98,7 @@ $allEventInfo = $eventService -> formatEventInfo();
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder;">Events</h3>
         </div>
+    </div>
 
         <!-- Google Map -->
         <div id="map"></div>
@@ -111,7 +112,7 @@ $allEventInfo = $eventService -> formatEventInfo();
     </div>
 </div>
 
-</div>
+
 </body>
 </html>
 
@@ -136,6 +137,6 @@ $allEventInfo = $eventService -> formatEventInfo();
 <style>
     #map {
         height: auto;
-        weidth: auto;
+        weidth: 100%;
     }
 </style>
