@@ -128,7 +128,7 @@ $allEventInfo = $eventService -> formatEventInfo();
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder;">Events</h3>
         </div>
-        <div class="row eventMap">
+        <div class="row eventMap" id="eventMap">
 
         </div>
         <div class="row">
