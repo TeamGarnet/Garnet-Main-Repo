@@ -4,7 +4,7 @@ include_once 'services/EventService.class.php';
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 $eventService = new EventService();
-$allEventInfo = $eventService -> getAllEventEntries();
+$allEventInfo = $eventService -> formatEventInfo();
 
 //print_r($allTrailInfo);
 ?>
