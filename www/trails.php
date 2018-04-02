@@ -1,7 +1,10 @@
 <?php
 include_once 'services/TrailService.class.php';
+include_once 'services/EventService.class.php';
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
+$eventService = new EventService();
+$allEventInfo = $eventService -> getAllEventEntries();
 
 //print_r($allTrailInfo);
 ?>
@@ -17,7 +20,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <!-- Bootstrap -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
     <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
@@ -42,7 +45,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -57,12 +60,17 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 </head>
 <body>
 
-    <!-- Navigation -->
-    <?php include_once 'components/NavBar.php'?>
+<!-- Navigation -->
+<?php include_once 'components/NavBar.php' ?>
 
 
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#pageContent">Historic Trails</a></li>
+    <li><a data-toggle="tab" href="#events">Rochester Events</a></li>
+</ul>
 
-<div class="container" id="pageContent">
+<div class="tab-content">
+<div class="container tab-pane fade in active" id="pageContent">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder;">Trails</h3>
@@ -71,7 +79,8 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <img class="center-block img-responsive" src="/images/TrailMap.jpg" alt="Map of history trails in Rochester"/>
+            <img class="center-block img-responsive" src="/images/TrailMap.jpg"
+                 alt="Map of history trails in Rochester"/>
         </div>
     </div>
 
@@ -82,7 +91,7 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
         echo $allTrailInfo;
         ?>
 
-<!-- Use this as an example of how the content will be created -->
+        <!-- Use this as an example of how the content will be created -->
         <!--
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="">
@@ -114,5 +123,19 @@ $allTrailInfo = $trailService -> formatTrailLocationsInfo();
     </div>
 </div>
 
+<div class="container tab-pane fade" id="events">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3 style="text-align: center; font-weight:bolder;">Events</h3>
+        </div>
+        <div class="row">
+        <?php
+        echo $allEventInfo;
+        ?>
+        </div>
+    </div>
+</div>
+
+</div>
 </body>
 </html>
