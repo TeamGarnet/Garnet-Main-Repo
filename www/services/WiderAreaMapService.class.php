@@ -139,11 +139,10 @@ class WiderAreaMapService {
     }
 
     public function generateInfoWindowConfig($pin, $markerName) {
-        $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><h4>"
+        $infoWindowContent =  '"' ."<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
-            . "</h4>"
-            . "</br></br></p><a class='locationHref' href=" . '"'
-            . $pin -> getUrl() . '"' . '>Visit Site</a></div></div>' . '"';
+            . "</h4></br><p><a class='locationHref' href=" . "'"
+            . $pin -> getUrl() . "'" . '>Visit Site</a></p></div></div>' . '"';
 
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
