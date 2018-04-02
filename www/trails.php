@@ -126,7 +126,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var allMarkerObjects = [];
 
     function initMap() {
-        var myLatlng = new google.maps.LatLng(43.140098, -77.615982);
+        var myLatlng = new google.maps.LatLng(43.149579, -77.609624);
         var mapOptions = {
             zoom: 15,
             center: myLatlng,
