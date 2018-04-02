@@ -123,6 +123,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
 <script type="text/javascript">
     var map, infoWindow;
+    var allMarkerObjects = [];
 
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.150412, -77.608938);
@@ -137,6 +138,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         <?php
             echo $allMapPins;
         ?>
+
     }
 </script>
 <script async defer
