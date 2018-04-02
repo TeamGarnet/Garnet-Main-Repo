@@ -142,8 +142,8 @@ class WiderAreaMapService {
         $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4>"
-            . "</br></br></p><a href="
-            . $pin -> getUrl() . ' class="locationURL">Visit Site</a></div></div>' . '"';
+            . "</br></br></p><a class='locationHref' href=" . '"'
+            . $pin -> getUrl() . '">Visit Site</a></div></div>' . '"';
 
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
