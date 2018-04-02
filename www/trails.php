@@ -90,36 +90,6 @@ $allEventInfo = $eventService -> formatEventInfo();
         <?php
         echo $allTrailInfo;
         ?>
-
-        <!-- Use this as an example of how the content will be created -->
-        <!--
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div id="">
-                <div class="">
-                    <p class="">Red Line</p>
-                    <p class="">1. Genesee Riverway Trail</p>
-                    <p class="">
-                        The problem here is that you fixed the position of the fixednav but not the navspacer. When you do this, the fixednav and navspacer are on the same line since one is fixed and not the other. When you add padding to the navspacer, it </p>
-                    <a href="#" class="">rochester.com</a>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div id="">
-                <div class="">
-                    <p class="">Blue Line</p>
-                    <p class="">1. Genesee Riverway Trail</p>
-                    <p class="">
-                        The problem here is that you fixed the position of the fixednav but not the navspacer. When you do this, the fixednav and navspacer are on the same line since one is fixed and not the other. When you add padding to the navspacer, it </p>
-                    <a href="#" class="">rochester.com</a>
-
-                </div>
-            </div>
-        </div>
-
-        -->
     </div>
 </div>
 
@@ -128,9 +98,11 @@ $allEventInfo = $eventService -> formatEventInfo();
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder;">Events</h3>
         </div>
-        <div class="row eventMap" id="eventMap">
 
-        </div>
+        <!-- Google Map -->
+        <div id="map"></div>
+
+        <!-- Event List -->
         <div class="row">
         <?php
         echo $allEventInfo;
@@ -153,10 +125,17 @@ $allEventInfo = $eventService -> formatEventInfo();
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.HYBRID
         };
-        map = new google.maps.Map(document.getElementById('eventMap'), mapOptions);
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
         infoWindow = new google.maps.InfoWindow;
     }
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
 </script>
+
+<style>
+    #map {
+        height: auto;
+        weidth: auto;
+    }
+</style>
