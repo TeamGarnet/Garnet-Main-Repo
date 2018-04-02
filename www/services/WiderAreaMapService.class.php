@@ -143,7 +143,7 @@ class WiderAreaMapService {
             . $pin -> getName()
             . "</h4>"
             . "</br></br></p><a href="
-            . $pin -> getUrl() . ' class="locationURL">Visit Site</a></div></div>"';
+            . $pin -> getUrl() . ' class="locationURL">Visit Site</a></div></div>' . '"';
 
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
@@ -156,4 +156,6 @@ class WiderAreaMapService {
 
         return $infoWindowGenerator . $infoWindowListener;
     }
+
+
 }
