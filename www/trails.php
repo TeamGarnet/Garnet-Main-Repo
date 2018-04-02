@@ -143,7 +143,9 @@ $allEventInfo = $eventService -> formatEventInfo();
 </body>
 </html>
 
-<script>
+<script type="text/javascript">
+    var map, infoWindow;
+
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.129467, -77.639153);
         var mapOptions = {
