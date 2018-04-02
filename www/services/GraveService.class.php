@@ -33,7 +33,7 @@ class GraveService extends TrackableObjectService {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
-            $idHistoricFilter = null;
+            $idHistoricFilter = 0;
         }
 
         //create Trackable Object

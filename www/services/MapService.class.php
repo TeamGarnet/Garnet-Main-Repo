@@ -33,6 +33,7 @@ class MapService {
 
             array_push($allPinObjects, $pinObject);
         }
+        //var_dump($allPinObjects);
         return $allPinObjects;
     }
 
