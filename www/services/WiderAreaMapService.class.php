@@ -120,7 +120,9 @@ class WiderAreaMapService {
 
         foreach ($pinObjectsArray as $pin) {
             $markerName = "marker" . $markerCounter;
-            $generatedMarkers .= "var " . $markerName . " = new google.maps.Marker({
+            $directionName = "direction" . $markerCounter;
+            $markerPos = "var " . $directionName. " = new google.maps.LatLng(" . $pin -> getLatitude() . $pin -> getLongitude() . "); ";
+            $generatedMarkers .= $directionName . "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'images/pins/greenMarker.png',
             title:'" . $pin -> getName() . "' ,
@@ -128,7 +130,7 @@ class WiderAreaMapService {
             markerName: " . $markerName . "});";
 
             $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");";
-            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName);
+            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName, $directionName);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
 
 
@@ -138,11 +140,11 @@ class WiderAreaMapService {
         return $generatedMarkers;
     }
 
-    public function generateInfoWindowConfig($pin, $markerName) {
+    public function generateInfoWindowConfig($pin, $markerName, $directionName) {
         $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4></br><p><a class='locationHref' href=" . "'"
-            . $pin -> getUrl() . "'" . '>Visit Site</a></p></div></div>' . '"';
+            . $pin -> getUrl() . "'" . '>Visit Site</a></p><p onclick="calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, ' . $directionName . ')">Get Directions</p></div></div>' . '"';
 
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";

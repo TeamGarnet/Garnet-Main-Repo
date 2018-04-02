@@ -124,6 +124,9 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 <script type="text/javascript">
     var map, infoWindow;
     var allMarkerObjects = [];
+    var userLocation;
+    directionsService = new google.maps.DirectionsService;
+    directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.149579, -77.609624);
@@ -134,15 +137,52 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         directionsService = new google.maps.DirectionsService;
-        directionsDisplay = new google.maps.DirectionsRenderer({
-            map: map
-        });
+        directionsDisplay = new google.maps.DirectionsRenderer({map: map});
         infoWindow = new google.maps.InfoWindow;
 
         <?php
         echo $allMapPins;
         ?>
 
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                userLocation = pos;
+                mark = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    icon: "images/pins/userMarker.png"
+                });
+                var myVar = setInterval(updateUserLocation, 15000);
+            }, function () {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+    }
+
+    //calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+        directionsService.route({
+            origin: pointA,
+            destination: pointB,
+            avoidTolls: true,
+            avoidHighways: false,
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
     }
 
 </script>
