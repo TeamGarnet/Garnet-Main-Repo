@@ -4,6 +4,7 @@ body {
 }
 .nav-tabs{
 	border: none;
+	text-align: center;
 }
 .nav-tabs > li > a{
 	color: white;
@@ -11,6 +12,10 @@ body {
 .nav-tabs > li > a:hover{
 	color: #000000;
 	background-color:none;
+}
+.nav-tabs > li{
+	float: none;
+	display: inline-block;
 }
 #pageContent {
     margin-top: 2.5%;
