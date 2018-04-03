@@ -12,12 +12,15 @@
 }
 #rightMenu{
 	float:right;
-	margin-top: 53px;
+	margin-top: 60px;
 	padding-right: 15px;
 	border:none;
+	padding-left: 0;
+	padding-right: 0;
 }
-#leftMenu{
-	
+#	{
+	padding-left: 0;
+	padding-right: 0;
 }
 #navBar {
     background-color: #6b7749;
@@ -91,7 +94,6 @@
     background-color: #6b7749;
     margin-bottom: 1em;
 	float:left;
-	margin-top: 53px;
 	border: none;
 }
 
