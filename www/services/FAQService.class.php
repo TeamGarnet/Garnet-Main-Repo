@@ -26,7 +26,7 @@ class FAQService {
         foreach ($allFAQObjectsInfo as $faqObjectInfo) {
             $formattedFAQInfo .= '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
                 . $faqObjectInfo -> getQuestion() . '</p><p class="a">'
-                . $faqObjectInfo -> getAnswer() . '</p></div></div></div>';
+                . $faqObjectInfo -> getAnswer() . '</p><hr class="style17"></div></div></div>';
         };
 
 

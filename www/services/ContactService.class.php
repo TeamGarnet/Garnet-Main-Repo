@@ -31,7 +31,7 @@ class ContactService {
                 . $contactObjectInfo -> getTitle() . '</p><p class="description">'
                 . $contactObjectInfo -> getDescription() . '</p><p class="email">'
                 . $contactObjectInfo -> getEmail() . '</p><p class="phone">'
-                . $contactObjectInfo -> getPhone() . '</p></div></div></div>';
+                . $contactObjectInfo -> getPhone() . '</p><hr class="style17"></div></div></div>';
         };
 
 
