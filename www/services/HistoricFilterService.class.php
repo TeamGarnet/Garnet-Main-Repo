@@ -47,25 +47,22 @@ class HistoricFilterService {
     }
 
     public function deleteHistoricFilterEntry($idHistoricFilter) {
-        echo ("<br>this is funmb: " .$idHistoricFilter);
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
-        echo $idHistoricFilter;
-        if (empty($idHistoricFilter) || $idHistoricFilter == "") {
-            echo "Its empty?";
-        } else {
-            if ($idHistoricFilter == 0 || $idHistoricFilter == "0") {
-                echo "Cannot delete 'No Historic Filter' default filter.";
-            }
-            $graveDataClass = new GraveObjectData();
-            $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
 
-            $historicFilterDataClass = new HistoricFilterData();
-            $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
-            return null;
+        if ($idHistoricFilter == 0 || $idHistoricFilter == "0") {
+            return "Cannot delete 'No Historic Filter' default filter.";
         }
+        $graveDataClass = new GraveObjectData();
+        $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
+
+        $historicFilterDataClass = new HistoricFilterData();
+        $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
+        return null;
     }
 
-    public function getAllEntriesAsRows() {
+
+    public
+    function getAllEntriesAsRows() {
         $allModels = $this -> getAllHistoricFilterEntries();
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
@@ -90,7 +87,8 @@ class HistoricFilterService {
         return $html;
     }
 
-    public function getAllFiltersForSelect() {
+    public
+    function getAllFiltersForSelect() {
         $filters = $this -> getAllHistoricFilterEntries();
         $filterHTML = "";
         foreach ($filters as $filter) {
