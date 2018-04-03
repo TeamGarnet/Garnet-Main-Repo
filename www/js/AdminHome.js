@@ -671,10 +671,9 @@ function createGrave() {
             'Longitude': $('#Longitude').val(),
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
-            'ImageLocation': $('#ImageLocation').val(),
-            'HistoricFilter': parseInt($(".historicSelect.currentFilter option:selected").val()),
+            'ImageLocation': $('#ImageLocation').val()
             'idTypeFilter': 1,
-            'idHistoricFilter': null
+            'idHistoricFilter': parseInt($(".historicSelect.currentFilter option:selected").val())
         };
 
         $.ajax({
