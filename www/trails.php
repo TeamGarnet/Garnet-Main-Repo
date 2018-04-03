@@ -158,7 +158,6 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
                     map: map,
                     icon: "images/pins/userMarker.png"
                 });
-                var myVar = setInterval(updateUserLocation, 15000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -169,7 +168,6 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     }
 
-    //calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
         directionsService.route({
