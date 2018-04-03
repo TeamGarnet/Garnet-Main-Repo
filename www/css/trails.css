@@ -12,7 +12,7 @@ body {
 }
 .nav-tabs > li > a:hover{
 	color: #000000;
-	background-color:none;
+	background-color: #f8f6ec !important;
 }
 .nav-tabs > li{
 	float: none !important;
