@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
 
     } else if (!empty($_POST['deleteHistoricFilter'])) {
         $service = new HistoricFilterService();
-        $status = $service -> deleteHistoricFilterEntry($_POST['deleteHistoricFilter']);
+        $historicStatus = $service -> deleteHistoricFilterEntry($_POST['deleteHistoricFilter']);
         unset($_POST['deleteHistoricFilter']);
-        echo $status;
+        echo $historicStatus;
 
     } else if (!empty($_POST['deleteFAQ'])) {
         $service = new FAQService();
