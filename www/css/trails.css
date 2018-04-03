@@ -19,7 +19,7 @@ body {
 	display: inline-block !important;
 }
 .nav-tabs>li.active>a{
-	background-color: #f8f6ec;
+	background-color: #f8f6ec !important;
 }
 #pageContent {
     margin-top: 2.5%;
