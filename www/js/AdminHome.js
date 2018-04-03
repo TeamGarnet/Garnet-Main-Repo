@@ -351,7 +351,7 @@ function generateCreateModal(tableID) {
                 '<input type="date" id="startDate" name="startDate" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" autocomplete="off"/>';
 
-        } else if (labelText == "End Time") {
+        } else if (labelText == "End Time:") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" autocomplete="off"/>';
