@@ -644,11 +644,10 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
         var formData = {
             'idEvent': idEvent,
             'Name': $('#Name').val(),
-            'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': idWiderAreaMap
+            'idWiderAreaMap': $("#locationSelect.currentFilter option:selected").val()
         };
 
         $.ajax({
