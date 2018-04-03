@@ -94,7 +94,7 @@ class EventService {
             $timeEnd = date("g:i A", $unixStartTime);
             $formattedEndTime = $dateEnd . " " . $timeEnd;
 
-            $formattedEventInfo .= '<div style="margin-bottom: 2%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
+            $formattedEventInfo .= '<div style="margin-top: 4%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
                 . $eventObject -> getName() . '</p><p class="eventLocationName">'
                 . $eventObject -> getLocationName() . '</p><p class="eventStartTime">' . $formattedStartTime . ' - ' . $formattedEndTime . '</p><p class="eventDescription">' . $eventObject -> getDescription() . '</p>'
                 . '</div>';
