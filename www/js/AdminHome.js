@@ -190,7 +190,7 @@ function deleteContact(id) {
                 data: 'deleteContact=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -214,7 +214,7 @@ function deleteEvent(id) {
                 data: 'deleteEvent=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -351,7 +351,7 @@ function generateCreateModal(tableID) {
                 '<input type="date" id="startDate" name="startDate" autocomplete="off"/>' +
                 '<input type="time" id="startTime" name="startTime" autocomplete="off"/>';
 
-        } else if (labelText == "End Time") {
+        } else if (labelText == "End Time:") {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="endDate" name="endDate" autocomplete="off"/>' +
                 '<input type="time" id="endTime" name="endTime" autocomplete="off"/>';
@@ -644,11 +644,10 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
         var formData = {
             'idEvent': idEvent,
             'Name': $('#Name').val(),
-            'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': idWiderAreaMap
+            'idWiderAreaMap': $("#locationSelect.currentFilter option:selected").val()
         };
 
         $.ajax({
@@ -893,11 +892,10 @@ function createEventEntry() {
     $('#createObject').click(function () {
         var formData = {
             'Name': $('#Name').val(),
-            'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': null
+            'idWiderAreaMap': $("#locationSelect.currentFilter option:selected").val()
         };
 
         $.ajax({

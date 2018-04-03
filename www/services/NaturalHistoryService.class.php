@@ -82,7 +82,6 @@ class NaturalHistoryService extends TrackableObjectService {
                 . "</td><td>" . $model -> getLatitude()
                 . "</td><td>" . $model -> getImageDescription()
                 . "</td><td>" . $model -> getImageLocation()
-                . "</td><td>" . $model -> getType()
                 . $editAndDelete
                 . "</td></tr>";
         }

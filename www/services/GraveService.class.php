@@ -110,7 +110,6 @@ class GraveService extends TrackableObjectService {
                 . "</td><td>" . $graveModel -> getLatitude()
                 . "</td><td>" . $graveModel -> getImageDescription()
                 . "</td><td>" . $graveModel -> getImageLocation()
-                . "</td><td>" . $graveModel -> getType()
                 . "</td><td>" . $historicFilterName
                 . $editAndDelete
                 . "</td></tr>";
