@@ -672,7 +672,7 @@ function createGrave() {
             'Latitude': $('#Latitude').val(),
             'ImageDescription': $('#ImageDescription').val(),
             'ImageLocation': $('#ImageLocation').val(),
-            'HistoricFilter': $(".historicSelect.currentFilter option:selected").val(),
+            'HistoricFilter': parseInt($(".historicSelect.currentFilter option:selected").val()),
             'idTypeFilter': 1,
             'idHistoricFilter': null
         };
