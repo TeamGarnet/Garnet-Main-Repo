@@ -47,6 +47,7 @@ class HistoricFilterService {
     }
 
     public function deleteHistoricFilterEntry($idHistoricFilter) {
+        echo ("<br>this is funmb: " /$idHistoricFilter);
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
         echo $idHistoricFilter;
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
