@@ -13,6 +13,7 @@
 }
 #dropdown-menu{
 	right:0;
+	left:unset;
 }
 #rightMenu{
 	float:right;
