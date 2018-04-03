@@ -49,15 +49,18 @@ class HistoricFilterService {
     public function deleteHistoricFilterEntry($idHistoricFilter) {
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
-            return;
-        } else if ($idHistoricFilter == 0 || $idHistoricFilter =="0") {
-            return "Cannot delete 'No Historic Filter' default filter.";
-        }else {
-            $graveDataClass = new GraveObjectData();
-            $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
+            return null;
+        } else {
+            if ($idHistoricFilter == 0 || $idHistoricFilter =="0") {
+                return "Cannot delete 'No Historic Filter' default filter.";
+            } else {
+                $graveDataClass = new GraveObjectData();
+                $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
 
-            $historicFilterDataClass = new HistoricFilterData();
-            $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
+                $historicFilterDataClass = new HistoricFilterData();
+                $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
+                return null;
+            }
         }
     }
 
