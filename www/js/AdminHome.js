@@ -892,11 +892,10 @@ function createEventEntry() {
     $('#createObject').click(function () {
         var formData = {
             'Name': $('#Name').val(),
-            'Location': $('#Location').val(),
             'Description': $('#Description').val(),
             'StartTime': $('#startDate').val() + " " + $('#startTime').val(),
             'EndTime': $('#endDate').val() + " " + $('#endTime').val(),
-            'idWiderAreaMap': null
+            'idWiderAreaMap': $("#locationSelect.currentFilter option:selected").val()
         };
 
         $.ajax({
