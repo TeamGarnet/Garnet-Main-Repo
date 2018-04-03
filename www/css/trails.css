@@ -19,7 +19,7 @@ body {
     text-decoration: none;
 }
 
-.locationInfo {
+.locationInfo, .eventInfo {
     font-family: prozolibre;
 }
 
@@ -27,7 +27,7 @@ body {
     font-size: large;
 }
 
-.locationName {
+.locationName, .eventName {
     font-size: x-large;
     font-weight: bold;
 }
