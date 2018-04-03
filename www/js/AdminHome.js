@@ -110,8 +110,14 @@ function deleteHistoricFilter(id) {
                 success: function (data) {
                     $('.deleteModal').modal('hide');
                     if (data != "") {
+                        alert(data);
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
+                        $('.message').modal('show');
+                    } else if ((id == 0 )) {
+                        alert(data);
+                        $('.messageContent').html('');
+                        $('.messageContent').append("Cannot delete 'No Historic Filter' default filter");
                         $('.message').modal('show');
                     }
                     return true;
