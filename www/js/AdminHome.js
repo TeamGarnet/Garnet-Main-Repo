@@ -111,7 +111,7 @@ function deleteHistoricFilter(id) {
                     $('.deleteModal').modal('hide');
                     if ((id == 0 )) {
                         $('.messageContent').html('');
-                        $('.messageContent').append("Cannot delete 'No Historic Filter' default filter");
+                        $('.messageContent').append("Cannot delete 'No Historic Filter' default filter.");
                         $('.message').modal('show');
                     }
                     return true;
