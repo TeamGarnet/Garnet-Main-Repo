@@ -25,6 +25,8 @@
 }
 #tabRow{
 	background-color: #6b7749;
+	margin-right: 0;
+	margin-left: 0;
 }
 #navBarContainer {
     width: 100%;
