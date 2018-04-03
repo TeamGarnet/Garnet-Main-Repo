@@ -94,6 +94,13 @@ class EventService {
             $timeEnd = date("g:i A", $unixStartTime);
             $formattedEndTime = $dateEnd . " " . $timeEnd;
 
+            if ($formattedStartTime == null || $formattedStartTime == "" || $formattedStartTime == "Nov 30, -0001 12:00 AM") {
+                $formattedStartTime = "Unknown Start Time";
+            }
+            if ($formattedEndTime == null || $formattedStartTime == "" || $formattedStartTime == "Nov 30, -0001 12:00 AM") {
+                $formattedEndTime = "Unknown End Time";
+            }
+
             $formattedEventInfo .= '<div style="margin-top: 4%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="eventInfo"><p class="eventName">'
                 . $eventObject -> getName() . '</p><p class="eventLocationName">'
                 . $eventObject -> getLocationName() . '</p><p class="eventStartTime">' . $formattedStartTime . ' - ' . $formattedEndTime . '</p><p class="eventDescription">' . $eventObject -> getDescription() . '</p>'
