@@ -5,6 +5,7 @@ body {
 .nav-tabs{
 	border: none !important;
 	text-align: center;
+	background-color: #6b7749;
 }
 .nav-tabs > li > a{
 	color: white;
