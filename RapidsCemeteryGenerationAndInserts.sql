@@ -71,7 +71,7 @@ CREATE TABLE `Event` (
 
 LOCK TABLES `Event` WRITE;
 /*!40000 ALTER TABLE `Event` DISABLE KEYS */;
-INSERT INTO `Event` VALUES (1,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2);
+INSERT INTO `Event` VALUES (1,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2),(2,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2),(3,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2);
 /*!40000 ALTER TABLE `Event` ENABLE KEYS */;
 UNLOCK TABLES;
 
