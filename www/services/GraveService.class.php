@@ -31,8 +31,9 @@ class GraveService extends TrackableObjectService {
         $birth = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($birth)));
         $death = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($death)));
         $description = filter_var($description, FILTER_SANITIZE_STRING);
+        echo("presan: " . $idHistoricFilter);
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
-        echo("firstname: " . $firstName);
+        echo("<br>firstname: " . $firstName);
         echo("<br>middlename: " . $middleName);echo("<br>last:".$lastName);echo("<br>birth: ".$birth);echo("<br>death: ".$death);echo("<br>desrip: ".$description);echo("<br>histoF: ".$idHistoricFilter);
 
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
