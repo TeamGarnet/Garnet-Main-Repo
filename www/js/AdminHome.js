@@ -400,6 +400,7 @@ function generateCreateModal(tableID) {
 
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
     generateUpdateModal('#grave', rowID, idHistoricFilter, idTypeFilter, null);
+    $('#updateModalTitle').text('Update Grave');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -435,6 +436,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
 
 function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#naturalHistory', rowID, null, idTypeFilter, null);
+    $('#updateModalTitle').text('Update Natural History');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -466,6 +468,7 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
 
 function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#misc', rowID, null, idTypeFilter, null);
+    $('#updateModalTitle').text('Update Miscellaneous');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -496,6 +499,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
 
 function updateType(rowID, idTypeFilter) {
     generateUpdateModal('#type', rowID, null, idTypeFilter, null);
+    $('#updateModalTitle').text('Update Type');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -520,6 +524,7 @@ function updateType(rowID, idTypeFilter) {
 
 function updateHistoricFilter(rowID, idHistoricFilter) {
     generateUpdateModal('#historic', rowID, idHistoricFilter, null, null);
+    $('#updateModalTitle').text('Update Historic Filter');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -546,6 +551,7 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
 
 function updateFAQ(rowID, idFAQ) {
     generateUpdateModal('#faq', rowID, null, null, null);
+    $('#updateModalTitle').text('Update FAQ');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -569,6 +575,7 @@ function updateFAQ(rowID, idFAQ) {
 
 function updateLocation(rowID, idWiderAreaMap) {
     generateUpdateModal('#widerLocation', rowID, null, null, null);
+    $('#updateModalTitle').text('Update Wider Area Location');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -599,6 +606,7 @@ function updateLocation(rowID, idWiderAreaMap) {
 
 function updateContact(rowID, idContact) {
     generateUpdateModal('#contact', rowID, null, null, null);
+    $('#updateModalTitle').text('Update Contact');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
@@ -625,6 +633,7 @@ function updateContact(rowID, idContact) {
 
 function updateEvent(rowID, idEvent, idWiderAreaMap) {
     generateUpdateModal('#event', rowID, null, null, idWiderAreaMap);
+    $('#updateModalTitle').text('Update Event');
 
     // Make AJAX POST request with JSON object to update entry in database
     $('#saveChanges').click(function () {
