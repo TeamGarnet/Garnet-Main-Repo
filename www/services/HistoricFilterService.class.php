@@ -48,11 +48,12 @@ class HistoricFilterService {
 
     public function deleteHistoricFilterEntry($idHistoricFilter) {
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
+        echo $idHistoricFilter;
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
-            return "Its empty?";
+            echo "Its empty?";
         } else {
             if ($idHistoricFilter == 0 || $idHistoricFilter == "0") {
-                return "Cannot delete 'No Historic Filter' default filter.";
+                echo "Cannot delete 'No Historic Filter' default filter.";
             }
             $graveDataClass = new GraveObjectData();
             $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
