@@ -18,6 +18,9 @@ body {
 	float: none !important;
 	display: inline-block !important;
 }
+.nav-tabs>li.active>a{
+	background-color: #f8f6ec;
+}
 #pageContent {
     margin-top: 2.5%;
 	margin-bottom: 2.5%;
