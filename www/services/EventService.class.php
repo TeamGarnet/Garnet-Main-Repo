@@ -97,7 +97,7 @@ class EventService {
             if ($formattedStartTime == null || $formattedStartTime == "" || $formattedStartTime == "Nov 30, -0001 12:00 AM") {
                 $formattedStartTime = "Unknown Start Time";
             }
-            if ($formattedEndTime == null || $formattedStartTime == "" || $formattedStartTime == "Nov 30, -0001 12:00 AM") {
+            if ($formattedEndTime == null || $formattedEndTime == "" || $formattedEndTime == "Nov 30, -0001 12:00 AM") {
                 $formattedEndTime = "Unknown End Time";
             }
 
