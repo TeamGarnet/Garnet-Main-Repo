@@ -6,6 +6,9 @@ body {
 #pageContent {
     margin-top: 2.5%;
 }
+#tabContent{
+	margin-top: 2.5%;
+}
 
 /* PHP Generated Content*/
 .locationContainer {
