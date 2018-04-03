@@ -51,7 +51,7 @@ class TrackableObjectCard {
         $this -> death = $cardDataArray['death'];
         $this -> description = stripcslashes($cardDataArray['description']);
         $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = stripcslashes$cardDataArray['imageDescription']);
+        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
     }
 
     public function setNaturalHistoryInfo($cardDataArray) {
