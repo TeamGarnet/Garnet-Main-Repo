@@ -31,7 +31,11 @@ class TrailService {
             $formattedTrailLocationInfo .= '<div style="margin-top: 4%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
                 . $trailObjectInfo -> getLineColor() . '</p><p class="locationName">'
                 . $trailObjectInfo -> getName() . '</p><p class="locationDescription">'
-                . $trailObjectInfo -> getDescription() . '</p><a href="'
+                . $trailObjectInfo -> getDescription() . '</p><p class="locationDescription">Address: '
+                . $trailObjectInfo->getAddress() .","
+                . $trailObjectInfo->getCity() . " "
+                . $trailObjectInfo->getState() . " "
+                . $trailObjectInfo->getZipcode() . '</p><a href="'
                 . $trailObjectInfo -> getUrl() . '" class="locationURL">Visit Site</a><hr class="style17"></div></div></div>';
         };
 
