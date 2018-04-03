@@ -149,7 +149,7 @@ $eventService->deleteEventEntry("5");
 				<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
 				<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
 				<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-				<li><a href="#faq" data-toggle="tab">FAQ</a></li>
+				<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
 				<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
 				<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
 				<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
@@ -307,7 +307,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
-                    <div class="tab-pane fade" id="faq">
+                    <div class="tab-pane fade" id="faqDiv">
                         <div class="content_accordion">
                             <table id="faq" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
