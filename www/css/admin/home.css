@@ -15,16 +15,17 @@
 	margin-top: 53px;
 	padding-right: 15px;
 	border:none;
-	background-color: #6b7749;
 }
 #leftMenu{
-	background-color: #6b7749;
+	
 }
 #navBar {
     background-color: #6b7749;
     margin: 0;
 }
-
+#tabRow{
+	background-color: #6b7749;
+}
 #navBarContainer {
     width: 100%;
 }
