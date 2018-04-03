@@ -214,7 +214,7 @@ function deleteEvent(id) {
                 data: 'deleteEvent=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
