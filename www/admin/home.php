@@ -162,7 +162,7 @@ $eventService->deleteEventEntry("5");
 					   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Create +
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
 						<li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
 						<li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>

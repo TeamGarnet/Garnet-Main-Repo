@@ -8,8 +8,12 @@
 	border:none;
 }
 #dropdownMenuLink:hover{
-		background-color: #ffffff;
-		color: #97583a;
+	background-color: #ffffff;
+	color: #97583a;
+}
+#dropdown-menu{
+	right:0;
+	left:unset;
 }
 #rightMenu{
 	float:right;
