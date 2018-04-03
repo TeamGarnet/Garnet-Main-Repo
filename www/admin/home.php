@@ -138,7 +138,7 @@ $eventService->deleteEventEntry("5");
 <!-- Filters Selects-->
 <div class="container" id="tabContainer">
 	<div class="row" id="tabRow">
-		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" id="leftMenu">
+		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="leftMenu">
 			<ul id="myTab" class="nav nav-tabs">
 				<li class="active">
 					<a href="#graveDiv" data-toggle="tab">
@@ -155,7 +155,7 @@ $eventService->deleteEventEntry("5");
 				<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
 			</ul>
 		</div>
-		<div class="dropdown col-xs-3 col-sm-3 col-md-3 col-lg-3" id="rightMenu">
+		<div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
 			<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
 			   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Create +
