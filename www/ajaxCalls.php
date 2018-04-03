@@ -33,16 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
         $service -> deleteMiscObjectEntry($_POST['deleteMisc']);
         unset($_POST['deleteMisc']);
 
+    } else if (!empty($_POST['deleteHistoricFilter'])) {
+        $service = new HistoricFilterService();
+        $historicStatus = $service -> deleteHistoricFilterEntry($_POST['deleteHistoricFilter']);
+        unset($_POST['deleteHistoricFilter']);
+        echo $historicStatus;
+
     } else if (!empty($_POST['deleteType'])) {
         $service = new TypeFilterService();
         $status = $service -> deleteTypeFilterEntry($_POST['deleteType']);
         unset($_POST['deleteType']);
         echo $status;
-
-    } else if (!empty($_POST['deleteHistoricFilter'])) {
-        $service = new HistoricFilterService();
-        $service -> deleteHistoricFilterEntry($_POST['deleteHistoricFilter']);
-        unset($_POST['deleteHistoricFilter']);
 
     } else if (!empty($_POST['deleteFAQ'])) {
         $service = new FAQService();

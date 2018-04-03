@@ -422,7 +422,6 @@ $eventService->deleteEventEntry("5");
 </div>
 <div class="container invisible">
     <select class="form-control form-control-sm historicSelect" id="historicSelect">
-        <option value="0">No Historic Filter</option>
         <?php
         echo $historicFilterService -> getAllFiltersForSelect();
         ?>
