@@ -2,7 +2,25 @@ body {
     background-color: #F7F5E9;
     background-image: url("../images/TrailBackground.png");
 }
-
+.nav-tabs{
+	border: none !important;
+	text-align: center;
+	background-color: #6b7749;
+}
+.nav-tabs > li > a{
+	color: white;
+}
+.nav-tabs > li > a:hover{
+	color: #000000;
+	background-color:none;
+}
+.nav-tabs > li{
+	float: none !important;
+	display: inline-block !important;
+}
+.nav-tabs>li.active>a{
+	background-color: #f8f6ec;
+}
 #pageContent {
     margin-top: 2.5%;
 	margin-bottom: 2.5%;
