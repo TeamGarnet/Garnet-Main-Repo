@@ -1,5 +1,5 @@
 <?php
-include '../services/DatabaseConnection.class.php';
+include_once 'DatabaseConnection.class.php';
 
 class WiderAreaMap {
 

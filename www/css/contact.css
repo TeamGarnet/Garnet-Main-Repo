@@ -1,0 +1,48 @@
+body {
+    background-color: #F7F5E9;
+    background-image: url("../images/TrailBackground.png");
+}
+
+#pageContent {
+    margin-top: 2.5%;
+}
+
+/* PHP Generated Content*/
+.contactCardOutter {
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    padding: 5%;
+}
+
+.contactCard {
+    font-family: Proza Libre !important;
+    font-size: large;
+}
+
+.name {
+
+    font-weight: bold;
+}
+
+h3 {
+    font-family: Proza Libre !important;
+}
+
+hr.style17 {
+    border-top: 1px solid #8c8b8b;
+    text-align: center;
+}
+hr.style17:after {
+    content: '§';
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    color: #8c8b8b;
+    font-size: 18px;
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    transform: rotate(60deg);
+}

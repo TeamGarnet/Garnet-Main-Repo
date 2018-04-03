@@ -33,5 +33,8 @@
 ._*
 .Spotlight-V100
 .Trashes
+package-lock.json
 ehthumbs.db
 Thumbs.db
+node_modules/
+/www/pages/phpErrors.txt

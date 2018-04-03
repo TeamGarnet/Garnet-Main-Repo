@@ -1,0 +1,139 @@
+body,
+html {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#menu {
+    font-family: "Proza Libre", sans-serif !important;
+    border: none !important;
+    background-color: #6b7749 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    min-height: 9%;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    opacity: 1 !important;
+}
+
+@media (min-height: 460px) and (max-height: 560px) {
+    #menu {
+        min-height: 19%;
+    }
+}
+
+@media (min-height: 560px) and (max-height: 630px) {
+    #menu {
+        min-height: 16%;
+    }
+}
+
+@media (min-height: 630px) and (max-height: 700px) {
+    #menu {
+        min-height: 14%;
+    }
+}
+
+@media (min-height: 700px) and (max-height: 800px) {
+    #menu {
+        min-height: 12%;
+    }
+}
+
+@media (min-height: 800px) and (max-height: 900px) {
+    #menu {
+        min-height: 11%;
+    }
+}
+
+#menu a {
+    text-shadow: none !important;
+}
+
+#menu .container {
+    height: 100% !important;
+}
+
+#menu ul {
+    margin-top: 3% !important;
+}
+
+.navbar-collapse {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#nav-right {
+    text-align: right;
+}
+
+.hvr-underline-reveal {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    font-variant: small-caps !important;
+    font-family: Proza Libre !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    letter-spacing: 1.5px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border: none !important;
+    color: white !important;
+}
+
+.hvr-underline-reveal:before {
+    content: "" !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: white !important;
+    color: white !important;
+    height: 4px !important;
+    -webkit-transform: translateY(4px) !important;
+    transform: translateY(4px) !important;
+    -webkit-transition-property: transform !important;
+    transition-property: transform !important;
+    -webkit-transition-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+    -webkit-transition-timing-function: ease-out !important;
+    transition-timing-function: ease-out !important;
+}
+
+.hvr-underline-reveal:hover:before,
+.hvr-underline-reveal:focus:before,
+.hvr-underline-reveal:active:before {
+    -webkit-transform: translateY(0) !important;
+    transform: translateY(0) !important;
+    color: white !important;
+}
+
+.donate {
+    color: white !important;
+    background-color: #97583a !important;
+    font-variant: small-caps !important;
+    font-family: Proza Libre !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    letter-spacing: 1.5px !important;
+    margin: 10px !important;
+}
+
+.donate:hover {
+    background-color: white !important;
+    color: #97583a !important;
+}
+

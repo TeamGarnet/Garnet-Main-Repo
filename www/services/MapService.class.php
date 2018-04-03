@@ -1,9 +1,9 @@
 <?php
-include '../data/MapData.class.php';
-include '../models/MapPin.class.php';
-include '../models/FilterButton.class.php';
-include '../components/FilterBar.class.php';
-include '../components/TrackableObjectCard.class.php';
+include_once 'data/MapData.class.php';
+include_once 'models/MapPin.class.php';
+include_once 'models/FilterButton.class.php';
+include_once 'components/FilterBar.class.php';
+include_once 'components/TrackableObjectCard.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
@@ -16,7 +16,7 @@ include '../components/TrackableObjectCard.class.php';
 
 class MapService {
 
-    public function __construct(){
+    public function __construct() {
     }
 
     /**
@@ -29,10 +29,11 @@ class MapService {
         $allPinObjects = array();
 
         foreach ($mapData as $pinArray) {
-            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], $pinArray['imageDescription'], $pinArray['imageLocation'], $pinArray['name'], $pinArray['idTypeFilter'], $pinArray['pinDesign'], $pinArray['idHistoricFilter']);
+            $pinObject = new MapPin($pinArray['idTrackableObject'], $pinArray['longitude'], $pinArray['latitude'], stripcslashes($pinArray['imageDescription']), $pinArray['imageLocation'], $pinArray['name'], $pinArray['idTypeFilter'], $pinArray['pinDesign'], $pinArray['idHistoricFilter']);
 
             array_push($allPinObjects, $pinObject);
         }
+        //var_dump($allPinObjects);
         return $allPinObjects;
     }
 
@@ -111,7 +112,7 @@ class MapService {
      *  infoWindow.setContent("<div id='infoWindow'>
      * <image src='imageLocation' alt='imageDescription' ></image>
      * <br><h2 class='pinName'>Blue Flower</h2><br>
-     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2);>
+     * <a class= 'pinLink' href='#' onclick='loadObjectInfo(2)';>
      * Learn more about Blue Flower </a> </div>");
      *  infoWindow.open(map,marker2);
      * }})(marker2));
@@ -127,13 +128,15 @@ class MapService {
 
         */
 
-        $infoWindowContent =  '"' ."<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src="
-            . $pin -> getImageDescription()
-            . " style=width:100px;height:100px;/></br><h4>"
+        $infoWindowContent = '"' . "<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src='"
+            . $pin -> getImageLocation()
+            . "' alt='"
+            . $pin -> getImageDescription() . "' style=width:100px;height:100px;/></br><h4>"
             . $pin -> getName()
             . "</h4>"
-            . "</br></br><button onclick='openup()' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
-            .'"';
+            . "</br></br><button onclick='loadObjectInfo("
+            . $pin -> getIdTrackableObject() . ")' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
+            . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
         $infoWindowListener = "google.maps.event.addListener(" . $markerName . ", 'click', (function(" . $markerName . ") {

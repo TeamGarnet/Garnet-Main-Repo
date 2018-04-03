@@ -1,0 +1,177 @@
+#dropdownMenuLink{
+	background-color: #97583a;
+	border:none;
+	float: right;
+	margin-right: 15px;
+}
+#dropdownMenuLink:hover{
+	background-color: #ffffff;
+	color: #97583a;
+}
+#dropdown-menu{
+	right:0;
+	left:unset;
+}
+#rightMenu{
+	margin-top: 60px;
+	border:none;
+	padding-left: 0;
+	padding-right: 0;
+}
+#leftMenu{
+	padding-left: 0;
+	padding-right: 0;
+}
+#navBar {
+    background-color: #6b7749;
+    margin: 0;
+}
+#tabRow{
+	background-color: #6b7749;
+	margin-right: 0;
+	margin-left: 0;
+}
+#navBarContainer {
+    width: 100%;
+}
+#tabContainer{
+	width: 100%;
+}
+
+#nav-right {
+    margin-top: 2%;
+}
+
+#nav-right > li > a:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+#nav-right > li > a:active {
+    background-color: white;
+    color: #000;
+    border-radius: 4px;
+}
+
+#nav-right > li > a:focus {
+    background-color: white;
+    color: #000;
+    border-radius: 4px;
+}
+
+#nav-right > li {
+    float: right;
+}
+
+#myTab > li > a {
+    color: #ffffff;
+    border: none !important;
+}
+
+#myTab > li > a:active {
+    border: 1px solid #ffffff !important;
+    border-bottom-color: transparent !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+#myTab > li > a:hover {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+#myTab > li.active > a {
+    color: #000000;
+}
+
+#myTab > li.active > a:hover {
+    background-color: #ffffff !important;
+
+}
+
+#myTab {
+    background-color: #6b7749;
+	float:left;
+	border: none;
+}
+
+#tabBar {
+    width: 100% !important;
+}
+
+.logo {
+    padding-top: 20px;
+}
+
+.logout {
+    float: right;
+    padding-top: 35px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.logout:hover {
+    color: #040404;
+}
+
+#custom-search-input {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    background: #eee;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #bdbcbc;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+/**********
+	Tabber
+***********/
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+.content_accordion {
+    margin-top: 20px;
+}
+
+#updateModal input, #createModal input {
+    width: 100%;
+    padding: 12px 5px;
+    margin: 5px 0px 30px 0px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
