@@ -49,25 +49,25 @@ class TrackableObjectCard {
         $this -> lastName = $cardDataArray['lastName'];
         $this -> birth = $cardDataArray['birth'];
         $this -> death = $cardDataArray['death'];
-        $this -> description = $cardDataArray['description'];
+        $this -> description = stripcslashes($cardDataArray['description']);
         $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = $cardDataArray['imageDescription'];
+        $this -> imageDescription = stripcslashes$cardDataArray['imageDescription']);
     }
 
     public function setNaturalHistoryInfo($cardDataArray) {
-        $this -> commonName = $cardDataArray['commonName'];
-        $this -> scientificName = $cardDataArray['scientificName'];
-        $this -> description = $cardDataArray['description'];
+        $this -> commonName = stripcslashes($cardDataArray['commonName']);
+        $this -> scientificName = stripcslashes($cardDataArray['scientificName']);
+        $this -> description = stripcslashes($cardDataArray['description']);
         $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = $cardDataArray['imageDescription'];
+        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
     }
 
     public function setMiscObjectInfo($cardDataArray) {
         $this -> name = $cardDataArray['name'];
         $this -> isHazard = $cardDataArray['isHazard'];
-        $this -> description = $cardDataArray['description'];
+        $this -> description = stripcslashes($cardDataArray['description']);
         $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = $cardDataArray['imageDescription'];
+        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
     }
 
     public function getGraveInfo() {
