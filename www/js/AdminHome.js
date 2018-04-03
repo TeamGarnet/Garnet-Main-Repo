@@ -80,7 +80,6 @@ function deleteType(id) {
                 data: 'deleteType=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    //alert(data);
                     if (data != "") {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
@@ -110,6 +109,11 @@ function deleteHistoricFilter(id) {
                 data: 'deleteHistoricFilter=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
+                    if (data != "") {
+                        $('.messageContent').html('');
+                        $('.messageContent').append(data);
+                        $('.message').modal('show');
+                    }
                     return true;
                 },
                 dataType: "text",
