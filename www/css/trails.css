@@ -23,7 +23,7 @@ body {
     font-family: prozolibre;
 }
 
-.locationDescription {
+.locationDescription, .eventLocationName, .eventStartTime, .eventDescription {
     font-size: large;
 }
 
