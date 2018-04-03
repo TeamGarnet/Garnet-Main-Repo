@@ -13,7 +13,7 @@ body {
 .nav-tabs > li > a:hover{
 	color: #000000;
 	background-color: #f8f6ec !important;
-	border: none !important;
+	border-color: transparent !important;
 }
 .nav-tabs > li{
 	float: none !important;
