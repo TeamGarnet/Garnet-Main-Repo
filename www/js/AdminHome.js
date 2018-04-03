@@ -8,7 +8,7 @@ function deleteGrave(id) {
                 data: 'deleteGrave=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -32,7 +32,7 @@ function deleteNH(id) {
                 data: 'deleteNH=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -56,7 +56,7 @@ function deleteMisc(id) {
                 data: 'deleteMisc=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -84,6 +84,8 @@ function deleteType(id) {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
                         $('.message').modal('show');
+                    }else {
+                        location.reload(true);
                     }
                     return true;
                 },
@@ -113,6 +115,8 @@ function deleteHistoricFilter(id) {
                         $('.messageContent').html('');
                         $('.messageContent').append("Cannot delete 'No Historic Filter' default filter.");
                         $('.message').modal('show');
+                    } else {
+                        location.reload(true);
                     }
                     return true;
                 },
@@ -138,7 +142,7 @@ function deleteFAQ(id) {
                 data: 'deleteFAQ=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
@@ -162,7 +166,7 @@ function deleteLocation(id) {
                 data: 'deleteLocation=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
