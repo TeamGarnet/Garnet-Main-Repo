@@ -138,7 +138,7 @@ $eventService->deleteEventEntry("5");
 <!-- Filters Selects-->
 <div class="container" id="tabContainer">
 	<div class="row" id="tabRow">
-		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" id="leftMenu">
 			<ul id="myTab" class="nav nav-tabs">
 				<li class="active">
 					<a href="#graveDiv" data-toggle="tab">
