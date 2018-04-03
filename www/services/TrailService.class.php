@@ -28,7 +28,7 @@ class TrailService {
         $formattedTrailLocationInfo = "";
 
         foreach ($allTrailObjectsInfo as $trailObjectInfo) {
-            $formattedTrailLocationInfo .= '<div style="margin-top: 6%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
+            $formattedTrailLocationInfo .= '<div style="margin-top: 4%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
                 . $trailObjectInfo -> getLineColor() . '</p><p class="locationName">'
                 . $trailObjectInfo -> getName() . '</p><p class="locationDescription">'
                 . $trailObjectInfo -> getDescription() . '</p><a href="'
