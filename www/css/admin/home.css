@@ -29,7 +29,9 @@
 #navBarContainer {
     width: 100%;
 }
-
+#tabContainer{
+	width: 100%;
+}
 #nav-right {
     margin-top: 2%;
 }
