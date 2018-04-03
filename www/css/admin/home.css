@@ -7,7 +7,10 @@
 	background-color: #97583a;
 	border:none;
 }
-
+#dropdownMenuLink:hover{
+		background-color: #ffffff;
+		color: #97583a;
+}
 #rightMenu{
 	float:right;
 	margin-top: 53px;
