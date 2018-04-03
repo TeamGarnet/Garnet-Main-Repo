@@ -155,37 +155,21 @@ $eventService->deleteEventEntry("5");
 				<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
 			</ul>
 		</div>
-		<script>
-		$('#myTab a').click(function(e) {
-			e.preventDefault();
-			$(this).tab('show');
-		});
-
-		// store the currently selected tab in the hash value
-		$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
-			var id = $(e.target).attr("href").substr(1);
-			window.location.hash = id;
-		});
-
-		// on load of the page: switch to the currently selected tab
-		var hash = window.location.hash;
-		$('#myTab a[href="' + hash + '"]').tab('show');
-		</script>
 		<div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
 			<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
 			   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Create +
 			</a>
 			<ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createContact()">Contact</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
+				<li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
+				<li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
+				<li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
+				<li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
+				<li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a></li>
+				<li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
+				<li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area Location</a></li>
+				<li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
+				<li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
 			</ul>
 		</div>
 	</div>
@@ -426,6 +410,22 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
+		<script>
+		$('#myTab a').click(function(e) {
+			e.preventDefault();
+			$(this).tab('show');
+		});
+
+		// store the currently selected tab in the hash value
+		$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+			var id = $(e.target).attr("href").substr(1);
+			window.location.hash = id;
+		});
+
+		// on load of the page: switch to the currently selected tab
+		var hash = window.location.hash;
+		$('#myTab a[href="' + hash + '"]').tab('show');
+		</script>
 
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
