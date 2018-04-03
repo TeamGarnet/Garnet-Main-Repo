@@ -177,15 +177,15 @@ $eventService->deleteEventEntry("5");
 				Create +
 			</a>
 			<ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<li><a class="dropdown-item" href="#" onclick="createGrave()">Grave</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createNH()">Natural History</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createMisc()">Micellaneous</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createTypeFilter()">Type Filter</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createHistoricFilter()">Historic Filter</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createFAQ()">FAQ</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createWiderLocation()">Wider Area Location</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createContact()">Contact</a></li>
-				<li><a class="dropdown-item" href="#" onclick="createEventEntry()">Event</a></li>
+				<li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
+				<li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
+				<li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
+				<li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
+				<li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a></li>
+				<li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
+				<li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area Location</a></li>
+				<li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
+				<li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
 			</ul>
 		</div>
 	</div>
