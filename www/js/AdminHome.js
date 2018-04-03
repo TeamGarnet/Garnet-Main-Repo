@@ -190,7 +190,7 @@ function deleteContact(id) {
                 data: 'deleteContact=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    return true;
+                    location.reload(true);
                 },
                 dataType: "text",
                 processData: false,
