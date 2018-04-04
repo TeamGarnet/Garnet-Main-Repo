@@ -21,6 +21,7 @@ body {
 }
 .nav-tabs>li.active>a{
 	background-color: #f8f6ec !important;
+	color: #000000;
 }
 #pageContent {
     margin-top: 2.5%;
