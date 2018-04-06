@@ -149,7 +149,7 @@ print_r($allTrailLocations);
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    var trailArray = <?php echo json_encode($allTrailLocations); ?>;
+    var trailArray = <?php echo json_encode(serialize($allTrailLocations)); ?>;
 
 
     function initMap() {
