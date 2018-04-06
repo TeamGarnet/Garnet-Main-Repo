@@ -31,14 +31,19 @@ class HistoricFilterData {
     public function createHistoricFilter($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         try {
             //global $createHistoricFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO HistoricFilter (historicFilterName, description, dateStart, dateEnd, buttonColor) VALUES (:historicFilterName, :description,:dateStart, :dateEnd, :buttonColor)");
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO HistoricFilter (historicFilterName, description, dateStart, dateEnd, buttonColor) VALUES (:historicFilterName, :description, :dateStart, :dateEnd, COALESCE(:buttonColor, DEFAULT(buttonColor)))");
 
 
             $stmt -> bindParam(':historicFilterName', $historicFilterName, PDO::PARAM_STR);
             $stmt -> bindParam(':dateStart', $dateStart, PDO::PARAM_STR);
             $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
             $stmt -> bindParam(':dateEnd', $dateEnd, PDO::PARAM_STR);
-            $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            if ($buttonColor == "" || empty($buttonColor)) {
+                $buttonColor= null;
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            }
 
             $stmt -> execute();
         } catch (PDOException $e) {
@@ -60,14 +65,20 @@ class HistoricFilterData {
     public function updateHistoricFilter($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         try {
             //global $updateHistoricFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE HistoricFilter SET idHistoricFilter = :idHistoricFilter , historicFilterName = :historicFilterName , description = :description , dateStart = :dateStart, dateEnd =:dateEnd, buttonColor =:buttonColor  WHERE idHistoricFilter = :idHistoricFilter");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE HistoricFilter SET idHistoricFilter = :idHistoricFilter , historicFilterName = :historicFilterName , description = :description , dateStart = :dateStart, dateEnd =:dateEnd, COALESCE(:buttonColor, DEFAULT(buttonColor))  WHERE idHistoricFilter = :idHistoricFilter");
 
             $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_STR);
             $stmt -> bindParam(':historicFilterName', $historicFilterName, PDO::PARAM_STR);
             $stmt -> bindParam(':dateStart', $dateStart, PDO::PARAM_STR);
             $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
             $stmt -> bindParam(':dateEnd', $dateEnd, PDO::PARAM_STR);
-            $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+
+            if ($buttonColor == "" || empty($buttonColor)) {
+                $buttonColor= null;
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            }
 
             $stmt -> execute();
         } catch (PDOException $e) {

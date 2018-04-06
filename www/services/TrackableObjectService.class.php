@@ -13,9 +13,7 @@ class TrackableObjectService {
         $hint = filter_var($hint, FILTER_SANITIZE_STRING);
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
-        if ($imageLocation == null || $imageLocation == "") {
-            $imageLocation = '/images/pins/default.png';
-        }
+
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
         $lastInsertId = $trackableObjectData -> createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
@@ -33,9 +31,7 @@ class TrackableObjectService {
         $hint = filter_var($hint, FILTER_SANITIZE_STRING);
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
-        if ($imageLocation == null || $imageLocation == "") {
-            $imageLocation = '/images/pins/default.png';
-        }
+
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
         $trackableObjectData -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
     }

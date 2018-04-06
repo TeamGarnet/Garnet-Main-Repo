@@ -31,17 +31,23 @@ class TypeFilterData {
     public function createTypeFilter($type, $pinDesign, $buttonColor) {
         try {
             //global $createTypeFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (COALESCE(:pinDesign, DEFAULT(pinDesign)), :type, :buttonColor)");
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (COALESCE(:pinDesign, DEFAULT(pinDesign)), :type, COALESCE(:buttonColor, DEFAULT(buttonColor)) )");
 
             if ($pinDesign == "" || empty($pinDesign) ){
-                //$pinDesign = "images/pins/orangeMarker.png";
                 $pinDesign = null;
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             } else {
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             }
+
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);
-            $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+
+            if ($buttonColor == "" || empty($buttonColor)) {
+                $buttonColor= null;
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            }
 
             $stmt -> execute();
         } catch (PDOException $e) {
@@ -64,12 +70,22 @@ class TypeFilterData {
     public function updateTypeFilter($idTypeFilter, $pinDesign, $type, $buttonColor) {
         try {
             //global $updateTypeFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE TypeFilter SET idTypeFilter = :idTypeFilter , pinDesign = :pinDesign , type = :type, buttonColor= :buttonColor WHERE idTypeFilter = :idTypeFilter");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE TypeFilter SET idTypeFilter = :idTypeFilter , pinDesign = :pinDesign , type = :type, buttonColor = COALESCE(:buttonColor, DEFAULT(buttonColor)) WHERE idTypeFilter = :idTypeFilter");
 
-            $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
+            if ($pinDesign == "" || empty($pinDesign) ){
+                $pinDesign = null;
+                $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
+            }
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);
             $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
-            $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            if ($buttonColor == "" || empty($buttonColor)) {
+                $buttonColor= null;
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            }
 
             $stmt -> execute();
         } catch (PDOException $e) {
