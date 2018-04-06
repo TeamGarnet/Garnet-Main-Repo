@@ -33,6 +33,9 @@
 	background-color: #97583a !important;
 	color: #ffffff !important;
 }
+.modal-footer > .btn:hover{
+	background-color: #6b7749 !important
+}
 .first{
 	font-family: Proza Libre !important;
 }
