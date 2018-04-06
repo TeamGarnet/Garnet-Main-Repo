@@ -72,7 +72,7 @@ class TypeFilterService {
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
-        $idsNotDeletable = array("1", "2", "3");
+        $idsNotDeletable = array("1", "2", "3", "4");
         foreach ($allModels as $model) {
             $idTypeFilter = strval($model -> getIdTypeFilter());
             $objectRowID = "13" . $idTypeFilter;
@@ -87,6 +87,8 @@ class TypeFilterService {
                     . '"deleteType('
                     . $model -> getIdTypeFilter()
                     . ')"> Delete</button></td>';
+            } else {
+                $editAndDelete = $editAndDelete . "<td></td>";
             }
 
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
