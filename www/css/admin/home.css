@@ -67,7 +67,7 @@
 	border-color: #97583a !important;
 	color: #ffffff !important;
 }
-.modal-footer > .btn:hover{
+.modal-footer > .btn:hover, .btn:focus{
 	background-color: #6b7749 !important;
 	border-color: #6b7749 !important;
 }
