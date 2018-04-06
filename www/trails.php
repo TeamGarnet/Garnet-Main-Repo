@@ -123,6 +123,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
 <script type="text/javascript">
     var map, infoWindow;
+    var allMarkerObjects = [];
     var directionList = [];
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
