@@ -5,6 +5,9 @@ body {
 .locationName{
 	text-align:center !important;
 }
+.modal-body{
+	font-family: Proza Libre !important;
+}
 .nav-tabs{
 	border: none !important;
 	text-align: center;
@@ -43,7 +46,7 @@ body {
 }
 
 .locationInfo, .eventInfo {
-    font-family: prozolibre;
+    font-family: Proza Libre;
 }
 
 .locationDescription, .eventLocationName, .eventStartTime, .eventDescription {
