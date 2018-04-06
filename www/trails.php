@@ -6,6 +6,7 @@ include_once 'services/WiderAreaMapService.class.php';
 
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
+$allTrailLocations = $trailService -> getAllTrailLocationInfo();
 $eventService = new EventService();
 $allEventInfo = $eventService -> formatEventInfo();
 $widerAreaMapService = new WiderAreaMapService();
@@ -147,7 +148,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    var trailArray = <?php echo json_encode($allTrailInfo); ?>;
+    var trailArray = <?php echo json_encode($allTrailLocations); ?>;
 
 
     function initMap() {
