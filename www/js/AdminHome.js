@@ -232,6 +232,7 @@ function deleteEvent(id) {
 
 function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idWiderAreaMap) {
     // Grab current table header value and corresponding table data value
+    $('#updateModalBody').empty();
     var input = '';
     var isHazard = "";
     $(tableID + ' th').each(function (index) {
