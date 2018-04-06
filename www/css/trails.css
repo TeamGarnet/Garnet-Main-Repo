@@ -65,6 +65,17 @@ body {
     color: white !important;
 }
 .locationDate {
+    background-color: #97583a !important;
+    color: white !important;
+}
+
+.eventBtns.btn{
+    background-color: #97583a !important;
+    color: white !important;
+}
+.eventBtns.btn{
+    background-color: #6b7749 !important;
+    color: white !important;
 }
 
 h3, p, a {
