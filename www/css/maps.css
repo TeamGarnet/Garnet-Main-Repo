@@ -26,6 +26,9 @@
 #map {
     height: 90%;
 }
+.popupModal{
+	font-family: Proza Libre !important;
+}
 
 /* Optional: Makes the sample page fill the window. */
 html, body {
