@@ -123,7 +123,6 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
 <script type="text/javascript">
     var map, infoWindow;
-    var allMarkerObjects = [];
     var directionList = [];
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
@@ -169,9 +168,9 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     }
 
 
-    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, pointB) {
         directionsService.route({
-            origin: pointA,
+            origin: userLocation,
             destination: pointB,
             avoidTolls: true,
             avoidHighways: false,

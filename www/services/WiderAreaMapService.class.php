@@ -130,7 +130,7 @@ class WiderAreaMapService {
             markerName: " . $markerName . "});";
 
             $generatedMarkers .= "allMarkerObjects.push(" . $markerName . ");";
-            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName, $directionName, $markerCounter);
+            $infoWidowConfig = $this -> generateInfoWindowConfig($pin, $markerName, $markerCounter);
             $generatedMarkers .= $infoWidowConfig . $setMarkerCode;
 
 
@@ -140,7 +140,7 @@ class WiderAreaMapService {
         return $generatedMarkers;
     }
 
-    public function generateInfoWindowConfig($pin, $markerName, $directionName, $markerCounter) {
+    public function generateInfoWindowConfig($pin, $markerName, $markerCounter) {
         $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4></br><p><a class='eventBtns btn' href='#' onclick='displayLocationInfo("
