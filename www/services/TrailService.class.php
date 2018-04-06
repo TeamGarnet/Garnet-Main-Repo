@@ -36,7 +36,7 @@ class TrailService {
                 . $trailObjectInfo->getState() . " "
                 . $trailObjectInfo->getZipcode() . '</p><p style="text-align: left;" class="locationDescription">'
                 . $trailObjectInfo -> getDescription() . '</p><a href="'
-                . $trailObjectInfo -> getUrl() . '" class="btn locationURL">Visit Site</a><hr class="style17"></div></div></div>';
+                . $trailObjectInfo -> getUrl() . '" class="btn locationURL"><button type="button">Visit Site</button></a><hr class="style17"></div></div></div>';
         };
 
 
