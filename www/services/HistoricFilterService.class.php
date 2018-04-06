@@ -87,13 +87,13 @@ class HistoricFilterService {
                 . $objectRowID . ","
                 . $model -> getIdHistoricFilter()
                 . ")'>Update</button>"
-                . "</td>";
+                . "</td><td>";
 
             if($idHistoricFilter != "0") {
-                $editAndDelete = $editAndDelete . "<td><button onclick="
+                $editAndDelete = $editAndDelete . "<button onclick="
                     . '"deleteHistoricFilter('
                     . $model -> getIdHistoricFilter()
-                    . ')"> Delete</button></td>';
+                    . ')"> Delete</button>';
             }
 
             $html = $html
@@ -103,7 +103,7 @@ class HistoricFilterService {
                 . "</td><td>" . $model -> getDescription()
                 . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
-                . "</tr>";
+                . "</td></tr>";
         }
         return $html;
     }
