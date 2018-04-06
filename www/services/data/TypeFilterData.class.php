@@ -33,7 +33,9 @@ class TypeFilterData {
             //global $createTypeFilterQuery;
             $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (:pinDesign, :type, :buttonColor)");
 
-
+            if ($pinDesign == "" || empty($pinDesign) ){
+                $pinDesign = 'DEFAULT';
+            }
             $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);
             $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
