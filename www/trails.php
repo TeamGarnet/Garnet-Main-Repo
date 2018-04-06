@@ -142,13 +142,12 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 </html>
 
 <script type="text/javascript">
-    var map, infoWindow;
+    var map, infoWindow, trailArray;
     var allMarkerObjects = [];
     var directionList = [];
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    var trailArray;
 
 
 
@@ -210,7 +209,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function displayLocationInfo(id) {
         infoWindow.close();
-        trailArray = '<?php echo json_encode($allTrailLocations); ?>';
+        trailArray = <?php echo json_encode($allTrailLocations); ?>;
         var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {
             $('#locationInfoBody').html('');
