@@ -66,13 +66,13 @@ class NaturalHistoryService extends TrackableObjectService {
         $html = "";
         foreach ($allModels as $model) {
             $objectRowID = "11" . strval($model -> getIdNaturalHistory());
-            $editAndDelete = "</td><td><button onclick='updateNH("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateNH("
                 . $objectRowID . ","
                 . $model -> getIdNaturalHistory() . ","
                 . $model -> getIdTrackableObject() . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteNH('
+                . "</td><td><button class='btn basicBtn' onclick=" . '"deleteNH('
                 . $model -> getIdNaturalHistory()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getCommonName()

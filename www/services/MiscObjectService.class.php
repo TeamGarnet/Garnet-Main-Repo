@@ -65,13 +65,13 @@ class MiscObjectService extends TrackableObjectService {
         $html = "";
         foreach ($allModels as $model) {
             $objectRowID = "12" . strval($model -> getIdMisc());
-            $editAndDelete = "</td><td><button onclick='updateMisc("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateMisc("
                 . $objectRowID . ","
                 . $model -> getIdMisc() . ","
                 . $model -> getIdTrackableObject() . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteMisc('
+                . "</td><td><button class='btn basicBtn' onclick=" . '"deleteMisc('
                 . $model -> getIdMisc()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()

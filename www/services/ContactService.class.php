@@ -76,11 +76,11 @@ class ContactService {
         $html = "";
         foreach ($allmodels as $model) {
             $objectRowID = "17" . strval($model -> getIdContact());
-            $editAndDelete = "</td><td><button onclick='updateContact("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateContact("
                 . $objectRowID . ","
                 . $model -> getIdContact()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteContact('
+                . "</td><td><button class='btn basicBtn' onclick=" . '"deleteContact('
                 . $model -> getIdContact()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()
