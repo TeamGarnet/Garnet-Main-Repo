@@ -64,10 +64,12 @@
 }
 .modal-footer > .btn{
 	background-color: #97583a !important;
+	border-color: #97583a !important;
 	color: #ffffff !important;
 }
 .modal-footer > .btn:hover{
-	background-color: #6b7749 !important
+	background-color: #6b7749 !important;
+	border-color: #6b7749 !important;
 }
 #myTab > li > a {
     color: #ffffff;
