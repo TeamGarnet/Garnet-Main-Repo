@@ -124,7 +124,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="locationName">Event Info</h5>
+                <h5 class="modal-title" id="locationName">Location Information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -210,9 +210,21 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function displayLocationInfo(id) {
         infoWindow.close();
+        var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {
+            $('#locationInfoBody').html('');
+            $('#locationInfoBody').append("<div><p>YO</p></div>");
             $('#locationInfoModal').modal('show');
         });
+    }
+
+    function findObjectByKey(array, key, value) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i][key] === value) {
+                return array[i];
+            }
+        }
+        return "No data found for location";
     }
 
 </script>
