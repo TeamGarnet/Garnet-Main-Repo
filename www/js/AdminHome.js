@@ -283,7 +283,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
                 '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
 
-        } else if (tableID == "#type" || tableID == "#historic") {
+        } else if (labelText == "Name:" && (tableID == "#type" || tableID == "#historic")) {
             if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0)) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' +
