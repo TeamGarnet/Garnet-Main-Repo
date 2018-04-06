@@ -1,6 +1,6 @@
 <?php
 
-class TrailObject {
+class TrailObject implements JsonSerializable {
     private $idWiderAreaMap;
     private $name;
     private $description;
@@ -166,4 +166,16 @@ class TrailObject {
         return '';
     }
 
+    public function jsonSerialize() {
+        return array(
+            'id' => $this -> idWiderAreaMap,
+            'name' => $this -> name,
+            'description' => $this -> description,
+            'url' => $this -> url,
+            'address' => $this -> address,
+            'city' => $this -> city,
+            'state' => $this -> state,
+            'zipcode' => $this -> zipcode
+        );
+    }
 }
