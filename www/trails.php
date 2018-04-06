@@ -124,10 +124,18 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="locationName">Location Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+							<h5 class="modal-title" id="locationName">Location Information</h5>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>
+					</div>
+				</div>
             </div>
             <div class="modal-body" id="locationInfoBody">
             </div>
