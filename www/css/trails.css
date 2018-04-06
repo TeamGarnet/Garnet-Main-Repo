@@ -56,7 +56,10 @@ body {
     font-size: large;
     text-decoration: none;
 }
-
+.btn .locationURL{
+    background-color: #97583a !important;
+    color: white !important;
+}
 .locationURL:hover {
     background-color: white !important;
     color: #97583a !important;
