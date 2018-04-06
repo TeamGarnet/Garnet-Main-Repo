@@ -106,7 +106,7 @@ td > button:focus{
     color: #000000 !important;
     border: none !important;
 }
-#myTab > li.focus{
+#myTab > li.focus > a{
 	outline-color: transparent !important;
 }
 #myTab > li.active > a {
