@@ -215,7 +215,8 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
             $('#locationInfoBody').html('');
             $('#locationInfoBody').append("<p class='locationName'>" +
                  locationInfo.name + "</p> <p class='locationDescription'> " +
-                locationInfo.address + "Add the rest of the address info</p> <p class='locationDescription'>" +
+                locationInfo.address + "," + locationInfo.city + " " + locationInfo.state + " " + locationInfo.zipcode + 
+                "Add the rest of the address info</p> <p class='locationDescription'>" +
                 locationInfo.description + "</p>");
             $('#locationInfoModal').modal('show');
         });
