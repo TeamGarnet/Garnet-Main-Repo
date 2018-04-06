@@ -134,8 +134,8 @@ class MapService {
             . $pin -> getImageDescription() . "' style=width:100px;height:100px;/></br><h4>"
             . $pin -> getName()
             . "</h4>"
-            . "</br></br><button onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . ")' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
+            . "<button onclick='loadObjectInfo("
+            . $pin -> getIdTrackableObject() . ")' class='btn mapBtn'>Learn More</button></div></div>"
             . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
