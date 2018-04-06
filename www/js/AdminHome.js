@@ -284,10 +284,14 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
                 '" autocomplete="off"/>';
 
         } else if (labelText == "Name:" && (tableID == "#type" || tableID == "#historic")) {
-            if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0)) {
+            if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0 || idTypeFilter == 4)) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
                     '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' +
                     tdVal + '" autocomplete="off" disabled/>';
+            } else {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' +
+                    tdVal + '" autocomplete="off"/>';
             }
 
         } else {
