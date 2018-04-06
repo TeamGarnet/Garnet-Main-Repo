@@ -86,7 +86,7 @@ function deleteType(id) {
                         $('.message').modal('show');
                         id = null;
                     }else {
-                        //location.reload(true);
+                        location.reload(true);
                     }
                     return true;
                 },
@@ -792,7 +792,7 @@ function createTypeFilter() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
-            location.reload(true);
+            //location.reload(true);
         });
     });
 }
