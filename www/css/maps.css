@@ -29,6 +29,9 @@
 .popupModal{
 	font-family: Proza Libre !important;
 }
+.popupModal > .btn{
+	background-color: #97583a !important;
+}
 
 /* Optional: Makes the sample page fill the window. */
 html, body {
