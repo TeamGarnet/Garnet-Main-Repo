@@ -112,6 +112,9 @@ td > button:focus{
 #myTab > li > a:focus{
 	
 }
+#myTab > li:active > a{
+	color: #000000 !important;
+}
 #myTab {
     background-color: #6b7749;
 	float:left;
