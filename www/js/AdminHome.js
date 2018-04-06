@@ -84,6 +84,7 @@ function deleteType(id) {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
                         $('.message').modal('show');
+                        id=null;
                     }else {
                         location.reload(true);
                     }
