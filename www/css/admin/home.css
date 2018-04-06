@@ -109,6 +109,7 @@ td > button:focus{
 
 #myTab > li.active > a {
     color: #000000;
+	outline-color: transparent !important;
 }
 
 #myTab > li.active > a:hover {
