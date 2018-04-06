@@ -286,7 +286,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
         } else if (labelText == "Name:" && (tableID == "#type" || tableID == "#historic")) {
             if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0)) {
                 input += '<label for="' + attribute + '">' + labelText + '</label>' +
-                    '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' +
                     tdVal + '" autocomplete="off" disabled/>';
             }
 
