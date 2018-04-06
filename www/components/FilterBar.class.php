@@ -25,12 +25,12 @@ class FilterBar {
             if ($filterButton->getFilterName() != "No Historic Filter") {
                 $filterButtonCode = "<li><button type='button' class='btn btn-default' style='background-color: " . $filterButton -> getButtonColor() . "; border: 2px solid " . $filterButton -> getButtonColor() . " !important;'" .
                     "onclick=" . "\"refreshFilters('" . $filterButton -> getTable() . "'," . $filterButton -> getFilterID() . ")" . "\">" .
-                    $filterButton -> getFilterName() . "</button></li></ul>";
+                    $filterButton -> getFilterName() . "</button></li>";
 
                 $filterBarCode = $filterBarCode . $filterButtonCode;
             }
         }
-        $filterBarCode = $filterBarCode . "<ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></div></nav>";
+        $filterBarCode = $filterBarCode . "</ul><ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></div></nav>";
         $this -> setFilterBar($filterBarCode);
     }
 
