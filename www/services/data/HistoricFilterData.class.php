@@ -65,7 +65,7 @@ class HistoricFilterData {
     public function updateHistoricFilter($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         try {
             //global $updateHistoricFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE HistoricFilter SET idHistoricFilter = :idHistoricFilter , historicFilterName = :historicFilterName , description = :description , dateStart = :dateStart, dateEnd =:dateEnd, COALESCE(:buttonColor, DEFAULT(buttonColor))  WHERE idHistoricFilter = :idHistoricFilter");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE HistoricFilter SET idHistoricFilter = :idHistoricFilter , historicFilterName = :historicFilterName , description = :description , dateStart = :dateStart, dateEnd =:dateEnd, buttonColor = COALESCE(:buttonColor, DEFAULT(buttonColor)) WHERE idHistoricFilter = :idHistoricFilter");
 
             $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_STR);
             $stmt -> bindParam(':historicFilterName', $historicFilterName, PDO::PARAM_STR);

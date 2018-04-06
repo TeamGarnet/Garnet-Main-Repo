@@ -70,7 +70,7 @@ class TypeFilterData {
     public function updateTypeFilter($idTypeFilter, $pinDesign, $type, $buttonColor) {
         try {
             //global $updateTypeFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE TypeFilter SET idTypeFilter = :idTypeFilter , pinDesign = :pinDesign , type = :type, buttonColor = COALESCE(:buttonColor, DEFAULT(buttonColor)) WHERE idTypeFilter = :idTypeFilter");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE TypeFilter SET idTypeFilter = :idTypeFilter , pinDesign = COALESCE(:pinDesign,, DEFAULT(pinDesign)), type = :type, buttonColor = COALESCE(:buttonColor, DEFAULT(buttonColor)) WHERE idTypeFilter = :idTypeFilter");
 
             if ($pinDesign == "" || empty($pinDesign) ){
                 $pinDesign = null;
@@ -78,8 +78,10 @@ class TypeFilterData {
             } else {
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             }
+
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);
             $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+
             if ($buttonColor == "" || empty($buttonColor)) {
                 $buttonColor= null;
                 $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
