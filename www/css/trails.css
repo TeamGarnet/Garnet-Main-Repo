@@ -56,7 +56,7 @@ body {
     font-size: large;
     text-decoration: none;
 }
-.btn .locationURL{
+.btn.locationURL{
     background-color: #97583a !important;
     color: white !important;
 }
