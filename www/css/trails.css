@@ -2,6 +2,9 @@ body {
     background-color: #F7F5E9;
     background-image: url("../images/TrailBackground.png");
 }
+.locationName{
+	text-align:center !important;
+}
 .nav-tabs{
 	border: none !important;
 	text-align: center;
