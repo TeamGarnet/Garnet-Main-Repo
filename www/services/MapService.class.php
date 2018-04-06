@@ -134,7 +134,7 @@ class MapService {
             . $pin -> getImageDescription() . "' style=width:100px;height:100px;/></br><h4>"
             . $pin -> getName()
             . "</h4>"
-            . "</br></br><button onclick='loadObjectInfo("
+            . "<button onclick='loadObjectInfo("
             . $pin -> getIdTrackableObject() . ")' class='btn mapBtn'>Learn More</button></div></div>"
             . '"';
 
