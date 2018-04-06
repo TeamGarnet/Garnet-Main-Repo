@@ -44,7 +44,8 @@ class TypeFilterData {
             $stmt -> execute();
         } catch (PDOException $e) {
             echo $e -> getMessage();
-            die();
+        } catch (Exception $ex) {
+            echo $ex ->getMessage();
         }
     }
 
