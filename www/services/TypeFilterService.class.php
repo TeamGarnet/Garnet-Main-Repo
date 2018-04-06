@@ -74,18 +74,16 @@ class TypeFilterService {
         $html = "";
         foreach ($allModels as $model) {
             $objectRowID = "13" . strval($model -> getIdTypeFilter());
-            $editAndDelete = "</td><td><button onclick='updateType("
+            $editOnly = "</td><td><button onclick='updateType("
                 . $objectRowID . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteType('
-                . $model -> getIdTypeFilter()
-                . ')"> Delete</button>';
+                . "</td>";
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
                 . "</td><td>" . $model -> getPinDesign()
                 . "</td><td>" . $model -> getButtonColor()
-                . $editAndDelete
-                . "</td></tr>";
+                . $editOnly
+                . "</tr>";
         }
         return $html;
     }
