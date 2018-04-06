@@ -80,7 +80,7 @@ function deleteType(id) {
                 data: 'deleteType=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    if (data != "") {
+                    if (data != "" && id !=null) {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
                         $('.message').modal('show');
