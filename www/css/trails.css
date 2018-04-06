@@ -8,6 +8,11 @@ body {
 .modal-body{
 	font-family: Proza Libre !important;
 }
+.modal-footer > .btn{
+	background-color: #97583a !important;
+	border-color: #97583a !important;
+	color: #ffffff !important;
+}
 .nav-tabs{
 	border: none !important;
 	text-align: center;
