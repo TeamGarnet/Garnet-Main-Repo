@@ -350,6 +350,8 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
 }
 
 function generateCreateModal(tableID) {
+    $('#createModalBody').html('');
+    $('#createModalBody').empty();
     var input = '';
     $(tableID + ' th').each(function (index) {
         var attribute = $(this).text().replace(/ /g, '');
