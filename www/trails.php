@@ -117,6 +117,25 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     </div>
 </div>
 
+<!-- Location Info modal -->
+<div class="modal message" id="locationInfoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locationName">Event Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="messageContent" id="locationInfoBody"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
@@ -128,6 +147,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+    var trailArray = <?php echo json_encode($allMapPins); ?>;
 
 
     function initMap() {
@@ -177,12 +197,17 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
             avoidHighways: false,
             travelMode: google.maps.TravelMode.DRIVING
         }, function (response, status) {
+            infoWindow.close();
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             } else {
                 window.alert('Directions request failed due to ' + status);
             }
         });
+    }
+
+    function displayLocationInfo(id) {
+        $('.locationModal').modal('show');
     }
 
 </script>
