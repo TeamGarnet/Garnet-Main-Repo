@@ -419,7 +419,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
     $('#updateModalTitle').text('Update Grave');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': idTrackableObject,
             'idGrave': idGrave,
@@ -455,7 +455,7 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     $('#updateModalTitle').text('Update Natural History');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': parseInt(idTrackableObject),
             'idNaturalHistory': parseInt(idNaturalHistory),
@@ -487,7 +487,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     $('#updateModalTitle').text('Update Miscellaneous');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': idTrackableObject,
             'idMiscObject': idMiscObject,
@@ -518,7 +518,7 @@ function updateType(rowID, idTypeFilter) {
     $('#updateModalTitle').text('Update Type');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTypeFilter': idTypeFilter,
             'Name': $('#Name').val(),
@@ -543,7 +543,7 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
     $('#updateModalTitle').text('Update Historic Filter');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idHistoricFilter': idHistoricFilter,
             'Name': $('#Name').val(),
@@ -570,7 +570,7 @@ function updateFAQ(rowID, idFAQ) {
     $('#updateModalTitle').text('Update FAQ');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idFAQ': idFAQ,
             'Question': $('#Question').val(),
@@ -594,7 +594,7 @@ function updateLocation(rowID, idWiderAreaMap) {
     $('#updateModalTitle').text('Update Wider Area Location');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idWiderAreaMap': idWiderAreaMap,
             'Site': $('#Site').val(),
@@ -625,7 +625,7 @@ function updateContact(rowID, idContact) {
     $('#updateModalTitle').text('Update Contact');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idContact': idContact,
             'Name': $('#Name').val(),
@@ -652,7 +652,7 @@ function updateEvent(rowID, idEvent, idWiderAreaMap) {
     $('#updateModalTitle').text('Update Event');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idEvent': idEvent,
             'Name': $('#Name').val(),
