@@ -31,10 +31,11 @@ class TypeFilterData {
     public function createTypeFilter($type, $pinDesign, $buttonColor) {
         try {
             //global $createTypeFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (:pinDesign, :type, :buttonColor)");
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (COALESCE(:pinDesign, DEFAULT(pinDesign)), :type, :buttonColor)");
 
             if ($pinDesign == "" || empty($pinDesign) ){
-                $pinDesign = "images/pins/orangeMarker.png";
+                //$pinDesign = "images/pins/orangeMarker.png";
+                $pinDesign = null;
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             } else {
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
