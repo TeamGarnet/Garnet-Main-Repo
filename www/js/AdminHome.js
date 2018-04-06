@@ -720,7 +720,7 @@ function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function() {
         var formData = {
             'CommonName': $('#CommonName').val(),
             'ScientificName': $('#ScientificName').val(),
