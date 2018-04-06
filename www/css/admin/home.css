@@ -62,7 +62,13 @@
 #nav-right > li {
     float: right;
 }
-
+.modal-footer > .btn{
+	background-color: #97583a !important;
+	color: #ffffff !important;
+}
+.modal-footer > .btn:hover{
+	background-color: #6b7749 !important
+}
 #myTab > li > a {
     color: #ffffff;
     border: none !important;
