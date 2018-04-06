@@ -112,7 +112,7 @@ td > button:focus{
 #myTab > li > a:focus{
 	
 }
-#myTab > li:active > a{
+#myTab > li.active > a{
 	color: #000000 !important;
 }
 #myTab {
