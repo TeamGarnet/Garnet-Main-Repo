@@ -82,6 +82,13 @@ td > button{
 	color: #ffffff !important;
 	border-color: #97583a !important;
 }
+td > button:hover{
+	background-color: #6b7749 !important;
+	border-color: transparent !important;
+}
+td > button:focus{
+	outline-color: transparent !important;
+}
 #myTab > li > a {
     color: #ffffff;
     border: none !important;
