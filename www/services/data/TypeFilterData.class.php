@@ -35,7 +35,8 @@ class TypeFilterData {
 
             if ($pinDesign == "" || empty($pinDesign) ){
                 echo "we here boys";
-                $stmt -> bindValue(':pinDesign', null);
+                $pinDesign =null;
+                $stmt -> bindParam(':pinDesign', $pinDesign);
                 echo "we gone boys";
             } else {
                 echo "we in here boys";
