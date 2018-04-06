@@ -37,6 +37,12 @@ h4{
 	background-color: #f8f6ec !important;
 	border-color: transparent !important;
 }
+.nav-tabs > li > a:focus{
+	color: #000000;
+	background-color: #f8f6ec !important;
+	border-color: transparent !important;
+	outline-color: transparent !important;
+}
 .nav-tabs > li{
 	float: none !important;
 	display: inline-block !important;
