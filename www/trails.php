@@ -210,7 +210,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     function displayLocationInfo(id) {
         infoWindow.close();
         trailArray = <?php echo json_encode($allTrailLocations); ?>;
-        var locationInfo = findObjectByKey(trailArray, 'id', id);
+        var locationInfo = findObjectByKey(trailArray, 'id', String(id));
         $(document).ready(function () {
             $('#locationInfoBody').html('');
             $('#locationInfoBody').append("<p class='locationName'>" +
