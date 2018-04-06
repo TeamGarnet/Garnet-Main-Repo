@@ -524,7 +524,7 @@ $eventService->deleteEventEntry("5");
             </div>
             <div class="modal-body" id="createModalBody"></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="createObject" onclick="postNH()">Create</button>
+                <button type="button" class="btn btn-primary" id="createObject">Create</button>
                 <button type="button" class="btn btn-secondary" id="cancelChanges" onclick="cancelCreate()">Cancel
                 </button>
             </div>

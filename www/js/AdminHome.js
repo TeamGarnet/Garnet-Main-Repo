@@ -410,10 +410,8 @@ function generateCreateModal(tableID) {
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
 
-    // Show modal
-    $(document).ready(function () {
-        $('#createModal').modal('show');
-    });
+
+    $('#createModal').modal('show');
 }
 
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
@@ -722,31 +720,27 @@ function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
 
-    // $('#createObject').click(function () {
-    //
-    // });
-}
+    $('#createObject').click(function () {
+        var formData = {
+            'CommonName': $('#CommonName').val(),
+            'ScientificName': $('#ScientificName').val(),
+            'Description': $('#Description').val(),
+            'Longitude': parseFloat($('#Longitude').val()),
+            'Latitude': parseFloat($('#Latitude').val()),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val(),
+            'idTypeFilter': 2
+        };
 
-function postNH() {
-    var formData = {
-        'CommonName': $('#CommonName').val(),
-        'ScientificName': $('#ScientificName').val(),
-        'Description': $('#Description').val(),
-        'Longitude': parseFloat($('#Longitude').val()),
-        'Latitude': parseFloat($('#Latitude').val()),
-        'ImageDescription': $('#ImageDescription').val(),
-        'ImageLocation': $('#ImageLocation').val(),
-        'idTypeFilter': 2
-    };
-
-    $.ajax({
-        method: "POST",
-        url: "../ajaxCalls.php",
-        data: {createNaturalHistoryEntry: formData}
-    }).done(function () {
-        $('#createModal').modal('hide');
-        $('#createModalBody').empty();
-        location.reload(true);
+        $.ajax({
+            method: "POST",
+            url: "../ajaxCalls.php",
+            data: {createNaturalHistoryEntry: formData}
+        }).done(function () {
+            $('#createModal').modal('hide');
+            $('#createModalBody').empty();
+            location.reload(true);
+        });
     });
 }
 
