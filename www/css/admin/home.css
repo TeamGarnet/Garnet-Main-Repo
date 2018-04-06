@@ -74,6 +74,9 @@
 .modal-footer > .btn:focus{
 	outline-color: transparent !important;
 }
+.modal-header > h3{
+	float:left;
+}
 #myTab > li > a {
     color: #ffffff;
     border: none !important;
