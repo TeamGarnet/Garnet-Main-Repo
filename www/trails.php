@@ -13,6 +13,7 @@ $widerAreaMapService = new WiderAreaMapService();
 $allMapPins = $widerAreaMapService -> generateMarkers();
 
 //print_r($allTrailInfo);
+print_r($allTrailLocations);
 ?>
 
 <!-- HTML -->
