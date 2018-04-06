@@ -208,7 +208,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         });
     }
 
-    function displayLocationInfo(id) {
+    function displayLocationInfo(trailArray, id) {
         infoWindow.close();
         var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {

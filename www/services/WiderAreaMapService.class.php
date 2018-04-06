@@ -143,7 +143,7 @@ class WiderAreaMapService {
     public function generateInfoWindowConfig($pin, $markerName, $markerCounter) {
         $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
-            . "</h4></br><p><a class='eventBtns btn' href='#' onclick='displayLocationInfo("
+            . "</h4></br><p><a class='eventBtns btn' href='#' onclick='displayLocationInfo(trailArray,"
             . $pin -> getIdWiderAreaMap() .")'>View Information</a><a class='eventBtns btn' href=" . "'"
             . $pin -> getUrl() . "'" . ">Visit Site</a></p><p><a class='eventBtns btn' onclick='calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, " . "directionList[" . $markerCounter . "]" . ")'>Generate Route</a></p></div></div>" . '"';
 
