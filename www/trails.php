@@ -129,8 +129,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p class="messageContent" id="locationInfoBody"></p>
+            <div class="modal-body" id="locationInfoBody">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary " data-dismiss="modal">OK</button>
@@ -211,10 +210,13 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function displayLocationInfo(id) {
         infoWindow.close();
-        //var locationInfo = findObjectByKey(trailArray, 'id', id);
+        var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {
             $('#locationInfoBody').html('');
-            $('#locationInfoBody').append("<div><p>YO</p></div>");
+            $('#locationInfoBody').append("<p class='locationName'>" +
+                 locationInfo.name + "</p> <p class='locationDescription'> " +
+                locationInfo.address + "Add the rest of the address info</p> <p class='locationDescription'>" +
+                locationInfo.description + "</p>");
             $('#locationInfoModal').modal('show');
         });
     }
