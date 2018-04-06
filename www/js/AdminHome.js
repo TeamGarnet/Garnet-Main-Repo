@@ -242,6 +242,7 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
+
         if (labelText == "Start Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -271,7 +272,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             if (tableID == "#misc") {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div><br>';
             }
-
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
@@ -282,6 +282,13 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
+
+        } else if (tableID == "#type" || tableID == "#historic") {
+            if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0)) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' +
+                    tdVal + '" autocomplete="off" disabled/>';
+            }
 
         } else {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
