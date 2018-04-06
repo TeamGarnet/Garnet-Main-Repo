@@ -59,12 +59,12 @@ class EventService {
         $html = "";
         foreach ($allmodels as $model) {
             $objectRowID = "18" . strval($model -> getIdEvent());
-            $editAndDelete = "</td><td><button onclick='updateEvent("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateEvent("
                 . $objectRowID . ","
                 . $model -> getIdEvent() . ","
                 . $model -> getIdWiderAreaMap()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteEvent('
+                . "</td><td><button class='btn basicBtn' onclick=" . '"deleteEvent('
                 . $model -> getIdEvent()
                 . ')"> Delete</button>';
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getName()

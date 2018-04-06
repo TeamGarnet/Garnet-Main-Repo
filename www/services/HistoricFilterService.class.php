@@ -83,14 +83,14 @@ class HistoricFilterService {
         foreach ($allModels as $model) {
             $idHistoricFilter = strval($model -> getIdHistoricFilter());
             $objectRowID = "14" . $idHistoricFilter;
-            $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateHistoricFilter("
                 . $objectRowID . ","
                 . $model -> getIdHistoricFilter()
                 . ")'>Update</button>"
                 . "</td><td>";
 
             if($idHistoricFilter != "0") {
-                $editAndDelete = $editAndDelete . "<button onclick="
+                $editAndDelete = $editAndDelete . "<button class='btn basicBtn' onclick="
                     . '"deleteHistoricFilter('
                     . $model -> getIdHistoricFilter()
                     . ')"> Delete</button>';

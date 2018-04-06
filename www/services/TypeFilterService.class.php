@@ -76,14 +76,14 @@ class TypeFilterService {
         foreach ($allModels as $model) {
             $idTypeFilter = strval($model -> getIdTypeFilter());
             $objectRowID = "13" . $idTypeFilter;
-            $editAndDelete = "</td><td><button onclick='updateType("
+            $editAndDelete = "</td><td><button class='btn basicBtn' onclick='updateType("
                 . $objectRowID . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
                 . "</td><td>";
 
             if(!in_array($idTypeFilter, $idsNotDeletable)) {
-                $editAndDelete = $editAndDelete . "<button onclick="
+                $editAndDelete = $editAndDelete . "<buttonclass='btn basicBtn'  onclick="
                     . '"deleteType('
                     . $model -> getIdTypeFilter()
                     . ')"> Delete</button>';
