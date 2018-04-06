@@ -114,7 +114,28 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
             echo $allEventInfo;
             ?>
         </div>
+
+        <!-- Event Info modal -->
+        <div class="modal message" id="eventInfoModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventName">Event Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="messageContent" id="eventInfoBody"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary " data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 
 
@@ -185,6 +206,17 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         });
     }
 
+    function displayLocationInfo(id) {
+        $.ajax({
+            type: "GET",
+            url: "",
+            data: String(id),
+            success: function (data) {
+                $("#eventInfoBody").appendData(id)
+                $("#eventInfoModal").modal("show");
+            }
+        });
+    }
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
