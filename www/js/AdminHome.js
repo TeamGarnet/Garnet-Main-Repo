@@ -80,11 +80,11 @@ function deleteType(id) {
                 data: 'deleteType=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    if (data != "" && id !=null) {
+                    if (data != "" && id != null) {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
                         $('.message').modal('show');
-                        id=null;
+                        id = null;
                     }else {
                         location.reload(true);
                     }
@@ -112,10 +112,11 @@ function deleteHistoricFilter(id) {
                 data: 'deleteHistoricFilter=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    if ((id == 0 )) {
+                    if (data != "" && id != null) {
                         $('.messageContent').html('');
-                        $('.messageContent').append("Cannot delete 'No Historic Filter' default filter.");
+                        $('.messageContent').append(data);
                         $('.message').modal('show');
+                        id = null;
                     } else {
                         location.reload(true);
                     }

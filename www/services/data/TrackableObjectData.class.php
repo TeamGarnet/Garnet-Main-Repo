@@ -98,7 +98,7 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
     }
 
     public function deleteTrackableObjectEntry($idTrackableObject) {
-        //This fucntion should not need to be used due to DB cascaing options
+        //This function should not need to be used due to DB cascading options
     }
 
     public function checkForInUseTypeFilters($idTypeFilter) {

@@ -55,15 +55,23 @@ class HistoricFilterService {
     public function deleteHistoricFilterEntry($idHistoricFilter) {
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
 
-        if ($idHistoricFilter == 0 || $idHistoricFilter == "0") {
-            return "Cannot delete 'No Historic Filter' default filter.";
-        }
-        $graveDataClass = new GraveObjectData();
-        $graveDataClass -> unsetHistoricFilterId($idHistoricFilter);
+        if (empty($idHistoricFilter) || $idHistoricFilter == "") {
+            return null;
+        } else {
+            if ($idHistoricFilter == 0){
+                return "This is a default filter that cannot be deleted.";
+            }
 
-        $historicFilterDataClass = new HistoricFilterData();
-        $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
-        return null;
+            $historicFilterDataClass = new HistoricFilterData();
+            $filterUseAmount = $historicFilterDataClass -> checkForInUseHistoricFilters($idHistoricFilter);
+
+            if ($filterUseAmount == 0) {
+                $historicFilterDataClass -> deleteHistoricFilter($idHistoricFilter);
+                return null;
+            } else {
+                return "The Historic filter is currently in use by a Grave. <br> Unattach this filter before the filter can be deleted.";
+            }
+        }
     }
 
 

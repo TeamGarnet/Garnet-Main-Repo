@@ -88,4 +88,18 @@ class HistoricFilterData {
             die();
         }
     }
+
+    public function checkForInUseHistoricFilters($idTypeFilter) {
+        try {
+            //global $deleteEventQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idGrave FROM Grave WHERE idHistoricFilter = :idHistoricFilter");
+            $stmt -> bindParam(':idHistoricFilter', $idTypeFilter, PDO::PARAM_STR);
+            $stmt -> execute();
+            $count = $stmt -> rowCount();
+            return $count;
+        } catch (PDOException $e) {
+            echo $e -> getMessage();
+            die();
+        }
+    }
 }
