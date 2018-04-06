@@ -291,7 +291,7 @@ DROP TABLE IF EXISTS `TypeFilter`;
 CREATE TABLE `TypeFilter` (
   `idTypeFilter` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(45) DEFAULT NULL,
-  `pinDesign` varchar(500) DEFAULT '/images/pins/orangeMarker.png',
+  `pinDesign` varchar(500) DEFAULT 'images/pins/orangeMarker.png',
   `buttonColor` varchar(45) DEFAULT '#bdc3c7',
   PRIMARY KEY (`idTypeFilter`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
