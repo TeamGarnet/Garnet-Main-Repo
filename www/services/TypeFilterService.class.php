@@ -83,7 +83,7 @@ class TypeFilterService {
                 . "</td><td>";
 
             if(!in_array($idTypeFilter, $idsNotDeletable)) {
-                $editAndDelete = $editAndDelete . "<buttonclass='btn basicBtn'  onclick="
+                $editAndDelete = $editAndDelete . "<button class='btn basicBtn'  onclick="
                     . '"deleteType('
                     . $model -> getIdTypeFilter()
                     . ')"> Delete</button>';
