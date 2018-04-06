@@ -26,9 +26,7 @@ class HistoricFilterService {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $dateEnd = filter_var($dateEnd, FILTER_SANITIZE_STRING);
-        if ($buttonColor == null) {
-            $buttonColor = "#bdc3c7";
-        }
+
         $buttonColor = filter_var($buttonColor, FILTER_SANITIZE_STRING);
         $historicFilterName = filter_var($historicFilterName, FILTER_SANITIZE_STRING);
 
@@ -41,9 +39,7 @@ class HistoricFilterService {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $dateEnd = filter_var($dateEnd, FILTER_SANITIZE_STRING);
-        if ($buttonColor == null) {
-            $buttonColor = "#bdc3c7";
-        }
+
         $buttonColor = filter_var($buttonColor, FILTER_SANITIZE_STRING);
         $historicFilterName = filter_var($historicFilterName, FILTER_SANITIZE_STRING);
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
