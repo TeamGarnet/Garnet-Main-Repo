@@ -1,5 +1,5 @@
 <?php
-class TrailObject {
+class TrailObject implements \JsonSerializable {
     private $idWiderAreaMap;
     private $name;
     private $description;
