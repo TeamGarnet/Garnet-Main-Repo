@@ -80,23 +80,20 @@ class TypeFilterService {
                 . $objectRowID . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
-                . "</td>";
+                . "</td><td>";
 
             if(!in_array($idTypeFilter, $idsNotDeletable)) {
-                $editAndDelete = $editAndDelete . "<td><button onclick="
+                $editAndDelete = $editAndDelete . "<button onclick="
                     . '"deleteType('
                     . $model -> getIdTypeFilter()
-                    . ')"> Delete</button></td>';
-            }
-            else {
-                $editAndDelete = $editAndDelete . "<td></td>";
+                    . ')"> Delete</button>';
             }
 
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
                 . "</td><td>" . $model -> getPinDesign()
                 . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
-                . "</tr>";
+                . "</td></tr>";
         }
         return $html;
     }
