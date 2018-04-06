@@ -72,20 +72,28 @@ class TypeFilterService {
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
+        $idsNotDeletable = array("1", "2", "3");
         foreach ($allModels as $model) {
-            $objectRowID = "13" . strval($model -> getIdTypeFilter());
+            $idTypeFilter = strval($model -> getIdTypeFilter());
+            $objectRowID = "13" . $idTypeFilter;
             $editAndDelete = "</td><td><button onclick='updateType("
                 . $objectRowID . ","
                 . $model -> getIdTypeFilter()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteType('
-                . $model -> getIdTypeFilter()
-                . ')"> Delete</button>';
+                . "</td>";
+
+            if(!in_array($idTypeFilter, $idsNotDeletable)) {
+                $editAndDelete = $editAndDelete . "<td><button onclick="
+                    . '"deleteType('
+                    . $model -> getIdTypeFilter()
+                    . ')"> Delete</button></td>';
+            }
+
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
                 . "</td><td>" . $model -> getPinDesign()
                 . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
-                . "</td></tr>";
+                . "</tr>";
         }
         return $html;
     }

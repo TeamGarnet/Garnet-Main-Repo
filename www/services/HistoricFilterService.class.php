@@ -81,14 +81,21 @@ class HistoricFilterService {
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
         foreach ($allModels as $model) {
-            $objectRowID = "14" . strval($model -> getIdHistoricFilter());
+            $idHistoricFilter = strval($model -> getIdHistoricFilter());
+            $objectRowID = "14" . $idHistoricFilter;
             $editAndDelete = "</td><td><button onclick='updateHistoricFilter("
                 . $objectRowID . ","
                 . $model -> getIdHistoricFilter()
                 . ")'>Update</button>"
-                . "</td><td><button onclick=" . '"deleteHistoricFilter('
-                . $model -> getIdHistoricFilter()
-                . ')"> Delete</button>';
+                . "</td>";
+
+            if($idHistoricFilter != "0") {
+                $editAndDelete = $editAndDelete . "<td><button onclick="
+                    . '"deleteHistoricFilter('
+                    . $model -> getIdHistoricFilter()
+                    . ')"> Delete</button></td>';
+            }
+
             $html = $html
                 . "<tr id='" . $objectRowID . "'><td>" . $model -> getHistoricFilterName()
                 . "</td><td>" . $model -> getDateStart()
@@ -96,7 +103,7 @@ class HistoricFilterService {
                 . "</td><td>" . $model -> getDescription()
                 . "</td><td>" . $model -> getButtonColor()
                 . $editAndDelete
-                . "</td></tr>";
+                . "</tr>";
         }
         return $html;
     }
