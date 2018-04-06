@@ -29,12 +29,10 @@
 .popupModal{
 	font-family: Proza Libre !important;
 }
-.modal-footer{
-	font-family: Proza Libre !important;
-}
 .modal-footer > .btn{
 	background-color: #97583a !important;
 	color: #ffffff !important;
+	font-family: Proza Libre !important;
 }
 .modal-footer > .btn:hover{
 	background-color: #6b7749 !important;
