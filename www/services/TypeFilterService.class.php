@@ -87,10 +87,8 @@ class TypeFilterService {
                     . '"deleteType('
                     . $model -> getIdTypeFilter()
                     . ')"> Delete</button></td>';
-            } else {
-                $editAndDelete = $editAndDelete . "<td></td>";
             }
-
+            
             $html = $html . "<tr id='" . $objectRowID . "'><td>" . $model -> getType()
                 . "</td><td>" . $model -> getPinDesign()
                 . "</td><td>" . $model -> getButtonColor()
