@@ -57,6 +57,10 @@ body {
     text-decoration: none;
 }
 
+.locationURL:hover {
+    background-color: white !important;
+    color: #97583a !important;
+}
 .locationDate {
 }
 
