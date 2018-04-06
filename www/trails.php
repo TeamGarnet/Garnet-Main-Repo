@@ -149,7 +149,8 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    var trailArray = <?php echo json_encode($allTrailLocations); ?>;
+    var trailArray;
+    trailArray = <?php echo json_encode($allTrailLocations); ?>;
 
 
     function initMap() {
