@@ -211,7 +211,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function displayLocationInfo(id) {
         infoWindow.close();
-        var locationInfo = findObjectByKey(trailArray, 'id', id);
+        //var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {
             $('#locationInfoBody').html('');
             $('#locationInfoBody').append("<div><p>YO</p></div>");
