@@ -208,6 +208,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     }
 
     function displayLocationInfo(id) {
+        infoWindow.close();
         $('#locationInfoModal').modal('show');
     }
 
