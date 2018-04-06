@@ -37,7 +37,6 @@ class TypeFilterData {
                 $pinDesign = "images/pins/orangeMarker.png";
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             } else {
-                echo "we in here boys";
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             }
             $stmt -> bindParam(':type', $type, PDO::PARAM_STR);

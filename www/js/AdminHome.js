@@ -792,7 +792,7 @@ function createTypeFilter() {
         }).done(function () {
             $('#createModal').modal('hide');
             $('#createModalBody').empty();
-            //location.reload(true);
+            location.reload(true);
         });
     });
 }
