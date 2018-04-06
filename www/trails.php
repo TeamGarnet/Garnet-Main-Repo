@@ -149,7 +149,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
     var trailArray;
-    trailArray = '<?php echo json_encode($allTrailLocations); ?>';
+
 
 
     function initMap() {
@@ -210,6 +210,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
     function displayLocationInfo(id) {
         infoWindow.close();
+        trailArray = '<?php echo json_encode($allTrailLocations); ?>';
         var locationInfo = findObjectByKey(trailArray, 'id', id);
         $(document).ready(function () {
             $('#locationInfoBody').html('');
