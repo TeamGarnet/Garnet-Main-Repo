@@ -34,10 +34,8 @@ class TypeFilterData {
             $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TypeFilter (pinDesign, type, buttonColor) VALUES (:pinDesign, :type, :buttonColor)");
 
             if ($pinDesign == "" || empty($pinDesign) ){
-                echo "we here boys";
-                $pinDesign =null;
-                $stmt -> bindParam(':pinDesign', $pinDesign);
-                echo "we gone boys";
+                $pinDesign = "images/pins/orangeMarker.png";
+                $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
             } else {
                 echo "we in here boys";
                 $stmt -> bindParam(':pinDesign', $pinDesign, PDO::PARAM_STR);
