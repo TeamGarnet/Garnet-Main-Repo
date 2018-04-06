@@ -14,6 +14,9 @@ body {
 	color: #ffffff !important;
 	font-family: Proza Libre !important;
 }
+h4{
+	font-family: Proza Libre !important;
+}
 .modal-footer > .btn:hover{
 	background-color: #6b7749 !important;
 	border-color: #6b7749 !important;
