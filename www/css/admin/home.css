@@ -72,7 +72,15 @@
 	border-color: #6b7749 !important;
 }
 .modal-footer > .btn:focus{
-	outline-color: #6b7749 !important;
+	outline-color: transparent !important;
+}
+.modal-header > h3{
+	float:left;
+}
+td > button{
+	background-color: #97583a !important;
+	color: #ffffff !important;
+	border-color: #97583a !important;
 }
 #myTab > li > a {
     color: #ffffff;
