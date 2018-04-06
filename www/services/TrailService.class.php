@@ -43,4 +43,19 @@ class TrailService {
         return $formattedTrailLocationInfo;
     }
 
+    public function getTrailLocationsAsJSON() {
+        $trailDataClass = new TrailData();
+        $allTrailData = $trailDataClass -> getAllTrailLocations();
+
+        $serializedAllTrailData = array();
+
+        foreach ($allTrailData as $trailArray) {
+            $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], stripcslashes($trailArray['description']), $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode']);
+            $serializedTrailObject = $trailObject -> jsonSerialize();
+
+            array_push($serializedAllTrailData, $serializedTrailObject);
+        }
+        return $serializedAllTrailData;
+    }
+
 }

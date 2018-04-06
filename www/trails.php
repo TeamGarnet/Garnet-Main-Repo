@@ -6,14 +6,14 @@ include_once 'services/WiderAreaMapService.class.php';
 
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
-$allTrailLocations = $trailService -> getAllTrailLocationInfo();
+$allTrailLocations = $trailService -> getTrailLocationsAsJSON();
 $eventService = new EventService();
 $allEventInfo = $eventService -> formatEventInfo();
 $widerAreaMapService = new WiderAreaMapService();
 $allMapPins = $widerAreaMapService -> generateMarkers();
 
 //print_r($allTrailInfo);
-//print_r($allTrailLocations);
+print_r($allTrailLocations);
 ?>
 
 <!-- HTML -->
