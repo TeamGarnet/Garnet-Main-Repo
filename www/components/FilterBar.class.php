@@ -30,7 +30,7 @@ class FilterBar {
                 $filterBarCode = $filterBarCode . $filterButtonCode;
             }
         }
-        $filterBarCode = $filterBarCode . "<ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></div></nav>";
+        $filterBarCode = $filterBarCode . "</div><ul class='nav navbar-nav navbar-right'><li><a href='#' onclick=" . "\"resetFilters()\">Reset Filters</a></li></ul></div></nav>";
         $this -> setFilterBar($filterBarCode);
     }
 
