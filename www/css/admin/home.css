@@ -102,28 +102,21 @@ td > button:focus{
 }
 
 #myTab > li > a:hover {
-    background-color: transparent !important;
+    background-color: #ffffff !important;
     color: #000000 !important;
     border: none !important;
 }
 #myTab > li:focus{
 	outline-color: transparent !important;
 }
-#myTab > li.active > a {
-    color: #000000;
+#myTab > li > a:focus{
+	
 }
-
-#myTab > li.active > a:hover {
-    background-color: #ffffff !important;
-
-}
-
 #myTab {
     background-color: #6b7749;
 	float:left;
 	border: none;
 }
-
 #tabBar {
     width: 100% !important;
 }
