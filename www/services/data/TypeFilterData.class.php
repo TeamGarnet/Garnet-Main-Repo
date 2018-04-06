@@ -35,7 +35,7 @@ class TypeFilterData {
 
             if ($pinDesign == "" || empty($pinDesign) ){
                 echo "we here boys";
-                $stmt -> bindValue(':pinDesign', null, PDO::PARAM_STR);
+                $stmt -> bindValue(':pinDesign', null);
                 echo "we gone boys";
             } else {
                 echo "we in here boys";
