@@ -29,7 +29,7 @@
 .popupModal{
 	font-family: Proza Libre !important;
 }
-.popupModal > .btn{
+.modal-footer > .btn{
 	background-color: #97583a !important;
 }
 
