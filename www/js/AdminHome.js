@@ -350,7 +350,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
 }
 
 function generateCreateModal(tableID) {
-    $('#createModalBody').html('');
     $('#createModalBody').empty();
     var input = '';
     $(tableID + ' th').each(function (index) {
@@ -723,27 +722,31 @@ function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
 
-    $('#createObject').click(function () {
-        var formData = {
-            'CommonName': $('#CommonName').val(),
-            'ScientificName': $('#ScientificName').val(),
-            'Description': $('#Description').val(),
-            'Longitude': parseFloat($('#Longitude').val()),
-            'Latitude': parseFloat($('#Latitude').val()),
-            'ImageDescription': $('#ImageDescription').val(),
-            'ImageLocation': $('#ImageLocation').val(),
-            'idTypeFilter': 2
-        };
+    // $('#createObject').click(function () {
+    //
+    // });
+}
 
-        $.ajax({
-            method: "POST",
-            url: "../ajaxCalls.php",
-            data: {createNaturalHistoryEntry: formData}
-        }).done(function () {
-            $('#createModal').modal('hide');
-            $('#createModalBody').empty();
-            location.reload(true);
-        });
+function postNH() {
+    var formData = {
+        'CommonName': $('#CommonName').val(),
+        'ScientificName': $('#ScientificName').val(),
+        'Description': $('#Description').val(),
+        'Longitude': parseFloat($('#Longitude').val()),
+        'Latitude': parseFloat($('#Latitude').val()),
+        'ImageDescription': $('#ImageDescription').val(),
+        'ImageLocation': $('#ImageLocation').val(),
+        'idTypeFilter': 2
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "../ajaxCalls.php",
+        data: {createNaturalHistoryEntry: formData}
+    }).done(function () {
+        $('#createModal').modal('hide');
+        $('#createModalBody').empty();
+        location.reload(true);
     });
 }
 
