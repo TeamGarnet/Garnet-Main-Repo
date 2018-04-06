@@ -688,7 +688,7 @@ function createGrave() {
     $('#createModalTitle').text('Create Grave');
     generateCreateModal('#grave');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'FirstName': $('#FirstName').val(),
             'MiddleName': $('#MiddleName').val(),
@@ -748,7 +748,7 @@ function createMisc() {
     $('#createModalTitle').text('Create Miscellaneous');
     generateCreateModal('#misc');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
@@ -777,7 +777,7 @@ function createTypeFilter() {
     $('#createModalTitle').text('Create Type Filter');
     generateCreateModal('#type');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'PinDesign': $('#PinDesign').val(),
@@ -800,7 +800,7 @@ function createHistoricFilter() {
     $('#createModalTitle').text('Create Historic Filter');
     generateCreateModal('#historic');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'StartDate': $('#StartDate').val(),
@@ -825,7 +825,7 @@ function createFAQ() {
     $('#createModalTitle').text('Create FAQ');
     generateCreateModal('#faq');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Question': $('#Question').val(),
             'Answer': $('#Answer').val()
@@ -847,7 +847,7 @@ function createWiderLocation() {
     $('#createModalTitle').text('Create Wider Area Location');
     generateCreateModal('#widerLocation');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Site': $('#Site').val(),
             'Name': $('#Name').val(),
@@ -876,7 +876,7 @@ function createContact() {
     $('#createModalTitle').text('Create Contact');
     generateCreateModal('#contact');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Email': $('#Email').val(),
@@ -901,7 +901,7 @@ function createEventEntry() {
     $('#createModalTitle').text('Create Event');
     generateCreateModal('#event');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
