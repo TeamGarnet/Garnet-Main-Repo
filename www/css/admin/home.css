@@ -77,7 +77,7 @@
 .modal-header > h3{
 	float:left;
 }
-#myTabContent > button{
+td > button{
 	background-color: #97583a !important;
 }
 #myTab > li > a {
