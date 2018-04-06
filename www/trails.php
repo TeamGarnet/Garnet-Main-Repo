@@ -228,7 +228,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
                 return array[i];
             }
         }
-        return "No data found for location";
+        return {"name":"No data found for location", "address":"", "city":"", "state":"","zipcode":"","description":""};
     }
 
 </script>
