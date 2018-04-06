@@ -47,7 +47,9 @@
 .first > button{
 	outline-color: transparent !important;
 }
-
+button:focus{
+	outline-color: transparent !important;
+}
 /* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
