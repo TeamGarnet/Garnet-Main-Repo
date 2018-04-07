@@ -118,7 +118,7 @@ td > button:focus{
 #myTab {
     background-color: #6b7749;
 	float:left;
-	border: none;
+	border-color: transparent !important;
 }
 #tabBar {
     width: 100% !important;
