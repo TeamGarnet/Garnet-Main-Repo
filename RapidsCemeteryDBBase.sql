@@ -4,7 +4,7 @@ USE `RapidsCemetery`;
 --
 -- Host: localhost    Database: RapidsCemetery
 -- ------------------------------------------------------
--- Server version	5.1.73
+-- Server version 5.1.73
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -125,7 +125,7 @@ CREATE TABLE `Grave` (
 
 LOCK TABLES `Grave` WRITE;
 /*!40000 ALTER TABLE `Grave` DISABLE KEYS */;
-INSERT INTO `Grave` VALUES (1,'James','H','McGuckin','1841-01-01','1885-01-01','His service was prestigious',1),(2,'','','Oakley','1841-01-01','1885-01-01','The Oakley family is mean to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.'),(3,'','','Potter\'s Field','1841-01-01','1885-01-01','The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery enterance. The \"poorest of the poor\" were located here, most likely buried in a simple shroud with no burial marker.'),(4,'','','Ballintine','1841-01-01','1885-01-01','This was the Ballintine Family Plot');
+INSERT INTO `Grave` VALUES (1,'James','H','McGuckin','1841-01-01','1885-01-01','His service was prestigious',1),(2,'','','Oakley','1841-01-01','1885-01-01','The Oakley family is mean to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.',0),(3,'','','Potter\'s Field','1841-01-01','1885-01-01','The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery enterance. The \"poorest of the poor\" were located here, most likely buried in a simple shroud with no burial marker.',0),(4,'','','Ballintine','1841-01-01','1885-01-01','This was the Ballintine Family Plot',0);
 /*!40000 ALTER TABLE `Grave` ENABLE KEYS */;
 UNLOCK TABLES;
 
