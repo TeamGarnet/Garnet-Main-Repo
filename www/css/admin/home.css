@@ -54,8 +54,8 @@
 }
 
 #nav-right > li > a:focus {
-    background-color: white;
-    color: #000;
+    background-color: #6b7749;
+    color: #fff;
     border-radius: 4px;
 }
 
