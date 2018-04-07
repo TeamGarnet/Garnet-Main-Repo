@@ -115,6 +115,10 @@ td > button:focus{
 #myTab > li.active > a{
 	color: #000000 !important;
 }
+#myTab > li.active > a:hover{
+	background-color: #ffffff !important;
+	color: #000000;
+}
 #myTab {
     background-color: #6b7749;
 	float:left;
