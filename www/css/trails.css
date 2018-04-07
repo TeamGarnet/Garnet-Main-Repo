@@ -41,7 +41,7 @@ h4{
 	color: #ffffff;
 	background-color: #6b7749 !important;
 	border-color: transparent !important;
-	border: none !important;
+	border-bottom: none !important;
 	outline-color: transparent !important;
 }
 .nav-tabs > li{
