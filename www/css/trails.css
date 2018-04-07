@@ -39,7 +39,7 @@ h4{
 }
 .nav-tabs > li > a:focus{
 	color: #000000;
-	background-color: none !important;
+	background-color: #6b7749 !important;
 	border-color: transparent !important;
 	outline-color: transparent !important;
 }
