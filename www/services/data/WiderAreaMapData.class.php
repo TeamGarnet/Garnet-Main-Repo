@@ -1,7 +1,14 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode)
+ *  readWiderAreaMap()
+ *  updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode)
+ *  deleteWiderAreaMap($idWiderAreaMap)
  */
 class WiderAreaMapData {
     /**

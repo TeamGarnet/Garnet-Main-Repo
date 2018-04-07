@@ -5,6 +5,11 @@ include_once 'query.php';
 /**
  * MapData.class.php: Handles all CRUD operations that are sent from the service and
  * business layers to the Database from mapping requests.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  getAllMapPinInfo()
+ *  getAllFilters()
+ *  getMapCardData($idTrackableObject)
  */
 class MapData {
 

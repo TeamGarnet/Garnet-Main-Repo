@@ -1,7 +1,15 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter)
+ *  checkForInUseTypeFilters($idTypeFilter)
+ *  updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter)
+ *  updateObjectEntryID($objectType, $objectID, $idTrackableObject)
+ *  deleteTrackableObjectEntry($idTrackableObject)
  */
 class TrackableObjectData {
     /**

@@ -1,11 +1,13 @@
 <?php
 ob_start();
-
-/*
- *
- */
 include_once 'DatabaseConnection.class.php';
 
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  validatePassword($email, $password)
+ */
 class LoginData {
 
     /**

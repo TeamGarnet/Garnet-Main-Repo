@@ -1,7 +1,15 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getAllContactEntries()
+ *  formatContactInfo($pinObjectsArray)
+ *  createContactEntry($pin, $markerName)
+ *  updateContactEntry()
+ *  deleteContactEntry($idContact)
+ *  getAllEntriesAsRows()
  */
 class FAQData {
     /**
