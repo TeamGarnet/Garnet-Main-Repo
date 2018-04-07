@@ -95,7 +95,6 @@ td > button:focus{
 }
 
 #myTab > li > a:active {
-    border: 1px solid #ffffff !important;
     border-bottom-color: transparent !important;
     background-color: #ffffff !important;
     color: #000000 !important;
