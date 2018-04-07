@@ -2,12 +2,15 @@
 include_once "data/LoginData.class.php";
 
 /*
- *
+ * LoginService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
+ * Functions:
+ *  validatePassword($email, $password)
  */
-
 class LoginService {
 
-
+    /*
+     * Retrieves login verification
+     */
     public function validatePassword($email, $password) {
         $LoginData = new LoginData();
         // Sanitize

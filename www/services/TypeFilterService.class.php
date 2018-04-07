@@ -3,12 +3,24 @@ include_once 'data/TypeFilterData.class.php';
 include_once 'models/TypeFilter.class.php';
 include_once 'data/TrackableObjectData.class.php';
 
-/**
+/*
+ * TypeFilterService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
+ * Functions:
+ *  getAllTypeFilterEntries()
+ *  createTypeFilterEntry($typeFilterName, $dateStart, $pinDesign, $type, $buttonColor)
+ *  updateTypeFilterEntry($idTypeFilter, $typeFilterName, $dateStart, $pinDesign, $type, $buttonColor)
+ *  deleteTypeFilterEntry($idTypeFilter)
+ *  getAllEntriesAsRows()
+ *  formatType filterInfo()
  */
 class TypeFilterService {
     public function __construct() {
     }
-
+    
+    /**
+     * Retrieves all Type filter data from the database and forms Type filter Objects
+     * @return array : An array of Type filter objects
+     */
     public function getAllTypeFilterEntries() {
         $typeFilterDataClass = new TypeFilterData();
         $allTypeFilterDataObjects = $typeFilterDataClass -> readTypeFilter();
@@ -22,6 +34,12 @@ class TypeFilterService {
         return $allTypeFilterData;
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $type: Type filter's ending type name
+     * @param $pinDesign: Type filter's pinDesign
+     * @param $buttonColor: Type filter's filter button color
+     */    
     public function createTypeFilterEntry($type, $pinDesign, $buttonColor) {
         $pinDesign = filter_var($pinDesign, FILTER_SANITIZE_STRING);
 
@@ -33,6 +51,13 @@ class TypeFilterService {
         $typeFilterDataClass -> createTypeFilter($type, $pinDesign, $buttonColor);
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $idTypeFilter: Type filter's ID
+     * @param $type: Type filter's ending type name
+     * @param $pinDesign: Type filter's pinDesign
+     * @param $buttonColor: Type filter's filter button color
+     */
     public function updateTypeFilterEntry($idTypeFilter, $type, $pinDesign, $buttonColor) {
         $pinDesign = filter_var($pinDesign, FILTER_SANITIZE_STRING);
 
@@ -43,6 +68,10 @@ class TypeFilterService {
         $typeFilterDataClass -> updateTypeFilter($idTypeFilter, $pinDesign, $type, $buttonColor);
     }
 
+    /*
+     * Deletes type filter currently in the database.
+     * @param $idTypeFilter: Type filter's ID
+     */    
     public function deleteTypeFilterEntry($idTypeFilter) {
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idTypeFilter) || $idTypeFilter == "") {
@@ -65,6 +94,10 @@ class TypeFilterService {
         }
     }
 
+    /*
+     * Retrieves all the type filter entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
@@ -94,6 +127,10 @@ class TypeFilterService {
         return $html;
     }
 
+    /*
+     * Retrieves all the type filter entries and creates options for a select population.
+     * @return string: A string of a options in html
+     */
     public function getAllFiltersForSelect() {
         $filters = $this -> getAllTypeFilterEntries();
         $customFilters = array_filter($filters, function ($filter) {

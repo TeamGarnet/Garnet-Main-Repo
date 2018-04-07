@@ -2,6 +2,14 @@
 include_once 'data/TrailData.class.php';
 include_once 'models/TrailObject.class.php';
 
+/*
+ * TrailService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
+ * Functions:
+ *  getAllTrailLocationInfo()
+ *  formatTrailLocationsInfo()
+ *  getTrailLocationsAsJSON()
+
+ */
 class TrailService {
 
 
@@ -9,6 +17,10 @@ class TrailService {
     }
 
 
+    /**
+     * Retrieves all Trail data from the database and forms Trail Objects
+     * @return array : An array of Trail objects
+     */
     public function getAllTrailLocationInfo() {
         $trailDataClass = new TrailData();
         $allTrailData = $trailDataClass -> getAllTrailLocations();
@@ -23,6 +35,10 @@ class TrailService {
         return $allTrailObjects;
     }
 
+    /*
+     * Collects all the FAQ information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     */
     public function formatTrailLocationsInfo() {
         $allTrailObjectsInfo = $this -> getAllTrailLocationInfo();
         $formattedTrailLocationInfo = "";
@@ -43,6 +59,10 @@ class TrailService {
         return $formattedTrailLocationInfo;
     }
 
+    /*
+     * Collects all the FAQ information and formats it to web correct JSON for filtering
+     * @return string: A string contain JSON to be appended to the page.
+     */
     public function getTrailLocationsAsJSON() {
         $trailDataClass = new TrailData();
         $allTrailData = $trailDataClass -> getAllTrailLocations();

@@ -118,16 +118,6 @@ class MapService {
      * }})(marker2));
      */
     public function generateInfoWindowConfig($pin, $markerName) {
-        /*
-        $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
-            . $pin -> getImageLocation() . "' alt='"
-            . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName'>"
-            . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . ");'> Learn more about "
-            . $pin -> getName() . "</a> </div>" . '"';
-
-        */
-
         $infoWindowContent = '"' . "<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src='"
             . $pin -> getImageLocation()
             . "' alt='"
@@ -149,7 +139,10 @@ class MapService {
         return $infoWindowGenerator . $infoWindowListener;
     }
 
-
+    /**
+     * Collects all the Filters that are available for filters.
+     * @return array: An array of filter objects.
+     */
     public function getFilterInfo() {
         $dataClass = new MapData();
         $filterData = $dataClass -> getAllFilters();
@@ -163,12 +156,20 @@ class MapService {
         return $allFilterObjects;
     }
 
+    /**
+     * Generates HTML and CSS for the filter bar
+     * @return string: String of html to be appended to the map page.
+     */
     public function generateFilterBar() {
         $allFilterObjects = $this -> getFilterInfo();
         $filterBar = new FilterBar($allFilterObjects);
         return $filterBar -> getFilterBar();
     }
 
+    /**
+     * Collects information for a specific TrackableObject.
+     * @return array: An array of filter objects.
+     */
     public function getMapCardInfo($idTrackableObject) {
         $mapData = new MapData();
         $cardData = $mapData -> getMapCardData($idTrackableObject);

@@ -2,12 +2,24 @@
 include_once 'data/ContactData.class.php';
 include_once 'models/Contact.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getAllContactEntries()
+ *  formatContactInfo($pinObjectsArray)
+ *  createContactEntry($pin, $markerName)
+ *  updateContactEntry()
+ *  deleteContactEntry($idContact)
+ *  getAllEntriesAsRows()
  */
 class ContactService {
     public function __construct() {
     }
 
+    /**
+     * Retrieves all contact data from the database and forms Contact Objects
+     * @return array : An array of Contact objects
+     */
     public function getAllContactEntries() {
         $contactDataClass = new ContactData();
         $allContactDataObjects = $contactDataClass -> readContact();
@@ -21,6 +33,10 @@ class ContactService {
         return $allContactData;
     }
 
+    /*
+     * Collects all the contact information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     */
     public function formatContactInfo() {
         $allContactObjectsInfo = $this -> getAllContactEntries();
         $formattedContactInfo = "";
@@ -38,6 +54,14 @@ class ContactService {
         return $formattedContactInfo;
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $name: Contact's preferred name
+     * @param $email: Contact's email
+     * @param $description: Contact's description of relation to Rapids Cemetery
+     * @param $phone: Contact's phone number
+     * @param $title: Contact's position to Rapids Cemetery
+     */
     public function createContactEntry($name, $email, $description, $phone, $title) {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -50,6 +74,15 @@ class ContactService {
         $contactDataClass -> createContact($name, $email, $description, $phone, $title);
     }
 
+    /*
+     * Updates contact currently in the database.
+     * @param $idContact: Database ID for contact.
+     * @param $name: Updated name for contact
+     * @param $email: Updated email for contact
+     * @param $description: Updated description for contact
+     * @param $phone: Updated phone for contact
+     * @param $title: Updated title for contact
+     */
     public function updateContactEntry($idContact, $name, $email, $description, $phone, $title) {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -61,6 +94,10 @@ class ContactService {
         $contactDataClass -> updateContact($idContact, $name, $email, $description, $phone, $title);
     }
 
+    /*
+     * Deletes Contact for Entry
+     * @param $idContact: id of contact to be deleted
+     */
     public function deleteContactEntry($idContact) {
         $idContact = filter_var($idContact, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idContact) || $idContact == "") {
@@ -71,6 +108,10 @@ class ContactService {
         }
     }
 
+    /*
+     * Retrieves all the contact entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllContactEntries();
         $html = "";

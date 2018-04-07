@@ -2,10 +2,24 @@
 include_once 'data/FAQData.class.php';
 include_once 'models/FAQ.class.php';
 
+/*
+ * FAQService.class.php: Used to communication faq.php and admin portal page with backend.
+ * Functions:
+ *  getAllFAQEntries()
+ *  createFAQEntry($name, $description, $startTime, $endTime, $idWiderAreaMap)
+ *  updateFAQEntry($idFAQ, $name, $description, $startTime, $endTime, $idWiderAreaMap)
+ *  deleteFAQEntry($idFAQ)
+ *  getAllEntriesAsRows()
+ *  formatFAQInfo()
+ */
 class FAQService {
     public function __construct() {
     }
 
+    /**
+     * Retrieves all FAQ data from the database and forms FAQ Objects
+     * @return array : An array of FAQ objects
+     */
     public function getAllFAQEntries() {
         $fAQDataClass = new FAQData();
         $allFAQDataObjects = $fAQDataClass -> readFAQ();
@@ -19,6 +33,10 @@ class FAQService {
         return $allFAQData;
     }
 
+    /*
+     * Collects all the FAQ information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     */
     public function formatFAQInfo() {
         $allFAQObjectsInfo = $this -> getAllFAQEntries();
         $formattedFAQInfo = "";
@@ -33,6 +51,14 @@ class FAQService {
         return $formattedFAQInfo;
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $name: FAQ's preferred name
+     * @param $description: FAQ's description of relation to Rapids Cemetery
+     * @param $startTime: FAQ's startTime
+     * @param $endTime: FAQ's endTime
+     * @param $idWiderAreaMap: FAQ's attached location
+     */
     public function createFAQEntry($question, $answer) {
         $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);
@@ -42,6 +68,15 @@ class FAQService {
         $fAQDataClass -> createFAQ($question, $answer);
     }
 
+    /*
+     * Updates FAQ currently in the database.
+     * @param $idFAQ: FAQ's preferred id
+     * @param $name: FAQ's preferred name
+     * @param $description: FAQ's description of relation to Rapids Cemetery
+     * @param $startTime: FAQ's startTime
+     * @param $endTime: FAQ's endTime
+     * @param $idWiderAreaMap: FAQ's attached location
+     */
     public function updateFAQEntry($idFAQ, $question, $answer) {
         $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);
@@ -50,6 +85,10 @@ class FAQService {
         $fAQDataClass -> updateFAQ($idFAQ, $question, $answer);
     }
 
+    /*
+     * Deletes FAQ for Entry
+     * @param $idFAQ: id of FAQ to be deleted
+     */
     public function deleteFAQEntry($idFAQ) {
         $idFAQ = filter_var($idFAQ, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idFAQ) || $idFAQ == "") {
@@ -60,6 +99,10 @@ class FAQService {
         }
     }
 
+    /*
+     * Retrieves all the FAQ entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllFAQEntries();
         $html = "";

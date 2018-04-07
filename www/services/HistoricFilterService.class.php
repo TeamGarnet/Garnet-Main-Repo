@@ -3,12 +3,24 @@ include_once 'data/HistoricFilterData.class.php';
 include_once 'data/GraveObjectData.class.php';
 include_once 'models/HistoricFilter.class.php';
 
-/**
+/*
+ * HistoricFilterService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
+ * Functions:
+ *  getAllHistoricFilterEntries()
+ *  createHistoricFilterEntry($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor)
+ *  updateHistoricFilterEntry($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor)
+ *  deleteHistoricFilterEntry($idHistoricFilter)
+ *  getAllEntriesAsRows()
+ *  formatHistoric filterInfo()
  */
 class HistoricFilterService {
     public function __construct() {
     }
 
+    /**
+     * Retrieves all Historic filter data from the database and forms Historic filter Objects
+     * @return array : An array of Historic filter objects
+     */
     public function getAllHistoricFilterEntries() {
         $historicFilterDataClass = new HistoricFilterData();
         $allHistoricFilterDataObjects = $historicFilterDataClass -> readHistoricFilter();
@@ -22,6 +34,14 @@ class HistoricFilterService {
         return $allHistoricFilterData;
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $historicFilterName: Historic filter's  name
+     * @param $dateStart: Historic filter's starting time period
+     * @param $dateEnd: Historic filter's ending time period
+     * @param $description: Historic filter's description
+     * @param $buttonColor: Historic filter's filter button color
+     */
     public function createHistoricFilterEntry($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -35,6 +55,14 @@ class HistoricFilterService {
         $historicFilterDataClass -> createHistoricFilter($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor);
     }
 
+    /*
+     * Updates historic filter currently in the database.
+     * @param $historicFilterName: Historic filter's  name
+     * @param $dateStart: Historic filter's starting time period
+     * @param $dateEnd: Historic filter's ending time period
+     * @param $description: Historic filter's description
+     * @param $buttonColor: Historic filter's filter button color
+     */
     public function updateHistoricFilterEntry($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -48,6 +76,10 @@ class HistoricFilterService {
         $historicFilterDataClass -> updateHistoricFilter($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor);
     }
 
+    /*
+     * Deletes Historic filter for Entry
+     * @param $idHistoric filter: id of historic filter to be deleted
+     */
     public function deleteHistoricFilterEntry($idHistoricFilter) {
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
 
@@ -70,9 +102,11 @@ class HistoricFilterService {
         }
     }
 
-
-    public
-    function getAllEntriesAsRows() {
+    /*
+     * Retrieves all the historic filter entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
+    public function getAllEntriesAsRows() {
         $allModels = $this -> getAllHistoricFilterEntries();
         $html = "";
         //TODO may need to make a function that makes a JS array to hold the info
@@ -104,8 +138,11 @@ class HistoricFilterService {
         return $html;
     }
 
-    public
-    function getAllFiltersForSelect() {
+    /*
+     * Retrieves all the historic filters and creates options for a select population.
+     * @return string: A string of a options in html
+     */
+    public function getAllFiltersForSelect() {
         $filters = $this -> getAllHistoricFilterEntries();
         $filterHTML = "";
         foreach ($filters as $filter) {
