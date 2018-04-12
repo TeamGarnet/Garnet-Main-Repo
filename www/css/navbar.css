@@ -137,6 +137,7 @@ img {
     color: #97583a !important;
 }
 .donate:focus{
-	outline-color: transparent !important;
+	outline: none !important;
+
 }
 
