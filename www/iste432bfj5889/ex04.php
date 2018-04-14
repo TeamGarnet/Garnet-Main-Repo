@@ -9,8 +9,9 @@ function createHash($txt, $salt){
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    echo createHash($_POST['text'], $_POST['salt']);
-    return createHash($_POST['text'], $_POST['salt']);
+    $data = $_POST['info'];
+    echo createHash($data['text'], $data['salt']);
+    return createHash($data['text'], $data['salt']);
 
 }
 ?>
@@ -34,20 +35,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!--- JS --->
 <script type="text/javascript">
 function createHash() {
-    var value2 = $('#txt').val();
-    alert(value2);
 
+    var salt = getSalt();
     var formData = {
         'text': $('#txt').val(),
-        'salt': getSalt()
+        'salt': salt
     };
-    var salt = getSalt();
+
+
     $.ajax({
         method: "POST",
         url: "ex04.php",
         data: {
-            text: $('#txt').val(),
-            salt: salt
+            info: formData
         }
     }).done(function (data) {
         alert(data);
