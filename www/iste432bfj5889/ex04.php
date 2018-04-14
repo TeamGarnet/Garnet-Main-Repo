@@ -9,6 +9,11 @@ function createHash($txt){
     return hash('sha256',$txt, $salt);
 }
 
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    echo createHash($_POST['text']);
+    return createHash($_POST['text']);
+
+}
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
@@ -39,5 +44,13 @@ function createHash() {
     });
     var value2 = $('#txt').val();
     alert(value2);
+
+    $.ajax({
+        method: "POST",
+        url: "ex04.php",
+        data: {text: $('#txt').val()}
+    }).done(function (data) {
+        alert(data);
+    });
 }
 </script>
