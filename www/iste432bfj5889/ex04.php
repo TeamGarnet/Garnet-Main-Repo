@@ -37,12 +37,17 @@ function createHash() {
     var value2 = $('#txt').val();
     alert(value2);
 
+    var formData = {
+        'text': $('#txt').val(),
+        'salt': getSalt()
+    };
+    var salt = getSalt();
     $.ajax({
         method: "POST",
         url: "ex04.php",
         data: {
             text: $('#txt').val(),
-            salt: getSalt();
+            salt: salt
         }
     }).done(function (data) {
         alert(data);
