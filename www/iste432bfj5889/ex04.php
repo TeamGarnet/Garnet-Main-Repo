@@ -29,6 +29,7 @@ function createHash($txt){
 </html>
 
 <!--- JS --->
+<script type="text/javascript">
 function createHash() {
     $(document).ready(function() {
         $('#btn').click(function() {
@@ -36,3 +37,4 @@ function createHash() {
         });
     });
 }
+</script>
