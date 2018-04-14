@@ -5,8 +5,8 @@
  * Description:
  */
 function createHash($txt){
-    $salt = "myRand0msalt%";
-    return hash('sha256',$txt, $salt);
+    $salt = "myRand0msalt";
+    return hash('sha256', $txt, $salt);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -36,12 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!--- JS --->
 <script type="text/javascript">
 function createHash() {
-    $(document).ready(function() {
-        $('#btn').click(function() {
-            var value = $('#txt').val();
-            alert(value);
-        });
-    });
     var value2 = $('#txt').val();
     alert(value2);
 
