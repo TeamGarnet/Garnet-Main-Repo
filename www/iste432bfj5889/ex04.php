@@ -4,14 +4,26 @@
  * Date: 4/13/2018
  * Description:
  */
-function createHash($txt, $salt){
+function createHash($txt){
+    $salt = getSalt();
     return hash('sha256', $txt.$salt);
+}
+function getSalt() {
+    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\][{}\'";:?.>,<!@#$%^&*()-_=+|';
+    $randStringLen = 64;
+
+    $randString = "";
+    for ($i = 0; $i < $randStringLen; $i++) {
+        $randString = $charset[mt_rand(0, strlen($charset) - 1)];
+    }
+
+    return $randString;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $data = $_POST['info'];
-    echo createHash($data['text'], $data['salt']);
-    return createHash($data['text'], $data['salt']);
+    echo createHash($data['text']);
+    return createHash($data['text']);
 
 }
 ?>
@@ -36,10 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <script type="text/javascript">
 function createHash() {
 
-    var salt = getSalt();
     var formData = {
-        'text': $('#txt').val(),
-        'salt': salt
+        'text': $('#txt').val()
     };
 
 
@@ -52,17 +62,5 @@ function createHash() {
     }).done(function (data) {
         alert(data);
     });
-}
-
-function getSalt() {
-    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\][{}\'";:?.>,<!@#$%^&*()-_=+|';
-    $randStringLen = 64;
-
-    $randString = "";
-    for ($i = 0; $i < $randStringLen; $i++) {
-        $randString = $charset[mt_rand(0, strlen($charset) - 1)];
-    }
-
-    return $randString;
 }
 </script>
