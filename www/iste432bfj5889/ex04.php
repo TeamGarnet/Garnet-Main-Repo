@@ -6,7 +6,7 @@
  */
 function createHash($txt){
     $salt = "myRand0msalt";
-    return hash('sha256', $txt, $salt);
+    return hash('sha256', $txt.$salt);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
