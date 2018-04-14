@@ -33,8 +33,11 @@ function createHash($txt){
 function createHash() {
     $(document).ready(function() {
         $('#btn').click(function() {
-            alert($('#txt').val());
+            var value = $('#txt').val();
+            alert(value);
         });
     });
+    var value2 = $('#txt').val();
+    alert(value2);
 }
 </script>
