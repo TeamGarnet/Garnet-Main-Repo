@@ -66,9 +66,6 @@ if (isset($_POST['Login'])) {
 
         <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
 
-        <div id="forgotPassword"><a href="#">Forgot Password?</div>
-        </a>
-
         <button type="Login" class="button" name="Login" value="Login">
             <div id="buttonText">Login</div>
         </button>

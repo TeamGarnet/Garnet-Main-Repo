@@ -55,13 +55,6 @@ form input {
     text-indent: 2%;
 }
 
-#forgotPassword {
-    width: 103px;
-    height: 17px;
-    font-size: 10px;
-    padding: 0px 0px 27px 197px;
-}
-
 .button {
     background-color: #6b7749;
     border: none;
@@ -99,7 +92,7 @@ form input, .button {
     height: 33px;
 }
 
-form label, #forgotPassword, #buttonText {
+form label, #buttonText {
     font-weight: normal;
 }
 
@@ -107,6 +100,6 @@ form label, form input, .button {
     display: block;
 }
 
-form label, #forgotPassword {
+form label {
     color: #757575;
 }
