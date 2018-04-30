@@ -176,7 +176,7 @@ if (isset($_POST['createGraveEntry'])) {
     $service = new WiderAreaMapService();
     $service -> createWiderAreaMapEntry($areaData['Site'], $areaData['Name'], $areaData['Description'],
         $areaData['Longitude'], $areaData['Latitude'], $areaData['Address'],
-        $areaData['City'], $areaData['State'], $areaData['ZipCode'], $areaData['imageDescription'], $areaData['imageLocation']);
+        $areaData['City'], $areaData['State'], $areaData['ZipCode'], $areaData['ImageDescription'], $areaData['ImageLocation']);
     unset($_POST['createWiderAreaMapEntry']);
 } else if (isset($_POST['createContactEntry'])) {
     $contactData = $_POST['createContactEntry'];
