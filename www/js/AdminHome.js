@@ -606,7 +606,9 @@ function updateLocation(rowID, idWiderAreaMap) {
             'Address': $('#Address').val(),
             'City': $('#City').val(),
             'State': $('#State').val(),
-            'ZipCode': $('#ZipCode').val()
+            'ZipCode': $('#ZipCode').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val()
         };
 
         $.ajax({
@@ -858,7 +860,9 @@ function createWiderLocation() {
             'Address': $('#Address').val(),
             'City': $('#City').val(),
             'State': $('#State').val(),
-            'ZipCode': $('#ZipCode').val()
+            'ZipCode': $('#ZipCode').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val()
         };
 
         $.ajax({
