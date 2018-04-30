@@ -34,28 +34,66 @@ class LoginData {
         return null;
     }
 
-    public function validatePassword($email, $password) {
-        global $loginUserQuery;
-
-        //TODO: hash them passwords gurl
-        $password = sha1($password);
+    public function createAccount($userName, $pwd, $salt) {
         try {
-            $idUser = null;
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("INSERT INTO `User` (email, password, salt) VALUES (:email, :pwd, :salt)");
 
-            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
-            $stmt -> bindParam(':email', $email);
-            $stmt -> bindParam(':pwd', $password);
-            $stmt -> execute();
+            $statement -> bindValue(':email', $userName);
+            $statement -> bindValue(':pwd', $pwd);
+            $statement -> bindValue(':salt', $salt);
 
-            $count = $stmt -> rowCount();
-            if ($count == 1) {
-                $idUser = $stmt -> fetch();
-                $idUser = $idUser[0]['idUser'];
+            $result = $statement -> execute();
+            return $result;
+        } catch (Exception $e) {
+            echo $e;
+            return null;
+        }
+    }
+
+    public function loginAccount($userName, $pwd) {
+        try {
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
+
+            $statement -> bindValue(':email', $userName);
+            $statement -> bindValue(':pwd', $pwd);
+            $statement -> execute();
+            $result = $statement -> fetchAll();
+
+            $numRows = count($result);
+            if ($numRows == 1) {
+                return $result[0]['idUser'];
+            } else {
+                return false;
             }
-            return $idUser;
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+
+        } catch (Exception $e) {
+            echo $e;
+            return null;
+        }
+    }
+
+    public function getAccountSalt($email) {
+        try {
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("SELECT salt FROM `User` WHERE email=:email");
+
+            $statement -> bindValue(':email', $email);
+
+            $statement -> execute();
+            $result = $statement -> fetchAll();
+
+            $numRows = count($result);
+            if ($numRows == 1) {
+                return $result['0']['salt'];
+            } else {
+                return false;
+            }
+
+        } catch (Exception $e) {
+            echo $e;
+            return null;
         }
     }
 }

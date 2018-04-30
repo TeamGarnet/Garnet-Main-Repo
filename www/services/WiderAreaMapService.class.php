@@ -27,7 +27,7 @@ class WiderAreaMapService {
         $allWiderAreaMapData = array();
 
         foreach ($allWiderAreaMapDataObjects as $widerAreaMapArray) {
-            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'], $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode']);
+            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'], $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode'], $widerAreaMapArray['imageDescription'], $widerAreaMapArray['imageLocation']);
 
             array_push($allWiderAreaMapData, $widerAreaMapObject);
         }
@@ -46,7 +46,7 @@ class WiderAreaMapService {
      * @param $state: state of location
      * @param $zipcode: zipcode of location
      */
-    public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
             FILTER_FLAG_ALLOW_FRACTION);
@@ -59,11 +59,13 @@ class WiderAreaMapService {
         $url = filter_var($url, FILTER_SANITIZE_EMAIL);
         $address = filter_var($address, FILTER_SANITIZE_STRING);
         $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
+        $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
+        $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
 
         //create WiderAreaMap Object
         $widerAreaMapDataClass = new WiderAreaMapData();
-        $widerAreaMapDataClass -> createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode);
+        $widerAreaMapDataClass -> createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
     }
 
     /*
@@ -79,7 +81,7 @@ class WiderAreaMapService {
      * @param $state: state of location
      * @param $zipcode: zipcode of location
      */
-    public function updateWiderAreaMapEntry($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function updateWiderAreaMapEntry($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
             FILTER_FLAG_ALLOW_FRACTION);
@@ -92,9 +94,11 @@ class WiderAreaMapService {
         $url = filter_var($url, FILTER_SANITIZE_EMAIL);
         $address = filter_var($address, FILTER_SANITIZE_STRING);
         $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
+        $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
+        $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
         $widerAreaMapDataClass = new WiderAreaMapData();
-        $widerAreaMapDataClass -> updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode);
+        $widerAreaMapDataClass -> updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
     }
 
     /*
@@ -139,6 +143,8 @@ class WiderAreaMapService {
                 . "</td><td>" . $model -> getCity()
                 . "</td><td>" . $model -> getState()
                 . "</td><td>" . $model -> getZipcode()
+                . "</td><td>" . $model -> getImageDescription()
+                . "</td><td>" . $model -> getImageLocation()
                 . $editAndDelete
                 . "</td></tr>";
         }

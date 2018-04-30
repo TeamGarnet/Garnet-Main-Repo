@@ -319,8 +319,10 @@ CREATE TABLE `User` (
   `firstName` varchar(80) DEFAULT NULL,
   `lastName` varchar(80) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
-  `password` varchar(80) DEFAULT NULL,
-  PRIMARY KEY (`idUser`)
+  `password` varchar(255) DEFAULT NULL,
+  `salt` varchar(255) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  UNIQUE (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -330,7 +332,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Brianna','Jones','bfj5889@rit.edu','842aba5843178b6e2bcc022d8f6082c6b6caba20'),(6,'Admin','User','admin@admin.com','d033e22ae348aeb5660fc2140aec35850c4da997');
+INSERT INTO `User` VALUES (1,'Default','User','default@default.com','5c56de0415bfc489729dc9c7b83eaa4892bae78c0355f01a0f174bb1e91d8778', '=d]B&{n+6]:j(K;1J4V.kX)nYUU}k/HwU9|gH7s)ooc5I8dhDq,t/u!n:/d_O>ub');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -352,6 +354,8 @@ CREATE TABLE `WiderAreaMap` (
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(2) DEFAULT NULL,
   `zipcode` int(11) DEFAULT NULL,
+  `imageDescription` varchar(100) DEFAULT NULL,
+  `imageLocation` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`idWiderAreaMap`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -362,7 +366,7 @@ CREATE TABLE `WiderAreaMap` (
 
 LOCK TABLES `WiderAreaMap` WRITE;
 /*!40000 ALTER TABLE `WiderAreaMap` DISABLE KEYS */;
-INSERT INTO `WiderAreaMap` VALUES (1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',-77.628100,43.153200,'17 Madison St','Rochester','NY',14608),(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',-77.614809,43.128700,'1133 Mt Hope Ave','Rochester','NY',14620),(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',-77.620700,43.128700,'180 Reservoir Ave','Rochester','NY',14620);
+INSERT INTO `WiderAreaMap` VALUES (1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',-77.628100,43.153200,'17 Madison St','Rochester','NY',14608,'',''),(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',-77.614809,43.128700,'1133 Mt Hope Ave','Rochester','NY',14620,NULL,NULL),(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',-77.620700,43.128700,'180 Reservoir Ave','Rochester','NY',14620,NULL,NULL);
 /*!40000 ALTER TABLE `WiderAreaMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -13,6 +13,8 @@ class WiderAreaMap {
     private $state;
     private $zipcode;
     private $url;
+    private $imageDescription;
+    private $imageLocation;
 
     /**
      * WiderAreaMap constructor.
@@ -26,7 +28,7 @@ class WiderAreaMap {
      * @param $state
      * @param $zipcode
      */
-    public function __construct($idWiderAreaMap, $name, $description, $url, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function __construct($idWiderAreaMap, $name, $description, $url, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $this -> idWiderAreaMap = $idWiderAreaMap;
         $this -> name = $name;
         $this -> description = $description;
@@ -37,6 +39,36 @@ class WiderAreaMap {
         $this -> state = $state;
         $this -> zipcode = $zipcode;
         $this -> url = $url;
+        $this -> imageDescription = $imageDescription;
+        $this -> imageLocation = $imageLocation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageDescription() {
+        return $this -> imageDescription;
+    }
+
+    /**
+     * @param mixed $imageDescription
+     */
+    public function setImageDescription($imageDescription) {
+        $this -> imageDescription = $imageDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageLocation() {
+        return $this -> imageLocation;
+    }
+
+    /**
+     * @param mixed $imageLocation
+     */
+    public function setImageLocation($imageLocation) {
+        $this -> imageLocation = $imageLocation;
     }
 
     /**

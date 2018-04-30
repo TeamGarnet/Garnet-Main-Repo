@@ -41,7 +41,7 @@ class DatabaseConnection {
             $dsn = 'mysql:host=localhost;port=3306;dbname=RapidsCemetery';
             //TODO #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $username = 'root';
-            $password = '$peedingT1ckets4the$l0w!';
+            $password = '';
             $options = array(
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             );

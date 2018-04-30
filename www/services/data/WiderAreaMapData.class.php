@@ -35,10 +35,10 @@ class WiderAreaMapData {
         return null;
     }
 
-    public function createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         try {
             //global $createWiderAreaMapQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO WiderAreaMap (url,description, name, address, city, state, zipcode, longitude, latitude) VALUES (:url, :description,:name, :address, :city, :state, :zipcode, :longitude, :latitude)");
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO WiderAreaMap (url,description, name, address, city, state, zipcode, longitude, latitude, imageDescription, imageLocation) VALUES (:url, :description,:name, :address, :city, :state, :zipcode, :longitude, :latitude, :imageDescription, :imageLocation)");
 
 
             $stmt -> bindParam(':url', $url, PDO::PARAM_STR);
@@ -50,6 +50,8 @@ class WiderAreaMapData {
             $stmt -> bindParam(':zipcode', $zipcode, PDO::PARAM_STR);
             $stmt -> bindParam(':longitude', $longitude, PDO::PARAM_STR);
             $stmt -> bindParam(':latitude', $latitude, PDO::PARAM_STR);
+            $stmt -> bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
+            $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
 
             $stmt -> execute();
         } catch (PDOException $e) {
@@ -61,17 +63,17 @@ class WiderAreaMapData {
     public function readWiderAreaMap() {
         try {
             //global $getAllWiderAreaMapEntriesQuery;
-            return $this -> getDBInfo(0) -> returnObject("", "SELECT idWiderAreaMap, name, description, url, longitude, latitude, address, city, state, zipcode FROM WiderAreaMap");
+            return $this -> getDBInfo(0) -> returnObject("", "SELECT idWiderAreaMap, name, description, url, longitude, latitude, address, city, state, zipcode, imageDescription, imageLocation FROM WiderAreaMap");
         } catch (PDOException $e) {
             echo $e -> getMessage();
             die();
         }
     }
 
-    public function updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode) {
+    public function updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         try {
             //global $updateWiderAreaMapQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE WiderAreaMap SET idWiderAreaMap = :idWiderAreaMap , url = :url , description = :description , name = :name, longitude =:longitude, latitude =:latitude, city = :city, zipcode =:zipcode, address = :address  WHERE idWiderAreaMap = :idWiderAreaMap");
+            $stmt = $this -> getDBInfo(1) -> prepare("UPDATE WiderAreaMap SET idWiderAreaMap = :idWiderAreaMap , url = :url , description = :description , name = :name, longitude =:longitude, latitude =:latitude, city = :city, zipcode =:zipcode, address = :address, imageDescription =:imageDescription, imageLocation=:imageLocation  WHERE idWiderAreaMap = :idWiderAreaMap");
 
             $stmt -> bindParam(':url', $url, PDO::PARAM_STR);
             $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
@@ -83,6 +85,8 @@ class WiderAreaMapData {
             $stmt -> bindParam(':zipcode', $zipcode, PDO::PARAM_STR);
             $stmt -> bindParam(':longitude', $longitude, PDO::PARAM_STR);
             $stmt -> bindParam(':latitude', $latitude, PDO::PARAM_STR);
+            $stmt -> bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
+            $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
 
             $stmt -> execute();
         } catch (PDOException $e) {

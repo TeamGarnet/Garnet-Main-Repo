@@ -9,6 +9,8 @@ class TrailObject {
     private $city;
     private $state;
     private $zipcode;
+    private $imageDescription;
+    private $imageLocation;
 
     /**
      * TrailObject constructor.
@@ -22,7 +24,7 @@ class TrailObject {
      * @param $state
      * @param $zipcode
      */
-    public function __construct($idWiderAreaMap, $name, $description, $url, $longitude, $address, $city, $state, $zipcode) {
+    public function __construct($idWiderAreaMap, $name, $description, $url, $longitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $this -> idWiderAreaMap = $idWiderAreaMap;
         $this -> name = $name;
         $this -> description = $description;
@@ -32,9 +34,37 @@ class TrailObject {
         $this -> city = $city;
         $this -> state = $state;
         $this -> zipcode = $zipcode;
+        $this -> imageDescription = $imageDescription;
+        $this -> imageLocation = $imageLocation;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImageDescription() {
+        return $this -> imageDescription;
+    }
 
+    /**
+     * @param mixed $imageDescription
+     */
+    public function setImageDescription($imageDescription) {
+        $this -> imageDescription = $imageDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageLocation() {
+        return $this -> imageLocation;
+    }
+
+    /**
+     * @param mixed $imageLocation
+     */
+    public function setImageLocation($imageLocation) {
+        $this -> imageLocation = $imageLocation;
+    }
     /**
      * @return mixed
      */

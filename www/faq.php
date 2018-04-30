@@ -64,6 +64,9 @@ $allFAQInfo = $faqService -> formatFAQInfo();
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3 style="text-align: center; font-weight:bolder; padding-bottom: 2%;">Frequently Asked Questions</h3>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" >
+            <a class="btn downloadLink" download="UserManual.pdf" href="UserManual.pdf"> Download User Manaul</a>
+        </div>
     </div>
     <div class="row">
         <?php

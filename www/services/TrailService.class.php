@@ -28,8 +28,7 @@ class TrailService {
         $allTrailObjects = array();
 
         foreach ($allTrailData as $trailArray) {
-            $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], stripcslashes($trailArray['description']), $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode']);
-
+            $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], stripcslashes($trailArray['description']), $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode'], $trailArray['imageDescription'], $trailArray['imageLocation']);
             array_push($allTrailObjects, $trailObject);
         }
         return $allTrailObjects;
@@ -46,7 +45,9 @@ class TrailService {
         foreach ($allTrailObjectsInfo as $trailObjectInfo) {
             $formattedTrailLocationInfo .= '<div style="margin-top: 4%;" class="locationContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"><div id=""><div class="locationInfo"><p class="locationDescription">'
                 . $trailObjectInfo -> getLineColor() . '</p><p style="text-align: left;" class="locationName">'
-                . $trailObjectInfo -> getName() . '</p><p style="text-align: left;" class="locationDescription">Address: '
+                . $trailObjectInfo -> getName()
+                . '</p><img src="' . $trailObjectInfo -> getImageLocation() . 'alt=' . $trailObjectInfo -> getImageDescription() . '">'
+                . '</p><p style="text-align: left;" class="locationDescription">Address: '
                 . $trailObjectInfo->getAddress() .","
                 . $trailObjectInfo->getCity() . " "
                 . $trailObjectInfo->getState() . " "
@@ -70,7 +71,7 @@ class TrailService {
         $serializedAllTrailData = array();
 
         foreach ($allTrailData as $trailArray) {
-            $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], stripcslashes($trailArray['description']), $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode']);
+            $trailObject = new TrailObject($trailArray['idWiderAreaMap'], $trailArray['name'], stripcslashes($trailArray['description']), $trailArray['url'], $trailArray['longitude'], $trailArray['address'], $trailArray['city'], $trailArray['state'], $trailArray['zipcode'], $trailArray['imageDescription'], $trailArray['imageLocation']);
             $serializedTrailObject = $trailObject -> jsonSerialize();
 
             array_push($serializedAllTrailData, $serializedTrailObject);

@@ -314,8 +314,10 @@ CREATE TABLE `User` (
   `firstName` varchar(80) DEFAULT NULL,
   `lastName` varchar(80) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
-  `password` varchar(80) DEFAULT NULL,
-  PRIMARY KEY (`idUser`)
+  `password` varchar(255) DEFAULT NULL,
+  `salt` varchar(255) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  UNIQUE (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -325,7 +327,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (6,'Admin','User','admin@admin.com','d033e22ae348aeb5660fc2140aec35850c4da997');
+INSERT INTO `User` VALUES (1,'Default','User','default@default.com','5c56de0415bfc489729dc9c7b83eaa4892bae78c0355f01a0f174bb1e91d8778', '=d]B&{n+6]:j(K;1J4V.kX)nYUU}k/HwU9|gH7s)ooc5I8dhDq,t/u!n:/d_O>ub');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -347,6 +349,8 @@ CREATE TABLE `WiderAreaMap` (
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(2) DEFAULT NULL,
   `zipcode` int(11) DEFAULT NULL,
+  `imageDescription` varchar(100) DEFAULT NULL,
+  `imageLocation` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`idWiderAreaMap`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
