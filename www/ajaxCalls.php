@@ -116,7 +116,7 @@ if (isset($_POST['updateGraveEntry'])) {
     $service = new WiderAreaMapService();
     $service -> updateWiderAreaMapEntry($areaData['idWiderAreaMap'], $areaData['Site'], $areaData['Name'],
         $areaData['Description'], $areaData['Longitude'], $areaData['Latitude'],
-        $areaData['Address'], $areaData['City'], $areaData['State'], $areaData['ZipCode'], $areaData['imageDescription'], $areaData['imageLocation']);
+        $areaData['Address'], $areaData['City'], $areaData['State'], $areaData['ZipCode'], $areaData['ImageDescription'], $areaData['ImageLocation']);
     unset($_POST['updateWiderAreaMapEntry']);
 } else if (isset($_POST['updateContactEntry'])) {
     $contactData = $_POST['updateContactEntry'];
