@@ -40,9 +40,9 @@ class DatabaseConnection {
         try {
             /***** UPDATE NEEDED:  dsn, username, and password  *****/
             $dsn = 'mysql:host=localhost;port=3306;dbname=RapidsCemetery';
-            //TODO #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $username = 'root';
-            $password = '$peedingT1ckets4the$l0w!';
+            $password = '';
+            //$password = '$peedingT1ckets4the$l0w!';
             $options = array(
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             );
@@ -50,9 +50,8 @@ class DatabaseConnection {
 
         } catch (PDOException $e) {
             #Open log file and add error message
-            #TODO: Fix log writing to work on a server
             echo $e -> getMessage() . "\n";
-            $logFile = 'phpErrors.txt';
+            $logFile = 'RapidsCemeteryPHPErrors.txt';
             $currentLogFile = file_get_contents($logFile);
             $currentLogFile .= "\n" . date('l jS \of F Y h:i:s A') . $e -> getMessage();
             file_put_contents($logFile, $currentLogFile);
