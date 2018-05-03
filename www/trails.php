@@ -6,12 +6,14 @@ include_once 'services/WiderAreaMapService.class.php';
 
 $trailService = new TrailService();
 $allTrailInfo = $trailService -> formatTrailLocationsInfo();
+$allTrailLocations = $trailService -> getTrailLocationsAsJSON();
 $eventService = new EventService();
 $allEventInfo = $eventService -> formatEventInfo();
 $widerAreaMapService = new WiderAreaMapService();
 $allMapPins = $widerAreaMapService -> generateMarkers();
 
 //print_r($allTrailInfo);
+//print_r($allTrailLocations);
 ?>
 
 <!-- HTML -->
@@ -117,17 +119,30 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     </div>
 </div>
 
+<!-- Location Info modal -->
+<div class="modal message" id="locationInfoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="locationInfoBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
 
 <script type="text/javascript">
-    var map, infoWindow;
+    var map, infoWindow, trailArray;
     var allMarkerObjects = [];
     var directionList = [];
     var userLocation;
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+
 
 
     function initMap() {
@@ -169,14 +184,15 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     }
 
 
-    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, pointB) {
         directionsService.route({
-            origin: pointA,
+            origin: userLocation,
             destination: pointB,
             avoidTolls: true,
             avoidHighways: false,
             travelMode: google.maps.TravelMode.DRIVING
         }, function (response, status) {
+            infoWindow.close();
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             } else {
@@ -185,7 +201,32 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         });
     }
 
+    function displayLocationInfo(id) {
+        infoWindow.close();
+        trailArray = <?php echo json_encode($allTrailLocations); ?>;
+        var locationInfo = findObjectByKey(trailArray, 'id', String(id));
+        $(document).ready(function () {
+            $('#locationInfoBody').html('');
+            $('#locationInfoBody').append("<p class='locationName'>" +
+                 locationInfo.name + "</p> <p class='locationDescription'> " +
+                locationInfo.address + ", " + locationInfo.city + " " + locationInfo.state + " " + locationInfo.zipcode +
+                "</p> <p class='locationDescription'>" +
+                locationInfo.description + "</p>");
+            $('#locationInfoModal').modal('show');
+        });
+    }
+
+    function findObjectByKey(array, key, value) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i][key] === value) {
+                return array[i];
+            }
+        }
+        return {"name":"No data found for location", "address":"", "city":"", "state":"","zipcode":"","description":""};
+    }
+
 </script>
+<!------ UPDATE NEEDED:  Correct API Key for Javascript ------>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
 </script>

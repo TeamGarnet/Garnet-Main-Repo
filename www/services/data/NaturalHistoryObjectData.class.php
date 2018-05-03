@@ -1,7 +1,14 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createContact($name, $email, $description, $phone, $title)
+ *  readContact()
+ *  updateContact($idContact, $name, $email, $description, $phone, $title)
+ *  deleteContact($idContact)
  */
 class NaturalHistoryObjectData {
     /**

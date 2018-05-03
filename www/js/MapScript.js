@@ -1,4 +1,6 @@
 function refreshFilters(table, referenceID) {
+    //close any opened info windows
+    infoWindow.close();
     // Loop through markers and set map to null for each
     for (var i = 0; i < allMarkerObjects.length; i++) {
         allMarkerObjects[i].setVisible(false);

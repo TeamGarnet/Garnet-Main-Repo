@@ -45,3 +45,14 @@ hr.style17:after {
     -moz-transform: rotate(60deg);
     transform: rotate(60deg);
 }
+
+.btn.downloadLink{
+    background-color: #97583a !important;
+    color: white !important;
+    font-family: Proza Libre !important;
+    font-weight: bold;
+}
+.downloadLink:hover {
+    background-color: #6b7749 !important;
+    color: white !important;
+}

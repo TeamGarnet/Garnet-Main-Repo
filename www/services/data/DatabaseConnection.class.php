@@ -38,6 +38,7 @@ class DatabaseConnection {
      */
     private function __construct() {
         try {
+            /***** UPDATE NEEDED:  dsn, username, and password  *****/
             $dsn = 'mysql:host=localhost;port=3306;dbname=RapidsCemetery';
             //TODO #IF TIME PERMITS A DBINFO FILE SHOULD BE MADE THAT CONTAINS THE PWD AND USRNAME
             $username = 'root';

@@ -2,6 +2,12 @@
 include_once 'DatabaseConnection.class.php';
 include_once 'query.php';
 
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  getAllTrailLocations()
+ */
 class TrailData {
     /**
      * Retrieves the Database information needed.

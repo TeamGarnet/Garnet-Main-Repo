@@ -1,7 +1,14 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createMiscObject($name, $isHazard, $description)
+ *  readMiscObject()
+ *  updateMiscObject($idMisc, $name, $isHazard, $description)
+ *  deleteMiscObject($idMisc)
  */
 class MiscObjectData {
     /**

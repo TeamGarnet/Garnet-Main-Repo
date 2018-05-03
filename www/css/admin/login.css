@@ -4,7 +4,8 @@ body {
 
 #login, #signup {
     width: 350px;
-    height: 490px;
+    height: auto;
+    padding-bottom: 3%;
     font-family: 'Proza Libre', sans-serif;
     font-style: normal;
     font-stretch: normal;
@@ -31,6 +32,8 @@ body {
 }
 
 #divider {
+    margin-top: 2%;
+    margin-bottom: 2%;
     height: 1px;
     background-color: #e0e0e0;
 }
@@ -53,13 +56,8 @@ form label {
 form input {
     border: solid 1px rgba(107, 119, 73, 0.7);
     text-indent: 2%;
-}
+    margin-top: 3%;
 
-#forgotPassword {
-    width: 103px;
-    height: 17px;
-    font-size: 10px;
-    padding: 0px 0px 27px 197px;
 }
 
 .button {
@@ -99,7 +97,7 @@ form input, .button {
     height: 33px;
 }
 
-form label, #forgotPassword, #buttonText {
+form label, #buttonText {
     font-weight: normal;
 }
 
@@ -107,6 +105,11 @@ form label, form input, .button {
     display: block;
 }
 
-form label, #forgotPassword {
+form label {
     color: #757575;
+}
+
+.create {
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
 }

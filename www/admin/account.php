@@ -1,27 +1,11 @@
 <?php
+/**
+ * Class: ${NAME}
+ * Date: 4/29/2018
+ * Description:
+ */
+
 include('../services/LoginService.class.php');
-$errorMsgLogin = '';
-if (isset($_POST['Login'])) {
-    if ($_POST['email'] != "" && $_POST['password'] != "") {
-        $LoginService = new LoginService();
-        $validateUser = $LoginService -> loginAccount($_POST['email'], $_POST['password']);
-        if ($validateUser) {
-            session_start();
-            $_SESSION['idUser'] = $validateUser;
-            header('Location: home.php');
-        } else {
-            $errorMsgLogin = "Incorrect email and password combination";
-        }
-    }
-} else {
-    if ( isset($_POST['newEmail']) && isset($_POST['newPwd']) && isset($_POST['masterEmail']) && isset($_POST['masterPWD']) ) {
-        $LoginService = new LoginService();
-        $validateUser = $LoginService -> createAccount($_POST['newEmail'], $_POST['newPwd'],$_POST['masterEmail'],$_POST['masterPWD']);
-        if ($validateUser == false) {
-            $errorMsgLogin = "Account Not Created";
-        }
-    }
-}
 ?>
 
 <!-- HTML -->
@@ -56,30 +40,33 @@ if (isset($_POST['Login'])) {
     <img src="../images/AdminLogo.png"
          srcset="../images/AdminLogo@2x.png 2x,
              ../images/AdminLogo@3x.png 3x"
-         class="logo"/>
+         class="logo create"/>
 
-    <div id="headline"><h4>Administrator Login</h4></div>
-    </br>
+    <div id="headline" class="create"><h4>Administrator Account Creation</h4></div>
 
-    <div id="divider"></div>
+    <div id="divider" class="create"></div>
 
-    <form method="post" action="" name="login">
+    <form action="login.php" method="post" class="create">
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" autocomplete="off" placeholder="Enter email"/>
+        <label for="masterEmail" class="create">Master Email</label>
+        <input type="text" id="masterEmail" name="masterEmail" placeholder="Enter Master Email">
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" autocomplete="off" placeholder="Enter password"/>
+        <label for="masterPWD" class="create">Master Password</label>
+        <input type="password" id="masterPWD" name="masterPWD" placeholder="Enter Master Password" class="create">
 
-        <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
+        <label for="newEmail" class="create">Set New Email</label>
+        <input type="text" id="newEmail" name="newEmail" placeholder="Enter Email">
 
-        <button type="Login" class="button" name="Login" value="Login">
-            <div id="buttonText">Login</div>
+        <label for="newPwd" class="create">Set New Password</label>
+        <input type="password" id="newPwd" name="newPwd" placeholder="Enter Password" class="create">
+
+        <div id="divider" class="create"></div>
+
+        <button type="submit" class="button" name="submit" value="Create Admin">
+            <div id="buttonText">Create Admin</div>
         </button>
     </form>
-
 </div>
 </body>
 </html>
-
 
