@@ -9,8 +9,6 @@ function refreshFilters(table, referenceID) {
             allMarkerObjects[i].setVisible(true);
         } else if (table == "typeFilter" && allMarkerObjects[i].idTypeFilter == referenceID) {
             allMarkerObjects[i].setVisible(true);
-        } else {
-            console.log(allMarkerObjects[i]);
         }
     }
 }

@@ -18,20 +18,9 @@ $filterBar = $mapData -> generateFilterBar();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title> Rapids Cemetery Map </title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
-    <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
 
     <!-- Favicon Info -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -54,8 +43,8 @@ $filterBar = $mapData -> generateFilterBar();
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 
-
-    <script src="../js/MapScript.js"></script>
+    <!-- Custom Style and Scripts -->
+    <script src="js/MapScript.js"></script>
     <link rel="stylesheet" href="css/maps.css" type="text/css">
     <link rel="stylesheet" href="css/navbar.css" type="text/css">
     <link rel="stylesheet" href="css/filterbar.css" type="text/css">

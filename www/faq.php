@@ -15,18 +15,11 @@ $allFAQInfo = $faqService -> formatFAQInfo();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
-    <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
-    <link href="css/thirdParty/style.css" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Custom Style -->
     <link rel="stylesheet" href="css/faq.css" type="text/css">
     <link rel="stylesheet" href="css/navbar.css" type="text/css">
 
