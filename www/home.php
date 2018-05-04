@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from cmsdevelop.net/sharuk/doodoo/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Dec 2017 08:45:20 GMT -->
 <head>
+    <!-- The meta tags MUST come first in the head; any other head content must come *after* these tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Rapids Cemetery</title>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="css/navbar.css" type="text/css">
-    <link rel="stylesheet" href="css/home.css" type="text/css">
-
-
+    <!-- Favicon Info -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -35,6 +33,10 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
 </head>
 <body>
 
@@ -69,7 +71,8 @@
         <div class="container" id="footerContainer">
             <div class="row" id="footerRow">
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 social" style="float:left;">
-                    <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF"><i
+                    <!----- UPDATE NEEDED:  Insert correct Facebook link----->
+                    <a href="https://www.facebook.com/" target="_blank" style="color:#FFFFFF"><i
                                 class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 address">
@@ -78,17 +81,6 @@
                 </div>
             </div>
         </div>
-        <!--<div class="container" id ="footerContainer">
-
-            <footer class="main-footer" style="color:#fff;  text-align:right; font-weight:bold">
-                <div class="social" style="float:left;">
-                    <a href="https://www.facebook.com/RapidsCemeteryRochester/" target="_blank" style="color:#FFFFFF">
-                        <i class="fab fa-facebook-f"></i></a>
-				</div>
-                <div style="color:#fff; float:right; font-family: prozo libre; padding-top:10px;"><h5>19th Ward Community Association
-                        --- 216 Thurston Road Rochester, NY 14619 - (585)328-6571 - 19thWard@19wca.org</h5></div>
-            </footer>
-        </div>-->
     </div>
 </section>
 </body>

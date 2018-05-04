@@ -15,22 +15,19 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
 <!-- HTML -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <!-- The meta tags MUST come first in the head; any other head content must come *after* these tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Bootstrap -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="css/trails.css" type="text/css">
-    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <title> Historic Trails </title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Favicon Info -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -53,7 +50,9 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 
-    <title> Historic Trails </title>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/trails.css" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
 </head>
 <body>
 
@@ -127,6 +126,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
 
 <script type="text/javascript">
     var map, infoWindow, trailArray;
+    <!-- allMarkerObjects amd directionList are populated on page load by PHP -->
     var allMarkerObjects = [];
     var directionList = [];
     var userLocation;
@@ -216,14 +216,8 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     }
 
 </script>
-<!------ UPDATE NEEDED:  Correct API Key for Javascript ------>
+<!------ UPDATE NEEDED:  Correct API Key for Google Maps Javascript ------>
+<!------ Example API Key shown here: https://developers.google.com/maps/documentation/javascript/get-api-key ------->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key='RAPIDS_CEMETERY_API_KEY'&callback=initMap">
 </script>
-
-<style>
-    #map {
-        height: 450px;
-        weidth: auto;
-    }
-</style>

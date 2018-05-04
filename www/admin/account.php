@@ -1,18 +1,24 @@
 <?php
-/**
- * Class: ${NAME}
- * Date: 4/29/2018
- * Description:
- */
-
 include('../services/LoginService.class.php');
 ?>
 
 <!-- HTML -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/admin/login.css" type="text/css">
+    <!-- The meta tags MUST come first in the head; any other head content must come *after* these tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title> Admin Account Creation </title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Favicon Info -->
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -33,6 +39,11 @@ include('../services/LoginService.class.php');
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="../favicon/site.webmanifest">
     <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="../css/admin/login.css" type="text/css">
+
+
 </head>
 <body>
 <div id="login">
