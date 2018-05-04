@@ -85,7 +85,7 @@ function deleteType(id) {
                         $('.messageContent').append(data);
                         $('.message').modal('show');
                         id = null;
-                    }else {
+                    } else {
                         location.reload(true);
                     }
                     return true;
@@ -723,7 +723,7 @@ function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
 
-    $('#createObject').unbind('click').bind('click', function() {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'CommonName': $('#CommonName').val(),
             'ScientificName': $('#ScientificName').val(),

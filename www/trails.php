@@ -134,7 +134,6 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
 
-
     function initMap() {
         var myLatlng = new google.maps.LatLng(43.149579, -77.609624);
         var mapOptions = {
@@ -198,7 +197,7 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
         $(document).ready(function () {
             $('#locationInfoBody').html('');
             $('#locationInfoBody').append("<p class='locationName'>" +
-                 locationInfo.name + "</p> <p class='locationDescription'> " +
+                locationInfo.name + "</p> <p class='locationDescription'> " +
                 locationInfo.address + ", " + locationInfo.city + " " + locationInfo.state + " " + locationInfo.zipcode +
                 "</p> <p class='locationDescription'>" +
                 locationInfo.description + "</p>");
@@ -212,7 +211,14 @@ $allMapPins = $widerAreaMapService -> generateMarkers();
                 return array[i];
             }
         }
-        return {"name":"No data found for location", "address":"", "city":"", "state":"","zipcode":"","description":""};
+        return {
+            "name": "No data found for location",
+            "address": "",
+            "city": "",
+            "state": "",
+            "zipcode": "",
+            "description": ""
+        };
     }
 
 </script>

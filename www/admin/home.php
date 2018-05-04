@@ -95,46 +95,54 @@ $eventService = new EventService();
         </div>
     </div>
 </div>
+
+
 <!-- Filters Selects-->
 <div class="container" id="tabContainer">
-	<div class="row" id="tabRow">
-		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="leftMenu">
-			<ul id="myTab" class="nav nav-tabs">
-				<li class="active">
-					<a href="#graveDiv" data-toggle="tab">
-						Graves
-					</a>
-				</li>
-				<li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
-				<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
-				<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
-				<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-				<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
-				<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
-				<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
-				<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
-			</ul>
-		</div>
-		<div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
-			<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-			   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Create +
-			</a>
-			<ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
-				<li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
-				<li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
-				<li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
-				<li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a></li>
-				<li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
-				<li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area Location</a></li>
-				<li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
-				<li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="row" id="tabRow">
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="leftMenu">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#graveDiv" data-toggle="tab">
+                        Graves
+                    </a>
+                </li>
+                <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+                <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+                <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+                <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+                <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+                <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
+                <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+                <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
+            </ul>
+        </div>
+
+        <!-- Create Dropdown-->
+        <div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Create +
+            </a>
+            <ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
+                <li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
+                <li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
+                <li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
+                <li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a>
+                </li>
+                <li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
+                <li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area
+                        Location</a></li>
+                <li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
+                <li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
+<!-- DataTable Headers and Rows-->
+<!-- Grave Datatable-->
 <div class="container" id="tabBar">
     <div class="container1">
         <div class="row">
@@ -170,6 +178,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Natural History Datatable-->
                     <div class="tab-pane fade" id="naturalHistoryDiv">
                         <div class="content_accordion">
                             <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">
@@ -195,6 +204,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Miscellaneous Datatable-->
                     <div class="tab-pane fade" id="miscDiv">
                         <div class="content_accordion">
                             <table id="misc" class="table table-striped table-bordered" style="width:100%">
@@ -221,6 +231,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Type Filter Datatable-->
                     <div class="tab-pane fade" id="typeDiv">
                         <div class="content_accordion">
                             <table id="type" class="table table-striped table-bordered" style="width:100%">
@@ -242,6 +253,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Historic Filter Datatable-->
                     <div class="tab-pane fade" id="historicDiv">
                         <div class="content_accordion">
                             <table id="historic" class="table table-striped table-bordered" style="width:100%">
@@ -267,6 +279,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- FAQ Datatable-->
                     <div class="tab-pane fade" id="faqDiv">
                         <div class="content_accordion">
                             <table id="faq" class="table table-striped table-bordered" style="width:100%">
@@ -287,6 +300,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Trail Datatable-->
                     <div class="tab-pane fade" id="widerLocationDiv">
                         <div class="content_accordion">
                             <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
@@ -317,6 +331,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Contact Datatable-->
                     <div class="tab-pane fade" id="contactDiv">
                         <div class="content_accordion">
                             <table id="contact" class="table table-striped table-bordered" style="width:100%">
@@ -341,6 +356,7 @@ $eventService = new EventService();
                         <!--accordion end-->
                     </div>
 
+                    <!-- Event Datatable-->
                     <div class="tab-pane fade" id="eventDiv">
                         <div class="content_accordion">
                             <table id="event" class="table table-striped table-bordered" style="width:100%">
@@ -372,22 +388,22 @@ $eventService = new EventService();
         </div>
     </div>
 </div>
-		<script>
-		$('#myTab a').click(function(e) {
-			e.preventDefault();
-			$(this).tab('show');
-		});
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
 
-		// store the currently selected tab in the hash value
-		$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
-			var id = $(e.target).attr("href").substr(1);
-			window.location.hash = id;
-		});
+    // store the currently selected tab in the hash value
+    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
+        var id = $(e.target).attr("href").substr(1);
+        window.location.hash = id;
+    });
 
-		// on load of the page: switch to the currently selected tab
-		var hash = window.location.hash;
-		$('#myTab a[href="' + hash + '"]').tab('show');
-		</script>
+    // on load of the page: switch to the currently selected tab
+    var hash = window.location.hash;
+    $('#myTab a[href="' + hash + '"]').tab('show');
+</script>
 
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
@@ -511,7 +527,5 @@ $eventService = new EventService();
         $('#widerLocation').DataTable();
         $('#contact').DataTable();
         $('#event').DataTable();
-
-
     });
 </script>

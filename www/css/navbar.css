@@ -136,8 +136,9 @@ img {
     background-color: white !important;
     color: #97583a !important;
 }
-.donate:focus{
-	outline: none !important;
+
+.donate:focus {
+    outline: none !important;
 
 }
 

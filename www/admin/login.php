@@ -14,9 +14,9 @@ if (isset($_POST['Login'])) {
         }
     }
 } else {
-    if ( isset($_POST['newEmail']) && isset($_POST['newPwd']) && isset($_POST['masterEmail']) && isset($_POST['masterPWD']) ) {
+    if (isset($_POST['newEmail']) && isset($_POST['newPwd']) && isset($_POST['masterEmail']) && isset($_POST['masterPWD'])) {
         $LoginService = new LoginService();
-        $validateUser = $LoginService -> createAccount($_POST['newEmail'], $_POST['newPwd'],$_POST['masterEmail'],$_POST['masterPWD']);
+        $validateUser = $LoginService -> createAccount($_POST['newEmail'], $_POST['newPwd'], $_POST['masterEmail'], $_POST['masterPWD']);
         if ($validateUser == false) {
             $errorMsgLogin = "Account Not Created";
         }
