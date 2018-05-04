@@ -2,32 +2,82 @@ body {
     background-color: #F7F5E9;
     background-image: url("../images/TrailBackground.png");
 }
-.nav-tabs{
-	border: none !important;
-	text-align: center;
-	background-color: #6b7749;
+
+.locationName {
+    text-align: center !important;
 }
-.nav-tabs > li > a{
-	color: white;
+
+.modal-body {
+    font-family: Proza Libre !important;
 }
-.nav-tabs > li > a:hover{
-	color: #000000;
-	background-color:none;
+
+.modal-footer > .btn {
+    background-color: #97583a !important;
+    border-color: #97583a !important;
+    color: #ffffff !important;
+    font-family: Proza Libre !important;
 }
-.nav-tabs > li{
-	float: none !important;
-	display: inline-block !important;
+
+h4 {
+    font-family: Proza Libre !important;
 }
-.nav-tabs>li.active>a{
-	background-color: #f8f6ec !important;
+
+#map {
+    height: 450px;
+    weidth: auto;
 }
+
+.modal-footer > .btn:hover {
+    background-color: #6b7749 !important;
+    border-color: #6b7749 !important;
+}
+
+.modal-footer > .btn:focus {
+    outline-color: transparent !important;
+}
+
+.nav-tabs {
+    border: none !important;
+    text-align: center;
+    background-color: #6b7749;
+}
+
+.nav-tabs > li > a {
+    color: white;
+}
+
+.nav-tabs > li > a:hover {
+    color: #000000;
+    background-color: #f8f6ec !important;
+    border-color: transparent !important;
+}
+
+.nav-tabs > li > a:focus {
+    color: #ffffff;
+    background-color: #6b7749 !important;
+    border-color: transparent !important;
+    border-bottom: none !important;
+    outline-color: transparent !important;
+}
+
+.nav-tabs > li {
+    float: none !important;
+    display: inline-block !important;
+}
+
+.nav-tabs > li.active > a {
+    background-color: #f8f6ec !important;
+    color: #000000;
+}
+
 #pageContent {
     margin-top: 2.5%;
-	margin-bottom: 2.5%;
+    margin-bottom: 2.5%;
 }
-#events{
-	margin-top: 2.5%;
-	margin-bottom: 2.5%;
+
+#events {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 /* PHP Generated Content*/
@@ -38,7 +88,7 @@ body {
 }
 
 .locationInfo, .eventInfo {
-    font-family: prozolibre;
+    font-family: Proza Libre;
 }
 
 .locationDescription, .eventLocationName, .eventStartTime, .eventDescription {
@@ -55,7 +105,30 @@ body {
     text-decoration: none;
 }
 
+.btn.locationURL {
+    background-color: #97583a !important;
+    color: white !important;
+}
+
+.locationURL:hover {
+    background-color: #6b7749 !important;
+    color: white !important;
+}
+
 .locationDate {
+    background-color: #97583a !important;
+    color: white !important;
+}
+
+.eventBtns.btn {
+    background-color: #97583a !important;
+    color: white !important;
+    margin: 1%;
+}
+
+.eventBtns:hover {
+    background-color: #6b7749 !important;
+    color: white !important;
 }
 
 h3, p, a {
@@ -66,6 +139,7 @@ hr.style17 {
     border-top: 1px solid #8c8b8b;
     text-align: center;
 }
+
 hr.style17:after {
     content: '§';
     display: inline-block;

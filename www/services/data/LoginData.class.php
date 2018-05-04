@@ -1,12 +1,40 @@
 <?php
 ob_start();
+include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
- *
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  validatePassword($email, $password)
  */
-include_once 'DatabaseConnection.class.php';
 
 class LoginData {
+
+    /**
+     * Creates a new User into the database for admin login
+     * @param $userName
+     * @param $pwd
+     * @param $salt
+     * @return bool|null
+     */
+    public function createAccount($userName, $pwd, $salt) {
+        try {
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("INSERT INTO `User` (email, password, salt) VALUES (:email, :pwd, :salt)");
+
+            $statement -> bindValue(':email', $userName);
+            $statement -> bindValue(':pwd', $pwd);
+            $statement -> bindValue(':salt', $salt);
+
+            $result = $statement -> execute();
+            return $result;
+        } catch (Exception $e) {
+            echo $e;
+            return null;
+        }
+    }
 
     /**
      * Retrieves the Database information needed.
@@ -27,33 +55,67 @@ class LoginData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
     }
 
-    public function validatePassword($email, $password) {
-        global $loginUserQuery;
-
-        //TODO: hash them passwords gurl
-        $password = sha1($password);
+    /**
+     * Finds the user id for the specifed email and hashed pwd combination
+     * @param $userName
+     * @param $pwd
+     * @return bool|null
+     */
+    public function loginAccount($userName, $pwd) {
         try {
-            $idUser = null;
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
 
-            $stmt = $this -> getDBInfo(1) -> prepare("SELECT idUser FROM `User` WHERE email=:email AND password=:pwd");
-            $stmt -> bindParam(':email', $email);
-            $stmt -> bindParam(':pwd', $password);
-            $stmt -> execute();
+            $statement -> bindValue(':email', $userName);
+            $statement -> bindValue(':pwd', $pwd);
+            $statement -> execute();
+            $result = $statement -> fetchAll();
 
-            $count = $stmt -> rowCount();
-            if ($count == 1) {
-                $idUser = $stmt -> fetch();
-                $idUser = $idUser[0]['idUser'];
+            $numRows = count($result);
+            if ($numRows == 1) {
+                return $result[0]['idUser'];
+            } else {
+                return false;
             }
-            return $idUser;
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+
+        } catch (Exception $e) {
+            echo $e;
+            return null;
+        }
+    }
+
+    /**
+     * Returns the salt for the specified email
+     * @param $email
+     * @return bool|null
+     */
+    public function getAccountSalt($email) {
+        try {
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("SELECT salt FROM `User` WHERE email=:email");
+
+            $statement -> bindValue(':email', $email);
+
+            $statement -> execute();
+            $result = $statement -> fetchAll();
+
+            $numRows = count($result);
+            if ($numRows == 1) {
+                return $result['0']['salt'];
+            } else {
+                return false;
+            }
+
+        } catch (Exception $e) {
+            echo $e;
+            return null;
         }
     }
 }

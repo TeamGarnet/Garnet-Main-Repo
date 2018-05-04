@@ -17,7 +17,7 @@ img {
     background-image: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    min-height: 9%;
+    min-height: 10%;
     margin-bottom: 0 !important;
     margin-top: 0 !important;
     opacity: 1 !important;
@@ -135,5 +135,10 @@ img {
 .donate:hover {
     background-color: white !important;
     color: #97583a !important;
+}
+
+.donate:focus {
+    outline: none !important;
+
 }
 

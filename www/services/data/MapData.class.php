@@ -1,12 +1,42 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 include_once 'query.php';
+include_once 'ErrorCatching.class.php';
 
 /**
  * MapData.class.php: Handles all CRUD operations that are sent from the service and
  * business layers to the Database from mapping requests.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  getAllMapPinInfo()
+ *  getAllFilters()
+ *  getMapCardData($idTrackableObject)
  */
 class MapData {
+
+    /**
+     * Connects to the database and runs a query to pull all of the MapPin object
+     * information.
+     * @return array: An array of Map Pin Object information.
+     */
+    public function getAllMapPinInfo() {
+        global $getAllMapPinInfoQuery;
+        try {
+            $mapPinData = array();
+
+            $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
+            $stmt -> execute();
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
+            while ($result = $stmt -> fetch()) {
+                array_push($mapPinData, $result);
+            }
+            return $mapPinData;
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
 
     /**
      * Retrieves the Database information needed.
@@ -27,35 +57,17 @@ class MapData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
     }
 
-
     /**
-     * Connects to the database and runs a query to pull all of the MapPin object
-     * information.
-     * @return array: An array of Map Pin Object information.
+     * Get all historic and type filters options from database
+     * @return array
      */
-    public function getAllMapPinInfo() {
-        global $getAllMapPinInfoQuery;
-        try {
-            $mapPinData = array();
-
-            $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
-            $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
-            while ($result = $stmt -> fetch()) {
-                array_push($mapPinData, $result);
-            }
-            return $mapPinData;
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
-    }
-
     public function getAllFilters() {
         global $filterBarQuery;
         try {
@@ -69,11 +81,17 @@ class MapData {
             }
             return $filterData;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Collect information for pin selected. Determines what type of object the ID is from wand then queries to receive the correct information.
+     * @param $idTrackableObject
+     * @return array
+     */
     public function getMapCardData($idTrackableObject) {
         global $filterTypeQuery;
         global $graveInfoQuery;
@@ -111,8 +129,9 @@ class MapData {
             }
             return $objectCardData;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

@@ -29,69 +29,25 @@ $typeFilterService = new TypeFilterService();
 
 $widerAreaMapService = new WiderAreaMapService();
 $eventService = new EventService();
-
-
-/*
-var_dump($graveService->getAllGraveEntries());
-$graveService -> createGraveEntry("firstName", "M", "lastName", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't", "1",43.109362, -77.659403, "graveService", "Test", "", 1);
-$graveService -> updateGraveEntry("14","5","firstName2Test2", "MTest2", "lastNameTest2", "2018/11/21", "1962-02-23", "Test Description. I need to test if ' work in words like don't. Test2", "1",48.109362, -70.659403, "UpdateTestTest2", "Test2Test2", "Test2", 1);
-$graveService -> deleteGraveEntry("5");
-/*
-echo "<br><br>";
-var_dump($naturalHistoryService->getAllNaturalHistoryEntries());
-$naturalHistoryService -> createNaturalHistoryEntry("naturalHistoryService", "commonName", "description", 40.109362, -77.659403, "naturalHistoryService", "Test", "", 2);
-$naturalHistoryService->updateNaturalHistoryEntry("44","9","Test1", "commonName", "description", 43.109362, -77.659403, "UpdateTest", "Test", "", 2);
-$naturalHistoryService->deleteNaturalHistoryEntry("6");
-
-echo "<br><br>";
-var_dump($miscObjectService->getAllMiscObjectEntries());
-$miscObjectService -> createMiscObjectEntry("miscObjectService", "Yes", "description",43.109362, -77.659403, "miscObjectService", "Test2", "", 3);
-$miscObjectService->updateMiscObjectEntry("45", "7", "name1", "Yes", "description",43.109362, -77.659403, "UpdateTest", "Test", "", 3);
-$miscObjectService->deleteMiscObjectEntry("4");
-
-echo "<br><br>";
-var_dump($contactService->getAllContactEntries());
-$contactService->createContactEntry("Name1", "email1@email.com", "description", "333-3333333", "Boss");
-$contactService->updateContactEntry("6", "Name3", "email3@email.com", "description1", "333-3333333", "Boss3");
-$contactService->deleteContactEntry("6");
-
-echo "<br><br>";
-var_dump($fAQService->getAllFAQEntries());
-$fAQService->createFAQEntry("make a question?", "make an answer.");
-$fAQService->updateFAQEntry("6", "make a question3?", "make an answer.3");
-$fAQService->deleteFAQEntry("6");
-
-echo "<br><br>";
-var_dump($historicFilterService->getAllHistoricFilterEntries());
-$historicFilterService->createHistoricFilterEntry("Name1", "3018/11/31", "description", "3018/11/31", "#4386f4");
-$historicFilterService->updateHistoricFilterEntry("8", "Name3", "3318/11/33", "description3", "3038/11/31", "#6g86f4");
-$historicFilterService->deleteHistoricFilterEntry("8");
-
-echo "<br><br>";
-var_dump($typeFilterService->getAllTypeFilterEntries());
-$typeFilterService->createTypeFilterEntry("Name1", null, "#4386f4");
-$typeFilterService->updateTypeFilterEntry("7", "Name3", "https:www.moma.org/collection/works/174300", null);
-$typeFilterService->deleteTypeFilterEntry("7");
-
-echo "<br><br>";
-var_dump($widerAreaMapService->getAllWiderAreaMapEntries());
-$widerAreaMapService->createWiderAreaMapEntry("www.google.com", "name1", "description", 43.109363, 43.109363, "Address1", "city1", "state1", 13345);
-$widerAreaMapService->updateWiderAreaMapEntry("7", "www.facebook.com", "name3", "description3", -77.659403, -77.659403, "Address3", "city3", "state1", 13345);
-$widerAreaMapService->deleteWiderAreaMapEntry("7");
-
-echo "<br><br>";
-var_dump($eventService->getAllEventEntries());
-$eventService->createEventEntry("name1", "description", "11:00", "12:00", "1");
-//TODO figure out how to get the correct time
-$eventService->updateEventEntry("5", "name3", "description3", "12:00", "1:00", "2");
-$eventService->deleteEventEntry("5");
-*/
 ?>
 
 <!-- HTML -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <!-- The meta tags MUST come first in the head; any other head content must come *after* these tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title> Admin Panel </title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Favicon Info -->
     <link rel="stylesheet" href="../css/admin/home.css" type="text/css">
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -112,11 +68,15 @@ $eventService->deleteEventEntry("5");
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="../favicon/site.webmanifest">
     <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- JQUERY Datatable Plugin -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-    <script src="../js/AdminHome.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom Style -->
+    <script src="../js/AdminHome.js"></script>
+
 </head>
 <body>
 
@@ -135,46 +95,54 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
+
+
 <!-- Filters Selects-->
 <div class="container" id="tabContainer">
-	<div class="row" id="tabRow">
-		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="leftMenu">
-			<ul id="myTab" class="nav nav-tabs">
-				<li class="active">
-					<a href="#graveDiv" data-toggle="tab">
-						Graves
-					</a>
-				</li>
-				<li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
-				<li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
-				<li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
-				<li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
-				<li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
-				<li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
-				<li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
-				<li><a href="#eventDiv" data-toggle="tab">Events</a></li>
-			</ul>
-		</div>
-		<div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
-			<a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-			   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Create +
-			</a>
-			<ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
-				<li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
-				<li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
-				<li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
-				<li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a></li>
-				<li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
-				<li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area Location</a></li>
-				<li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
-				<li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="row" id="tabRow">
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="leftMenu">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#graveDiv" data-toggle="tab">
+                        Graves
+                    </a>
+                </li>
+                <li><a href="#naturalHistoryDiv" data-toggle="tab">Natural History</a></li>
+                <li><a href="#miscDiv" data-toggle="tab">Miscellaneous</a></li>
+                <li><a href="#typeDiv" data-toggle="tab">Type Filters</a></li>
+                <li><a href="#historicDiv" data-toggle="tab">Historic Filters</a></li>
+                <li><a href="#faqDiv" data-toggle="tab">FAQ</a></li>
+                <li><a href="#widerLocationDiv" data-toggle="tab">Wider Area Locations</a></li>
+                <li><a href="#contactDiv" data-toggle="tab">Contacts</a></li>
+                <li><a href="#eventDiv" data-toggle="tab">Events</a></li>
+            </ul>
+        </div>
+
+        <!-- Create Dropdown-->
+        <div class="dropdown col-xs-1 col-sm-1 col-md-1 col-lg-1" id="rightMenu">
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Create +
+            </a>
+            <ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#graveDiv" onclick="createGrave()">Grave</a></li>
+                <li><a class="dropdown-item" href="#naturalHistoryDiv" onclick="createNH()">Natural History</a></li>
+                <li><a class="dropdown-item" href="#miscDiv" onclick="createMisc()">Micellaneous</a></li>
+                <li><a class="dropdown-item" href="#typeDiv" onclick="createTypeFilter()">Type Filter</a></li>
+                <li><a class="dropdown-item" href="#historicDiv" onclick="createHistoricFilter()">Historic Filter</a>
+                </li>
+                <li><a class="dropdown-item" href="#faqDiv" onclick="createFAQ()">FAQ</a></li>
+                <li><a class="dropdown-item" href="#widerLocationDiv" onclick="createWiderLocation()">Wider Area
+                        Location</a></li>
+                <li><a class="dropdown-item" href="#contactDiv" onclick="createContact()">Contact</a></li>
+                <li><a class="dropdown-item" href="#eventDiv" onclick="createEventEntry()">Event</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
+<!-- DataTable Headers and Rows-->
+<!-- Grave Datatable-->
 <div class="container" id="tabBar">
     <div class="container1">
         <div class="row">
@@ -210,6 +178,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Natural History Datatable-->
                     <div class="tab-pane fade" id="naturalHistoryDiv">
                         <div class="content_accordion">
                             <table id="naturalHistory" class="table table-striped table-bordered" style="width:100%">
@@ -235,6 +204,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Miscellaneous Datatable-->
                     <div class="tab-pane fade" id="miscDiv">
                         <div class="content_accordion">
                             <table id="misc" class="table table-striped table-bordered" style="width:100%">
@@ -261,6 +231,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Type Filter Datatable-->
                     <div class="tab-pane fade" id="typeDiv">
                         <div class="content_accordion">
                             <table id="type" class="table table-striped table-bordered" style="width:100%">
@@ -282,6 +253,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Historic Filter Datatable-->
                     <div class="tab-pane fade" id="historicDiv">
                         <div class="content_accordion">
                             <table id="historic" class="table table-striped table-bordered" style="width:100%">
@@ -307,6 +279,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- FAQ Datatable-->
                     <div class="tab-pane fade" id="faqDiv">
                         <div class="content_accordion">
                             <table id="faq" class="table table-striped table-bordered" style="width:100%">
@@ -327,6 +300,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Trail Datatable-->
                     <div class="tab-pane fade" id="widerLocationDiv">
                         <div class="content_accordion">
                             <table id="widerLocation" class="table table-striped table-bordered" style="width:100%">
@@ -341,6 +315,8 @@ $eventService->deleteEventEntry("5");
                                     <th>City</th>
                                     <th>State</th>
                                     <th>Zip Code</th>
+                                    <th>Image Description</th>
+                                    <th>Image Location</th>
                                 </tr>
                                 </thead>
 
@@ -355,6 +331,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Contact Datatable-->
                     <div class="tab-pane fade" id="contactDiv">
                         <div class="content_accordion">
                             <table id="contact" class="table table-striped table-bordered" style="width:100%">
@@ -379,6 +356,7 @@ $eventService->deleteEventEntry("5");
                         <!--accordion end-->
                     </div>
 
+                    <!-- Event Datatable-->
                     <div class="tab-pane fade" id="eventDiv">
                         <div class="content_accordion">
                             <table id="event" class="table table-striped table-bordered" style="width:100%">
@@ -410,22 +388,22 @@ $eventService->deleteEventEntry("5");
         </div>
     </div>
 </div>
-		<script>
-		$('#myTab a').click(function(e) {
-			e.preventDefault();
-			$(this).tab('show');
-		});
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
 
-		// store the currently selected tab in the hash value
-		$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
-			var id = $(e.target).attr("href").substr(1);
-			window.location.hash = id;
-		});
+    // store the currently selected tab in the hash value
+    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
+        var id = $(e.target).attr("href").substr(1);
+        window.location.hash = id;
+    });
 
-		// on load of the page: switch to the currently selected tab
-		var hash = window.location.hash;
-		$('#myTab a[href="' + hash + '"]').tab('show');
-		</script>
+    // on load of the page: switch to the currently selected tab
+    var hash = window.location.hash;
+    $('#myTab a[href="' + hash + '"]').tab('show');
+</script>
 
 <div class="container invisible">
     <select class="form-control form-control-sm typeSelect" id="typeSelect">
@@ -549,7 +527,5 @@ $eventService->deleteEventEntry("5");
         $('#widerLocation').DataTable();
         $('#contact').DataTable();
         $('#event').DataTable();
-
-
     });
 </script>

@@ -11,27 +11,19 @@ $filterBar = $mapData -> generateFilterBar();
 <!-- HTML -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- The meta tags MUST come first in the head; any other head content must come *after* these tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
     <title> Rapids Cemetery Map </title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/thirdParty/font-awesome.css" type="text/css">
-    <link href="css/thirdParty/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/thirdParty/YouTubePopUp.css" rel="stylesheet">
-    <link href="css/thirdParty/imagehover.css" rel="stylesheet">
-    <link href="css/thirdParty/dropdoun.css" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Favicon Info -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -54,8 +46,8 @@ $filterBar = $mapData -> generateFilterBar();
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 
-
-    <script src="../js/MapScript.js"></script>
+    <!-- Custom Style and Scripts -->
+    <script src="js/MapScript.js"></script>
     <link rel="stylesheet" href="css/maps.css" type="text/css">
     <link rel="stylesheet" href="css/navbar.css" type="text/css">
     <link rel="stylesheet" href="css/filterbar.css" type="text/css">
@@ -66,7 +58,6 @@ $filterBar = $mapData -> generateFilterBar();
 <?php include_once 'components/NavBar.php'; ?>
 
 <!--Map Filters -->
-
 <?php
 echo $filterBar;
 ?>
@@ -83,11 +74,11 @@ echo $filterBar;
 </body>
 
 </html>
-</DOCTYPE>
 
 <!-- Javascript -->
 <script type="text/javascript">
     var map, infoWindow, mark;
+    <!-- allMarkerObjects is populated on page load by PHP -->
     var allMarkerObjects = [];
 
     function initMap() {
@@ -115,7 +106,14 @@ echo $filterBar;
                     map: map,
                     icon: "images/pins/userMarker.png"
                 });
-                var myVar = setInterval(updateUserLocation, 15000);
+                /*
+                UPDATE NEEDED:
+                UPDATE INTERVAL TIME: 5 seconds
+                Interval is currently commented out as Rapids Cemetery Sponsors
+                are deciding on whether it is worth paying for an SSL Cert that
+                will allow user location functionality through Google Maps.
+                 */
+                //setInterval(updateUserLocation, 15000);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -123,14 +121,9 @@ echo $filterBar;
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-
-        //its in ms so 1000ms/second
-
     }
 
     function updateUserLocation() {
-        <!-- This needs to be tested -->
-        // HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
@@ -167,7 +160,6 @@ echo $filterBar;
             data: "getMapCardInfoID=" + String(idTrackableObject),
             dataType: "text",
             success: function (data) {
-                //alert(data);
                 showModal(data);
             }
         });
@@ -180,61 +172,10 @@ echo $filterBar;
         $("#exampleModalLong").modal("show");
     }
 
-    $(document).ready(function () {
-        $("#flip").click(function () {
-            $("#panel").slideToggle("slow");
-        });
-    });
-    $("#flip").on('click', function () {
-        $(this).children('i.fa-sort-down').toggleClass('i.fa-sort-up');
-    });
-
-
 </script>
+<!------ UPDATE NEEDED:  Correct API Key for Google Maps Javascript ------>
+<!------ Example API Key shown here: https://developers.google.com/maps/documentation/javascript/get-api-key ------->
 
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key='RAPIDS_CEMETERY_API_KEY'&callback=initMap">
 </script>
-
-<style>
-    .popup-overlay {
-        z-index: 999;
-        position: absolute;
-        background: #ffffff;
-
-        width: 100%;
-        height: 100%;
-        left: 0%;
-        top: 0%;
-    }
-
-    .popup-overlay.active {
-        /*displays pop-up when "active" class is present*/
-        visibility: visible;
-        text-align: center;
-    }
-
-    .popup-content.active {
-        /*Shows pop-up content when "active" class is present */
-        visibility: visible;
-    }
-
-    #panel, #flip {
-        padding: 5px;
-        text-align: center;
-        background-color: #e5eecc;
-        border: solid 1px #c3c3c3;
-    }
-
-    #panel {
-        display: none;
-    }
-
-    .secondmenu input[type="radio"] {
-        opacity: 0;
-    }
-
-    .paragraph {
-        margin: 80px 0px 10px !important;
-    }
-</style>

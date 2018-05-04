@@ -1,9 +1,44 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createContact($name, $email, $description, $phone, $title)
+ *  readContact()
+ *  updateContact($idContact, $name, $email, $description, $phone, $title)
+ *  deleteContact($idContact)
  */
+
 class NaturalHistoryObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $commonName
+     * @param $scientificName
+     * @param $description
+     * @return string
+     */
+    public function createNaturalHistoryObject($commonName, $scientificName, $description) {
+        try {
+            //global $createNaturalHistoryObjectQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO NaturalHistory (commonName,scientificName,description) VALUES  (:commonName,:scientificName,:description)");
+
+
+            $stmt -> bindParam(':commonName', $commonName, PDO::PARAM_STR);
+            $stmt -> bindParam(':scientificName', $scientificName, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+
+            $stmt -> execute();
+            return $this -> getDBInfo(1) -> lastInsertId();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -23,29 +58,16 @@ class NaturalHistoryObjectData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
-        }
-        return null;
-    }
-
-    public function createNaturalHistoryObject($commonName, $scientificName, $description) {
-        try {
-            //global $createNaturalHistoryObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO NaturalHistory (commonName,scientificName,description) VALUES  (:commonName,:scientificName,:description)");
-
-
-            $stmt -> bindParam(':commonName', $commonName, PDO::PARAM_STR);
-            $stmt -> bindParam(':scientificName', $scientificName, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-
-            $stmt -> execute();
-            return $this -> getDBInfo(1) -> lastInsertId();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readNaturalHistoryObject() {
         try {
             //global $getAllNaturalHistoryEntriesQuery;
@@ -53,11 +75,19 @@ class NaturalHistoryObjectData {
 JOIN TrackableObject T ON NM.idNaturalHistory = T.idNaturalHistory 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idNaturalHistory
+     * @param $commonName
+     * @param $scientificName
+     * @param $description
+     */
     public function updateNaturalHistoryObject($idNaturalHistory, $commonName, $scientificName, $description) {
         try {
             //global $updateNaturalHistoryObjectQuery;
@@ -70,11 +100,16 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idNaturalHistory
+     */
     public function deleteNaturalHistoryObject($idNaturalHistory) {
         try {
             //global $deleteNaturalHistoryObjectQuery;
@@ -82,8 +117,9 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
             $stmt -> bindParam(':idNaturalHistory', $idNaturalHistory, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

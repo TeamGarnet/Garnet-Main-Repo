@@ -1,3 +1,9 @@
+/*
+Team Garnet Notes: This file can be split up by create, deletes, and updates for better readability.
+ */
+<!-- OBJECT DELETION FUNCTIONS -->
+
+<!-- Grave Deletion -->
 function deleteGrave(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -22,6 +28,7 @@ function deleteGrave(id) {
     });
 }
 
+<!-- Natural History Deletion -->
 function deleteNH(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -46,6 +53,7 @@ function deleteNH(id) {
     });
 }
 
+<!-- Miscellaneous Deletion -->
 function deleteMisc(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -70,6 +78,7 @@ function deleteMisc(id) {
     });
 }
 
+<!-- Type Filter Deletion -->
 function deleteType(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -80,41 +89,11 @@ function deleteType(id) {
                 data: 'deleteType=' + String(id) + '&action=delete',
                 success: function (data) {
                     $('.deleteModal').modal('hide');
-                    if (data != "") {
+                    if (data != "" && id != null) {
                         $('.messageContent').html('');
                         $('.messageContent').append(data);
                         $('.message').modal('show');
-                    }else {
-                        location.reload(true);
-                    }
-                    return true;
-                },
-                dataType: "text",
-                processData: false,
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status);
-                    alert(thrownError);
-                }
-            });
-        });
-    });
-}
-
-function deleteHistoricFilter(id) {
-    $(document).ready(function () {
-        $('#deleteModal').modal('show');
-        $('.confirm').click(function () {
-            $.ajax({
-                type: "POST",
-                url: "../ajaxCalls.php",
-                data: 'deleteHistoricFilter=' + String(id) + '&action=delete',
-                success: function (data) {
-                    $('.deleteModal').modal('hide');
-                    if ((id == 0 )) {
-                        $('.messageContent').html('');
-                        $('.messageContent').append("Cannot delete 'No Historic Filter' default filter.");
-                        $('.message').modal('show');
+                        id = null;
                     } else {
                         location.reload(true);
                     }
@@ -132,6 +111,40 @@ function deleteHistoricFilter(id) {
     });
 }
 
+<!-- Historic Filter Deletion -->
+function deleteHistoricFilter(id) {
+    $(document).ready(function () {
+        $('#deleteModal').modal('show');
+        $('.confirm').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "../ajaxCalls.php",
+                data: 'deleteHistoricFilter=' + String(id) + '&action=delete',
+                success: function (data) {
+                    $('.deleteModal').modal('hide');
+                    if (data != "" && id != null) {
+                        $('.messageContent').html('');
+                        $('.messageContent').append(data);
+                        $('.message').modal('show');
+                        id = null;
+                    } else {
+                        location.reload(true);
+                    }
+                    return true;
+                },
+                dataType: "text",
+                processData: false,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+        });
+    });
+}
+
+<!-- FAQ Deletion -->
 function deleteFAQ(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -156,6 +169,7 @@ function deleteFAQ(id) {
     });
 }
 
+<!-- Trail Deletion -->
 function deleteLocation(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -180,6 +194,7 @@ function deleteLocation(id) {
     });
 }
 
+<!-- Contact Deletion -->
 function deleteContact(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -203,7 +218,7 @@ function deleteContact(id) {
         });
     });
 }
-
+<!-- Event Deletion -->
 function deleteEvent(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -228,8 +243,12 @@ function deleteEvent(id) {
     });
 }
 
+<!-- MODAL GENERATION -->
+
+<!-- Update Modal -->
 function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idWiderAreaMap) {
     // Grab current table header value and corresponding table data value
+    $('#updateModalBody').empty();
     var input = '';
     var isHazard = "";
     $(tableID + ' th').each(function (index) {
@@ -242,6 +261,10 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             attribute = attribute.replace('?', '');
             labelText = labelText.replace('?', '');
         }
+
+        /*
+        Team Garnet Notes: This can probably be refactored. It currently looks at headers and makes the field types based off of the header name. Sponsors would like text fields to be bigger to show large text.
+         */
         if (labelText == "Start Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -271,7 +294,6 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             if (tableID == "#misc") {
                 input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="typeFilter" id="typeFilter"></div><br>';
             }
-
         } else if (labelText == "Historic Filter:") {
             input += '<label for="' + attribute + '">' + labelText + '</label><br><div class="hisFilter" id="hisFilter"></div>';
 
@@ -282,6 +304,17 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
                 '<input type="date" id="' + attribute + '" name="' + attribute + '" value="' + tdVal +
                 '" autocomplete="off"/>';
+
+        } else if (labelText == "Name:" && (tableID == "#type" || tableID == "#historic")) {
+            if (labelText == "Name:" && (idTypeFilter == 1 || idTypeFilter == 2 || idTypeFilter == 3 || idHistoricFilter == 0 || idTypeFilter == 4)) {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' +
+                    tdVal + '" autocomplete="off" disabled/>';
+            } else {
+                input += '<label for="' + attribute + '">' + labelText + '</label>' +
+                    '<input type="text" id="' + attribute + '" name="' + attribute + '" value="' +
+                    tdVal + '" autocomplete="off"/>';
+            }
 
         } else {
             input += '<label for="' + attribute + '">' + labelText + '</label>' +
@@ -336,7 +369,13 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
     });
 }
 
+<!-- Create Modal -->
 function generateCreateModal(tableID) {
+    /*
+        Team Garnet Notes: This can probably be refactored. It currently looks at headers and makes the field types based off of the header name. Sponsors would like text fields to be bigger to show large text.
+         */
+
+    $('#createModalBody').empty();
     var input = '';
     $(tableID + ' th').each(function (index) {
         var attribute = $(this).text().replace(/ /g, '');
@@ -396,18 +435,19 @@ function generateCreateModal(tableID) {
         $(".locationSelect.currentFilter").removeClass("invisible");
     }
 
-    // Show modal
-    $(document).ready(function () {
-        $('#createModal').modal('show');
-    });
+
+    $('#createModal').modal('show');
 }
 
+<!-- OBJECT UPDATE FUNCTIONS -->
+
+<!-- Update Grave -->
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
     generateUpdateModal('#grave', rowID, idHistoricFilter, idTypeFilter, null);
     $('#updateModalTitle').text('Update Grave');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': idTrackableObject,
             'idGrave': idGrave,
@@ -438,12 +478,13 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
     });
 }
 
+<!-- Update Natural History -->
 function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#naturalHistory', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Natural History');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': parseInt(idTrackableObject),
             'idNaturalHistory': parseInt(idNaturalHistory),
@@ -470,12 +511,13 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     });
 }
 
+<!-- Update Miscellaneous -->
 function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#misc', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Miscellaneous');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTrackableObject': idTrackableObject,
             'idMiscObject': idMiscObject,
@@ -501,12 +543,13 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     });
 }
 
+<!-- Update Type Filter -->
 function updateType(rowID, idTypeFilter) {
     generateUpdateModal('#type', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Type');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idTypeFilter': idTypeFilter,
             'Name': $('#Name').val(),
@@ -526,12 +569,13 @@ function updateType(rowID, idTypeFilter) {
     });
 }
 
+<!-- Update Historic Filter -->
 function updateHistoricFilter(rowID, idHistoricFilter) {
     generateUpdateModal('#historic', rowID, idHistoricFilter, null, null);
     $('#updateModalTitle').text('Update Historic Filter');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idHistoricFilter': idHistoricFilter,
             'Name': $('#Name').val(),
@@ -553,12 +597,13 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
     });
 }
 
+<!-- Update FAQ -->
 function updateFAQ(rowID, idFAQ) {
     generateUpdateModal('#faq', rowID, null, null, null);
     $('#updateModalTitle').text('Update FAQ');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idFAQ': idFAQ,
             'Question': $('#Question').val(),
@@ -577,12 +622,13 @@ function updateFAQ(rowID, idFAQ) {
     });
 }
 
+<!-- Update Trail -->
 function updateLocation(rowID, idWiderAreaMap) {
     generateUpdateModal('#widerLocation', rowID, null, null, null);
     $('#updateModalTitle').text('Update Wider Area Location');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idWiderAreaMap': idWiderAreaMap,
             'Site': $('#Site').val(),
@@ -593,7 +639,9 @@ function updateLocation(rowID, idWiderAreaMap) {
             'Address': $('#Address').val(),
             'City': $('#City').val(),
             'State': $('#State').val(),
-            'ZipCode': $('#ZipCode').val()
+            'ZipCode': $('#ZipCode').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val()
         };
 
         $.ajax({
@@ -608,12 +656,13 @@ function updateLocation(rowID, idWiderAreaMap) {
     });
 }
 
+<!-- Update Contact -->
 function updateContact(rowID, idContact) {
     generateUpdateModal('#contact', rowID, null, null, null);
     $('#updateModalTitle').text('Update Contact');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idContact': idContact,
             'Name': $('#Name').val(),
@@ -635,12 +684,13 @@ function updateContact(rowID, idContact) {
     });
 }
 
+<!-- Update Event -->
 function updateEvent(rowID, idEvent, idWiderAreaMap) {
     generateUpdateModal('#event', rowID, null, null, idWiderAreaMap);
     $('#updateModalTitle').text('Update Event');
 
     // Make AJAX POST request with JSON object to update entry in database
-    $('#saveChanges').click(function () {
+    $('#saveChanges').unbind('click').bind('click', function () {
         var formData = {
             'idEvent': idEvent,
             'Name': $('#Name').val(),
@@ -672,11 +722,14 @@ function cancelCreate() {
     $('#createModalBody').empty();
 }
 
+<!-- OBJECT CREATE FUNCTIONS -->
+
+<!-- Create Grave -->
 function createGrave() {
     $('#createModalTitle').text('Create Grave');
     generateCreateModal('#grave');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'FirstName': $('#FirstName').val(),
             'MiddleName': $('#MiddleName').val(),
@@ -704,11 +757,12 @@ function createGrave() {
     });
 }
 
+<!-- Create Natural History-->
 function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'CommonName': $('#CommonName').val(),
             'ScientificName': $('#ScientificName').val(),
@@ -732,11 +786,12 @@ function createNH() {
     });
 }
 
+<!-- Create Miscellaneous-->
 function createMisc() {
     $('#createModalTitle').text('Create Miscellaneous');
     generateCreateModal('#misc');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),
@@ -761,11 +816,12 @@ function createMisc() {
     });
 }
 
+<!-- Create Type Filter-->
 function createTypeFilter() {
     $('#createModalTitle').text('Create Type Filter');
     generateCreateModal('#type');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'PinDesign': $('#PinDesign').val(),
@@ -784,11 +840,12 @@ function createTypeFilter() {
     });
 }
 
+<!-- Create Historic Filter-->
 function createHistoricFilter() {
     $('#createModalTitle').text('Create Historic Filter');
     generateCreateModal('#historic');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'StartDate': $('#StartDate').val(),
@@ -809,11 +866,12 @@ function createHistoricFilter() {
     });
 }
 
+<!-- Create FAQ -->
 function createFAQ() {
     $('#createModalTitle').text('Create FAQ');
     generateCreateModal('#faq');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Question': $('#Question').val(),
             'Answer': $('#Answer').val()
@@ -831,11 +889,12 @@ function createFAQ() {
     });
 }
 
+<!-- Create Trail -->
 function createWiderLocation() {
     $('#createModalTitle').text('Create Wider Area Location');
     generateCreateModal('#widerLocation');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Site': $('#Site').val(),
             'Name': $('#Name').val(),
@@ -845,7 +904,9 @@ function createWiderLocation() {
             'Address': $('#Address').val(),
             'City': $('#City').val(),
             'State': $('#State').val(),
-            'ZipCode': $('#ZipCode').val()
+            'ZipCode': $('#ZipCode').val(),
+            'ImageDescription': $('#ImageDescription').val(),
+            'ImageLocation': $('#ImageLocation').val()
         };
 
         $.ajax({
@@ -860,11 +921,12 @@ function createWiderLocation() {
     });
 }
 
+<!-- Create Contact -->
 function createContact() {
     $('#createModalTitle').text('Create Contact');
     generateCreateModal('#contact');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Email': $('#Email').val(),
@@ -885,11 +947,12 @@ function createContact() {
     });
 }
 
+<!-- Create Event -->
 function createEventEntry() {
     $('#createModalTitle').text('Create Event');
     generateCreateModal('#event');
 
-    $('#createObject').click(function () {
+    $('#createObject').unbind('click').bind('click', function () {
         var formData = {
             'Name': $('#Name').val(),
             'Description': $('#Description').val(),

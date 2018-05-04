@@ -4,6 +4,7 @@ include_once 'models/MapPin.class.php';
 include_once 'models/FilterButton.class.php';
 include_once 'components/FilterBar.class.php';
 include_once 'components/TrackableObjectCard.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
@@ -118,24 +119,14 @@ class MapService {
      * }})(marker2));
      */
     public function generateInfoWindowConfig($pin, $markerName) {
-        /*
-        $infoWindowContent = ' " ' . "<div id=" . "'infoWindow'><image src='"
-            . $pin -> getImageLocation() . "' alt='"
-            . $pin -> getImageDescription() . "' ></image><br><h2 class='pinName'>"
-            . $pin -> getName() . "</h2><br><a class= 'pinLink' href='#' onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . ");'> Learn more about "
-            . $pin -> getName() . "</a> </div>" . '"';
-
-        */
-
         $infoWindowContent = '"' . "<div><div class='first' style = 'width:250px;height:auto;text-align:center'><img src='"
             . $pin -> getImageLocation()
             . "' alt='"
             . $pin -> getImageDescription() . "' style=width:100px;height:100px;/></br><h4>"
             . $pin -> getName()
             . "</h4>"
-            . "</br></br><button onclick='loadObjectInfo("
-            . $pin -> getIdTrackableObject() . ")' class='btn' style='border-radius:25px;color:#ec5e07;background-color: #fff;border-color: #ec5e07;padding:5px !important;'>Learn More</button></div></div>"
+            . "<button onclick='loadObjectInfo("
+            . $pin -> getIdTrackableObject() . ")' class='btn mapBtn'>Learn More</button></div></div>"
             . '"';
 
         $infoWindowGenerator = "var infowindow = new google.maps.InfoWindow();";
@@ -149,7 +140,20 @@ class MapService {
         return $infoWindowGenerator . $infoWindowListener;
     }
 
+    /**
+     * Generates HTML and CSS for the filter bar
+     * @return string: String of html to be appended to the map page.
+     */
+    public function generateFilterBar() {
+        $allFilterObjects = $this -> getFilterInfo();
+        $filterBar = new FilterBar($allFilterObjects);
+        return $filterBar -> getFilterBar();
+    }
 
+    /**
+     * Collects all the Filters that are available for filters.
+     * @return array: An array of filter objects.
+     */
     public function getFilterInfo() {
         $dataClass = new MapData();
         $filterData = $dataClass -> getAllFilters();
@@ -163,12 +167,10 @@ class MapService {
         return $allFilterObjects;
     }
 
-    public function generateFilterBar() {
-        $allFilterObjects = $this -> getFilterInfo();
-        $filterBar = new FilterBar($allFilterObjects);
-        return $filterBar -> getFilterBar();
-    }
-
+    /**
+     * Collects information for a specific TrackableObject.
+     * @return array: An array of filter objects.
+     */
     public function getMapCardInfo($idTrackableObject) {
         $mapData = new MapData();
         $cardData = $mapData -> getMapCardData($idTrackableObject);

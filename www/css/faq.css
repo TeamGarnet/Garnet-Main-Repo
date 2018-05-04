@@ -32,6 +32,7 @@ hr.style17 {
     border-top: 1px solid #8c8b8b;
     text-align: center;
 }
+
 hr.style17:after {
     content: '§';
     display: inline-block;
@@ -44,4 +45,16 @@ hr.style17:after {
     -webkit-transform: rotate(60deg);
     -moz-transform: rotate(60deg);
     transform: rotate(60deg);
+}
+
+.btn.downloadLink {
+    background-color: #97583a !important;
+    color: white !important;
+    font-family: Proza Libre !important;
+    font-weight: bold;
+}
+
+.downloadLink:hover {
+    background-color: #6b7749 !important;
+    color: white !important;
 }

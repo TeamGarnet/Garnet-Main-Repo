@@ -4,7 +4,7 @@ USE `RapidsCemetery`;
 --
 -- Host: localhost    Database: RapidsCemetery
 -- ------------------------------------------------------
--- Server version	5.1.73
+-- Server version 5.1.73
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,7 +41,6 @@ CREATE TABLE `Contact` (
 
 LOCK TABLES `Contact` WRITE;
 /*!40000 ALTER TABLE `Contact` DISABLE KEYS */;
-INSERT INTO `Contact` VALUES (1,'John Curran','JohnCurren@Rapids.com','My name is John and I\'m usually at the cemetery Sundays 12:30-3:30PM.','750285028','titleName'),(2,'Test Person','test@person.com','I am a test person.','750285020','title');
 /*!40000 ALTER TABLE `Contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +70,6 @@ CREATE TABLE `Event` (
 
 LOCK TABLES `Event` WRITE;
 /*!40000 ALTER TABLE `Event` DISABLE KEYS */;
-INSERT INTO `Event` VALUES (1,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2),(2,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2),(3,'Spring Festival Picnic','The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others','2018-12-31 14:00:00','2018-12-31 10:30:00',2);
 /*!40000 ALTER TABLE `Event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +94,6 @@ CREATE TABLE `FAQ` (
 
 LOCK TABLES `FAQ` WRITE;
 /*!40000 ALTER TABLE `FAQ` DISABLE KEYS */;
-INSERT INTO `FAQ` VALUES (1,'How do I ask a question on this?',' I don\'t know how do I get an anwser.'),(2,'What do I need to remember to escape?','Apsotophes can be an issue at times');
 /*!40000 ALTER TABLE `FAQ` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +125,7 @@ CREATE TABLE `Grave` (
 
 LOCK TABLES `Grave` WRITE;
 /*!40000 ALTER TABLE `Grave` DISABLE KEYS */;
-INSERT INTO `Grave` VALUES (1,'John','M','Smith','1962-02-21','1989-02-21','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(2,'Jane','T','Doe','1755-02-23','1777-12-02','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',1),(3,'Patrick','F','Franklin','1845-11-11','1869-01-14','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',2),(4,'James','H','McGuckin','1841-01-01','1885-01-01','His service was prestigious',1);
+INSERT INTO `Grave` VALUES (1,'James','H','McGuckin','1841-01-01','1885-01-01','His service was prestigious',1),(2,'','','Oakley','1841-01-01','1885-01-01','The Oakley family is mean to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.',0),(3,'','','Potter\'s Field','1841-01-01','1885-01-01','The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery enterance. The \"poorest of the poor\" were located here, most likely buried in a simple shroud with no burial marker.',0),(4,'','','Ballintine','1841-01-01','1885-01-01','This was the Ballintine Family Plot',0);
 /*!40000 ALTER TABLE `Grave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +150,6 @@ CREATE TABLE `Group` (
 
 LOCK TABLES `Group` WRITE;
 /*!40000 ALTER TABLE `Group` DISABLE KEYS */;
-INSERT INTO `Group` VALUES (1,'Doctor Lady','Big grave that show the doctor lady'),(2,'Oakley Family','The Oakley family is meant to be a representative of the early pioneer families. Research suggests that the first generation had a Revolutionary War vetern; the second generation fought in the War of 1812 and the next generation, Monroe Oakley, fought in the Civil War.'),(3,'Ballintine Family','The had a lot of sick children'),(4,'Potter\'s Field,','The Potter\'s Field area is desolate (foreground) and proceeds along the sidewalk towards the four posts of the cemetery entrance. The \"poorest of the poor\" were located here, most likely buried in a simple shroud with no burial marker.');
 /*!40000 ALTER TABLE `Group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +203,7 @@ CREATE TABLE `MiscObject` (
 
 LOCK TABLES `MiscObject` WRITE;
 /*!40000 ALTER TABLE `MiscObject` DISABLE KEYS */;
-INSERT INTO `MiscObject` VALUES (1,'Bee Hive','There is a bee hive in this area','No'),(2,'Random Hole','Disclaimer: There is a hole around this area. Now you cant sue','Yes'),(3,'Amphitheater','The amphitheater is used for events at the cemetery','No');
+INSERT INTO `MiscObject` VALUES (1,'Amphitheater seating','The amphitheater is used for events at the cemetery','No');
 /*!40000 ALTER TABLE `MiscObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +229,6 @@ CREATE TABLE `NaturalHistory` (
 
 LOCK TABLES `NaturalHistory` WRITE;
 /*!40000 ALTER TABLE `NaturalHistory` DISABLE KEYS */;
-INSERT INTO `NaturalHistory` VALUES (1,'Forget-Me-Not','scientificName','grows on tall, hairy stems which reach two feet in height. Blue blooms with yellow centers'),(2,'Black Raspberries','scientificName','This plant is native to eastern North America. Black seeded looking fruit'),(3,'Walnut Trees','scientificName','These trees grow walnuts, a walnut is the seed of a drupe or drupaceous nut these fall from up high');
 /*!40000 ALTER TABLE `NaturalHistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +272,7 @@ CREATE TABLE `TrackableObject` (
 
 LOCK TABLES `TrackableObject` WRITE;
 /*!40000 ALTER TABLE `TrackableObject` DISABLE KEYS */;
-INSERT INTO `TrackableObject` VALUES (1,43.129362,-77.639403,'qrCode','He was #1','imageDescription','/images/pins/default.png',1,1,NULL,NULL,3),(2,43.129434,-77.639395,'qrCode','He was always angry','imageDescription','images/pins/default.png',1,2,NULL,NULL,2),(3,43.129518,-77.639398,'qrCode','I guess Ill eat it know.','imageDescription','/images/pins/default.png',1,3,NULL,NULL,3),(4,43.129539,-77.639636,'qrCode','Look at allllll those flowerrss','imageDescription','/images/pins/default.png',2,NULL,1,NULL,2),(5,43.129545,-77.639701,'qrCode','Look at allllll those treessss','imageDescription','/images/pins/default.png',2,NULL,2,NULL,2),(6,43.129607,-77.639348,'qrCode','Look at allllll thattt grassss','imageDescription','/images/pins/default.png',2,NULL,3,NULL,2),(7,43.129617,-77.638936,'qrCode','3','imageDescription','/images/pins/default.png',4,NULL,NULL,2,1),(8,43.129617,-77.639403,'qrCode','3','imageDescription','/images/pins/default.png',3,NULL,NULL,1,2),(9,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Amphitheater Seating','/images/pins/amp.jpeg',3,NULL,NULL,3,NULL),(10,43.129361,-77.639027,'qrCode',NULL,'Image of McGuckin\'s tombstone','/images/pins/mcguckin.jpeg',1,4,NULL,NULL,NULL),(11,43.129387,-77.639330,'qrCode',NULL,'Image is of the Oakley hotel','/images/pins/oakleyhotel.jpeg',1,NULL,NULL,NULL,2),(12,43.129301,-77.639521,'qrCode',NULL,'Image of Potter\'s Field','/images/pins/potters.jpeg',1,NULL,NULL,NULL,4),(13,43.129356,-77.638774,'qrCode',NULL,'Image of the Ballintine\'s family plot','/images/pins/ballintine_family.jpeg',1,NULL,NULL,NULL,3);
+INSERT INTO `TrackableObject` VALUES (1,43.129581,-77.638892,'qrCode','This is where people will sit for the Amphitheater','Image of the Amphitheater Seating','/images/pins/amp.jpeg',3,NULL,NULL,1,NULL),(2,43.129361,-77.639027,'qrCode',NULL,'Image of McGuckin\'s tombstone','/images/pins/mcguckin.jpeg',1,1,NULL,NULL,NULL),(3,43.129387,-77.639330,'qrCode',NULL,'Image is of the Oakley hotel','/images/pins/oakleyhotel.jpeg',1,2,NULL,NULL,NULL),(4,43.129301,-77.639521,'qrCode',NULL,'Image of Potter\'s Field', '/images/pins/potters.jpeg',1,3,NULL,NULL,NULL),(5,43.129356,-77.638774,'qrCode',NULL,'Image of the Ballintine\'s family plot','/images/pins/ballintine_family.jpeg',1,4,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `TrackableObject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,7 +361,6 @@ CREATE TABLE `WiderAreaMap` (
 
 LOCK TABLES `WiderAreaMap` WRITE;
 /*!40000 ALTER TABLE `WiderAreaMap` DISABLE KEYS */;
-INSERT INTO `WiderAreaMap` VALUES (1,'Susan B Anthony Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://susanbanthonyhouse.org/index.php',-77.628100,43.153200,'17 Madison St','Rochester','NY',14608,'',''),(2,'Fredick Duglass Home','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.nps.gov/frdo/index.htm',-77.614809,43.128700,'1133 Mt Hope Ave','Rochester','NY',14620,NULL,NULL),(3,'Highland Park','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.','https://www.cityofrochester.gov/highlandpark/',-77.620700,43.128700,'180 Reservoir Ave','Rochester','NY',14620,NULL,NULL);
 /*!40000 ALTER TABLE `WiderAreaMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

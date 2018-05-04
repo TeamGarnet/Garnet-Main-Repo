@@ -1,9 +1,44 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
-/**
+/*
+ * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
+ * Functions:
+ *  getDBInfo($returnConn)
+ *  createMiscObject($name, $isHazard, $description)
+ *  readMiscObject()
+ *  updateMiscObject($idMisc, $name, $isHazard, $description)
+ *  deleteMiscObject($idMisc)
  */
+
 class MiscObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $name
+     * @param $isHazard
+     * @param $description
+     * @return string
+     */
+    public function createMiscObject($name, $isHazard, $description) {
+        try {
+            //global $createMiscObjectQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO MiscObject (name, description, isHazard) VALUES (:name, :description, :isHazard)");
+
+
+            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+
+            $stmt -> execute();
+            return $this -> getDBInfo(1) -> lastInsertId();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -23,29 +58,17 @@ class MiscObjectData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
     }
 
-    public function createMiscObject($name, $isHazard, $description) {
-        try {
-            //global $createMiscObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO MiscObject (name, description, isHazard) VALUES (:name, :description, :isHazard)");
-
-
-            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt -> bindParam(':isHazard', $isHazard, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-
-            $stmt -> execute();
-            return $this -> getDBInfo(1) -> lastInsertId();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
-    }
-
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readMiscObject() {
         try {
             //global $getAllMiscEntriesQuery;
@@ -53,11 +76,19 @@ class MiscObjectData {
 JOIN TrackableObject T ON M.idMisc = T.idMisc 
 JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idMisc
+     * @param $name
+     * @param $isHazard
+     * @param $description
+     */
     public function updateMiscObject($idMisc, $name, $isHazard, $description) {
         try {
             //global $updateMiscObjectQuery;
@@ -70,11 +101,16 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idMisc
+     */
     public function deleteMiscObject($idMisc) {
         try {
             //global $deleteMiscObjectQuery;
@@ -82,8 +118,9 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
             $stmt -> bindParam(':idMisc', $idMisc, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

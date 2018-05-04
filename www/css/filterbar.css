@@ -46,7 +46,7 @@
 }
 
 .btn-default:focus {
-    outline-color: #4D90FE !important;
+    outline: none !important;
 }
 
 #nav-fixed-bottom {

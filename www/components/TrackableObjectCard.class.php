@@ -54,24 +54,8 @@ class TrackableObjectCard {
         $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
     }
 
-    public function setNaturalHistoryInfo($cardDataArray) {
-        $this -> commonName = stripcslashes($cardDataArray['commonName']);
-        $this -> scientificName = stripcslashes($cardDataArray['scientificName']);
-        $this -> description = stripcslashes($cardDataArray['description']);
-        $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
-    }
-
-    public function setMiscObjectInfo($cardDataArray) {
-        $this -> name = $cardDataArray['name'];
-        $this -> isHazard = $cardDataArray['isHazard'];
-        $this -> description = stripcslashes($cardDataArray['description']);
-        $this -> imageLocation = $cardDataArray['imageLocation'];
-        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
-    }
-
     public function getGraveInfo() {
-        if ($this -> birth == "" && $this -> death == ""){
+        if ($this -> birth == "" && $this -> death == "") {
             $birthDate = "Unknown Birth Date";
             $deathDate = "Unkown Death Date";
         } else if ($this -> birth == "" && $this -> death != "") {
@@ -84,44 +68,16 @@ class TrackableObjectCard {
             $birthDate = $this -> birth;
             $deathDate = $this -> death;
         }
-            $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
-                . $this -> imageLocation . "' alt='"
-                . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
-                . $this -> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
-                . $birthDate . " - " . $deathDate . ")" . "</h4></h2>"
-                . $this -> description;
-
-        $modalStyle = $this -> getModalClosure();
-        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
-
-        echo $modal;
-        return $modal;
-    }
-
-    public function getNaturalHistoryInfo() {
-        $modalContent = "<div style='margin:3%;' class='naturalHistoryInfo'><img src='"
+        $modalContent = "<div style='margin:3%;' class='graveInfo'><img src='"
             . $this -> imageLocation . "' alt='"
             . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
-            . $this -> commonName . "</br><h4>"
-            . $this -> scientificName . "</h4></h2>"
+            . $this -> firstName . " " . $this -> lastName . "</br><h4 class='locationDate'>("
+            . $birthDate . " - " . $deathDate . ")" . "</h4></h2>"
             . $this -> description;
 
         $modalStyle = $this -> getModalClosure();
         $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
-        echo $modal;
-        return $modal;
-    }
 
-    public function getMiscObjectInfo() {
-        $modalContent = "<div style='margin:3%;' class='miscObjectInfo'><img src='"
-            . $this -> imageLocation . "' alt='"
-            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
-            . $this -> name . "</br><h4> Hazardous Location: "
-            . $this -> isHazard . "</h4></h2>"
-            . $this -> description;
-
-        $modalStyle = $this -> getModalClosure();
-        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
         echo $modal;
         return $modal;
     }
@@ -145,5 +101,49 @@ class TrackableObjectCard {
         </div>
     </div>
 </div>';
+    }
+
+    public function setNaturalHistoryInfo($cardDataArray) {
+        $this -> commonName = stripcslashes($cardDataArray['commonName']);
+        $this -> scientificName = stripcslashes($cardDataArray['scientificName']);
+        $this -> description = stripcslashes($cardDataArray['description']);
+        $this -> imageLocation = $cardDataArray['imageLocation'];
+        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
+    }
+
+    public function getNaturalHistoryInfo() {
+        $modalContent = "<div style='margin:3%;' class='naturalHistoryInfo'><img src='"
+            . $this -> imageLocation . "' alt='"
+            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
+            . $this -> commonName . "</br><h4>"
+            . $this -> scientificName . "</h4></h2>"
+            . $this -> description;
+
+        $modalStyle = $this -> getModalClosure();
+        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
+        echo $modal;
+        return $modal;
+    }
+
+    public function setMiscObjectInfo($cardDataArray) {
+        $this -> name = $cardDataArray['name'];
+        $this -> isHazard = $cardDataArray['isHazard'];
+        $this -> description = stripcslashes($cardDataArray['description']);
+        $this -> imageLocation = $cardDataArray['imageLocation'];
+        $this -> imageDescription = stripcslashes($cardDataArray['imageDescription']);
+    }
+
+    public function getMiscObjectInfo() {
+        $modalContent = "<div style='margin:3%;' class='miscObjectInfo'><img src='"
+            . $this -> imageLocation . "' alt='"
+            . $this -> imageDescription . "' style=width:200px;height:auto;/></br><h2>"
+            . $this -> name . "</br><h4> Hazardous Location: "
+            . $this -> isHazard . "</h4></h2>"
+            . $this -> description;
+
+        $modalStyle = $this -> getModalClosure();
+        $modal = $this -> getModalContainerBegin() . $modalContent . $modalStyle . $this -> getModalContainerEnd();
+        echo $modal;
+        return $modal;
     }
 }

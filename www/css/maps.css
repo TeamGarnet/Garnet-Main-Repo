@@ -24,7 +24,38 @@
 }
 
 #map {
-    height: 90.8%;
+    height: 90%;
+}
+
+.popupModal {
+    font-family: Proza Libre !important;
+}
+
+.modal-footer > .btn {
+    background-color: #97583a !important;
+    color: #ffffff !important;
+    font-family: Proza Libre !important;
+}
+
+.modal-footer > .btn:hover {
+    background-color: #6b7749 !important;
+    border-color: #6b7749 !important;
+}
+
+.modal-footer > .btn:focus {
+    outline-color: transparent !important;
+}
+
+.first {
+    font-family: Proza Libre !important;
+}
+
+.first > button {
+    outline-color: transparent !important;
+}
+
+button:focus {
+    outline-color: transparent !important;
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -32,6 +63,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Proza Libre !important;
 }
 
 .pinName {
@@ -40,6 +72,16 @@ html, body {
 
 .pinLink {
 
+}
+
+.btn.mapBtn {
+    background-color: #97583a !important;
+    color: white !important;
+}
+
+.mapBtn:hover {
+    background-color: #6b7749 !important;
+    color: white !important;
 }
 
 /* CSS Document */
