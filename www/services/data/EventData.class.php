@@ -1,5 +1,6 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -11,7 +12,28 @@ include_once 'DatabaseConnection.class.php';
  *  deleteContactEntry($idContact)
  *  getAllEntriesAsRows()
  */
+
 class EventData {
+    public function createEvent($name, $description, $startTime, $endTime, $idWiderAreaMap) {
+        try {
+            //global $createEventQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO Event (name,description, startTime, endTime, idWiderAreaMap) VALUES (:name,:description, :startTime, :endTime, :idWiderAreaMap)");
+
+
+            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt -> bindParam(':idWiderAreaMap', $idWiderAreaMap, PDO::PARAM_STR);
+            $stmt -> bindParam(':startTime', $startTime, PDO::PARAM_STR);
+            $stmt -> bindParam(':endTime', $endTime, PDO::PARAM_STR);
+
+            $stmt -> execute();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -31,28 +53,11 @@ class EventData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function createEvent($name, $description, $startTime, $endTime, $idWiderAreaMap) {
-        try {
-            //global $createEventQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO Event (name,description, startTime, endTime, idWiderAreaMap) VALUES (:name,:description, :startTime, :endTime, :idWiderAreaMap)");
-
-
-            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-            $stmt -> bindParam(':idWiderAreaMap', $idWiderAreaMap, PDO::PARAM_STR);
-            $stmt -> bindParam(':startTime', $startTime, PDO::PARAM_STR);
-            $stmt -> bindParam(':endTime', $endTime, PDO::PARAM_STR);
-
-            $stmt -> execute();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 
     public function readEvent() {
@@ -60,8 +65,9 @@ class EventData {
             //global $getAllEventEntriesQuery;
             return $this -> getDBInfo(0) -> returnObject("", "SELECT idEvent, E.name, E.description, startTime, endTime, E.idWiderAreaMap, W.name AS locationName FROM Event E JOIN WiderAreaMap W ON E.idWiderAreaMap = W.idWiderAreaMap;");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -79,8 +85,9 @@ class EventData {
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -91,8 +98,9 @@ class EventData {
             $stmt -> bindParam(':idEvent', $idEvent, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -103,8 +111,9 @@ class EventData {
             $stmt -> bindParam(':idWiderAreaMap', $idWiderAreaMap, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

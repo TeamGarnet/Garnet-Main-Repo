@@ -1,6 +1,7 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 include_once 'query.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -8,7 +9,27 @@ include_once 'query.php';
  *  getDBInfo($returnConn)
  *  getAllTrailLocations()
  */
+
 class TrailData {
+    public function getAllTrailLocations() {
+        global $allTrailLocationQuery;
+        try {
+            $allTrailLocations = array();
+            $stmt = $this -> getDBInfo(1) -> prepare($allTrailLocationQuery);
+            $stmt -> execute();
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrailObject.class");
+            while ($result = $stmt -> fetch()) {
+                array_push($allTrailLocations, $result);
+            }
+
+            return $allTrailLocations;
+        } catch (Exception $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -28,26 +49,10 @@ class TrailData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function getAllTrailLocations() {
-        global $allTrailLocationQuery;
-        try {
-            $allTrailLocations = array();
-            $stmt = $this -> getDBInfo(1) -> prepare($allTrailLocationQuery);
-            $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "TrailObject.class");
-            while ($result = $stmt -> fetch()) {
-                array_push($allTrailLocations, $result);
-            }
-
-            return $allTrailLocations;
-        } catch (Exception $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 }

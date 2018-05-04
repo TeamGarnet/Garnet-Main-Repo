@@ -1,4 +1,5 @@
 <?php
+
 class TrailObject {
     private $idWiderAreaMap;
     private $name;
@@ -65,6 +66,7 @@ class TrailObject {
     public function setImageLocation($imageLocation) {
         $this -> imageLocation = $imageLocation;
     }
+
     /**
      * @return mixed
      */

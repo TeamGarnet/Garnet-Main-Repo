@@ -1,5 +1,6 @@
 <?php
 include_once 'data/TrackableObjectData.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * TrackableObjectService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
@@ -9,6 +10,7 @@ include_once 'data/TrackableObjectData.class.php';
  *  updateObjectEntryID($objectType, $objectID, $idTrackableObject)
  *  deleteTrackableObjectEntry($idTrackableObject)
  */
+
 class TrackableObjectService {
 
     /*

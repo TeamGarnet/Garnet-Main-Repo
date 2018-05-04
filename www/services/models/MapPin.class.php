@@ -86,6 +86,9 @@ class MapPin {
         $this -> name = $name;
     }
 
+    public function getLatitude() {
+        return $this -> latitude;
+    }
 
     /**
      * @param string : the object's latitude
@@ -93,11 +96,6 @@ class MapPin {
     public function setLatitude($latitude) {
         $this -> latitude = $latitude;
     }
-
-    public function getLatitude() {
-        return $this -> latitude;
-    }
-
 
     /**
      * @return string : the object's image alt text
@@ -107,7 +105,7 @@ class MapPin {
     }
 
     public function setImageDescription($imageDescription) {
-        $this -> im7geDescription = $imageDescription;
+        $this -> imageDescription = $imageDescription;
     }
 
 

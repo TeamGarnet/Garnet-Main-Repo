@@ -2,6 +2,7 @@
 include_once 'data/MiscObjectData.class.php';
 include_once 'models/MiscObject.class.php';
 include_once 'TrackableObjectService.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * MiscService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
@@ -13,40 +14,11 @@ include_once 'TrackableObjectService.class.php';
  *  getAllEntriesAsRows()
  *  formatMiscInfo()
  */
+
 class MiscObjectService extends TrackableObjectService {
     public function __construct() {
     }
 
-    /**
-     * Retrieves all Misc data from the database and forms Misc Objects
-     * @return array : An array of Misc objects
-     */
-    public function getAllMiscObjectEntries() {
-        $miscObjectDataClass = new MiscObjectData();
-        $allMiscObjectDataObjects = $miscObjectDataClass -> readMiscObject();
-        $allMiscObject = array();
-
-        foreach ($allMiscObjectDataObjects as $miscObjectArray) {
-            $miscObject = new MiscObject($miscObjectArray['idMisc'], stripcslashes($miscObjectArray['name']), stripcslashes($miscObjectArray['description']), $miscObjectArray['isHazard'],
-                $miscObjectArray['idTrackableObject'], $miscObjectArray['longitude'], $miscObjectArray['latitude'], $miscObjectArray['hint'], stripcslashes($miscObjectArray['imageDescription']), $miscObjectArray['imageLocation'], $miscObjectArray['idTypeFilter'], stripcslashes($miscObjectArray['type']));
-
-            array_push($allMiscObject, $miscObject);
-        }
-        return $allMiscObject;
-    }
-
-    /*
-     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
-     * @param $name: Misc's  name
-     * @param isHazard: Whether the object is in a hazard location or not
-     * @param $description: Misc's description
-     * @param $longitude: Float for longitude location of misc (ie. 99.999999)
-     * @param $latitude: Float for latitude location of misc (ie. 99.999999)
-     * @param $hint: Scavenger hunt hit for misc. For Version 2 of application
-     * @param $imageDescription: Description and alt text for image
-     * @param $imageLocation: Location of image
-     * @param $idTypeFilter: ID for the attached type filter
-     */
     public function createMiscObjectEntry($name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $isHazard = filter_var($isHazard, FILTER_SANITIZE_STRING);
@@ -64,11 +36,10 @@ class MiscObjectService extends TrackableObjectService {
     }
 
     /*
-     * Updates misc currently in the database.
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
      * @param $name: Misc's  name
      * @param isHazard: Whether the object is in a hazard location or not
      * @param $description: Misc's description
-     * @param $idTrackableObject: TrackableObject ID for object
      * @param $longitude: Float for longitude location of misc (ie. 99.999999)
      * @param $latitude: Float for latitude location of misc (ie. 99.999999)
      * @param $hint: Scavenger hunt hit for misc. For Version 2 of application
@@ -76,6 +47,7 @@ class MiscObjectService extends TrackableObjectService {
      * @param $imageLocation: Location of image
      * @param $idTypeFilter: ID for the attached type filter
      */
+
     public function updateMiscObjectEntry($idTrackableObject, $idMiscObject, $name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $isHazard = filter_var($isHazard, FILTER_SANITIZE_STRING);
@@ -88,9 +60,19 @@ class MiscObjectService extends TrackableObjectService {
     }
 
     /*
-     * Deletes Misc for Entry
-     * @param $idMisc: id of misc to be deleted
+     * Updates misc currently in the database.
+     * @param $name: Misc's  name
+     * @param isHazard: Whether the object is in a hazard location or not
+     * @param $description: Misc's description
+     * @param $idTrackableObject: TrackableObject ID for object
+     * @param $longitude: Float for longitude location of misc (ie. 99.999999)
+     * @param $latitude: Float for latitude location of misc (ie. 99.999999)
+     * @param $hint: Scavenger hunt hit for misc. For Version 2 of application
+     * @param $imageDescription: Description and alt text for image
+     * @param $imageLocation: Location of image
+     * @param $idTypeFilter: ID for the attached type filter
      */
+
     public function deleteMiscObjectEntry($idMiscObject) {
         $idMiscObject = filter_var($idMiscObject, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idMiscObject) || $idMiscObject == "") {
@@ -102,9 +84,10 @@ class MiscObjectService extends TrackableObjectService {
     }
 
     /*
-     * Retrieves all the misc entries and formats to display in a table.
-     * @return string: A string of a table in html
+     * Deletes Misc for Entry
+     * @param $idMisc: id of misc to be deleted
      */
+
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllMiscObjectEntries();
         $html = "";
@@ -131,5 +114,28 @@ class MiscObjectService extends TrackableObjectService {
                 . "</td></tr>";
         }
         return $html;
+    }
+
+    /*
+     * Retrieves all the misc entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
+
+    /**
+     * Retrieves all Misc data from the database and forms Misc Objects
+     * @return array : An array of Misc objects
+     */
+    public function getAllMiscObjectEntries() {
+        $miscObjectDataClass = new MiscObjectData();
+        $allMiscObjectDataObjects = $miscObjectDataClass -> readMiscObject();
+        $allMiscObject = array();
+
+        foreach ($allMiscObjectDataObjects as $miscObjectArray) {
+            $miscObject = new MiscObject($miscObjectArray['idMisc'], stripcslashes($miscObjectArray['name']), stripcslashes($miscObjectArray['description']), $miscObjectArray['isHazard'],
+                $miscObjectArray['idTrackableObject'], $miscObjectArray['longitude'], $miscObjectArray['latitude'], '', stripcslashes($miscObjectArray['imageDescription']), $miscObjectArray['imageLocation'], $miscObjectArray['idTypeFilter'], stripcslashes($miscObjectArray['type']));
+
+            array_push($allMiscObject, $miscObject);
+        }
+        return $allMiscObject;
     }
 }

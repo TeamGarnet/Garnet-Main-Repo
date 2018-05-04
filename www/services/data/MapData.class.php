@@ -1,6 +1,7 @@
 <?php
 include_once 'DatabaseConnection.class.php';
 include_once 'query.php';
+include_once 'ErrorCatching.class.php';
 
 /**
  * MapData.class.php: Handles all CRUD operations that are sent from the service and
@@ -12,6 +13,30 @@ include_once 'query.php';
  *  getMapCardData($idTrackableObject)
  */
 class MapData {
+
+    /**
+     * Connects to the database and runs a query to pull all of the MapPin object
+     * information.
+     * @return array: An array of Map Pin Object information.
+     */
+    public function getAllMapPinInfo() {
+        global $getAllMapPinInfoQuery;
+        try {
+            $mapPinData = array();
+
+            $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
+            $stmt -> execute();
+            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
+            while ($result = $stmt -> fetch()) {
+                array_push($mapPinData, $result);
+            }
+            return $mapPinData;
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
 
     /**
      * Retrieves the Database information needed.
@@ -32,33 +57,11 @@ class MapData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-
-    /**
-     * Connects to the database and runs a query to pull all of the MapPin object
-     * information.
-     * @return array: An array of Map Pin Object information.
-     */
-    public function getAllMapPinInfo() {
-        global $getAllMapPinInfoQuery;
-        try {
-            $mapPinData = array();
-
-            $stmt = $this -> getDBInfo(1) -> prepare($getAllMapPinInfoQuery);
-            $stmt -> execute();
-            $stmt -> setFetchMode(PDO::FETCH_CLASS, "MapPin.class");
-            while ($result = $stmt -> fetch()) {
-                array_push($mapPinData, $result);
-            }
-            return $mapPinData;
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 
     public function getAllFilters() {
@@ -74,8 +77,9 @@ class MapData {
             }
             return $filterData;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -116,8 +120,9 @@ class MapData {
             }
             return $objectCardData;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

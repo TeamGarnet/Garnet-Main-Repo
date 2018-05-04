@@ -4,6 +4,7 @@ include_once 'models/MapPin.class.php';
 include_once 'models/FilterButton.class.php';
 include_once 'components/FilterBar.class.php';
 include_once 'components/TrackableObjectCard.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * MapService.class.php: Used to grab Google Map marker information from the
@@ -140,6 +141,16 @@ class MapService {
     }
 
     /**
+     * Generates HTML and CSS for the filter bar
+     * @return string: String of html to be appended to the map page.
+     */
+    public function generateFilterBar() {
+        $allFilterObjects = $this -> getFilterInfo();
+        $filterBar = new FilterBar($allFilterObjects);
+        return $filterBar -> getFilterBar();
+    }
+
+    /**
      * Collects all the Filters that are available for filters.
      * @return array: An array of filter objects.
      */
@@ -154,16 +165,6 @@ class MapService {
             array_push($allFilterObjects, $pinObject);
         }
         return $allFilterObjects;
-    }
-
-    /**
-     * Generates HTML and CSS for the filter bar
-     * @return string: String of html to be appended to the map page.
-     */
-    public function generateFilterBar() {
-        $allFilterObjects = $this -> getFilterInfo();
-        $filterBar = new FilterBar($allFilterObjects);
-        return $filterBar -> getFilterBar();
     }
 
     /**

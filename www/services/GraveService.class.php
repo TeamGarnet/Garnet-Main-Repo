@@ -2,6 +2,7 @@
 include_once 'data/GraveObjectData.class.php';
 include_once 'models/Grave.class.php';
 include_once 'TrackableObjectService.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * GraveService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
@@ -13,28 +14,34 @@ include_once 'TrackableObjectService.class.php';
  *  getAllEntriesAsRows()
  *  formatGraveInfo()
  */
+
 class GraveService extends TrackableObjectService {
 
     public function __construct() {
     }
 
-    /**
-     * Retrieves all Grave data from the database and forms Grave Objects
-     * @return array : An array of Grave objects
-     */
-    public function getAllGraveEntries() {
-        $graveDataClass = new GraveObjectData();
-        $allGraveDataObjects = $graveDataClass -> readGraveObject();
-        $allGraveObjects = array();
+    public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
+        $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
+        $lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
+        $birth = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($birth)));
+        $death = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($death)));
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
+        $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
 
-        foreach ($allGraveDataObjects as $graveArray) {
-            $graveObject = new Grave($graveArray['idGrave'], $graveArray['firstName'], $graveArray['middleName'], $graveArray['lastName'], $graveArray['birth'], $graveArray['death'], stripcslashes($graveArray['description']), $graveArray['idHistoricFilter'], stripcslashes($graveArray['historicFilterName']),
-                $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], $graveArray['hint'], stripcslashes($graveArray['imageDescription']), $graveArray['imageLocation'], $graveArray['idTypeFilter'], stripcslashes($graveArray['type']));
-
-            array_push($allGraveObjects, $graveObject);
+        if (empty($idHistoricFilter) || $idHistoricFilter == "") {
+            $idHistoricFilter = 0;
         }
 
-        return $allGraveObjects;
+        //create Trackable Object
+        $lastInsertIdTrackableObject = $this -> createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
+
+        //create Grave Object
+        $graveDataClass = new GraveObjectData();
+        $lastInsertIdGrave = $graveDataClass -> createGraveObject($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter);
+
+        //Update Trackable Object to know Grave Object
+        $this -> updateObjectEntryID("Grave", $lastInsertIdGrave, $lastInsertIdTrackableObject);
     }
 
     /*
@@ -53,47 +60,7 @@ class GraveService extends TrackableObjectService {
      * @param $imageLocation: Location of image
      * @param $idTypeFilter: ID for the attached type filter
      */
-    public function createGraveEntry($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
-        $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
-        $middleName = filter_var($middleName, FILTER_SANITIZE_STRING);
-        $lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
-        $birth = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($birth)));
-        $death = filter_var(preg_replace("([^0-9/] | [^0-9-])", "", htmlentities($death)));
-        $description = filter_var($description, FILTER_SANITIZE_STRING);
-        $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
 
-        if (empty($idHistoricFilter) || $idHistoricFilter == "" ) {
-            $idHistoricFilter = 0;
-        }
-
-        //create Trackable Object
-        $lastInsertIdTrackableObject = $this -> createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
-
-        //create Grave Object
-        $graveDataClass = new GraveObjectData();
-        $lastInsertIdGrave = $graveDataClass -> createGraveObject($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter);
-
-        //Update Trackable Object to know Grave Object
-        $this -> updateObjectEntryID("Grave", $lastInsertIdGrave, $lastInsertIdTrackableObject);
-    }
-
-    /*
-     * Updates grave currently in the database.
-     * @param $firstName: Grave's first name
-     * @param $middleName: Grave's middle name or
-     * @param $lastName: Grave's last name
-     * @param $birth: Grave's birth date
-     * @param $death: Grave's last name
-     * @param $description: Grave's description
-     * @param $idHistoricFilter: ID for the attached historical filter (optional)
-     * @param $idTrackableObject: TrackableObject ID for object
-     * @param $longitude: Float for longitude location of grave (ie. 99.999999)
-     * @param $latitude: Float for latitude location of grave (ie. 99.999999)
-     * @param $hint: Scavenger hunt hit for grave. For Version 2 of application
-     * @param $imageDescription: Description and alt text for image
-     * @param $imageLocation: Location of image
-     * @param $idTypeFilter: ID for the attached type filter
-     */
     public function updateGraveEntry($idTrackableObject, $idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
 
         $firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
@@ -113,9 +80,23 @@ class GraveService extends TrackableObjectService {
     }
 
     /*
-     * Deletes Grave for Entry
-     * @param $idGrave: id of grave to be deleted
+     * Updates grave currently in the database.
+     * @param $firstName: Grave's first name
+     * @param $middleName: Grave's middle name or
+     * @param $lastName: Grave's last name
+     * @param $birth: Grave's birth date
+     * @param $death: Grave's last name
+     * @param $description: Grave's description
+     * @param $idHistoricFilter: ID for the attached historical filter (optional)
+     * @param $idTrackableObject: TrackableObject ID for object
+     * @param $longitude: Float for longitude location of grave (ie. 99.999999)
+     * @param $latitude: Float for latitude location of grave (ie. 99.999999)
+     * @param $hint: Scavenger hunt hit for grave. For Version 2 of application
+     * @param $imageDescription: Description and alt text for image
+     * @param $imageLocation: Location of image
+     * @param $idTypeFilter: ID for the attached type filter
      */
+
     public function deleteGraveEntry($idGrave) {
         $idGrave = filter_var($idGrave, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idGrave) || $idGrave == "") {
@@ -129,9 +110,10 @@ class GraveService extends TrackableObjectService {
     }
 
     /*
-     * Retrieves all the grave entries and formats to display in a table.
-     * @return string: A string of a table in html
+     * Deletes Grave for Entry
+     * @param $idGrave: id of grave to be deleted
      */
+
     public function getAllEntriesAsRows() {
         $allGraveModels = $this -> getAllGraveEntries();
         $html = "";
@@ -169,6 +151,30 @@ class GraveService extends TrackableObjectService {
                 . "</td></tr>";
         }
         return $html;
+    }
+
+    /*
+     * Retrieves all the grave entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
+
+    /**
+     * Retrieves all Grave data from the database and forms Grave Objects
+     * @return array : An array of Grave objects
+     */
+    public function getAllGraveEntries() {
+        $graveDataClass = new GraveObjectData();
+        $allGraveDataObjects = $graveDataClass -> readGraveObject();
+        $allGraveObjects = array();
+
+        foreach ($allGraveDataObjects as $graveArray) {
+            $graveObject = new Grave($graveArray['idGrave'], $graveArray['firstName'], $graveArray['middleName'], $graveArray['lastName'], $graveArray['birth'], $graveArray['death'], stripcslashes($graveArray['description']), $graveArray['idHistoricFilter'], stripcslashes($graveArray['historicFilterName']),
+                $graveArray['idTrackableObject'], $graveArray['longitude'], $graveArray['latitude'], '', stripcslashes($graveArray['imageDescription']), $graveArray['imageLocation'], $graveArray['idTypeFilter'], stripcslashes($graveArray['type']));
+
+            array_push($allGraveObjects, $graveObject);
+        }
+
+        return $allGraveObjects;
     }
 
 }

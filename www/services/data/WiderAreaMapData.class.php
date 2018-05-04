@@ -1,5 +1,6 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -10,31 +11,8 @@ include_once 'DatabaseConnection.class.php';
  *  updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode)
  *  deleteWiderAreaMap($idWiderAreaMap)
  */
-class WiderAreaMapData {
-    /**
-     * Retrieves the Database information needed.
-     * @param $returnConn : An int that designates whether to return the DB instance
-     * or the connection. 0 = instance, 1 = connection
-     * @return DatabaseConnection|null|PDO : Can return the DB instance, connection,
-     * or null if neither are found.
-     */
-    private function getDBInfo($returnConn) {
-        try {
-            $instance = DatabaseConnection ::getInstance();
-            $conn = $instance -> getConnection();
-            if ($returnConn == 0) {
-                return $instance;
-            } else if ($returnConn == 1) {
-                return $conn;
-            } else {
-                return null;
-            }
-        } catch (Exception $e) {
-            echo $e -> getMessage();
-        }
-        return null;
-    }
 
+class WiderAreaMapData {
     public function createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         try {
             //global $createWiderAreaMapQuery;
@@ -55,9 +33,36 @@ class WiderAreaMapData {
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
+    }
+
+    /**
+     * Retrieves the Database information needed.
+     * @param $returnConn : An int that designates whether to return the DB instance
+     * or the connection. 0 = instance, 1 = connection
+     * @return DatabaseConnection|null|PDO : Can return the DB instance, connection,
+     * or null if neither are found.
+     */
+    private function getDBInfo($returnConn) {
+        try {
+            $instance = DatabaseConnection ::getInstance();
+            $conn = $instance -> getConnection();
+            if ($returnConn == 0) {
+                return $instance;
+            } else if ($returnConn == 1) {
+                return $conn;
+            } else {
+                return null;
+            }
+        } catch (Exception $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+        return null;
     }
 
     public function readWiderAreaMap() {
@@ -65,8 +70,9 @@ class WiderAreaMapData {
             //global $getAllWiderAreaMapEntriesQuery;
             return $this -> getDBInfo(0) -> returnObject("", "SELECT idWiderAreaMap, name, description, url, longitude, latitude, address, city, state, zipcode, imageDescription, imageLocation FROM WiderAreaMap");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -90,8 +96,9 @@ class WiderAreaMapData {
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -103,8 +110,9 @@ class WiderAreaMapData {
             $stmt -> bindParam(':idWiderAreaMap', $idWiderAreaMap, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

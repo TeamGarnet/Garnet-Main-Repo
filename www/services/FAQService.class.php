@@ -12,9 +12,29 @@ include_once 'models/FAQ.class.php';
  *  getAllEntriesAsRows()
  *  formatFAQInfo()
  */
+
 class FAQService {
     public function __construct() {
     }
+
+    public function formatFAQInfo() {
+        $allFAQObjectsInfo = $this -> getAllFAQEntries();
+        $formattedFAQInfo = "";
+
+        foreach ($allFAQObjectsInfo as $faqObjectInfo) {
+            $formattedFAQInfo .= '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
+                . $faqObjectInfo -> getQuestion() . '</p><p class="a">'
+                . $faqObjectInfo -> getAnswer() . '</p><hr class="style17"></div></div></div>';
+        };
+
+
+        return $formattedFAQInfo;
+    }
+
+    /*
+     * Collects all the FAQ information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     */
 
     /**
      * Retrieves all FAQ data from the database and forms FAQ Objects
@@ -34,24 +54,6 @@ class FAQService {
     }
 
     /*
-     * Collects all the FAQ information and formats it to web correct HTML and CSS
-     * @return string: A string contain HTML to be appended to the page.
-     */
-    public function formatFAQInfo() {
-        $allFAQObjectsInfo = $this -> getAllFAQEntries();
-        $formattedFAQInfo = "";
-
-        foreach ($allFAQObjectsInfo as $faqObjectInfo) {
-            $formattedFAQInfo .= '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="faqCardContainer"><div class="faqCard"><p class="q">'
-                . $faqObjectInfo -> getQuestion() . '</p><p class="a">'
-                . $faqObjectInfo -> getAnswer() . '</p><hr class="style17"></div></div></div>';
-        };
-
-
-        return $formattedFAQInfo;
-    }
-
-    /*
      * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
      * @param $name: FAQ's preferred name
      * @param $description: FAQ's description of relation to Rapids Cemetery
@@ -59,6 +61,7 @@ class FAQService {
      * @param $endTime: FAQ's endTime
      * @param $idWiderAreaMap: FAQ's attached location
      */
+
     public function createFAQEntry($question, $answer) {
         $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);

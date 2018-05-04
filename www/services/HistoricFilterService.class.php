@@ -2,6 +2,7 @@
 include_once 'data/HistoricFilterData.class.php';
 include_once 'data/GraveObjectData.class.php';
 include_once 'models/HistoricFilter.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * HistoricFilterService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
@@ -13,35 +14,11 @@ include_once 'models/HistoricFilter.class.php';
  *  getAllEntriesAsRows()
  *  formatHistoric filterInfo()
  */
+
 class HistoricFilterService {
     public function __construct() {
     }
 
-    /**
-     * Retrieves all Historic filter data from the database and forms Historic filter Objects
-     * @return array : An array of Historic filter objects
-     */
-    public function getAllHistoricFilterEntries() {
-        $historicFilterDataClass = new HistoricFilterData();
-        $allHistoricFilterDataObjects = $historicFilterDataClass -> readHistoricFilter();
-        $allHistoricFilterData = array();
-
-        foreach ($allHistoricFilterDataObjects as $historicFilterArray) {
-            $historicFilterObject = new HistoricFilter($historicFilterArray['idHistoricFilter'], stripcslashes($historicFilterArray['historicFilterName']), $historicFilterArray['dateStart'], $historicFilterArray['dateEnd'], stripcslashes($historicFilterArray['description']), $historicFilterArray['buttonColor']);
-
-            array_push($allHistoricFilterData, $historicFilterObject);
-        }
-        return $allHistoricFilterData;
-    }
-
-    /*
-     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
-     * @param $historicFilterName: Historic filter's  name
-     * @param $dateStart: Historic filter's starting time period
-     * @param $dateEnd: Historic filter's ending time period
-     * @param $description: Historic filter's description
-     * @param $buttonColor: Historic filter's filter button color
-     */
     public function createHistoricFilterEntry($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -56,13 +33,14 @@ class HistoricFilterService {
     }
 
     /*
-     * Updates historic filter currently in the database.
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
      * @param $historicFilterName: Historic filter's  name
      * @param $dateStart: Historic filter's starting time period
      * @param $dateEnd: Historic filter's ending time period
      * @param $description: Historic filter's description
      * @param $buttonColor: Historic filter's filter button color
      */
+
     public function updateHistoricFilterEntry($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         $dateStart = filter_var($dateStart, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -77,16 +55,21 @@ class HistoricFilterService {
     }
 
     /*
-     * Deletes Historic filter for Entry
-     * @param $idHistoric filter: id of historic filter to be deleted
+     * Updates historic filter currently in the database.
+     * @param $historicFilterName: Historic filter's  name
+     * @param $dateStart: Historic filter's starting time period
+     * @param $dateEnd: Historic filter's ending time period
+     * @param $description: Historic filter's description
+     * @param $buttonColor: Historic filter's filter button color
      */
+
     public function deleteHistoricFilterEntry($idHistoricFilter) {
         $idHistoricFilter = filter_var($idHistoricFilter, FILTER_SANITIZE_NUMBER_INT);
 
         if (empty($idHistoricFilter) || $idHistoricFilter == "") {
             return null;
         } else {
-            if ($idHistoricFilter == 0){
+            if ($idHistoricFilter == 0) {
                 return "This is a default filter that cannot be deleted.";
             }
 
@@ -103,9 +86,10 @@ class HistoricFilterService {
     }
 
     /*
-     * Retrieves all the historic filter entries and formats to display in a table.
-     * @return string: A string of a table in html
+     * Deletes Historic filter for Entry
+     * @param $idHistoric filter: id of historic filter to be deleted
      */
+
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllHistoricFilterEntries();
         $html = "";
@@ -119,7 +103,7 @@ class HistoricFilterService {
                 . ")'>Update</button>"
                 . "</td><td>";
 
-            if($idHistoricFilter != "0") {
+            if ($idHistoricFilter != "0") {
                 $editAndDelete = $editAndDelete . "<button class='btn basicBtn' onclick="
                     . '"deleteHistoricFilter('
                     . $model -> getIdHistoricFilter()
@@ -139,9 +123,32 @@ class HistoricFilterService {
     }
 
     /*
+     * Retrieves all the historic filter entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
+
+    /**
+     * Retrieves all Historic filter data from the database and forms Historic filter Objects
+     * @return array : An array of Historic filter objects
+     */
+    public function getAllHistoricFilterEntries() {
+        $historicFilterDataClass = new HistoricFilterData();
+        $allHistoricFilterDataObjects = $historicFilterDataClass -> readHistoricFilter();
+        $allHistoricFilterData = array();
+
+        foreach ($allHistoricFilterDataObjects as $historicFilterArray) {
+            $historicFilterObject = new HistoricFilter($historicFilterArray['idHistoricFilter'], stripcslashes($historicFilterArray['historicFilterName']), $historicFilterArray['dateStart'], $historicFilterArray['dateEnd'], stripcslashes($historicFilterArray['description']), $historicFilterArray['buttonColor']);
+
+            array_push($allHistoricFilterData, $historicFilterObject);
+        }
+        return $allHistoricFilterData;
+    }
+
+    /*
      * Retrieves all the historic filters and creates options for a select population.
      * @return string: A string of a options in html
      */
+
     public function getAllFiltersForSelect() {
         $filters = $this -> getAllHistoricFilterEntries();
         $filterHTML = "";

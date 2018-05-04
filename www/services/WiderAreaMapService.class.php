@@ -2,6 +2,7 @@
 include_once 'data/WiderAreaMapData.class.php';
 include_once 'data/EventData.class.php';
 include_once 'models/WiderAreaMap.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * WiderAreaMapService.class.php: Used to communication rapidsMap.php and admin portal page with backend.
@@ -13,25 +14,31 @@ include_once 'models/WiderAreaMap.class.php';
  *  generateMarkers()
  *  generateInfoWindowConfig($pin, $markerName, $markerCounter)
  */
+
 class WiderAreaMapService {
     public function __construct() {
     }
 
-    /**
-     * Retrieves all Type filter data from the database and forms Type filter Objects
-     * @return array : An array of Type filter objects
-     */
-    public function getAllWiderAreaMapEntries() {
+    public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
+        $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
+            FILTER_FLAG_ALLOW_FRACTION);
+        $latitude = filter_var($latitude, FILTER_SANITIZE_NUMBER_FLOAT,
+            FILTER_FLAG_ALLOW_FRACTION);
+        $city = filter_var($city, FILTER_SANITIZE_STRING);
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $zipcode = filter_var($zipcode, FILTER_SANITIZE_STRING);
+        $state = filter_var($state, FILTER_SANITIZE_STRING);
+        $url = filter_var($url, FILTER_SANITIZE_URL);
+        $address = filter_var($address, FILTER_SANITIZE_STRING);
+        $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
+        $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
+        $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
+
+
+        //create WiderAreaMap Object
         $widerAreaMapDataClass = new WiderAreaMapData();
-        $allWiderAreaMapDataObjects = $widerAreaMapDataClass -> readWiderAreaMap();
-        $allWiderAreaMapData = array();
-
-        foreach ($allWiderAreaMapDataObjects as $widerAreaMapArray) {
-            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'], $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode'], $widerAreaMapArray['imageDescription'], $widerAreaMapArray['imageLocation']);
-
-            array_push($allWiderAreaMapData, $widerAreaMapObject);
-        }
-        return $allWiderAreaMapData;
+        $widerAreaMapDataClass -> createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
     }
 
     /*
@@ -46,7 +53,8 @@ class WiderAreaMapService {
      * @param $state: state of location
      * @param $zipcode: zipcode of location
      */
-    public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
+
+    public function updateWiderAreaMapEntry($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
             FILTER_FLAG_ALLOW_FRACTION);
@@ -56,16 +64,14 @@ class WiderAreaMapService {
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $zipcode = filter_var($zipcode, FILTER_SANITIZE_STRING);
         $state = filter_var($state, FILTER_SANITIZE_STRING);
-        $url = filter_var($url, FILTER_SANITIZE_EMAIL);
+        $url = filter_var($url, FILTER_SANITIZE_URL);
         $address = filter_var($address, FILTER_SANITIZE_STRING);
         $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
         $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
         $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
-
-        //create WiderAreaMap Object
         $widerAreaMapDataClass = new WiderAreaMapData();
-        $widerAreaMapDataClass -> createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
+        $widerAreaMapDataClass -> updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
     }
 
     /*
@@ -81,30 +87,7 @@ class WiderAreaMapService {
      * @param $state: state of location
      * @param $zipcode: zipcode of location
      */
-    public function updateWiderAreaMapEntry($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
-        $description = filter_var($description, FILTER_SANITIZE_STRING);
-        $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
-            FILTER_FLAG_ALLOW_FRACTION);
-        $latitude = filter_var($latitude, FILTER_SANITIZE_NUMBER_FLOAT,
-            FILTER_FLAG_ALLOW_FRACTION);
-        $city = filter_var($city, FILTER_SANITIZE_STRING);
-        $name = filter_var($name, FILTER_SANITIZE_STRING);
-        $zipcode = filter_var($zipcode, FILTER_SANITIZE_STRING);
-        $state = filter_var($state, FILTER_SANITIZE_STRING);
-        $url = filter_var($url, FILTER_SANITIZE_EMAIL);
-        $address = filter_var($address, FILTER_SANITIZE_STRING);
-        $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
-        $imageDescription = filter_var($imageDescription, FILTER_SANITIZE_STRING);
-        $imageLocation = filter_var($imageLocation, FILTER_SANITIZE_URL);
 
-        $widerAreaMapDataClass = new WiderAreaMapData();
-        $widerAreaMapDataClass -> updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation);
-    }
-
-    /*
-     * Deletes WiderAreaMapObject for Entry
-     * @param $idTrackableObject: id of WiderAreaMapObject to be deleted
-     */
     public function deleteWiderAreaMapEntry($idWiderAreaMap) {
         $idWiderAreaMap = filter_var($idWiderAreaMap, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idWiderAreaMap) || $idWiderAreaMap == "") {
@@ -119,9 +102,10 @@ class WiderAreaMapService {
     }
 
     /*
-     * Retrieves all the wider area map entries and formats to display in a table.
-     * @return string: A string of a table in html
+     * Deletes WiderAreaMapObject for Entry
+     * @param $idTrackableObject: id of WiderAreaMapObject to be deleted
      */
+
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllWiderAreaMapEntries();
         $html = "";
@@ -152,9 +136,32 @@ class WiderAreaMapService {
     }
 
     /*
+     * Retrieves all the wider area map entries and formats to display in a table.
+     * @return string: A string of a table in html
+     */
+
+    /**
+     * Retrieves all Type filter data from the database and forms Type filter Objects
+     * @return array : An array of Type filter objects
+     */
+    public function getAllWiderAreaMapEntries() {
+        $widerAreaMapDataClass = new WiderAreaMapData();
+        $allWiderAreaMapDataObjects = $widerAreaMapDataClass -> readWiderAreaMap();
+        $allWiderAreaMapData = array();
+
+        foreach ($allWiderAreaMapDataObjects as $widerAreaMapArray) {
+            $widerAreaMapObject = new WiderAreaMap($widerAreaMapArray['idWiderAreaMap'], stripcslashes($widerAreaMapArray['name']), stripcslashes($widerAreaMapArray['description']), $widerAreaMapArray['url'], $widerAreaMapArray['longitude'], $widerAreaMapArray['latitude'], $widerAreaMapArray['address'], $widerAreaMapArray['city'], $widerAreaMapArray['state'], $widerAreaMapArray['zipcode'], $widerAreaMapArray['imageDescription'], $widerAreaMapArray['imageLocation']);
+
+            array_push($allWiderAreaMapData, $widerAreaMapObject);
+        }
+        return $allWiderAreaMapData;
+    }
+
+    /*
      * Retrieves all the wider area map entries and creates options for a select population.
      * @return string: A string of a options in html
      */
+
     public function getAllFiltersForSelect() {
         $filters = $this -> getAllWiderAreaMapEntries();
         $filterHTML = "";
@@ -206,7 +213,7 @@ class WiderAreaMapService {
         foreach ($pinObjectsArray as $pin) {
             $markerName = "marker" . $markerCounter;
             $directionName = "direction" . $markerCounter;
-            $markerPos = "var " . $directionName. " = new google.maps.LatLng(" . $pin -> getLatitude() . "," . $pin -> getLongitude() . "); directionList.push(" . $directionName . ");";
+            $markerPos = "var " . $directionName . " = new google.maps.LatLng(" . $pin -> getLatitude() . "," . $pin -> getLongitude() . "); directionList.push(" . $directionName . ");";
             $generatedMarkers .= $markerPos . "var " . $markerName . " = new google.maps.Marker({
             position: {lat: " . $pin -> getLatitude() . ", lng: " . $pin -> getLongitude() . "},
             icon:'images/pins/greenMarker.png',
@@ -249,7 +256,7 @@ class WiderAreaMapService {
         $infoWindowContent = '"' . "<div><div style = 'width:250px;height:auto;text-align:center'><h4>"
             . $pin -> getName()
             . "</h4></br><p><a class='eventBtns btn' href='#' onclick='displayLocationInfo("
-            . $pin -> getIdWiderAreaMap() .")'>View Information</a><a class='eventBtns btn' href=" . "'"
+            . $pin -> getIdWiderAreaMap() . ")'>View Information</a><a class='eventBtns btn' href=" . "'"
             . $pin -> getUrl() . "'" . ">Visit Site</a></p><p><a class='eventBtns btn' onclick='calculateAndDisplayRoute(directionsService, directionsDisplay, userLocation, " . "directionList[" . $markerCounter . "]" . ")'>Generate Route</a></p></div></div>" . '"';
 
 

@@ -1,5 +1,6 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -11,7 +12,37 @@ include_once 'DatabaseConnection.class.php';
  *  updateObjectEntryID($objectType, $objectID, $idTrackableObject)
  *  deleteTrackableObjectEntry($idTrackableObject)
  */
+
 class TrackableObjectData {
+    public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        try {
+            //global $createTrackableObjectQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription, imageLocation, idTypeFilter) VALUES (:longitude, :latitude, :hint, :imageDescription, COALESCE(:imageLocation, DEFAULT(imageLocation)), :idTypeFilter)");
+
+            $stmt -> bindParam(':longitude', $longitude, PDO::PARAM_STR);
+            $stmt -> bindParam(':latitude', $latitude, PDO::PARAM_STR);
+            $stmt -> bindParam(':hint', $hint, PDO::PARAM_STR);
+            $stmt -> bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
+
+            $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
+            if ($imageLocation == "" || empty($imageLocation)) {
+                $imageLocation = null;
+                $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
+            }
+
+            $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
+
+            $stmt -> execute();
+            return $this -> getDBInfo(1) -> lastInsertId();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -31,37 +62,11 @@ class TrackableObjectData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
-        try {
-            //global $createTrackableObjectQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO TrackableObject (longitude, latitude, hint, imageDescription, imageLocation, idTypeFilter) VALUES (:longitude, :latitude, :hint, :imageDescription, COALESCE(:imageLocation, DEFAULT(imageLocation)), :idTypeFilter)");
-
-            $stmt -> bindParam(':longitude', $longitude, PDO::PARAM_STR);
-            $stmt -> bindParam(':latitude', $latitude, PDO::PARAM_STR);
-            $stmt -> bindParam(':hint', $hint, PDO::PARAM_STR);
-            $stmt -> bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
-
-            $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
-            if ($imageLocation == "" || empty($imageLocation)) {
-                $imageLocation= null;
-                $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
-            } else {
-                $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
-            }
-
-            $stmt -> bindParam(':idTypeFilter', $idTypeFilter, PDO::PARAM_STR);
-
-            $stmt -> execute();
-            return $this -> getDBInfo(1) -> lastInsertId();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 
     public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
@@ -76,7 +81,7 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
             $stmt -> bindParam(':imageDescription', $imageDescription, PDO::PARAM_STR);
             $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
             if ($imageLocation == "" || empty($imageLocation)) {
-                $imageLocation= null;
+                $imageLocation = null;
                 $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
             } else {
                 $stmt -> bindParam(':imageLocation', $imageLocation, PDO::PARAM_STR);
@@ -87,8 +92,9 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
             $stmt -> execute();
             return $this -> getDBInfo(1) -> lastInsertId();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -114,8 +120,9 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
             $stmt -> bindParam(':idTrackableObject', $idTrackableObject, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -132,8 +139,9 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
             $count = $stmt -> rowCount();
             return $count;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

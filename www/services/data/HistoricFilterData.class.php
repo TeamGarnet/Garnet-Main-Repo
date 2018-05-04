@@ -1,5 +1,6 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -11,7 +12,33 @@ include_once 'DatabaseConnection.class.php';
  *  deleteContactEntry($idContact)
  *  getAllEntriesAsRows()
  */
+
 class HistoricFilterData {
+    public function createHistoricFilter($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
+        try {
+            //global $createHistoricFilterQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO HistoricFilter (historicFilterName, description, dateStart, dateEnd, buttonColor) VALUES (:historicFilterName, :description, :dateStart, :dateEnd, COALESCE(:buttonColor, DEFAULT(buttonColor)))");
+
+
+            $stmt -> bindParam(':historicFilterName', $historicFilterName, PDO::PARAM_STR);
+            $stmt -> bindParam(':dateStart', $dateStart, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt -> bindParam(':dateEnd', $dateEnd, PDO::PARAM_STR);
+            if ($buttonColor == "" || empty($buttonColor)) {
+                $buttonColor = null;
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            } else {
+                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
+            }
+
+            $stmt -> execute();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -31,33 +58,11 @@ class HistoricFilterData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function createHistoricFilter($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
-        try {
-            //global $createHistoricFilterQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO HistoricFilter (historicFilterName, description, dateStart, dateEnd, buttonColor) VALUES (:historicFilterName, :description, :dateStart, :dateEnd, COALESCE(:buttonColor, DEFAULT(buttonColor)))");
-
-
-            $stmt -> bindParam(':historicFilterName', $historicFilterName, PDO::PARAM_STR);
-            $stmt -> bindParam(':dateStart', $dateStart, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-            $stmt -> bindParam(':dateEnd', $dateEnd, PDO::PARAM_STR);
-            if ($buttonColor == "" || empty($buttonColor)) {
-                $buttonColor= null;
-                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
-            } else {
-                $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
-            }
-
-            $stmt -> execute();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 
     public function readHistoricFilter() {
@@ -65,8 +70,9 @@ class HistoricFilterData {
             //global $getAllHistoricFilterEntriesQuery;
             return $this -> getDBInfo(0) -> returnObject("", "SELECT idHistoricFilter, dateStart, description, historicFilterName, dateEnd, buttonColor FROM HistoricFilter");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -82,7 +88,7 @@ class HistoricFilterData {
             $stmt -> bindParam(':dateEnd', $dateEnd, PDO::PARAM_STR);
 
             if ($buttonColor == "" || empty($buttonColor)) {
-                $buttonColor= null;
+                $buttonColor = null;
                 $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
             } else {
                 $stmt -> bindParam(':buttonColor', $buttonColor, PDO::PARAM_STR);
@@ -90,8 +96,9 @@ class HistoricFilterData {
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -103,8 +110,9 @@ class HistoricFilterData {
             $stmt -> bindParam(':idHistoricFilter', $idHistoricFilter, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -117,8 +125,9 @@ class HistoricFilterData {
             $count = $stmt -> rowCount();
             return $count;
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

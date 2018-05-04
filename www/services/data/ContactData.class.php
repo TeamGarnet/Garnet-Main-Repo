@@ -1,5 +1,6 @@
 <?php
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -10,7 +11,28 @@ include_once 'DatabaseConnection.class.php';
  *  updateContact($idContact, $name, $email, $description, $phone, $title)
  *  deleteContact($idContact)
  */
+
 class ContactData {
+    public function createContact($name, $email, $description, $phone, $title) {
+        try {
+            //global $createContactQuery;
+            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO Contact (name,description,email, phone, title) VALUES (:name, :description,:email,:phone,:title)");
+
+
+            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt -> bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
+            $stmt -> bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt -> bindParam(':phone', $phone, PDO::PARAM_STR);
+
+            $stmt -> execute();
+        } catch (PDOException $e) {
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
+        }
+    }
+
     /**
      * Retrieves the Database information needed.
      * @param $returnConn : An int that designates whether to return the DB instance
@@ -30,28 +52,11 @@ class ContactData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function createContact($name, $email, $description, $phone, $title) {
-        try {
-            //global $createContactQuery;
-            $stmt = $this -> getDBInfo(1) -> prepare("INSERT INTO Contact (name,description,email, phone, title) VALUES (:name, :description,:email,:phone,:title)");
-
-
-            $stmt -> bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt -> bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt -> bindParam(':description', $description, PDO::PARAM_STR);
-            $stmt -> bindParam(':title', $title, PDO::PARAM_STR);
-            $stmt -> bindParam(':phone', $phone, PDO::PARAM_STR);
-
-            $stmt -> execute();
-        } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
-        }
     }
 
     public function readContact() {
@@ -59,8 +64,9 @@ class ContactData {
             //global $getAllContactEntriesQuery;
             return $this -> getDBInfo(0) -> returnObject("", "SELECT idContact, name, email, description, phone, title FROM Contact");
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -78,8 +84,9 @@ class ContactData {
 
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 
@@ -90,8 +97,9 @@ class ContactData {
             $stmt -> bindParam(':idContact', $idContact, PDO::PARAM_STR);
             $stmt -> execute();
         } catch (PDOException $e) {
-            echo $e -> getMessage();
-            die();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 ob_start();
 include_once 'DatabaseConnection.class.php';
+include_once 'ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -8,7 +9,25 @@ include_once 'DatabaseConnection.class.php';
  *  getDBInfo($returnConn)
  *  validatePassword($email, $password)
  */
+
 class LoginData {
+
+    public function createAccount($userName, $pwd, $salt) {
+        try {
+            $dbconn = $this -> getDBInfo(1);
+            $statement = $dbconn -> prepare("INSERT INTO `User` (email, password, salt) VALUES (:email, :pwd, :salt)");
+
+            $statement -> bindValue(':email', $userName);
+            $statement -> bindValue(':pwd', $pwd);
+            $statement -> bindValue(':salt', $salt);
+
+            $result = $statement -> execute();
+            return $result;
+        } catch (Exception $e) {
+            echo $e;
+            return null;
+        }
+    }
 
     /**
      * Retrieves the Database information needed.
@@ -29,26 +48,11 @@ class LoginData {
                 return null;
             }
         } catch (Exception $e) {
-            echo $e -> getMessage();
+            $errorService = new ErrorCatching();
+            $errorService -> logError($e);
+            exit();
         }
         return null;
-    }
-
-    public function createAccount($userName, $pwd, $salt) {
-        try {
-            $dbconn = $this -> getDBInfo(1);
-            $statement = $dbconn -> prepare("INSERT INTO `User` (email, password, salt) VALUES (:email, :pwd, :salt)");
-
-            $statement -> bindValue(':email', $userName);
-            $statement -> bindValue(':pwd', $pwd);
-            $statement -> bindValue(':salt', $salt);
-
-            $result = $statement -> execute();
-            return $result;
-        } catch (Exception $e) {
-            echo $e;
-            return null;
-        }
     }
 
     public function loginAccount($userName, $pwd) {

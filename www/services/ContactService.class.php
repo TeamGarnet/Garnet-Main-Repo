@@ -1,6 +1,7 @@
 <?php
 include_once 'data/ContactData.class.php';
 include_once 'models/Contact.class.php';
+include_once 'data/ErrorCatching.class.php';
 
 /*
  * ContactService.class.php: Used to communication contact.php and admin portal page with backend.
@@ -12,9 +13,32 @@ include_once 'models/Contact.class.php';
  *  deleteContactEntry($idContact)
  *  getAllEntriesAsRows()
  */
+
 class ContactService {
     public function __construct() {
     }
+
+    public function formatContactInfo() {
+        $allContactObjectsInfo = $this -> getAllContactEntries();
+        $formattedContactInfo = "";
+
+        foreach ($allContactObjectsInfo as $contactObjectInfo) {
+            $formattedContactInfo .= '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="contactCardOutter"><div class="contactCard"><p class="name">'
+                . $contactObjectInfo -> getName() . '</p><p class="title">'
+                . $contactObjectInfo -> getTitle() . '</p><p class="description">'
+                . $contactObjectInfo -> getDescription() . '</p><p class="email">'
+                . $contactObjectInfo -> getEmail() . '</p><p class="phone">'
+                . $contactObjectInfo -> getPhone() . '</p><hr class="style17"></div></div></div>';
+        };
+
+
+        return $formattedContactInfo;
+    }
+
+    /*
+     * Collects all the contact information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     */
 
     /**
      * Retrieves all contact data from the database and forms Contact Objects
@@ -34,27 +58,6 @@ class ContactService {
     }
 
     /*
-     * Collects all the contact information and formats it to web correct HTML and CSS
-     * @return string: A string contain HTML to be appended to the page.
-     */
-    public function formatContactInfo() {
-        $allContactObjectsInfo = $this -> getAllContactEntries();
-        $formattedContactInfo = "";
-
-        foreach ($allContactObjectsInfo as $contactObjectInfo) {
-            $formattedContactInfo .= '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><div class="contactCardOutter"><div class="contactCard"><p class="name">'
-                . $contactObjectInfo -> getName() . '</p><p class="title">'
-                . $contactObjectInfo -> getTitle() . '</p><p class="description">'
-                . $contactObjectInfo -> getDescription() . '</p><p class="email">'
-                . $contactObjectInfo -> getEmail() . '</p><p class="phone">'
-                . $contactObjectInfo -> getPhone() . '</p><hr class="style17"></div></div></div>';
-        };
-
-
-        return $formattedContactInfo;
-    }
-
-    /*
      * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
      * @param $name: Contact's preferred name
      * @param $email: Contact's email
@@ -62,6 +65,7 @@ class ContactService {
      * @param $phone: Contact's phone number
      * @param $title: Contact's position to Rapids Cemetery
      */
+
     public function createContactEntry($name, $email, $description, $phone, $title) {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
