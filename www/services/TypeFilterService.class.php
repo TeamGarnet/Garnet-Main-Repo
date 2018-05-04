@@ -19,6 +19,12 @@ class TypeFilterService {
     public function __construct() {
     }
 
+    /*
+    * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+    * @param $type: Type filter's ending type name
+    * @param $pinDesign: Type filter's pinDesign
+    * @param $buttonColor: Type filter's filter button color
+    */
     public function createTypeFilterEntry($type, $pinDesign, $buttonColor) {
         $pinDesign = filter_var($pinDesign, FILTER_SANITIZE_STRING);
 
@@ -30,13 +36,14 @@ class TypeFilterService {
         $typeFilterDataClass -> createTypeFilter($type, $pinDesign, $buttonColor);
     }
 
+
     /*
      * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $idTypeFilter: Type filter's ID
      * @param $type: Type filter's ending type name
      * @param $pinDesign: Type filter's pinDesign
      * @param $buttonColor: Type filter's filter button color
      */
-
     public function updateTypeFilterEntry($idTypeFilter, $type, $pinDesign, $buttonColor) {
         $pinDesign = filter_var($pinDesign, FILTER_SANITIZE_STRING);
 
@@ -48,13 +55,9 @@ class TypeFilterService {
     }
 
     /*
-     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * Deletes type filter currently in the database.
      * @param $idTypeFilter: Type filter's ID
-     * @param $type: Type filter's ending type name
-     * @param $pinDesign: Type filter's pinDesign
-     * @param $buttonColor: Type filter's filter button color
      */
-
     public function deleteTypeFilterEntry($idTypeFilter) {
         $idTypeFilter = filter_var($idTypeFilter, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idTypeFilter) || $idTypeFilter == "") {
@@ -78,10 +81,17 @@ class TypeFilterService {
     }
 
     /*
-     * Deletes type filter currently in the database.
-     * @param $idTypeFilter: Type filter's ID
+     * Retrieves all the type filter entries and formats to display in a table.
+     * @return string: A string of a table in html
+     * Example Output:
+     * <tr id="131">
+      <td>Grave</td>
+      <td>images/pins/blueMarker.png</td>
+      <td>#6991FD</td>
+      <td><button class="btn basicBtn" onclick="updateType(131,1)">Update</button></td>
+      <td></td>
+    </tr>
      */
-
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllTypeFilterEntries();
         $html = "";
@@ -111,10 +121,6 @@ class TypeFilterService {
         return $html;
     }
 
-    /*
-     * Retrieves all the type filter entries and formats to display in a table.
-     * @return string: A string of a table in html
-     */
 
     /**
      * Retrieves all Type filter data from the database and forms Type filter Objects
@@ -136,8 +142,9 @@ class TypeFilterService {
     /*
      * Retrieves all the type filter entries and creates options for a select population.
      * @return string: A string of a options in html
+     * Example Output:
+     * <option value="3">Miscellaneous</option>
      */
-
     public function getAllFiltersForSelect() {
         $filters = $this -> getAllTypeFilterEntries();
         $customFilters = array_filter($filters, function ($filter) {

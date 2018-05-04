@@ -13,6 +13,13 @@ include_once 'ErrorCatching.class.php';
  */
 
 class MiscObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $name
+     * @param $isHazard
+     * @param $description
+     * @return string
+     */
     public function createMiscObject($name, $isHazard, $description) {
         try {
             //global $createMiscObjectQuery;
@@ -58,6 +65,10 @@ class MiscObjectData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readMiscObject() {
         try {
             //global $getAllMiscEntriesQuery;
@@ -71,6 +82,13 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idMisc
+     * @param $name
+     * @param $isHazard
+     * @param $description
+     */
     public function updateMiscObject($idMisc, $name, $isHazard, $description) {
         try {
             //global $updateMiscObjectQuery;
@@ -89,6 +107,10 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idMisc
+     */
     public function deleteMiscObject($idMisc) {
         try {
             //global $deleteMiscObjectQuery;

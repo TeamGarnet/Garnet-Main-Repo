@@ -16,9 +16,25 @@ include_once 'data/ErrorCatching.class.php';
  */
 
 class WiderAreaMapService {
+    /**
+     * WiderAreaMapService constructor.
+     */
     public function __construct() {
     }
 
+    /**
+     * @param $url
+     * @param $name
+     * @param $description
+     * @param $longitude
+     * @param $latitude
+     * @param $address
+     * @param $city
+     * @param $state
+     * @param $zipcode
+     * @param $imageDescription
+     * @param $imageLocation
+     */
     public function createWiderAreaMapEntry($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
@@ -43,17 +59,19 @@ class WiderAreaMapService {
 
     /*
      * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
-     * @param $longitude: Float for longitude location of WiderAreaMap (ie. 99.999999)
-     * @param $latitude: Float for latitude location of WiderAreaMap (ie. 99.999999)
-     * @param $url: Site url for location
-     * @param $name: Name of location
-     * @param $description: Description of location
-     * @param $address: Line 1 Address for location
-     * @param $city: city of location
-     * @param $state: state of location
-     * @param $zipcode: zipcode of location
+     * @param $idWiderAreaMap
+     * @param $url
+     * @param $name
+     * @param $description
+     * @param $longitude
+     * @param $latitude
+     * @param $address
+     * @param $city
+     * @param $state
+     * @param $zipcode
+     * @param $imageDescription
+     * @param $imageLocation
      */
-
     public function updateWiderAreaMapEntry($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         $description = filter_var($description, FILTER_SANITIZE_STRING);
         $longitude = filter_var($longitude, FILTER_SANITIZE_NUMBER_FLOAT,
@@ -76,18 +94,8 @@ class WiderAreaMapService {
 
     /*
      * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
-     * @param $idWiderAreaMap: ID of widerAreaMap to be updated
-     * @param $longitude: Float for longitude location of WiderAreaMap (ie. 99.999999)
-     * @param $latitude: Float for latitude location of WiderAreaMap (ie. 99.999999)
-     * @param $url: Site url for location
-     * @param $name: Name of location
-     * @param $description: Description of location
-     * @param $address: Line 1 Address for location
-     * @param $city: city of location
-     * @param $state: state of location
-     * @param $zipcode: zipcode of location
+     * @param $idWiderAreaMap
      */
-
     public function deleteWiderAreaMapEntry($idWiderAreaMap) {
         $idWiderAreaMap = filter_var($idWiderAreaMap, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idWiderAreaMap) || $idWiderAreaMap == "") {
@@ -102,10 +110,23 @@ class WiderAreaMapService {
     }
 
     /*
-     * Deletes WiderAreaMapObject for Entry
-     * @param $idTrackableObject: id of WiderAreaMapObject to be deleted
+     * Grabs all Wider Area Locatin Entries and returns them as rows for displaying.
+     * Exmaple Output:
+     * <tr id="161">
+  <td>Susan B Anthony Home</td>
+  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna vitae ipsum placerat vestibulum. Sed sed tempor justo. Nunc bibendum sapien urna, quis condimentum justo porta ut. Donec et risus eu tortor faucibus tempus. Quisque velit nibh, fermentum sit amet lacus quis, blandit elementum nulla. Cras id consequat sem. Integer aliquet risus eu erat vehicula, vitae tristique sapien blandit.</td>
+  <td>https://www.susanbanthonyhouse.orgindex.php</td><td>-77.628100</td>
+  <td>43.153200</td>
+  <td>17 Madison St</td>
+  <td>Rochester</td>
+  <td>NY</td>
+  <td>14608</td>
+  <td>dwq</td>
+  <td>https://www.fiftyflowers.com/site_files/FiftyFlowers/Image/Product/salmon-dahlia-flower-350_5ae0c998.jpg</td>
+  <td><button class="btn basicBtn" onclick="updateLocation(161,1)">Update</button></td>
+  <td><button class="btn basicBtn" onclick="deleteLocation(1)"> Delete</button></td></tr>
+    *
      */
-
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllWiderAreaMapEntries();
         $html = "";
@@ -135,14 +156,9 @@ class WiderAreaMapService {
         return $html;
     }
 
-    /*
-     * Retrieves all the wider area map entries and formats to display in a table.
-     * @return string: A string of a table in html
-     */
-
     /**
-     * Retrieves all Type filter data from the database and forms Type filter Objects
-     * @return array : An array of Type filter objects
+     * Retrieves all the wider area location data from the database and forms wider area location Objects
+     * @return array : An array of wider area location objects
      */
     public function getAllWiderAreaMapEntries() {
         $widerAreaMapDataClass = new WiderAreaMapData();
@@ -160,8 +176,9 @@ class WiderAreaMapService {
     /*
      * Retrieves all the wider area map entries and creates options for a select population.
      * @return string: A string of a options in html
+     * Example Output:
+     *<option value="1">Susan B Anthony Home</option>
      */
-
     public function getAllFiltersForSelect() {
         $filters = $this -> getAllWiderAreaMapEntries();
         $filterHTML = "";

@@ -19,6 +19,18 @@ class MiscObjectService extends TrackableObjectService {
     public function __construct() {
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     * @param $name: Misc's  name
+     * @param isHazard: Whether the object is in a hazard location or not
+     * @param $description: Misc's description
+     * @param $longitude: Float for longitude location of misc (ie. 99.999999)
+     * @param $latitude: Float for latitude location of misc (ie. 99.999999)
+     * @param $hint: Scavenger hunt hit for misc. For Version 2 of application
+     * @param $imageDescription: Description and alt text for image
+     * @param $imageLocation: Location of image
+     * @param $idTypeFilter: ID for the attached type filter
+     */
     public function createMiscObjectEntry($name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $isHazard = filter_var($isHazard, FILTER_SANITIZE_STRING);
@@ -35,29 +47,6 @@ class MiscObjectService extends TrackableObjectService {
         $this -> updateObjectEntryID("Misc", $lastInsertIdMiscObject, $lastInsertIdTrackableObject);
     }
 
-    /*
-     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
-     * @param $name: Misc's  name
-     * @param isHazard: Whether the object is in a hazard location or not
-     * @param $description: Misc's description
-     * @param $longitude: Float for longitude location of misc (ie. 99.999999)
-     * @param $latitude: Float for latitude location of misc (ie. 99.999999)
-     * @param $hint: Scavenger hunt hit for misc. For Version 2 of application
-     * @param $imageDescription: Description and alt text for image
-     * @param $imageLocation: Location of image
-     * @param $idTypeFilter: ID for the attached type filter
-     */
-
-    public function updateMiscObjectEntry($idTrackableObject, $idMiscObject, $name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
-        $name = filter_var($name, FILTER_SANITIZE_STRING);
-        $isHazard = filter_var($isHazard, FILTER_SANITIZE_STRING);
-        $description = filter_var($description, FILTER_SANITIZE_STRING);
-
-        $this -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
-
-        $miscObjectDataClass = new MiscObjectData();
-        $miscObjectDataClass -> updateMiscObject($idMiscObject, $name, $isHazard, $description);
-    }
 
     /*
      * Updates misc currently in the database.
@@ -72,7 +61,22 @@ class MiscObjectService extends TrackableObjectService {
      * @param $imageLocation: Location of image
      * @param $idTypeFilter: ID for the attached type filter
      */
+    public function updateMiscObjectEntry($idTrackableObject, $idMiscObject, $name, $isHazard, $description, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $isHazard = filter_var($isHazard, FILTER_SANITIZE_STRING);
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
 
+        $this -> updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter);
+
+        $miscObjectDataClass = new MiscObjectData();
+        $miscObjectDataClass -> updateMiscObject($idMiscObject, $name, $isHazard, $description);
+    }
+
+
+    /*
+     * Deletes Misc for Entry
+     * @param $idMisc: id of misc to be deleted
+     */
     public function deleteMiscObjectEntry($idMiscObject) {
         $idMiscObject = filter_var($idMiscObject, FILTER_SANITIZE_NUMBER_INT);
         if (empty($idMiscObject) || $idMiscObject == "") {
@@ -84,10 +88,21 @@ class MiscObjectService extends TrackableObjectService {
     }
 
     /*
-     * Deletes Misc for Entry
-     * @param $idMisc: id of misc to be deleted
+     * Retrieves all the misc entries and formats to display in a table.
+     * @return string: A string of a table in html
+     * Example Output:
+     * <tr id="121">
+      <td>Bee Hive</td>
+      <td>There is a bee hive in this area</td>
+      <td>No</td><td>43.129617</td>
+      <td>-77.639403</td>
+      <td>imageDescription</td>
+      <td>/images/pins/default.png</td>
+      <td>Miscellaneous</td>
+      <td><button class="btn basicBtn" onclick="updateMisc(121,1,8,3)">Update</button></td>
+      <td><button class="btn basicBtn" onclick="deleteMisc(1)"> Delete</button></td>
+    </tr>
      */
-
     public function getAllEntriesAsRows() {
         $allModels = $this -> getAllMiscObjectEntries();
         $html = "";
@@ -116,10 +131,6 @@ class MiscObjectService extends TrackableObjectService {
         return $html;
     }
 
-    /*
-     * Retrieves all the misc entries and formats to display in a table.
-     * @return string: A string of a table in html
-     */
 
     /**
      * Retrieves all Misc data from the database and forms Misc Objects

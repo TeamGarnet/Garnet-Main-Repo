@@ -13,6 +13,14 @@ include_once 'ErrorCatching.class.php';
  */
 
 class ContactData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $name
+     * @param $email
+     * @param $description
+     * @param $phone
+     * @param $title
+     */
     public function createContact($name, $email, $description, $phone, $title) {
         try {
             //global $createContactQuery;
@@ -59,6 +67,10 @@ class ContactData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readContact() {
         try {
             //global $getAllContactEntriesQuery;
@@ -70,6 +82,15 @@ class ContactData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idContact
+     * @param $name
+     * @param $email
+     * @param $description
+     * @param $phone
+     * @param $title
+     */
     public function updateContact($idContact, $name, $email, $description, $phone, $title) {
         try {
             //global $updateContactQuery;
@@ -90,6 +111,10 @@ class ContactData {
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idContact
+     */
     public function deleteContact($idContact) {
         try {
             //global $deleteContactQuery;

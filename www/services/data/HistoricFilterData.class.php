@@ -14,6 +14,14 @@ include_once 'ErrorCatching.class.php';
  */
 
 class HistoricFilterData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $historicFilterName
+     * @param $dateStart
+     * @param $description
+     * @param $dateEnd
+     * @param $buttonColor
+     */
     public function createHistoricFilter($historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         try {
             //global $createHistoricFilterQuery;
@@ -65,6 +73,10 @@ class HistoricFilterData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readHistoricFilter() {
         try {
             //global $getAllHistoricFilterEntriesQuery;
@@ -76,6 +88,15 @@ class HistoricFilterData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idHistoricFilter
+     * @param $historicFilterName
+     * @param $dateStart
+     * @param $description
+     * @param $dateEnd
+     * @param $buttonColor
+     */
     public function updateHistoricFilter($idHistoricFilter, $historicFilterName, $dateStart, $description, $dateEnd, $buttonColor) {
         try {
             //global $updateHistoricFilterQuery;
@@ -102,6 +123,10 @@ class HistoricFilterData {
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idHistoricFilter
+     */
     public function deleteHistoricFilter($idHistoricFilter) {
         try {
             //global $deleteHistoricFilterQuery;
@@ -116,6 +141,11 @@ class HistoricFilterData {
         }
     }
 
+    /**
+     * Selects all Grave IDs for Historic Filters. Used to prevent deletion of a historic filter that is in use.
+     * @param $idTypeFilter
+     * @return int
+     */
     public function checkForInUseHistoricFilters($idTypeFilter) {
         try {
             //global $deleteEventQuery;

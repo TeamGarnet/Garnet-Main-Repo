@@ -13,6 +13,12 @@ include_once 'ErrorCatching.class.php';
  */
 
 class TypeFilterData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $type
+     * @param $pinDesign
+     * @param $buttonColor
+     */
     public function createTypeFilter($type, $pinDesign, $buttonColor) {
         try {
             //global $createTypeFilterQuery;
@@ -70,6 +76,10 @@ class TypeFilterData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readTypeFilter() {
         try {
             //global $getAllTypeFilterEntriesQuery;
@@ -81,6 +91,13 @@ class TypeFilterData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idTypeFilter
+     * @param $pinDesign
+     * @param $type
+     * @param $buttonColor
+     */
     public function updateTypeFilter($idTypeFilter, $pinDesign, $type, $buttonColor) {
         try {
             //global $updateTypeFilterQuery;
@@ -111,6 +128,10 @@ class TypeFilterData {
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idTypeFilter
+     */
     public function deleteTypeFilter($idTypeFilter) {
         try {
             //global $deleteTypeFilterQuery;

@@ -14,6 +14,17 @@ include_once 'ErrorCatching.class.php';
  */
 
 class GraveObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $firstName
+     * @param $middleName
+     * @param $lastName
+     * @param $birth
+     * @param $death
+     * @param $description
+     * @param $idHistoricFilter
+     * @return string
+     */
     public function createGraveObject($firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
         try {
             //global $createGraveObjectQuery;
@@ -67,6 +78,10 @@ class GraveObjectData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readGraveObject() {
         try {
             //global $getAllGraveEntriesQuery;
@@ -81,6 +96,17 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idGrave
+     * @param $firstName
+     * @param $middleName
+     * @param $lastName
+     * @param $birth
+     * @param $death
+     * @param $description
+     * @param $idHistoricFilter
+     */
     public function updateGraveObject($idGrave, $firstName, $middleName, $lastName, $birth, $death, $description, $idHistoricFilter) {
         try {
 
@@ -109,6 +135,10 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idGrave
+     */
     public function deleteGraveObject($idGrave) {
         try {
             //global $deleteGraveObjectQuery;
@@ -122,6 +152,10 @@ LEFT OUTER JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter");
         }
     }
 
+    /**
+     * Updates all connected graves historic filter IDs to NULL in the database.
+     * @param $idHistoricFilter
+     */
     public function unsetHistoricFilterId($idHistoricFilter) {
         try {
             //global $unsetHistoricFilterIdQuery;

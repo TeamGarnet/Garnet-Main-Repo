@@ -14,6 +14,16 @@ include_once 'ErrorCatching.class.php';
  */
 
 class TrackableObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $longitude
+     * @param $latitude
+     * @param $hint
+     * @param $imageDescription
+     * @param $imageLocation
+     * @param $idTypeFilter
+     * @return string
+     */
     public function createTrackableObjectEntry($longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         try {
             //global $createTrackableObjectQuery;
@@ -66,9 +76,19 @@ class TrackableObjectData {
             $errorService -> logError($e);
             exit();
         }
-        return null;
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idTrackableObject
+     * @param $longitude
+     * @param $latitude
+     * @param $hint
+     * @param $imageDescription
+     * @param $imageLocation
+     * @param $idTypeFilter
+     * @return string
+     */
     public function updateTrackableObjectEntry($idTrackableObject, $longitude, $latitude, $hint, $imageDescription, $imageLocation, $idTypeFilter) {
         try {
             //global $updateTrackableObjectQuery;
@@ -98,6 +118,12 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object ID in the database.
+     * @param $objectType
+     * @param $objectID
+     * @param $idTrackableObject
+     */
     public function updateObjectEntryID($objectType, $objectID, $idTrackableObject) {
         try {
             if ($objectType == "Grave") {
@@ -126,10 +152,18 @@ SET longitude = :longitude, latitude = :latitude, hint = :hint, imageDescription
         }
     }
 
+    /**
+     * @param $idTrackableObject
+     */
     public function deleteTrackableObjectEntry($idTrackableObject) {
         //This function should not need to be used due to DB cascading options
     }
 
+    /**
+     * Returns object IDs that have the type filter attached. This is used to verify a type filter is not in use before deletion.
+     * @param $idTypeFilter
+     * @return int
+     */
     public function checkForInUseTypeFilters($idTypeFilter) {
         try {
             //global $deleteEventQuery;

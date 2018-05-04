@@ -1,3 +1,9 @@
+<!--
+Team Garnet Notes: This file can be split up by create, deletes, and updates for better readability. It could also be split based on page.
+-->
+<!--
+Based on the request method and param that is sent from the front end the correct service is instantiated and then the correct function is called with the data from the frontend.
+-->
 <?php
 include_once 'services/MapService.class.php';
 include_once 'services/GraveService.class.php';
@@ -10,13 +16,14 @@ include_once 'services/TypeFilterService.class.php';
 include_once 'services/MiscObjectService.class.php';
 include_once 'services/WiderAreaMapService.class.php';
 
+/* Get Map Card Data requests */
 if (isset($_GET['getMapCardInfoID'])) {
     $mapService = new MapService();
     $mapService -> getMapCardInfo($_GET['getMapCardInfoID']);
     unset($_GET['getMapCardInfoID']);
 }
 
-//Delete Checks
+/* Delete POST requests */
 if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
     if (!empty($_POST['deleteGrave'])) {
         $service = new GraveService();
@@ -67,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['action'] == 'delete') {
     }
 }
 
-// Update POST requests
+/* Update POST requests */
 if (isset($_POST['updateGraveEntry'])) {
     $graveData = $_POST['updateGraveEntry'];
     $service = new GraveService();
@@ -132,7 +139,7 @@ if (isset($_POST['updateGraveEntry'])) {
     unset($_POST['updateEventEntry']);
 }
 
-// Create POST requests
+/* Create POST requests */
 if (isset($_POST['createGraveEntry'])) {
     $graveData = $_POST['createGraveEntry'];
     $service = new GraveService();

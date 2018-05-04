@@ -13,6 +13,13 @@ include_once 'ErrorCatching.class.php';
  */
 
 class NaturalHistoryObjectData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $commonName
+     * @param $scientificName
+     * @param $description
+     * @return string
+     */
     public function createNaturalHistoryObject($commonName, $scientificName, $description) {
         try {
             //global $createNaturalHistoryObjectQuery;
@@ -55,9 +62,12 @@ class NaturalHistoryObjectData {
             $errorService -> logError($e);
             exit();
         }
-        return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readNaturalHistoryObject() {
         try {
             //global $getAllNaturalHistoryEntriesQuery;
@@ -71,6 +81,13 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idNaturalHistory
+     * @param $commonName
+     * @param $scientificName
+     * @param $description
+     */
     public function updateNaturalHistoryObject($idNaturalHistory, $commonName, $scientificName, $description) {
         try {
             //global $updateNaturalHistoryObjectQuery;
@@ -89,6 +106,10 @@ JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter");
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idNaturalHistory
+     */
     public function deleteNaturalHistoryObject($idNaturalHistory) {
         try {
             //global $deleteNaturalHistoryObjectQuery;

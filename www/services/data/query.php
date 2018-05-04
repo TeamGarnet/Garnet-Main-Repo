@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * Many of the queries stopped working so they got commented out in the connect files.
+ */
 $getAllMapPinInfoQuery = "
     SELECT * FROM (
 	    SELECT idTrackableObject, longitude, latitude, imageDescription, imageLocation, CONCAT(firstName, ' ', middleName, ' ', lastName) AS name, pinDesign, T.idTypeFilter, concat(CAST(HF.idHistoricFilter AS CHAR)) AS idHistoricFilter FROM Grave G JOIN TrackableObject T ON G.idGrave = T.idGrave JOIN TypeFilter TF ON T.idTypeFilter = TF.idTypeFilter JOIN HistoricFilter HF ON G.idHistoricFilter = HF.idHistoricFilter

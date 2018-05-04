@@ -64,6 +64,10 @@ class MapData {
         return null;
     }
 
+    /**
+     * Get all historic and type filters options from database
+     * @return array
+     */
     public function getAllFilters() {
         global $filterBarQuery;
         try {
@@ -83,6 +87,11 @@ class MapData {
         }
     }
 
+    /**
+     * Collect information for pin selected. Determines what type of object the ID is from wand then queries to receive the correct information.
+     * @param $idTrackableObject
+     * @return array
+     */
     public function getMapCardData($idTrackableObject) {
         global $filterTypeQuery;
         global $graveInfoQuery;

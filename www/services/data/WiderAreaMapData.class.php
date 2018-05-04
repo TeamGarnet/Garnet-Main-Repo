@@ -12,7 +12,24 @@ include_once 'ErrorCatching.class.php';
  *  deleteWiderAreaMap($idWiderAreaMap)
  */
 
+/**
+ * Class WiderAreaMapData
+ */
 class WiderAreaMapData {
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $url
+     * @param $name
+     * @param $description
+     * @param $longitude
+     * @param $latitude
+     * @param $address
+     * @param $city
+     * @param $state
+     * @param $zipcode
+     * @param $imageDescription
+     * @param $imageLocation
+     */
     public function createWiderAreaMap($url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         try {
             //global $createWiderAreaMapQuery;
@@ -65,6 +82,10 @@ class WiderAreaMapData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readWiderAreaMap() {
         try {
             //global $getAllWiderAreaMapEntriesQuery;
@@ -76,6 +97,21 @@ class WiderAreaMapData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idWiderAreaMap
+     * @param $url
+     * @param $name
+     * @param $description
+     * @param $longitude
+     * @param $latitude
+     * @param $address
+     * @param $city
+     * @param $state
+     * @param $zipcode
+     * @param $imageDescription
+     * @param $imageLocation
+     */
     public function updateWiderAreaMap($idWiderAreaMap, $url, $name, $description, $longitude, $latitude, $address, $city, $state, $zipcode, $imageDescription, $imageLocation) {
         try {
             //global $updateWiderAreaMapQuery;
@@ -102,6 +138,10 @@ class WiderAreaMapData {
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idWiderAreaMap
+     */
     public function deleteWiderAreaMap($idWiderAreaMap) {
         try {
             //global $deleteWiderAreaMapQuery;

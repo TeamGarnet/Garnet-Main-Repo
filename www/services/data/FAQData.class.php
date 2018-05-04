@@ -14,6 +14,11 @@ include_once 'ErrorCatching.class.php';
  */
 
 class FAQData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $question
+     * @param $answer
+     */
     public function createFAQ($question, $answer) {
         try {
             //global $createFAQQuery;
@@ -57,6 +62,10 @@ class FAQData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readFAQ() {
         try {
             //global $getAllFAQEntriesQuery;
@@ -68,6 +77,12 @@ class FAQData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idFAQ
+     * @param $question
+     * @param $answer
+     */
     public function updateFAQ($idFAQ, $question, $answer) {
         try {
             //global $updateFAQQuery;
@@ -85,6 +100,10 @@ class FAQData {
         }
     }
 
+    /**
+     * Deletes an object from the database
+     * @param $idFAQ
+     */
     public function deleteFAQ($idFAQ) {
         try {
             //global $deleteFAQQuery;

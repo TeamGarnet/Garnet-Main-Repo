@@ -12,6 +12,13 @@ include_once 'ErrorCatching.class.php';
 
 class LoginData {
 
+    /**
+     * Creates a new User into the database for admin login
+     * @param $userName
+     * @param $pwd
+     * @param $salt
+     * @return bool|null
+     */
     public function createAccount($userName, $pwd, $salt) {
         try {
             $dbconn = $this -> getDBInfo(1);
@@ -55,6 +62,12 @@ class LoginData {
         return null;
     }
 
+    /**
+     * Finds the user id for the specifed email and hashed pwd combination
+     * @param $userName
+     * @param $pwd
+     * @return bool|null
+     */
     public function loginAccount($userName, $pwd) {
         try {
             $dbconn = $this -> getDBInfo(1);
@@ -78,6 +91,11 @@ class LoginData {
         }
     }
 
+    /**
+     * Returns the salt for the specified email
+     * @param $email
+     * @return bool|null
+     */
     public function getAccountSalt($email) {
         try {
             $dbconn = $this -> getDBInfo(1);

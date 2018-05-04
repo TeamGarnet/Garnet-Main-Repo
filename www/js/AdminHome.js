@@ -1,3 +1,9 @@
+/*
+Team Garnet Notes: This file can be split up by create, deletes, and updates for better readability.
+ */
+<!-- OBJECT DELETION FUNCTIONS -->
+
+<!-- Grave Deletion -->
 function deleteGrave(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -22,6 +28,7 @@ function deleteGrave(id) {
     });
 }
 
+<!-- Natural History Deletion -->
 function deleteNH(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -46,6 +53,7 @@ function deleteNH(id) {
     });
 }
 
+<!-- Miscellaneous Deletion -->
 function deleteMisc(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -70,6 +78,7 @@ function deleteMisc(id) {
     });
 }
 
+<!-- Type Filter Deletion -->
 function deleteType(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -102,6 +111,7 @@ function deleteType(id) {
     });
 }
 
+<!-- Historic Filter Deletion -->
 function deleteHistoricFilter(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -134,6 +144,7 @@ function deleteHistoricFilter(id) {
     });
 }
 
+<!-- FAQ Deletion -->
 function deleteFAQ(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -158,6 +169,7 @@ function deleteFAQ(id) {
     });
 }
 
+<!-- Trail Deletion -->
 function deleteLocation(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -182,6 +194,7 @@ function deleteLocation(id) {
     });
 }
 
+<!-- Contact Deletion -->
 function deleteContact(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -205,7 +218,7 @@ function deleteContact(id) {
         });
     });
 }
-
+<!-- Event Deletion -->
 function deleteEvent(id) {
     $(document).ready(function () {
         $('#deleteModal').modal('show');
@@ -230,6 +243,9 @@ function deleteEvent(id) {
     });
 }
 
+<!-- MODAL GENERATION -->
+
+<!-- Update Modal -->
 function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idWiderAreaMap) {
     // Grab current table header value and corresponding table data value
     $('#updateModalBody').empty();
@@ -246,6 +262,9 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
             labelText = labelText.replace('?', '');
         }
 
+        /*
+        Team Garnet Notes: This can probably be refactored. It currently looks at headers and makes the field types based off of the header name. Sponsors would like text fields to be bigger to show large text.
+         */
         if (labelText == "Start Time:") {
             var dateTimeArray = tdVal.split(" ");
             var time = dateTimeArray[1];
@@ -350,7 +369,12 @@ function generateUpdateModal(tableID, rowID, idHistoricFilter, idTypeFilter, idW
     });
 }
 
+<!-- Create Modal -->
 function generateCreateModal(tableID) {
+    /*
+        Team Garnet Notes: This can probably be refactored. It currently looks at headers and makes the field types based off of the header name. Sponsors would like text fields to be bigger to show large text.
+         */
+
     $('#createModalBody').empty();
     var input = '';
     $(tableID + ' th').each(function (index) {
@@ -415,6 +439,9 @@ function generateCreateModal(tableID) {
     $('#createModal').modal('show');
 }
 
+<!-- OBJECT UPDATE FUNCTIONS -->
+
+<!-- Update Grave -->
 function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idTypeFilter) {
     generateUpdateModal('#grave', rowID, idHistoricFilter, idTypeFilter, null);
     $('#updateModalTitle').text('Update Grave');
@@ -451,6 +478,7 @@ function updateGrave(rowID, idGrave, idTrackableObject, idHistoricFilter, idType
     });
 }
 
+<!-- Update Natural History -->
 function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#naturalHistory', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Natural History');
@@ -483,6 +511,7 @@ function updateNH(rowID, idNaturalHistory, idTrackableObject, idTypeFilter) {
     });
 }
 
+<!-- Update Miscellaneous -->
 function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     generateUpdateModal('#misc', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Miscellaneous');
@@ -514,6 +543,7 @@ function updateMisc(rowID, idMiscObject, idTrackableObject, idTypeFilter) {
     });
 }
 
+<!-- Update Type Filter -->
 function updateType(rowID, idTypeFilter) {
     generateUpdateModal('#type', rowID, null, idTypeFilter, null);
     $('#updateModalTitle').text('Update Type');
@@ -539,6 +569,7 @@ function updateType(rowID, idTypeFilter) {
     });
 }
 
+<!-- Update Historic Filter -->
 function updateHistoricFilter(rowID, idHistoricFilter) {
     generateUpdateModal('#historic', rowID, idHistoricFilter, null, null);
     $('#updateModalTitle').text('Update Historic Filter');
@@ -566,6 +597,7 @@ function updateHistoricFilter(rowID, idHistoricFilter) {
     });
 }
 
+<!-- Update FAQ -->
 function updateFAQ(rowID, idFAQ) {
     generateUpdateModal('#faq', rowID, null, null, null);
     $('#updateModalTitle').text('Update FAQ');
@@ -590,6 +622,7 @@ function updateFAQ(rowID, idFAQ) {
     });
 }
 
+<!-- Update Trail -->
 function updateLocation(rowID, idWiderAreaMap) {
     generateUpdateModal('#widerLocation', rowID, null, null, null);
     $('#updateModalTitle').text('Update Wider Area Location');
@@ -623,6 +656,7 @@ function updateLocation(rowID, idWiderAreaMap) {
     });
 }
 
+<!-- Update Contact -->
 function updateContact(rowID, idContact) {
     generateUpdateModal('#contact', rowID, null, null, null);
     $('#updateModalTitle').text('Update Contact');
@@ -650,6 +684,7 @@ function updateContact(rowID, idContact) {
     });
 }
 
+<!-- Update Event -->
 function updateEvent(rowID, idEvent, idWiderAreaMap) {
     generateUpdateModal('#event', rowID, null, null, idWiderAreaMap);
     $('#updateModalTitle').text('Update Event');
@@ -687,6 +722,9 @@ function cancelCreate() {
     $('#createModalBody').empty();
 }
 
+<!-- OBJECT CREATE FUNCTIONS -->
+
+<!-- Create Grave -->
 function createGrave() {
     $('#createModalTitle').text('Create Grave');
     generateCreateModal('#grave');
@@ -719,6 +757,7 @@ function createGrave() {
     });
 }
 
+<!-- Create Natural History-->
 function createNH() {
     $('#createModalTitle').text('Create Natural History');
     generateCreateModal('#naturalHistory');
@@ -747,6 +786,7 @@ function createNH() {
     });
 }
 
+<!-- Create Miscellaneous-->
 function createMisc() {
     $('#createModalTitle').text('Create Miscellaneous');
     generateCreateModal('#misc');
@@ -776,6 +816,7 @@ function createMisc() {
     });
 }
 
+<!-- Create Type Filter-->
 function createTypeFilter() {
     $('#createModalTitle').text('Create Type Filter');
     generateCreateModal('#type');
@@ -799,6 +840,7 @@ function createTypeFilter() {
     });
 }
 
+<!-- Create Historic Filter-->
 function createHistoricFilter() {
     $('#createModalTitle').text('Create Historic Filter');
     generateCreateModal('#historic');
@@ -824,6 +866,7 @@ function createHistoricFilter() {
     });
 }
 
+<!-- Create FAQ -->
 function createFAQ() {
     $('#createModalTitle').text('Create FAQ');
     generateCreateModal('#faq');
@@ -846,6 +889,7 @@ function createFAQ() {
     });
 }
 
+<!-- Create Trail -->
 function createWiderLocation() {
     $('#createModalTitle').text('Create Wider Area Location');
     generateCreateModal('#widerLocation');
@@ -877,6 +921,7 @@ function createWiderLocation() {
     });
 }
 
+<!-- Create Contact -->
 function createContact() {
     $('#createModalTitle').text('Create Contact');
     generateCreateModal('#contact');
@@ -902,6 +947,7 @@ function createContact() {
     });
 }
 
+<!-- Create Event -->
 function createEventEntry() {
     $('#createModalTitle').text('Create Event');
     generateCreateModal('#event');

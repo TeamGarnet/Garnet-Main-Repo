@@ -13,7 +13,18 @@ include_once 'ErrorCatching.class.php';
  *  getAllEntriesAsRows()
  */
 
+/**
+ * Class EventData
+ */
 class EventData {
+    /**
+     * Takes sanitized information and create a new object.
+     * @param $name
+     * @param $description
+     * @param $startTime
+     * @param $endTime
+     * @param $idWiderAreaMap
+     */
     public function createEvent($name, $description, $startTime, $endTime, $idWiderAreaMap) {
         try {
             //global $createEventQuery;
@@ -60,6 +71,10 @@ class EventData {
         return null;
     }
 
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function readEvent() {
         try {
             //global $getAllEventEntriesQuery;
@@ -71,6 +86,15 @@ class EventData {
         }
     }
 
+    /**
+     * Takes sanitized information and updates a object in the database.
+     * @param $idEvent
+     * @param $name
+     * @param $description
+     * @param $startTime
+     * @param $endTime
+     * @param $idWiderAreaMap
+     */
     public function updateEvent($idEvent, $name, $description, $startTime, $endTime, $idWiderAreaMap) {
         try {
             //global $updateEventQuery;
@@ -91,6 +115,10 @@ class EventData {
         }
     }
 
+    /**
+     * Deletes an object from the database.
+     * @param $idEvent
+     */
     public function deleteEvent($idEvent) {
         try {
             //global $deleteEventQuery;
@@ -104,6 +132,10 @@ class EventData {
         }
     }
 
+    /**
+     * Deletes all connected events from a location.
+     * @param $idWiderAreaMap
+     */
     public function deleteLocationConnectedEvents($idWiderAreaMap) {
         try {
             //global $deleteEventQuery;

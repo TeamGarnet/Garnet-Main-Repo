@@ -18,6 +18,9 @@ class EventService {
     public function __construct() {
     }
 
+    /*
+     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     */
     public function createEventEntry($name, $description, $startTime, $endTime, $idWiderAreaMap) {
         $startTime = filter_var($startTime, FILTER_SANITIZE_STRING);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -31,7 +34,8 @@ class EventService {
     }
 
     /*
-     * Takes in form data from an admin user and sanitizes the information. Then send the data to the data class for processing.
+     *
+     * Updates event currently in the database.
      * @param $name: Event's preferred name
      * @param $description: Event's description of relation to Rapids Cemetery
      * @param $startTime: Event's startTime
@@ -51,7 +55,8 @@ class EventService {
     }
 
     /*
-     * Updates event currently in the database.
+     *
+     * Deletes Event for Entry
      * @param $idEvent: Event's preferred id
      * @param $name: Event's preferred name
      * @param $description: Event's description of relation to Rapids Cemetery
@@ -71,8 +76,19 @@ class EventService {
     }
 
     /*
-     * Deletes Event for Entry
+     * Retrieves all the event entries and formats to display in a table.
+     * @return string: A string of a table in html
      * @param $idEvent: id of event to be deleted
+     * Example Output:
+     * <tr id="181">
+      <td>Spring Festival Picnic</td>
+      <td>Fredick Duglass Home</td>
+      <td>The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others</td>
+      <td>2018-12-31 14:00:00</td>
+      <td>2018-12-31 10:30:00</td>
+      <td><button class="btn basicBtn" onclick="updateEvent(181,1,2)">Update</button></td>
+      <td><button class="btn basicBtn" onclick="deleteEvent(1)"> Delete</button></td>
+    </tr>
      */
 
     public function getAllEntriesAsRows() {
@@ -99,11 +115,6 @@ class EventService {
         return $html;
     }
 
-    /*
-     * Retrieves all the event entries and formats to display in a table.
-     * @return string: A string of a table in html
-     */
-
     /**
      * Retrieves all event data from the database and forms Event Objects
      * @return array : An array of Event objects
@@ -122,8 +133,17 @@ class EventService {
     }
 
     /*
+     * Team Garnet Notes: More validation should be done for formatting the dates and other type fields. For example the sponsors should be able to only put in a year for a grave. This should be done for the update and create forms as well as displaying information.
      * Collects all the event information and formats it to web correct HTML and CSS
      * @return string: A string contain HTML to be appended to the page.
+     * Example Output:
+     * <div class="eventInfo">
+  <p class="eventName">Spring Festival Picnic</p>
+  <p class="eventLocationName">Fredick Duglass Home</p>
+  <p class="eventStartTime">Dec 31, 2018 2:00 PM - Dec 31, 2018 2:00 PM</p>
+  <p class="eventDescription">The Spring Festival Picnic is a tradition we have where we have people enjoy the day with others</p>
+  <hr class="style17">
+</div>
      */
 
     public function formatEventInfo() {

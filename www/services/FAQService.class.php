@@ -17,6 +17,16 @@ class FAQService {
     public function __construct() {
     }
 
+    /*
+     * Collects all the FAQ information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     * Example Output:
+     * <div class="faqCard">
+      <p class="q">How do I ask a question on this?</p>
+      <p class="a"> I don't know how do I get an anwser.</p>
+      <hr class="style17">
+    </div>
+     */
     public function formatFAQInfo() {
         $allFAQObjectsInfo = $this -> getAllFAQEntries();
         $formattedFAQInfo = "";
@@ -31,10 +41,6 @@ class FAQService {
         return $formattedFAQInfo;
     }
 
-    /*
-     * Collects all the FAQ information and formats it to web correct HTML and CSS
-     * @return string: A string contain HTML to be appended to the page.
-     */
 
     /**
      * Retrieves all FAQ data from the database and forms FAQ Objects
@@ -61,7 +67,6 @@ class FAQService {
      * @param $endTime: FAQ's endTime
      * @param $idWiderAreaMap: FAQ's attached location
      */
-
     public function createFAQEntry($question, $answer) {
         $question = filter_var($question, FILTER_SANITIZE_STRING);
         $answer = filter_var($answer, FILTER_SANITIZE_STRING);
@@ -105,6 +110,13 @@ class FAQService {
     /*
      * Retrieves all the FAQ entries and formats to display in a table.
      * @return string: A string of a table in html
+     * Example Output:
+     * <tr id="151">
+      <td>How do I ask a question on this?</td>
+      <td> I don't know how do I get an anwser.</td>
+      <td><button class="btn basicBtn" onclick="updateFAQ(151,1)">Update</button></td>
+      <td><button class="btn basicBtn" onclick="deleteFAQ(1)"> Delete</button></td>
+       </tr>
      */
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllFAQEntries();

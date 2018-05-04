@@ -6,6 +6,11 @@
  */
 
 class ErrorCatching {
+
+    /**
+     * Opens either the main site or admin RapidsCemeteryPHPErrors.txt and log the error.
+     * @param $error
+     */
     function logError($error) {
         $logFile = 'RapidsCemeteryPHPErrors.txt';
 

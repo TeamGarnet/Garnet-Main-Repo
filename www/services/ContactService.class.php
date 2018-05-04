@@ -18,6 +18,25 @@ class ContactService {
     public function __construct() {
     }
 
+    /**
+     * Collects all the contact information and formats it to web correct HTML and CSS
+     * @return string: A string contain HTML to be appended to the page.
+     *
+     * @return string
+     * Examlpe Output:
+     * <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+     * <div class="contactCardOutter">
+     * <div class="contactCard">
+     * <p class="name">Name </p>
+     * <p class="title">Title </p>
+     * <p class="description">Description </p>
+     * <p class="email">Email </p>
+     * <p class="phone">Phone </p>
+     * </div>
+     * </div>
+     * </div>
+     * *
+     */
     public function formatContactInfo() {
         $allContactObjectsInfo = $this -> getAllContactEntries();
         $formattedContactInfo = "";
@@ -35,10 +54,6 @@ class ContactService {
         return $formattedContactInfo;
     }
 
-    /*
-     * Collects all the contact information and formats it to web correct HTML and CSS
-     * @return string: A string contain HTML to be appended to the page.
-     */
 
     /**
      * Retrieves all contact data from the database and forms Contact Objects
@@ -65,7 +80,6 @@ class ContactService {
      * @param $phone: Contact's phone number
      * @param $title: Contact's position to Rapids Cemetery
      */
-
     public function createContactEntry($name, $email, $description, $phone, $title) {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $description = filter_var($description, FILTER_SANITIZE_STRING);
@@ -115,6 +129,16 @@ class ContactService {
     /*
      * Retrieves all the contact entries and formats to display in a table.
      * @return string: A string of a table in html
+     * Example Output:
+     <tr id="171">
+    <td>John Curran</td>
+     <td>JohnCurren@Rapids.com</td>
+    <td>My name is John and I'm usually at the cemetery Sundays 12:30-3:30PM.</td>
+    <td>750285028</td>
+    <td>titleName1</td>
+    <td><button class="btn basicBtn" onclick="updateContact(171,1)">Update</button></td>
+    <td><button class="btn basicBtn" onclick="deleteContact(1)"> Delete</button></td>
+    </tr>
      */
     public function getAllEntriesAsRows() {
         $allmodels = $this -> getAllContactEntries();
@@ -138,44 +162,4 @@ class ContactService {
         }
         return $html;
     }
-
-    /*
-     * <!--<div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="contactCardOutter">
-                    <div class="contactCard">
-                        <p class="name">Name </p>
-                        <p class="title">Title </p>
-                        <p class="description">Description </p>
-                        <p class="email">Email </p>
-                        <p class="phone">Phone </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="contactCardOutter">
-                    <div class="contactCard">
-                        <p class="name">Name </p>
-                        <p class="title">Title </p>
-                        <p class="description">Description </p>
-                        <p class="email">Email </p>
-                        <p class="phone">Phone </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="contactCardOutter">
-                    <div class="contactCard">
-                        <p class="name">Name </p>
-                        <p class="title">Title </p>
-                        <p class="description">Description </p>
-                        <p class="email">Email </p>
-                        <p class="phone">Phone </p>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-     */
 }

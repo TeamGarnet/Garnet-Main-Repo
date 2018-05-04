@@ -11,6 +11,10 @@ include_once 'ErrorCatching.class.php';
  */
 
 class TrailData {
+    /**
+     * Retrieves all the database entries.
+     * @return array
+     */
     public function getAllTrailLocations() {
         global $allTrailLocationQuery;
         try {
@@ -53,6 +57,5 @@ class TrailData {
             $errorService -> logError($e);
             exit();
         }
-        return null;
     }
 }
