@@ -19,6 +19,8 @@ if (isset($_POST['Login'])) {
         $validateUser = $LoginService -> createAccount($_POST['newEmail'], $_POST['newPwd'], $_POST['masterEmail'], $_POST['masterPWD']);
         if ($validateUser == false) {
             $errorMsgLogin = "Account Not Created";
+        } else {
+            $errorMsgLogin = "Account Created";
         }
     }
 }
