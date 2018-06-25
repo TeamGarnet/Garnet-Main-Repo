@@ -177,5 +177,5 @@ echo $filterBar;
 <!------ Example API Key shown here: https://developers.google.com/maps/documentation/javascript/get-api-key ------->
 
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key='RAPIDS_CEMETERY_API_KEY'&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sglJvUDWiUe_6Pe_sV9-SdtIvN_J-Vo&callback=initMap">
 </script>
